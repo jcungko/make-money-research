@@ -42,7 +42,7 @@ jobs:
           month=datetime.fromtimestamp(archive_data.closed_end_ms()/1000,timezone.utc).strftime("%Y%m")
           code=hashlib.sha256(",".join(names).encode()).hexdigest()[:18]
           key=f"um-archive-v2-{month}-{code}"
-          with open(os.environ["GITHUB_ENV"],"a") as fh: fh.write(f"ARCHIVE_CACHE_KEY={key}\\n")
+          with open(os.environ["GITHUB_ENV"],"a") as fh: fh.write(f"ARCHIVE_CACHE_KEY={key}\n")
           print("Historical data cache partition:",month,names)
           PY
       - name: Cache official monthly archive ZIPs
