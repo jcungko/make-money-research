@@ -1,7 +1,7 @@
 name: MAKE MONEY independent research (paper only)
 on:
   schedule:
-    - cron: '7,17,27,37,47,57 * * * *'
+    - cron: '2,7,12,17,22,27,32,37,42,47,52,57 * * * *'
   workflow_dispatch:
   push:
     paths:
@@ -26,6 +26,30 @@ jobs:
           cache: pip
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Select archive cache partition
+        env:
+          MAX_COINS: '2'
+        run: |
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          from datetime import datetime, timezone
+          import archive_data
+          symbols=archive_data.listing()
+          st=json.loads(Path("results/state.json").read_text())
+          start=int(st.get("coin_cursor",0))%len(symbols)
+          names=[symbols[(start+i)%len(symbols)] for i in range(min(int(os.environ["MAX_COINS"]),len(symbols)))]
+          month=datetime.fromtimestamp(archive_data.closed_end_ms()/1000,timezone.utc).strftime("%Y%m")
+          code=hashlib.sha256(",".join(names).encode()).hexdigest()[:18]
+          key=f"um-archive-v2-{month}-{code}"
+          with open(os.environ["GITHUB_ENV"],"a") as fh: fh.write(f"ARCHIVE_CACHE_KEY={key}\\n")
+          print("Historical data cache partition:",month,names)
+          PY
+      - name: Cache official monthly archive ZIPs
+        uses: actions/cache@v4
+        with:
+          path: .cache/binance-archive
+          key: ${{ env.ARCHIVE_CACHE_KEY }}
       - name: Run unit tests
         run: python -m pytest -q
       - name: Backtest next batch without trading access
