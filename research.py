@@ -154,6 +154,8 @@ def main():
     start_ix=int(st.get("coin_cursor",0))%len(symbols)
     coins=[symbols[(start_ix+j)%len(symbols)] for j in range(min(MAX_COINS,len(symbols)))]
     completed=0
+    new_profitable=0
+    new_candidates=0
     for coin in coins:
         if completed>=BUDGET or time.monotonic()>DEADLINE-125: break
         symbol=coin
@@ -175,8 +177,18 @@ def main():
                     boundary=data.index[0]+(data.index[-1]-data.index[0])*.8
                     result=score(trades,boundary,data.index[-1])
                     item={"id":f"MM-{symbol}-{index:09d}","config":asdict(cfg),"from":str(data.index[0]),"to":str(data.index[-1]),"data_sha256":fingerprints[cfg.timeframe],"result":result,"research_only":True,"checked_utc":datetime.now(timezone.utc).isoformat()}
-                    persist("experiments.jsonl",item)
-                    if result["exploratory_candidate"]: persist("candidates.jsonl",item)
+                    # Full failing configurations are reproducible from cursor and source
+                    # fingerprints. Do not append thousands of losing records to Git
+                    # every day; retain full details for profitable configurations.
+                    if result.get("total_usdt",0)>0 and result.get("trades",0)>0:
+                        persist("profitable_experiments.jsonl",item)
+                        st["profitable"]=st.get("profitable",0)+1
+                        new_profitable+=1
+                    if result["exploratory_candidate"]:
+                        persist("candidates.jsonl",item)
+                        st["candidates"]=st.get("candidates",0)+1
+                        new_candidates+=1
+                    if result.get("trades",0)==0: st["zero_trade"]=st.get("zero_trade",0)+1
                     st["processed"]=st.get("processed",0)+1
                     completed+=1
                 except Exception as e:
@@ -185,10 +197,11 @@ def main():
         except Exception as e:
             persist("errors.jsonl",{"symbol":symbol,"error":str(e),"checked_utc":datetime.now(timezone.utc).isoformat()})
             state_save(st)
+    persist("runs.jsonl",{"completed":completed,"new_profitable":new_profitable,"new_candidates":new_candidates,"symbols":coins,"cursor_end":st.get("cursor"),"archive_end_utc":datetime.fromtimestamp(end/1000,timezone.utc).isoformat(),"checked_utc":datetime.now(timezone.utc).isoformat()})
     st["coin_cursor"]=int(st.get("coin_cursor",0))+len(coins)
     st["last_run_utc"]=datetime.now(timezone.utc).isoformat()
     state_save(st)
-    print(json.dumps({"completed":completed,"total":st.get("processed",0),"coins":coins,"cursor":st["cursor"],"source":"Binance Vision public USD-M monthly OHLCV and funding archives","archive_end_utc":datetime.fromtimestamp(end/1000,timezone.utc).isoformat()}))
+    print(json.dumps({"completed":completed,"new_profitable":new_profitable,"new_candidates":new_candidates,"total":st.get("processed",0),"coins":coins,"cursor":st["cursor"],"source":"Binance Vision public USD-M monthly OHLCV and funding archives","archive_end_utc":datetime.fromtimestamp(end/1000,timezone.utc).isoformat()}))
     if completed==0: raise RuntimeError("No completed tests: check results/errors.jsonl (archives missing, not-yet-listed, or other data issues)")
 
 if __name__=="__main__":
