@@ -6,9 +6,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 import numpy as np
 import pandas as pd
-import requests
+import archive_data
 
-API="https://fapi.binance.com"
 OUT=Path("results"); OUT.mkdir(exist_ok=True)
 STATE=OUT/"state.json"
 STEP=900000
@@ -16,8 +15,6 @@ BUDGET=max(1,int(os.getenv("MODEL_BUDGET","12")))
 MAX_COINS=max(1,int(os.getenv("MAX_COINS","2")))
 DEADLINE=time.monotonic()+max(120,int(os.getenv("MAX_RUNTIME_SECONDS","1050")))
 FEE=.0005; SLIP=.0002; CAPITAL=100; MARGIN=10; RISK_USD=2
-S=requests.Session()
-S.headers["User-Agent"]="make-money-read-only-research"
 
 @dataclass(frozen=True)
 class Config:
@@ -45,70 +42,6 @@ def state_save(state):
     temp=STATE.with_suffix(".tmp")
     temp.write_text(json.dumps(state,indent=2),encoding="utf-8")
     temp.replace(STATE)
-
-def fetch(endpoint,params=None):
-    last=None
-    for attempt in range(4):
-        if time.monotonic()>DEADLINE-75: raise TimeoutError("Run time budget reached")
-        try:
-            r=S.get(API+endpoint,params=params,timeout=18)
-            if r.status_code in (418,429,451):
-                raise RuntimeError("Binance HTTP "+str(r.status_code)+"; restricted or rate limited")
-            r.raise_for_status()
-            result=r.json()
-            if isinstance(result,dict) and result.get("code",0)<0: raise RuntimeError(str(result))
-            return result
-        except Exception as e:
-            last=e
-            if attempt<3: time.sleep(1+attempt*2)
-    raise RuntimeError("Binance fetch failed "+endpoint+": "+str(last))
-
-def universe():
-    info=fetch("/fapi/v1/exchangeInfo")
-    volumes=fetch("/fapi/v1/ticker/24hr")
-    v={x["symbol"]:float(x.get("quoteVolume",0)) for x in volumes if "symbol" in x}
-    a=[x for x in info["symbols"] if x.get("status")=="TRADING" and x.get("contractType")=="PERPETUAL" and x.get("quoteAsset")=="USDT" and x.get("onboardDate") and v.get(x["symbol"],0)>=1_000_000]
-    liquid=sorted(a,key=lambda x:v[x["symbol"]],reverse=True)[:30]
-    now=int(time.time()*1000)
-    new=sorted([x for x in a if 0<=now-int(x["onboardDate"])<=180*86400000],key=lambda x:int(x["onboardDate"]),reverse=True)[:20]
-    return list({x["symbol"]:x for x in liquid+new}.values())
-
-def history(symbol,start,end):
-    records={}
-    cursor=start
-    while cursor<end:
-        if time.monotonic()>DEADLINE-110: raise TimeoutError("Kline fetch checkpoint")
-        raw=fetch("/fapi/v1/klines",{"symbol":symbol,"interval":"15m","startTime":cursor,"endTime":end-1,"limit":1500})
-        if not raw: break
-        for x in raw: records[int(x[0])]=x
-        nxt=int(raw[-1][0])+STEP
-        if nxt<=cursor: raise ValueError("Kline pagination stalled")
-        cursor=nxt
-        time.sleep(.12)
-    if not records: raise ValueError("No historical candles")
-    rows=[records[x] for x in sorted(records)]
-    f=pd.DataFrame({"open":[float(x[1]) for x in rows],"high":[float(x[2]) for x in rows],"low":[float(x[3]) for x in rows],"close":[float(x[4]) for x in rows],"volume":[float(x[5]) for x in rows]},index=pd.to_datetime([int(x[0]) for x in rows],unit="ms",utc=True))
-    f=f[(f.index.view("i8")//1_000_000+STEP)<=end]
-    if len(f)>1 and (np.diff(f.index.view("i8"))//1_000_000!=STEP).any(): raise ValueError("Candle gaps: refusing interpolation")
-    if (f.low<=0).any() or (f.low>f[["open","close"]].min(axis=1)).any() or (f.high<f[["open","close"]].max(axis=1)).any(): raise ValueError("Invalid OHLC")
-    return f
-
-def funding(symbol,start,end):
-    records={}; cursor=start
-    while cursor<end:
-        if time.monotonic()>DEADLINE-110: raise TimeoutError("Funding fetch checkpoint")
-        raw=fetch("/fapi/v1/fundingRate",{"symbol":symbol,"startTime":cursor,"endTime":end,"limit":1000})
-        if not raw: break
-        for x in raw: records[int(x["fundingTime"])]=x
-        nxt=int(raw[-1]["fundingTime"])+1
-        if nxt<=cursor: raise ValueError("Funding pagination stalled")
-        cursor=nxt
-        time.sleep(.12)
-    if not records: raise ValueError("Funding history missing")
-    a=pd.DataFrame([{"time":t,"rate":float(v["fundingRate"]),"mark":float(v.get("markPrice") or 0)} for t,v in sorted(records.items())])
-    if (a.mark<=0).any() or a.time.iloc[0]>start+10*86400000 or a.time.iloc[-1]<end-10*86400000 or (a.time.diff().dropna()>10*86400000).any():
-        raise ValueError("Missing or incomplete funding mark data")
-    return a
 
 def resample(df,tf):
     if tf=="15m": return df
@@ -198,7 +131,7 @@ def score(trades,split,end):
     dd=float(np.min(curve-np.maximum.accumulate(curve)))
     train=dates<split; test=~train
     months=f.groupby(dates.dt.tz_convert("Asia/Ho_Chi_Minh").dt.strftime("%Y-%m"))["pnl"].sum()
-    last12=[float(months.get((end.tz_convert("Asia/Ho_Chi_Minh")-pd.DateOffset(months=k+1)).strftime("%Y-%m"),0)) for k in range(12)]
+    last12=[float(months.get(str(end.tz_convert("Asia/Ho_Chi_Minh").to_period("M")-k-1),0)) for k in range(12)]
     years=[]
     for k in range(3):
         a=end-pd.Timedelta(days=(k+1)*365); b=end-pd.Timedelta(days=k*365)
@@ -215,20 +148,18 @@ def score(trades,split,end):
 
 def main():
     st=state_load()
-    end=(int(time.time()*1000)//STEP)*STEP
-    symbols=universe()
+    end=archive_data.closed_end_ms()
+    symbols=archive_data.listing()
     if not symbols: raise RuntimeError("No active Binance USDT-M perpetual contracts")
     start_ix=int(st.get("coin_cursor",0))%len(symbols)
     coins=[symbols[(start_ix+j)%len(symbols)] for j in range(min(MAX_COINS,len(symbols)))]
     completed=0
     for coin in coins:
         if completed>=BUDGET or time.monotonic()>DEADLINE-125: break
-        symbol=coin["symbol"]
+        symbol=coin
         try:
-            since=max(end-3*365*86400000,int(coin["onboardDate"]))
-            bars=history(symbol,since,end)
-            if len(bars)<96*30: raise ValueError("Less than 30 days data")
-            funds=funding(symbol,int(bars.index[0].timestamp()*1000),end)
+            since=end-3*365*86400000
+            bars,funds=archive_data.load(symbol,since,end)
             datasets={tf:resample(bars,tf) for tf in ["15m","30m","1h","4h","1d"]}
             # Calculated once per dataset rather than per candidate.
             fingerprints={tf:hashlib.sha256(x.to_csv().encode()+funds.to_csv(index=False).encode()).hexdigest() for tf,x in datasets.items()}
@@ -257,8 +188,8 @@ def main():
     st["coin_cursor"]=int(st.get("coin_cursor",0))+len(coins)
     st["last_run_utc"]=datetime.now(timezone.utc).isoformat()
     state_save(st)
-    print(json.dumps({"completed":completed,"total":st.get("processed",0),"coins":[x["symbol"] for x in coins],"cursor":st["cursor"]}))
-    if completed==0: raise RuntimeError("No completed tests: check results/errors.jsonl (API restrictions or history errors)")
+    print(json.dumps({"completed":completed,"total":st.get("processed",0),"coins":coins,"cursor":st["cursor"],"source":"Binance Vision public USD-M monthly OHLCV and funding archives","archive_end_utc":datetime.fromtimestamp(end/1000,timezone.utc).isoformat()}))
+    if completed==0: raise RuntimeError("No completed tests: check results/errors.jsonl (archives missing, not-yet-listed, or other data issues)")
 
 if __name__=="__main__":
     try: main()
