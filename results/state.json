@@ -1,1 +1,7 @@
-{"version":1,"cursor":0,"coin_cursor":0,"processed":0}
+{
+  "version": 1,
+  "cursor": 16,
+  "coin_cursor": 2,
+  "processed": 16,
+  "last_run_utc": "2026-11-06T23:55:32.193924+00:00"
+}
