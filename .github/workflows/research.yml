@@ -3,6 +3,12 @@ on:
   schedule:
     - cron: '17 1,13 * * *'
   workflow_dispatch:
+  push:
+    paths:
+      - 'archive_data.py'
+      - 'research.py'
+      - '.github/workflows/research.yml'
+      - 'tests/**'
 permissions:
   contents: write
 concurrency:
@@ -11,7 +17,7 @@ concurrency:
 jobs:
   research:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 9
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -24,9 +30,9 @@ jobs:
         run: python -m pytest -q
       - name: Backtest next batch without trading access
         env:
-          MODEL_BUDGET: '12'
+          MODEL_BUDGET: '16'
           MAX_COINS: '2'
-          MAX_RUNTIME_SECONDS: '1050'
+          MAX_RUNTIME_SECONDS: '450'
         run: python research.py
       - name: Persist state and research journal
         if: always()
