@@ -1,0 +1,19 @@
+name: Binance public archive source probe
+on:
+  push:
+    paths:
+      - 'probe_sources.py'
+      - '.github/workflows/source-probe.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe archive endpoints without credentials
+        run: |
+          python -m pip install requests
+          python probe_sources.py
