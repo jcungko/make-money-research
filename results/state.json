@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "cursor": 304,
-  "coin_cursor": 48,
-  "processed": 301,
-  "last_run_utc": "2026-11-07T17:11:37.852450+00:00",
-  "zero_trade": 153,
-  "profitable": 28
+  "cursor": 312,
+  "coin_cursor": 50,
+  "processed": 309,
+  "last_run_utc": "2026-11-07T17:49:26.192552+00:00",
+  "zero_trade": 158,
+  "profitable": 29
 }
