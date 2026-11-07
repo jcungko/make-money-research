@@ -14,3 +14,4 @@
 {"symbol":"AIAUSDT","error":"Missing 15m candles, no interpolation","checked_utc":"2026-11-07T19:14:54.884871+00:00"}
 {"symbol":"AIUSDT","error":"404 Client Error: Not Found for url: https://data.binance.vision/data/futures/um/monthly/fundingRate/AIUSDT/AIUSDT-fundingRate-2026-05.zip","checked_utc":"2026-11-07T20:38:19.897750+00:00"}
 {"symbol":"AKAMUSDT","error":"No contract archive","checked_utc":"2026-11-07T21:17:24.759201+00:00"}
+{"symbol":"AKROUSDT","error":"No contract archive","checked_utc":"2026-11-07T21:56:51.410845+00:00"}
