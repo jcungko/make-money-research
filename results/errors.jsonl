@@ -1,1 +1,2 @@
 {"fatal":"Binance fetch failed /fapi/v1/exchangeInfo: Binance HTTP 451; restricted or rate limited","checked_utc":"2026-11-06T23:47:03.658931+00:00"}
+{"symbol":"1000BTTCUSDT","error":"No contract archive","checked_utc":"2026-11-07T05:14:47.428881+00:00"}
