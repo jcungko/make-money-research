@@ -12,3 +12,4 @@
 {"symbol":"AGPUUSDT","error":"Under 30 days candles","checked_utc":"2026-11-07T17:49:26.192058+00:00"}
 {"symbol":"AI16ZUSDT","error":"404 Client Error: Not Found for url: https://data.binance.vision/data/futures/um/monthly/fundingRate/AI16ZUSDT/AI16ZUSDT-fundingRate-2025-12.zip","checked_utc":"2026-11-07T18:22:34.662586+00:00"}
 {"symbol":"AIAUSDT","error":"Missing 15m candles, no interpolation","checked_utc":"2026-11-07T19:14:54.884871+00:00"}
+{"symbol":"AIUSDT","error":"404 Client Error: Not Found for url: https://data.binance.vision/data/futures/um/monthly/fundingRate/AIUSDT/AIUSDT-fundingRate-2026-05.zip","checked_utc":"2026-11-07T20:38:19.897750+00:00"}
