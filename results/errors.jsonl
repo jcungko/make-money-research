@@ -6,3 +6,4 @@
 {"symbol":"A2ZUSDT","error":"404 Client Error: Not Found for url: https://data.binance.vision/data/futures/um/monthly/fundingRate/A2ZUSDT/A2ZUSDT-fundingRate-2026-04.zip","checked_utc":"2026-11-07T11:52:39.806562+00:00"}
 {"symbol":"ABBVUSDT","error":"No contract archive","checked_utc":"2026-11-07T13:34:01.011347+00:00"}
 {"symbol":"ACNUSDT","error":"Under 30 days candles","checked_utc":"2026-11-07T14:23:52.545473+00:00"}
+{"symbol":"ACXUSDT","error":"404 Client Error: Not Found for url: https://data.binance.vision/data/futures/um/monthly/fundingRate/ACXUSDT/ACXUSDT-fundingRate-2026-09.zip","checked_utc":"2026-11-07T15:48:21.715051+00:00"}
