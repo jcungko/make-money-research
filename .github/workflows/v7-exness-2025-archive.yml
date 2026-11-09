@@ -1,0 +1,43 @@
+name: V7 Exness EURUSDm 2025 raw tick collection (paper research)
+on:
+  push:
+    paths:
+      - '.github/workflows/v7-exness-2025-archive.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - name: Download 2025 EURUSDm tick history
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p v7_2025_raw
+          curl -fL --retry 3 --connect-timeout 25 --max-time 750             https://ticks.ex2archive.com/ticks/EURUSDm/2025/Exness_EURUSDm_2025.zip             -o v7_2025_raw/Exness_EURUSDm_2025.zip
+      - name: Validate archive, provenance, and structure
+        shell: bash
+        run: |
+          python - <<'PY'
+          import pathlib,zipfile,json,hashlib,datetime
+          p=pathlib.Path("v7_2025_raw/Exness_EURUSDm_2025.zip")
+          with zipfile.ZipFile(p) as z:
+              assert z.testzip() is None, "ZIP CRC failed"
+              members=[{"name":f.filename,"size":f.file_size} for f in z.infolist()]
+              assert any(m["name"].endswith(".csv") for m in members)
+              first=z.open(next(m["name"] for m in members if m["name"].endswith(".csv"))).readline().decode("utf-8-sig").strip()
+              assert 'Timestamp' in first and 'Bid' in first and 'Ask' in first, first
+          with open(p,'rb') as f: sha=hashlib.file_digest(f,'sha256').hexdigest()
+          manifest={"symbol":"EURUSDm","year":2025,"source_url":"https://ticks.ex2archive.com/ticks/EURUSDm/2025/Exness_EURUSDm_2025.zip","utc_downloaded":datetime.datetime.now(datetime.timezone.utc).isoformat(),"bytes":p.stat().st_size,"sha256":sha,"members":members,"csv_header":first}
+          (p.parent/"manifest.json").write_text(json.dumps(manifest,indent=2))
+          print(json.dumps(manifest,indent=2))
+          PY
+      - name: Upload source archive for offline validation
+        uses: actions/upload-artifact@v4
+        with:
+          name: v7-exness-eurusdm-2025-tick-source
+          path: v7_2025_raw/
+          retention-days: 30
+          if-no-files-found: error
