@@ -1,0 +1,44 @@
+name: V7 EURUSDm Exness 2026 archive collection
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/v7-eurusdm-exness-2026.yml'
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Download 2026 archive and latest 2026-11-09 snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p exness_eurusdm_2026
+          curl -fL --retry 3 --connect-timeout 25 --max-time 450             'https://ticks.ex2archive.com/ticks/EURUSDm/2026/Exness_EURUSDm_2026.zip'             -o exness_eurusdm_2026/Exness_EURUSDm_2026.zip
+          curl -fL --retry 3 --connect-timeout 25 --max-time 120             'https://ticks.ex2archive.com/ticks/EURUSDm/2026/11/09/Exness_EURUSDm_2026_11_09.zip'             -o exness_eurusdm_2026/Exness_EURUSDm_2026_11_09.zip
+      - name: Validate downloaded archives and create provenance manifest
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, hashlib, json, pathlib, zipfile, datetime
+          root=pathlib.Path("exness_eurusdm_2026")
+          result={"symbol":"EURUSDm", "period_requested_utc":["2026-01-01T00:00:00Z","2026-11-09T23:59:59Z"], "downloaded_at_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(), "source":"public historical tick archive; NOT broker-server-execution history", "time_zone":"UTC", "caveats":["annual archive may not include all ticks through 2026-11-09","November 9 daily snapshot supplements annual archive; it may overlap annual rows","Use broker specific spread and trade execution validation before real trading"],"files":[]}
+          for p in sorted(root.glob("*.zip")):
+            with zipfile.ZipFile(p) as z:
+              bad=z.testzip()
+              if bad: raise RuntimeError(f"corrupt zip member {bad}")
+              members=[{"name":i.filename,"size":i.file_size} for i in z.infolist() if not i.is_dir()]
+              if not members: raise RuntimeError(f"empty archive {p}")
+              result["files"].append({"name":p.name,"bytes":p.stat().st_size,"sha256":hashlib.file_digest(p.open("rb"),"sha256").hexdigest(),"source_url":("https://ticks.ex2archive.com/ticks/EURUSDm/2026/"+p.name if "_11_09" not in p.name else "https://ticks.ex2archive.com/ticks/EURUSDm/2026/11/09/"+p.name),"zip_members":members[:100]})
+          (root/"manifest.json").write_text(json.dumps(result,indent=2),encoding="utf-8")
+          print(json.dumps({"validated_archives":[(x["name"],x["bytes"],len(x["zip_members"])) for x in result["files"]]},indent=2))
+          PY
+      - name: Upload original Exness-derived source files
+        uses: actions/upload-artifact@v4
+        with:
+          name: v7-exness-eurusdm-2026-ticks
+          path: exness_eurusdm_2026/
+          retention-days: 30
+          if-no-files-found: error
