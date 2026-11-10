@@ -44,16 +44,16 @@ def main():
             best=float(d.iloc[s:e+1].bh.max())
             worst=float(d.iloc[s:e+1].bl.min())
             price4=float(d.iloc[min(e,s+3)].bc)
-            fav=(best-row.entry)/row.risk_dist
-            adv=(worst-row.entry)/row.risk_dist
-            c4=(price4-row.entry)/row.risk_dist
+            fav=(best-row.entry)/abs(row.entry-row.stop)
+            adv=(worst-row.entry)/abs(row.entry-row.stop)
+            c4=(price4-row.entry)/abs(row.entry-row.stop)
         else:
             best=float(d.iloc[s:e+1].al.min())
             worst=float(d.iloc[s:e+1].ah.max())
             price4=float(d.iloc[min(e,s+3)].ac)
-            fav=(row.entry-best)/row.risk_dist
-            adv=(row.entry-worst)/row.risk_dist
-            c4=(row.entry-price4)/row.risk_dist
+            fav=(row.entry-best)/abs(row.entry-row.stop)
+            adv=(row.entry-worst)/abs(row.entry-row.stop)
+            c4=(row.entry-price4)/abs(row.entry-row.stop)
         back_in_box.append(in_box_4)
         mfe.append(max(0.0,fav))
         mae.append(min(0.0,adv))
