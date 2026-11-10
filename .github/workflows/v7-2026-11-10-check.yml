@@ -1,0 +1,32 @@
+name: V7 Nov10 public EURUSDm tick snapshot (research only)
+on:
+  push:
+    paths:
+      - '.github/workflows/v7-2026-11-10-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Get latest Nov10 public EURUSDm tick history
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p ticks
+          curl -fL --retry 3 --connect-timeout 20 --max-time 120 'https://ticks.ex2archive.com/ticks/EURUSDm/2026/11/10/Exness_EURUSDm_2026_11_10.zip' -o ticks/Exness_EURUSDm_2026_11_10.zip
+          python - <<'PY'
+          import zipfile,json,pathlib
+          p=pathlib.Path('ticks/Exness_EURUSDm_2026_11_10.zip')
+          with zipfile.ZipFile(p) as z:
+            assert z.testzip() is None
+            print(json.dumps({"members":z.namelist(),"bytes":p.stat().st_size}))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v7-eurusdm-2026-11-10-snapshot
+          path: ticks/*.zip
+          retention-days: 7
+          if-no-files-found: error
