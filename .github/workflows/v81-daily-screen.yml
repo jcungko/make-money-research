@@ -1,0 +1,39 @@
+name: V8.1 EURUSDm daily-recurrence strategy screen (research only)
+on:
+  push:
+    paths:
+      - 'research/v81_daily_recurring.py'
+      - '.github/workflows/v81-daily-screen.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: v81-research
+  cancel-in-progress: false
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install data science packages
+        run: python -m pip install --disable-pip-version-check numpy pandas
+      - name: Run causality unit tests
+        run: python research/v81_daily_recurring.py --selftest
+      - name: Run EURUSDm intraday daily signal and monthly profitability grid
+        run: python research/v81_daily_recurring.py
+      - name: Commit reproducible results (research only)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name v81-research-bot
+          git config user.email v81-research-bot@users.noreply.github.com
+          git add results/v81_daily_recurring_2026/
+          if ! git diff --cached --quiet; then
+            git commit -m "Save V8.1 EURUSDm daily repeatability research results"
+            git pull --rebase
+            git push
+          fi
