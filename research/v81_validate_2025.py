@@ -34,8 +34,8 @@ def ts_key(x):
 def ticks_to_m15(src,dst):
     src=Path(src);dst=Path(dst)
     dst.parent.mkdir(parents=True,exist_ok=True)
-    rows=[];last=None;bucket=None
-    ticks=0;outoforder=0
+    agg={}
+    ticks=0;reverse_ticks=0;last_tick=None
     with zipfile.ZipFile(src) as z:
         members=[n for n in z.namelist() if n.lower().endswith(".csv")]
         if not members:raise ValueError("No CSV in "+str(src))
@@ -48,32 +48,40 @@ def ticks_to_m15(src,dst):
             it,ib,ia=col["timestamp"],col["bid"],col["ask"]
             for v in reader:
                 if not v:continue
-                k=ts_key(v[it])
-                b=float(v[ib]);a=float(v[ia])
-                if b<=0 or a<=b:continue
+                stamp=v[it].strip().replace("T"," ").replace(".","-",2)
+                k=ts_key(stamp)
+                bid=float(v[ib]);ask=float(v[ia])
+                if bid<=0 or ask<bid:continue
                 ticks+=1
-                if last is not None and k<last:
-                    outoforder+=1
-                    raise ValueError("Out-of-order ticks, cannot construct OHLC without sorting")
-                if bucket is None or k!=last:
-                    if bucket is not None: rows.append(bucket)
-                    bucket=[k,b,b,b,b,a,a,a,a,0]
-                    last=k
+                if last_tick is not None and stamp<last_tick:
+                    reverse_ticks+=1
+                last_tick=stamp
+                row=agg.get(k)
+                if row is None:
+                    # k, bid O/H/L/C, ask O/H/L/C, count, first tick ts, last tick ts
+                    agg[k]=[k,bid,bid,bid,bid,ask,ask,ask,ask,1,stamp,stamp]
                 else:
-                    bucket[2]=max(bucket[2],b);bucket[3]=min(bucket[3],b);bucket[4]=b
-                    bucket[6]=max(bucket[6],a);bucket[7]=min(bucket[7],a);bucket[8]=a
-                bucket[9]+=1
-                if ticks%5000000==0:print("PROCESSED TICKS",ticks,"LAST",k,flush=True)
-            if bucket is not None:rows.append(bucket)
+                    row[2]=max(row[2],bid);row[3]=min(row[3],bid)
+                    row[6]=max(row[6],ask);row[7]=min(row[7],ask)
+                    if stamp<row[10]:
+                        row[1]=bid;row[5]=ask;row[10]=stamp
+                    if stamp>=row[11]:
+                        row[4]=bid;row[8]=ask;row[11]=stamp
+                    row[9]+=1
+                if ticks%5000000==0:
+                    print("PROCESSED TICKS",ticks,"LAST",k,"reverse",reverse_ticks,flush=True)
+    rows=[agg[k][:10] for k in sorted(agg)]
     columns=["time_utc","bid_open","bid_high","bid_low","bid_close",
              "ask_open","ask_high","ask_low","ask_close","ticks"]
     df=pd.DataFrame(rows,columns=columns)
-    print("CONVERT",ticks,len(df),df.time_utc.iloc[0],df.time_utc.iloc[-1],"order_errors",outoforder)
+    print("CONVERT",ticks,len(df),df.time_utc.iloc[0],df.time_utc.iloc[-1],
+          "out_of_chronology_raw_ticks",reverse_ticks)
     buf=io.StringIO()
     df.to_csv(buf,index=False)
     with zipfile.ZipFile(dst,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=8) as z:
         z.writestr("EURUSDm_Exness_2025_M15.csv",buf.getvalue())
     return ticks,df
+
 
 def main():
     ap=argparse.ArgumentParser()
