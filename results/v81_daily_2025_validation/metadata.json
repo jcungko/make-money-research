@@ -1,0 +1,14 @@
+{
+  "source": "Exness public 2025 EURUSDm tick archive (stored GitHub Actions artifact)",
+  "datefirst": "2025-01-01 22:00:00+00:00",
+  "datelast": "2025-12-29 23:45:00+00:00",
+  "tick_count": 16213693,
+  "M15_candles": 23879,
+  "eligible_trading_days": 249,
+  "selection": "Configurations preselected entirely on 2026 before reading 2025 results.",
+  "caveats": [
+    "Not a prospective/live independent holdout; same broker historical feed",
+    "2025 archive 1GB uncompressed, true per-tick fill ordering not simulated",
+    "Slippage assumptions per side, swap excluded for intraday positions"
+  ]
+}
