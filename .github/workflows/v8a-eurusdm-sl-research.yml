@@ -1,0 +1,24 @@
+name: V8-A EURUSDm M15 fixed-SL research (paper only)
+on:
+  push:
+    paths:
+      - '.github/workflows/v8a-eurusdm-sl-research.yml'
+      - 'v8a_eurusdm_sl_research.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run 2026 EURUSDm M15 breakout SL comparison
+        run: python v8a_eurusdm_sl_research.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v8a-eurusdm-sl-research
+          path: results/v8a_eurusdm_sl_study_2026.json
+          retention-days: 30
+          if-no-files-found: warn
