@@ -1,0 +1,131 @@
+name: V8.1B public EURUSDm 2026-11-10 tick replay (research only)
+on:
+  push:
+    paths:
+      - '.github/workflows/v81b-2026-11-10-tick-replay.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch latest public Exness EURUSDm 2026-11-10 tick archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fL --retry 2 --connect-timeout 20 --max-time 120 'https://ticks.ex2archive.com/ticks/EURUSDm/2026/11/10/Exness_EURUSDm_2026_11_10.zip' -o /tmp/exness_eurusdm_nov10.zip
+      - name: Replay frozen V8.1B tick signals through scheduled UTC close
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import csv,zipfile,io,json,pathlib,datetime,hashlib
+          p=pathlib.Path('/tmp/exness_eurusdm_nov10.zip')
+          with zipfile.ZipFile(p) as z:
+              names=[n for n in z.namelist() if n.lower().endswith('.csv')]
+              assert names
+              if z.testzip() is not None:raise ValueError('zip corrupted')
+              f=io.TextIOWrapper(z.open(names[0]),encoding='utf-8-sig',newline='')
+              rd=csv.DictReader(f)
+              print('COLUMNS',rd.fieldnames,flush=True)
+              candles={}
+              data=[]
+              count=0
+              def stamp_key(raw):
+                  raw=str(raw).strip().replace('T',' ')
+                  if raw.isdigit():
+                      v=int(raw)
+                      if v>100000000000: v=v/1000
+                      return datetime.datetime.fromtimestamp(v,datetime.timezone.utc)
+                  raw=raw.replace('Z','+00:00')
+                  dt=datetime.datetime.fromisoformat(raw)
+                  if dt.tzinfo is None:dt=dt.replace(tzinfo=datetime.timezone.utc)
+                  return dt.astimezone(datetime.timezone.utc)
+              for r in rd:
+                  if not r.get('Timestamp'):continue
+                  ts=stamp_key(r['Timestamp'])
+                  bid=float(r['Bid']);ask=float(r['Ask'])
+                  if bid<=0 or ask<bid:continue
+                  count+=1
+                  if ts.date()!=datetime.date(2026,11,10):continue
+                  data.append((ts,bid,ask))
+                  bucket=ts.replace(minute=ts.minute//15*15,second=0,microsecond=0)
+                  if bucket not in candles:candles[bucket]=[ts,ts,bid]
+                  else:
+                      row=candles[bucket]
+                      if ts>row[1]:row[1]=ts;row[2]=bid
+                      if ts<row[0]:row[0]=ts
+              f.close()
+          data.sort(key=lambda x:x[0])
+          first=data[0][0] if data else None
+          last=data[-1][0] if data else None
+          def at(h,m):
+              return datetime.datetime(2026,11,10,h,m,tzinfo=datetime.timezone.utc)
+          result={
+             'symbol':'EURUSDm','date_utc':'2026-11-10','source_url':'https://ticks.ex2archive.com/ticks/EURUSDm/2026/11/10/Exness_EURUSDm_2026_11_10.zip',
+             'sha256':hashlib.file_digest(p.open('rb'),'sha256').hexdigest(),
+             'total_raw_ticks':count,'nov10_ticks':len(data),'first_tick':str(first),'last_tick':str(last),
+             'model':'V8.1B M15 06:45-08:45 close momentum, 09 UTC entry, 19 UTC close, 24 pip stop, 36 pip TP',
+             'status':'UNKNOWN','caution':'Public tick replay is NOT an MT5 Strategy Tester statement, executions/slippage can differ.'
+          }
+          if not data or last<at(19,0):
+              result['status']='INCOMPLETE_TICK_ARCHIVE_BEFORE_19UTC'
+          elif at(6,45) not in candles or at(8,45) not in candles:
+              result['status']='MISSING_EARLY_SIGNAL_CANDLES'
+          else:
+              c_early=candles[at(6,45)][2]
+              c_latest=candles[at(8,45)][2]
+              side='BUY' if c_latest>=c_early else 'SELL'
+              quote=next((x for x in data if at(9,0)<=x[0]<at(9,15)),None)
+              if quote is None:
+                  result['status']='MISSING_ENTRY_TICK'
+              else:
+                  entry=quote[2] if side=='BUY' else quote[1]
+                  SL=entry+(-1 if side=='BUY' else 1)*24*0.0001
+                  TP=entry+(1 if side=='BUY' else -1)*36*0.0001
+                  fill=None;why=None
+                  for ts,bid,ask in data:
+                      if ts<quote[0]:continue
+                      if side=='BUY':
+                          if bid<=SL: fill=bid;why='SL';break
+                          if bid>=TP: fill=bid;why='TP';break
+                          if ts>=at(19,0):fill=bid;why='TIME';break
+                      else:
+                          if ask>=SL:fill=ask;why='SL';break
+                          if ask<=TP:fill=ask;why='TP';break
+                          if ts>=at(19,0):fill=ask;why='TIME';break
+                  if fill is None:result['status']='MISSING_EXIT_TICK_AFTER_19UTC'
+                  else:
+                      direction=1 if side=='BUY' else -1
+                      delta=(fill-entry)*direction
+                      result.update({
+                         'status':'COMPLETED_PUBLIC_TICK_REPLAY',
+                         'signal_bid_close_0645':c_early,
+                         'signal_bid_close_0845':c_latest,
+                         'side':side,'entry_utc':str(quote[0]),'entry_quote':entry,
+                         'SL':round(SL,5),'TP':round(TP,5),
+                         'exit_utc':str(ts),'exit_quote':fill,'exit_reason':why,
+                         'gross_pips':delta/0.0001,
+                         'approx_usd_001_lot':round(delta/0.0001*0.1,2),
+                         'slippage_assumed_pips':0,
+                      })
+          print(json.dumps(result,indent=2),flush=True)
+          root=pathlib.Path('results/v81_daily_recurring_2026')
+          root.mkdir(parents=True,exist_ok=True)
+          (root/'public_tick_nov10_replay.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+          PY
+      - name: Commit verifiable public tick replay metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name v81-research-bot
+          git config user.email v81-research-bot@users.noreply.github.com
+          git add results/v81_daily_recurring_2026/public_tick_nov10_replay.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record V8.1B November 10 public tick replay (no trades)'
+            git pull --rebase
+            git push
+          fi
