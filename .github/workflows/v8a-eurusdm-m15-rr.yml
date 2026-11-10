@@ -1,0 +1,28 @@
+name: V8-A EURUSDm M15 R:R backtest (paper research)
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'research/v8a_eurusdm_m15_rr.py'
+      - '.github/workflows/v8a-eurusdm-m15-rr.yml'
+permissions:
+  contents: read
+jobs:
+  v8a_rr_backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Backtest 2026 Exness EURUSDm M15 RR grid
+        run: |
+          python research/v8a_eurusdm_m15_rr.py --zip data/exness/EURUSDm_2026/exness_eurusdm_2026_m5_m15_h1.zip --out v8a_output
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v8a-eurusdm-m15-rr-research
+          path: v8a_output/
+          retention-days: 30
+          if-no-files-found: warn
