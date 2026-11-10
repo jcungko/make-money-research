@@ -1,0 +1,11 @@
+{
+  "model": "V8-A 2026 EURUSDm SL0.30% RR1:5 slippage0.2pips each side",
+  "all_trades": 107,
+  "total_R": 2.3933,
+  "positive_months": 4,
+  "back_in_box_first4_count": 49,
+  "back_in_box_first4_note": "Counted only among the bars actually held, before or including exit bar; 4 M15 bars maximum",
+  "MFE_note": "Bar-high/low descriptive max move until exit (inclusive). Ambiguous same-bar stop-first means MFE is not necessarily tradable or time ordered.",
+  "commission_and_swap": "No additional commission (Standard assumption) or swap/financing modeled",
+  "caution": "In-sample diagnostic, after selecting top combination. Observational patterns may be consequences rather than causal evidence."
+}
