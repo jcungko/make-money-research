@@ -260,9 +260,9 @@
     ]
   ],
   "candidates_tested": 10480,
-  "qualifying_recent3": 371,
+  "qualifying_recent3": 367,
   "qualifying_recent3_dev_positive": 64,
-  "qualifying_all10": 3,
+  "qualifying_all10": 2,
   "pnl": "R per trade; fixed SL in pips; bid/ask mark; adverse 0.2 pip per side; no fees or swap",
   "limits": [
     "Retrospective exhaustive parameter search; recent 3 months ARE NOT an untouched holdout",
