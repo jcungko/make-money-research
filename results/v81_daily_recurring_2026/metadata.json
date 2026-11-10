@@ -1,0 +1,274 @@
+{
+  "data": "data/exness/EURUSDm_2026/exness_eurusdm_2026_m5_m15_h1.zip",
+  "n_candles": 21318,
+  "first": "2026-01-01 22:00:00+00:00",
+  "last": "2026-11-09 23:45:00+00:00",
+  "eligible_full_days": 216,
+  "weekday_days_by_month": {
+    "2026-01": 21,
+    "2026-02": 20,
+    "2026-03": 22,
+    "2026-04": 22,
+    "2026-05": 21,
+    "2026-06": 22,
+    "2026-07": 23,
+    "2026-08": 21,
+    "2026-09": 22,
+    "2026-10": 22
+  },
+  "entry_utc_hours": [
+    7,
+    8,
+    9,
+    12,
+    13,
+    15
+  ],
+  "exit_utc_hours": [
+    19,
+    20
+  ],
+  "SL_pips": [
+    8,
+    12,
+    16,
+    24
+  ],
+  "RR": [
+    0.75,
+    1.0,
+    1.5,
+    2.0,
+    3.0
+  ],
+  "signal_features": [
+    [
+      "m15_momentum_4",
+      "trend"
+    ],
+    [
+      "m15_momentum_4",
+      "revert"
+    ],
+    [
+      "m15_momentum_8",
+      "trend"
+    ],
+    [
+      "m15_momentum_8",
+      "revert"
+    ],
+    [
+      "m15_momentum_16",
+      "trend"
+    ],
+    [
+      "m15_momentum_16",
+      "revert"
+    ],
+    [
+      "m15_momentum_32",
+      "trend"
+    ],
+    [
+      "m15_momentum_32",
+      "revert"
+    ],
+    [
+      "m15_momentum_64",
+      "trend"
+    ],
+    [
+      "m15_momentum_64",
+      "revert"
+    ],
+    [
+      "m15_range_pos_16",
+      "trend"
+    ],
+    [
+      "m15_range_pos_16",
+      "revert"
+    ],
+    [
+      "m15_range_pos_32",
+      "trend"
+    ],
+    [
+      "m15_range_pos_32",
+      "revert"
+    ],
+    [
+      "m15_range_pos_64",
+      "trend"
+    ],
+    [
+      "m15_range_pos_64",
+      "revert"
+    ],
+    [
+      "m15_ema_8_21",
+      "trend"
+    ],
+    [
+      "m15_ema_8_21",
+      "revert"
+    ],
+    [
+      "m15_ema_12_36",
+      "trend"
+    ],
+    [
+      "m15_ema_12_36",
+      "revert"
+    ],
+    [
+      "m15_ema_20_50",
+      "trend"
+    ],
+    [
+      "m15_ema_20_50",
+      "revert"
+    ],
+    [
+      "m15_rsi50",
+      "trend"
+    ],
+    [
+      "m15_rsi50",
+      "revert"
+    ],
+    [
+      "1h_momentum_1",
+      "trend"
+    ],
+    [
+      "1h_momentum_1",
+      "revert"
+    ],
+    [
+      "1h_momentum_2",
+      "trend"
+    ],
+    [
+      "1h_momentum_2",
+      "revert"
+    ],
+    [
+      "1h_momentum_4",
+      "trend"
+    ],
+    [
+      "1h_momentum_4",
+      "revert"
+    ],
+    [
+      "1h_momentum_8",
+      "trend"
+    ],
+    [
+      "1h_momentum_8",
+      "revert"
+    ],
+    [
+      "1h_momentum_16",
+      "trend"
+    ],
+    [
+      "1h_momentum_16",
+      "revert"
+    ],
+    [
+      "1h_ema_5_15",
+      "trend"
+    ],
+    [
+      "1h_ema_5_15",
+      "revert"
+    ],
+    [
+      "1h_ema_8_21",
+      "trend"
+    ],
+    [
+      "1h_ema_8_21",
+      "revert"
+    ],
+    [
+      "4h_momentum_1",
+      "trend"
+    ],
+    [
+      "4h_momentum_1",
+      "revert"
+    ],
+    [
+      "4h_momentum_2",
+      "trend"
+    ],
+    [
+      "4h_momentum_2",
+      "revert"
+    ],
+    [
+      "4h_momentum_3",
+      "trend"
+    ],
+    [
+      "4h_momentum_3",
+      "revert"
+    ],
+    [
+      "4h_momentum_6",
+      "trend"
+    ],
+    [
+      "4h_momentum_6",
+      "revert"
+    ],
+    [
+      "4h_ema_4_12",
+      "trend"
+    ],
+    [
+      "4h_ema_4_12",
+      "revert"
+    ],
+    [
+      "4h_ema_6_18",
+      "trend"
+    ],
+    [
+      "4h_ema_6_18",
+      "revert"
+    ],
+    [
+      "prior_utc_day_direction",
+      "trend"
+    ],
+    [
+      "prior_utc_day_direction",
+      "revert"
+    ],
+    [
+      "intraday_open_move",
+      "trend"
+    ],
+    [
+      "intraday_open_move",
+      "revert"
+    ]
+  ],
+  "candidates_tested": 10480,
+  "qualifying_recent3": 371,
+  "qualifying_recent3_dev_positive": 64,
+  "qualifying_all10": 3,
+  "pnl": "R per trade; fixed SL in pips; bid/ask mark; adverse 0.2 pip per side; no fees or swap",
+  "limits": [
+    "Retrospective exhaustive parameter search; recent 3 months ARE NOT an untouched holdout",
+    "Eligible days = weekdays with >=48 M15 bars, scheduled exit candle present; coverage 99% minimum",
+    "One scheduled intraday entry each eligible trading day, no weekend overnight carry",
+    "MT5 mark-price/spread/commissions/swap/specific execution conditions not independently verified",
+    "0.5 and 1.0 pips stress applied to top200 recent3 candidates only"
+  ]
+}
