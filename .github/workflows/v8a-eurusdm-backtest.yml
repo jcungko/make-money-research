@@ -1,0 +1,38 @@
+name: V8-A EURUSDm M15 frozen-box backtest (research only)
+on:
+  push:
+    paths:
+      - 'research/v8a_eurusdm_m15.py'
+      - '.github/workflows/v8a-eurusdm-backtest.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: v8a-research
+  cancel-in-progress: false
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install public dependencies
+        run: python -m pip install --disable-pip-version-check numpy pandas
+      - name: Self tests (no trading actions)
+        run: python research/v8a_eurusdm_m15.py --self-test
+      - name: Run 25 SL-RR combinations at 3 slippage assumptions
+        run: python research/v8a_eurusdm_m15.py
+      - name: Save reproducible research outputs to repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'v8a-research-bot'
+          git config user.email 'v8a-research-bot@users.noreply.github.com'
+          git add results/v8a_box_breakout_2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record V8-A EURUSDm M15 25-grid backtest research'
+            git push
+          fi
