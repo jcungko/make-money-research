@@ -1,0 +1,104 @@
+{
+  "broker": "Exness",
+  "source": "public mirror ticks.ex2archive.com (not MT5 directly)",
+  "symbol": "USDJPY",
+  "year": 2026,
+  "timezone": "UTC",
+  "price": "bid/ask",
+  "scale": "USDJPY (JPY per 1 USD)",
+  "months": {
+    "01": {
+      "zip_bytes": 11312771,
+      "sha256": "0e9d1cf450370e21024e80ff1e33400388f19c0c6034dc156b14e467454cf542",
+      "ticks": 1737936,
+      "first_tick_utc": "2026-01-01 22:11:01.493Z",
+      "last_tick_utc": "2026-01-30 21:58:58.815Z"
+    },
+    "02": {
+      "zip_bytes": 10647270,
+      "sha256": "83f8ffe7e15fae4215c43843b9258a7e8f469329d96c171d4d9af5b9f6544b39",
+      "ticks": 1620426,
+      "first_tick_utc": "2026-02-01 22:05:06.662Z",
+      "last_tick_utc": "2026-02-27 21:58:58.787Z"
+    },
+    "03": {
+      "zip_bytes": 11453828,
+      "sha256": "6d684da2e6d6792e3b586a831fa6dae7732ed2e9ffeea684d6a281585a6eb628",
+      "ticks": 1750363,
+      "first_tick_utc": "2026-03-01 22:05:07.115Z",
+      "last_tick_utc": "2026-03-31 23:59:58.970Z"
+    },
+    "04": {
+      "zip_bytes": 8616628,
+      "sha256": "60faf9c551362123618f4e6e11c4aacf8080f2a951849938c2046d464d2d68c1",
+      "ticks": 1316742,
+      "first_tick_utc": "2026-04-01 00:00:01.044Z",
+      "last_tick_utc": "2026-04-30 23:59:59.848Z"
+    },
+    "05": {
+      "zip_bytes": 7120871,
+      "sha256": "669e1ddceed8fcad2da808f768efb98145dbb579a5070c43e9d69d5e6b354f5a",
+      "ticks": 1088085,
+      "first_tick_utc": "2026-05-01 00:00:00.056Z",
+      "last_tick_utc": "2026-05-31 23:59:59.538Z"
+    },
+    "06": {
+      "zip_bytes": 5208928,
+      "sha256": "4859ca00cf348671ebeaf730bb5256c208b14df2ee196f8be618b1091e04ff63",
+      "ticks": 792144,
+      "first_tick_utc": "2026-06-01 00:00:00.814Z",
+      "last_tick_utc": "2026-06-30 23:59:21.189Z"
+    },
+    "07": {
+      "zip_bytes": 8444433,
+      "sha256": "702bd53fc9754ddadaeb4957c5f6375cc5dfcc8a3c53fd41bcd565ad525a7fff",
+      "ticks": 1281054,
+      "first_tick_utc": "2026-07-01 00:00:00.653Z",
+      "last_tick_utc": "2026-07-31 20:58:59.990Z"
+    },
+    "08": {
+      "zip_bytes": 7882248,
+      "sha256": "1e7fa8ed3914c73c24cd252aa7f2965c7cbbaee83b33e44948b573e6265617fd",
+      "ticks": 1191406,
+      "first_tick_utc": "2026-08-02 21:05:05.676Z",
+      "last_tick_utc": "2026-08-31 23:59:57.376Z"
+    },
+    "09": {
+      "zip_bytes": 13733887,
+      "sha256": "c90d058d81a8cc230a31f2a58bb3c1db9ea098f6128cfbc5e5597757121ae9b9",
+      "ticks": 2108153,
+      "first_tick_utc": "2026-09-01 00:00:00.398Z",
+      "last_tick_utc": "2026-09-30 23:59:58.077Z"
+    },
+    "10": {
+      "zip_bytes": 10373211,
+      "sha256": "b78b2f91755b1ebdb9cdc29feb70ec7552a07e83f11cf06d967040e5dbc97ba6",
+      "ticks": 1587435,
+      "first_tick_utc": "2026-10-01 00:00:00.043Z",
+      "last_tick_utc": "2026-10-30 20:58:58.678Z"
+    },
+    "11": {
+      "zip_bytes": 3067708,
+      "sha256": "62f25f1b5735f83c7720a3cc5ce30a6f2a3acaf40f8ac25f239a386b662a927b",
+      "ticks": 467913,
+      "first_tick_utc": "2026-11-01 22:05:13.293Z",
+      "last_tick_utc": "2026-11-09 23:59:57.348Z"
+    }
+  },
+  "periods": {
+    "M15": {
+      "rows": 21317,
+      "tick_volume_sum": 14941657
+    },
+    "H1": {
+      "rows": 5330,
+      "tick_volume_sum": 14941657
+    },
+    "H4": {
+      "rows": 1378,
+      "tick_volume_sum": 14941657
+    }
+  },
+  "first_tick_utc": "2026-01-01 22:11:01.493Z",
+  "last_tick_utc": "2026-11-09 23:59:57.348Z"
+}
