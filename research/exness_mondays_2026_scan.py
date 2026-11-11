@@ -90,6 +90,50 @@ def ticks_to_m5(s, p):
                     count+=1
     return results,count
 
+
+def recover_missing_days(s, folder, results):
+    """The year ZIP has holes: restore wholly absent Monday dates from monthly ZIPs."""
+    missing=[d for d in DAYS if not any(results[d])]
+    recovered=[]
+    for month in sorted(set(d[:7] for d in missing)):
+        ym=month.replace("-","_")
+        yy,mm=month.split("-")
+        dest=folder/(s+"_"+mm+".zip")
+        source=f"https://ticks.ex2archive.com/ticks/{s}/{yy}/{mm}/Exness_{s}_{ym}.zip"
+        if not dest.exists():
+            req=urllib.request.Request(source,headers={"User-Agent":"Exness-Monday-Research/1.0"})
+            with urllib.request.urlopen(req,timeout=90) as resp, dest.open("wb") as fp:
+                while True:
+                    chunk=resp.read(1024*1024)
+                    if not chunk:break
+                    fp.write(chunk)
+        target={d.encode() for d in missing if d.startswith(month)}
+        counts=collections.Counter()
+        with zipfile.ZipFile(dest) as z:
+            for fname in z.namelist():
+                if not fname.endswith(".csv"):continue
+                with z.open(fname) as fp:
+                    fp.readline()
+                    for line in fp:
+                        d=line[19:29]
+                        if d not in target:continue
+                        try:
+                            slot=int(line[30:32])*12+int(line[33:35])//5
+                            parts=line.rsplit(b",",2)
+                            bid=float(parts[-2]);ask=float(parts[-1])
+                            if not (bid>0 and ask>=bid):continue
+                        except (ValueError,IndexError):continue
+                        row=results[d.decode()][slot]
+                        if row is None:
+                            results[d.decode()][slot]=[bid,bid,bid,bid,ask,ask,ask,ask,1]
+                        else:
+                            row[1]=max(row[1],bid);row[2]=min(row[2],bid);row[3]=bid
+                            row[5]=max(row[5],ask);row[6]=min(row[6],ask);row[7]=ask
+                            row[8]+=1
+                        counts[d.decode()]+=1
+        recovered.append({"month":month,"url":source,"bytes":dest.stat().st_size,"restored_mondays":dict(counts)})
+    return recovered
+
 def merge_tf(bars,tf):
     step=tf//5
     out=[]
@@ -205,12 +249,14 @@ def main():
                      "symbols":{}}
     for symbol in SYMBOLS:
         bars,n=ticks_to_m5(symbol,fetched[symbol])
+        supplements=recover_missing_days(symbol,root,bars)
         m5[symbol]=bars
         per_day={d:{"bars_M5":sum(x is not None for x in bars[d]),
                     "ticks":sum(x[8] for x in bars[d] if x)} for d in DAYS}
         manifest["symbols"][symbol]={"archive_bytes":pathlib.Path(fetched[symbol]).stat().st_size,
                   "sha256":hashlib.sha256(pathlib.Path(fetched[symbol]).read_bytes()).hexdigest(),
-                  "monday_ticks":n,
+                  "monday_ticks":n+sum(sum(x["restored_mondays"].values()) for x in supplements),
+                  "monthly_supplements":supplements,
                   "complete_M5_mondays":sum(x["bars_M5"]==288 for x in per_day.values()),
                   "per_monday":per_day}
         with (root/(symbol+"_M5_MONDAYS_2026.csv")).open("w",newline="") as fp:
