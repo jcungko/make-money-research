@@ -12,33 +12,39 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Download day archives (public tick market data only)
+      - name: Download day archives with retries; preserve successful archives
         shell: bash
         run: |
           mkdir -p nov11_exness
           python - <<'PY'
-          import requests, pathlib,zipfile,datetime
+          import requests, pathlib, zipfile, datetime, io, time
           out=pathlib.Path('nov11_exness')
-          print('Fetched timestamp UTC:',datetime.datetime.now(datetime.timezone.utc).isoformat())
+          print('Fetched UTC:',datetime.datetime.now(datetime.timezone.utc).isoformat())
           for symbol in ('EURUSD','USDJPY','GBPUSD'):
               url=f'https://ticks.ex2archive.com/ticks/{symbol}/2026/11/11/Exness_{symbol}_2026_11_11.zip'
-              r=requests.get(url,timeout=60)
-              r.raise_for_status()
-              p=out/f'Exness_{symbol}_2026_11_11.zip'
-              p.write_bytes(r.content)
-              with zipfile.ZipFile(p) as z:
-                  files=z.namelist()
-                  print(symbol,'ZIP bytes',len(r.content),'filenames',files)
-                  for file in files:
-                      if not file.lower().endswith('.csv'):continue
-                      with z.open(file) as inp:
-                          first=inp.readline()
-                          second=inp.readline()
-                          print(symbol,'headers and first row',first[:200],second[:200])
-              print(symbol,'mtime header',r.headers.get('last-modified'))
+              for attempt in range(5):
+                  try:
+                      r=requests.get(url,timeout=30,headers={'Cache-Control':'no-cache'})
+                      r.raise_for_status()
+                      if not zipfile.is_zipfile(io.BytesIO(r.content)):
+                          raise RuntimeError(f'not zip, status={r.status_code}, type={r.headers.get("content-type")},len={len(r.content)},head={r.content[:70]!r}')
+                      p=out/f'Exness_{symbol}_2026_11_11.zip'
+                      p.write_bytes(r.content)
+                      with zipfile.ZipFile(p) as z:
+                          for name in z.namelist():
+                              if name.lower().endswith('.csv'):
+                                  with z.open(name) as stream:
+                                      head=stream.readline();first=stream.readline()
+                                  print(symbol,'ZIP bytes',len(r.content),'first',first,'last modified',r.headers.get('last-modified'),flush=True)
+                      break
+                  except Exception as e:
+                      print(symbol,'attempt',attempt+1,'error',repr(e),flush=True)
+                      time.sleep(1+attempt)
           PY
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: V12-Nov11-daily-ticks-2026
+          name: V12-Nov11-daily-ticks-2026-retry
           path: nov11_exness/
+          if-no-files-found: warn
           retention-days: 7
