@@ -1,0 +1,173 @@
+{
+  "project": "V11 EURUSD",
+  "symbol": "EURUSD",
+  "variant": "Exness public tick-history (EURUSD, no suffix)",
+  "origin": "https://www.exness.global/tick-history/",
+  "monthly_url_pattern": "https://ticks.ex2archive.com/ticks/EURUSD/2026/MM/Exness_EURUSD_2026_MM.zip",
+  "additional_november_day_urls": [
+    "https://ticks.ex2archive.com/ticks/EURUSD/2026/11/10/Exness_EURUSD_2026_11_10.zip",
+    "https://ticks.ex2archive.com/ticks/EURUSD/2026/11/11/Exness_EURUSD_2026_11_11.zip"
+  ],
+  "earliest_tick_minute_utc": "2026-01-01 22:05",
+  "latest_tick_minute_utc": "2026-11-11 01:15",
+  "timezone": "UTC",
+  "h4_alignment": "00:00 UTC",
+  "column_names": [
+    "timeframe",
+    "time_utc",
+    "open_bid",
+    "high_bid",
+    "low_bid",
+    "close_bid",
+    "open_ask",
+    "high_ask",
+    "low_ask",
+    "close_ask",
+    "tick_volume",
+    "mean_spread_pips"
+  ],
+  "tick_volume": "count of tick updates",
+  "mean_spread_pips": "tick-mean(ask-bid)*10000",
+  "pips_per_price_unit": 10000,
+  "totals": {
+    "M5": 64177,
+    "M15": 21420,
+    "M30": 10711,
+    "H1": 5356,
+    "H4": 1385
+  },
+  "files": [
+    {
+      "month": "2026-01",
+      "file": "Exness_EURUSD_2026_01_multiTF.csv.gz",
+      "sha": "ac8e14e87cd4e0638857f623daa7cd1df0556ea9",
+      "candles": {
+        "M5": 6043,
+        "M15": 2016,
+        "M30": 1008,
+        "H1": 504,
+        "H4": 131
+      }
+    },
+    {
+      "month": "2026-02",
+      "file": "Exness_EURUSD_2026_02_multiTF.csv.gz",
+      "sha": "227ec08a85b479eeb8280f77bf869f84e6c7c6d6",
+      "candles": {
+        "M5": 5753,
+        "M15": 1920,
+        "M30": 960,
+        "H1": 480,
+        "H4": 124
+      }
+    },
+    {
+      "month": "2026-03",
+      "file": "Exness_EURUSD_2026_03_multiTF.csv.gz",
+      "sha": "38169561a910e5cf3b8d6c90b6eada0ae9744a96",
+      "candles": {
+        "M5": 6362,
+        "M15": 2123,
+        "M30": 1062,
+        "H1": 531,
+        "H4": 137
+      }
+    },
+    {
+      "month": "2026-04",
+      "file": "Exness_EURUSD_2026_04_multiTF.csv.gz",
+      "sha": "12dd0c19477947d8eadbd3e607e291d204506d30",
+      "candles": {
+        "M5": 6328,
+        "M15": 2112,
+        "M30": 1056,
+        "H1": 528,
+        "H4": 136
+      }
+    },
+    {
+      "month": "2026-05",
+      "file": "Exness_EURUSD_2026_05_multiTF.csv.gz",
+      "sha": "73e593efb98033bdab4de705636e3697217ab92c",
+      "candles": {
+        "M5": 6041,
+        "M15": 2016,
+        "M30": 1008,
+        "H1": 504,
+        "H4": 131
+      }
+    },
+    {
+      "month": "2026-06",
+      "file": "Exness_EURUSD_2026_06_multiTF.csv.gz",
+      "sha": "41d1625a8eea1c012ecaa46e89c9553881abb102",
+      "candles": {
+        "M5": 6328,
+        "M15": 2112,
+        "M30": 1056,
+        "H1": 528,
+        "H4": 136
+      }
+    },
+    {
+      "month": "2026-07",
+      "file": "Exness_EURUSD_2026_07_multiTF.csv.gz",
+      "sha": "dc248e75691ab991552748f4d8ed525ce2ee6fbd",
+      "candles": {
+        "M5": 6583,
+        "M15": 2196,
+        "M30": 1098,
+        "H1": 549,
+        "H4": 142
+      }
+    },
+    {
+      "month": "2026-08",
+      "file": "Exness_EURUSD_2026_08_multiTF.csv.gz",
+      "sha": "c4728c08ca114725600c0ae122907e80394f0174",
+      "candles": {
+        "M5": 6077,
+        "M15": 2028,
+        "M30": 1014,
+        "H1": 507,
+        "H4": 131
+      }
+    },
+    {
+      "month": "2026-09",
+      "file": "Exness_EURUSD_2026_09_multiTF.csv.gz",
+      "sha": "4218cc085b84dd99b27ad17da659ea98790b2ffe",
+      "candles": {
+        "M5": 6325,
+        "M15": 2112,
+        "M30": 1056,
+        "H1": 528,
+        "H4": 136
+      }
+    },
+    {
+      "month": "2026-10",
+      "file": "Exness_EURUSD_2026_10_multiTF.csv.gz",
+      "sha": "b610d0d8dc6f836c3822e954883e8d4477a22d2e",
+      "candles": {
+        "M5": 6285,
+        "M15": 2099,
+        "M30": 1050,
+        "H1": 525,
+        "H4": 136
+      }
+    },
+    {
+      "month": "2026-11",
+      "file": "Exness_EURUSD_2026_11_multiTF.csv.gz",
+      "sha": "10b20e31f426aed8c56f9e19264c9699a4cd5d9b",
+      "candles": {
+        "M5": 2052,
+        "M15": 686,
+        "M30": 343,
+        "H1": 172,
+        "H4": 45
+      }
+    }
+  ]
+}
