@@ -1,0 +1,568 @@
+{
+  "year": 2025,
+  "monday_dates": [
+    "2025-01-06",
+    "2025-01-13",
+    "2025-01-20",
+    "2025-01-27",
+    "2025-02-03",
+    "2025-02-10",
+    "2025-02-17",
+    "2025-02-24",
+    "2025-03-03",
+    "2025-03-10",
+    "2025-03-17",
+    "2025-03-24",
+    "2025-03-31",
+    "2025-04-07",
+    "2025-04-14",
+    "2025-04-21",
+    "2025-04-28",
+    "2025-05-05",
+    "2025-05-12",
+    "2025-05-19",
+    "2025-05-26",
+    "2025-06-02",
+    "2025-06-09",
+    "2025-06-16",
+    "2025-06-23",
+    "2025-06-30",
+    "2025-07-07",
+    "2025-07-14",
+    "2025-07-21",
+    "2025-07-28",
+    "2025-08-04",
+    "2025-08-11",
+    "2025-08-18",
+    "2025-08-25",
+    "2025-09-01",
+    "2025-09-08",
+    "2025-09-15",
+    "2025-09-22",
+    "2025-09-29",
+    "2025-10-06",
+    "2025-10-13",
+    "2025-10-20",
+    "2025-10-27",
+    "2025-11-03",
+    "2025-11-10",
+    "2025-11-17",
+    "2025-11-24",
+    "2025-12-01",
+    "2025-12-08",
+    "2025-12-15",
+    "2025-12-22",
+    "2025-12-29"
+  ],
+  "timezone": "UTC",
+  "pricing": "entry/exit at first M5 tick, BUY ask->bid, SELL bid->ask",
+  "method": "same frozen 2026 strategy rules, no retuning",
+  "source": "Exness ex2archive.com monthly tick CSV ZIP (historical indicative quotes)",
+  "archive_files": [
+    {
+      "symbol": "EURUSD",
+      "month": 1,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/01/Exness_EURUSD_2025_01.zip",
+      "compressed_bytes": 11337963,
+      "sha256": "70086d27f7c52dc4c1c23358720cd82a69b1fae8a54c5dd7858b61c1652fd8a3"
+    },
+    {
+      "symbol": "EURUSD",
+      "month": 2,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/02/Exness_EURUSD_2025_02.zip",
+      "compressed_bytes": 9598001,
+      "sha256": "049e10b6b480f8de1ac435923c0d9e40ca90ecd1062769626c2624dcf8e9626b"
+    },
+    {
+      "symbol": "EURUSD",
+      "month": 3,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/03/Exness_EURUSD_2025_03.zip",
+      "compressed_bytes": 11277923,
+      "sha256": "a753b92ef8bde09d3fc30bd52c333ed4c2d10cd215d2e3ed182cce7dc5471f89"
+    },
+    {
+      "symbol": "EURUSD",
+      "month": 4,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/04/Exness_EURUSD_2025_04.zip",
+      "compressed_bytes": 20474422,
+      "sha256": "4b3f0499ecd33cec2bce3a00d4a32b00f39fbe0b1a783532981b086aa2bacd6a"
+    },
+    {
+      "symbol": "EURUSD",
+      "month": 5,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/05/Exness_EURUSD_2025_05.zip",
+      "compressed_bytes": 12903873,
+      "sha256": "59234822537f196f8244cb3edaad34672f16c3181aea44a201e4bf60a50e2051"
+    },
+    {
+      "symbol": "EURUSD",
+      "month": 6,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/06/Exness_EURUSD_2025_06.zip",
+      "compressed_bytes": 10945509,
+      "sha256": "bf19c4f5d38bbc89f4ffe83a8c4557cf06dd526c609de5c1cf164a233d4b06ed"
+    },
+    {
+      "symbol": "EURUSD",
+      "month": 7,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/07/Exness_EURUSD_2025_07.zip",
+      "compressed_bytes": 10219866,
+      "sha256": "065779532551f0c42760f04c886a4bd05ac078bae63a4fe3332426a805b59454"
+    },
+    {
+      "symbol": "EURUSD",
+      "month": 8,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/08/Exness_EURUSD_2025_08.zip",
+      "compressed_bytes": 8519456,
+      "sha256": "726db0b42046700499acc738fe03ba50e41a62d765fb9a7f7d6efbee26eaec60"
+    },
+    {
+      "symbol": "EURUSD",
+      "month": 9,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/09/Exness_EURUSD_2025_09.zip",
+      "compressed_bytes": 7586602,
+      "sha256": "7c4270f5df118ba171dae6dcc7b6acce2bcd7ef0ed5e8ae64705a569b8c3e607"
+    },
+    {
+      "symbol": "EURUSD",
+      "month": 10,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/10/Exness_EURUSD_2025_10.zip",
+      "compressed_bytes": 7782940,
+      "sha256": "acf15ce5f50c81cf62072be1ba4eefcf33f28f45be8f97317dbf8fa5a6ab8705"
+    },
+    {
+      "symbol": "EURUSD",
+      "month": 11,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/11/Exness_EURUSD_2025_11.zip",
+      "compressed_bytes": 5373035,
+      "sha256": "51364ba2c2129fca4a0dfb5355dba73999028b05222796e34d61b8569e7381c7"
+    },
+    {
+      "symbol": "EURUSD",
+      "month": 12,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/12/Exness_EURUSD_2025_12.zip",
+      "compressed_bytes": 5651770,
+      "sha256": "d2e560f6209c1964333f9cac1209c681158ecc4fdbdaa9eeae07575ee33a7cbc"
+    },
+    {
+      "symbol": "GBPUSD",
+      "month": 1,
+      "url": "https://ticks.ex2archive.com/ticks/GBPUSD/2025/01/Exness_GBPUSD_2025_01.zip",
+      "compressed_bytes": 13593730,
+      "sha256": "e4190ed9253dd624843b54732ec10ea25bbf65dbe65f1d63c33eac7a688f5534"
+    },
+    {
+      "symbol": "GBPUSD",
+      "month": 2,
+      "url": "https://ticks.ex2archive.com/ticks/GBPUSD/2025/02/Exness_GBPUSD_2025_02.zip",
+      "compressed_bytes": 11121207,
+      "sha256": "d8be96d301f31b54584e16d9d0c60308df8ca1100b90983818ab23d7c1133fc3"
+    },
+    {
+      "symbol": "GBPUSD",
+      "month": 3,
+      "url": "https://ticks.ex2archive.com/ticks/GBPUSD/2025/03/Exness_GBPUSD_2025_03.zip",
+      "compressed_bytes": 11415936,
+      "sha256": "baeed9cb775f57ddeb4eb6b59a0b0edc7b1592472cea83b074ceebd724c5a927"
+    },
+    {
+      "symbol": "GBPUSD",
+      "month": 4,
+      "url": "https://ticks.ex2archive.com/ticks/GBPUSD/2025/04/Exness_GBPUSD_2025_04.zip",
+      "compressed_bytes": 17764826,
+      "sha256": "4666ad979ddfccc42d294ecf42896fd040379a87cb803d6758ee965e29a30aa3"
+    },
+    {
+      "symbol": "GBPUSD",
+      "month": 5,
+      "url": "https://ticks.ex2archive.com/ticks/GBPUSD/2025/05/Exness_GBPUSD_2025_05.zip",
+      "compressed_bytes": 12210286,
+      "sha256": "464f656e09dcbed94a0cd49b7d1a4af471791f5bfce0a5b17cd1b8479bb69c11"
+    },
+    {
+      "symbol": "GBPUSD",
+      "month": 6,
+      "url": "https://ticks.ex2archive.com/ticks/GBPUSD/2025/06/Exness_GBPUSD_2025_06.zip",
+      "compressed_bytes": 11307800,
+      "sha256": "213b8a1c1e5c3a0ff1ab24fed82578db96d76cab1b4bb3786175b2041cf3058f"
+    },
+    {
+      "symbol": "GBPUSD",
+      "month": 7,
+      "url": "https://ticks.ex2archive.com/ticks/GBPUSD/2025/07/Exness_GBPUSD_2025_07.zip",
+      "compressed_bytes": 11457922,
+      "sha256": "33f3cf11016a343d21a5d696414da19098a776f083df2e72ac80f10a62d9a018"
+    },
+    {
+      "symbol": "GBPUSD",
+      "month": 8,
+      "url": "https://ticks.ex2archive.com/ticks/GBPUSD/2025/08/Exness_GBPUSD_2025_08.zip",
+      "compressed_bytes": 9305326,
+      "sha256": "f36af769eab51aaea7641c801f48ee47a3313e579f7b5e7a198e770ca54c624f"
+    },
+    {
+      "symbol": "GBPUSD",
+      "month": 9,
+      "url": "https://ticks.ex2archive.com/ticks/GBPUSD/2025/09/Exness_GBPUSD_2025_09.zip",
+      "compressed_bytes": 8503420,
+      "sha256": "e546d1e7b25648cb079bd27f7672dd2680708c779948a6b267e361bc213b45c8"
+    },
+    {
+      "symbol": "GBPUSD",
+      "month": 10,
+      "url": "https://ticks.ex2archive.com/ticks/GBPUSD/2025/10/Exness_GBPUSD_2025_10.zip",
+      "compressed_bytes": 9338948,
+      "sha256": "d827c3e6eb858d7b4f22433c322f6b83c0e23ad2bda9901cb57de8c2d285a5ec"
+    },
+    {
+      "symbol": "GBPUSD",
+      "month": 11,
+      "url": "https://ticks.ex2archive.com/ticks/GBPUSD/2025/11/Exness_GBPUSD_2025_11.zip",
+      "compressed_bytes": 8140897,
+      "sha256": "95186f1a5e946372b74f08b7f08d055b3c64d1ce584860b9ceb186731823ad82"
+    },
+    {
+      "symbol": "GBPUSD",
+      "month": 12,
+      "url": "https://ticks.ex2archive.com/ticks/GBPUSD/2025/12/Exness_GBPUSD_2025_12.zip",
+      "compressed_bytes": 7806176,
+      "sha256": "093f75b7d440d05b8e558f2baf67278707ba02c0e9b4df28afaf79550619d048"
+    },
+    {
+      "symbol": "USDJPY",
+      "month": 1,
+      "url": "https://ticks.ex2archive.com/ticks/USDJPY/2025/01/Exness_USDJPY_2025_01.zip",
+      "compressed_bytes": 14323528,
+      "sha256": "772bfbd023a811d9a47fbe01c4dd59c6ba9bdc5ad113e9d85bd63c288a4850db"
+    },
+    {
+      "symbol": "USDJPY",
+      "month": 2,
+      "url": "https://ticks.ex2archive.com/ticks/USDJPY/2025/02/Exness_USDJPY_2025_02.zip",
+      "compressed_bytes": 13784860,
+      "sha256": "ca697b7f319cf47f3471fefff5ac4b228177fa8ac5b0c550af2f3aa197ebabed"
+    },
+    {
+      "symbol": "USDJPY",
+      "month": 3,
+      "url": "https://ticks.ex2archive.com/ticks/USDJPY/2025/03/Exness_USDJPY_2025_03.zip",
+      "compressed_bytes": 17136036,
+      "sha256": "8fa46b43a02e7b5c8f29a228aa53c369d0360ce201dc4abf14483b2f8182eca0"
+    },
+    {
+      "symbol": "USDJPY",
+      "month": 4,
+      "url": "https://ticks.ex2archive.com/ticks/USDJPY/2025/04/Exness_USDJPY_2025_04.zip",
+      "compressed_bytes": 27508971,
+      "sha256": "ff24f22861a2110b744754fa4e7d12091b41ef128d2daf4e2cf11803b2a5732e"
+    },
+    {
+      "symbol": "USDJPY",
+      "month": 5,
+      "url": "https://ticks.ex2archive.com/ticks/USDJPY/2025/05/Exness_USDJPY_2025_05.zip",
+      "compressed_bytes": 16695259,
+      "sha256": "753fdbdc64236ae3f168581f76560761c79189e0e8026de104ef38dfd7aa2372"
+    },
+    {
+      "symbol": "USDJPY",
+      "month": 6,
+      "url": "https://ticks.ex2archive.com/ticks/USDJPY/2025/06/Exness_USDJPY_2025_06.zip",
+      "compressed_bytes": 13439914,
+      "sha256": "abdbde2f8fed2d6b4ae4949340d6bdc0c86d7957431949fdd6a51a509da0c8f7"
+    },
+    {
+      "symbol": "USDJPY",
+      "month": 7,
+      "url": "https://ticks.ex2archive.com/ticks/USDJPY/2025/07/Exness_USDJPY_2025_07.zip",
+      "compressed_bytes": 12946607,
+      "sha256": "5d386b641c9f3be74dd7a71330f058225119167929c2d0a9410fd2e557be02bc"
+    },
+    {
+      "symbol": "USDJPY",
+      "month": 8,
+      "url": "https://ticks.ex2archive.com/ticks/USDJPY/2025/08/Exness_USDJPY_2025_08.zip",
+      "compressed_bytes": 10806603,
+      "sha256": "4a6f7174ae273bdd4e8b3a8d31752f703c758d99e1f4b542bc01f0b893bf8bf0"
+    },
+    {
+      "symbol": "USDJPY",
+      "month": 9,
+      "url": "https://ticks.ex2archive.com/ticks/USDJPY/2025/09/Exness_USDJPY_2025_09.zip",
+      "compressed_bytes": 9712114,
+      "sha256": "ee7e8437bca5b1ac8fb9213040b01cac924f11589c3773640bec1ac3137606d4"
+    },
+    {
+      "symbol": "USDJPY",
+      "month": 10,
+      "url": "https://ticks.ex2archive.com/ticks/USDJPY/2025/10/Exness_USDJPY_2025_10.zip",
+      "compressed_bytes": 12185109,
+      "sha256": "f8d925a3b93739ede01cb96a5adec5b6439abbd8ffc039a6c76c975e9ce0dc90"
+    },
+    {
+      "symbol": "USDJPY",
+      "month": 11,
+      "url": "https://ticks.ex2archive.com/ticks/USDJPY/2025/11/Exness_USDJPY_2025_11.zip",
+      "compressed_bytes": 9005561,
+      "sha256": "ff38e3128bc459566d5400633d6541b38f824b843bde50b6af047980783b50c7"
+    },
+    {
+      "symbol": "USDJPY",
+      "month": 12,
+      "url": "https://ticks.ex2archive.com/ticks/USDJPY/2025/12/Exness_USDJPY_2025_12.zip",
+      "compressed_bytes": 8653267,
+      "sha256": "2adce92f429bdd6a3bcd271d94ca912786f0117ab2437a56fffb7bb89b3c61d6"
+    }
+  ],
+  "monday_tick_counts": {
+    "EURUSD": 3476755,
+    "USDJPY": 4680407,
+    "GBPUSD": 3689676
+  },
+  "missing_days": {
+    "#11": [],
+    "#6": [],
+    "#18": []
+  },
+  "per_bot": {
+    "#11": {
+      "code": "#11",
+      "symbol": "EURUSD",
+      "timeframe_minutes": 240,
+      "rule": "SMA3",
+      "entry_slot": 198,
+      "hold_slots": 48,
+      "metrics": {
+        "trades": 52,
+        "wins": 25,
+        "losses": 26,
+        "flat": 1,
+        "win_rate_pct": 48.08,
+        "net_pips": 78.3,
+        "gross_win_pips": 333.4,
+        "gross_loss_pips": 255.1,
+        "profit_factor": 1.307,
+        "median_pips": -0.7,
+        "best_pips": 45.8,
+        "worst_pips": -25.7,
+        "max_positive_streak": 5,
+        "max_negative_streak": 5
+      }
+    },
+    "#6": {
+      "code": "#6",
+      "symbol": "USDJPY",
+      "timeframe_minutes": 60,
+      "rule": "BUY",
+      "entry_slot": 102,
+      "hold_slots": 24,
+      "metrics": {
+        "trades": 52,
+        "wins": 23,
+        "losses": 29,
+        "flat": 0,
+        "win_rate_pct": 44.23,
+        "net_pips": -121.9,
+        "gross_win_pips": 431.8,
+        "gross_loss_pips": 553.7,
+        "profit_factor": 0.78,
+        "median_pips": -2.05,
+        "best_pips": 52.5,
+        "worst_pips": -134.8,
+        "max_positive_streak": 4,
+        "max_negative_streak": 5
+      }
+    },
+    "#18": {
+      "code": "#18",
+      "symbol": "GBPUSD",
+      "timeframe_minutes": 30,
+      "rule": "SMAR12",
+      "entry_slot": 108,
+      "hold_slots": 18,
+      "metrics": {
+        "trades": 52,
+        "wins": 17,
+        "losses": 35,
+        "flat": 0,
+        "win_rate_pct": 32.69,
+        "net_pips": -211.2,
+        "gross_win_pips": 234.5,
+        "gross_loss_pips": 445.7,
+        "profit_factor": 0.526,
+        "median_pips": -4.55,
+        "best_pips": 49.2,
+        "worst_pips": -45.8,
+        "max_positive_streak": 2,
+        "max_negative_streak": 5
+      }
+    }
+  },
+  "portfolio_unweighted_pips": {
+    "trades": 52,
+    "wins": 23,
+    "losses": 29,
+    "flat": 0,
+    "win_rate_pct": 44.23,
+    "net_pips": -254.8,
+    "gross_win_pips": 564.7,
+    "gross_loss_pips": 819.5,
+    "profit_factor": 0.689,
+    "median_pips": -3.3,
+    "best_pips": 74.0,
+    "worst_pips": -195.5,
+    "max_positive_streak": 3,
+    "max_negative_streak": 5
+  },
+  "monthly": [
+    {
+      "month": "2025-01",
+      "mondays": 4,
+      "bots": {
+        "#11": -16.3,
+        "#6": -124.4,
+        "#18": -58.5
+      },
+      "combined_pips": -199.2,
+      "profitable_combined": 2,
+      "losing_combined": 2
+    },
+    {
+      "month": "2025-02",
+      "mondays": 4,
+      "bots": {
+        "#11": -5.1,
+        "#6": -35.9,
+        "#18": 0.6
+      },
+      "combined_pips": -40.4,
+      "profitable_combined": 2,
+      "losing_combined": 2
+    },
+    {
+      "month": "2025-03",
+      "mondays": 5,
+      "bots": {
+        "#11": -57.5,
+        "#6": -25.9,
+        "#18": 31.9
+      },
+      "combined_pips": -51.5,
+      "profitable_combined": 1,
+      "losing_combined": 4
+    },
+    {
+      "month": "2025-04",
+      "mondays": 4,
+      "bots": {
+        "#11": 50.1,
+        "#6": 21.0,
+        "#18": -21.9
+      },
+      "combined_pips": 49.2,
+      "profitable_combined": 3,
+      "losing_combined": 1
+    },
+    {
+      "month": "2025-05",
+      "mondays": 4,
+      "bots": {
+        "#11": -15.1,
+        "#6": 4.1,
+        "#18": -39.8
+      },
+      "combined_pips": -50.8,
+      "profitable_combined": 1,
+      "losing_combined": 3
+    },
+    {
+      "month": "2025-06",
+      "mondays": 5,
+      "bots": {
+        "#11": 70.3,
+        "#6": 25.7,
+        "#18": -33.4
+      },
+      "combined_pips": 62.6,
+      "profitable_combined": 3,
+      "losing_combined": 2
+    },
+    {
+      "month": "2025-07",
+      "mondays": 4,
+      "bots": {
+        "#11": 13.9,
+        "#6": 33.5,
+        "#18": -2.5
+      },
+      "combined_pips": 44.9,
+      "profitable_combined": 2,
+      "losing_combined": 2
+    },
+    {
+      "month": "2025-08",
+      "mondays": 4,
+      "bots": {
+        "#11": 48.2,
+        "#6": 17.1,
+        "#18": -38.4
+      },
+      "combined_pips": 26.9,
+      "profitable_combined": 2,
+      "losing_combined": 2
+    },
+    {
+      "month": "2025-09",
+      "mondays": 5,
+      "bots": {
+        "#11": 12.3,
+        "#6": -1.4,
+        "#18": -38.6
+      },
+      "combined_pips": -27.7,
+      "profitable_combined": 2,
+      "losing_combined": 3
+    },
+    {
+      "month": "2025-10",
+      "mondays": 4,
+      "bots": {
+        "#11": 30.5,
+        "#6": -16.3,
+        "#18": -26.8
+      },
+      "combined_pips": -12.6,
+      "profitable_combined": 1,
+      "losing_combined": 3
+    },
+    {
+      "month": "2025-11",
+      "mondays": 4,
+      "bots": {
+        "#11": 9.2,
+        "#6": 6.2,
+        "#18": 10.6
+      },
+      "combined_pips": 26.0,
+      "profitable_combined": 3,
+      "losing_combined": 1
+    },
+    {
+      "month": "2025-12",
+      "mondays": 5,
+      "bots": {
+        "#11": -62.2,
+        "#6": -25.6,
+        "#18": 5.6
+      },
+      "combined_pips": -82.2,
+      "profitable_combined": 1,
+      "losing_combined": 4
+    }
+  ],
+  "notes": [
+    "Additive pips are not USD P&L or risk-normalized returns.",
+    "Spread at M5 first ticks included; other fees, swaps, slippage and broker execution excluded.",
+    "2025 validation is held back from 2026 optimization, but dates predate strategy selection; not prospective forward test.",
+    "Signal H4/H1/M30 uses all available real ticks; wholly empty parent bars excluded. No synthetic ticks or fills inserted.",
+    "EURUSD 2025-04-14 14:05-14:15 UTC absent in source but H4 candle has other real ticks; reconstructed H4 close from last observed tick."
+  ]
+}
