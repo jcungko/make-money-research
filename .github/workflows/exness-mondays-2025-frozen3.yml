@@ -1,0 +1,55 @@
+name: Exness 2025 frozen 3 Monday strategies OOS backtest
+on:
+  push:
+    branches:
+      - research/exness-mondays-2026
+    paths:
+      - research/exness_mondays_2025_frozen3.py
+      - .github/workflows/exness-mondays-2025-frozen3.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  backtest-2025:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replay frozen 3 strategies on all 2025 Exness Mondays
+        run: |
+          python3 -u research/exness_mondays_2025_frozen3.py \
+            --out results/exness_mondays_2025_frozen3
+      - name: Confirm 52 complete Mondays and validate weekly metrics
+        run: |
+          python3 - <<'PY'
+          import csv,json,pathlib
+          p=pathlib.Path("results/exness_mondays_2025_frozen3")
+          r=json.loads((p/"report_2025_3bots.json").read_text())
+          assert len(r["monday_dates"])==52, len(r["monday_dates"])
+          assert all(not x for x in r["missing_days"].values()),r["missing_days"]
+          assert all(v["metrics"]["trades"]==52 for v in r["per_bot"].values())
+          with (p/"trades_2025_3bots.csv").open() as f:
+              assert len(list(csv.DictReader(f)))==52
+          print("AUDIT_2025_52_MON",r["portfolio_unweighted_pips"])
+          PY
+      - name: Commit reproducible summaries
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/exness_mondays_2025_frozen3/report_2025_3bots.json \
+                  results/exness_mondays_2025_frozen3/trades_2025_3bots.csv \
+                  results/exness_mondays_2025_frozen3/monthly_2025_3bots.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "Record out-of-sample 2025 Monday three-bot results"
+            git push
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: exness-frozen3-mondays-2025
+          path: |
+            results/exness_mondays_2025_frozen3/report_2025_3bots.json
+            results/exness_mondays_2025_frozen3/trades_2025_3bots.csv
+            results/exness_mondays_2025_frozen3/monthly_2025_3bots.csv
+          if-no-files-found: warn
+          retention-days: 30
