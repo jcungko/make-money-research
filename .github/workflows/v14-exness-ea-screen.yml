@@ -1,0 +1,58 @@
+name: V14 Exness 2026 EA strategy screen (research only)
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v14-exness-ea-screen.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: v14-exness-screen
+  cancel-in-progress: false
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install research dependencies
+        run: pip install "pandas>=2.2,<3" "numpy>=1.26,<3"
+      - name: Download the three verified V12 2026 Exness source artifacts
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p v14_inputs
+          gh run download 42964857297 --dir v14_inputs
+          echo 'Downloaded artifact files:'
+          find v14_inputs -type f | sort
+          test "$(find v14_inputs -name '*_M5_2026_UTC.csv.gz' | wc -l)" -eq 3
+          test "$(find v14_inputs -name '*_H4_2026_UTC.csv.gz' | wc -l)" -eq 3
+      - name: Screen independent EAs without changing trading accounts
+        run: python scripts/v14_exness_ea_screen.py --input v14_inputs --out results/v14_ea_2026
+      - name: Commit research results to the repository
+        if: success()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v14_ea_2026/
+          if ! git diff --cached --quiet; then
+            git commit -m "V14: Exness 2026 exploratory EA backtest report"
+            git push
+          else
+            echo "No report changes"
+          fi
+      - name: Upload research report snapshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: V14-Exness-2026-EA-screen
+          path: results/v14_ea_2026/
+          if-no-files-found: warn
+          retention-days: 30
