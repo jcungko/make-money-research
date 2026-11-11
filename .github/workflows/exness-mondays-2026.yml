@@ -1,0 +1,66 @@
+name: Exness Monday 2026 three-pair 50-strategy research
+on:
+  push:
+    branches:
+      - research/exness-mondays-2026
+    paths:
+      - research/exness_mondays_2026_scan.py
+      - research/exness_mondays_2026_export.py
+      - .github/workflows/exness-mondays-2026.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download archived Exness 2026 ticks and backtest 45 Mondays
+        run: |
+          python3 research/exness_mondays_2026_scan.py --output results/exness_mondays_2026
+      - name: Build 15 OHLC datasets
+        run: |
+          python3 research/exness_mondays_2026_export.py results/exness_mondays_2026
+      - name: Validate 45 days and 50 reproducible rows
+        run: |
+          python3 - <<'PY'
+          import csv,json,pathlib
+          p=pathlib.Path("results/exness_mondays_2026")
+          m=json.loads((p/"manifest.json").read_text())
+          rows=list(csv.DictReader((p/"ranked_50_distinct.csv").open()))
+          assert len(rows)==50,len(rows)
+          assert m["distinct_trade_paths"]>=50
+          for symbol, info in m["symbols"].items():
+              assert len(info["per_monday"])==45,symbol
+              assert all(x["bars_M5"]>=280 for x in info["per_monday"].values()),symbol
+          assert (p/"exness_mondays_2026_15timeframes.zip").exists()
+          print("VALIDATION_OK; max_positive_days =",m["max_positive_days"])
+          PY
+      - name: Commit summary and compressed 15-frame data to research branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/exness_mondays_2026/manifest.json \
+                  results/exness_mondays_2026/ranked_50_distinct.csv \
+                  results/exness_mondays_2026/ranked_all_distinct.csv \
+                  results/exness_mondays_2026/top50_daily_pips.csv \
+                  results/exness_mondays_2026/exness_mondays_2026_15timeframes.zip
+          if git diff --cached --quiet; then
+            echo "No changes to research outputs"
+          else
+            git commit -m "Store Exness Monday 2026 scan, top 50, and OHLC data"
+            git push
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: exness-mondays-2026-backtest
+          path: |
+            results/exness_mondays_2026/ranked_50_distinct.csv
+            results/exness_mondays_2026/ranked_all_distinct.csv
+            results/exness_mondays_2026/top50_daily_pips.csv
+            results/exness_mondays_2026/manifest.json
+            results/exness_mondays_2026/exness_mondays_2026_15timeframes.zip
+          retention-days: 30
+          if-no-files-found: warn
