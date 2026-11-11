@@ -62,8 +62,11 @@ def aggregate(bars,minutes):
     size=minutes//5
     result=[]
     for start in range(0,288,size):
-        chunk=bars[start:start+size]
-        if any(x is None for x in chunk):
+        chunk=[x for x in bars[start:start+size] if x is not None]
+        # A higher-timeframe candle exists when there is >=1 real tick.
+        # Do NOT invent OHLC for empty M5 bins (Exness can have short tick gaps).
+        # MT5 still builds a valid H4 candle when 14:05-14:15 M5 ticks are absent.
+        if not chunk:
             result.append(None)
             continue
         result.append([chunk[0][0],max(x[1] for x in chunk),min(x[2] for x in chunk),
@@ -203,7 +206,8 @@ def main():
         "notes":["Additive pips are not USD P&L or risk-normalized returns.",
                  "Spread at M5 first ticks included; other fees, swaps, slippage and broker execution excluded.",
                  "2025 validation is held back from 2026 optimization, but dates predate strategy selection; not prospective forward test.",
-                 "Missing any required M5 candle excludes day; do not silently fill missing quotes."]
+                 "Signal H4/H1/M30 uses all available real ticks; wholly empty parent bars excluded. No synthetic ticks or fills inserted.",
+                 "EURUSD 2025-04-14 14:05-14:15 UTC absent in source but H4 candle has other real ticks; reconstructed H4 close from last observed tick."]
     }
     with (out/"trades_2025_3bots.csv").open("w",newline="") as f:
         w=csv.writer(f)
