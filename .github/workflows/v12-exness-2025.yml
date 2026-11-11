@@ -1,0 +1,37 @@
+name: V12 Exness 2025 out-of-sample tick OHLC collection
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v12-exness-2025.yml'
+permissions:
+  contents: read
+jobs:
+  collect:
+    name: V12 OOS 2025 ${{ matrix.symbol }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        symbol: [EURUSD, USDJPY, GBPUSD]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install isolated data dependencies
+        run: pip install 'pandas>=2.2,<3' 'requests>=2.31,<3'
+      - name: Unit test with synthetic ticks
+        run: python scripts/v12_exness_collect.py --self-test
+      - name: Download Exness 2025 and aggregate UTC M5 M15 M30 H1 H4
+        run: python scripts/v12_exness_collect.py --symbol "${{ matrix.symbol }}" --year 2025 --out v12_exness_data
+      - name: Save reproducible historical OHLC and provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Exness-V12-${{ matrix.symbol }}-2025-UTC
+          path: v12_exness_data/
+          if-no-files-found: warn
+          retention-days: 30
