@@ -53,3 +53,15 @@ So sánh 45 thứ Hai đầu năm 2025 (06/01–10/11) với 45 thứ Hai 2026 (
 - `research/exness_mondays_2025_frozen3.py`: mã tái lập.
 
 Nguồn Exness chính thức: https://www.exness.global/tick-history/ . Exness lưu ý tick history là dữ liệu tham khảo, không bảo đảm giá khớp lệnh.
+
+
+## Tương quan của bộ ba trong năm 2025
+Tương quan Pearson tính trên 52 lãi/lỗ pip từng thứ Hai:
+
+| Cặp bot | r trong năm 2025 | r trong 2026 (45 tuần) |
+|---|---:|---:|
+| #11 EURUSD / #6 USDJPY | +0.253 | +0.019 |
+| #11 EURUSD / #18 GBPUSD | -0.283 | -0.087 |
+| #6 USDJPY / #18 GBPUSD | +0.214 | -0.000 |
+
+Trung bình ba giá trị |r| năm 2025 khoảng **0.250**, cao hơn rõ rệt mức **0.035** trong năm 2026. Mẫu 52 tuần vẫn nhỏ và tương quan có thể thay đổi theo thời kỳ. Có **10 thứ Hai cả ba bot cùng âm** trong năm 2025; đây là bằng chứng thực nghiệm chống lại giả định ba bot độc lập về lãi/lỗ.
