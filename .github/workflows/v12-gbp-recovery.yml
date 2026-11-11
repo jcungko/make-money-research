@@ -1,0 +1,33 @@
+name: V12 GBPUSD November 11 raw ZIP recovery
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v12-gbp-recovery.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Preserve raw GBPUSD bytes despite malformed ZIP central directory
+        shell: bash
+        run: |
+          mkdir -p v12_gbp
+          python - <<'PY'
+          import requests,zipfile,pathlib,zlib,struct
+          url='https://ticks.ex2archive.com/ticks/GBPUSD/2026/11/11/Exness_GBPUSD_2026_11_11.zip'
+          for label, query in [('direct',''),('fresh','?cache_bust=20261111_1335')]:
+              r=requests.get(url+query,timeout=45)
+              r.raise_for_status()
+              p=pathlib.Path('v12_gbp')/f'GBPUSD_2026_11_11_{label}.zip'
+              p.write_bytes(r.content)
+              print(label,'size',len(r.content),'valid',zipfile.is_zipfile(p),'begin',r.content[:15],'end',r.content[-25:],flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: V12-GBPUSD-Nov11-raw
+          path: v12_gbp/
+          retention-days: 7
