@@ -35,7 +35,7 @@ def recover_csv(raw: bytes):
             names = [n for n in z.namelist() if n.lower().endswith(".csv") and ".." not in n]
             if len(names) != 1: raise ValueError(f"unexpected CSV members {names}")
             return z.read(names[0]), "valid_complete_zip"
-    if not raw.startswith(b"PK\\x03\\x04") or len(raw) < 35:
+    if not raw.startswith(b"PK\x03\x04") or len(raw) < 35:
         raise ValueError("Not ZIP, partial ZIP, or missing ZIP header")
     method = struct.unpack_from("<H", raw, 8)[0]
     nlen, xlen = struct.unpack_from("<HH", raw, 26)
@@ -44,8 +44,8 @@ def recover_csv(raw: bytes):
         raise ValueError("unsupported partial ZIP structure")
     decoder = zlib.decompressobj(-zlib.MAX_WBITS)
     body = decoder.decompress(raw[off:]) + decoder.flush()
-    if b"\\n" not in body: raise ValueError("no complete CSV rows in incomplete ZIP")
-    return body[:body.rfind(b"\\n")+1], "recoverable_partial_zip"
+    if b"\n" not in body: raise ValueError("no complete CSV rows in incomplete ZIP")
+    return body[:body.rfind(b"\n")+1], "recoverable_partial_zip"
 
 def fetch_daily(session, symbol, day, effective):
     label = day.strftime("%Y-%m-%d")
