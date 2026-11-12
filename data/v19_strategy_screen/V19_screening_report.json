@@ -41,36 +41,42 @@
       "tested": 12424,
       "profitable_in_both_years": 514,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 18
     },
     "UKOIL": {
       "tested": 10648,
       "profitable_in_both_years": 67,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 18
     },
     "XNGUSD": {
       "tested": 12436,
       "profitable_in_both_years": 0,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 13
     }
   },
   "single_totals": {
     "tested": 35508,
     "profitable_in_both_years": 581,
-    "profitable_in_all_22_months": 0
+    "profitable_in_all_22_months": 0,
+    "profitable_in_exactly_21_months": 0
   },
   "portfolio_counts_by_leg_count": {
     "2": {
       "tested": 4800,
       "profitable_in_both_years": 795,
-      "profitable_in_all_22_months": 0
+      "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0
     },
     "3": {
       "tested": 64000,
       "profitable_in_both_years": 357,
-      "profitable_in_all_22_months": 0
+      "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0
     }
   },
   "extended_portfolio_counts": {
@@ -78,108 +84,126 @@
       "tested": 780,
       "profitable_in_both_years": 721,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 20
     },
     "same_USOIL_3": {
       "tested": 9880,
       "profitable_in_both_years": 9503,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 20
     },
     "same_USOIL_4": {
       "tested": 91390,
       "profitable_in_both_years": 90097,
       "profitable_in_all_22_months": 3,
+      "profitable_in_exactly_21_months": 33,
       "best_positive_months": 22
     },
     "same_UKOIL_2": {
       "tested": 780,
       "profitable_in_both_years": 240,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 19
     },
     "same_UKOIL_3": {
       "tested": 9880,
       "profitable_in_both_years": 3260,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 19
     },
     "same_UKOIL_4": {
       "tested": 91390,
       "profitable_in_both_years": 32221,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 19
     },
     "same_XNGUSD_2": {
       "tested": 780,
       "profitable_in_both_years": 0,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 13
     },
     "same_XNGUSD_3": {
       "tested": 9880,
       "profitable_in_both_years": 0,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 14
     },
     "same_XNGUSD_4": {
       "tested": 91390,
       "profitable_in_both_years": 0,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 14
     },
     "mix_USOIL_UKOIL_2plus2": {
       "tested": 608400,
       "profitable_in_both_years": 377866,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 19,
       "best_positive_months": 21
     },
     "mix_USOIL_XNGUSD_2plus2": {
       "tested": 608400,
       "profitable_in_both_years": 0,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 15
     },
     "mix_UKOIL_XNGUSD_2plus2": {
       "tested": 608400,
       "profitable_in_both_years": 0,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 16
     },
     "mix_USOIL_UKOIL_3plus1": {
       "tested": 395200,
       "profitable_in_both_years": 318983,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 34,
       "best_positive_months": 21
     },
     "mix_USOIL_XNGUSD_3plus1": {
       "tested": 395200,
       "profitable_in_both_years": 5307,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 17
     },
     "mix_UKOIL_USOIL_3plus1": {
       "tested": 395200,
       "profitable_in_both_years": 184883,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 20
     },
     "mix_UKOIL_XNGUSD_3plus1": {
       "tested": 395200,
       "profitable_in_both_years": 6186,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 17
     },
     "mix_XNGUSD_USOIL_3plus1": {
       "tested": 395200,
       "profitable_in_both_years": 0,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 14
     },
     "mix_XNGUSD_UKOIL_3plus1": {
       "tested": 395200,
       "profitable_in_both_years": 0,
       "profitable_in_all_22_months": 0,
+      "profitable_in_exactly_21_months": 0,
       "best_positive_months": 15
     }
   },
@@ -866,6 +890,7 @@
     }
   ],
   "total_pass_all_22": 3,
+  "total_pass_exactly_21": 86,
   "best_single_candidates": [
     {
       "id": "USOIL|M30|rsi14_above_60|long|H4|08utc",
