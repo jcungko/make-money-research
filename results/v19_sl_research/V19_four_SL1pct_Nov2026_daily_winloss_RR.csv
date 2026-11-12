@@ -1,0 +1,5 @@
+portfolio,sl_pct,november_realized_profit_bp,november_no_sl_profit_bp,november_orders,november_stop_orders,profitable_days,losing_days,breakeven_days,days_with_closed_orders,days_without_closed_orders_of_12,avg_net_profit_bp_per_day_with_closed_orders,avg_net_profit_bp_per_12_calendar_days,winning_orders,losing_orders,break_even_orders,avg_winning_order_bp_unweighted,avg_losing_order_bp_unweighted,realized_rr_reward_to_risk,realized_rr_formatted
+V19-065,1.0,232.16387,141.65308,17,5,7,2,0,9,3,25.79599,19.34699,10,7,0,144.79697,-74.18774,1.95176,1:1.95
+V19-051,1.0,128.67492,60.68435,14,6,5,2,0,7,5,18.38213,10.72291,8,6,0,140.83556,-101.99747,1.38078,1:1.38
+V19-043,1.0,121.77106,52.19107,9,3,4,2,0,6,6,20.29518,10.14759,5,4,0,164.17553,-83.44835,1.96739,1:1.97
+V19-025,1.0,111.47302,43.48245,15,6,6,2,0,8,4,13.93413,9.28942,9,6,0,117.54188,-101.99747,1.1524,1:1.15

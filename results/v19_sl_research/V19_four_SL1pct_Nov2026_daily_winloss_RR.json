@@ -1,0 +1,264 @@
+{
+  "project": "V19",
+  "source": "Exness USOIL and UKOIL M5 historical and Nov 2026 frozen snapshots",
+  "date_start_inclusive_utc": "2026-11-01T00:00:00+00:00",
+  "date_cutoff_exclusive_utc": "2026-11-12T18:00:00+00:00",
+  "sl_pct": 1.0,
+  "sl_definition": "Hard stop from entry Ask for buys and entry Bid for sells. For buy stop test M5 Bid lows; for sell test M5 Ask highs; fill at stop level or worse M5 opening quote when gap crosses, then apply 1 bp exit slippage. Stop on broker requires actual MT5 implementation and confirmation; this only simulates.",
+  "pnl_units": "basis points (bp) of equal 1/4 fixed portfolio notional, not USD",
+  "day_definition": "UTC DATE OF EXIT of closed trades including stop exits; win day means net sum of four independently traded legs > 0",
+  "avg_daily_definition": "Net total November profit / number of UTC days with >=1 closed trade, including losing days",
+  "rr_definition": "Ex post realized (average profitable EA leg PnL) / absolute(average losing EA leg PnL); reported as risk:reward 1:X, not preset RR because bots have no fixed TP.",
+  "execution_limitations": "M5 intra-bar quote extremes cannot reveal exact stop fill/spread at the tick of trigger. No swap, commissions, order rejection, or MT5 broker stop-distance validation. Return is fixed-notional bp, NOT USD. Portfolio positions can overlap.",
+  "cross_validation": "All 4 SL replay November PnL, win/loss trade counts, stop counts and pre-SL baselines verified against committed previous SL report.",
+  "rows": [
+    {
+      "portfolio": "V19-065",
+      "sl_pct": 1.0,
+      "november_realized_profit_bp": 232.16387,
+      "november_no_sl_profit_bp": 141.65308,
+      "november_orders": 17,
+      "november_stop_orders": 5,
+      "profitable_days": 7,
+      "losing_days": 2,
+      "breakeven_days": 0,
+      "days_with_closed_orders": 9,
+      "days_without_closed_orders_of_12": 3,
+      "avg_net_profit_bp_per_day_with_closed_orders": 25.79599,
+      "avg_net_profit_bp_per_12_calendar_days": 19.34699,
+      "winning_orders": 10,
+      "losing_orders": 7,
+      "break_even_orders": 0,
+      "avg_winning_order_bp_unweighted": 144.79697,
+      "avg_losing_order_bp_unweighted": -74.18774,
+      "realized_rr_reward_to_risk": 1.95176,
+      "realized_rr_formatted": "1:1.95"
+    },
+    {
+      "portfolio": "V19-051",
+      "sl_pct": 1.0,
+      "november_realized_profit_bp": 128.67492,
+      "november_no_sl_profit_bp": 60.68435,
+      "november_orders": 14,
+      "november_stop_orders": 6,
+      "profitable_days": 5,
+      "losing_days": 2,
+      "breakeven_days": 0,
+      "days_with_closed_orders": 7,
+      "days_without_closed_orders_of_12": 5,
+      "avg_net_profit_bp_per_day_with_closed_orders": 18.38213,
+      "avg_net_profit_bp_per_12_calendar_days": 10.72291,
+      "winning_orders": 8,
+      "losing_orders": 6,
+      "break_even_orders": 0,
+      "avg_winning_order_bp_unweighted": 140.83556,
+      "avg_losing_order_bp_unweighted": -101.99747,
+      "realized_rr_reward_to_risk": 1.38078,
+      "realized_rr_formatted": "1:1.38"
+    },
+    {
+      "portfolio": "V19-043",
+      "sl_pct": 1.0,
+      "november_realized_profit_bp": 121.77106,
+      "november_no_sl_profit_bp": 52.19107,
+      "november_orders": 9,
+      "november_stop_orders": 3,
+      "profitable_days": 4,
+      "losing_days": 2,
+      "breakeven_days": 0,
+      "days_with_closed_orders": 6,
+      "days_without_closed_orders_of_12": 6,
+      "avg_net_profit_bp_per_day_with_closed_orders": 20.29518,
+      "avg_net_profit_bp_per_12_calendar_days": 10.14759,
+      "winning_orders": 5,
+      "losing_orders": 4,
+      "break_even_orders": 0,
+      "avg_winning_order_bp_unweighted": 164.17553,
+      "avg_losing_order_bp_unweighted": -83.44835,
+      "realized_rr_reward_to_risk": 1.96739,
+      "realized_rr_formatted": "1:1.97"
+    },
+    {
+      "portfolio": "V19-025",
+      "sl_pct": 1.0,
+      "november_realized_profit_bp": 111.47302,
+      "november_no_sl_profit_bp": 43.48245,
+      "november_orders": 15,
+      "november_stop_orders": 6,
+      "profitable_days": 6,
+      "losing_days": 2,
+      "breakeven_days": 0,
+      "days_with_closed_orders": 8,
+      "days_without_closed_orders_of_12": 4,
+      "avg_net_profit_bp_per_day_with_closed_orders": 13.93413,
+      "avg_net_profit_bp_per_12_calendar_days": 9.28942,
+      "winning_orders": 9,
+      "losing_orders": 6,
+      "break_even_orders": 0,
+      "avg_winning_order_bp_unweighted": 117.54188,
+      "avg_losing_order_bp_unweighted": -101.99747,
+      "realized_rr_reward_to_risk": 1.1524,
+      "realized_rr_formatted": "1:1.15"
+    }
+  ],
+  "daily_exit_utc": {
+    "V19-065": [
+      {
+        "date_utc": "2026-11-02",
+        "net_profit_bp": 24.462608,
+        "closed_orders": 2
+      },
+      {
+        "date_utc": "2026-11-03",
+        "net_profit_bp": 97.70868,
+        "closed_orders": 1
+      },
+      {
+        "date_utc": "2026-11-04",
+        "net_profit_bp": 24.231017,
+        "closed_orders": 3
+      },
+      {
+        "date_utc": "2026-11-05",
+        "net_profit_bp": -21.60441,
+        "closed_orders": 2
+      },
+      {
+        "date_utc": "2026-11-06",
+        "net_profit_bp": 4.390221,
+        "closed_orders": 1
+      },
+      {
+        "date_utc": "2026-11-09",
+        "net_profit_bp": 47.051643,
+        "closed_orders": 3
+      },
+      {
+        "date_utc": "2026-11-10",
+        "net_profit_bp": 23.056266,
+        "closed_orders": 1
+      },
+      {
+        "date_utc": "2026-11-11",
+        "net_profit_bp": 58.368846,
+        "closed_orders": 3
+      },
+      {
+        "date_utc": "2026-11-12",
+        "net_profit_bp": -25.500999,
+        "closed_orders": 1
+      }
+    ],
+    "V19-051": [
+      {
+        "date_utc": "2026-11-02",
+        "net_profit_bp": 61.708028,
+        "closed_orders": 3
+      },
+      {
+        "date_utc": "2026-11-04",
+        "net_profit_bp": 52.450736,
+        "closed_orders": 3
+      },
+      {
+        "date_utc": "2026-11-05",
+        "net_profit_bp": -25.499096,
+        "closed_orders": 1
+      },
+      {
+        "date_utc": "2026-11-09",
+        "net_profit_bp": 27.052392,
+        "closed_orders": 3
+      },
+      {
+        "date_utc": "2026-11-10",
+        "net_profit_bp": 23.056266,
+        "closed_orders": 1
+      },
+      {
+        "date_utc": "2026-11-11",
+        "net_profit_bp": 40.906578,
+        "closed_orders": 1
+      },
+      {
+        "date_utc": "2026-11-12",
+        "net_profit_bp": -50.999982,
+        "closed_orders": 2
+      }
+    ],
+    "V19-043": [
+      {
+        "date_utc": "2026-11-02",
+        "net_profit_bp": 61.708157,
+        "closed_orders": 3
+      },
+      {
+        "date_utc": "2026-11-04",
+        "net_profit_bp": 25.975117,
+        "closed_orders": 2
+      },
+      {
+        "date_utc": "2026-11-09",
+        "net_profit_bp": 43.482158,
+        "closed_orders": 1
+      },
+      {
+        "date_utc": "2026-11-10",
+        "net_profit_bp": 23.056266,
+        "closed_orders": 1
+      },
+      {
+        "date_utc": "2026-11-11",
+        "net_profit_bp": -6.949635,
+        "closed_orders": 1
+      },
+      {
+        "date_utc": "2026-11-12",
+        "net_profit_bp": -25.500999,
+        "closed_orders": 1
+      }
+    ],
+    "V19-025": [
+      {
+        "date_utc": "2026-11-02",
+        "net_profit_bp": 24.462608,
+        "closed_orders": 2
+      },
+      {
+        "date_utc": "2026-11-04",
+        "net_profit_bp": 52.450736,
+        "closed_orders": 3
+      },
+      {
+        "date_utc": "2026-11-05",
+        "net_profit_bp": -25.499096,
+        "closed_orders": 1
+      },
+      {
+        "date_utc": "2026-11-06",
+        "net_profit_bp": 4.390221,
+        "closed_orders": 1
+      },
+      {
+        "date_utc": "2026-11-09",
+        "net_profit_bp": 27.052392,
+        "closed_orders": 3
+      },
+      {
+        "date_utc": "2026-11-10",
+        "net_profit_bp": 23.056266,
+        "closed_orders": 1
+      },
+      {
+        "date_utc": "2026-11-11",
+        "net_profit_bp": 56.55988,
+        "closed_orders": 2
+      },
+      {
+        "date_utc": "2026-11-12",
+        "net_profit_bp": -50.999982,
+        "closed_orders": 2
+      }
+    ]
+  }
+}
