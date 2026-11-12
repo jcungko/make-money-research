@@ -1,0 +1,121 @@
+{
+  "version": "V22",
+  "symbol": "SPCX",
+  "year": 2026,
+  "source": "Exness public tick archive",
+  "timezone": "UTC",
+  "price_types": [
+    "bid",
+    "ask"
+  ],
+  "volume_type": "tick_count (not exchange shares)",
+  "start_inclusive": "2026-01-01T00:00:00+00:00",
+  "end_exclusive": "2026-11-01T00:00:00+00:00",
+  "timeframes": [
+    "M5",
+    "M15",
+    "M30",
+    "H1",
+    "H4",
+    "D1",
+    "W1"
+  ],
+  "expected_months": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "prelisting_months_excluded": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "downloaded_months": [
+    {
+      "month": 6,
+      "url": "https://ticks.ex2archive.com/ticks/SPCX/2026/06/Exness_SPCX_2026_06.zip",
+      "zip_bytes": 2722018,
+      "m5_rows": 1212,
+      "first": "2026-06-16T18:20:00+00:00",
+      "last": "2026-06-30T23:55:00+00:00"
+    },
+    {
+      "month": 7,
+      "url": "https://ticks.ex2archive.com/ticks/SPCX/2026/07/Exness_SPCX_2026_07.zip",
+      "zip_bytes": 3511307,
+      "m5_rows": 4075,
+      "first": "2026-07-01T08:00:00+00:00",
+      "last": "2026-07-31T20:55:00+00:00"
+    },
+    {
+      "month": 8,
+      "url": "https://ticks.ex2archive.com/ticks/SPCX/2026/08/Exness_SPCX_2026_08.zip",
+      "zip_bytes": 3773327,
+      "m5_rows": 3886,
+      "first": "2026-08-03T08:00:00+00:00",
+      "last": "2026-08-31T23:55:00+00:00"
+    },
+    {
+      "month": 9,
+      "url": "https://ticks.ex2archive.com/ticks/SPCX/2026/09/Exness_SPCX_2026_09.zip",
+      "zip_bytes": 2587578,
+      "m5_rows": 3887,
+      "first": "2026-09-01T08:00:00+00:00",
+      "last": "2026-09-30T23:55:00+00:00"
+    },
+    {
+      "month": 10,
+      "url": "https://ticks.ex2archive.com/ticks/SPCX/2026/10/Exness_SPCX_2026_10.zip",
+      "zip_bytes": 3242423,
+      "m5_rows": 4039,
+      "first": "2026-10-01T08:00:00+00:00",
+      "last": "2026-10-30T20:55:00+00:00"
+    }
+  ],
+  "missing_months": [],
+  "frames": {
+    "M5": {
+      "rows": 17099,
+      "first": "2026-06-16T18:20:00+00:00",
+      "last": "2026-10-30T20:55:00+00:00"
+    },
+    "M15": {
+      "rows": 5703,
+      "first": "2026-06-16T18:15:00+00:00",
+      "last": "2026-10-30T20:45:00+00:00"
+    },
+    "M30": {
+      "rows": 2857,
+      "first": "2026-06-16T18:00:00+00:00",
+      "last": "2026-10-30T20:30:00+00:00"
+    },
+    "H1": {
+      "rows": 1429,
+      "first": "2026-06-16T18:00:00+00:00",
+      "last": "2026-10-30T20:00:00+00:00"
+    },
+    "H4": {
+      "rows": 374,
+      "first": "2026-06-16T16:00:00+00:00",
+      "last": "2026-10-30T20:00:00+00:00"
+    },
+    "D1": {
+      "rows": 96,
+      "first": "2026-06-16T00:00:00+00:00",
+      "last": "2026-10-30T00:00:00+00:00"
+    },
+    "W1": {
+      "rows": 20,
+      "first": "2026-06-15T00:00:00+00:00",
+      "last": "2026-10-26T00:00:00+00:00"
+    }
+  },
+  "archive": "SPCX_2026_UTC_7TF.zip",
+  "archive_bytes": 600276,
+  "status": "complete",
+  "generated_at_utc": "2026-11-12T17:37:05.692286+00:00"
+}

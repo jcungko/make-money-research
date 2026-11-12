@@ -1,0 +1,43 @@
+{
+  "version": "V22",
+  "symbol": "SPCX",
+  "year": 2025,
+  "source": "Exness public tick archive",
+  "timezone": "UTC",
+  "price_types": [
+    "bid",
+    "ask"
+  ],
+  "volume_type": "tick_count (not exchange shares)",
+  "start_inclusive": "2025-01-01T00:00:00+00:00",
+  "end_exclusive": "2026-01-01T00:00:00+00:00",
+  "timeframes": [
+    "M5",
+    "M15",
+    "M30",
+    "H1",
+    "H4",
+    "D1",
+    "W1"
+  ],
+  "expected_months": [],
+  "prelisting_months_excluded": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "downloaded_months": [],
+  "missing_months": [],
+  "frames": {},
+  "status": "not_applicable",
+  "generated_at_utc": "2026-11-12T17:36:45.876035+00:00"
+}

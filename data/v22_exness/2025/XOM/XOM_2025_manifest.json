@@ -1,0 +1,178 @@
+{
+  "version": "V22",
+  "symbol": "XOM",
+  "year": 2025,
+  "source": "Exness public tick archive",
+  "timezone": "UTC",
+  "price_types": [
+    "bid",
+    "ask"
+  ],
+  "volume_type": "tick_count (not exchange shares)",
+  "start_inclusive": "2025-01-01T00:00:00+00:00",
+  "end_exclusive": "2026-01-01T00:00:00+00:00",
+  "timeframes": [
+    "M5",
+    "M15",
+    "M30",
+    "H1",
+    "H4",
+    "D1",
+    "W1"
+  ],
+  "expected_months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "prelisting_months_excluded": [],
+  "downloaded_months": [
+    {
+      "month": 1,
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2025/01/Exness_XOM_2025_01.zip",
+      "zip_bytes": 972071,
+      "m5_rows": 1460,
+      "first": "2025-01-02T14:40:00+00:00",
+      "last": "2025-01-31T20:40:00+00:00"
+    },
+    {
+      "month": 2,
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2025/02/Exness_XOM_2025_02.zip",
+      "zip_bytes": 889883,
+      "m5_rows": 1387,
+      "first": "2025-02-03T14:40:00+00:00",
+      "last": "2025-02-28T20:40:00+00:00"
+    },
+    {
+      "month": 3,
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2025/03/Exness_XOM_2025_03.zip",
+      "zip_bytes": 1402344,
+      "m5_rows": 1533,
+      "first": "2025-03-03T14:40:00+00:00",
+      "last": "2025-03-31T19:40:00+00:00"
+    },
+    {
+      "month": 4,
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2025/04/Exness_XOM_2025_04.zip",
+      "zip_bytes": 2167814,
+      "m5_rows": 1530,
+      "first": "2025-04-01T13:40:00+00:00",
+      "last": "2025-04-30T19:40:00+00:00"
+    },
+    {
+      "month": 5,
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2025/05/Exness_XOM_2025_05.zip",
+      "zip_bytes": 1038960,
+      "m5_rows": 1533,
+      "first": "2025-05-01T13:40:00+00:00",
+      "last": "2025-05-30T19:40:00+00:00"
+    },
+    {
+      "month": 6,
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2025/06/Exness_XOM_2025_06.zip",
+      "zip_bytes": 1189299,
+      "m5_rows": 1460,
+      "first": "2025-06-02T13:40:00+00:00",
+      "last": "2025-06-30T19:40:00+00:00"
+    },
+    {
+      "month": 7,
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2025/07/Exness_XOM_2025_07.zip",
+      "zip_bytes": 1059713,
+      "m5_rows": 1573,
+      "first": "2025-07-01T13:40:00+00:00",
+      "last": "2025-07-31T19:40:00+00:00"
+    },
+    {
+      "month": 8,
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2025/08/Exness_XOM_2025_08.zip",
+      "zip_bytes": 923685,
+      "m5_rows": 1533,
+      "first": "2025-08-01T13:40:00+00:00",
+      "last": "2025-08-29T19:40:00+00:00"
+    },
+    {
+      "month": 9,
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2025/09/Exness_XOM_2025_09.zip",
+      "zip_bytes": 946277,
+      "m5_rows": 1533,
+      "first": "2025-09-02T13:40:00+00:00",
+      "last": "2025-09-30T19:40:00+00:00"
+    },
+    {
+      "month": 10,
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2025/10/Exness_XOM_2025_10.zip",
+      "zip_bytes": 996188,
+      "m5_rows": 1679,
+      "first": "2025-10-01T13:40:00+00:00",
+      "last": "2025-10-31T19:40:00+00:00"
+    },
+    {
+      "month": 11,
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2025/11/Exness_XOM_2025_11.zip",
+      "zip_bytes": 998559,
+      "m5_rows": 1354,
+      "first": "2025-11-03T14:40:00+00:00",
+      "last": "2025-11-28T17:55:00+00:00"
+    },
+    {
+      "month": 12,
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2025/12/Exness_XOM_2025_12.zip",
+      "zip_bytes": 799263,
+      "m5_rows": 1573,
+      "first": "2025-12-01T14:40:00+00:00",
+      "last": "2025-12-31T20:40:00+00:00"
+    }
+  ],
+  "missing_months": [],
+  "frames": {
+    "M5": {
+      "rows": 18148,
+      "first": "2025-01-02T14:40:00+00:00",
+      "last": "2025-12-31T20:40:00+00:00"
+    },
+    "M15": {
+      "rows": 6217,
+      "first": "2025-01-02T14:30:00+00:00",
+      "last": "2025-12-31T20:30:00+00:00"
+    },
+    "M30": {
+      "rows": 3232,
+      "first": "2025-01-02T14:30:00+00:00",
+      "last": "2025-12-31T20:30:00+00:00"
+    },
+    "H1": {
+      "rows": 1741,
+      "first": "2025-01-02T14:00:00+00:00",
+      "last": "2025-12-31T20:00:00+00:00"
+    },
+    "H4": {
+      "rows": 583,
+      "first": "2025-01-02T12:00:00+00:00",
+      "last": "2025-12-31T20:00:00+00:00"
+    },
+    "D1": {
+      "rows": 250,
+      "first": "2025-01-02T00:00:00+00:00",
+      "last": "2025-12-31T00:00:00+00:00"
+    },
+    "W1": {
+      "rows": 52,
+      "first": "2025-01-06T00:00:00+00:00",
+      "last": "2025-12-29T00:00:00+00:00"
+    }
+  },
+  "archive": "XOM_2025_UTC_7TF.zip",
+  "archive_bytes": 599788,
+  "status": "complete",
+  "generated_at_utc": "2026-11-12T17:37:35.095833+00:00"
+}

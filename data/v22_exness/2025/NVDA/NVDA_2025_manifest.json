@@ -1,0 +1,178 @@
+{
+  "version": "V22",
+  "symbol": "NVDA",
+  "year": 2025,
+  "source": "Exness public tick archive",
+  "timezone": "UTC",
+  "price_types": [
+    "bid",
+    "ask"
+  ],
+  "volume_type": "tick_count (not exchange shares)",
+  "start_inclusive": "2025-01-01T00:00:00+00:00",
+  "end_exclusive": "2026-01-01T00:00:00+00:00",
+  "timeframes": [
+    "M5",
+    "M15",
+    "M30",
+    "H1",
+    "H4",
+    "D1",
+    "W1"
+  ],
+  "expected_months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "prelisting_months_excluded": [],
+  "downloaded_months": [
+    {
+      "month": 1,
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2025/01/Exness_NVDA_2025_01.zip",
+      "zip_bytes": 4586636,
+      "m5_rows": 2332,
+      "first": "2025-01-02T11:00:00+00:00",
+      "last": "2025-01-31T20:40:00+00:00"
+    },
+    {
+      "month": 2,
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2025/02/Exness_NVDA_2025_02.zip",
+      "zip_bytes": 4277204,
+      "m5_rows": 2223,
+      "first": "2025-02-03T11:00:00+00:00",
+      "last": "2025-02-28T20:40:00+00:00"
+    },
+    {
+      "month": 3,
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2025/03/Exness_NVDA_2025_03.zip",
+      "zip_bytes": 5304827,
+      "m5_rows": 2457,
+      "first": "2025-03-03T11:00:00+00:00",
+      "last": "2025-03-31T19:40:00+00:00"
+    },
+    {
+      "month": 4,
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2025/04/Exness_NVDA_2025_04.zip",
+      "zip_bytes": 6002693,
+      "m5_rows": 2454,
+      "first": "2025-04-01T10:00:00+00:00",
+      "last": "2025-04-30T19:40:00+00:00"
+    },
+    {
+      "month": 5,
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2025/05/Exness_NVDA_2025_05.zip",
+      "zip_bytes": 2976989,
+      "m5_rows": 2457,
+      "first": "2025-05-01T10:00:00+00:00",
+      "last": "2025-05-30T19:40:00+00:00"
+    },
+    {
+      "month": 6,
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2025/06/Exness_NVDA_2025_06.zip",
+      "zip_bytes": 2423035,
+      "m5_rows": 2340,
+      "first": "2025-06-02T10:00:00+00:00",
+      "last": "2025-06-30T19:40:00+00:00"
+    },
+    {
+      "month": 7,
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2025/07/Exness_NVDA_2025_07.zip",
+      "zip_bytes": 2735520,
+      "m5_rows": 2541,
+      "first": "2025-07-01T10:00:00+00:00",
+      "last": "2025-07-31T19:40:00+00:00"
+    },
+    {
+      "month": 8,
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2025/08/Exness_NVDA_2025_08.zip",
+      "zip_bytes": 3464649,
+      "m5_rows": 2457,
+      "first": "2025-08-01T10:00:00+00:00",
+      "last": "2025-08-29T19:40:00+00:00"
+    },
+    {
+      "month": 9,
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2025/09/Exness_NVDA_2025_09.zip",
+      "zip_bytes": 3225473,
+      "m5_rows": 2457,
+      "first": "2025-09-02T10:00:00+00:00",
+      "last": "2025-09-30T19:40:00+00:00"
+    },
+    {
+      "month": 10,
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2025/10/Exness_NVDA_2025_10.zip",
+      "zip_bytes": 4601836,
+      "m5_rows": 2691,
+      "first": "2025-10-01T10:00:00+00:00",
+      "last": "2025-10-31T19:40:00+00:00"
+    },
+    {
+      "month": 11,
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2025/11/Exness_NVDA_2025_11.zip",
+      "zip_bytes": 5906244,
+      "m5_rows": 2190,
+      "first": "2025-11-03T11:00:00+00:00",
+      "last": "2025-11-28T17:55:00+00:00"
+    },
+    {
+      "month": 12,
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2025/12/Exness_NVDA_2025_12.zip",
+      "zip_bytes": 3568483,
+      "m5_rows": 2541,
+      "first": "2025-12-01T11:00:00+00:00",
+      "last": "2025-12-31T20:40:00+00:00"
+    }
+  ],
+  "missing_months": [],
+  "frames": {
+    "M5": {
+      "rows": 29140,
+      "first": "2025-01-02T11:00:00+00:00",
+      "last": "2025-12-31T20:40:00+00:00"
+    },
+    "M15": {
+      "rows": 9715,
+      "first": "2025-01-02T11:00:00+00:00",
+      "last": "2025-12-31T20:30:00+00:00"
+    },
+    "M30": {
+      "rows": 4981,
+      "first": "2025-01-02T11:00:00+00:00",
+      "last": "2025-12-31T20:30:00+00:00"
+    },
+    "H1": {
+      "rows": 2491,
+      "first": "2025-01-02T11:00:00+00:00",
+      "last": "2025-12-31T20:00:00+00:00"
+    },
+    "H4": {
+      "rows": 833,
+      "first": "2025-01-02T08:00:00+00:00",
+      "last": "2025-12-31T20:00:00+00:00"
+    },
+    "D1": {
+      "rows": 250,
+      "first": "2025-01-02T00:00:00+00:00",
+      "last": "2025-12-31T00:00:00+00:00"
+    },
+    "W1": {
+      "rows": 52,
+      "first": "2025-01-06T00:00:00+00:00",
+      "last": "2025-12-29T00:00:00+00:00"
+    }
+  },
+  "archive": "NVDA_2025_UTC_7TF.zip",
+  "archive_bytes": 1042908,
+  "status": "complete",
+  "generated_at_utc": "2026-11-12T17:36:25.717965+00:00"
+}

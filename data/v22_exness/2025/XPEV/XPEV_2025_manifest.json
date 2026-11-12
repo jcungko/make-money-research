@@ -1,0 +1,104 @@
+{
+  "version": "V22",
+  "symbol": "XPEV",
+  "year": 2025,
+  "source": "Exness public tick archive",
+  "timezone": "UTC",
+  "price_types": [
+    "bid",
+    "ask"
+  ],
+  "volume_type": "tick_count (not exchange shares)",
+  "start_inclusive": "2025-01-01T00:00:00+00:00",
+  "end_exclusive": "2026-01-01T00:00:00+00:00",
+  "timeframes": [
+    "M5",
+    "M15",
+    "M30",
+    "H1",
+    "H4",
+    "D1",
+    "W1"
+  ],
+  "expected_months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "prelisting_months_excluded": [],
+  "downloaded_months": [],
+  "missing_months": [
+    {
+      "month": 1,
+      "url": "https://ticks.ex2archive.com/ticks/XPEV/2025/01/Exness_XPEV_2025_01.zip",
+      "error": "HTTP 404"
+    },
+    {
+      "month": 2,
+      "url": "https://ticks.ex2archive.com/ticks/XPEV/2025/02/Exness_XPEV_2025_02.zip",
+      "error": "HTTP 404"
+    },
+    {
+      "month": 3,
+      "url": "https://ticks.ex2archive.com/ticks/XPEV/2025/03/Exness_XPEV_2025_03.zip",
+      "error": "HTTP 404"
+    },
+    {
+      "month": 4,
+      "url": "https://ticks.ex2archive.com/ticks/XPEV/2025/04/Exness_XPEV_2025_04.zip",
+      "error": "HTTP 404"
+    },
+    {
+      "month": 5,
+      "url": "https://ticks.ex2archive.com/ticks/XPEV/2025/05/Exness_XPEV_2025_05.zip",
+      "error": "HTTP 404"
+    },
+    {
+      "month": 6,
+      "url": "https://ticks.ex2archive.com/ticks/XPEV/2025/06/Exness_XPEV_2025_06.zip",
+      "error": "HTTP 404"
+    },
+    {
+      "month": 7,
+      "url": "https://ticks.ex2archive.com/ticks/XPEV/2025/07/Exness_XPEV_2025_07.zip",
+      "error": "HTTP 404"
+    },
+    {
+      "month": 8,
+      "url": "https://ticks.ex2archive.com/ticks/XPEV/2025/08/Exness_XPEV_2025_08.zip",
+      "error": "HTTP 404"
+    },
+    {
+      "month": 9,
+      "url": "https://ticks.ex2archive.com/ticks/XPEV/2025/09/Exness_XPEV_2025_09.zip",
+      "error": "HTTP 404"
+    },
+    {
+      "month": 10,
+      "url": "https://ticks.ex2archive.com/ticks/XPEV/2025/10/Exness_XPEV_2025_10.zip",
+      "error": "HTTP 404"
+    },
+    {
+      "month": 11,
+      "url": "https://ticks.ex2archive.com/ticks/XPEV/2025/11/Exness_XPEV_2025_11.zip",
+      "error": "HTTP 404"
+    },
+    {
+      "month": 12,
+      "url": "https://ticks.ex2archive.com/ticks/XPEV/2025/12/Exness_XPEV_2025_12.zip",
+      "error": "HTTP 404"
+    }
+  ],
+  "frames": {},
+  "status": "unavailable",
+  "generated_at_utc": "2026-11-12T17:37:08.281334+00:00"
+}

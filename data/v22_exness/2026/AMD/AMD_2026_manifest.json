@@ -1,0 +1,160 @@
+{
+  "version": "V22",
+  "symbol": "AMD",
+  "year": 2026,
+  "source": "Exness public tick archive",
+  "timezone": "UTC",
+  "price_types": [
+    "bid",
+    "ask"
+  ],
+  "volume_type": "tick_count (not exchange shares)",
+  "start_inclusive": "2026-01-01T00:00:00+00:00",
+  "end_exclusive": "2026-11-01T00:00:00+00:00",
+  "timeframes": [
+    "M5",
+    "M15",
+    "M30",
+    "H1",
+    "H4",
+    "D1",
+    "W1"
+  ],
+  "expected_months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "prelisting_months_excluded": [],
+  "downloaded_months": [
+    {
+      "month": 1,
+      "url": "https://ticks.ex2archive.com/ticks/AMD/2026/01/Exness_AMD_2026_01.zip",
+      "zip_bytes": 2505494,
+      "m5_rows": 2339,
+      "first": "2026-01-02T11:00:00+00:00",
+      "last": "2026-01-30T20:40:00+00:00"
+    },
+    {
+      "month": 2,
+      "url": "https://ticks.ex2archive.com/ticks/AMD/2026/02/Exness_AMD_2026_02.zip",
+      "zip_bytes": 2794221,
+      "m5_rows": 2223,
+      "first": "2026-02-02T11:00:00+00:00",
+      "last": "2026-02-27T20:40:00+00:00"
+    },
+    {
+      "month": 3,
+      "url": "https://ticks.ex2archive.com/ticks/AMD/2026/03/Exness_AMD_2026_03.zip",
+      "zip_bytes": 3161042,
+      "m5_rows": 2573,
+      "first": "2026-03-02T11:00:00+00:00",
+      "last": "2026-03-31T19:40:00+00:00"
+    },
+    {
+      "month": 4,
+      "url": "https://ticks.ex2archive.com/ticks/AMD/2026/04/Exness_AMD_2026_04.zip",
+      "zip_bytes": 3098011,
+      "m5_rows": 2457,
+      "first": "2026-04-01T10:00:00+00:00",
+      "last": "2026-04-30T19:40:00+00:00"
+    },
+    {
+      "month": 5,
+      "url": "https://ticks.ex2archive.com/ticks/AMD/2026/05/Exness_AMD_2026_05.zip",
+      "zip_bytes": 3817304,
+      "m5_rows": 2340,
+      "first": "2026-05-01T10:00:00+00:00",
+      "last": "2026-05-29T19:40:00+00:00"
+    },
+    {
+      "month": 6,
+      "url": "https://ticks.ex2archive.com/ticks/AMD/2026/06/Exness_AMD_2026_06.zip",
+      "zip_bytes": 4617216,
+      "m5_rows": 2457,
+      "first": "2026-06-01T10:00:00+00:00",
+      "last": "2026-06-30T19:40:00+00:00"
+    },
+    {
+      "month": 7,
+      "url": "https://ticks.ex2archive.com/ticks/AMD/2026/07/Exness_AMD_2026_07.zip",
+      "zip_bytes": 5127257,
+      "m5_rows": 2571,
+      "first": "2026-07-01T10:00:00+00:00",
+      "last": "2026-07-31T19:40:00+00:00"
+    },
+    {
+      "month": 8,
+      "url": "https://ticks.ex2archive.com/ticks/AMD/2026/08/Exness_AMD_2026_08.zip",
+      "zip_bytes": 3580655,
+      "m5_rows": 2457,
+      "first": "2026-08-03T10:00:00+00:00",
+      "last": "2026-08-31T19:40:00+00:00"
+    },
+    {
+      "month": 9,
+      "url": "https://ticks.ex2archive.com/ticks/AMD/2026/09/Exness_AMD_2026_09.zip",
+      "zip_bytes": 3341311,
+      "m5_rows": 2457,
+      "first": "2026-09-01T10:00:00+00:00",
+      "last": "2026-09-30T19:40:00+00:00"
+    },
+    {
+      "month": 10,
+      "url": "https://ticks.ex2archive.com/ticks/AMD/2026/10/Exness_AMD_2026_10.zip",
+      "zip_bytes": 3553353,
+      "m5_rows": 2574,
+      "first": "2026-10-01T10:00:00+00:00",
+      "last": "2026-10-30T19:40:00+00:00"
+    }
+  ],
+  "missing_months": [],
+  "frames": {
+    "M5": {
+      "rows": 24448,
+      "first": "2026-01-02T11:00:00+00:00",
+      "last": "2026-10-30T19:40:00+00:00"
+    },
+    "M15": {
+      "rows": 8151,
+      "first": "2026-01-02T11:00:00+00:00",
+      "last": "2026-10-30T19:30:00+00:00"
+    },
+    "M30": {
+      "rows": 4180,
+      "first": "2026-01-02T11:00:00+00:00",
+      "last": "2026-10-30T19:30:00+00:00"
+    },
+    "H1": {
+      "rows": 2090,
+      "first": "2026-01-02T11:00:00+00:00",
+      "last": "2026-10-30T19:00:00+00:00"
+    },
+    "H4": {
+      "rows": 671,
+      "first": "2026-01-02T08:00:00+00:00",
+      "last": "2026-10-30T16:00:00+00:00"
+    },
+    "D1": {
+      "rows": 209,
+      "first": "2026-01-02T00:00:00+00:00",
+      "last": "2026-10-30T00:00:00+00:00"
+    },
+    "W1": {
+      "rows": 43,
+      "first": "2026-01-05T00:00:00+00:00",
+      "last": "2026-10-26T00:00:00+00:00"
+    }
+  },
+  "archive": "AMD_2026_UTC_7TF.zip",
+  "archive_bytes": 983942,
+  "status": "complete",
+  "generated_at_utc": "2026-11-12T17:36:45.021120+00:00"
+}
