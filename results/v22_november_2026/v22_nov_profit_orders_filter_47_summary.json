@@ -1,0 +1,196 @@
+{
+  "version": "V22-NOVEMBER-2026-SEQUENTIAL-50-PERCENT-FILTER",
+  "input": "results/v22_november_2026/v22_nov2026_profitable_survivors.csv",
+  "fixed_evaluation_window_utc": [
+    "2026-11-01T00:00:00+00:00",
+    "2026-11-11T20:40:00+00:00"
+  ],
+  "method": "First remove lowest November modeled profit, then remove lowest November executed constituent-order count from the remainder.",
+  "profit_measure": "november_net_bps, equal-notional average of EA components for each portfolio, historical CFD bid/ask plus modeled slippage; not USD.",
+  "orders_measure": "november_orders is sum of orders of constituent EAs in November period",
+  "rounding_policy": "At each stage remove floor(N/2); for 93 survivors, remove 46 so 47 remain.",
+  "tie_break": "original final_id ascending (stable lexicographic) at ranking cutoffs",
+  "initial": {
+    "total": 186,
+    "by_category": {
+      "quad": 76,
+      "quint": 110,
+      "triple": 0
+    },
+    "by_historical_months": {
+      "17": 145,
+      "18": 28,
+      "19": 13
+    }
+  },
+  "removed_low_profit": {
+    "total": 93,
+    "by_category": {
+      "quad": 39,
+      "quint": 54,
+      "triple": 0
+    },
+    "by_historical_months": {
+      "17": 74,
+      "18": 13,
+      "19": 6
+    }
+  },
+  "profit_cutoff": {
+    "largest_excluded_profit_bps": 52.324037,
+    "smallest_retained_profit_bps": 52.467143
+  },
+  "after_profit": {
+    "total": 93,
+    "by_category": {
+      "quad": 37,
+      "quint": 56,
+      "triple": 0
+    },
+    "by_historical_months": {
+      "17": 71,
+      "18": 15,
+      "19": 7
+    }
+  },
+  "removed_fewest_orders": {
+    "total": 46,
+    "by_category": {
+      "quad": 20,
+      "quint": 26,
+      "triple": 0
+    },
+    "by_historical_months": {
+      "17": 32,
+      "18": 10,
+      "19": 4
+    }
+  },
+  "order_cutoff": {
+    "largest_excluded_orders": 21,
+    "smallest_retained_orders": 21,
+    "tie_at_boundary": true
+  },
+  "final": {
+    "total": 47,
+    "by_category": {
+      "quad": 17,
+      "quint": 30,
+      "triple": 0
+    },
+    "by_historical_months": {
+      "17": 39,
+      "18": 5,
+      "19": 3
+    }
+  },
+  "final_nov_profit_bps": {
+    "min": 52.467143,
+    "max": 240.92722
+  },
+  "final_nov_orders": {
+    "min": 21,
+    "max": 32
+  },
+  "top10": [
+    {
+      "postfilter_id": "V22-N001",
+      "previous_id": "V22-F0620",
+      "category": "quad",
+      "symbols": "NVDA+AMD+AVGO+GOOGL",
+      "months_profitable_prior_history": 17,
+      "november_net_bps": 240.92722,
+      "november_orders": 23
+    },
+    {
+      "postfilter_id": "V22-N002",
+      "previous_id": "V22-F0668",
+      "category": "quint",
+      "symbols": "NVDA+AMD+AVGO+XOM+GOOGL",
+      "months_profitable_prior_history": 17,
+      "november_net_bps": 227.432975,
+      "november_orders": 27
+    },
+    {
+      "postfilter_id": "V22-N003",
+      "previous_id": "V22-F0551",
+      "category": "quint",
+      "symbols": "NVDA+AMD+AVGO+XOM+GOOGL",
+      "months_profitable_prior_history": 17,
+      "november_net_bps": 221.329126,
+      "november_orders": 21
+    },
+    {
+      "postfilter_id": "V22-N004",
+      "previous_id": "V22-F0652",
+      "category": "quint",
+      "symbols": "NVDA+AMD+AVGO+XOM+GOOGL",
+      "months_profitable_prior_history": 17,
+      "november_net_bps": 201.935846,
+      "november_orders": 27
+    },
+    {
+      "postfilter_id": "V22-N005",
+      "previous_id": "V22-F0512",
+      "category": "quad",
+      "symbols": "NVDA+AMD+AVGO+GOOGL",
+      "months_profitable_prior_history": 17,
+      "november_net_bps": 201.713054,
+      "november_orders": 21
+    },
+    {
+      "postfilter_id": "V22-N006",
+      "previous_id": "V22-F0663",
+      "category": "quad",
+      "symbols": "NVDA+AMD+AVGO+GOOGL",
+      "months_profitable_prior_history": 17,
+      "november_net_bps": 192.480389,
+      "november_orders": 23
+    },
+    {
+      "postfilter_id": "V22-N007",
+      "previous_id": "V22-F0640",
+      "category": "quad",
+      "symbols": "NVDA+AMD+AVGO+XOM",
+      "months_profitable_prior_history": 17,
+      "november_net_bps": 184.345743,
+      "november_orders": 24
+    },
+    {
+      "postfilter_id": "V22-N008",
+      "previous_id": "V22-F0598",
+      "category": "quint",
+      "symbols": "NVDA+AMD+AVGO+XOM+GOOGL",
+      "months_profitable_prior_history": 17,
+      "november_net_bps": 175.362808,
+      "november_orders": 21
+    },
+    {
+      "postfilter_id": "V22-N009",
+      "previous_id": "V22-F0022",
+      "category": "quint",
+      "symbols": "NVDA+AMD+AVGO+XOM+GOOGL",
+      "months_profitable_prior_history": 19,
+      "november_net_bps": 173.564277,
+      "november_orders": 27
+    },
+    {
+      "postfilter_id": "V22-N010",
+      "previous_id": "V22-F0483",
+      "category": "quad",
+      "symbols": "NVDA+AMD+AVGO+GOOGL",
+      "months_profitable_prior_history": 17,
+      "november_net_bps": 171.293769,
+      "november_orders": 23
+    }
+  ],
+  "exports": {
+    "retained": "results/v22_november_2026/v22_nov_after_profit_trade_filter_47.csv",
+    "excluded": "results/v22_november_2026/v22_nov_removed_139_profit_orders.csv"
+  },
+  "cautions": [
+    "November 2026 is incomplete as of the replay cutoff; surviving results can reverse before month end.",
+    "In-sample selection and reused underlying EA legs create high risk of overfitting and correlation.",
+    "Portfolio P&L is model-based, not an MT5 live execution or proof of net cash returns."
+  ]
+}
