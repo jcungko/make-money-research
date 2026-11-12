@@ -9,7 +9,7 @@
     "after_profit": 100,
     "removed_low_trades": 50,
     "final": 50,
-    "initial_profit_cutoff_bp": 3172.32118,
+    "initial_profit_cutoff_bp": 3019.84302,
     "final_min_trade_count": 888,
     "compositions": {
       "4 BTCUSD + 0 ETHUSD": 13,
@@ -97,7 +97,9 @@
         "oct_2026_bp": 62.30873,
         "composition": "3 BTCUSD + 1 ETHUSD"
       }
-    ]
+    ],
+    "profit_filter_top_bp": 4549.78962,
+    "first_eliminated_profit_bp": 3014.93889
   },
   "portfolios": [
     {
