@@ -233,6 +233,7 @@ def assemble_portfolios(all_records):
         tested = 0
         both_years = 0
         all_months = 0
+        exactly_21 = 0
         for symbols in itertools.combinations(SYMBOLS, degree):
             chosen = [pools[s] for s in symbols]
             if not all(chosen):
@@ -243,6 +244,8 @@ def assemble_portfolios(all_records):
                 tested += 1
                 if monthly[:12].sum() > 0 and monthly[12:].sum() > 0:
                     both_years += 1
+                    if int((monthly > 0).sum()) == 21:
+                        exactly_21 += 1
                     if np.all(monthly > 0):
                         all_months += 1
                         r = {
@@ -263,7 +266,8 @@ def assemble_portfolios(all_records):
                     best_portfolios = best_portfolios[:8]
         counters[str(degree)] = {
             "tested": tested, "profitable_in_both_years": both_years,
-            "profitable_in_all_22_months": all_months
+            "profitable_in_all_22_months": all_months,
+            "profitable_in_exactly_21_months": exactly_21
         }
         print("V19_PORTFOLIO", degree, json.dumps(counters[str(degree)]), flush=True)
     passes.sort(key=lambda r: (r["min_month_bp"], r["total_bp"]), reverse=True)
@@ -313,6 +317,7 @@ def expand_portfolios(all_records):
             "tested": int(n),
             "profitable_in_both_years": int(positive_year.sum()),
             "profitable_in_all_22_months": int(len(pass_idx)),
+            "profitable_in_exactly_21_months": int((positive_year & (months_positive == 21)).sum()),
             "best_positive_months": int(months_positive.max())
         }
         def as_result(j):
@@ -395,6 +400,7 @@ def main():
             "tested": len(rows),
             "profitable_in_both_years": sum(x["passed_both_years"] for x in rows),
             "profitable_in_all_22_months": sum(x["passed_all_22_months"] for x in rows),
+            "profitable_in_exactly_21_months": sum(x["passed_both_years"] and x["positive_months"] == 21 for x in rows),
             "best_positive_months": max((r["positive_months"] for r in rows), default=0)
         }
         print("V19_SINGLE", symbol, json.dumps(counts[symbol]), flush=True)
@@ -431,12 +437,14 @@ def main():
             "tested": len(recs),
             "profitable_in_both_years": sum(r["passed_both_years"] for r in recs),
             "profitable_in_all_22_months": len(pass_single),
+            "profitable_in_exactly_21_months": sum(r["passed_both_years"] and r["positive_months"] == 21 for r in recs),
         },
         "portfolio_counts_by_leg_count": c,
         "extended_portfolio_counts": extended_counts,
         "extended_portfolio_examples": extended_examples,
         "extended_best_near_misses": extended_best_near_misses,
         "total_pass_all_22": len(pass_single) + len(passing_portfolios) + sum(x["profitable_in_all_22_months"] for x in extended_counts.values()),
+        "total_pass_exactly_21": sum(r["passed_both_years"] and r["positive_months"] == 21 for r in recs) + sum(x["profitable_in_exactly_21_months"] for x in c.values()) + sum(x["profitable_in_exactly_21_months"] for x in extended_counts.values()),
         "best_single_candidates": best_single,
         "best_portfolio_candidates": top_portfolios,
         "passing_single_strategies_file": "passing_single_strategies.json",
@@ -447,7 +455,8 @@ def main():
         "single": report["single_totals"],
         "portfolio": c,
         "extended": extended_counts,
-        "all_22_total": report["total_pass_all_22"]
+        "all_22_total": report["total_pass_all_22"],
+        "exactly_21_new": report["total_pass_exactly_21"]
     }), flush=True)
 
 
