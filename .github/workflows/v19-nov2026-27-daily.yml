@@ -1,0 +1,56 @@
+name: V19 November 2026 daily PnL and win loss days for 27 portfolios
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v19-nov2026-27-daily.yml'
+      - 'scripts/v19_nov2026_27_daily_winloss.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: v19-nov2026-27-daily
+  cancel-in-progress: false
+jobs:
+  daily-statistics:
+    name: Verify exact daily realized profit for 27 survivors
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'numpy>=1.26,<3' 'pandas>=2.2,<3' 'requests>=2.31,<3'
+      - name: Run 27 strategies day by day and verify against November profit report
+        run: python scripts/v19_nov2026_27_daily_winloss.py
+      - name: Validate and commit daily data
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open("results/v19_november_2026/V19_27_nov2026_daily_win_loss_profit.json"))
+          assert d["number_of_portfolios"]==27
+          assert all(x["winning_days"]+x["losing_days"]+x["zero_pnl_days"]==9 for x in d["rows"])
+          assert len(d["daily"])==27*9
+          print("VALIDATED",d["number_of_portfolios"],"portfolios",len(d["daily"]),"daily rows")
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v19_november_2026/V19_27_nov2026_daily_win_loss_profit.json results/v19_november_2026/V19_27_nov2026_daily_win_loss_profit.csv results/v19_november_2026/V19_27_nov2026_daily_pnl_by_exit_utc.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "V19: store 27 surviving strategy daily win loss and mean PnL"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: V19-Nov-2026-27-Daily-Win-Loss
+          path: |
+            results/v19_november_2026/V19_27_nov2026_daily_win_loss_profit.json
+            results/v19_november_2026/V19_27_nov2026_daily_win_loss_profit.csv
+            results/v19_november_2026/V19_27_nov2026_daily_pnl_by_exit_utc.csv
+          if-no-files-found: warn
+          retention-days: 30
