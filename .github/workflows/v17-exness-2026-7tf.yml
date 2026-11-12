@@ -1,0 +1,59 @@
+name: V17 Exness 2026 seven-timeframe dataset
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v17-exness-2026-7tf.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: v17-exness-2026-package
+  cancel-in-progress: false
+jobs:
+  assemble:
+    name: Assemble verified Exness bid/ask M5-M15-M30-H1-H4-D1-W1
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install offline candle aggregation dependencies
+        run: pip install 'pandas>=2.2,<3'
+      - name: Download three successful V12 Exness 2026 run artifacts
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p v17_input
+          for symbol in EURUSD USDJPY GBPUSD; do
+            gh run download 42964857297 -n "Exness-V12-${symbol}-2026-UTC" --dir "v17_input/${symbol}"
+          done
+          find v17_input -name '*_M5_2026_UTC.csv.gz' -print
+          test "$(find v17_input -name '*_M5_2026_UTC.csv.gz' | wc -l)" -eq 3
+      - name: Verify data and assemble all seven UTC periods
+        run: python scripts/v17_exness_prepare.py --input v17_input --out data/v17_exness_2026 --run-id 42964857297
+      - name: Publish persistent research data to GitHub
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/v17_exness_2026/
+          if ! git diff --cached --quiet; then
+            git commit -m "V17: assemble Exness 2026 candles for three forex pairs at seven periods"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo "Dataset already up-to-date"
+          fi
+      - name: Store portable dataset snapshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: V17-Exness-2026-SevenTimeframes
+          path: data/v17_exness_2026/
+          if-no-files-found: warn
+          retention-days: 30
