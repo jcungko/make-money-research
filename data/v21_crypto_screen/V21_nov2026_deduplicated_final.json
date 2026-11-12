@@ -1,0 +1,334 @@
+{
+  "project": "V21",
+  "operation": "deduplicate November-positive frozen 199-portfolio cohort",
+  "source": "data/v21_crypto_screen/V21_nov2026_forward_199.json",
+  "cutoff_utc": "2026-11-12T20:00:00+00:00",
+  "initial_before_nov_filter": 199,
+  "after_excluding_nov_losses": 44,
+  "method": "Two-stage intentional conservative similarity pruning: (1) group exact multiset of 4 (symbol, UTC entry-hour) leg slots; in each group retain the highest November realized bp among methods with strictly positive each 22 historical months and minimum historical monthly bp >=10. (2) for distinct group winners, compare all unique November (symbol, open timestamp UTC, side) events; if at least 70% of smaller event set matches, retain higher November bp representative. November simulations use the original fixed-notional portfolio weights; sample ends 2026-11-12T20:00:00Z.",
+  "minimum_historical_month_bp_preference": 10,
+  "november_event_overlap_threshold": 0.7,
+  "note": "This screen is purposely aggressive, and 70% is a judgement threshold. Nov entry-event overlap is sampled from only 12 days. Historical monthly profitability is in-sample, November not completed; no swap, commissions or stop loss simulations.",
+  "stage1": {
+    "number_groups": 3,
+    "removed": 41,
+    "groups": [
+      {
+        "signature": "BTCUSD|20utc;BTCUSD|20utc;BTCUSD|20utc;ETHUSD|08utc",
+        "group_size": 20,
+        "selected_stage1": "V21-P4-055",
+        "selected_nov_bp": 45.226677,
+        "selected_min22bp": 15.93362,
+        "discarded_at_stage1": 19,
+        "largest_nov_bp_group": 55.407124
+      },
+      {
+        "signature": "BTCUSD|08utc;BTCUSD|20utc;BTCUSD|20utc;BTCUSD|20utc",
+        "group_size": 18,
+        "selected_stage1": "V21-P4-039",
+        "selected_nov_bp": 39.006501,
+        "selected_min22bp": 18.96152,
+        "discarded_at_stage1": 17,
+        "largest_nov_bp_group": 39.006501
+      },
+      {
+        "signature": "BTCUSD|00utc;BTCUSD|08utc;BTCUSD|20utc;BTCUSD|20utc",
+        "group_size": 6,
+        "selected_stage1": "V21-P4-053",
+        "selected_nov_bp": 27.083939,
+        "selected_min22bp": 16.03649,
+        "discarded_at_stage1": 5,
+        "largest_nov_bp_group": 32.039156
+      }
+    ]
+  },
+  "stage2": {
+    "removed": 1,
+    "compared_pairs": [
+      {
+        "a": "V21-P4-055",
+        "b": "V21-P4-039",
+        "unique_november_events_a": 12,
+        "unique_november_events_b": 15,
+        "shared_entry_symbol_side_events": 9,
+        "overlap_smaller_portfolio": 0.75,
+        "shared_exact_bot_legs": [
+          "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+          "BTCUSD|H4|range_top_20|short|H3|20utc"
+        ]
+      },
+      {
+        "a": "V21-P4-055",
+        "b": "V21-P4-053",
+        "unique_november_events_a": 12,
+        "unique_november_events_b": 13,
+        "shared_entry_symbol_side_events": 3,
+        "overlap_smaller_portfolio": 0.25,
+        "shared_exact_bot_legs": [
+          "BTCUSD|H4|range_top_20|short|H3|20utc"
+        ]
+      },
+      {
+        "a": "V21-P4-039",
+        "b": "V21-P4-053",
+        "unique_november_events_a": 15,
+        "unique_november_events_b": 13,
+        "shared_entry_symbol_side_events": 7,
+        "overlap_smaller_portfolio": 0.538462,
+        "shared_exact_bot_legs": [
+          "BTCUSD|M30|prev_red|long|H8|20utc",
+          "BTCUSD|H4|range_top_20|short|H3|20utc"
+        ]
+      }
+    ],
+    "excluded": "V21-P4-039",
+    "retained_in_pair": "V21-P4-055"
+  },
+  "final_remaining": 2,
+  "final_kept": [
+    {
+      "id": "V21-P4-055",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "nov_realized_bp": 45.226677,
+      "nov_closed_trades": 15,
+      "min_prior_22_month_bp": 15.93362,
+      "profit_2025_bp": 1404.89448,
+      "profit_2026_JanOct_bp": 1567.05108
+    },
+    {
+      "id": "V21-P4-053",
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "legs": [
+        "BTCUSD|M30|prev_red|long|H8|20utc",
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "nov_realized_bp": 27.083939,
+      "nov_closed_trades": 13,
+      "min_prior_22_month_bp": 16.03649,
+      "profit_2025_bp": 1191.186,
+      "profit_2026_JanOct_bp": 1688.30422
+    }
+  ],
+  "removed": [
+    {
+      "id": "V21-P4-007",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-011",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-019",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-020",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-027",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-029",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-032",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-033",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-034",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-036",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-039",
+      "reason": "cross_schedule_november_entry_overlap_at_least_70pct",
+      "kept_group_representative": "V21-P4-055",
+      "entry_overlap_smaller_portfolio": 0.75
+    },
+    {
+      "id": "V21-P4-041",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-043",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-047",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-052",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-058",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-059",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-064",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-068",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-074",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-082",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-085",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-088",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-053"
+    },
+    {
+      "id": "V21-P4-089",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-095",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-098",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-053"
+    },
+    {
+      "id": "V21-P4-106",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-109",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-112",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-115",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-119",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-053"
+    },
+    {
+      "id": "V21-P4-120",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-141",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-143",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-158",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-161",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-162",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-165",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-167",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-055"
+    },
+    {
+      "id": "V21-P4-180",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-039"
+    },
+    {
+      "id": "V21-P4-194",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-053"
+    },
+    {
+      "id": "V21-P4-195",
+      "reason": "same_asset_entry_hour_signature",
+      "kept_group_representative": "V21-P4-053"
+    }
+  ],
+  "validated": true
+}
