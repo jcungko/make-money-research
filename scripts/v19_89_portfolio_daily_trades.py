@@ -177,6 +177,10 @@ def main():
             "portfolio": f"V19-{i:03d}",
             "family": item["family"],
             "positive_months": item["profitable_months"],
+            "october_2026_bp": round(float(item["monthly_bp"][21]), 5),
+            "monthly_bp": [round(float(x), 5) for x in item["monthly_bp"]],
+            "profit_2025_bp": round(float(item["profit_2025_bp"]), 5),
+            "profit_2026_bp": round(float(item["profit_2026_bp"]), 5),
             "legs": item["legs"],
             "total_entries": total,
             "entries_2025": totals_2025,
@@ -196,10 +200,32 @@ def main():
             "daily_4_entries": int(np.count_nonzero(total_daily == 4)),
         }
         daily_records.append(r)
-        csv_rows.append({k:v for k,v in r.items() if k != "legs"})
+        csv_rows.append({k:v for k,v in r.items() if k not in ("legs", "monthly_bp")})
     out = args.out
     out.mkdir(exist_ok=True, parents=True)
     pd.DataFrame(csv_rows).to_csv(out / "V19_89_portfolios_trade_frequency.csv", index=False)
+    retained = [r for r in daily_records if r["october_2026_bp"] >= 0]
+    excluded = [r for r in daily_records if r["october_2026_bp"] < 0]
+    zero_month = [r for r in retained if r["october_2026_bp"] == 0]
+    filtered_report = {
+        "criteria": "Keep V19 21+/22 positive-month strategies profitable in both 2025 and 2026 Jan-Oct, excluding those with strictly negative PnL in October 2026",
+        "october_index": 21,
+        "base_candidates": len(daily_records),
+        "removed_negative_october": len(excluded),
+        "retained_nonnegative_october": len(retained),
+        "retained_positive_october": len(retained) - len(zero_month),
+        "retained_zero_october": len(zero_month),
+        "removed": [{"id":r["portfolio"],"october_2026_bp":r["october_2026_bp"]} for r in excluded],
+        "retained": retained,
+    }
+    (out / "V19_89_filtered_oct2026.json").write_text(json.dumps(filtered_report,ensure_ascii=False,indent=2))
+    pd.DataFrame([{k:v for k,v in r.items() if k not in ("legs", "monthly_bp")} for r in retained]).to_csv(out / "V19_filtered_no_loss_oct2026.csv", index=False)
+    print("V19_FILTER_OCT2026", json.dumps({
+        "original":len(daily_records),"removed":len(excluded),"retained":len(retained),
+        "zero":len(zero_month),"positive":len(retained)-len(zero_month),
+        "retained_21_months":sum(r["positive_months"]==21 for r in retained),
+        "retained_22_months":sum(r["positive_months"]==22 for r in retained)
+    }), flush=True)
 
     all_daily_mean = np.asarray([r["mean_per_calendar_day"] for r in daily_records])
     market_mean = np.asarray([r["mean_per_market_open_day"] for r in daily_records])
