@@ -21,7 +21,7 @@ SURVIVOR_CSV=Path('results/v22_oct2026_filter/kept_not_losing_2026_10.csv')
 PATTERN=re.compile(
     r'(?P<symbol>NVDA|AMD|AVGO|XOM|GOOGL) '
     r'(?P<tf>M5|M15|M30|H1|H4) '
-    r'(?P<family>[A-Z0-9_]+) '
+    r'(?P<family>[A-Za-z0-9_]+) '
     r'(?P<orientation>FOLLOW|FADE|LONG_ONLY|SHORT_ONLY) '
     r'(?P<regime>ANY|D1_ALIGN|W1_ALIGN) '
     r'entry_(?P<hour>\d{2}):00_UTC window_(?P<window>\d+)h '
