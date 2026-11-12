@@ -1,0 +1,538 @@
+{
+  "date_filter": "2026-11-01 to 2026-11-12 20:00 UTC",
+  "historical_overlap_sample": "2025-01-01 to 2026-11-01 00:00 UTC (22 months)",
+  "original_44": 44,
+  "excluded_duplicate_same_symbol_hour_side_within_portfolio": 38,
+  "remaining_structurally_distinct": 6,
+  "excluded_near_duplicate_portfolios_sharing_3_of_4_bots": 5,
+  "final_portfolio_count": 1,
+  "final_selected_id": "V21-P4-098",
+  "selection_priority": "Zero duplicated same asset+UTC entry session+direction within portfolio; minimize actual same asset simultaneous entry in historical data; maximize minimum positive month Jan2025-Oct2026; maximize positive Nov2026",
+  "caveats": [
+    "At least one strategy (BTCUSD H4 range_top_20 short H3 20utc) is shared by all 44 starting portfolios",
+    "Opposite-side trades on the same asset may overlap in time; collision and position overlap metrics reported",
+    "One retained portfolio is a single selected configuration; not an independent diversified collection",
+    "No hard stop loss in original 199 method model; swap and broker commissions excluded",
+    "November 2026 period incomplete; not live-deployment validation",
+    "These strategies selected on 2025-2026 historical data; in-sample selection bias"
+  ],
+  "selected_portfolio": {
+    "id": "V21-P4-098",
+    "nov2026_bp": 9.375561,
+    "janoct2026_and_2025_min_month_bp": 9.49472,
+    "month_2025_bp": 1308.52196,
+    "month_2026_janoct_bp": 1793.6322,
+    "nov_closed_trades": 13,
+    "legs": [
+      "BTCUSD|H1|range_top_20|long|H2|08utc",
+      "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+      "BTCUSD|H1|above_sma_50|short|H8|00utc",
+      "BTCUSD|H4|range_top_20|short|H3|20utc"
+    ],
+    "same_asset_same_entry_historical_22mo": 2,
+    "same_asset_same_entry_same_side_historical_22mo": 0,
+    "overlapping_positions_historical_22mo": 173,
+    "leg_count_by_strategy": {
+      "BTCUSD|H1|range_top_20|long|H2|08utc": 169,
+      "BTCUSD|H1|rsi7_below_40|long|H4|20utc": 198,
+      "BTCUSD|H1|above_sma_50|short|H8|00utc": 336,
+      "BTCUSD|H4|range_top_20|short|H3|20utc": 185
+    },
+    "overlap_details": [
+      {
+        "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "leg_b": "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+        "same_entry_utc": 0,
+        "overlapping_position_pairs": 0,
+        "jaccard_same_entry": 0.0
+      },
+      {
+        "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "leg_b": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "same_entry_utc": 0,
+        "overlapping_position_pairs": 0,
+        "jaccard_same_entry": 0.0
+      },
+      {
+        "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "same_entry_utc": 0,
+        "overlapping_position_pairs": 0,
+        "jaccard_same_entry": 0.0
+      },
+      {
+        "leg_a": "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+        "leg_b": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "same_entry_utc": 0,
+        "overlapping_position_pairs": 0,
+        "jaccard_same_entry": 0.0
+      },
+      {
+        "leg_a": "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+        "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "same_entry_utc": 2,
+        "overlapping_position_pairs": 2,
+        "jaccard_same_entry": 0.005249
+      },
+      {
+        "leg_a": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "same_entry_utc": 0,
+        "overlapping_position_pairs": 171,
+        "jaccard_same_entry": 0.0
+      }
+    ]
+  },
+  "six_structurally_distinct_ranked": [
+    {
+      "id": "V21-P4-098",
+      "nov2026_bp": 9.375561,
+      "janoct2026_and_2025_min_month_bp": 9.49472,
+      "month_2025_bp": 1308.52196,
+      "month_2026_janoct_bp": 1793.6322,
+      "nov_closed_trades": 13,
+      "legs": [
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "same_asset_same_entry_historical_22mo": 2,
+      "same_asset_same_entry_same_side_historical_22mo": 0,
+      "overlapping_positions_historical_22mo": 173,
+      "leg_count_by_strategy": {
+        "BTCUSD|H1|range_top_20|long|H2|08utc": 169,
+        "BTCUSD|H1|rsi7_below_40|long|H4|20utc": 198,
+        "BTCUSD|H1|above_sma_50|short|H8|00utc": 336,
+        "BTCUSD|H4|range_top_20|short|H3|20utc": 185
+      },
+      "overlap_details": [
+        {
+          "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "leg_b": "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "leg_b": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+          "leg_b": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 2,
+          "overlapping_position_pairs": 2,
+          "jaccard_same_entry": 0.005249
+        },
+        {
+          "leg_a": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 171,
+          "jaccard_same_entry": 0.0
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-088",
+      "nov2026_bp": 0.87218,
+      "janoct2026_and_2025_min_month_bp": 11.10306,
+      "month_2025_bp": 1317.25574,
+      "month_2026_janoct_bp": 1735.41238,
+      "nov_closed_trades": 12,
+      "legs": [
+        "BTCUSD|H4|range_bottom_5|long|H1|20utc",
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "same_asset_same_entry_historical_22mo": 4,
+      "same_asset_same_entry_same_side_historical_22mo": 0,
+      "overlapping_positions_historical_22mo": 175,
+      "leg_count_by_strategy": {
+        "BTCUSD|H4|range_bottom_5|long|H1|20utc": 194,
+        "BTCUSD|H1|range_top_20|long|H2|08utc": 169,
+        "BTCUSD|H1|above_sma_50|short|H8|00utc": 336,
+        "BTCUSD|H4|range_top_20|short|H3|20utc": 185
+      },
+      "overlap_details": [
+        {
+          "leg_a": "BTCUSD|H4|range_bottom_5|long|H1|20utc",
+          "leg_b": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H4|range_bottom_5|long|H1|20utc",
+          "leg_b": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H4|range_bottom_5|long|H1|20utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 4,
+          "overlapping_position_pairs": 4,
+          "jaccard_same_entry": 0.010667
+        },
+        {
+          "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "leg_b": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 171,
+          "jaccard_same_entry": 0.0
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-119",
+      "nov2026_bp": 7.958474,
+      "janoct2026_and_2025_min_month_bp": 5.98814,
+      "month_2025_bp": 1228.78562,
+      "month_2026_janoct_bp": 1797.92515,
+      "nov_closed_trades": 12,
+      "legs": [
+        "BTCUSD|M30|rsi7_below_40|long|H8|20utc",
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "same_asset_same_entry_historical_22mo": 7,
+      "same_asset_same_entry_same_side_historical_22mo": 0,
+      "overlapping_positions_historical_22mo": 178,
+      "leg_count_by_strategy": {
+        "BTCUSD|M30|rsi7_below_40|long|H8|20utc": 173,
+        "BTCUSD|H1|range_top_20|long|H2|08utc": 169,
+        "BTCUSD|H1|above_sma_50|short|H8|00utc": 336,
+        "BTCUSD|H4|range_top_20|short|H3|20utc": 185
+      },
+      "overlap_details": [
+        {
+          "leg_a": "BTCUSD|M30|rsi7_below_40|long|H8|20utc",
+          "leg_b": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|M30|rsi7_below_40|long|H8|20utc",
+          "leg_b": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|M30|rsi7_below_40|long|H8|20utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 7,
+          "overlapping_position_pairs": 7,
+          "jaccard_same_entry": 0.019943
+        },
+        {
+          "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "leg_b": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 171,
+          "jaccard_same_entry": 0.0
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-194",
+      "nov2026_bp": 17.123028,
+      "janoct2026_and_2025_min_month_bp": 0.23404,
+      "month_2025_bp": 1295.64651,
+      "month_2026_janoct_bp": 1879.22849,
+      "nov_closed_trades": 15,
+      "legs": [
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "same_asset_same_entry_historical_22mo": 25,
+      "same_asset_same_entry_same_side_historical_22mo": 0,
+      "overlapping_positions_historical_22mo": 196,
+      "leg_count_by_strategy": {
+        "BTCUSD|H1|range_top_20|long|H2|08utc": 169,
+        "BTCUSD|H1|above_sma_50|short|H8|00utc": 336,
+        "BTCUSD|H1|below_sma_10|long|H4|20utc": 312,
+        "BTCUSD|H4|range_top_20|short|H3|20utc": 185
+      },
+      "overlap_details": [
+        {
+          "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "leg_b": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "leg_b": "BTCUSD|H1|below_sma_10|long|H4|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "leg_b": "BTCUSD|H1|below_sma_10|long|H4|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 171,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|below_sma_10|long|H4|20utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 25,
+          "overlapping_position_pairs": 25,
+          "jaccard_same_entry": 0.052966
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-195",
+      "nov2026_bp": 32.039156,
+      "janoct2026_and_2025_min_month_bp": 0.23404,
+      "month_2025_bp": 1334.58382,
+      "month_2026_janoct_bp": 1716.03659,
+      "nov_closed_trades": 16,
+      "legs": [
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "same_asset_same_entry_historical_22mo": 31,
+      "same_asset_same_entry_same_side_historical_22mo": 0,
+      "overlapping_positions_historical_22mo": 202,
+      "leg_count_by_strategy": {
+        "BTCUSD|H1|range_top_20|long|H2|08utc": 169,
+        "BTCUSD|H1|above_sma_50|short|H8|00utc": 336,
+        "BTCUSD|M30|ema_below_3_10|long|H8|20utc": 315,
+        "BTCUSD|H4|range_top_20|short|H3|20utc": 185
+      },
+      "overlap_details": [
+        {
+          "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "leg_b": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "leg_b": "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "leg_b": "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 171,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 31,
+          "overlapping_position_pairs": 31,
+          "jaccard_same_entry": 0.066098
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-053",
+      "nov2026_bp": 27.083939,
+      "janoct2026_and_2025_min_month_bp": 16.03649,
+      "month_2025_bp": 1191.186,
+      "month_2026_janoct_bp": 1688.30422,
+      "nov_closed_trades": 13,
+      "legs": [
+        "BTCUSD|M30|prev_red|long|H8|20utc",
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "same_asset_same_entry_historical_22mo": 83,
+      "same_asset_same_entry_same_side_historical_22mo": 0,
+      "overlapping_positions_historical_22mo": 254,
+      "leg_count_by_strategy": {
+        "BTCUSD|M30|prev_red|long|H8|20utc": 325,
+        "BTCUSD|H1|range_top_20|long|H2|08utc": 169,
+        "BTCUSD|H1|above_sma_50|short|H8|00utc": 336,
+        "BTCUSD|H4|range_top_20|short|H3|20utc": 185
+      },
+      "overlap_details": [
+        {
+          "leg_a": "BTCUSD|M30|prev_red|long|H8|20utc",
+          "leg_b": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|M30|prev_red|long|H8|20utc",
+          "leg_b": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|M30|prev_red|long|H8|20utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 83,
+          "overlapping_position_pairs": 83,
+          "jaccard_same_entry": 0.194379
+        },
+        {
+          "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "leg_b": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 0,
+          "jaccard_same_entry": 0.0
+        },
+        {
+          "leg_a": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "leg_b": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "same_entry_utc": 0,
+          "overlapping_position_pairs": 171,
+          "jaccard_same_entry": 0.0
+        }
+      ]
+    }
+  ],
+  "rejected_38_ids": [
+    "V21-P4-120",
+    "V21-P4-055",
+    "V21-P4-115",
+    "V21-P4-039",
+    "V21-P4-027",
+    "V21-P4-041",
+    "V21-P4-047",
+    "V21-P4-082",
+    "V21-P4-141",
+    "V21-P4-052",
+    "V21-P4-143",
+    "V21-P4-161",
+    "V21-P4-158",
+    "V21-P4-029",
+    "V21-P4-043",
+    "V21-P4-058",
+    "V21-P4-085",
+    "V21-P4-007",
+    "V21-P4-033",
+    "V21-P4-064",
+    "V21-P4-095",
+    "V21-P4-165",
+    "V21-P4-034",
+    "V21-P4-036",
+    "V21-P4-032",
+    "V21-P4-011",
+    "V21-P4-106",
+    "V21-P4-167",
+    "V21-P4-089",
+    "V21-P4-059",
+    "V21-P4-019",
+    "V21-P4-020",
+    "V21-P4-074",
+    "V21-P4-162",
+    "V21-P4-068",
+    "V21-P4-112",
+    "V21-P4-180",
+    "V21-P4-109"
+  ],
+  "rejected_5_redundant_ids": [
+    "V21-P4-088",
+    "V21-P4-119",
+    "V21-P4-194",
+    "V21-P4-195",
+    "V21-P4-053"
+  ],
+  "remaining_all_44_legs_overlap_core": "BTCUSD|H4|range_top_20|short|H3|20utc"
+}
