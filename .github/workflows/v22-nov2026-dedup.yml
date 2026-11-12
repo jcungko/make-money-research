@@ -1,0 +1,44 @@
+name: V22 consolidate similar stock trading strategies
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v22-nov2026-dedup.yml'
+      - 'scripts/v22_nov2026_dedup.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  dedup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Research dependencies
+        run: pip install 'numpy>=1.26,<3'
+      - name: Filter correlated same-time same-asset configurations
+        run: python -u scripts/v22_nov2026_dedup.py
+      - name: Export audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: V22-Nov2026-Deduped-Strategies
+          path: results/v22_nov2026_deduplicated/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit final lists
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v22_nov2026_deduplicated/
+          if ! git diff --cached --quiet; then
+            git commit -m "V22: publish retained unique strategies and duplicates audit"
+            for n in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && exit 0
+              sleep "$((n * 3))"
+            done
+            exit 1
+          fi
