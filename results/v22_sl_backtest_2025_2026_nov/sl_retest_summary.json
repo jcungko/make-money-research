@@ -1,0 +1,245 @@
+{
+  "version": "V22-MANDATORY-SL-CFD-REPLAY",
+  "as_of_utc": "2026-11-12T19:55:00Z",
+  "as_of_vietnam": "2026-11-13 02:55 UTC+07",
+  "data_november_incomplete": true,
+  "original_qualified_276": 276,
+  "unique_ea_configurations": 79,
+  "passed_all": 3,
+  "eliminated": 273,
+  "sl_definition": {
+    "trigger": "Long stop if M5 bid_low <= price; short stop if M5 ask_high >= price",
+    "stop_at_entry": "entry Ask for long; entry Bid for short, minus/plus ATR-derived price distance",
+    "atr": "14 candle SMA true range on entry timeframe shifted one complete bar",
+    "atr_multiplier": 1.5,
+    "min_stop_pct": 0.3,
+    "max_stop_pct": 2.0,
+    "warmup_default_pct": 1.0,
+    "entry_model": "Ask open for long, Bid open for short, first eligible trade per day",
+    "stop_slippage": "on 5min gap over stop fill at worse 5min open; otherwise quoted stop price",
+    "standard_cost": "observed bid/ask plus 2 bps roundtrip assumed extra slippage",
+    "trade_duration": "original time-based exit used unless SL triggered sooner",
+    "caution": "M5 high/low interpolation, cannot guarantee real gap/stop fill in live execution; no fees/commissions"
+  },
+  "preserved_filters": [
+    "2025 total pnl >0",
+    "Jan-Oct2026 total pnl >0",
+    "at least 17 of 22 profitable historical months",
+    "October 2026 pnl >0",
+    "November 2026-to-date pnl >0",
+    "November >1 closed trades across EA components",
+    "November strictly more net-positive trades than net-negative trades"
+  ],
+  "counts_by_type": {
+    "single": {
+      "before": 1,
+      "passed": 0,
+      "removed": 1
+    },
+    "pair": {
+      "before": 25,
+      "passed": 2,
+      "removed": 23
+    },
+    "triple": {
+      "before": 92,
+      "passed": 0,
+      "removed": 92
+    },
+    "quad": {
+      "before": 109,
+      "passed": 1,
+      "removed": 108
+    },
+    "quint": {
+      "before": 49,
+      "passed": 0,
+      "removed": 49
+    }
+  },
+  "counts_by_sl_positive_months": {
+    "17": 3,
+    "18": 0,
+    "19": 0,
+    "20": 0,
+    "21": 0,
+    "22": 0
+  },
+  "failure_reasons": {
+    "2025_nonprofitable": 90,
+    "2026_JanOct_nonprofitable": 24,
+    "under_17_of_22_profitable_months": 271,
+    "Oct2026_nonprofitable": 102,
+    "Nov2026_win_count_not_above_loss_count": 157,
+    "Nov2026_to_date_nonprofitable": 82
+  },
+  "november_trades_in_survivors": 44,
+  "november_stops_in_survivors": 12,
+  "all_nov_stop_hits_across_276": 2048,
+  "max_baseline_reproduction_error_bps": {
+    "pnl_2025": 6e-05,
+    "pnl_2026": 5.8e-05,
+    "oct": 5e-05,
+    "nov": 0.0
+  },
+  "top_survivors_by_nov_profit": [
+    {
+      "id": "V22-K0549",
+      "category": "pair",
+      "symbols": "AVGO+GOOGL",
+      "sl_profitable_months_22": 17,
+      "sl_2025_bps": 869.684143,
+      "sl_2026_JanOct_bps": 355.579768,
+      "sl_oct2026_bps": 28.399902,
+      "sl_nov2026_to_date_bps": 368.822218,
+      "sl_nov_trades": 8,
+      "sl_nov_wins": 7,
+      "sl_nov_losses": 1,
+      "sl_nov_win_rate_pct": 87.5,
+      "sl_nov_hit_count": 1,
+      "sl_historical_hit_count": 112,
+      "components": "AVGO M15 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | GOOGL H1 MOMENTUM_32 FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
+    },
+    {
+      "id": "V22-K1736",
+      "category": "quad",
+      "symbols": "NVDA+AMD+AVGO+GOOGL",
+      "sl_profitable_months_22": 17,
+      "sl_2025_bps": 235.564924,
+      "sl_2026_JanOct_bps": 974.470726,
+      "sl_oct2026_bps": 120.528102,
+      "sl_nov2026_to_date_bps": 280.934584,
+      "sl_nov_trades": 24,
+      "sl_nov_wins": 13,
+      "sl_nov_losses": 11,
+      "sl_nov_win_rate_pct": 54.167,
+      "sl_nov_hit_count": 10,
+      "sl_historical_hit_count": 522,
+      "components": "NVDA M5 SMA_16 FADE ANY entry_15:00_UTC window_2h hold_240min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 ZSCORE_32_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | GOOGL M5 DAILY_PREVIOUS FADE W1_ALIGN entry_17:00_UTC window_2h hold_120min"
+    },
+    {
+      "id": "V22-K0722",
+      "category": "pair",
+      "symbols": "AVGO+XOM",
+      "sl_profitable_months_22": 17,
+      "sl_2025_bps": 421.500309,
+      "sl_2026_JanOct_bps": 588.644888,
+      "sl_oct2026_bps": 48.30781,
+      "sl_nov2026_to_date_bps": 122.575813,
+      "sl_nov_trades": 12,
+      "sl_nov_wins": 7,
+      "sl_nov_losses": 5,
+      "sl_nov_win_rate_pct": 58.333,
+      "sl_nov_hit_count": 1,
+      "sl_historical_hit_count": 97,
+      "components": "AVGO H1 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | XOM H1 MOMENTUM_2 LONG_ONLY ANY entry_14:00_UTC window_2h hold_240min"
+    }
+  ],
+  "top_survivors_by_nov_trades": [
+    {
+      "id": "V22-K1736",
+      "category": "quad",
+      "symbols": "NVDA+AMD+AVGO+GOOGL",
+      "sl_profitable_months_22": 17,
+      "sl_2025_bps": 235.564924,
+      "sl_2026_JanOct_bps": 974.470726,
+      "sl_oct2026_bps": 120.528102,
+      "sl_nov2026_to_date_bps": 280.934584,
+      "sl_nov_trades": 24,
+      "sl_nov_wins": 13,
+      "sl_nov_losses": 11,
+      "sl_nov_win_rate_pct": 54.167,
+      "sl_nov_hit_count": 10,
+      "sl_historical_hit_count": 522,
+      "components": "NVDA M5 SMA_16 FADE ANY entry_15:00_UTC window_2h hold_240min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 ZSCORE_32_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | GOOGL M5 DAILY_PREVIOUS FADE W1_ALIGN entry_17:00_UTC window_2h hold_120min"
+    },
+    {
+      "id": "V22-K0722",
+      "category": "pair",
+      "symbols": "AVGO+XOM",
+      "sl_profitable_months_22": 17,
+      "sl_2025_bps": 421.500309,
+      "sl_2026_JanOct_bps": 588.644888,
+      "sl_oct2026_bps": 48.30781,
+      "sl_nov2026_to_date_bps": 122.575813,
+      "sl_nov_trades": 12,
+      "sl_nov_wins": 7,
+      "sl_nov_losses": 5,
+      "sl_nov_win_rate_pct": 58.333,
+      "sl_nov_hit_count": 1,
+      "sl_historical_hit_count": 97,
+      "components": "AVGO H1 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | XOM H1 MOMENTUM_2 LONG_ONLY ANY entry_14:00_UTC window_2h hold_240min"
+    },
+    {
+      "id": "V22-K0549",
+      "category": "pair",
+      "symbols": "AVGO+GOOGL",
+      "sl_profitable_months_22": 17,
+      "sl_2025_bps": 869.684143,
+      "sl_2026_JanOct_bps": 355.579768,
+      "sl_oct2026_bps": 28.399902,
+      "sl_nov2026_to_date_bps": 368.822218,
+      "sl_nov_trades": 8,
+      "sl_nov_wins": 7,
+      "sl_nov_losses": 1,
+      "sl_nov_win_rate_pct": 87.5,
+      "sl_nov_hit_count": 1,
+      "sl_historical_hit_count": 112,
+      "components": "AVGO M15 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | GOOGL H1 MOMENTUM_32 FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
+    }
+  ],
+  "top_survivors_by_historical_months": [
+    {
+      "id": "V22-K0549",
+      "category": "pair",
+      "symbols": "AVGO+GOOGL",
+      "sl_profitable_months_22": 17,
+      "sl_2025_bps": 869.684143,
+      "sl_2026_JanOct_bps": 355.579768,
+      "sl_oct2026_bps": 28.399902,
+      "sl_nov2026_to_date_bps": 368.822218,
+      "sl_nov_trades": 8,
+      "sl_nov_wins": 7,
+      "sl_nov_losses": 1,
+      "sl_nov_win_rate_pct": 87.5,
+      "sl_nov_hit_count": 1,
+      "sl_historical_hit_count": 112,
+      "components": "AVGO M15 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | GOOGL H1 MOMENTUM_32 FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
+    },
+    {
+      "id": "V22-K1736",
+      "category": "quad",
+      "symbols": "NVDA+AMD+AVGO+GOOGL",
+      "sl_profitable_months_22": 17,
+      "sl_2025_bps": 235.564924,
+      "sl_2026_JanOct_bps": 974.470726,
+      "sl_oct2026_bps": 120.528102,
+      "sl_nov2026_to_date_bps": 280.934584,
+      "sl_nov_trades": 24,
+      "sl_nov_wins": 13,
+      "sl_nov_losses": 11,
+      "sl_nov_win_rate_pct": 54.167,
+      "sl_nov_hit_count": 10,
+      "sl_historical_hit_count": 522,
+      "components": "NVDA M5 SMA_16 FADE ANY entry_15:00_UTC window_2h hold_240min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 ZSCORE_32_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | GOOGL M5 DAILY_PREVIOUS FADE W1_ALIGN entry_17:00_UTC window_2h hold_120min"
+    },
+    {
+      "id": "V22-K0722",
+      "category": "pair",
+      "symbols": "AVGO+XOM",
+      "sl_profitable_months_22": 17,
+      "sl_2025_bps": 421.500309,
+      "sl_2026_JanOct_bps": 588.644888,
+      "sl_oct2026_bps": 48.30781,
+      "sl_nov2026_to_date_bps": 122.575813,
+      "sl_nov_trades": 12,
+      "sl_nov_wins": 7,
+      "sl_nov_losses": 5,
+      "sl_nov_win_rate_pct": 58.333,
+      "sl_nov_hit_count": 1,
+      "sl_historical_hit_count": 97,
+      "components": "AVGO H1 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | XOM H1 MOMENTUM_2 LONG_ONLY ANY entry_14:00_UTC window_2h hold_240min"
+    }
+  ],
+  "created_at_utc": "2026-11-12T21:34:17.556217+00:00"
+}
