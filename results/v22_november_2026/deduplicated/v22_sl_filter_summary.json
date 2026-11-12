@@ -1,0 +1,14 @@
+{
+  "version": "V22-SL-FILTER",
+  "filter": "Require an explicit broker-side stop-loss price or risk distance on every EA order",
+  "checked_original_strategy_count": 14,
+  "removed_without_explicit_SL": 14,
+  "kept_with_explicit_SL": 0,
+  "reason": "The 2025-2026 screen and November replay use time-based exits (hold_bars/hold_minutes), and none of the 14 component configs or replay logic has a protective stop-loss price. Simulated time-based exits are not broker-side protective stops.",
+  "source_selection": "results/v22_november_2026/deduplicated/v22_unique_strategies.csv",
+  "validation_sources": [
+    "scripts/v22_strategy_screen.py",
+    "scripts/v22_november_replay_682.py"
+  ],
+  "next_step": "To create SL-protected methods, design explicit SL levels and rerun 2025-2026+Nov2026 tick backtests. Historical profits without SL cannot be transferred to SL-protected variants."
+}
