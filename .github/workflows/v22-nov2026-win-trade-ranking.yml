@@ -1,0 +1,45 @@
+name: V22 November win/loss and profit/trade rankings
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v22-nov2026-win-trade-ranking.yml'
+      - 'scripts/v22_nov2026_win_trade_ranking.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  rank:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install offline quantitative research dependencies
+        run: pip install 'pandas>=2.2,<3' 'numpy>=1.26,<3' 'requests>=2.31'
+      - name: Replay November closed EA trades and rank 308 independent configurations
+        run: python -u scripts/v22_nov2026_win_trade_ranking.py
+      - name: Export trade statistics and rankings
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: V22-Nov-2026-Win-Loss-Rankings
+          path: results/v22_nov2026_win_trade_ranking/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit complete trade statistics and top rankings
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v22_nov2026_win_trade_ranking/
+          if ! git diff --cached --quiet; then
+            git commit -m "V22: auditable November win-loss and top profit/trade rankings"
+            for n in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && exit 0
+              sleep "$((n * 3))"
+            done
+            exit 1
+          fi
