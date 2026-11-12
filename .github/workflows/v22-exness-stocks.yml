@@ -1,0 +1,70 @@
+name: V22 Exness public stocks 2025-2026 seven-timeframe dataset
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v22-exness-stocks.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: v22-exness-stocks-dataset
+  cancel-in-progress: false
+jobs:
+  collect:
+    name: "${{ matrix.symbol }} / ${{ matrix.year }}"
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        symbol: [NVDA, NIO, AMD, AVGO, SPCX, XPEV, LI, XOM, GOOGL]
+        year: [2025, 2026]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install read-only data-processing dependencies
+        run: pip install 'pandas>=2.2,<3' 'requests>=2.31,<3'
+      - name: Retrieve Exness ticks and aggregate M5-M15-M30-H1-H4-D1-W1
+        run: python scripts/v22_exness_stocks.py --symbol "${{ matrix.symbol }}" --year "${{ matrix.year }}" --out "v22_results/${{ matrix.year }}/${{ matrix.symbol }}"
+      - name: Preserve each symbol-year result even if coverage is partial
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: "V22-${{ matrix.symbol }}-${{ matrix.year }}"
+          path: v22_results/
+          if-no-files-found: warn
+          retention-days: 30
+  publish:
+    name: Publish V22 durable audit and datasets
+    if: always()
+    needs: [collect]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect results from all symbol/year jobs
+        uses: actions/download-artifact@v4
+        with:
+          pattern: V22-*
+          path: data/v22_exness/
+          merge-multiple: true
+      - name: Commit archives and verification manifests
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/v22_exness/
+          if ! git diff --cached --quiet; then
+            git commit -m "V22: public Exness 2025-2026 stock candle archives and coverage"
+            for n in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && exit 0
+              sleep "$((n * 3))"
+            done
+            echo "Publication failed after retries" >&2
+            exit 1
+          fi
