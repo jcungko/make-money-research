@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/v17-strategy-census.yml'
+      - 'scripts/v17_strategy_screen.py'
   workflow_dispatch:
 permissions:
   contents: write
