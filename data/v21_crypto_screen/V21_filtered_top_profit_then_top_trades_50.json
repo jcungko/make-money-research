@@ -1,0 +1,3104 @@
+{
+  "summary": {
+    "scope": "V21 backtest Exness BTCUSD ETHUSD 2025-01 through 2026-10",
+    "rules": "Sequential top-half filter; odd input size keep ceil(n/2). Stage1 rank by cumulative modeled portfolio BP; stage2 rank survivors by sum of 4 independent bot trade counts across 22 months. Tie stage1 min_month_bp; tie stage2 total_bp; then ID.",
+    "costs": "Historical Bid/Ask spread + 1bp slippage each side; excludes overnight swaps, commission and live execution costs.",
+    "profit_units": "sum of monthly portfolio basis points on fixed notional; no compounding",
+    "initial": 199,
+    "removed_low_profit": 99,
+    "after_profit": 100,
+    "removed_low_trades": 50,
+    "final": 50,
+    "initial_profit_cutoff_bp": 3172.32118,
+    "final_min_trade_count": 888,
+    "compositions": {
+      "4 BTCUSD + 0 ETHUSD": 13,
+      "3 BTCUSD + 1 ETHUSD": 31,
+      "2 BTCUSD + 2 ETHUSD": 6
+    },
+    "profit_range_bp": [
+      3019.84302,
+      4549.78962
+    ],
+    "trade_count_range": [
+      888,
+      1163
+    ],
+    "best_profit": [
+      {
+        "id": "V21-P4-170",
+        "total_bp": 4549.78962,
+        "total_trades": 983,
+        "oct_2026_bp": 105.18848,
+        "composition": "3 BTCUSD + 1 ETHUSD"
+      },
+      {
+        "id": "V21-P4-171",
+        "total_bp": 4536.11018,
+        "total_trades": 989,
+        "oct_2026_bp": 91.81103,
+        "composition": "3 BTCUSD + 1 ETHUSD"
+      },
+      {
+        "id": "V21-P4-107",
+        "total_bp": 4458.13089,
+        "total_trades": 1128,
+        "oct_2026_bp": 149.83621,
+        "composition": "3 BTCUSD + 1 ETHUSD"
+      },
+      {
+        "id": "V21-P4-108",
+        "total_bp": 4444.45145,
+        "total_trades": 1134,
+        "oct_2026_bp": 136.45876,
+        "composition": "3 BTCUSD + 1 ETHUSD"
+      },
+      {
+        "id": "V21-P4-044",
+        "total_bp": 4283.72092,
+        "total_trades": 1144,
+        "oct_2026_bp": 62.30873,
+        "composition": "3 BTCUSD + 1 ETHUSD"
+      }
+    ],
+    "best_trades": [
+      {
+        "id": "V21-P4-077",
+        "total_bp": 3258.79784,
+        "total_trades": 1163,
+        "oct_2026_bp": 101.08496,
+        "composition": "4 BTCUSD + 0 ETHUSD"
+      },
+      {
+        "id": "V21-P4-093",
+        "total_bp": 3266.83309,
+        "total_trades": 1162,
+        "oct_2026_bp": 133.97082,
+        "composition": "4 BTCUSD + 0 ETHUSD"
+      },
+      {
+        "id": "V21-P4-045",
+        "total_bp": 4270.04148,
+        "total_trades": 1150,
+        "oct_2026_bp": 48.93128,
+        "composition": "3 BTCUSD + 1 ETHUSD"
+      },
+      {
+        "id": "V21-P4-047",
+        "total_bp": 3028.91909,
+        "total_trades": 1145,
+        "oct_2026_bp": 89.32713,
+        "composition": "3 BTCUSD + 1 ETHUSD"
+      },
+      {
+        "id": "V21-P4-044",
+        "total_bp": 4283.72092,
+        "total_trades": 1144,
+        "oct_2026_bp": 62.30873,
+        "composition": "3 BTCUSD + 1 ETHUSD"
+      }
+    ]
+  },
+  "portfolios": [
+    {
+      "id": "V21-P4-077",
+      "bot_count": 4,
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|above_sma_10|short|H3|20utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1571.34342,
+      "profit_2026_JanOct_bp": 1687.45442,
+      "min_month_bp": 13.05525,
+      "total_bp": 3258.79784,
+      "monthly_bp": [
+        239.56194,
+        149.83744,
+        42.21224,
+        117.74101,
+        44.16591,
+        13.05525,
+        198.61848,
+        155.94039,
+        61.59226,
+        39.45491,
+        147.23219,
+        361.9314,
+        67.81258,
+        117.44043,
+        104.14695,
+        353.65731,
+        19.64669,
+        383.64263,
+        266.32716,
+        26.3204,
+        247.37531,
+        101.08496
+      ],
+      "total_trades": 1163,
+      "mean_trades_per_month": 52.864,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+          "trades": 343
+        },
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+          "trades": 322
+        },
+        {
+          "id": "BTCUSD|H4|above_sma_10|short|H3|20utc",
+          "trades": 331
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-093",
+      "bot_count": 4,
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|above_sma_20|short|H3|20utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1603.91267,
+      "profit_2026_JanOct_bp": 1662.92042,
+      "min_month_bp": 10.61605,
+      "total_bp": 3266.83309,
+      "monthly_bp": [
+        261.1694,
+        149.83744,
+        65.12542,
+        10.61605,
+        20.29218,
+        87.73187,
+        226.16463,
+        152.16891,
+        72.82738,
+        41.18021,
+        180.09429,
+        336.70488,
+        45.4706,
+        71.01402,
+        120.30051,
+        275.64502,
+        29.97449,
+        388.6262,
+        320.9946,
+        12.00351,
+        264.92065,
+        133.97082
+      ],
+      "total_trades": 1162,
+      "mean_trades_per_month": 52.818,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+          "trades": 343
+        },
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+          "trades": 322
+        },
+        {
+          "id": "BTCUSD|H4|above_sma_20|short|H3|20utc",
+          "trades": 330
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-045",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|ema_below_5_20|long|H2|20utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 2510.91023,
+      "profit_2026_JanOct_bp": 1759.13125,
+      "min_month_bp": 17.36921,
+      "total_bp": 4270.04148,
+      "monthly_bp": [
+        63.39048,
+        87.54181,
+        417.11377,
+        287.47074,
+        119.46463,
+        172.37511,
+        227.45222,
+        347.22928,
+        148.18175,
+        37.78214,
+        565.25198,
+        37.6563,
+        191.8538,
+        361.06115,
+        311.57418,
+        327.9303,
+        65.94913,
+        203.8869,
+        97.98064,
+        17.36921,
+        132.59465,
+        48.93128
+      ],
+      "total_trades": 1150,
+      "mean_trades_per_month": 52.273,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|ema_below_5_20|long|H2|20utc",
+          "trades": 328
+        },
+        {
+          "id": "BTCUSD|H1|below_sma_10|long|H4|20utc",
+          "trades": 312
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|M30|above_sma_20|long|H8|16utc",
+          "trades": 325
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-047",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|below_sma_20|long|H4|20utc",
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1423.16736,
+      "profit_2026_JanOct_bp": 1605.75173,
+      "min_month_bp": 17.03521,
+      "total_bp": 3028.91909,
+      "monthly_bp": [
+        94.94623,
+        141.39463,
+        197.80329,
+        104.9311,
+        161.35977,
+        153.41358,
+        61.75408,
+        98.50759,
+        17.03521,
+        41.5748,
+        188.41801,
+        162.02907,
+        114.10916,
+        32.7741,
+        226.42801,
+        128.14376,
+        26.01164,
+        486.21694,
+        205.34924,
+        139.78712,
+        157.60464,
+        89.32713
+      ],
+      "total_trades": 1145,
+      "mean_trades_per_month": 52.045,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|below_sma_20|long|H4|20utc",
+          "trades": 328
+        },
+        {
+          "id": "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+          "trades": 322
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-044",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|ema_below_5_20|long|H2|20utc",
+        "BTCUSD|M30|below_sma_20|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 2520.10515,
+      "profit_2026_JanOct_bp": 1763.61577,
+      "min_month_bp": 17.36921,
+      "total_bp": 4283.72092,
+      "monthly_bp": [
+        60.34863,
+        78.78752,
+        420.16728,
+        287.47074,
+        147.56143,
+        148.70286,
+        213.22624,
+        347.22928,
+        170.22644,
+        37.78214,
+        570.9463,
+        37.6563,
+        191.8538,
+        361.06115,
+        311.57418,
+        314.25672,
+        65.94913,
+        215.98351,
+        97.98064,
+        17.36921,
+        125.27869,
+        62.30873
+      ],
+      "total_trades": 1144,
+      "mean_trades_per_month": 52,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|ema_below_5_20|long|H2|20utc",
+          "trades": 328
+        },
+        {
+          "id": "BTCUSD|M30|below_sma_20|long|H8|20utc",
+          "trades": 306
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|M30|above_sma_20|long|H8|16utc",
+          "trades": 325
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-087",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H4|momentum_down_3|long|H1|20utc",
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1393.17614,
+      "profit_2026_JanOct_bp": 1630.66786,
+      "min_month_bp": 11.30152,
+      "total_bp": 3023.844,
+      "monthly_bp": [
+        39.80305,
+        179.9933,
+        194.74979,
+        109.64644,
+        154.06405,
+        139.82328,
+        69.73761,
+        98.50759,
+        11.30152,
+        48.58023,
+        165.76248,
+        181.20682,
+        115.92081,
+        51.77024,
+        208.96823,
+        130.24986,
+        14.54218,
+        520.95624,
+        216.78795,
+        153.12608,
+        133.93593,
+        84.41034
+      ],
+      "total_trades": 1140,
+      "mean_trades_per_month": 51.818,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H4|momentum_down_3|long|H1|20utc",
+          "trades": 323
+        },
+        {
+          "id": "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+          "trades": 322
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-108",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|above_sma_20|short|H2|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 2899.43619,
+      "profit_2026_JanOct_bp": 1545.01526,
+      "min_month_bp": 8.09503,
+      "total_bp": 4444.45145,
+      "monthly_bp": [
+        307.44094,
+        66.04556,
+        408.14308,
+        160.72084,
+        41.67854,
+        142.67951,
+        465.03085,
+        368.92454,
+        120.99977,
+        37.81839,
+        647.90227,
+        132.05189,
+        129.87167,
+        318.87866,
+        217.74478,
+        325.22778,
+        8.09503,
+        99.84044,
+        176.78947,
+        9.77424,
+        122.33442,
+        136.45876
+      ],
+      "total_trades": 1134,
+      "mean_trades_per_month": 51.545,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|H1|below_sma_10|long|H4|20utc",
+          "trades": 312
+        },
+        {
+          "id": "BTCUSD|H4|above_sma_20|short|H2|20utc",
+          "trades": 330
+        },
+        {
+          "id": "ETHUSD|M30|above_sma_20|long|H8|16utc",
+          "trades": 325
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-041",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1365.95717,
+      "profit_2026_JanOct_bp": 1730.24299,
+      "min_month_bp": 18.5644,
+      "total_bp": 3096.20017,
+      "monthly_bp": [
+        59.0342,
+        153.62393,
+        181.2069,
+        117.55604,
+        165.7002,
+        144.04232,
+        68.37401,
+        99.22796,
+        18.5644,
+        28.4067,
+        145.03193,
+        185.18861,
+        114.10916,
+        53.60597,
+        241.7698,
+        142.77851,
+        20.21885,
+        491.59893,
+        223.14719,
+        191.35887,
+        142.41715,
+        109.23855
+      ],
+      "total_trades": 1129,
+      "mean_trades_per_month": 51.318,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+          "trades": 322
+        },
+        {
+          "id": "BTCUSD|H1|below_sma_10|long|H4|20utc",
+          "trades": 312
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-107",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|M30|below_sma_20|long|H8|20utc",
+        "BTCUSD|H4|above_sma_20|short|H2|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 2908.63112,
+      "profit_2026_JanOct_bp": 1549.49977,
+      "min_month_bp": 8.09503,
+      "total_bp": 4458.13089,
+      "monthly_bp": [
+        304.39909,
+        57.29127,
+        411.19659,
+        160.72084,
+        69.77533,
+        119.00725,
+        450.80486,
+        368.92454,
+        143.04446,
+        37.81839,
+        653.59659,
+        132.05189,
+        129.87167,
+        318.87866,
+        217.74478,
+        311.5542,
+        8.09503,
+        111.93704,
+        176.78947,
+        9.77424,
+        115.01846,
+        149.83621
+      ],
+      "total_trades": 1128,
+      "mean_trades_per_month": 51.273,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|M30|below_sma_20|long|H8|20utc",
+          "trades": 306
+        },
+        {
+          "id": "BTCUSD|H4|above_sma_20|short|H2|20utc",
+          "trades": 330
+        },
+        {
+          "id": "ETHUSD|M30|above_sma_20|long|H8|16utc",
+          "trades": 325
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-089",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|M30|prev_red|long|H8|20utc",
+        "BTCUSD|M30|below_sma_20|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1504.23149,
+      "profit_2026_JanOct_bp": 1571.97049,
+      "min_month_bp": 10.99127,
+      "total_bp": 3076.20199,
+      "monthly_bp": [
+        178.32394,
+        77.31813,
+        70.40362,
+        113.4939,
+        275.66316,
+        131.98295,
+        62.26968,
+        89.24391,
+        10.99127,
+        101.67641,
+        274.38209,
+        118.48243,
+        64.77971,
+        62.65668,
+        102.44383,
+        166.63733,
+        11.89751,
+        366.64981,
+        247.28691,
+        188.14955,
+        140.10365,
+        221.36552
+      ],
+      "total_trades": 1126,
+      "mean_trades_per_month": 51.182,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|M30|prev_red|long|H8|20utc",
+          "trades": 325
+        },
+        {
+          "id": "BTCUSD|M30|below_sma_20|long|H8|20utc",
+          "trades": 306
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-030",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|M30|below_sma_20|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1375.1521,
+      "profit_2026_JanOct_bp": 1734.72751,
+      "min_month_bp": 20.21885,
+      "total_bp": 3109.87961,
+      "monthly_bp": [
+        55.99234,
+        144.86964,
+        184.2604,
+        117.55604,
+        193.797,
+        120.37006,
+        54.14803,
+        99.22796,
+        40.60909,
+        28.4067,
+        150.72624,
+        185.18861,
+        114.10916,
+        53.60597,
+        241.7698,
+        129.10493,
+        20.21885,
+        503.69553,
+        223.14719,
+        191.35887,
+        135.10119,
+        122.61599
+      ],
+      "total_trades": 1123,
+      "mean_trades_per_month": 51.045,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+          "trades": 322
+        },
+        {
+          "id": "BTCUSD|M30|below_sma_20|long|H8|20utc",
+          "trades": 306
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-198",
+      "bot_count": 4,
+      "composition": "2 BTCUSD + 2 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 2780.17386,
+      "profit_2026_JanOct_bp": 1343.09589,
+      "min_month_bp": 0.0423,
+      "total_bp": 4123.26975,
+      "monthly_bp": [
+        88.68991,
+        128.98222,
+        443.97035,
+        127.7492,
+        287.54881,
+        138.85889,
+        405.99694,
+        459.41316,
+        6.35681,
+        32.57574,
+        608.26504,
+        51.76679,
+        137.4862,
+        100.07641,
+        226.85932,
+        285.78681,
+        9.279,
+        130.86428,
+        200.34864,
+        243.90058,
+        8.45234,
+        0.0423
+      ],
+      "total_trades": 1114,
+      "mean_trades_per_month": 50.636,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|H1|below_sma_10|long|H4|20utc",
+          "trades": 312
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        },
+        {
+          "id": "ETHUSD|M30|above_sma_20|long|H8|16utc",
+          "trades": 325
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-181",
+      "bot_count": 4,
+      "composition": "2 BTCUSD + 2 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|M30|below_sma_20|long|H8|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 2789.36879,
+      "profit_2026_JanOct_bp": 1347.5804,
+      "min_month_bp": 1.13638,
+      "total_bp": 4136.94919,
+      "monthly_bp": [
+        85.64805,
+        120.22793,
+        447.02386,
+        127.7492,
+        315.6456,
+        115.18663,
+        391.77096,
+        459.41316,
+        28.4015,
+        32.57574,
+        613.95935,
+        51.76679,
+        137.4862,
+        100.07641,
+        226.85932,
+        272.11323,
+        9.279,
+        142.96089,
+        200.34864,
+        243.90058,
+        1.13638,
+        13.41975
+      ],
+      "total_trades": 1108,
+      "mean_trades_per_month": 50.364,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|M30|below_sma_20|long|H8|20utc",
+          "trades": 306
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        },
+        {
+          "id": "ETHUSD|M30|above_sma_20|long|H8|16utc",
+          "trades": 325
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-183",
+      "bot_count": 4,
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|ema_below_5_20|long|H2|20utc",
+        "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1445.49535,
+      "profit_2026_JanOct_bp": 1615.43795,
+      "min_month_bp": 0.90594,
+      "total_bp": 3060.9333,
+      "monthly_bp": [
+        153.94692,
+        93.42064,
+        148.16711,
+        108.93503,
+        125.74731,
+        118.52408,
+        18.66801,
+        55.21436,
+        79.86424,
+        52.67767,
+        210.30656,
+        280.02341,
+        103.34932,
+        128.28769,
+        159.18483,
+        235.8739,
+        0.90594,
+        461.3253,
+        122.9781,
+        29.79043,
+        223.90221,
+        149.84024
+      ],
+      "total_trades": 1054,
+      "mean_trades_per_month": 47.909,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+          "trades": 343
+        },
+        {
+          "id": "BTCUSD|H1|ema_below_5_20|long|H2|20utc",
+          "trades": 328
+        },
+        {
+          "id": "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+          "trades": 198
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-126",
+      "bot_count": 4,
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|below_sma_20|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1408.79756,
+      "profit_2026_JanOct_bp": 1611.04546,
+      "min_month_bp": 5.44335,
+      "total_bp": 3019.84302,
+      "monthly_bp": [
+        147.37447,
+        142.3212,
+        179.97427,
+        67.05104,
+        134.23698,
+        162.02557,
+        5.45417,
+        63.48265,
+        71.94532,
+        5.44335,
+        199.82523,
+        229.66332,
+        77.38162,
+        153.76863,
+        182.49404,
+        200.43717,
+        24.65237,
+        426.72458,
+        98.12301,
+        17.04924,
+        303.11975,
+        127.29503
+      ],
+      "total_trades": 1023,
+      "mean_trades_per_month": 46.5,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+          "trades": 343
+        },
+        {
+          "id": "BTCUSD|H1|below_sma_20|long|H4|20utc",
+          "trades": 328
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-199",
+      "bot_count": 4,
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "legs": [
+        "BTCUSD|M30|prev_red|long|H8|20utc",
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|rsi7_below_40|long|H2|20utc",
+        "BTCUSD|H4|above_sma_20|short|H3|20utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1366.83693,
+      "profit_2026_JanOct_bp": 1659.03694,
+      "min_month_bp": 0.01948,
+      "total_bp": 3025.87387,
+      "monthly_bp": [
+        349.47697,
+        146.37226,
+        0.01948,
+        93.44498,
+        27.93189,
+        18.14408,
+        219.70852,
+        51.31512,
+        52.28356,
+        100.82097,
+        176.0593,
+        131.25979,
+        139.20588,
+        95.17159,
+        50.19146,
+        215.5334,
+        17.14189,
+        370.43471,
+        271.41766,
+        51.9357,
+        230.87377,
+        217.13088
+      ],
+      "total_trades": 1022,
+      "mean_trades_per_month": 46.455,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|M30|prev_red|long|H8|20utc",
+          "trades": 325
+        },
+        {
+          "id": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "trades": 169
+        },
+        {
+          "id": "BTCUSD|H1|rsi7_below_40|long|H2|20utc",
+          "trades": 198
+        },
+        {
+          "id": "BTCUSD|H4|above_sma_20|short|H3|20utc",
+          "trades": 330
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-142",
+      "bot_count": 4,
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1484.76974,
+      "profit_2026_JanOct_bp": 1653.24594,
+      "min_month_bp": 3.93629,
+      "total_bp": 3138.01568,
+      "monthly_bp": [
+        3.93629,
+        70.46882,
+        117.82887,
+        88.56338,
+        129.06969,
+        122.94403,
+        76.10896,
+        147.36294,
+        105.52954,
+        32.85623,
+        203.64112,
+        386.45986,
+        9.69101,
+        97.34314,
+        269.94378,
+        264.91339,
+        53.00129,
+        332.78448,
+        180.8493,
+        64.73647,
+        277.47691,
+        102.50619
+      ],
+      "total_trades": 1017,
+      "mean_trades_per_month": 46.227,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+          "trades": 343
+        },
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+          "trades": 322
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-052",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1378.83262,
+      "profit_2026_JanOct_bp": 1644.64669,
+      "min_month_bp": 16.26959,
+      "total_bp": 3023.47932,
+      "monthly_bp": [
+        16.26959,
+        172.40121,
+        222.43151,
+        107.20095,
+        162.98959,
+        100.21988,
+        77.63469,
+        78.31682,
+        22.4661,
+        40.83918,
+        203.26254,
+        174.80057,
+        117.18939,
+        23.74433,
+        188.02755,
+        128.89447,
+        29.24529,
+        510.77868,
+        228.29477,
+        148.73166,
+        142.42452,
+        127.31604
+      ],
+      "total_trades": 1015,
+      "mean_trades_per_month": 46.136,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+          "trades": 198
+        },
+        {
+          "id": "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+          "trades": 322
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-177",
+      "bot_count": 4,
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H4|momentum_down_3|long|H1|20utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1322.86548,
+      "profit_2026_JanOct_bp": 1779.65336,
+      "min_month_bp": 1.59764,
+      "total_bp": 3102.51885,
+      "monthly_bp": [
+        135.14923,
+        153.0445,
+        230.26422,
+        64.54247,
+        69.73162,
+        121.76729,
+        1.59764,
+        115.82119,
+        60.02607,
+        51.58845,
+        157.14378,
+        162.18901,
+        81.93115,
+        218.3036,
+        86.57903,
+        254.83164,
+        9.16015,
+        292.26935,
+        209.55206,
+        84.88374,
+        395.29865,
+        146.84398
+      ],
+      "total_trades": 1013,
+      "mean_trades_per_month": 46.045,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "trades": 169
+        },
+        {
+          "id": "BTCUSD|H4|momentum_down_3|long|H1|20utc",
+          "trades": 323
+        },
+        {
+          "id": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "trades": 336
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-195",
+      "bot_count": 4,
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1334.58382,
+      "profit_2026_JanOct_bp": 1716.03659,
+      "min_month_bp": 0.23404,
+      "total_bp": 3050.6204,
+      "monthly_bp": [
+        154.38038,
+        144.66623,
+        259.43803,
+        33.40722,
+        76.60836,
+        139.34465,
+        0.23404,
+        98.76337,
+        84.32156,
+        35.26391,
+        142.10755,
+        166.04851,
+        66.0803,
+        227.01028,
+        119.38061,
+        269.46639,
+        16.32379,
+        264.27394,
+        197.3896,
+        71.5004,
+        406.24401,
+        78.36726
+      ],
+      "total_trades": 1005,
+      "mean_trades_per_month": 45.682,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "trades": 169
+        },
+        {
+          "id": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "trades": 336
+        },
+        {
+          "id": "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+          "trades": 315
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-194",
+      "bot_count": 4,
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1295.64651,
+      "profit_2026_JanOct_bp": 1879.22849,
+      "min_month_bp": 0.23404,
+      "total_bp": 3174.875,
+      "monthly_bp": [
+        154.38038,
+        126.67513,
+        216.72133,
+        72.45207,
+        81.36777,
+        125.98633,
+        0.23404,
+        116.54156,
+        67.28895,
+        31.41492,
+        136.41323,
+        166.1708,
+        80.1195,
+        220.13934,
+        119.38061,
+        267.36029,
+        14.83682,
+        262.91204,
+        215.91131,
+        123.11653,
+        403.77987,
+        171.67219
+      ],
+      "total_trades": 1002,
+      "mean_trades_per_month": 45.545,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "trades": 169
+        },
+        {
+          "id": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "trades": 336
+        },
+        {
+          "id": "BTCUSD|H1|below_sma_10|long|H4|20utc",
+          "trades": 312
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-105",
+      "bot_count": 4,
+      "composition": "2 BTCUSD + 2 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 2793.04931,
+      "profit_2026_JanOct_bp": 1257.49959,
+      "min_month_bp": 8.45971,
+      "total_bp": 4050.5489,
+      "monthly_bp": [
+        45.9253,
+        147.7595,
+        485.19497,
+        117.3941,
+        284.83819,
+        95.03646,
+        415.25762,
+        438.50203,
+        10.25851,
+        45.00822,
+        666.49565,
+        41.37875,
+        140.56644,
+        70.21476,
+        173.11705,
+        271.90278,
+        18.30544,
+        150.04403,
+        205.49622,
+        201.27337,
+        8.45971,
+        18.1198
+      ],
+      "total_trades": 1000,
+      "mean_trades_per_month": 45.455,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+          "trades": 198
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        },
+        {
+          "id": "ETHUSD|M30|above_sma_20|long|H8|16utc",
+          "trades": 325
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-151",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_10|long|H4|20utc",
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 2552.55685,
+      "profit_2026_JanOct_bp": 1301.08035,
+      "min_month_bp": 3.27693,
+      "total_bp": 3853.6372,
+      "monthly_bp": [
+        12.95397,
+        104.253,
+        414.0405,
+        106.95175,
+        287.53087,
+        89.62794,
+        355.10206,
+        411.92913,
+        52.93002,
+        3.27693,
+        640.34375,
+        73.61694,
+        90.68028,
+        222.5654,
+        171.27591,
+        363.71601,
+        48.334,
+        22.14181,
+        126.74366,
+        105.97291,
+        145.99788,
+        3.65249
+      ],
+      "total_trades": 995,
+      "mean_trades_per_month": 45.227,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_10|long|H4|20utc",
+          "trades": 160
+        },
+        {
+          "id": "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+          "trades": 343
+        },
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "ETHUSD|M30|above_sma_20|long|H8|16utc",
+          "trades": 325
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-152",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|M30|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 2494.50978,
+      "profit_2026_JanOct_bp": 1296.38698,
+      "min_month_bp": 3.27693,
+      "total_bp": 3790.89676,
+      "monthly_bp": [
+        12.95397,
+        75.35815,
+        404.59269,
+        106.95175,
+        285.81652,
+        89.62794,
+        339.0669,
+        411.92913,
+        52.93002,
+        3.27693,
+        640.34375,
+        71.66204,
+        85.98691,
+        222.5654,
+        171.27591,
+        363.71601,
+        48.334,
+        22.14181,
+        126.74366,
+        105.97291,
+        145.99788,
+        3.65249
+      ],
+      "total_trades": 992,
+      "mean_trades_per_month": 45.091,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|M30|range_bottom_20|long|H8|20utc",
+          "trades": 157
+        },
+        {
+          "id": "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+          "trades": 343
+        },
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "ETHUSD|M30|above_sma_20|long|H8|16utc",
+          "trades": 325
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-138",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+        "BTCUSD|H1|below_sma_20|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1629.29817,
+      "profit_2026_JanOct_bp": 1536.8051,
+      "min_month_bp": 4.35784,
+      "total_bp": 3166.10327,
+      "monthly_bp": [
+        195.90917,
+        201.71292,
+        268.05055,
+        44.05961,
+        180.40038,
+        154.10022,
+        26.12091,
+        90.05555,
+        9.37262,
+        74.2831,
+        214.52394,
+        170.70919,
+        72.28918,
+        4.35784,
+        198.91751,
+        122.86907,
+        19.07533,
+        499.64675,
+        179.87987,
+        105.86782,
+        204.60669,
+        129.29504
+      ],
+      "total_trades": 990,
+      "mean_trades_per_month": 45,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|H1|below_sma_20|long|H4|20utc",
+          "trades": 328
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-070",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|ema_below_5_20|long|H2|20utc",
+        "BTCUSD|H1|range_bottom_20|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1655.0464,
+      "profit_2026_JanOct_bp": 1456.16426,
+      "min_month_bp": 13.70831,
+      "total_bp": 3111.21066,
+      "monthly_bp": [
+        218.045,
+        177.37743,
+        253.1652,
+        42.12647,
+        138.39855,
+        126.44021,
+        29.69447,
+        77.39748,
+        18.57535,
+        148.62587,
+        188.81584,
+        236.38452,
+        24.5729,
+        13.70831,
+        176.74692,
+        153.55322,
+        21.08119,
+        449.0709,
+        206.35987,
+        107.73369,
+        164.41427,
+        138.92299
+      ],
+      "total_trades": 990,
+      "mean_trades_per_month": 45,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|ema_below_5_20|long|H2|20utc",
+          "trades": 328
+        },
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H4|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-171",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 2796.59998,
+      "profit_2026_JanOct_bp": 1739.51021,
+      "min_month_bp": 1.8305,
+      "total_bp": 4536.11018,
+      "monthly_bp": [
+        27.85736,
+        75.92514,
+        412.83468,
+        189.38354,
+        167.02163,
+        238.11981,
+        286.47307,
+        411.36899,
+        159.56578,
+        1.8305,
+        700.69849,
+        125.52098,
+        98.20489,
+        341.42994,
+        314.61917,
+        345.89723,
+        66.28571,
+        93.15122,
+        155.3976,
+        37.29177,
+        195.42164,
+        91.81103
+      ],
+      "total_trades": 989,
+      "mean_trades_per_month": 44.955,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|H1|below_sma_10|long|H4|20utc",
+          "trades": 312
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|M30|above_sma_20|long|H8|16utc",
+          "trades": 325
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-116",
+      "bot_count": 4,
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|above_sma_10|short|H3|20utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1575.63546,
+      "profit_2026_JanOct_bp": 1768.55757,
+      "min_month_bp": 7.01198,
+      "total_bp": 3344.19303,
+      "monthly_bp": [
+        277.8685,
+        143.48357,
+        41.96892,
+        113.16213,
+        7.01198,
+        8.68491,
+        235.7936,
+        133.95386,
+        83.32157,
+        26.71196,
+        140.93803,
+        362.73642,
+        89.11465,
+        126.01168,
+        186.47811,
+        308.10431,
+        21.69852,
+        368.49765,
+        242.89828,
+        82.35062,
+        245.12672,
+        98.27702
+      ],
+      "total_trades": 989,
+      "mean_trades_per_month": 44.955,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "trades": 169
+        },
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+          "trades": 322
+        },
+        {
+          "id": "BTCUSD|H4|above_sma_10|short|H3|20utc",
+          "trades": 331
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-072",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+        "BTCUSD|H4|below_sma_5|long|H1|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1574.81408,
+      "profit_2026_JanOct_bp": 1535.23078,
+      "min_month_bp": 13.55226,
+      "total_bp": 3110.04486,
+      "monthly_bp": [
+        195.90917,
+        202.22374,
+        268.05055,
+        29.1678,
+        180.47641,
+        140.50992,
+        26.12091,
+        90.05555,
+        18.95064,
+        67.66894,
+        182.08504,
+        173.59542,
+        72.28918,
+        13.55226,
+        198.91751,
+        122.86907,
+        14.1792,
+        487.22693,
+        179.87987,
+        105.86782,
+        214.74594,
+        125.70301
+      ],
+      "total_trades": 989,
+      "mean_trades_per_month": 44.955,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|H4|below_sma_5|long|H1|20utc",
+          "trades": 327
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-146",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+        "BTCUSD|H4|momentum_down_3|long|H1|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1599.30695,
+      "profit_2026_JanOct_bp": 1561.72124,
+      "min_month_bp": 3.63893,
+      "total_bp": 3161.02818,
+      "monthly_bp": [
+        140.76598,
+        240.31159,
+        264.99705,
+        48.77495,
+        173.10466,
+        140.50992,
+        34.10444,
+        90.05555,
+        3.63893,
+        81.28852,
+        191.86841,
+        189.88695,
+        74.10082,
+        23.35398,
+        181.45773,
+        124.97517,
+        7.60587,
+        534.38606,
+        191.31858,
+        119.20679,
+        180.93798,
+        124.37825
+      ],
+      "total_trades": 985,
+      "mean_trades_per_month": 44.773,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|H4|momentum_down_3|long|H1|20utc",
+          "trades": 323
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-170",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|M30|below_sma_20|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 2805.7949,
+      "profit_2026_JanOct_bp": 1743.99472,
+      "min_month_bp": 1.8305,
+      "total_bp": 4549.78962,
+      "monthly_bp": [
+        24.81551,
+        67.17085,
+        415.88819,
+        189.38354,
+        195.11843,
+        214.44755,
+        272.24709,
+        411.36899,
+        181.61047,
+        1.8305,
+        706.3928,
+        125.52098,
+        98.20489,
+        341.42994,
+        314.61917,
+        332.22365,
+        66.28571,
+        105.24783,
+        155.3976,
+        37.29177,
+        188.10568,
+        105.18848
+      ],
+      "total_trades": 983,
+      "mean_trades_per_month": 44.682,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|M30|below_sma_20|long|H8|20utc",
+          "trades": 306
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|M30|above_sma_20|long|H8|16utc",
+          "trades": 325
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-173",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "BTCUSD|H1|range_bottom_10|long|H8|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 2505.32549,
+      "profit_2026_JanOct_bp": 1716.94941,
+      "min_month_bp": 1.8305,
+      "total_bp": 4222.27489,
+      "monthly_bp": [
+        27.85736,
+        82.32228,
+        412.83468,
+        135.12034,
+        175.34584,
+        208.87752,
+        206.09389,
+        360.81313,
+        124.58691,
+        1.8305,
+        693.16363,
+        76.47941,
+        147.30203,
+        305.21399,
+        352.39405,
+        291.78535,
+        47.1948,
+        137.77889,
+        144.57189,
+        37.23878,
+        195.42164,
+        58.04799
+      ],
+      "total_trades": 982,
+      "mean_trades_per_month": 44.636,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|below_sma_10|long|H4|20utc",
+          "trades": 312
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "BTCUSD|H1|range_bottom_10|long|H8|20utc",
+          "trades": 160
+        },
+        {
+          "id": "ETHUSD|M30|above_sma_20|long|H8|16utc",
+          "trades": 325
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-131",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_10|long|H2|20utc",
+        "BTCUSD|H4|below_sma_5|long|H1|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1534.98706,
+      "profit_2026_JanOct_bp": 1533.63043,
+      "min_month_bp": 5.02399,
+      "total_bp": 3068.61749,
+      "monthly_bp": [
+        195.90917,
+        217.39517,
+        268.05055,
+        40.01078,
+        187.85673,
+        122.70052,
+        5.02399,
+        97.23452,
+        5.33873,
+        67.66894,
+        195.7803,
+        132.01766,
+        59.99776,
+        13.55226,
+        208.03245,
+        124.42363,
+        16.48956,
+        441.55262,
+        200.32202,
+        105.86782,
+        214.74594,
+        148.64637
+      ],
+      "total_trades": 982,
+      "mean_trades_per_month": 44.636,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_10|long|H2|20utc",
+          "trades": 160
+        },
+        {
+          "id": "BTCUSD|H4|below_sma_5|long|H1|20utc",
+          "trades": 327
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-064",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+        "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1611.02528,
+      "profit_2026_JanOct_bp": 1498.10446,
+      "min_month_bp": 14.76952,
+      "total_bp": 3109.12974,
+      "monthly_bp": [
+        159.99713,
+        231.93332,
+        294.17086,
+        17.63971,
+        179.9814,
+        158.08728,
+        32.74083,
+        72.99773,
+        27.93442,
+        64.96399,
+        176.83218,
+        193.74645,
+        58.24997,
+        32.06066,
+        214.25931,
+        139.60992,
+        14.76952,
+        506.39065,
+        179.15612,
+        105.82344,
+        191.88334,
+        55.90153
+      ],
+      "total_trades": 977,
+      "mean_trades_per_month": 44.409,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+          "trades": 315
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-172",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|M30|below_sma_20|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "BTCUSD|H1|range_bottom_10|long|H8|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 2514.52041,
+      "profit_2026_JanOct_bp": 1721.43392,
+      "min_month_bp": 1.8305,
+      "total_bp": 4235.95433,
+      "monthly_bp": [
+        24.81551,
+        73.56799,
+        415.88819,
+        135.12034,
+        203.44264,
+        185.20526,
+        191.86791,
+        360.81313,
+        146.6316,
+        1.8305,
+        698.85794,
+        76.47941,
+        147.30203,
+        305.21399,
+        352.39405,
+        278.11176,
+        47.1948,
+        149.87549,
+        144.57189,
+        37.23878,
+        188.10568,
+        71.42543
+      ],
+      "total_trades": 976,
+      "mean_trades_per_month": 44.364,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|M30|below_sma_20|long|H8|20utc",
+          "trades": 306
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "BTCUSD|H1|range_bottom_10|long|H8|20utc",
+          "trades": 160
+        },
+        {
+          "id": "ETHUSD|M30|above_sma_20|long|H8|16utc",
+          "trades": 325
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-090",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1572.08798,
+      "profit_2026_JanOct_bp": 1661.29636,
+      "min_month_bp": 10.90181,
+      "total_bp": 3233.38434,
+      "monthly_bp": [
+        159.99713,
+        213.94222,
+        251.45416,
+        56.68455,
+        184.74081,
+        144.72895,
+        32.74083,
+        90.77592,
+        10.90181,
+        61.115,
+        171.13786,
+        193.86874,
+        72.28918,
+        25.18971,
+        214.25931,
+        137.50382,
+        13.28254,
+        505.02874,
+        197.67783,
+        157.43957,
+        189.4192,
+        149.20646
+      ],
+      "total_trades": 974,
+      "mean_trades_per_month": 44.273,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|H1|below_sma_10|long|H4|20utc",
+          "trades": 312
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-123",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|M30|rsi14_below_40|long|H8|20utc",
+        "BTCUSD|H1|ema_below_5_20|long|H2|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1516.10879,
+      "profit_2026_JanOct_bp": 1631.52434,
+      "min_month_bp": 5.93638,
+      "total_bp": 3147.63313,
+      "monthly_bp": [
+        218.045,
+        162.25389,
+        243.71739,
+        52.50983,
+        83.60993,
+        70.88674,
+        10.04449,
+        81.78726,
+        18.57535,
+        133.8164,
+        211.71153,
+        229.15098,
+        76.26627,
+        5.93638,
+        259.20457,
+        179.33868,
+        21.08119,
+        490.33966,
+        184.88217,
+        118.60901,
+        149.87236,
+        145.99403
+      ],
+      "total_trades": 974,
+      "mean_trades_per_month": 44.273,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|M30|rsi14_below_40|long|H8|20utc",
+          "trades": 151
+        },
+        {
+          "id": "BTCUSD|H1|ema_below_5_20|long|H2|20utc",
+          "trades": 328
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-144",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|M30|rsi14_below_40|long|H4|20utc",
+        "BTCUSD|H1|below_sma_20|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1554.13699,
+      "profit_2026_JanOct_bp": 1542.92369,
+      "min_month_bp": 3.75983,
+      "total_bp": 3097.06068,
+      "monthly_bp": [
+        195.90917,
+        204.11523,
+        253.2591,
+        54.90259,
+        146.01009,
+        105.29771,
+        3.75983,
+        97.23452,
+        9.37262,
+        95.45414,
+        220.41691,
+        168.40509,
+        107.49451,
+        14.05146,
+        209.22441,
+        118.4948,
+        19.07533,
+        469.40783,
+        185.85442,
+        116.69832,
+        171.48413,
+        131.13845
+      ],
+      "total_trades": 974,
+      "mean_trades_per_month": 44.273,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|M30|rsi14_below_40|long|H4|20utc",
+          "trades": 151
+        },
+        {
+          "id": "BTCUSD|H1|below_sma_20|long|H4|20utc",
+          "trades": 328
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-145",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|M30|rsi14_below_40|long|H4|20utc",
+        "BTCUSD|H4|below_sma_5|long|H1|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1499.6529,
+      "profit_2026_JanOct_bp": 1541.34937,
+      "min_month_bp": 3.75983,
+      "total_bp": 3041.00227,
+      "monthly_bp": [
+        195.90917,
+        204.62605,
+        253.2591,
+        40.01078,
+        146.08612,
+        91.7074,
+        3.75983,
+        97.23452,
+        18.95064,
+        88.83998,
+        187.97801,
+        171.29131,
+        107.49451,
+        23.24589,
+        209.22441,
+        118.4948,
+        14.1792,
+        456.98801,
+        185.85442,
+        116.69832,
+        181.62338,
+        127.54643
+      ],
+      "total_trades": 973,
+      "mean_trades_per_month": 44.227,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|M30|rsi14_below_40|long|H4|20utc",
+          "trades": 151
+        },
+        {
+          "id": "BTCUSD|H4|below_sma_5|long|H1|20utc",
+          "trades": 327
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-085",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_10|long|H2|20utc",
+        "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1571.19827,
+      "profit_2026_JanOct_bp": 1496.5041,
+      "min_month_bp": 11.64392,
+      "total_bp": 3067.70238,
+      "monthly_bp": [
+        159.99713,
+        247.10474,
+        294.17086,
+        28.48268,
+        187.36173,
+        140.27788,
+        11.64392,
+        80.1767,
+        14.32251,
+        64.96399,
+        190.52744,
+        152.16869,
+        45.95856,
+        32.06066,
+        223.37425,
+        141.16448,
+        17.07988,
+        460.71634,
+        199.59826,
+        105.82344,
+        191.88334,
+        78.84489
+      ],
+      "total_trades": 970,
+      "mean_trades_per_month": 44.091,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_10|long|H2|20utc",
+          "trades": 160
+        },
+        {
+          "id": "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+          "trades": 315
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-128",
+      "bot_count": 4,
+      "composition": "2 BTCUSD + 2 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H1|range_bottom_20|long|H4|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 2782.09975,
+      "profit_2026_JanOct_bp": 1172.46625,
+      "min_month_bp": 5.20255,
+      "total_bp": 3954.56601,
+      "monthly_bp": [
+        61.48867,
+        172.32456,
+        502.11678,
+        73.57697,
+        251.32603,
+        110.87793,
+        405.61735,
+        434.11225,
+        11.54232,
+        72.11667,
+        630.30622,
+        56.69399,
+        66.88246,
+        105.04618,
+        174.25568,
+        267.1502,
+        44.05772,
+        64.86746,
+        207.12113,
+        190.39805,
+        47.48482,
+        5.20255
+      ],
+      "total_trades": 969,
+      "mean_trades_per_month": 44.045,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H4|20utc",
+          "trades": 167
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        },
+        {
+          "id": "ETHUSD|M30|above_sma_20|long|H8|16utc",
+          "trades": 325
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-147",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|M30|rsi14_below_40|long|H4|20utc",
+        "BTCUSD|H4|momentum_down_3|long|H1|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1524.14578,
+      "profit_2026_JanOct_bp": 1567.83982,
+      "min_month_bp": 3.63893,
+      "total_bp": 3091.9856,
+      "monthly_bp": [
+        140.76598,
+        242.7139,
+        250.20559,
+        59.61793,
+        138.71436,
+        91.7074,
+        11.74336,
+        97.23452,
+        3.63893,
+        102.45957,
+        197.76139,
+        187.58284,
+        109.30616,
+        33.0476,
+        191.76464,
+        120.6009,
+        7.60587,
+        504.14714,
+        197.29313,
+        130.03729,
+        147.81542,
+        126.22167
+      ],
+      "total_trades": 969,
+      "mean_trades_per_month": 44.045,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|M30|rsi14_below_40|long|H4|20utc",
+          "trades": 151
+        },
+        {
+          "id": "BTCUSD|H4|momentum_down_3|long|H1|20utc",
+          "trades": 323
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-075",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+        "BTCUSD|M30|below_sma_20|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1581.28291,
+      "profit_2026_JanOct_bp": 1665.78088,
+      "min_month_bp": 13.28254,
+      "total_bp": 3247.06379,
+      "monthly_bp": [
+        156.95528,
+        205.18793,
+        254.50767,
+        56.68455,
+        212.83761,
+        121.05669,
+        18.51485,
+        90.77592,
+        32.9465,
+        61.115,
+        176.83218,
+        193.86874,
+        72.28918,
+        25.18971,
+        214.25931,
+        123.83024,
+        13.28254,
+        517.12535,
+        197.67783,
+        157.43957,
+        182.10325,
+        162.5839
+      ],
+      "total_trades": 968,
+      "mean_trades_per_month": 44,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|M30|below_sma_20|long|H8|20utc",
+          "trades": 306
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-163",
+      "bot_count": 4,
+      "composition": "2 BTCUSD + 2 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H1|rsi14_below_40|long|H4|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 2584.55326,
+      "profit_2026_JanOct_bp": 1172.14518,
+      "min_month_bp": 2.4377,
+      "total_bp": 3756.69843,
+      "monthly_bp": [
+        80.85009,
+        153.12305,
+        462.37276,
+        111.57332,
+        180.83897,
+        57.30722,
+        399.20175,
+        440.12851,
+        6.68718,
+        45.47734,
+        621.02256,
+        25.97048,
+        113.10654,
+        70.21476,
+        247.89719,
+        269.92537,
+        2.4377,
+        76.82068,
+        183.42586,
+        201.27337,
+        3.01197,
+        4.03173
+      ],
+      "total_trades": 961,
+      "mean_trades_per_month": 43.682,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|H1|rsi14_below_40|long|H4|20utc",
+          "trades": 159
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        },
+        {
+          "id": "ETHUSD|M30|above_sma_20|long|H8|16utc",
+          "trades": 325
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-095",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|M30|rsi14_below_40|long|H4|20utc",
+        "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1535.86411,
+      "profit_2026_JanOct_bp": 1504.22304,
+      "min_month_bp": 10.37976,
+      "total_bp": 3040.08716,
+      "monthly_bp": [
+        159.99713,
+        234.33563,
+        279.3794,
+        28.48268,
+        145.59111,
+        109.28476,
+        10.37976,
+        80.1767,
+        27.93442,
+        86.13503,
+        182.72515,
+        191.44234,
+        93.45531,
+        41.75428,
+        224.56621,
+        135.23565,
+        14.76952,
+        476.15173,
+        185.13067,
+        116.65394,
+        158.76078,
+        57.74495
+      ],
+      "total_trades": 961,
+      "mean_trades_per_month": 43.682,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|M30|rsi14_below_40|long|H4|20utc",
+          "trades": 151
+        },
+        {
+          "id": "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+          "trades": 315
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-094",
+      "bot_count": 4,
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "legs": [
+        "BTCUSD|M30|rsi14_below_40|long|H4|20utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1496.92681,
+      "profit_2026_JanOct_bp": 1667.41495,
+      "min_month_bp": 10.37976,
+      "total_bp": 3164.34176,
+      "monthly_bp": [
+        159.99713,
+        216.34453,
+        236.6627,
+        67.52753,
+        150.35052,
+        95.92644,
+        10.37976,
+        97.95489,
+        10.90181,
+        82.28604,
+        177.03083,
+        191.56464,
+        107.49451,
+        34.88334,
+        224.56621,
+        133.12955,
+        13.28254,
+        474.78982,
+        203.65238,
+        168.27007,
+        156.29664,
+        151.04987
+      ],
+      "total_trades": 958,
+      "mean_trades_per_month": 43.545,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|M30|rsi14_below_40|long|H4|20utc",
+          "trades": 151
+        },
+        {
+          "id": "BTCUSD|H1|below_sma_10|long|H4|20utc",
+          "trades": 312
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-086",
+      "bot_count": 4,
+      "composition": "2 BTCUSD + 2 ETHUSD",
+      "legs": [
+        "BTCUSD|M30|rsi14_below_40|long|H8|20utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 2643.16215,
+      "profit_2026_JanOct_bp": 1347.82632,
+      "min_month_bp": 11.54232,
+      "total_bp": 3990.98847,
+      "monthly_bp": [
+        61.48867,
+        157.20103,
+        492.66897,
+        83.96032,
+        196.53741,
+        55.32446,
+        385.96737,
+        438.50203,
+        11.54232,
+        57.3072,
+        653.20191,
+        49.46044,
+        118.57584,
+        97.27425,
+        256.71333,
+        292.93566,
+        44.05772,
+        106.13623,
+        185.64343,
+        201.27337,
+        32.94292,
+        12.27358
+      ],
+      "total_trades": 953,
+      "mean_trades_per_month": 43.318,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|M30|rsi14_below_40|long|H8|20utc",
+          "trades": 151
+        },
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "ETHUSD|H4|above_sma_50|long|H1|08utc",
+          "trades": 310
+        },
+        {
+          "id": "ETHUSD|M30|above_sma_20|long|H8|16utc",
+          "trades": 325
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-179",
+      "bot_count": 4,
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1731.1851,
+      "profit_2026_JanOct_bp": 1595.81691,
+      "min_month_bp": 1.24252,
+      "total_bp": 3327.00201,
+      "monthly_bp": [
+        118.4138,
+        81.80397,
+        143.88802,
+        10.84784,
+        173.30431,
+        184.26878,
+        77.68886,
+        119.35407,
+        91.24827,
+        16.72603,
+        345.75306,
+        367.8881,
+        9.70041,
+        108.65647,
+        162.22981,
+        253.84083,
+        1.24252,
+        350.58962,
+        180.39506,
+        49.71299,
+        286.7292,
+        192.71999
+      ],
+      "total_trades": 893,
+      "mean_trades_per_month": 40.591,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+          "trades": 343
+        },
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+          "trades": 198
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-078",
+      "bot_count": 4,
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|rsi7_below_40|long|H2|20utc",
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1687.17564,
+      "profit_2026_JanOct_bp": 1607.9462,
+      "min_month_bp": 12.85839,
+      "total_bp": 3295.12183,
+      "monthly_bp": [
+        82.2846,
+        109.70351,
+        176.35581,
+        60.6888,
+        148.47529,
+        122.23725,
+        45.07699,
+        146.08988,
+        99.08369,
+        76.69681,
+        239.43367,
+        381.04933,
+        18.87223,
+        39.38011,
+        247.45526,
+        260.20064,
+        12.85839,
+        379.51679,
+        164.4187,
+        41.64768,
+        286.46778,
+        157.12861
+      ],
+      "total_trades": 893,
+      "mean_trades_per_month": 40.591,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|rsi7_below_40|long|H2|20utc",
+          "trades": 198
+        },
+        {
+          "id": "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+          "trades": 343
+        },
+        {
+          "id": "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+          "trades": 167
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        }
+      ]
+    },
+    {
+      "id": "V21-P4-098",
+      "bot_count": 4,
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "legs": [
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "all_legs_profitable_both_years": true,
+      "profit_2025_bp": 1308.52196,
+      "profit_2026_JanOct_bp": 1793.6322,
+      "min_month_bp": 9.49472,
+      "total_bp": 3102.15416,
+      "monthly_bp": [
+        111.61577,
+        145.45241,
+        257.94594,
+        62.09698,
+        78.65716,
+        82.16389,
+        9.49472,
+        95.63043,
+        71.19066,
+        43.8474,
+        194.64384,
+        155.78276,
+        83.19974,
+        190.27769,
+        65.63835,
+        253.47626,
+        23.86326,
+        282.09179,
+        221.05889,
+        80.48932,
+        403.78724,
+        189.74968
+      ],
+      "total_trades": 888,
+      "mean_trades_per_month": 40.364,
+      "leg_trade_counts": [
+        {
+          "id": "BTCUSD|H1|range_top_20|long|H2|08utc",
+          "trades": 169
+        },
+        {
+          "id": "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+          "trades": 198
+        },
+        {
+          "id": "BTCUSD|H1|above_sma_50|short|H8|00utc",
+          "trades": 336
+        },
+        {
+          "id": "BTCUSD|H4|range_top_20|short|H3|20utc",
+          "trades": 185
+        }
+      ]
+    }
+  ]
+}
