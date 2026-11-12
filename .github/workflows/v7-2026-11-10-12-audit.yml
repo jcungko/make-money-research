@@ -1,0 +1,34 @@
+name: V7 audit EURUSDm Nov 10-12 2026 (read only)
+on:
+  push:
+    paths:
+      - '.github/workflows/v7-2026-11-10-12-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - name: Fetch and validate historical tick data
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p audit
+          for d in 10 11 12; do
+            curl -fL --retry 3 --connect-timeout 20 --max-time 120 "https://ticks.ex2archive.com/ticks/EURUSDm/2026/11/$d/Exness_EURUSDm_2026_11_$d.zip" -o "audit/Exness_EURUSDm_2026_11_$d.zip"
+          done
+          python - <<'PY'
+          import zipfile, glob, json, pathlib
+          for path in sorted(glob.glob('audit/*.zip')):
+              with zipfile.ZipFile(path) as z:
+                  assert z.testzip() is None, path
+                  print(json.dumps({'zip':path,'members':z.namelist(),'bytes':pathlib.Path(path).stat().st_size}))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v7-eurusdm-nov10-nov12-tick-snapshots
+          path: audit/*.zip
+          retention-days: 14
+          if-no-files-found: error
