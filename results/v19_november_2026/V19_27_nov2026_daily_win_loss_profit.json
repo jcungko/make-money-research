@@ -1,0 +1,2161 @@
+{
+  "project": "V19",
+  "period": "November 2026 (partial)",
+  "as_of_cutoff_exclusive_utc": "2026-11-12T18:00:00+00:00",
+  "daily_timezone": "UTC",
+  "counted_weekdays_utc": [
+    "2026-11-02",
+    "2026-11-03",
+    "2026-11-04",
+    "2026-11-05",
+    "2026-11-06",
+    "2026-11-09",
+    "2026-11-10",
+    "2026-11-11",
+    "2026-11-12"
+  ],
+  "date_definition": "Trading weekdays Monday-Friday between Nov 02 and Nov 12 UTC; 9 dates, last date partially observed through 18:00 UTC. Nov 01 and Nov 08 excluded from averages as Sundays (market hours are partial).",
+  "day_pnl_definition": "Sum of realized PnL of orders closed on that UTC day. Zero includes days without closed orders or exact net break-even. Open orders excluded from PnL.",
+  "daily_mean_definition": "Total realized profit in bp / 9 observed trading weekdays, including zero-PnL days; not USD and not profit per winning day.",
+  "modeling": "Same historical Exness bid/ask plus 1bp slippage each side; 4 legs equal notional, no stop-loss / swaps / broker fees or fill simulation.",
+  "base_report": "results/v19_november_2026/V19_89_nov2026_profit_and_orders_filter.json",
+  "number_of_portfolios": 27,
+  "number_of_unique_legs": 24,
+  "rows": [
+    {
+      "portfolio": "V19-065",
+      "winning_days": 6,
+      "losing_days": 3,
+      "zero_pnl_days": 0,
+      "days_without_closed_orders": 0,
+      "days_with_closed_orders": 9,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 141.65308,
+      "mean_realized_profit_bp_per_trading_weekday": 15.73923,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 15.73923,
+      "mean_positive_day_profit_bp": 61.32827,
+      "mean_negative_day_loss_bp": -75.43885,
+      "closed_orders": 17,
+      "positive_day_rate_pct": 66.67
+    },
+    {
+      "portfolio": "V19-034",
+      "winning_days": 6,
+      "losing_days": 3,
+      "zero_pnl_days": 0,
+      "days_without_closed_orders": 0,
+      "days_with_closed_orders": 9,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 125.21773,
+      "mean_realized_profit_bp_per_trading_weekday": 13.91308,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 13.91308,
+      "mean_positive_day_profit_bp": 53.84955,
+      "mean_negative_day_loss_bp": -65.95986,
+      "closed_orders": 20,
+      "positive_day_rate_pct": 66.67
+    },
+    {
+      "portfolio": "V19-036",
+      "winning_days": 5,
+      "losing_days": 4,
+      "zero_pnl_days": 0,
+      "days_without_closed_orders": 0,
+      "days_with_closed_orders": 9,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 62.85609,
+      "mean_realized_profit_bp_per_trading_weekday": 6.98401,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 6.98401,
+      "mean_positive_day_profit_bp": 58.42821,
+      "mean_negative_day_loss_bp": -57.32124,
+      "closed_orders": 14,
+      "positive_day_rate_pct": 55.56
+    },
+    {
+      "portfolio": "V19-051",
+      "winning_days": 5,
+      "losing_days": 4,
+      "zero_pnl_days": 0,
+      "days_without_closed_orders": 0,
+      "days_with_closed_orders": 9,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 60.68435,
+      "mean_realized_profit_bp_per_trading_weekday": 6.74271,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 6.74271,
+      "mean_positive_day_profit_bp": 61.86859,
+      "mean_negative_day_loss_bp": -62.16465,
+      "closed_orders": 14,
+      "positive_day_rate_pct": 55.56
+    },
+    {
+      "portfolio": "V19-028",
+      "winning_days": 5,
+      "losing_days": 4,
+      "zero_pnl_days": 0,
+      "days_without_closed_orders": 0,
+      "days_with_closed_orders": 9,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 57.48517,
+      "mean_realized_profit_bp_per_trading_weekday": 6.38724,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 6.38724,
+      "mean_positive_day_profit_bp": 61.40856,
+      "mean_negative_day_loss_bp": -62.38941,
+      "closed_orders": 15,
+      "positive_day_rate_pct": 55.56
+    },
+    {
+      "portfolio": "V19-009",
+      "winning_days": 5,
+      "losing_days": 1,
+      "zero_pnl_days": 3,
+      "days_without_closed_orders": 3,
+      "days_with_closed_orders": 6,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 57.07541,
+      "mean_realized_profit_bp_per_trading_weekday": 6.34171,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 9.51257,
+      "mean_positive_day_profit_bp": 12.18699,
+      "mean_negative_day_loss_bp": -3.85953,
+      "closed_orders": 7,
+      "positive_day_rate_pct": 55.56
+    },
+    {
+      "portfolio": "V19-055",
+      "winning_days": 5,
+      "losing_days": 1,
+      "zero_pnl_days": 3,
+      "days_without_closed_orders": 3,
+      "days_with_closed_orders": 6,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 52.65134,
+      "mean_realized_profit_bp_per_trading_weekday": 5.85015,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 8.77522,
+      "mean_positive_day_profit_bp": 11.9202,
+      "mean_negative_day_loss_bp": -6.94964,
+      "closed_orders": 6,
+      "positive_day_rate_pct": 55.56
+    },
+    {
+      "portfolio": "V19-043",
+      "winning_days": 3,
+      "losing_days": 3,
+      "zero_pnl_days": 3,
+      "days_without_closed_orders": 3,
+      "days_with_closed_orders": 6,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 52.19107,
+      "mean_realized_profit_bp_per_trading_weekday": 5.79901,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 8.69851,
+      "mean_positive_day_profit_bp": 43.10047,
+      "mean_negative_day_loss_bp": -25.70345,
+      "closed_orders": 9,
+      "positive_day_rate_pct": 33.33
+    },
+    {
+      "portfolio": "V19-010",
+      "winning_days": 5,
+      "losing_days": 1,
+      "zero_pnl_days": 3,
+      "days_without_closed_orders": 3,
+      "days_with_closed_orders": 6,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 47.07868,
+      "mean_realized_profit_bp_per_trading_weekday": 5.23096,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 7.84645,
+      "mean_positive_day_profit_bp": 10.18764,
+      "mean_negative_day_loss_bp": -3.85953,
+      "closed_orders": 8,
+      "positive_day_rate_pct": 55.56
+    },
+    {
+      "portfolio": "V19-021",
+      "winning_days": 5,
+      "losing_days": 4,
+      "zero_pnl_days": 0,
+      "days_without_closed_orders": 0,
+      "days_with_closed_orders": 9,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 45.61311,
+      "mean_realized_profit_bp_per_trading_weekday": 5.06812,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 5.06812,
+      "mean_positive_day_profit_bp": 54.97962,
+      "mean_negative_day_loss_bp": -57.32124,
+      "closed_orders": 15,
+      "positive_day_rate_pct": 55.56
+    },
+    {
+      "portfolio": "V19-025",
+      "winning_days": 5,
+      "losing_days": 4,
+      "zero_pnl_days": 0,
+      "days_without_closed_orders": 0,
+      "days_with_closed_orders": 9,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 43.48245,
+      "mean_realized_profit_bp_per_trading_weekday": 4.83138,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 4.83138,
+      "mean_positive_day_profit_bp": 58.42821,
+      "mean_negative_day_loss_bp": -62.16465,
+      "closed_orders": 15,
+      "positive_day_rate_pct": 55.56
+    },
+    {
+      "portfolio": "V19-039",
+      "winning_days": 5,
+      "losing_days": 4,
+      "zero_pnl_days": 0,
+      "days_without_closed_orders": 0,
+      "days_with_closed_orders": 9,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 40.25315,
+      "mean_realized_profit_bp_per_trading_weekday": 4.47257,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 4.47257,
+      "mean_positive_day_profit_bp": 53.90762,
+      "mean_negative_day_loss_bp": -57.32124,
+      "closed_orders": 14,
+      "positive_day_rate_pct": 55.56
+    },
+    {
+      "portfolio": "V19-008",
+      "winning_days": 3,
+      "losing_days": 1,
+      "zero_pnl_days": 5,
+      "days_without_closed_orders": 5,
+      "days_with_closed_orders": 4,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 26.40296,
+      "mean_realized_profit_bp_per_trading_weekday": 2.93366,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 6.60074,
+      "mean_positive_day_profit_bp": 10.0875,
+      "mean_negative_day_loss_bp": -3.85953,
+      "closed_orders": 5,
+      "positive_day_rate_pct": 33.33
+    },
+    {
+      "portfolio": "V19-047",
+      "winning_days": 5,
+      "losing_days": 4,
+      "zero_pnl_days": 0,
+      "days_without_closed_orders": 0,
+      "days_with_closed_orders": 9,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 24.58569,
+      "mean_realized_profit_bp_per_trading_weekday": 2.73174,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 2.73174,
+      "mean_positive_day_profit_bp": 61.40856,
+      "mean_negative_day_loss_bp": -70.61428,
+      "closed_orders": 17,
+      "positive_day_rate_pct": 55.56
+    },
+    {
+      "portfolio": "V19-030",
+      "winning_days": 4,
+      "losing_days": 1,
+      "zero_pnl_days": 4,
+      "days_without_closed_orders": 4,
+      "days_with_closed_orders": 5,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 24.17593,
+      "mean_realized_profit_bp_per_trading_weekday": 2.68621,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 4.83519,
+      "mean_positive_day_profit_bp": 11.85227,
+      "mean_negative_day_loss_bp": -23.23317,
+      "closed_orders": 9,
+      "positive_day_rate_pct": 44.44
+    },
+    {
+      "portfolio": "V19-076",
+      "winning_days": 6,
+      "losing_days": 3,
+      "zero_pnl_days": 0,
+      "days_without_closed_orders": 0,
+      "days_with_closed_orders": 9,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 23.47356,
+      "mean_realized_profit_bp_per_trading_weekday": 2.60817,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 2.60817,
+      "mean_positive_day_profit_bp": 41.97636,
+      "mean_negative_day_loss_bp": -76.12821,
+      "closed_orders": 15,
+      "positive_day_rate_pct": 66.67
+    },
+    {
+      "portfolio": "V19-006",
+      "winning_days": 4,
+      "losing_days": 2,
+      "zero_pnl_days": 3,
+      "days_without_closed_orders": 3,
+      "days_with_closed_orders": 6,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 21.77071,
+      "mean_realized_profit_bp_per_trading_weekday": 2.41897,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 3.62845,
+      "mean_positive_day_profit_bp": 8.90674,
+      "mean_negative_day_loss_bp": -6.92813,
+      "closed_orders": 7,
+      "positive_day_rate_pct": 44.44
+    },
+    {
+      "portfolio": "V19-022",
+      "winning_days": 4,
+      "losing_days": 2,
+      "zero_pnl_days": 3,
+      "days_without_closed_orders": 3,
+      "days_with_closed_orders": 6,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 18.2416,
+      "mean_realized_profit_bp_per_trading_weekday": 2.02684,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 3.04027,
+      "mean_positive_day_profit_bp": 8.02446,
+      "mean_negative_day_loss_bp": -6.92813,
+      "closed_orders": 7,
+      "positive_day_rate_pct": 44.44
+    },
+    {
+      "portfolio": "V19-027",
+      "winning_days": 4,
+      "losing_days": 2,
+      "zero_pnl_days": 3,
+      "days_without_closed_orders": 3,
+      "days_with_closed_orders": 6,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 18.2416,
+      "mean_realized_profit_bp_per_trading_weekday": 2.02684,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 3.04027,
+      "mean_positive_day_profit_bp": 8.02446,
+      "mean_negative_day_loss_bp": -6.92813,
+      "closed_orders": 7,
+      "positive_day_rate_pct": 44.44
+    },
+    {
+      "portfolio": "V19-050",
+      "winning_days": 4,
+      "losing_days": 2,
+      "zero_pnl_days": 3,
+      "days_without_closed_orders": 3,
+      "days_with_closed_orders": 6,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 18.17495,
+      "mean_realized_profit_bp_per_trading_weekday": 2.01944,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 3.02916,
+      "mean_positive_day_profit_bp": 26.92732,
+      "mean_negative_day_loss_bp": -44.76717,
+      "closed_orders": 9,
+      "positive_day_rate_pct": 44.44
+    },
+    {
+      "portfolio": "V19-014",
+      "winning_days": 3,
+      "losing_days": 2,
+      "zero_pnl_days": 4,
+      "days_without_closed_orders": 4,
+      "days_with_closed_orders": 5,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 16.72704,
+      "mean_realized_profit_bp_per_trading_weekday": 1.85856,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 3.34541,
+      "mean_positive_day_profit_bp": 14.35011,
+      "mean_negative_day_loss_bp": -13.16164,
+      "closed_orders": 5,
+      "positive_day_rate_pct": 33.33
+    },
+    {
+      "portfolio": "V19-001",
+      "winning_days": 3,
+      "losing_days": 1,
+      "zero_pnl_days": 5,
+      "days_without_closed_orders": 5,
+      "days_with_closed_orders": 4,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 14.91936,
+      "mean_realized_profit_bp_per_trading_weekday": 1.65771,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 3.72984,
+      "mean_positive_day_profit_bp": 6.25963,
+      "mean_negative_day_loss_bp": -3.85953,
+      "closed_orders": 5,
+      "positive_day_rate_pct": 33.33
+    },
+    {
+      "portfolio": "V19-015",
+      "winning_days": 4,
+      "losing_days": 2,
+      "zero_pnl_days": 3,
+      "days_without_closed_orders": 3,
+      "days_with_closed_orders": 6,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 12.98763,
+      "mean_realized_profit_bp_per_trading_weekday": 1.44307,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 2.1646,
+      "mean_positive_day_profit_bp": 8.52253,
+      "mean_negative_day_loss_bp": -10.55125,
+      "closed_orders": 8,
+      "positive_day_rate_pct": 44.44
+    },
+    {
+      "portfolio": "V19-003",
+      "winning_days": 2,
+      "losing_days": 2,
+      "zero_pnl_days": 5,
+      "days_without_closed_orders": 5,
+      "days_with_closed_orders": 4,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 7.96973,
+      "mean_realized_profit_bp_per_trading_weekday": 0.88553,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 1.99243,
+      "mean_positive_day_profit_bp": 6.70721,
+      "mean_negative_day_loss_bp": -2.72234,
+      "closed_orders": 6,
+      "positive_day_rate_pct": 22.22
+    },
+    {
+      "portfolio": "V19-074",
+      "winning_days": 6,
+      "losing_days": 3,
+      "zero_pnl_days": 0,
+      "days_without_closed_orders": 0,
+      "days_with_closed_orders": 9,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 7.82026,
+      "mean_realized_profit_bp_per_trading_weekday": 0.86892,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 0.86892,
+      "mean_positive_day_profit_bp": 39.36748,
+      "mean_negative_day_loss_bp": -76.12821,
+      "closed_orders": 14,
+      "positive_day_rate_pct": 66.67
+    },
+    {
+      "portfolio": "V19-075",
+      "winning_days": 6,
+      "losing_days": 3,
+      "zero_pnl_days": 0,
+      "days_without_closed_orders": 0,
+      "days_with_closed_orders": 9,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 7.82026,
+      "mean_realized_profit_bp_per_trading_weekday": 0.86892,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 0.86892,
+      "mean_positive_day_profit_bp": 39.36748,
+      "mean_negative_day_loss_bp": -76.12821,
+      "closed_orders": 14,
+      "positive_day_rate_pct": 66.67
+    },
+    {
+      "portfolio": "V19-049",
+      "winning_days": 2,
+      "losing_days": 2,
+      "zero_pnl_days": 5,
+      "days_without_closed_orders": 5,
+      "days_with_closed_orders": 4,
+      "calendar_trading_weekdays": 9,
+      "total_realized_profit_bp": 2.60525,
+      "mean_realized_profit_bp_per_trading_weekday": 0.28947,
+      "mean_realized_profit_bp_per_day_with_closed_orders": 0.65131,
+      "mean_positive_day_profit_bp": 6.70721,
+      "mean_negative_day_loss_bp": -5.40458,
+      "closed_orders": 5,
+      "positive_day_rate_pct": 22.22
+    }
+  ],
+  "daily": [
+    {
+      "portfolio": "V19-065",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 49.961558,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-065",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 61.514179,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-065",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 49.730069,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-065",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": -139.050418,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-065",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 75.844196,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-065",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 72.550772,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-065",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": -65.574101,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-065",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 58.368846,
+      "closed_orders": 3,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-065",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -21.692022,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-034",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 49.961558,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-034",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 54.146569,
+      "closed_orders": 3,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-034",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 77.949788,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-034",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": -111.149663,
+      "closed_orders": 3,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-034",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 55.118314,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-034",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 52.551521,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-034",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": -45.664258,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-034",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 33.369563,
+      "closed_orders": 3,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-034",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -41.065661,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-036",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 49.961558,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-036",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": -33.565379,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-036",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 77.949788,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-036",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": -128.363313,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-036",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 55.118314,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-036",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 52.551521,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-036",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": -45.664258,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-036",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 56.55988,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-036",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -21.692022,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-051",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 87.206977,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-051",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": -33.565379,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-051",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 77.949788,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-051",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": -128.363313,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-051",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 50.728093,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-051",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 52.551521,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-051",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": -45.664258,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-051",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 40.906578,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-051",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -41.065661,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-028",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 49.961558,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-028",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": -36.194501,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-028",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 49.730069,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-028",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": -142.945103,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-028",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 75.844196,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-028",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 72.550772,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-028",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": -48.726026,
+      "closed_orders": 3,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-028",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 58.956225,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-028",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -21.692022,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-009",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 12.377865,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-009",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 30.017418,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-009",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-009",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": 0.655034,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-009",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-009",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 1.036546,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-009",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": 16.848075,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-009",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-009",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -3.859527,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-055",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 12.377865,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-055",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 30.017418,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-055",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-055",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": 0.655034,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-055",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-055",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 1.036546,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-055",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-055",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": -6.949635,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-055",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": 15.514112,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-043",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 62.762986,
+      "closed_orders": 3,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-043",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-043",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": -48.468686,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-043",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-043",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-043",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 43.482158,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-043",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": 23.056266,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-043",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": -6.949635,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-043",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -21.692022,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-010",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 12.377865,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-010",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 20.020685,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-010",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-010",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": 0.655034,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-010",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-010",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 1.036546,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-010",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": 16.848075,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-010",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-010",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -3.859527,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-021",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 49.961558,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-021",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": -33.565379,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-021",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 77.949788,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-021",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": -128.363313,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-021",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 55.118314,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-021",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 52.551521,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-021",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": -45.664258,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-021",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 39.316902,
+      "closed_orders": 3,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-021",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -21.692022,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-025",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 49.961558,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-025",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": -33.565379,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-025",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 77.949788,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-025",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": -128.363313,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-025",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 55.118314,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-025",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 52.551521,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-025",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": -45.664258,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-025",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 56.55988,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-025",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -41.065661,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-039",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 49.961558,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-039",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": -33.565379,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-039",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 77.949788,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-039",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": -128.363313,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-039",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 55.118314,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-039",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 52.551521,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-039",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": -45.664258,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-039",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 33.956942,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-039",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -21.692022,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-008",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 12.377865,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-008",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-008",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-008",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-008",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-008",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 1.036546,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-008",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": 16.848075,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-008",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-008",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -3.859527,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-047",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 49.961558,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-047",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": -46.191234,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-047",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 49.730069,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-047",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": -129.626139,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-047",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 75.844196,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-047",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 72.550772,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-047",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": -65.574101,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-047",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 58.956225,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-047",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -41.065661,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-030",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 12.377865,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-030",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 20.020685,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-030",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-030",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": 13.973999,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-030",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-030",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 1.036546,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-030",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-030",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-030",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -23.233166,
+      "closed_orders": 3,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-076",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 49.961558,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-076",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 2.342265,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-076",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 61.949671,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-076",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": -104.789551,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-076",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 47.365026,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-076",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 39.670647,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-076",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": -82.529408,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-076",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 50.569018,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-076",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -41.065661,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-006",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 12.377865,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-006",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": -9.996733,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-006",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-006",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-006",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-006",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 1.036546,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-006",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": 16.848075,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-006",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 5.36448,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-006",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -3.859527,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-022",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 12.377865,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-022",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": -9.996733,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-022",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-022",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": 13.318964,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-022",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-022",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 1.036546,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-022",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-022",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 5.36448,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-022",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -3.859527,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-027",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 12.377865,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-027",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": -9.996733,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-027",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-027",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": 13.318964,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-027",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-027",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 1.036546,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-027",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-027",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 5.36448,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-027",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -3.859527,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-050",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 25.517566,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-050",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-050",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": -48.468686,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-050",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-050",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-050",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 43.482158,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-050",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": 23.056266,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-050",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 15.653302,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-050",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -41.065661,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-014",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 12.377865,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-014",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 30.017418,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-014",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-014",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": 0.655034,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-014",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-014",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-014",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-014",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": -6.949635,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-014",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -19.373639,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-001",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 12.377865,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-001",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-001",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-001",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-001",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-001",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 1.036546,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-001",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-001",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 5.36448,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-001",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -3.859527,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-015",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 12.377865,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-015",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 20.020685,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-015",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-015",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": 0.655034,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-015",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-015",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 1.036546,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-015",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-015",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": -17.242978,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-015",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -3.859527,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-003",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 12.377865,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-003",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-003",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-003",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-003",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-003",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 1.036546,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-003",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-003",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": -1.585155,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-003",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -3.859527,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-074",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 49.961558,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-074",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 2.342265,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-074",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 61.949671,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-074",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": -104.789551,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-074",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 47.365026,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-074",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 39.670647,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-074",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": -82.529408,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-074",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 34.915715,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-074",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -41.065661,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-075",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 49.961558,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-075",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 2.342265,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-075",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 61.949671,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-075",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": -104.789551,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-075",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 47.365026,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-075",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 39.670647,
+      "closed_orders": 2,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-075",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": -82.529408,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-075",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": 34.915715,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-075",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -41.065661,
+      "closed_orders": 2,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-049",
+      "exit_day_utc": "2026-11-02",
+      "realized_profit_bp": 12.377865,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-049",
+      "exit_day_utc": "2026-11-03",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-049",
+      "exit_day_utc": "2026-11-04",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-049",
+      "exit_day_utc": "2026-11-05",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-049",
+      "exit_day_utc": "2026-11-06",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-049",
+      "exit_day_utc": "2026-11-09",
+      "realized_profit_bp": 1.036546,
+      "closed_orders": 1,
+      "day_result": "profit"
+    },
+    {
+      "portfolio": "V19-049",
+      "exit_day_utc": "2026-11-10",
+      "realized_profit_bp": 0.0,
+      "closed_orders": 0,
+      "day_result": "zero"
+    },
+    {
+      "portfolio": "V19-049",
+      "exit_day_utc": "2026-11-11",
+      "realized_profit_bp": -6.949635,
+      "closed_orders": 1,
+      "day_result": "loss"
+    },
+    {
+      "portfolio": "V19-049",
+      "exit_day_utc": "2026-11-12",
+      "realized_profit_bp": -3.859527,
+      "closed_orders": 2,
+      "day_result": "loss"
+    }
+  ]
+}
