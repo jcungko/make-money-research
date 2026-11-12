@@ -1,0 +1,45 @@
+name: V22 final filter half lowest profit then half fewest orders
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v22-profit-orders-filter.yml'
+      - 'scripts/v22_profit_orders_filter.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install read-only research tools
+        run: pip install 'pandas>=2.2,<3' 'numpy>=1.26,<3'
+      - name: Replay and filter V22 October-positive candidates
+        run: python -u scripts/v22_profit_orders_filter.py --root data/v22_exness --out results/v22_profit_orders_filter
+      - name: Upload auditable CSVs and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: V22-682-Final-Profit-Order-Selection
+          path: results/v22_profit_orders_filter/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit selection and rejected CSVs for long-term audit
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v22_profit_orders_filter/
+          if ! git diff --cached --quiet; then
+            git commit -m "V22: filter bottom 50% return then bottom 50% order count"
+            for n in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && exit 0
+              sleep "$((n * 3))"
+            done
+            exit 1
+          fi
