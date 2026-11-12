@@ -1,0 +1,65 @@
+{
+  "created_utc": "2026-11-12T18:01:01.532422+00:00",
+  "period": "2025-01 to 2026-10 UTC (22 months)",
+  "source": "Exness historical Bid/Ask ticks",
+  "symbols_requested": [
+    "BTCUSD",
+    "ETHUSD",
+    "BTCUSDT"
+  ],
+  "symbols_validated": [
+    "BTCUSD",
+    "ETHUSD"
+  ],
+  "coverage": {
+    "BTCUSD": {
+      "downloaded_months": 22,
+      "required_months": 22,
+      "complete": true,
+      "issues": []
+    },
+    "ETHUSD": {
+      "downloaded_months": 22,
+      "required_months": 22,
+      "complete": true,
+      "issues": []
+    },
+    "BTCUSDT": {
+      "downloaded_months": 5,
+      "required_months": 22,
+      "complete": false,
+      "issues": [
+        "2025: incomplete monthly data",
+        "2025: 7TF archive missing",
+        "2026: incomplete monthly data"
+      ]
+    }
+  },
+  "screened_fully_active_variants": 25622,
+  "both_years_profitable_pre_swap": 1703,
+  "all_22_months_profitable_pre_swap": 0,
+  "per_symbol_counts": {
+    "BTCUSD": {
+      "tested_fully_active": 12714,
+      "profit_both_years": 913,
+      "profit_all_22_months": 0,
+      "best_positive_months": 19
+    },
+    "ETHUSD": {
+      "tested_fully_active": 12908,
+      "profit_both_years": 790,
+      "profit_all_22_months": 0,
+      "best_positive_months": 18
+    }
+  },
+  "full_universe_complete": false,
+  "notes": [
+    "V21 exploratory enumeration using existing vetted V19 single-asset signal census",
+    "Includes observed Bid/Ask spread and assumed 1 basis point slippage per side",
+    "Fixed one-notional PnL basis points, not USD account returns",
+    "Excludes swap, broker commissions, execution latency and margin",
+    "Data-selected strategies require new unseen-period forward testing",
+    "Counts represent eligible single-method variants with at least one closed trade each month",
+    "If any symbol is missing, total does NOT include unverified symbols"
+  ]
+}

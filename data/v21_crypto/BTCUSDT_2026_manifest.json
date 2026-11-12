@@ -1,0 +1,132 @@
+{
+  "dataset": "V21 Exness crypto",
+  "symbol": "BTCUSDT",
+  "year": 2026,
+  "period_start": "2026-01-01T00:00:00+00:00",
+  "period_end_exclusive": "2026-11-01T00:00:00+00:00",
+  "source": "Exness indicative Bid/Ask public tick mirror at ticks.ex2archive.com",
+  "quote_variant": "unsuffixed symbol",
+  "complete_months": false,
+  "month_count_ok": 5,
+  "month_count_requested": 10,
+  "months": [
+    {
+      "month": "2026-01",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2026/01/Exness_BTCUSDT_2026_01.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    },
+    {
+      "month": "2026-02",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2026/02/Exness_BTCUSDT_2026_02.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    },
+    {
+      "month": "2026-03",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2026/03/Exness_BTCUSDT_2026_03.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    },
+    {
+      "month": "2026-04",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2026/04/Exness_BTCUSDT_2026_04.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    },
+    {
+      "month": "2026-05",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2026/05/Exness_BTCUSDT_2026_05.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    },
+    {
+      "month": "2026-06",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2026/06/Exness_BTCUSDT_2026_06.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "8cc6179f85cf96a2578399d496cd14c377796c633ac2d231de5dac5f9b3b889e",
+      "archive_bytes": 19952298,
+      "m5_candles": 4100,
+      "first_m5_utc": "2026-06-16T18:20:00+00:00",
+      "last_m5_utc": "2026-06-30T23:55:00+00:00"
+    },
+    {
+      "month": "2026-07",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2026/07/Exness_BTCUSDT_2026_07.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "2b4ebc7ee8c5eaceeb28f8508e72747d458f0c1a00dd4649e8b7d72bf6f94810",
+      "archive_bytes": 32118027,
+      "m5_candles": 8928,
+      "first_m5_utc": "2026-07-01T00:00:00+00:00",
+      "last_m5_utc": "2026-07-31T23:55:00+00:00"
+    },
+    {
+      "month": "2026-08",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2026/08/Exness_BTCUSDT_2026_08.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "a2d63cef896408ff2adfa8d82394b8251b6f5a1b120f152887fc1e11c68e259c",
+      "archive_bytes": 39424573,
+      "m5_candles": 8928,
+      "first_m5_utc": "2026-08-01T00:00:00+00:00",
+      "last_m5_utc": "2026-08-31T23:55:00+00:00"
+    },
+    {
+      "month": "2026-09",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2026/09/Exness_BTCUSDT_2026_09.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "ae78db5854de05306f22ad591a08de54c95154e4359ace669293f0f54d499d10",
+      "archive_bytes": 38074220,
+      "m5_candles": 8640,
+      "first_m5_utc": "2026-09-01T00:00:00+00:00",
+      "last_m5_utc": "2026-09-30T23:55:00+00:00"
+    },
+    {
+      "month": "2026-10",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2026/10/Exness_BTCUSDT_2026_10.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "5742f9767e4f3de4ea4d3ff5985794b966a1ef02269698523f02e70f1632dd27",
+      "archive_bytes": 38869018,
+      "m5_candles": 8928,
+      "first_m5_utc": "2026-10-01T00:00:00+00:00",
+      "last_m5_utc": "2026-10-31T23:55:00+00:00"
+    }
+  ],
+  "frames": {
+    "M5": {
+      "rows": 39524,
+      "quotes": 15683154
+    },
+    "M15": {
+      "rows": 13175,
+      "quotes": 15683154
+    },
+    "M30": {
+      "rows": 6588,
+      "quotes": 15683154
+    },
+    "H1": {
+      "rows": 3294,
+      "quotes": 15683154
+    },
+    "H4": {
+      "rows": 824,
+      "quotes": 15683154
+    },
+    "D1": {
+      "rows": 138,
+      "quotes": 15683154
+    },
+    "W1": {
+      "rows": 19,
+      "quotes": 14925699
+    }
+  },
+  "calendar": "UTC; complete Monday-Sunday weeks only at year boundaries",
+  "warning": "Broker historical quotes; spread included, swap and commissions excluded",
+  "created_utc": "2026-11-12T17:58:35.333700+00:00"
+}

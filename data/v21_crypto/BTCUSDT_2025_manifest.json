@@ -1,0 +1,90 @@
+{
+  "dataset": "V21 Exness crypto",
+  "symbol": "BTCUSDT",
+  "year": 2025,
+  "period_start": "2025-01-01T00:00:00+00:00",
+  "period_end_exclusive": "2026-01-01T00:00:00+00:00",
+  "source": "Exness indicative Bid/Ask public tick mirror at ticks.ex2archive.com",
+  "quote_variant": "unsuffixed symbol",
+  "complete_months": false,
+  "month_count_ok": 0,
+  "month_count_requested": 12,
+  "months": [
+    {
+      "month": "2025-01",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2025/01/Exness_BTCUSDT_2025_01.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    },
+    {
+      "month": "2025-02",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2025/02/Exness_BTCUSDT_2025_02.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    },
+    {
+      "month": "2025-03",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2025/03/Exness_BTCUSDT_2025_03.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    },
+    {
+      "month": "2025-04",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2025/04/Exness_BTCUSDT_2025_04.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    },
+    {
+      "month": "2025-05",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2025/05/Exness_BTCUSDT_2025_05.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    },
+    {
+      "month": "2025-06",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2025/06/Exness_BTCUSDT_2025_06.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    },
+    {
+      "month": "2025-07",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2025/07/Exness_BTCUSDT_2025_07.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    },
+    {
+      "month": "2025-08",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2025/08/Exness_BTCUSDT_2025_08.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    },
+    {
+      "month": "2025-09",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2025/09/Exness_BTCUSDT_2025_09.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    },
+    {
+      "month": "2025-10",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2025/10/Exness_BTCUSDT_2025_10.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    },
+    {
+      "month": "2025-11",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2025/11/Exness_BTCUSDT_2025_11.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    },
+    {
+      "month": "2025-12",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSDT/2025/12/Exness_BTCUSDT_2025_12.zip",
+      "status": "error",
+      "error": "HTTP 404 \u2014 this symbol/month unavailable"
+    }
+  ],
+  "frames": {},
+  "calendar": "UTC; complete Monday-Sunday weeks only at year boundaries",
+  "warning": "Broker historical quotes; spread included, swap and commissions excluded",
+  "created_utc": "2026-11-12T17:57:36.637035+00:00"
+}

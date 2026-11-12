@@ -1,0 +1,157 @@
+{
+  "dataset": "V21 Exness crypto",
+  "symbol": "BTCUSD",
+  "year": 2026,
+  "period_start": "2026-01-01T00:00:00+00:00",
+  "period_end_exclusive": "2026-11-01T00:00:00+00:00",
+  "source": "Exness indicative Bid/Ask public tick mirror at ticks.ex2archive.com",
+  "quote_variant": "unsuffixed symbol",
+  "complete_months": true,
+  "month_count_ok": 10,
+  "month_count_requested": 10,
+  "months": [
+    {
+      "month": "2026-01",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/01/Exness_BTCUSD_2026_01.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "cc82ac33812a785680a7949385b624dfabdcd2845f513d2d81f5215cffcd2011",
+      "archive_bytes": 26299363,
+      "m5_candles": 8928,
+      "first_m5_utc": "2026-01-01T00:00:00+00:00",
+      "last_m5_utc": "2026-01-31T23:55:00+00:00"
+    },
+    {
+      "month": "2026-02",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/02/Exness_BTCUSD_2026_02.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "f118f39102706d20a616401a8c1d3d2aab95daf887d531330917f69d59d05aca",
+      "archive_bytes": 43958641,
+      "m5_candles": 8064,
+      "first_m5_utc": "2026-02-01T00:00:00+00:00",
+      "last_m5_utc": "2026-02-28T23:55:00+00:00"
+    },
+    {
+      "month": "2026-03",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/03/Exness_BTCUSD_2026_03.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "af6edb8b4d74ffa107be95c8a81230e8802a0974935f22c378ad9d8a82510c14",
+      "archive_bytes": 36460627,
+      "m5_candles": 8928,
+      "first_m5_utc": "2026-03-01T00:00:00+00:00",
+      "last_m5_utc": "2026-03-31T23:55:00+00:00"
+    },
+    {
+      "month": "2026-04",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/04/Exness_BTCUSD_2026_04.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "d8d63922760cafdf89c5f478fe42dab2f7802ccc1c89d15a7325d98303f6bef2",
+      "archive_bytes": 24527388,
+      "m5_candles": 8640,
+      "first_m5_utc": "2026-04-01T00:00:00+00:00",
+      "last_m5_utc": "2026-04-30T23:55:00+00:00"
+    },
+    {
+      "month": "2026-05",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/05/Exness_BTCUSD_2026_05.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "670d0af76339de50214ca0c96df6caed62dcca980089e8541e5ee7c9ca57f9fc",
+      "archive_bytes": 19902081,
+      "m5_candles": 8928,
+      "first_m5_utc": "2026-05-01T00:00:00+00:00",
+      "last_m5_utc": "2026-05-31T23:55:00+00:00"
+    },
+    {
+      "month": "2026-06",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/06/Exness_BTCUSD_2026_06.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "edb8d4aae6edb4fc4eff192d135784fd4a266c358e107a23ae6dadc9af370e91",
+      "archive_bytes": 36265888,
+      "m5_candles": 8636,
+      "first_m5_utc": "2026-06-01T00:00:00+00:00",
+      "last_m5_utc": "2026-06-30T23:55:00+00:00"
+    },
+    {
+      "month": "2026-07",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/07/Exness_BTCUSD_2026_07.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "7003f8be87f39db8d572ec61022a24554370b8d42114bbd70a4e5db3acd1ee05",
+      "archive_bytes": 33591568,
+      "m5_candles": 8928,
+      "first_m5_utc": "2026-07-01T00:00:00+00:00",
+      "last_m5_utc": "2026-07-31T23:55:00+00:00"
+    },
+    {
+      "month": "2026-08",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/08/Exness_BTCUSD_2026_08.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "684419608cf367e23806ec5339ff3d7643c3e8ec596a16cb07c188e2fe3bb1e2",
+      "archive_bytes": 39955363,
+      "m5_candles": 8928,
+      "first_m5_utc": "2026-08-01T00:00:00+00:00",
+      "last_m5_utc": "2026-08-31T23:55:00+00:00"
+    },
+    {
+      "month": "2026-09",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/09/Exness_BTCUSD_2026_09.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "8a978681acb2928c7eed3edac1390807c296a0fab5eeea7e479a22da40af2e92",
+      "archive_bytes": 38688743,
+      "m5_candles": 8640,
+      "first_m5_utc": "2026-09-01T00:00:00+00:00",
+      "last_m5_utc": "2026-09-30T23:55:00+00:00"
+    },
+    {
+      "month": "2026-10",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/10/Exness_BTCUSD_2026_10.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "433a80ce770b1a00c2a8207e76cdde300eb65790e9eadd1dcf6983e034784bfc",
+      "archive_bytes": 39577580,
+      "m5_candles": 8928,
+      "first_m5_utc": "2026-10-01T00:00:00+00:00",
+      "last_m5_utc": "2026-10-31T23:55:00+00:00"
+    }
+  ],
+  "frames": {
+    "M5": {
+      "rows": 87548,
+      "quotes": 30847342
+    },
+    "M15": {
+      "rows": 29184,
+      "quotes": 30847342
+    },
+    "M30": {
+      "rows": 14592,
+      "quotes": 30847342
+    },
+    "H1": {
+      "rows": 7296,
+      "quotes": 30847342
+    },
+    "H4": {
+      "rows": 1824,
+      "quotes": 30847342
+    },
+    "D1": {
+      "rows": 304,
+      "quotes": 30847342
+    },
+    "W1": {
+      "rows": 42,
+      "quotes": 29855465
+    }
+  },
+  "calendar": "UTC; complete Monday-Sunday weeks only at year boundaries",
+  "warning": "Broker historical quotes; spread included, swap and commissions excluded",
+  "created_utc": "2026-11-12T17:56:25.307002+00:00"
+}

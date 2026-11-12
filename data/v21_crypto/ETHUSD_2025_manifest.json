@@ -1,0 +1,179 @@
+{
+  "dataset": "V21 Exness crypto",
+  "symbol": "ETHUSD",
+  "year": 2025,
+  "period_start": "2025-01-01T00:00:00+00:00",
+  "period_end_exclusive": "2026-01-01T00:00:00+00:00",
+  "source": "Exness indicative Bid/Ask public tick mirror at ticks.ex2archive.com",
+  "quote_variant": "unsuffixed symbol",
+  "complete_months": true,
+  "month_count_ok": 12,
+  "month_count_requested": 12,
+  "months": [
+    {
+      "month": "2025-01",
+      "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2025/01/Exness_ETHUSD_2025_01.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "41acc72702a53e15f3cdf845e964e1e7e8b5860cec46c52fb4c0bba3dabcf557",
+      "archive_bytes": 50484671,
+      "m5_candles": 8928,
+      "first_m5_utc": "2025-01-01T00:00:00+00:00",
+      "last_m5_utc": "2025-01-31T23:55:00+00:00"
+    },
+    {
+      "month": "2025-02",
+      "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2025/02/Exness_ETHUSD_2025_02.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "5f6bc6be074d1ff6378650caa86739eccabe5612e2a20d8913c888f21a229aeb",
+      "archive_bytes": 58338137,
+      "m5_candles": 8064,
+      "first_m5_utc": "2025-02-01T00:00:00+00:00",
+      "last_m5_utc": "2025-02-28T23:55:00+00:00"
+    },
+    {
+      "month": "2025-03",
+      "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2025/03/Exness_ETHUSD_2025_03.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "0986da48a19baaae90e6bf9259bee21d1334dc3517c5af6d57a25818924c91ed",
+      "archive_bytes": 51754827,
+      "m5_candles": 8928,
+      "first_m5_utc": "2025-03-01T00:00:00+00:00",
+      "last_m5_utc": "2025-03-31T23:55:00+00:00"
+    },
+    {
+      "month": "2025-04",
+      "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2025/04/Exness_ETHUSD_2025_04.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "c29467a124dd4a248bbdd8c84aae00d85d21e60bf81af9882d122fb48d7a15c3",
+      "archive_bytes": 42476037,
+      "m5_candles": 8637,
+      "first_m5_utc": "2025-04-01T00:00:00+00:00",
+      "last_m5_utc": "2025-04-30T23:55:00+00:00"
+    },
+    {
+      "month": "2025-05",
+      "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2025/05/Exness_ETHUSD_2025_05.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "e16bddb1b4ccf0b0f27e6c0ced481a0e6f0dbece955b099a371cc897672a2142",
+      "archive_bytes": 48559640,
+      "m5_candles": 8913,
+      "first_m5_utc": "2025-05-01T00:00:00+00:00",
+      "last_m5_utc": "2025-05-31T23:55:00+00:00"
+    },
+    {
+      "month": "2025-06",
+      "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2025/06/Exness_ETHUSD_2025_06.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "ff006e2845451afb6c3d3fd093934623b6883bc1f6a045810b8403e5fb5a9e0e",
+      "archive_bytes": 37293525,
+      "m5_candles": 8640,
+      "first_m5_utc": "2025-06-01T00:00:00+00:00",
+      "last_m5_utc": "2025-06-30T23:55:00+00:00"
+    },
+    {
+      "month": "2025-07",
+      "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2025/07/Exness_ETHUSD_2025_07.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "6ee3d3dfe03eb6fff16e25370bc3354b445dd5c610f5ace37d90742dfc0a65d2",
+      "archive_bytes": 42523855,
+      "m5_candles": 8928,
+      "first_m5_utc": "2025-07-01T00:00:00+00:00",
+      "last_m5_utc": "2025-07-31T23:55:00+00:00"
+    },
+    {
+      "month": "2025-08",
+      "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2025/08/Exness_ETHUSD_2025_08.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "3804300e5d249bd63985cbcd0ce3f315d815ecf95224572ae513ae29070ca651",
+      "archive_bytes": 55432451,
+      "m5_candles": 8922,
+      "first_m5_utc": "2025-08-01T00:00:00+00:00",
+      "last_m5_utc": "2025-08-31T23:55:00+00:00"
+    },
+    {
+      "month": "2025-09",
+      "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2025/09/Exness_ETHUSD_2025_09.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "4b56e23306b9698d63b847b23bd34e6e589a5a440b3dc0d4f73fb936223c2ffa",
+      "archive_bytes": 35285600,
+      "m5_candles": 8637,
+      "first_m5_utc": "2025-09-01T00:00:00+00:00",
+      "last_m5_utc": "2025-09-30T23:55:00+00:00"
+    },
+    {
+      "month": "2025-10",
+      "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2025/10/Exness_ETHUSD_2025_10.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "6ac186d78bd7d35dcdfbcaae03896e3b7bbdb6486dda069b3773b23bf29bb75e",
+      "archive_bytes": 35679912,
+      "m5_candles": 8927,
+      "first_m5_utc": "2025-10-01T00:00:00+00:00",
+      "last_m5_utc": "2025-10-31T23:55:00+00:00"
+    },
+    {
+      "month": "2025-11",
+      "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2025/11/Exness_ETHUSD_2025_11.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "6d433281018c9c93ce10f7dede225e0ed5b14f10ab0d09ba7162fa3f3030ae98",
+      "archive_bytes": 32479154,
+      "m5_candles": 8574,
+      "first_m5_utc": "2025-11-01T00:00:00+00:00",
+      "last_m5_utc": "2025-11-30T18:25:00+00:00"
+    },
+    {
+      "month": "2025-12",
+      "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2025/12/Exness_ETHUSD_2025_12.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "91d0775bc4138ffd66de1dc2c6fadbdaf2f247b128bf680d14015cb08d7eb6cd",
+      "archive_bytes": 23093551,
+      "m5_candles": 8915,
+      "first_m5_utc": "2025-12-01T00:00:00+00:00",
+      "last_m5_utc": "2025-12-31T23:55:00+00:00"
+    }
+  ],
+  "frames": {
+    "M5": {
+      "rows": 105013,
+      "quotes": 60245963
+    },
+    "M15": {
+      "rows": 35011,
+      "quotes": 60245963
+    },
+    "M30": {
+      "rows": 17506,
+      "quotes": 60245963
+    },
+    "H1": {
+      "rows": 8755,
+      "quotes": 60245963
+    },
+    "H4": {
+      "rows": 2189,
+      "quotes": 60245963
+    },
+    "D1": {
+      "rows": 365,
+      "quotes": 60245963
+    },
+    "W1": {
+      "rows": 51,
+      "quotes": 59502234
+    }
+  },
+  "calendar": "UTC; complete Monday-Sunday weeks only at year boundaries",
+  "warning": "Broker historical quotes; spread included, swap and commissions excluded",
+  "created_utc": "2026-11-12T17:57:15.404044+00:00"
+}

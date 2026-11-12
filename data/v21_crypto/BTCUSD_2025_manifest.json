@@ -1,0 +1,179 @@
+{
+  "dataset": "V21 Exness crypto",
+  "symbol": "BTCUSD",
+  "year": 2025,
+  "period_start": "2025-01-01T00:00:00+00:00",
+  "period_end_exclusive": "2026-01-01T00:00:00+00:00",
+  "source": "Exness indicative Bid/Ask public tick mirror at ticks.ex2archive.com",
+  "quote_variant": "unsuffixed symbol",
+  "complete_months": true,
+  "month_count_ok": 12,
+  "month_count_requested": 12,
+  "months": [
+    {
+      "month": "2025-01",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2025/01/Exness_BTCUSD_2025_01.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "5df46b582d3ef34c94726514cf1479c89000f6117fab22e34cc193b31b2f05b2",
+      "archive_bytes": 119719856,
+      "m5_candles": 8928,
+      "first_m5_utc": "2025-01-01T00:00:00+00:00",
+      "last_m5_utc": "2025-01-31T23:55:00+00:00"
+    },
+    {
+      "month": "2025-02",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2025/02/Exness_BTCUSD_2025_02.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "71dedd37230cf1bc00a17ad984338123815db762f4abee773104274f6cd6adb4",
+      "archive_bytes": 149404389,
+      "m5_candles": 8064,
+      "first_m5_utc": "2025-02-01T00:00:00+00:00",
+      "last_m5_utc": "2025-02-28T23:55:00+00:00"
+    },
+    {
+      "month": "2025-03",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2025/03/Exness_BTCUSD_2025_03.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "4352bfbecf2733ed4ce51949a1618d48647827b74981b62ff2e1f3b6c86f9cac",
+      "archive_bytes": 162023553,
+      "m5_candles": 8352,
+      "first_m5_utc": "2025-03-01T00:00:00+00:00",
+      "last_m5_utc": "2025-03-29T23:55:00+00:00"
+    },
+    {
+      "month": "2025-04",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2025/04/Exness_BTCUSD_2025_04.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "7e19fc6f215dca01199af9810bdee0e1dfeb54dc3e0b2c7da1f79b5d10ea6ee2",
+      "archive_bytes": 158102989,
+      "m5_candles": 8349,
+      "first_m5_utc": "2025-04-01T00:00:00+00:00",
+      "last_m5_utc": "2025-04-30T23:55:00+00:00"
+    },
+    {
+      "month": "2025-05",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2025/05/Exness_BTCUSD_2025_05.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "589fc1f19e1543d9a6e9877da4a054d2f78e671c7027d46120de9da444452c41",
+      "archive_bytes": 170296784,
+      "m5_candles": 8913,
+      "first_m5_utc": "2025-05-01T00:00:00+00:00",
+      "last_m5_utc": "2025-05-31T23:55:00+00:00"
+    },
+    {
+      "month": "2025-06",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2025/06/Exness_BTCUSD_2025_06.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "8a84be8490805befb670e4315633b9c1f756edaf05d0de47b886099853379f58",
+      "archive_bytes": 161542795,
+      "m5_candles": 8640,
+      "first_m5_utc": "2025-06-01T00:00:00+00:00",
+      "last_m5_utc": "2025-06-30T23:55:00+00:00"
+    },
+    {
+      "month": "2025-07",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2025/07/Exness_BTCUSD_2025_07.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "f1f57ba6008855627b8a7d01fac30e3cae1da585e8b261c91040f579b8aaa125",
+      "archive_bytes": 174291010,
+      "m5_candles": 8928,
+      "first_m5_utc": "2025-07-01T00:00:00+00:00",
+      "last_m5_utc": "2025-07-31T23:55:00+00:00"
+    },
+    {
+      "month": "2025-08",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2025/08/Exness_BTCUSD_2025_08.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "49f7ae8ad4a885abccd24d076fcb229bb46f3d163aad78ba12abd3c7ffcb28b4",
+      "archive_bytes": 144409363,
+      "m5_candles": 8923,
+      "first_m5_utc": "2025-08-01T00:00:00+00:00",
+      "last_m5_utc": "2025-08-31T23:55:00+00:00"
+    },
+    {
+      "month": "2025-09",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2025/09/Exness_BTCUSD_2025_09.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "9fd10a2f48c2f0c42461d542d7847ba27ced3d0bcdfd15666cc3fa2341cfbd99",
+      "archive_bytes": 130123456,
+      "m5_candles": 8637,
+      "first_m5_utc": "2025-09-01T00:00:00+00:00",
+      "last_m5_utc": "2025-09-30T23:55:00+00:00"
+    },
+    {
+      "month": "2025-10",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2025/10/Exness_BTCUSD_2025_10.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "96c7b6e256046223404ed9ec855c59bb4b9a9edda6474c149a7592c93dc03a54",
+      "archive_bytes": 47642071,
+      "m5_candles": 8927,
+      "first_m5_utc": "2025-10-01T00:00:00+00:00",
+      "last_m5_utc": "2025-10-31T23:55:00+00:00"
+    },
+    {
+      "month": "2025-11",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2025/11/Exness_BTCUSD_2025_11.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "b4951826cbf268a0652fc0147300ea204b0fc956a92295540f2e525109619248",
+      "archive_bytes": 37877120,
+      "m5_candles": 8574,
+      "first_m5_utc": "2025-11-01T00:00:00+00:00",
+      "last_m5_utc": "2025-11-30T18:25:00+00:00"
+    },
+    {
+      "month": "2025-12",
+      "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2025/12/Exness_BTCUSD_2025_12.zip",
+      "status": "ok",
+      "error": null,
+      "sha256": "37fa06d9072b031d7cee2f01a76755ba5aa8ec238bf68ab7463cc28175523152",
+      "archive_bytes": 30434441,
+      "m5_candles": 8915,
+      "first_m5_utc": "2025-12-01T00:00:00+00:00",
+      "last_m5_utc": "2025-12-31T23:55:00+00:00"
+    }
+  ],
+  "frames": {
+    "M5": {
+      "rows": 104150,
+      "quotes": 148657447
+    },
+    "M15": {
+      "rows": 34723,
+      "quotes": 148657447
+    },
+    "M30": {
+      "rows": 17362,
+      "quotes": 148657447
+    },
+    "H1": {
+      "rows": 8683,
+      "quotes": 148657447
+    },
+    "H4": {
+      "rows": 2171,
+      "quotes": 148657447
+    },
+    "D1": {
+      "rows": 362,
+      "quotes": 148657447
+    },
+    "W1": {
+      "rows": 51,
+      "quotes": 146953868
+    }
+  },
+  "calendar": "UTC; complete Monday-Sunday weeks only at year boundaries",
+  "warning": "Broker historical quotes; spread included, swap and commissions excluded",
+  "created_utc": "2026-11-12T18:00:34.026337+00:00"
+}
