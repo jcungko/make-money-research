@@ -74,7 +74,7 @@ def relationship(a,b):
     # Strict but hybrid: structural clones with same loss/profit months,
     # or nearly identical monthly returns, are counted as duplicates.
     if exact:
-        qualifies=(structural>=.82 and (corr>=.88 or agree>=.90)) or (structural>=.76 and corr>=.97)
+        qualifies=(structural>=.82 and (corr>=.88 or (agree>=.90 and corr>=.70))) or (structural>=.76 and corr>=.97)
     else:
         qualifies=(structural>=.91 and corr>=.97 and agree>=.95)
     if not qualifies:return None
@@ -169,7 +169,7 @@ def main():
       'methods':{
         'ranking':'22-month positive-month count, then worst monthly P&L, worse of 2025/2026 P&L, total P&L, Nov-to-date P&L',
         'comparison':'same symbols with same/within-1-hour UTC entry times and similar timeframe, direction, indicators, regime, duration; monthly P&L similarity. Optional 4/5 overlap only if extremely high correlation',
-        'suppress_when_same_assets':'60% exact hours, >=90% within 1h, structural similarity >=0.82 and (monthly corr >=0.88 or profit/loss month sign agree >=90%) OR structural >=0.76 and corr >=0.97',
+        'suppress_when_same_assets':'60% exact hours, >=90% within 1h, structural similarity >=0.82 and (monthly corr >=0.88 or monthly corr >=0.70 with >=90% profitable-month sign agreement); OR structural >=0.76 and corr >=0.97',
         'suppress_when_4of5_asset_overlap':'structural >=0.91, monthly corr >=0.97, monthly sign agreement >=95%',
         'direct_only':'Every removed configuration compared directly with final retained representative. No transitive single-linkage overmerging.',
         'disclaimer':'In-sample monthly-return similarity over only 22 months; not trade-by-trade correlation or proven independence.'
