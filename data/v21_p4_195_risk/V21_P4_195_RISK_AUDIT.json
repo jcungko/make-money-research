@@ -1,0 +1,287 @@
+{
+  "initial_equity_usd": 10000.0,
+  "final_balance_usd": 11528.64,
+  "marked_equity_usd": 11528.64,
+  "max_drawdown_pct": 1.6412,
+  "min_marked_equity_usd": 9888.21,
+  "completed_trades": 1022,
+  "stopouts": 156,
+  "pending": [],
+  "risk_events": {
+    "OPENED": 1022,
+    "TIME": 866,
+    "SL": 156
+  },
+  "daily_entry_lock_trigger_days": 0,
+  "positive_months_2025_to_oct2026": 18,
+  "positive_months_from_jan2025_to_nov_partial": 18,
+  "monthly": [
+    {
+      "month": "2025-01",
+      "realized_pnl_usd": -23.62,
+      "realized_pnl_pct_initial": -0.23617,
+      "closed_trades": 47,
+      "positive": false
+    },
+    {
+      "month": "2025-02",
+      "realized_pnl_usd": 25.06,
+      "realized_pnl_pct_initial": 0.25057,
+      "closed_trades": 33,
+      "positive": true
+    },
+    {
+      "month": "2025-03",
+      "realized_pnl_usd": 86.46,
+      "realized_pnl_pct_initial": 0.86462,
+      "closed_trades": 38,
+      "positive": true
+    },
+    {
+      "month": "2025-04",
+      "realized_pnl_usd": -43.74,
+      "realized_pnl_pct_initial": -0.4374,
+      "closed_trades": 49,
+      "positive": false
+    },
+    {
+      "month": "2025-05",
+      "realized_pnl_usd": 85.96,
+      "realized_pnl_pct_initial": 0.85963,
+      "closed_trades": 55,
+      "positive": true
+    },
+    {
+      "month": "2025-06",
+      "realized_pnl_usd": 28.78,
+      "realized_pnl_pct_initial": 0.28778,
+      "closed_trades": 50,
+      "positive": true
+    },
+    {
+      "month": "2025-07",
+      "realized_pnl_usd": 50.95,
+      "realized_pnl_pct_initial": 0.50945,
+      "closed_trades": 51,
+      "positive": true
+    },
+    {
+      "month": "2025-08",
+      "realized_pnl_usd": 84.02,
+      "realized_pnl_pct_initial": 0.84016,
+      "closed_trades": 40,
+      "positive": true
+    },
+    {
+      "month": "2025-09",
+      "realized_pnl_usd": 56.05,
+      "realized_pnl_pct_initial": 0.56052,
+      "closed_trades": 52,
+      "positive": true
+    },
+    {
+      "month": "2025-10",
+      "realized_pnl_usd": 69.94,
+      "realized_pnl_pct_initial": 0.69936,
+      "closed_trades": 47,
+      "positive": true
+    },
+    {
+      "month": "2025-11",
+      "realized_pnl_usd": 66.56,
+      "realized_pnl_pct_initial": 0.66564,
+      "closed_trades": 46,
+      "positive": true
+    },
+    {
+      "month": "2025-12",
+      "realized_pnl_usd": 37.4,
+      "realized_pnl_pct_initial": 0.37398,
+      "closed_trades": 44,
+      "positive": true
+    },
+    {
+      "month": "2026-01",
+      "realized_pnl_usd": -29.29,
+      "realized_pnl_pct_initial": -0.29294,
+      "closed_trades": 43,
+      "positive": false
+    },
+    {
+      "month": "2026-02",
+      "realized_pnl_usd": 97.34,
+      "realized_pnl_pct_initial": 0.97344,
+      "closed_trades": 36,
+      "positive": true
+    },
+    {
+      "month": "2026-03",
+      "realized_pnl_usd": 7.68,
+      "realized_pnl_pct_initial": 0.0768,
+      "closed_trades": 47,
+      "positive": true
+    },
+    {
+      "month": "2026-04",
+      "realized_pnl_usd": 209.24,
+      "realized_pnl_pct_initial": 2.09242,
+      "closed_trades": 54,
+      "positive": true
+    },
+    {
+      "month": "2026-05",
+      "realized_pnl_usd": -32.37,
+      "realized_pnl_pct_initial": -0.32369,
+      "closed_trades": 41,
+      "positive": false
+    },
+    {
+      "month": "2026-06",
+      "realized_pnl_usd": 134.12,
+      "realized_pnl_pct_initial": 1.34116,
+      "closed_trades": 45,
+      "positive": true
+    },
+    {
+      "month": "2026-07",
+      "realized_pnl_usd": 109.71,
+      "realized_pnl_pct_initial": 1.09711,
+      "closed_trades": 50,
+      "positive": true
+    },
+    {
+      "month": "2026-08",
+      "realized_pnl_usd": 110.13,
+      "realized_pnl_pct_initial": 1.10126,
+      "closed_trades": 52,
+      "positive": true
+    },
+    {
+      "month": "2026-09",
+      "realized_pnl_usd": 368.22,
+      "realized_pnl_pct_initial": 3.68223,
+      "closed_trades": 44,
+      "positive": true
+    },
+    {
+      "month": "2026-10",
+      "realized_pnl_usd": 56.86,
+      "realized_pnl_pct_initial": 0.56859,
+      "closed_trades": 41,
+      "positive": true
+    },
+    {
+      "month": "2026-11",
+      "realized_pnl_usd": -26.81,
+      "realized_pnl_pct_initial": -0.26813,
+      "closed_trades": 17,
+      "positive": false
+    }
+  ],
+  "by_bot": {
+    "BTCUSD|H1|range_top_20|long|H2|08utc": {
+      "realized_usd": 315.01,
+      "closed_trades": 173,
+      "stopouts": 6
+    },
+    "BTCUSD|H1|above_sma_50|short|H8|00utc": {
+      "realized_usd": 396.95,
+      "closed_trades": 341,
+      "stopouts": 62
+    },
+    "BTCUSD|H4|range_top_20|short|H3|20utc": {
+      "realized_usd": 482.54,
+      "closed_trades": 186,
+      "stopouts": 50
+    },
+    "BTCUSD|M30|ema_below_3_10|long|H8|20utc": {
+      "realized_usd": 334.14,
+      "closed_trades": 322,
+      "stopouts": 38
+    }
+  },
+  "status": "BACKTEST_MODEL_ONLY",
+  "symbol": "BTCUSD",
+  "portfolio": "V21-P4-195",
+  "all_four_bots_preserved": [
+    "BTCUSD|H1|range_top_20|long|H2|08utc",
+    "BTCUSD|H1|above_sma_50|short|H8|00utc",
+    "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+    "BTCUSD|H4|range_top_20|short|H3|20utc"
+  ],
+  "source": "Exness public indicative Bid/Ask ticks",
+  "last_complete_m5_exclusive_utc": "2026-11-12T18:30:00+00:00",
+  "historical_months": "2025-01 to 2026-10",
+  "november_month": "2026-11 PARTIAL THROUGH cutoff",
+  "risk_config": {
+    "sl_formula": "2 x completed H1 ATR14 with floor 3 x live observed spread",
+    "per_trade_initial_stop_risk_pct": 0.2,
+    "total_btc_initial_stop_risk_pct": 0.6,
+    "total_account_initial_stop_risk_pct": 1.0,
+    "max_gross_btc_notional_to_equity": 2.0,
+    "min_trade_risk_pct": 0.05,
+    "daily_equity_loss_pause_new_entries_pct": 2.0,
+    "daily_stop_rule": "pause entries until next UTC date; NO forced flattening",
+    "default_exit": "original time-based exit if SL not hit",
+    "entry_execution": "long Ask / short Bid plus 1bp adverse slippage",
+    "exit_execution": "long Bid / short Ask plus 1bp adverse slippage",
+    "sl_intrabar": "5-minute Bid low (long) / Ask high (short), stop-first after entry",
+    "gap_rule": "if M5 open is through stop, use worse opening price"
+  },
+  "baseline_22m_equal_notional_bp": 3050.6204,
+  "original_monthly_equal_notional_bp": [
+    154.38038,
+    144.66623,
+    259.43803,
+    33.40722,
+    76.60836,
+    139.34465,
+    0.23404,
+    98.76337,
+    84.32156,
+    35.26391,
+    142.10755,
+    166.04851,
+    66.0803,
+    227.01028,
+    119.38061,
+    269.46639,
+    16.32379,
+    264.27394,
+    197.3896,
+    71.5004,
+    406.24401,
+    78.36726
+  ],
+  "original_nov_partial_equal_notional_bp": 32.03916,
+  "original_baseline_parity_by_bot": {
+    "BTCUSD|H1|range_top_20|long|H2|08utc": {
+      "max_abs_diff_bp": 0.0,
+      "replay_total_bp": 2168.5887,
+      "original_total_bp": 2168.5887
+    },
+    "BTCUSD|H1|above_sma_50|short|H8|00utc": {
+      "max_abs_diff_bp": 0.0,
+      "replay_total_bp": 2989.4158,
+      "original_total_bp": 2989.4158
+    },
+    "BTCUSD|M30|ema_below_3_10|long|H8|20utc": {
+      "max_abs_diff_bp": 0.0,
+      "replay_total_bp": 2981.0664,
+      "original_total_bp": 2981.0664
+    },
+    "BTCUSD|H4|range_top_20|short|H3|20utc": {
+      "max_abs_diff_bp": 0.0,
+      "replay_total_bp": 4063.4107,
+      "original_total_bp": 4063.4107
+    }
+  },
+  "caveats": [
+    "Account USD and BTC quantity are normalized, not Exness contract lots.",
+    "No swap, overnight financing, platform commission, broker-specific lot steps, margin, liquidation, or exact live slippage.",
+    "Monthly realized PnL is attributed to closing month; open November positions remain unrealized.",
+    "Daily 2% loss pause is not a guaranteed maximal loss; stops/gaps may exceed budgets.",
+    "ATR stops and total risk caps change the strategy; original 22/22 profit is not inherited.",
+    "This uses in-sample 2025-2026 parameters; walk-forward needed."
+  ]
+}
