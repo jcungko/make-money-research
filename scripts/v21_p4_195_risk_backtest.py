@@ -314,7 +314,7 @@ def risk_test(m5,events,cutoff):
         months_count[month]+=1
     monthly=[dict(month=m,realized_pnl_usd=round(months_usd[m],2),
         realized_pnl_pct_initial=round(months_usd[m]/START_CASH*100,5),
-        closed_trades=months_count[m],positive=months_usd[m]>0)
+        closed_trades=int(months_count[m]),positive=bool(months_usd[m]>0))
         for m in MONTHS]
     by_bot=defaultdict(lambda:dict(realized_usd=0.0,closed_trades=0,stopouts=0))
     for p in completed:
@@ -335,8 +335,8 @@ def risk_test(m5,events,cutoff):
         stopouts=sum(x["reason"]=="SL" for x in completed),
         pending=pending,risk_events=dict(event_counts),
         daily_entry_lock_trigger_days=day_lock_count,
-        positive_months_2025_to_oct2026=sum(x["positive"] for x in monthly[:22]),
-        positive_months_from_jan2025_to_nov_partial=sum(x["positive"] for x in monthly),
+        positive_months_2025_to_oct2026=int(sum(x["positive"] for x in monthly[:22])),
+        positive_months_from_jan2025_to_nov_partial=int(sum(x["positive"] for x in monthly)),
         monthly=monthly,by_bot=dict(by_bot),trades=completed,
         end_of_day_equity=snapshots)
 
@@ -392,7 +392,7 @@ def main():
             "Daily 2% loss pause is not a guaranteed maximal loss; stops/gaps may exceed budgets.",
             "ATR stops and total risk caps change the strategy; original 22/22 profit is not inherited.",
             "This uses in-sample 2025-2026 parameters; walk-forward needed."])
-    (OUT/"V21_P4_195_RISK_AUDIT.json").write_text(json.dumps(result,indent=2,ensure_ascii=False)+"\n")
+    (OUT/"V21_P4_195_RISK_AUDIT.json").write_text(json.dumps(result,indent=2,ensure_ascii=False,default=lambda o: o.item() if isinstance(o,np.generic) else str(o))+"\n")
     with (OUT/"V21_P4_195_RISK_TRADES.csv").open("w",newline="") as handle:
         w=csv.DictWriter(handle,fieldnames=["bot","entry_utc","exit_utc","reason","qty_btc",
             "entry_fill","stop","exit_fill","profit_usd","initial_risk_usd","realized_r","gap_through_sl"])
