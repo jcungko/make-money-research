@@ -1,0 +1,33 @@
+name: V19-065 investigate no B3 trades November 2026
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v19-065-b3-zero-trades-diagnostic.yml'
+      - 'scripts/v19_065_b3_nov_diagnostic.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'numpy>=1.26,<3' 'pandas>=2.2,<3' 'requests>=2.31,<3'
+      - name: Count B3 H4 bars, RSI7 conditions and session filters
+        run: python scripts/v19_065_b3_nov_diagnostic.py
+      - name: Save analysis
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v19_sl_research/V19_065_B3_nov2026_zero_trades_diagnostic.json
+          if ! git diff --cached --quiet; then
+            git commit -m "V19-065: B3 November zero-trades root-cause diagnostics"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
