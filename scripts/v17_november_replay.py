@@ -50,7 +50,7 @@ def unzip_csv(raw):
             if len(files)!=1:
                 raise ValueError("unexpected tick ZIP member list")
             return z.read(files[0]), "valid_zip"
-    if not raw.startswith(b"PK\\x03\\x04".decode("unicode_escape").encode("latin1")) or len(raw)<35:
+    if not raw.startswith(bytes((80,75,3,4))) or len(raw)<35:
         raise ValueError("not a valid ZIP or recoverable partial ZIP")
     method=struct.unpack_from("<H",raw,8)[0]
     nlen,xlen=struct.unpack_from("<HH",raw,26)
@@ -58,9 +58,9 @@ def unzip_csv(raw):
         raise ValueError("unsupported partial ZIP deflate compression")
     decoder=zlib.decompressobj(-zlib.MAX_WBITS)
     body=decoder.decompress(raw[30+nlen+xlen:])+decoder.flush()
-    if b"\\n" not in body:
+    if b"\n" not in body:
         raise ValueError("no complete tick records in truncated ZIP")
-    return body[:body.rfind(b"\\n")+1],"recovered_partial_zip"
+    return body[:body.rfind(b"\n")+1],"recovered_partial_zip"
 
 
 def fresh_ticks(session,symbol,day):
@@ -212,8 +212,12 @@ def main():
             # Detect missing 5-minute bars on weekday Nov 11, when Forex market is open.
             nov11=concat.loc["2026-11-11T00:00:00Z":"2026-11-11T23:55:00Z"]
             valid_ranges=np.diff(nov11.index.asi8)==300_000_000_000
-            if (not len(nov11)) or (not valid_ranges.all()) or len(nov11)<280:
-                raise RuntimeError(f"{symbol}: Nov11 5min bars contain gaps ({len(nov11)})")
+            if (not len(nov11)) or len(nov11)<280:
+                raise RuntimeError(f"{symbol}: Nov11 source incomplete ({len(nov11)}/288 possible M5 buckets)")
+            # Quote gaps are preserved, never filled with invented candles. Individual
+            # trades crossing a gap are already disqualified by trade_ledger().
+            gaps = int((~valid_ranges).sum())
+            print("DATA_GAPS", symbol, "Nov11", gaps, "M5 gaps",flush=True)
             frames={tf:make_frame(concat,tf) for tf in {spec[2] for spec in SPECS if spec[1]==symbol}}
             frames["M5"]=concat
             ledger=trade_ledger(symbol,meta,frames,verified_exclusive)
@@ -246,7 +250,7 @@ def main():
     dataset["total_profit_pips"]=round(sum(x["profit_pips"] for x in by_strategy),3)
     dataset["all_8_positive"]=all(x["profit_pips"]>0 for x in by_strategy)
     dataset["all_sources_complete"]=not dataset["errors"]
-    (OUT/"report.json").write_text(json.dumps(dataset,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+    (OUT/"report.json").write_text(json.dumps(dataset,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     pd.DataFrame(dataset["trades"]).sort_values(["entry_utc","strategy"]).to_csv(OUT/"trades.csv",index=False)
     pd.DataFrame(by_strategy).to_csv(OUT/"summary.csv",index=False)
     print("FINAL_V17_NOVEMBER",json.dumps({"asof_utc":now.isoformat(),"result":by_strategy,
