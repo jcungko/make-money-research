@@ -1,0 +1,5200 @@
+{
+  "project": "V19",
+  "strategy_selection": "The four positively performing 2026-Nov portfolios from prior deduplication",
+  "selection_ids": [
+    "V19-065",
+    "V19-051",
+    "V19-043",
+    "V19-025"
+  ],
+  "history_period": "2025-01-01 through 2026-10-31 inclusive UTC",
+  "november_period": "2026-11-01 through completed M5 candles prior to 2026-11-12 18:00 UTC (original frozen snapshot)",
+  "sl_definition": "Hard stop from entry Ask for buys and entry Bid for sells. For buy stop test M5 Bid lows; for sell test M5 Ask highs; fill at stop level or worse M5 opening quote when gap crosses, then apply 1 bp exit slippage. Stop on broker requires actual MT5 implementation and confirmation; this only simulates.",
+  "fixed_pct_100bps_default": "1.00% of entry execution price for every bot on both commodities; fixed close after original number of timeframe bars if stop never hit",
+  "sl_bp_values": [
+    50,
+    75,
+    100,
+    125,
+    150,
+    200,
+    250,
+    300,
+    400
+  ],
+  "no_reoptimizing_on_november": true,
+  "trade_selection": "Signals & time entries identical to old no-SL version; after stop, do not reactivate same leg until previously scheduled hold has ended.",
+  "remaining_limitations": "M5 intra-bar quote extremes cannot reveal exact stop fill/spread at the tick of trigger. No swap, commissions, order rejection, or MT5 broker stop-distance validation. Return is fixed-notional bp, NOT USD. Portfolio positions can overlap.",
+  "baseline": {
+    "V19-065": {
+      "historical_bp": 1754.86144,
+      "historical_positive_months": 21,
+      "november_bp": 141.65308,
+      "historical_orders": 766,
+      "november_orders": 17
+    },
+    "V19-051": {
+      "historical_bp": 1733.65945,
+      "historical_positive_months": 21,
+      "november_bp": 60.68435,
+      "historical_orders": 694,
+      "november_orders": 14
+    },
+    "V19-043": {
+      "historical_bp": 1542.47956,
+      "historical_positive_months": 21,
+      "november_bp": 52.19107,
+      "historical_orders": 708,
+      "november_orders": 9
+    },
+    "V19-025": {
+      "historical_bp": 1796.39833,
+      "historical_positive_months": 21,
+      "november_bp": 43.48245,
+      "historical_orders": 570,
+      "november_orders": 15
+    }
+  },
+  "fixed_1pct_default": [
+    {
+      "portfolio": "V19-065",
+      "stop_basis_points": 100,
+      "stop_pct": 1.0,
+      "historical": {
+        "portfolio": "V19-065",
+        "sl_bp": 100,
+        "period": "historical",
+        "total_profit_bp": 1110.04183,
+        "trades": 766,
+        "stop_count": 172,
+        "stop_fraction": 0.2245,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 361,
+        "losing_orders": 405,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 18,
+            "realized_bp_unweighted": 1648.40755
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 440,
+            "stop_count": 93,
+            "realized_bp_unweighted": 544.85465
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 79,
+            "stop_count": 26,
+            "realized_bp_unweighted": 912.76031
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 123,
+            "stop_count": 35,
+            "realized_bp_unweighted": 1334.14481
+          }
+        ],
+        "positive_months": 15,
+        "month_total": 22,
+        "profit_2025_bp": 597.12006,
+        "profit_2026_jan_oct_bp": 512.92177,
+        "min_month_bp": -175.07339,
+        "max_month_bp": 249.44775,
+        "monthly_bp": [
+          18.51404,
+          59.12227,
+          91.99804,
+          -60.58027,
+          28.35885,
+          98.66166,
+          58.12914,
+          -37.88399,
+          149.66434,
+          97.03286,
+          118.54229,
+          -24.43917,
+          -175.07339,
+          71.44695,
+          -2.3072,
+          206.41842,
+          95.62994,
+          249.44775,
+          65.20674,
+          -85.56839,
+          -65.68312,
+          153.40405
+        ],
+        "max_month_end_equity_drawdown_bp": 199.51256
+      },
+      "november": {
+        "portfolio": "V19-065",
+        "sl_bp": 100,
+        "period": "november",
+        "total_profit_bp": 232.16387,
+        "trades": 17,
+        "stop_count": 5,
+        "stop_fraction": 0.2941,
+        "worst_single_leg_trade_bp": -102.004,
+        "worst_portfolio_allocated_trade_bp": -25.501,
+        "winning_orders": 10,
+        "losing_orders": 7,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 9,
+            "stop_count": 1,
+            "realized_bp_unweighted": 991.5168
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 0,
+            "stop_count": 0,
+            "realized_bp_unweighted": 0.0
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 7,
+            "stop_count": 4,
+            "realized_bp_unweighted": -125.47452
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-051",
+      "stop_basis_points": 100,
+      "stop_pct": 1.0,
+      "historical": {
+        "portfolio": "V19-051",
+        "sl_bp": 100,
+        "period": "historical",
+        "total_profit_bp": 1444.38441,
+        "trades": 694,
+        "stop_count": 118,
+        "stop_fraction": 0.17,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 364,
+        "losing_orders": 330,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 13,
+            "realized_bp_unweighted": 1602.38057
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 27,
+            "realized_bp_unweighted": 2038.07613
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 53,
+            "realized_bp_unweighted": 642.73166
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 25,
+            "realized_bp_unweighted": 1494.34927
+          }
+        ],
+        "positive_months": 17,
+        "month_total": 22,
+        "profit_2025_bp": 622.4263,
+        "profit_2026_jan_oct_bp": 821.95811,
+        "min_month_bp": -163.96743,
+        "max_month_bp": 340.41745,
+        "monthly_bp": [
+          9.33426,
+          38.72618,
+          23.8603,
+          -70.47785,
+          0.95224,
+          188.45103,
+          116.54227,
+          -36.45904,
+          86.8483,
+          23.47547,
+          181.31073,
+          59.86241,
+          140.12444,
+          51.79252,
+          203.49198,
+          249.21415,
+          52.34906,
+          340.41745,
+          -59.93369,
+          -163.96743,
+          -47.48667,
+          55.9563
+        ],
+        "max_month_end_equity_drawdown_bp": 271.38779
+      },
+      "november": {
+        "portfolio": "V19-051",
+        "sl_bp": 100,
+        "period": "november",
+        "total_profit_bp": 128.67492,
+        "trades": 14,
+        "stop_count": 6,
+        "stop_fraction": 0.4286,
+        "worst_single_leg_trade_bp": -102.004,
+        "worst_portfolio_allocated_trade_bp": -25.501,
+        "winning_orders": 8,
+        "losing_orders": 6,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 1,
+            "realized_bp_unweighted": -101.99593
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 1,
+            "realized_bp_unweighted": 569.89197
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 4,
+            "realized_bp_unweighted": -102.17803
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-043",
+      "stop_basis_points": 100,
+      "stop_pct": 1.0,
+      "historical": {
+        "portfolio": "V19-043",
+        "sl_bp": 100,
+        "period": "historical",
+        "total_profit_bp": 1341.26155,
+        "trades": 708,
+        "stop_count": 107,
+        "stop_fraction": 0.1511,
+        "worst_single_leg_trade_bp": -105.16172,
+        "worst_portfolio_allocated_trade_bp": -26.29043,
+        "winning_orders": 367,
+        "losing_orders": 341,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 124,
+            "stop_count": 7,
+            "realized_bp_unweighted": 1591.79989
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 116,
+            "stop_count": 20,
+            "realized_bp_unweighted": 1092.43852
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 27,
+            "realized_bp_unweighted": 2038.07613
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 53,
+            "realized_bp_unweighted": 642.73166
+          }
+        ],
+        "positive_months": 18,
+        "month_total": 22,
+        "profit_2025_bp": 554.25682,
+        "profit_2026_jan_oct_bp": 787.00473,
+        "min_month_bp": -109.43064,
+        "max_month_bp": 326.70554,
+        "monthly_bp": [
+          41.88278,
+          17.58714,
+          16.30019,
+          85.94235,
+          -109.43064,
+          203.07942,
+          78.15221,
+          -3.84376,
+          47.71727,
+          12.66978,
+          128.03725,
+          36.16284,
+          108.97265,
+          16.06057,
+          88.05533,
+          194.89713,
+          85.20946,
+          326.70554,
+          -59.10292,
+          -43.99823,
+          24.11107,
+          46.09413
+        ],
+        "max_month_end_equity_drawdown_bp": 109.43064
+      },
+      "november": {
+        "portfolio": "V19-043",
+        "sl_bp": 100,
+        "period": "november",
+        "total_profit_bp": 121.77106,
+        "trades": 9,
+        "stop_count": 3,
+        "stop_fraction": 0.3333,
+        "worst_single_leg_trade_bp": -102.004,
+        "worst_portfolio_allocated_trade_bp": -25.501,
+        "winning_orders": 5,
+        "losing_orders": 4,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -27.79854
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 2,
+            "stop_count": 2,
+            "realized_bp_unweighted": -203.99085
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 1,
+            "realized_bp_unweighted": 569.89197
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-025",
+      "stop_basis_points": 100,
+      "stop_pct": 1.0,
+      "historical": {
+        "portfolio": "V19-025",
+        "sl_bp": 100,
+        "period": "historical",
+        "total_profit_bp": 1276.18513,
+        "trades": 570,
+        "stop_count": 110,
+        "stop_fraction": 0.193,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 293,
+        "losing_orders": 277,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 13,
+            "realized_bp_unweighted": 1602.38057
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 18,
+            "realized_bp_unweighted": 1648.40755
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 220,
+            "stop_count": 54,
+            "realized_bp_unweighted": 359.60311
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 25,
+            "realized_bp_unweighted": 1494.34927
+          }
+        ],
+        "positive_months": 17,
+        "month_total": 22,
+        "profit_2025_bp": 424.31762,
+        "profit_2026_jan_oct_bp": 851.86751,
+        "min_month_bp": -118.04439,
+        "max_month_bp": 284.98662,
+        "monthly_bp": [
+          37.0465,
+          48.48879,
+          48.00287,
+          -118.04439,
+          -47.57285,
+          103.82118,
+          51.70677,
+          -30.21884,
+          80.88445,
+          103.04988,
+          115.16103,
+          31.99222,
+          83.41491,
+          43.30045,
+          125.57369,
+          284.98662,
+          188.14967,
+          175.3728,
+          -60.81555,
+          -63.14212,
+          55.64031,
+          19.38671
+        ],
+        "max_month_end_equity_drawdown_bp": 165.61723
+      },
+      "november": {
+        "portfolio": "V19-025",
+        "sl_bp": 100,
+        "period": "november",
+        "total_profit_bp": 111.47302,
+        "trades": 15,
+        "stop_count": 6,
+        "stop_fraction": 0.4,
+        "worst_single_leg_trade_bp": -102.004,
+        "worst_portfolio_allocated_trade_bp": -25.501,
+        "winning_orders": 9,
+        "losing_orders": 6,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 1,
+            "realized_bp_unweighted": -101.99593
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 6,
+            "stop_count": 1,
+            "realized_bp_unweighted": 587.45285
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 4,
+            "realized_bp_unweighted": -102.17803
+          }
+        ]
+      }
+    }
+  ],
+  "comparison": [
+    {
+      "portfolio": "V19-065",
+      "sl_bp": 50,
+      "sl_pct": 0.5,
+      "history_months_positive": 11,
+      "history_profit_bp": 11.74493,
+      "history_min_month_bp": -115.98433,
+      "history_largest_month_end_dd_bp": 270.97658,
+      "history_stop_count": 390,
+      "november_profit_bp": 225.44574,
+      "november_orders": 17,
+      "november_stop_count": 9,
+      "november_worst_trade_bp": -52.00207,
+      "positive_both_years": false,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-051",
+      "sl_bp": 50,
+      "sl_pct": 0.5,
+      "history_months_positive": 12,
+      "history_profit_bp": 333.65596,
+      "history_min_month_bp": -165.4744,
+      "history_largest_month_end_dd_bp": 270.70165,
+      "history_stop_count": 290,
+      "november_profit_bp": 203.67296,
+      "november_orders": 14,
+      "november_stop_count": 6,
+      "november_worst_trade_bp": -52.00194,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-043",
+      "sl_bp": 50,
+      "sl_pct": 0.5,
+      "history_months_positive": 14,
+      "history_profit_bp": 839.14548,
+      "history_min_month_bp": -123.6937,
+      "history_largest_month_end_dd_bp": 136.83388,
+      "history_stop_count": 273,
+      "november_profit_bp": 159.27041,
+      "november_orders": 9,
+      "november_stop_count": 3,
+      "november_worst_trade_bp": -52.00194,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-025",
+      "sl_bp": 50,
+      "sl_pct": 0.5,
+      "history_months_positive": 12,
+      "history_profit_bp": 132.78993,
+      "history_min_month_bp": -145.55504,
+      "history_largest_month_end_dd_bp": 368.55578,
+      "history_stop_count": 268,
+      "november_profit_bp": 157.81825,
+      "november_orders": 15,
+      "november_stop_count": 7,
+      "november_worst_trade_bp": -52.00194,
+      "positive_both_years": false,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-065",
+      "sl_bp": 75,
+      "sl_pct": 0.75,
+      "history_months_positive": 14,
+      "history_profit_bp": 752.8781,
+      "history_min_month_bp": -175.62832,
+      "history_largest_month_end_dd_bp": 187.1993,
+      "history_stop_count": 251,
+      "november_profit_bp": 240.26768,
+      "november_orders": 17,
+      "november_stop_count": 6,
+      "november_worst_trade_bp": -77.00316,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-051",
+      "sl_bp": 75,
+      "sl_pct": 0.75,
+      "history_months_positive": 13,
+      "history_profit_bp": 1043.50039,
+      "history_min_month_bp": -212.50715,
+      "history_largest_month_end_dd_bp": 374.91632,
+      "history_stop_count": 183,
+      "november_profit_bp": 166.17394,
+      "november_orders": 14,
+      "november_stop_count": 6,
+      "november_worst_trade_bp": -77.00297,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-043",
+      "sl_bp": 75,
+      "sl_pct": 0.75,
+      "history_months_positive": 16,
+      "history_profit_bp": 979.77085,
+      "history_min_month_bp": -172.15991,
+      "history_largest_month_end_dd_bp": 172.15991,
+      "history_stop_count": 176,
+      "november_profit_bp": 140.52074,
+      "november_orders": 9,
+      "november_stop_count": 3,
+      "november_worst_trade_bp": -77.00297,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-025",
+      "sl_bp": 75,
+      "sl_pct": 0.75,
+      "history_months_positive": 16,
+      "history_profit_bp": 989.63025,
+      "history_min_month_bp": -115.99343,
+      "history_largest_month_end_dd_bp": 198.19255,
+      "history_stop_count": 163,
+      "november_profit_bp": 148.97205,
+      "november_orders": 15,
+      "november_stop_count": 6,
+      "november_worst_trade_bp": -77.00297,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-065",
+      "sl_bp": 100,
+      "sl_pct": 1.0,
+      "history_months_positive": 15,
+      "history_profit_bp": 1110.04183,
+      "history_min_month_bp": -175.07339,
+      "history_largest_month_end_dd_bp": 199.51256,
+      "history_stop_count": 172,
+      "november_profit_bp": 232.16387,
+      "november_orders": 17,
+      "november_stop_count": 5,
+      "november_worst_trade_bp": -102.004,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-051",
+      "sl_bp": 100,
+      "sl_pct": 1.0,
+      "history_months_positive": 17,
+      "history_profit_bp": 1444.38441,
+      "history_min_month_bp": -163.96743,
+      "history_largest_month_end_dd_bp": 271.38779,
+      "history_stop_count": 118,
+      "november_profit_bp": 128.67492,
+      "november_orders": 14,
+      "november_stop_count": 6,
+      "november_worst_trade_bp": -102.004,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-043",
+      "sl_bp": 100,
+      "sl_pct": 1.0,
+      "history_months_positive": 18,
+      "history_profit_bp": 1341.26155,
+      "history_min_month_bp": -109.43064,
+      "history_largest_month_end_dd_bp": 109.43064,
+      "history_stop_count": 107,
+      "november_profit_bp": 121.77106,
+      "november_orders": 9,
+      "november_stop_count": 3,
+      "november_worst_trade_bp": -102.004,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-025",
+      "sl_bp": 100,
+      "sl_pct": 1.0,
+      "history_months_positive": 17,
+      "history_profit_bp": 1276.18513,
+      "history_min_month_bp": -118.04439,
+      "history_largest_month_end_dd_bp": 165.61723,
+      "history_stop_count": 110,
+      "november_profit_bp": 111.47302,
+      "november_orders": 15,
+      "november_stop_count": 6,
+      "november_worst_trade_bp": -102.004,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-065",
+      "sl_bp": 125,
+      "sl_pct": 1.25,
+      "history_months_positive": 15,
+      "history_profit_bp": 1099.15112,
+      "history_min_month_bp": -170.88682,
+      "history_largest_month_end_dd_bp": 207.53173,
+      "history_stop_count": 120,
+      "november_profit_bp": 304.11743,
+      "november_orders": 17,
+      "november_stop_count": 4,
+      "november_worst_trade_bp": -127.00502,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-051",
+      "sl_bp": 125,
+      "sl_pct": 1.25,
+      "history_months_positive": 18,
+      "history_profit_bp": 1452.1124,
+      "history_min_month_bp": -138.35352,
+      "history_largest_month_end_dd_bp": 204.20095,
+      "history_stop_count": 71,
+      "november_profit_bp": 186.02794,
+      "november_orders": 14,
+      "november_stop_count": 4,
+      "november_worst_trade_bp": -127.00502,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-043",
+      "sl_bp": 125,
+      "sl_pct": 1.25,
+      "history_months_positive": 18,
+      "history_profit_bp": 1377.31792,
+      "history_min_month_bp": -64.32944,
+      "history_largest_month_end_dd_bp": 72.85589,
+      "history_stop_count": 65,
+      "november_profit_bp": 103.02139,
+      "november_orders": 9,
+      "november_stop_count": 3,
+      "november_worst_trade_bp": -127.00502,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-025",
+      "sl_bp": 125,
+      "sl_pct": 1.25,
+      "history_months_positive": 18,
+      "history_profit_bp": 1354.97691,
+      "history_min_month_bp": -156.01363,
+      "history_largest_month_end_dd_bp": 168.53197,
+      "history_stop_count": 64,
+      "november_profit_bp": 168.82604,
+      "november_orders": 15,
+      "november_stop_count": 4,
+      "november_worst_trade_bp": -127.00502,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-065",
+      "sl_bp": 150,
+      "sl_pct": 1.5,
+      "history_months_positive": 17,
+      "history_profit_bp": 1265.31062,
+      "history_min_month_bp": -185.53074,
+      "history_largest_month_end_dd_bp": 197.47773,
+      "history_stop_count": 80,
+      "november_profit_bp": 279.11791,
+      "november_orders": 17,
+      "november_stop_count": 4,
+      "november_worst_trade_bp": -152.00605,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-051",
+      "sl_bp": 150,
+      "sl_pct": 1.5,
+      "history_months_positive": 18,
+      "history_profit_bp": 1782.43726,
+      "history_min_month_bp": -149.29218,
+      "history_largest_month_end_dd_bp": 184.22743,
+      "history_stop_count": 46,
+      "november_profit_bp": 161.02842,
+      "november_orders": 14,
+      "november_stop_count": 4,
+      "november_worst_trade_bp": -152.00605,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-043",
+      "sl_bp": 150,
+      "sl_pct": 1.5,
+      "history_months_positive": 18,
+      "history_profit_bp": 1387.08159,
+      "history_min_month_bp": -63.98528,
+      "history_largest_month_end_dd_bp": 63.98528,
+      "history_stop_count": 44,
+      "november_profit_bp": 84.27172,
+      "november_orders": 9,
+      "november_stop_count": 3,
+      "november_worst_trade_bp": -152.00605,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-025",
+      "sl_bp": 150,
+      "sl_pct": 1.5,
+      "history_months_positive": 19,
+      "history_profit_bp": 1677.26959,
+      "history_min_month_bp": -59.19673,
+      "history_largest_month_end_dd_bp": 95.59087,
+      "history_stop_count": 41,
+      "november_profit_bp": 143.82652,
+      "november_orders": 15,
+      "november_stop_count": 4,
+      "november_worst_trade_bp": -152.00605,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-065",
+      "sl_bp": 200,
+      "sl_pct": 2.0,
+      "history_months_positive": 19,
+      "history_profit_bp": 1344.68958,
+      "history_min_month_bp": -196.48796,
+      "history_largest_month_end_dd_bp": 240.90802,
+      "history_stop_count": 43,
+      "november_profit_bp": 229.11888,
+      "november_orders": 17,
+      "november_stop_count": 4,
+      "november_worst_trade_bp": -202.00811,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-051",
+      "sl_bp": 200,
+      "sl_pct": 2.0,
+      "history_months_positive": 21,
+      "history_profit_bp": 1830.03476,
+      "history_min_month_bp": -103.13625,
+      "history_largest_month_end_dd_bp": 103.13625,
+      "history_stop_count": 25,
+      "november_profit_bp": 111.02939,
+      "november_orders": 14,
+      "november_stop_count": 4,
+      "november_worst_trade_bp": -202.00811,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-043",
+      "sl_bp": 200,
+      "sl_pct": 2.0,
+      "history_months_positive": 19,
+      "history_profit_bp": 1445.18001,
+      "history_min_month_bp": -76.48521,
+      "history_largest_month_end_dd_bp": 76.48521,
+      "history_stop_count": 21,
+      "november_profit_bp": 46.77238,
+      "november_orders": 9,
+      "november_stop_count": 3,
+      "november_worst_trade_bp": -202.00811,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-025",
+      "sl_bp": 200,
+      "sl_pct": 2.0,
+      "history_months_positive": 20,
+      "history_profit_bp": 1720.97769,
+      "history_min_month_bp": -24.67411,
+      "history_largest_month_end_dd_bp": 24.67411,
+      "history_stop_count": 23,
+      "november_profit_bp": 93.82749,
+      "november_orders": 15,
+      "november_stop_count": 4,
+      "november_worst_trade_bp": -202.00811,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-065",
+      "sl_bp": 250,
+      "sl_pct": 2.5,
+      "history_months_positive": 19,
+      "history_profit_bp": 1433.99037,
+      "history_min_month_bp": -190.42191,
+      "history_largest_month_end_dd_bp": 193.25265,
+      "history_stop_count": 27,
+      "november_profit_bp": 220.43036,
+      "november_orders": 17,
+      "november_stop_count": 3,
+      "november_worst_trade_bp": -251.9911,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-051",
+      "sl_bp": 250,
+      "sl_pct": 2.5,
+      "history_months_positive": 21,
+      "history_profit_bp": 1851.50222,
+      "history_min_month_bp": -115.63672,
+      "history_largest_month_end_dd_bp": 115.63672,
+      "history_stop_count": 14,
+      "november_profit_bp": 102.34087,
+      "november_orders": 14,
+      "november_stop_count": 3,
+      "november_worst_trade_bp": -251.9911,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-043",
+      "sl_bp": 250,
+      "sl_pct": 2.5,
+      "history_months_positive": 21,
+      "history_profit_bp": 1563.81136,
+      "history_min_month_bp": -88.98514,
+      "history_largest_month_end_dd_bp": 88.98514,
+      "history_stop_count": 11,
+      "november_profit_bp": 89.13657,
+      "november_orders": 9,
+      "november_stop_count": 1,
+      "november_worst_trade_bp": -251.98877,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-025",
+      "sl_bp": 250,
+      "sl_pct": 2.5,
+      "history_months_positive": 20,
+      "history_profit_bp": 1661.11628,
+      "history_min_month_bp": -37.17404,
+      "history_largest_month_end_dd_bp": 37.17404,
+      "history_stop_count": 14,
+      "november_profit_bp": 85.13898,
+      "november_orders": 15,
+      "november_stop_count": 3,
+      "november_worst_trade_bp": -251.9911,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-065",
+      "sl_bp": 300,
+      "sl_pct": 3.0,
+      "history_months_positive": 19,
+      "history_profit_bp": 1434.7442,
+      "history_min_month_bp": -190.42191,
+      "history_largest_month_end_dd_bp": 194.15672,
+      "history_stop_count": 17,
+      "november_profit_bp": 222.23413,
+      "november_orders": 17,
+      "november_stop_count": 2,
+      "november_worst_trade_bp": -301.98929,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-051",
+      "sl_bp": 300,
+      "sl_pct": 3.0,
+      "history_months_positive": 20,
+      "history_profit_bp": 1806.3386,
+      "history_min_month_bp": -100.44645,
+      "history_largest_month_end_dd_bp": 100.44645,
+      "history_stop_count": 10,
+      "november_profit_bp": 106.77376,
+      "november_orders": 14,
+      "november_stop_count": 2,
+      "november_worst_trade_bp": -301.98929,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-043",
+      "sl_bp": 300,
+      "sl_pct": 3.0,
+      "history_months_positive": 20,
+      "history_profit_bp": 1506.64748,
+      "history_min_month_bp": -101.48507,
+      "history_largest_month_end_dd_bp": 101.48507,
+      "history_stop_count": 9,
+      "november_profit_bp": 76.63714,
+      "november_orders": 9,
+      "november_stop_count": 1,
+      "november_worst_trade_bp": -301.9865,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-025",
+      "sl_bp": 300,
+      "sl_pct": 3.0,
+      "history_months_positive": 21,
+      "history_profit_bp": 1715.03489,
+      "history_min_month_bp": -49.67397,
+      "history_largest_month_end_dd_bp": 49.67397,
+      "history_stop_count": 7,
+      "november_profit_bp": 89.57187,
+      "november_orders": 15,
+      "november_stop_count": 2,
+      "november_worst_trade_bp": -301.98929,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-065",
+      "sl_bp": 400,
+      "sl_pct": 4.0,
+      "history_months_positive": 20,
+      "history_profit_bp": 1490.59335,
+      "history_min_month_bp": -190.42191,
+      "history_largest_month_end_dd_bp": 240.74415,
+      "history_stop_count": 9,
+      "november_profit_bp": 172.23601,
+      "november_orders": 17,
+      "november_stop_count": 2,
+      "november_worst_trade_bp": -401.98568,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-051",
+      "sl_bp": 400,
+      "sl_pct": 4.0,
+      "history_months_positive": 21,
+      "history_profit_bp": 1687.0269,
+      "history_min_month_bp": -100.44645,
+      "history_largest_month_end_dd_bp": 100.44645,
+      "history_stop_count": 7,
+      "november_profit_bp": 56.77565,
+      "november_orders": 14,
+      "november_stop_count": 2,
+      "november_worst_trade_bp": -401.98568,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-043",
+      "sl_bp": 400,
+      "sl_pct": 4.0,
+      "history_months_positive": 20,
+      "history_profit_bp": 1366.67031,
+      "history_min_month_bp": -94.33913,
+      "history_largest_month_end_dd_bp": 94.33913,
+      "history_stop_count": 7,
+      "november_profit_bp": 51.63827,
+      "november_orders": 9,
+      "november_stop_count": 1,
+      "november_worst_trade_bp": -401.98196,
+      "positive_both_years": true,
+      "positive_november": true
+    },
+    {
+      "portfolio": "V19-025",
+      "sl_bp": 400,
+      "sl_pct": 4.0,
+      "history_months_positive": 21,
+      "history_profit_bp": 1670.09305,
+      "history_min_month_bp": -35.97164,
+      "history_largest_month_end_dd_bp": 35.97164,
+      "history_stop_count": 4,
+      "november_profit_bp": 39.57375,
+      "november_orders": 15,
+      "november_stop_count": 2,
+      "november_worst_trade_bp": -401.98568,
+      "positive_both_years": true,
+      "positive_november": true
+    }
+  ],
+  "all_scenarios": [
+    {
+      "portfolio": "V19-065",
+      "stop_basis_points": 50,
+      "stop_pct": 0.5,
+      "historical": {
+        "portfolio": "V19-065",
+        "sl_bp": 50,
+        "period": "historical",
+        "total_profit_bp": 11.74493,
+        "trades": 766,
+        "stop_count": 390,
+        "stop_fraction": 0.5091,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 287,
+        "losing_orders": 479,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 49,
+            "realized_bp_unweighted": 1412.46976
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 440,
+            "stop_count": 220,
+            "realized_bp_unweighted": -497.65586
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 79,
+            "stop_count": 48,
+            "realized_bp_unweighted": 580.16407
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 123,
+            "stop_count": 73,
+            "realized_bp_unweighted": -1447.99823
+          }
+        ],
+        "positive_months": 11,
+        "month_total": 22,
+        "profit_2025_bp": -99.10332,
+        "profit_2026_jan_oct_bp": 110.84825,
+        "min_month_bp": -115.98433,
+        "max_month_bp": 154.4146,
+        "monthly_bp": [
+          -78.01418,
+          56.97679,
+          5.62495,
+          -115.98433,
+          -29.37446,
+          -110.20536,
+          26.83468,
+          -23.39758,
+          143.19933,
+          -13.61992,
+          98.59219,
+          -59.73545,
+          -91.37266,
+          -47.50245,
+          1.92147,
+          69.65433,
+          30.44924,
+          59.94793,
+          -43.70724,
+          -98.74944,
+          75.79247,
+          154.4146
+        ],
+        "max_month_end_equity_drawdown_bp": 270.97658
+      },
+      "november": {
+        "portfolio": "V19-065",
+        "sl_bp": 50,
+        "period": "november",
+        "total_profit_bp": 225.44574,
+        "trades": 17,
+        "stop_count": 9,
+        "stop_fraction": 0.5294,
+        "worst_single_leg_trade_bp": -52.00207,
+        "worst_portfolio_allocated_trade_bp": -13.00052,
+        "winning_orders": 8,
+        "losing_orders": 9,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 1,
+            "realized_bp_unweighted": -51.99805
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 9,
+            "stop_count": 3,
+            "realized_bp_unweighted": 924.28559
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 0,
+            "stop_count": 0,
+            "realized_bp_unweighted": 0.0
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 7,
+            "stop_count": 5,
+            "realized_bp_unweighted": 29.49541
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-051",
+      "stop_basis_points": 50,
+      "stop_pct": 0.5,
+      "historical": {
+        "portfolio": "V19-051",
+        "sl_bp": 50,
+        "period": "historical",
+        "total_profit_bp": 333.65596,
+        "trades": 694,
+        "stop_count": 290,
+        "stop_fraction": 0.4179,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 299,
+        "losing_orders": 395,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 39,
+            "realized_bp_unweighted": 1217.11414
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 74,
+            "realized_bp_unweighted": 1633.56163
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 117,
+            "realized_bp_unweighted": -306.8459
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 60,
+            "realized_bp_unweighted": -1209.20603
+          }
+        ],
+        "positive_months": 12,
+        "month_total": 22,
+        "profit_2025_bp": 71.38313,
+        "profit_2026_jan_oct_bp": 262.27283,
+        "min_month_bp": -165.4744,
+        "max_month_bp": 181.66601,
+        "monthly_bp": [
+          -42.33473,
+          31.43057,
+          -32.45862,
+          -99.26078,
+          -51.2689,
+          -33.29226,
+          48.89535,
+          -10.12896,
+          67.49079,
+          -9.72216,
+          181.66601,
+          20.36682,
+          95.89298,
+          -115.28394,
+          179.08539,
+          112.95083,
+          36.75673,
+          142.07218,
+          -105.22725,
+          -165.4744,
+          16.11883,
+          65.38148
+        ],
+        "max_month_end_equity_drawdown_bp": 270.70165
+      },
+      "november": {
+        "portfolio": "V19-051",
+        "sl_bp": 50,
+        "period": "november",
+        "total_profit_bp": 203.67296,
+        "trades": 14,
+        "stop_count": 6,
+        "stop_fraction": 0.4286,
+        "worst_single_leg_trade_bp": -52.00194,
+        "worst_portfolio_allocated_trade_bp": -13.00048,
+        "winning_orders": 8,
+        "losing_orders": 6,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 1,
+            "realized_bp_unweighted": -51.99802
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 1,
+            "realized_bp_unweighted": 619.89403
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 4,
+            "realized_bp_unweighted": 97.81418
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-043",
+      "stop_basis_points": 50,
+      "stop_pct": 0.5,
+      "historical": {
+        "portfolio": "V19-043",
+        "sl_bp": 50,
+        "period": "historical",
+        "total_profit_bp": 839.14548,
+        "trades": 708,
+        "stop_count": 273,
+        "stop_fraction": 0.3856,
+        "worst_single_leg_trade_bp": -52.00245,
+        "worst_portfolio_allocated_trade_bp": -13.00061,
+        "winning_orders": 317,
+        "losing_orders": 391,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 124,
+            "stop_count": 30,
+            "realized_bp_unweighted": 1533.91271
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 116,
+            "stop_count": 52,
+            "realized_bp_unweighted": 495.95347
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 74,
+            "realized_bp_unweighted": 1633.56163
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 117,
+            "realized_bp_unweighted": -306.8459
+          }
+        ],
+        "positive_months": 14,
+        "month_total": 22,
+        "profit_2025_bp": 195.7137,
+        "profit_2026_jan_oct_bp": 643.43178,
+        "min_month_bp": -123.6937,
+        "max_month_bp": 270.69312,
+        "monthly_bp": [
+          -5.84785,
+          37.30616,
+          -35.43386,
+          16.90557,
+          -116.33707,
+          -1.96851,
+          54.45836,
+          -10.43853,
+          51.79785,
+          23.21476,
+          158.50373,
+          23.55311,
+          82.13688,
+          -123.6937,
+          80.81703,
+          270.69312,
+          62.42376,
+          227.80798,
+          -25.46595,
+          -63.38206,
+          80.6669,
+          51.42781
+        ],
+        "max_month_end_equity_drawdown_bp": 136.83388
+      },
+      "november": {
+        "portfolio": "V19-043",
+        "sl_bp": 50,
+        "period": "november",
+        "total_profit_bp": 159.27041,
+        "trades": 9,
+        "stop_count": 3,
+        "stop_fraction": 0.3333,
+        "worst_single_leg_trade_bp": -52.00194,
+        "worst_portfolio_allocated_trade_bp": -13.00048,
+        "winning_orders": 5,
+        "losing_orders": 4,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -27.79854
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 2,
+            "stop_count": 2,
+            "realized_bp_unweighted": -103.99553
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 1,
+            "realized_bp_unweighted": 619.89403
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-025",
+      "stop_basis_points": 50,
+      "stop_pct": 0.5,
+      "historical": {
+        "portfolio": "V19-025",
+        "sl_bp": 50,
+        "period": "historical",
+        "total_profit_bp": 132.78993,
+        "trades": 570,
+        "stop_count": 268,
+        "stop_fraction": 0.4702,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 230,
+        "losing_orders": 340,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 39,
+            "realized_bp_unweighted": 1217.11414
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 49,
+            "realized_bp_unweighted": 1412.46976
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 220,
+            "stop_count": 120,
+            "realized_bp_unweighted": -889.21814
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 60,
+            "realized_bp_unweighted": -1209.20603
+          }
+        ],
+        "positive_months": 12,
+        "month_total": 22,
+        "profit_2025_bp": -119.08087,
+        "profit_2026_jan_oct_bp": 251.8708,
+        "min_month_bp": -145.55504,
+        "max_month_bp": 153.10282,
+        "monthly_bp": [
+          -29.00642,
+          41.19318,
+          -20.10888,
+          -145.55504,
+          -111.89405,
+          -82.70319,
+          -8.29462,
+          2.6394,
+          56.36209,
+          58.17226,
+          111.51298,
+          8.60141,
+          84.09504,
+          -81.75244,
+          96.18753,
+          22.68628,
+          153.10282,
+          19.2689,
+          -114.23092,
+          -17.93572,
+          95.74215,
+          -5.29284
+        ],
+        "max_month_end_equity_drawdown_bp": 368.55578
+      },
+      "november": {
+        "portfolio": "V19-025",
+        "sl_bp": 50,
+        "period": "november",
+        "total_profit_bp": 157.81825,
+        "trades": 15,
+        "stop_count": 7,
+        "stop_fraction": 0.4667,
+        "worst_single_leg_trade_bp": -52.00194,
+        "worst_portfolio_allocated_trade_bp": -13.00048,
+        "winning_orders": 8,
+        "losing_orders": 7,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 1,
+            "realized_bp_unweighted": -51.99802
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 1,
+            "realized_bp_unweighted": -51.99805
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 6,
+            "stop_count": 1,
+            "realized_bp_unweighted": 637.45491
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 4,
+            "realized_bp_unweighted": 97.81418
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-065",
+      "stop_basis_points": 75,
+      "stop_pct": 0.75,
+      "historical": {
+        "portfolio": "V19-065",
+        "sl_bp": 75,
+        "period": "historical",
+        "total_profit_bp": 752.8781,
+        "trades": 766,
+        "stop_count": 251,
+        "stop_fraction": 0.3277,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 338,
+        "losing_orders": 428,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 28,
+            "realized_bp_unweighted": 1626.40666
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 440,
+            "stop_count": 136,
+            "realized_bp_unweighted": 525.67258
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 79,
+            "stop_count": 36,
+            "realized_bp_unweighted": 808.64298
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 123,
+            "stop_count": 51,
+            "realized_bp_unweighted": 50.79018
+          }
+        ],
+        "positive_months": 14,
+        "month_total": 22,
+        "profit_2025_bp": 386.81936,
+        "profit_2026_jan_oct_bp": 366.05874,
+        "min_month_bp": -175.62832,
+        "max_month_bp": 256.64994,
+        "monthly_bp": [
+          10.66846,
+          64.65802,
+          55.11531,
+          -56.05175,
+          5.83293,
+          49.30934,
+          37.30972,
+          -36.22629,
+          113.49492,
+          22.18414,
+          132.09555,
+          -11.57098,
+          -175.62832,
+          28.58296,
+          -20.81227,
+          256.64994,
+          90.88077,
+          159.11873,
+          -11.58805,
+          -98.31406,
+          -5.7043,
+          142.87333
+        ],
+        "max_month_end_equity_drawdown_bp": 187.1993
+      },
+      "november": {
+        "portfolio": "V19-065",
+        "sl_bp": 75,
+        "period": "november",
+        "total_profit_bp": 240.26768,
+        "trades": 17,
+        "stop_count": 6,
+        "stop_fraction": 0.3529,
+        "worst_single_leg_trade_bp": -77.00316,
+        "worst_portfolio_allocated_trade_bp": -19.25079,
+        "winning_orders": 9,
+        "losing_orders": 8,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 9,
+            "stop_count": 2,
+            "realized_bp_unweighted": 923.93593
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 0,
+            "stop_count": 0,
+            "realized_bp_unweighted": 0.0
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 7,
+            "stop_count": 4,
+            "realized_bp_unweighted": -25.47841
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-051",
+      "stop_basis_points": 75,
+      "stop_pct": 0.75,
+      "historical": {
+        "portfolio": "V19-051",
+        "sl_bp": 75,
+        "period": "historical",
+        "total_profit_bp": 1043.50039,
+        "trades": 694,
+        "stop_count": 183,
+        "stop_fraction": 0.2637,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 344,
+        "losing_orders": 350,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 22,
+            "realized_bp_unweighted": 1560.84203
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 48,
+            "realized_bp_unweighted": 1488.4195
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 77,
+            "realized_bp_unweighted": 551.77346
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 36,
+            "realized_bp_unweighted": 572.96656
+          }
+        ],
+        "positive_months": 13,
+        "month_total": 22,
+        "profit_2025_bp": 563.8418,
+        "profit_2026_jan_oct_bp": 479.65859,
+        "min_month_bp": -212.50715,
+        "max_month_bp": 325.5659,
+        "monthly_bp": [
+          18.32301,
+          51.23083,
+          -11.79796,
+          -34.63258,
+          -36.61799,
+          167.18107,
+          102.42523,
+          -17.7037,
+          72.76349,
+          -7.95877,
+          200.39495,
+          60.2342,
+          108.74162,
+          -5.18229,
+          117.36117,
+          325.5659,
+          58.66119,
+          207.04786,
+          -124.51519,
+          -212.50715,
+          -37.89398,
+          42.37947
+        ],
+        "max_month_end_equity_drawdown_bp": 374.91632
+      },
+      "november": {
+        "portfolio": "V19-051",
+        "sl_bp": 75,
+        "period": "november",
+        "total_profit_bp": 166.17394,
+        "trades": 14,
+        "stop_count": 6,
+        "stop_fraction": 0.4286,
+        "worst_single_leg_trade_bp": -77.00297,
+        "worst_portfolio_allocated_trade_bp": -19.25074,
+        "winning_orders": 8,
+        "losing_orders": 6,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 1,
+            "realized_bp_unweighted": -76.99698
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 1,
+            "realized_bp_unweighted": 594.893
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 4,
+            "realized_bp_unweighted": -2.18193
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-043",
+      "stop_basis_points": 75,
+      "stop_pct": 0.75,
+      "historical": {
+        "portfolio": "V19-043",
+        "sl_bp": 75,
+        "period": "historical",
+        "total_profit_bp": 979.77085,
+        "trades": 708,
+        "stop_count": 176,
+        "stop_fraction": 0.2486,
+        "worst_single_leg_trade_bp": -77.00372,
+        "worst_portfolio_allocated_trade_bp": -19.25093,
+        "winning_orders": 349,
+        "losing_orders": 359,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 124,
+            "stop_count": 16,
+            "realized_bp_unweighted": 1508.10427
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 116,
+            "stop_count": 35,
+            "realized_bp_unweighted": 370.78616
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 48,
+            "realized_bp_unweighted": 1488.4195
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 77,
+            "realized_bp_unweighted": 551.77346
+          }
+        ],
+        "positive_months": 16,
+        "month_total": 22,
+        "profit_2025_bp": 433.92307,
+        "profit_2026_jan_oct_bp": 545.84778,
+        "min_month_bp": -172.15991,
+        "max_month_bp": 231.33287,
+        "monthly_bp": [
+          50.86906,
+          19.44672,
+          -24.69517,
+          109.28229,
+          -172.15991,
+          167.48966,
+          64.03517,
+          8.65623,
+          46.98446,
+          14.36759,
+          140.53724,
+          9.10973,
+          100.06623,
+          -31.34328,
+          -11.86614,
+          186.27665,
+          109.33025,
+          231.33287,
+          -26.85597,
+          -91.57744,
+          32.90466,
+          47.57994
+        ],
+        "max_month_end_equity_drawdown_bp": 172.15991
+      },
+      "november": {
+        "portfolio": "V19-043",
+        "sl_bp": 75,
+        "period": "november",
+        "total_profit_bp": 140.52074,
+        "trades": 9,
+        "stop_count": 3,
+        "stop_fraction": 0.3333,
+        "worst_single_leg_trade_bp": -77.00297,
+        "worst_portfolio_allocated_trade_bp": -19.25074,
+        "winning_orders": 5,
+        "losing_orders": 4,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -27.79854
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 2,
+            "stop_count": 2,
+            "realized_bp_unweighted": -153.99319
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 1,
+            "realized_bp_unweighted": 594.893
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-025",
+      "stop_basis_points": 75,
+      "stop_pct": 0.75,
+      "historical": {
+        "portfolio": "V19-025",
+        "sl_bp": 75,
+        "period": "historical",
+        "total_profit_bp": 989.63025,
+        "trades": 570,
+        "stop_count": 163,
+        "stop_fraction": 0.286,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 276,
+        "losing_orders": 294,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 22,
+            "realized_bp_unweighted": 1560.84203
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 28,
+            "realized_bp_unweighted": 1626.40666
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 220,
+            "stop_count": 77,
+            "realized_bp_unweighted": 198.30574
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 36,
+            "realized_bp_unweighted": 572.96656
+          }
+        ],
+        "positive_months": 16,
+        "month_total": 22,
+        "profit_2025_bp": 319.01977,
+        "profit_2026_jan_oct_bp": 670.61048,
+        "min_month_bp": -115.99343,
+        "max_month_bp": 346.74991,
+        "monthly_bp": [
+          47.29934,
+          60.99344,
+          6.09487,
+          -82.19912,
+          -115.99343,
+          82.55167,
+          50.0896,
+          -11.46349,
+          48.95282,
+          65.36572,
+          128.71429,
+          38.61406,
+          52.03258,
+          17.90968,
+          109.91724,
+          346.74991,
+          174.13851,
+          90.49477,
+          -115.10599,
+          -64.24783,
+          63.4101,
+          -4.68849
+        ],
+        "max_month_end_equity_drawdown_bp": 198.19255
+      },
+      "november": {
+        "portfolio": "V19-025",
+        "sl_bp": 75,
+        "period": "november",
+        "total_profit_bp": 148.97205,
+        "trades": 15,
+        "stop_count": 6,
+        "stop_fraction": 0.4,
+        "worst_single_leg_trade_bp": -77.00297,
+        "worst_portfolio_allocated_trade_bp": -19.25074,
+        "winning_orders": 9,
+        "losing_orders": 6,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 1,
+            "realized_bp_unweighted": -76.99698
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 6,
+            "stop_count": 1,
+            "realized_bp_unweighted": 612.45388
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 4,
+            "realized_bp_unweighted": -2.18193
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-065",
+      "stop_basis_points": 100,
+      "stop_pct": 1.0,
+      "historical": {
+        "portfolio": "V19-065",
+        "sl_bp": 100,
+        "period": "historical",
+        "total_profit_bp": 1110.04183,
+        "trades": 766,
+        "stop_count": 172,
+        "stop_fraction": 0.2245,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 361,
+        "losing_orders": 405,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 18,
+            "realized_bp_unweighted": 1648.40755
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 440,
+            "stop_count": 93,
+            "realized_bp_unweighted": 544.85465
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 79,
+            "stop_count": 26,
+            "realized_bp_unweighted": 912.76031
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 123,
+            "stop_count": 35,
+            "realized_bp_unweighted": 1334.14481
+          }
+        ],
+        "positive_months": 15,
+        "month_total": 22,
+        "profit_2025_bp": 597.12006,
+        "profit_2026_jan_oct_bp": 512.92177,
+        "min_month_bp": -175.07339,
+        "max_month_bp": 249.44775,
+        "monthly_bp": [
+          18.51404,
+          59.12227,
+          91.99804,
+          -60.58027,
+          28.35885,
+          98.66166,
+          58.12914,
+          -37.88399,
+          149.66434,
+          97.03286,
+          118.54229,
+          -24.43917,
+          -175.07339,
+          71.44695,
+          -2.3072,
+          206.41842,
+          95.62994,
+          249.44775,
+          65.20674,
+          -85.56839,
+          -65.68312,
+          153.40405
+        ],
+        "max_month_end_equity_drawdown_bp": 199.51256
+      },
+      "november": {
+        "portfolio": "V19-065",
+        "sl_bp": 100,
+        "period": "november",
+        "total_profit_bp": 232.16387,
+        "trades": 17,
+        "stop_count": 5,
+        "stop_fraction": 0.2941,
+        "worst_single_leg_trade_bp": -102.004,
+        "worst_portfolio_allocated_trade_bp": -25.501,
+        "winning_orders": 10,
+        "losing_orders": 7,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 9,
+            "stop_count": 1,
+            "realized_bp_unweighted": 991.5168
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 0,
+            "stop_count": 0,
+            "realized_bp_unweighted": 0.0
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 7,
+            "stop_count": 4,
+            "realized_bp_unweighted": -125.47452
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-051",
+      "stop_basis_points": 100,
+      "stop_pct": 1.0,
+      "historical": {
+        "portfolio": "V19-051",
+        "sl_bp": 100,
+        "period": "historical",
+        "total_profit_bp": 1444.38441,
+        "trades": 694,
+        "stop_count": 118,
+        "stop_fraction": 0.17,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 364,
+        "losing_orders": 330,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 13,
+            "realized_bp_unweighted": 1602.38057
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 27,
+            "realized_bp_unweighted": 2038.07613
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 53,
+            "realized_bp_unweighted": 642.73166
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 25,
+            "realized_bp_unweighted": 1494.34927
+          }
+        ],
+        "positive_months": 17,
+        "month_total": 22,
+        "profit_2025_bp": 622.4263,
+        "profit_2026_jan_oct_bp": 821.95811,
+        "min_month_bp": -163.96743,
+        "max_month_bp": 340.41745,
+        "monthly_bp": [
+          9.33426,
+          38.72618,
+          23.8603,
+          -70.47785,
+          0.95224,
+          188.45103,
+          116.54227,
+          -36.45904,
+          86.8483,
+          23.47547,
+          181.31073,
+          59.86241,
+          140.12444,
+          51.79252,
+          203.49198,
+          249.21415,
+          52.34906,
+          340.41745,
+          -59.93369,
+          -163.96743,
+          -47.48667,
+          55.9563
+        ],
+        "max_month_end_equity_drawdown_bp": 271.38779
+      },
+      "november": {
+        "portfolio": "V19-051",
+        "sl_bp": 100,
+        "period": "november",
+        "total_profit_bp": 128.67492,
+        "trades": 14,
+        "stop_count": 6,
+        "stop_fraction": 0.4286,
+        "worst_single_leg_trade_bp": -102.004,
+        "worst_portfolio_allocated_trade_bp": -25.501,
+        "winning_orders": 8,
+        "losing_orders": 6,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 1,
+            "realized_bp_unweighted": -101.99593
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 1,
+            "realized_bp_unweighted": 569.89197
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 4,
+            "realized_bp_unweighted": -102.17803
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-043",
+      "stop_basis_points": 100,
+      "stop_pct": 1.0,
+      "historical": {
+        "portfolio": "V19-043",
+        "sl_bp": 100,
+        "period": "historical",
+        "total_profit_bp": 1341.26155,
+        "trades": 708,
+        "stop_count": 107,
+        "stop_fraction": 0.1511,
+        "worst_single_leg_trade_bp": -105.16172,
+        "worst_portfolio_allocated_trade_bp": -26.29043,
+        "winning_orders": 367,
+        "losing_orders": 341,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 124,
+            "stop_count": 7,
+            "realized_bp_unweighted": 1591.79989
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 116,
+            "stop_count": 20,
+            "realized_bp_unweighted": 1092.43852
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 27,
+            "realized_bp_unweighted": 2038.07613
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 53,
+            "realized_bp_unweighted": 642.73166
+          }
+        ],
+        "positive_months": 18,
+        "month_total": 22,
+        "profit_2025_bp": 554.25682,
+        "profit_2026_jan_oct_bp": 787.00473,
+        "min_month_bp": -109.43064,
+        "max_month_bp": 326.70554,
+        "monthly_bp": [
+          41.88278,
+          17.58714,
+          16.30019,
+          85.94235,
+          -109.43064,
+          203.07942,
+          78.15221,
+          -3.84376,
+          47.71727,
+          12.66978,
+          128.03725,
+          36.16284,
+          108.97265,
+          16.06057,
+          88.05533,
+          194.89713,
+          85.20946,
+          326.70554,
+          -59.10292,
+          -43.99823,
+          24.11107,
+          46.09413
+        ],
+        "max_month_end_equity_drawdown_bp": 109.43064
+      },
+      "november": {
+        "portfolio": "V19-043",
+        "sl_bp": 100,
+        "period": "november",
+        "total_profit_bp": 121.77106,
+        "trades": 9,
+        "stop_count": 3,
+        "stop_fraction": 0.3333,
+        "worst_single_leg_trade_bp": -102.004,
+        "worst_portfolio_allocated_trade_bp": -25.501,
+        "winning_orders": 5,
+        "losing_orders": 4,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -27.79854
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 2,
+            "stop_count": 2,
+            "realized_bp_unweighted": -203.99085
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 1,
+            "realized_bp_unweighted": 569.89197
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-025",
+      "stop_basis_points": 100,
+      "stop_pct": 1.0,
+      "historical": {
+        "portfolio": "V19-025",
+        "sl_bp": 100,
+        "period": "historical",
+        "total_profit_bp": 1276.18513,
+        "trades": 570,
+        "stop_count": 110,
+        "stop_fraction": 0.193,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 293,
+        "losing_orders": 277,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 13,
+            "realized_bp_unweighted": 1602.38057
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 18,
+            "realized_bp_unweighted": 1648.40755
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 220,
+            "stop_count": 54,
+            "realized_bp_unweighted": 359.60311
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 25,
+            "realized_bp_unweighted": 1494.34927
+          }
+        ],
+        "positive_months": 17,
+        "month_total": 22,
+        "profit_2025_bp": 424.31762,
+        "profit_2026_jan_oct_bp": 851.86751,
+        "min_month_bp": -118.04439,
+        "max_month_bp": 284.98662,
+        "monthly_bp": [
+          37.0465,
+          48.48879,
+          48.00287,
+          -118.04439,
+          -47.57285,
+          103.82118,
+          51.70677,
+          -30.21884,
+          80.88445,
+          103.04988,
+          115.16103,
+          31.99222,
+          83.41491,
+          43.30045,
+          125.57369,
+          284.98662,
+          188.14967,
+          175.3728,
+          -60.81555,
+          -63.14212,
+          55.64031,
+          19.38671
+        ],
+        "max_month_end_equity_drawdown_bp": 165.61723
+      },
+      "november": {
+        "portfolio": "V19-025",
+        "sl_bp": 100,
+        "period": "november",
+        "total_profit_bp": 111.47302,
+        "trades": 15,
+        "stop_count": 6,
+        "stop_fraction": 0.4,
+        "worst_single_leg_trade_bp": -102.004,
+        "worst_portfolio_allocated_trade_bp": -25.501,
+        "winning_orders": 9,
+        "losing_orders": 6,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 1,
+            "realized_bp_unweighted": -101.99593
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 6,
+            "stop_count": 1,
+            "realized_bp_unweighted": 587.45285
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 4,
+            "realized_bp_unweighted": -102.17803
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-065",
+      "stop_basis_points": 125,
+      "stop_pct": 1.25,
+      "historical": {
+        "portfolio": "V19-065",
+        "sl_bp": 125,
+        "period": "historical",
+        "total_profit_bp": 1099.15112,
+        "trades": 766,
+        "stop_count": 120,
+        "stop_fraction": 0.1567,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 370,
+        "losing_orders": 396,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 11,
+            "realized_bp_unweighted": 1534.40209
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 440,
+            "stop_count": 62,
+            "realized_bp_unweighted": 351.59148
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 79,
+            "stop_count": 22,
+            "realized_bp_unweighted": 1037.29412
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 123,
+            "stop_count": 25,
+            "realized_bp_unweighted": 1473.31678
+          }
+        ],
+        "positive_months": 15,
+        "month_total": 22,
+        "profit_2025_bp": 618.45275,
+        "profit_2026_jan_oct_bp": 480.69837,
+        "min_month_bp": -170.88682,
+        "max_month_bp": 245.32207,
+        "monthly_bp": [
+          12.26164,
+          62.12394,
+          88.64949,
+          -92.3027,
+          69.70244,
+          146.80575,
+          42.41331,
+          -11.08187,
+          153.70071,
+          70.53258,
+          112.29236,
+          -36.64492,
+          -170.88682,
+          67.10888,
+          -60.80179,
+          191.67462,
+          56.94886,
+          245.32207,
+          11.34525,
+          -17.32726,
+          -6.06985,
+          163.3844
+        ],
+        "max_month_end_equity_drawdown_bp": 207.53173
+      },
+      "november": {
+        "portfolio": "V19-065",
+        "sl_bp": 125,
+        "period": "november",
+        "total_profit_bp": 304.11743,
+        "trades": 17,
+        "stop_count": 4,
+        "stop_fraction": 0.2353,
+        "worst_single_leg_trade_bp": -127.00502,
+        "worst_portfolio_allocated_trade_bp": -31.75126,
+        "winning_orders": 11,
+        "losing_orders": 6,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 9,
+            "stop_count": 1,
+            "realized_bp_unweighted": 966.51577
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 0,
+            "stop_count": 0,
+            "realized_bp_unweighted": 0.0
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 7,
+            "stop_count": 3,
+            "realized_bp_unweighted": 187.34073
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-051",
+      "stop_basis_points": 125,
+      "stop_pct": 1.25,
+      "historical": {
+        "portfolio": "V19-051",
+        "sl_bp": 125,
+        "period": "historical",
+        "total_profit_bp": 1452.1124,
+        "trades": 694,
+        "stop_count": 71,
+        "stop_fraction": 0.1023,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 370,
+        "losing_orders": 324,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 8,
+            "realized_bp_unweighted": 1569.22995
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 16,
+            "realized_bp_unweighted": 1965.33428
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 31,
+            "realized_bp_unweighted": 941.05236
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 16,
+            "realized_bp_unweighted": 1332.83302
+          }
+        ],
+        "positive_months": 18,
+        "month_total": 22,
+        "profit_2025_bp": 634.69827,
+        "profit_2026_jan_oct_bp": 817.41413,
+        "min_month_bp": -138.35352,
+        "max_month_bp": 366.05234,
+        "monthly_bp": [
+          3.08187,
+          38.93264,
+          50.56557,
+          -108.4471,
+          36.20178,
+          174.70095,
+          114.57601,
+          1.15972,
+          85.78972,
+          9.46703,
+          175.06081,
+          53.60929,
+          145.04822,
+          60.97401,
+          189.59877,
+          168.75213,
+          44.42491,
+          366.05234,
+          -50.38968,
+          -138.35352,
+          -15.45774,
+          46.7647
+        ],
+        "max_month_end_equity_drawdown_bp": 204.20095
+      },
+      "november": {
+        "portfolio": "V19-051",
+        "sl_bp": 125,
+        "period": "november",
+        "total_profit_bp": 186.02794,
+        "trades": 14,
+        "stop_count": 4,
+        "stop_fraction": 0.2857,
+        "worst_single_leg_trade_bp": -127.00502,
+        "worst_portfolio_allocated_trade_bp": -31.75126,
+        "winning_orders": 9,
+        "losing_orders": 5,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -77.49456
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 1,
+            "realized_bp_unweighted": 544.89094
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 3,
+            "realized_bp_unweighted": 127.73369
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-043",
+      "stop_basis_points": 125,
+      "stop_pct": 1.25,
+      "historical": {
+        "portfolio": "V19-043",
+        "sl_bp": 125,
+        "period": "historical",
+        "total_profit_bp": 1377.31792,
+        "trades": 708,
+        "stop_count": 65,
+        "stop_fraction": 0.0918,
+        "worst_single_leg_trade_bp": -127.00627,
+        "worst_portfolio_allocated_trade_bp": -31.75157,
+        "winning_orders": 373,
+        "losing_orders": 335,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 124,
+            "stop_count": 7,
+            "realized_bp_unweighted": 1416.80201
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 116,
+            "stop_count": 11,
+            "realized_bp_unweighted": 1186.08304
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 16,
+            "realized_bp_unweighted": 1965.33428
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 31,
+            "realized_bp_unweighted": 941.05236
+          }
+        ],
+        "positive_months": 18,
+        "month_total": 22,
+        "profit_2025_bp": 595.73592,
+        "profit_2026_jan_oct_bp": 781.582,
+        "min_month_bp": -64.32944,
+        "max_month_bp": 377.84914,
+        "monthly_bp": [
+          35.63285,
+          17.58714,
+          43.00545,
+          60.47843,
+          -64.32944,
+          198.51431,
+          76.18595,
+          25.65685,
+          46.65869,
+          -1.33618,
+          123.19363,
+          34.48824,
+          100.55312,
+          18.99204,
+          40.95387,
+          120.68532,
+          119.01633,
+          377.84914,
+          -49.55862,
+          -23.29728,
+          39.48553,
+          36.90254
+        ],
+        "max_month_end_equity_drawdown_bp": 72.85589
+      },
+      "november": {
+        "portfolio": "V19-043",
+        "sl_bp": 125,
+        "period": "november",
+        "total_profit_bp": 103.02139,
+        "trades": 9,
+        "stop_count": 3,
+        "stop_fraction": 0.3333,
+        "worst_single_leg_trade_bp": -127.00502,
+        "worst_portfolio_allocated_trade_bp": -31.75126,
+        "winning_orders": 5,
+        "losing_orders": 4,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -27.79854
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 2,
+            "stop_count": 2,
+            "realized_bp_unweighted": -253.98851
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 1,
+            "realized_bp_unweighted": 544.89094
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-025",
+      "stop_basis_points": 125,
+      "stop_pct": 1.25,
+      "historical": {
+        "portfolio": "V19-025",
+        "sl_bp": 125,
+        "period": "historical",
+        "total_profit_bp": 1354.97691,
+        "trades": 570,
+        "stop_count": 64,
+        "stop_fraction": 0.1123,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 300,
+        "losing_orders": 270,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 8,
+            "realized_bp_unweighted": 1569.22995
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 11,
+            "realized_bp_unweighted": 1534.40209
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 220,
+            "stop_count": 29,
+            "realized_bp_unweighted": 983.44258
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 16,
+            "realized_bp_unweighted": 1332.83302
+          }
+        ],
+        "positive_months": 18,
+        "month_total": 22,
+        "profit_2025_bp": 458.45545,
+        "profit_2026_jan_oct_bp": 896.52147,
+        "min_month_bp": -156.01363,
+        "max_month_bp": 223.27554,
+        "monthly_bp": [
+          30.7941,
+          48.69524,
+          48.00287,
+          -156.01363,
+          -12.51833,
+          140.30129,
+          41.73283,
+          7.39992,
+          79.82587,
+          95.29135,
+          108.91111,
+          26.03283,
+          97.60141,
+          51.45868,
+          138.56206,
+          223.27554,
+          168.2187,
+          205.13138,
+          -77.17818,
+          -40.44654,
+          94.28117,
+          35.61725
+        ],
+        "max_month_end_equity_drawdown_bp": 168.53197
+      },
+      "november": {
+        "portfolio": "V19-025",
+        "sl_bp": 125,
+        "period": "november",
+        "total_profit_bp": 168.82604,
+        "trades": 15,
+        "stop_count": 4,
+        "stop_fraction": 0.2667,
+        "worst_single_leg_trade_bp": -127.00502,
+        "worst_portfolio_allocated_trade_bp": -31.75126,
+        "winning_orders": 10,
+        "losing_orders": 5,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -77.49456
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 6,
+            "stop_count": 1,
+            "realized_bp_unweighted": 562.45183
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 3,
+            "realized_bp_unweighted": 127.73369
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-065",
+      "stop_basis_points": 150,
+      "stop_pct": 1.5,
+      "historical": {
+        "portfolio": "V19-065",
+        "sl_bp": 150,
+        "period": "historical",
+        "total_profit_bp": 1265.31062,
+        "trades": 766,
+        "stop_count": 80,
+        "stop_fraction": 0.1044,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 373,
+        "losing_orders": 393,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 8,
+            "realized_bp_unweighted": 1457.40966
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 440,
+            "stop_count": 37,
+            "realized_bp_unweighted": 363.46803
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 79,
+            "stop_count": 19,
+            "realized_bp_unweighted": 648.87875
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 123,
+            "stop_count": 16,
+            "realized_bp_unweighted": 2591.48606
+          }
+        ],
+        "positive_months": 17,
+        "month_total": 22,
+        "profit_2025_bp": 881.30844,
+        "profit_2026_jan_oct_bp": 384.00218,
+        "min_month_bp": -185.53074,
+        "max_month_bp": 207.82107,
+        "monthly_bp": [
+          30.78712,
+          69.67568,
+          88.64949,
+          87.24317,
+          63.79662,
+          153.329,
+          41.17503,
+          -7.09773,
+          153.70071,
+          50.10995,
+          139.40083,
+          10.53857,
+          -185.53074,
+          58.00807,
+          -69.95507,
+          139.05895,
+          94.80571,
+          207.82107,
+          26.01228,
+          -22.59562,
+          -23.28329,
+          159.66081
+        ],
+        "max_month_end_equity_drawdown_bp": 197.47773
+      },
+      "november": {
+        "portfolio": "V19-065",
+        "sl_bp": 150,
+        "period": "november",
+        "total_profit_bp": 279.11791,
+        "trades": 17,
+        "stop_count": 4,
+        "stop_fraction": 0.2353,
+        "worst_single_leg_trade_bp": -152.00605,
+        "worst_portfolio_allocated_trade_bp": -38.00151,
+        "winning_orders": 11,
+        "losing_orders": 6,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 9,
+            "stop_count": 1,
+            "realized_bp_unweighted": 941.51474
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 0,
+            "stop_count": 0,
+            "realized_bp_unweighted": 0.0
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 7,
+            "stop_count": 3,
+            "realized_bp_unweighted": 112.34369
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-051",
+      "stop_basis_points": 150,
+      "stop_pct": 1.5,
+      "historical": {
+        "portfolio": "V19-051",
+        "sl_bp": 150,
+        "period": "historical",
+        "total_profit_bp": 1782.43726,
+        "trades": 694,
+        "stop_count": 46,
+        "stop_fraction": 0.0663,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 374,
+        "losing_orders": 320,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 6,
+            "realized_bp_unweighted": 1486.07134
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 11,
+            "realized_bp_unweighted": 1945.13156
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 19,
+            "realized_bp_unweighted": 1286.64415
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 10,
+            "realized_bp_unweighted": 2411.90198
+          }
+        ],
+        "positive_months": 18,
+        "month_total": 22,
+        "profit_2025_bp": 943.4417,
+        "profit_2026_jan_oct_bp": 838.99555,
+        "min_month_bp": -149.29218,
+        "max_month_bp": 347.30197,
+        "monthly_bp": [
+          21.93393,
+          38.93264,
+          50.56557,
+          151.31377,
+          36.54593,
+          178.34223,
+          111.84678,
+          -5.09305,
+          85.78972,
+          6.81849,
+          188.71535,
+          77.73035,
+          145.04822,
+          60.97401,
+          192.25184,
+          194.61704,
+          46.23911,
+          347.30197,
+          -13.94963,
+          -149.29218,
+          -20.98562,
+          36.79079
+        ],
+        "max_month_end_equity_drawdown_bp": 184.22743
+      },
+      "november": {
+        "portfolio": "V19-051",
+        "sl_bp": 150,
+        "period": "november",
+        "total_profit_bp": 161.02842,
+        "trades": 14,
+        "stop_count": 4,
+        "stop_fraction": 0.2857,
+        "worst_single_leg_trade_bp": -152.00605,
+        "worst_portfolio_allocated_trade_bp": -38.00151,
+        "winning_orders": 9,
+        "losing_orders": 5,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -77.49456
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 1,
+            "realized_bp_unweighted": 519.88991
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 3,
+            "realized_bp_unweighted": 52.73665
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-043",
+      "stop_basis_points": 150,
+      "stop_pct": 1.5,
+      "historical": {
+        "portfolio": "V19-043",
+        "sl_bp": 150,
+        "period": "historical",
+        "total_profit_bp": 1387.08159,
+        "trades": 708,
+        "stop_count": 44,
+        "stop_fraction": 0.0621,
+        "worst_single_leg_trade_bp": -152.00754,
+        "worst_portfolio_allocated_trade_bp": -38.00189,
+        "winning_orders": 375,
+        "losing_orders": 333,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 124,
+            "stop_count": 5,
+            "realized_bp_unweighted": 1293.28857
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 116,
+            "stop_count": 9,
+            "realized_bp_unweighted": 1023.26209
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 11,
+            "realized_bp_unweighted": 1945.13156
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 19,
+            "realized_bp_unweighted": 1286.64415
+          }
+        ],
+        "positive_months": 18,
+        "month_total": 22,
+        "profit_2025_bp": 610.68298,
+        "profit_2026_jan_oct_bp": 776.39861,
+        "min_month_bp": -63.98528,
+        "max_month_bp": 359.09878,
+        "monthly_bp": [
+          29.38292,
+          17.58714,
+          43.00545,
+          78.95412,
+          -63.98528,
+          192.26497,
+          79.04775,
+          19.40689,
+          46.65869,
+          -3.98223,
+          136.84818,
+          35.49438,
+          115.09107,
+          12.74203,
+          43.60985,
+          153.98738,
+          94.01674,
+          359.09878,
+          -35.04783,
+          -27.9857,
+          33.95766,
+          26.92863
+        ],
+        "max_month_end_equity_drawdown_bp": 63.98528
+      },
+      "november": {
+        "portfolio": "V19-043",
+        "sl_bp": 150,
+        "period": "november",
+        "total_profit_bp": 84.27172,
+        "trades": 9,
+        "stop_count": 3,
+        "stop_fraction": 0.3333,
+        "worst_single_leg_trade_bp": -152.00605,
+        "worst_portfolio_allocated_trade_bp": -38.00151,
+        "winning_orders": 5,
+        "losing_orders": 4,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -27.79854
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 2,
+            "stop_count": 2,
+            "realized_bp_unweighted": -303.98617
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 1,
+            "realized_bp_unweighted": 519.88991
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-025",
+      "stop_basis_points": 150,
+      "stop_pct": 1.5,
+      "historical": {
+        "portfolio": "V19-025",
+        "sl_bp": 150,
+        "period": "historical",
+        "total_profit_bp": 1677.26959,
+        "trades": 570,
+        "stop_count": 41,
+        "stop_fraction": 0.0719,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 304,
+        "losing_orders": 266,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 6,
+            "realized_bp_unweighted": 1486.07134
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 8,
+            "realized_bp_unweighted": 1457.40966
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 220,
+            "stop_count": 17,
+            "realized_bp_unweighted": 1353.69538
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 10,
+            "realized_bp_unweighted": 2411.90198
+          }
+        ],
+        "positive_months": 19,
+        "month_total": 22,
+        "profit_2025_bp": 767.11496,
+        "profit_2026_jan_oct_bp": 910.15463,
+        "min_month_bp": -59.19673,
+        "max_month_bp": 213.4094,
+        "monthly_bp": [
+          49.64616,
+          48.69524,
+          48.00287,
+          103.74725,
+          -12.17418,
+          150.19191,
+          36.27436,
+          1.14715,
+          79.82587,
+          89.03878,
+          122.56566,
+          50.15389,
+          97.60141,
+          51.45868,
+          141.21489,
+          213.4094,
+          176.28266,
+          186.38101,
+          -36.39414,
+          -59.19673,
+          101.2536,
+          38.14384
+        ],
+        "max_month_end_equity_drawdown_bp": 95.59087
+      },
+      "november": {
+        "portfolio": "V19-025",
+        "sl_bp": 150,
+        "period": "november",
+        "total_profit_bp": 143.82652,
+        "trades": 15,
+        "stop_count": 4,
+        "stop_fraction": 0.2667,
+        "worst_single_leg_trade_bp": -152.00605,
+        "worst_portfolio_allocated_trade_bp": -38.00151,
+        "winning_orders": 10,
+        "losing_orders": 5,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -77.49456
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 6,
+            "stop_count": 1,
+            "realized_bp_unweighted": 537.4508
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 3,
+            "realized_bp_unweighted": 52.73665
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-065",
+      "stop_basis_points": 200,
+      "stop_pct": 2.0,
+      "historical": {
+        "portfolio": "V19-065",
+        "sl_bp": 200,
+        "period": "historical",
+        "total_profit_bp": 1344.68958,
+        "trades": 766,
+        "stop_count": 43,
+        "stop_fraction": 0.0561,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 378,
+        "losing_orders": 388,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 5,
+            "realized_bp_unweighted": 1354.04085
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 440,
+            "stop_count": 19,
+            "realized_bp_unweighted": 324.71104
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 79,
+            "stop_count": 12,
+            "realized_bp_unweighted": 654.39442
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 123,
+            "stop_count": 7,
+            "realized_bp_unweighted": 3045.61199
+          }
+        ],
+        "positive_months": 19,
+        "month_total": 22,
+        "profit_2025_bp": 844.7693,
+        "profit_2026_jan_oct_bp": 499.92027,
+        "min_month_bp": -196.48796,
+        "max_month_bp": 229.8122,
+        "monthly_bp": [
+          30.78712,
+          69.67568,
+          88.64949,
+          57.78794,
+          51.45888,
+          128.33732,
+          44.26205,
+          30.45607,
+          153.70071,
+          39.71464,
+          139.40083,
+          10.53857,
+          -196.48796,
+          45.51552,
+          -89.93558,
+          141.74016,
+          229.8122,
+          165.235,
+          33.48917,
+          -38.05845,
+          50.85921,
+          157.751
+        ],
+        "max_month_end_equity_drawdown_bp": 240.90802
+      },
+      "november": {
+        "portfolio": "V19-065",
+        "sl_bp": 200,
+        "period": "november",
+        "total_profit_bp": 229.11888,
+        "trades": 17,
+        "stop_count": 4,
+        "stop_fraction": 0.2353,
+        "worst_single_leg_trade_bp": -202.00811,
+        "worst_portfolio_allocated_trade_bp": -50.50203,
+        "winning_orders": 11,
+        "losing_orders": 6,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 9,
+            "stop_count": 1,
+            "realized_bp_unweighted": 891.51269
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 0,
+            "stop_count": 0,
+            "realized_bp_unweighted": 0.0
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 7,
+            "stop_count": 3,
+            "realized_bp_unweighted": -37.65039
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-051",
+      "stop_basis_points": 200,
+      "stop_pct": 2.0,
+      "historical": {
+        "portfolio": "V19-051",
+        "sl_bp": 200,
+        "period": "historical",
+        "total_profit_bp": 1830.03476,
+        "trades": 694,
+        "stop_count": 25,
+        "stop_fraction": 0.036,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 378,
+        "losing_orders": 316,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 4,
+            "realized_bp_unweighted": 1375.63699
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 6,
+            "realized_bp_unweighted": 2050.19901
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 11,
+            "realized_bp_unweighted": 1276.14498
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 4,
+            "realized_bp_unweighted": 2618.15805
+          }
+        ],
+        "positive_months": 21,
+        "month_total": 22,
+        "profit_2025_bp": 895.8042,
+        "profit_2026_jan_oct_bp": 934.23056,
+        "min_month_bp": -103.13625,
+        "max_month_bp": 324.18393,
+        "monthly_bp": [
+          21.93393,
+          38.93264,
+          50.56557,
+          109.35945,
+          24.04601,
+          165.84356,
+          111.84678,
+          11.0043,
+          85.78972,
+          10.03655,
+          188.71535,
+          77.73035,
+          145.04822,
+          60.97401,
+          110.60517,
+          195.35007,
+          127.67223,
+          324.18393,
+          16.17602,
+          -103.13625,
+          14.21677,
+          43.14041
+        ],
+        "max_month_end_equity_drawdown_bp": 103.13625
+      },
+      "november": {
+        "portfolio": "V19-051",
+        "sl_bp": 200,
+        "period": "november",
+        "total_profit_bp": 111.02939,
+        "trades": 14,
+        "stop_count": 4,
+        "stop_fraction": 0.2857,
+        "worst_single_leg_trade_bp": -202.00811,
+        "worst_portfolio_allocated_trade_bp": -50.50203,
+        "winning_orders": 9,
+        "losing_orders": 5,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -77.49456
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 1,
+            "realized_bp_unweighted": 469.88786
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 3,
+            "realized_bp_unweighted": -97.25743
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-043",
+      "stop_basis_points": 200,
+      "stop_pct": 2.0,
+      "historical": {
+        "portfolio": "V19-043",
+        "sl_bp": 200,
+        "period": "historical",
+        "total_profit_bp": 1445.18001,
+        "trades": 708,
+        "stop_count": 21,
+        "stop_fraction": 0.0297,
+        "worst_single_leg_trade_bp": -202.01009,
+        "worst_portfolio_allocated_trade_bp": -50.50252,
+        "winning_orders": 378,
+        "losing_orders": 330,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 124,
+            "stop_count": 1,
+            "realized_bp_unweighted": 1301.70904
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 116,
+            "stop_count": 3,
+            "realized_bp_unweighted": 1152.66701
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 6,
+            "realized_bp_unweighted": 2050.19901
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 11,
+            "realized_bp_unweighted": 1276.14498
+          }
+        ],
+        "positive_months": 19,
+        "month_total": 22,
+        "profit_2025_bp": 611.10594,
+        "profit_2026_jan_oct_bp": 834.07407,
+        "min_month_bp": -76.48521,
+        "max_month_bp": 335.98074,
+        "monthly_bp": [
+          49.17978,
+          17.58714,
+          43.00545,
+          69.32169,
+          -76.48521,
+          179.76629,
+          79.04775,
+          25.2012,
+          46.65869,
+          5.48059,
+          136.84818,
+          35.49438,
+          115.09107,
+          22.55311,
+          -40.63366,
+          154.72041,
+          113.43404,
+          335.98074,
+          -0.18062,
+          30.6707,
+          69.16004,
+          33.27824
+        ],
+        "max_month_end_equity_drawdown_bp": 76.48521
+      },
+      "november": {
+        "portfolio": "V19-043",
+        "sl_bp": 200,
+        "period": "november",
+        "total_profit_bp": 46.77238,
+        "trades": 9,
+        "stop_count": 3,
+        "stop_fraction": 0.3333,
+        "worst_single_leg_trade_bp": -202.00811,
+        "worst_portfolio_allocated_trade_bp": -50.50203,
+        "winning_orders": 5,
+        "losing_orders": 4,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -27.79854
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 2,
+            "stop_count": 2,
+            "realized_bp_unweighted": -403.98149
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 1,
+            "realized_bp_unweighted": 469.88786
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-025",
+      "stop_basis_points": 200,
+      "stop_pct": 2.0,
+      "historical": {
+        "portfolio": "V19-025",
+        "sl_bp": 200,
+        "period": "historical",
+        "total_profit_bp": 1720.97769,
+        "trades": 570,
+        "stop_count": 23,
+        "stop_fraction": 0.0404,
+        "worst_single_leg_trade_bp": -371.81209,
+        "worst_portfolio_allocated_trade_bp": -92.95302,
+        "winning_orders": 307,
+        "losing_orders": 263,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 4,
+            "realized_bp_unweighted": 1375.63699
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 5,
+            "realized_bp_unweighted": 1354.04085
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 220,
+            "stop_count": 10,
+            "realized_bp_unweighted": 1536.07485
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 4,
+            "realized_bp_unweighted": 2618.15805
+          }
+        ],
+        "positive_months": 20,
+        "month_total": 22,
+        "profit_2025_bp": 723.92621,
+        "profit_2026_jan_oct_bp": 997.05147,
+        "min_month_bp": -24.67411,
+        "max_month_bp": 239.6636,
+        "monthly_bp": [
+          49.64616,
+          48.69524,
+          48.00287,
+          53.74302,
+          -24.67411,
+          150.19191,
+          36.27436,
+          17.2445,
+          79.82587,
+          92.25685,
+          122.56566,
+          50.15389,
+          97.60141,
+          51.45868,
+          94.78864,
+          214.14314,
+          239.6636,
+          163.26297,
+          -4.48981,
+          1.2254,
+          101.2536,
+          38.14384
+        ],
+        "max_month_end_equity_drawdown_bp": 24.67411
+      },
+      "november": {
+        "portfolio": "V19-025",
+        "sl_bp": 200,
+        "period": "november",
+        "total_profit_bp": 93.82749,
+        "trades": 15,
+        "stop_count": 4,
+        "stop_fraction": 0.2667,
+        "worst_single_leg_trade_bp": -202.00811,
+        "worst_portfolio_allocated_trade_bp": -50.50203,
+        "winning_orders": 10,
+        "losing_orders": 5,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -77.49456
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 6,
+            "stop_count": 1,
+            "realized_bp_unweighted": 487.44874
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 3,
+            "realized_bp_unweighted": -97.25743
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-065",
+      "stop_basis_points": 250,
+      "stop_pct": 2.5,
+      "historical": {
+        "portfolio": "V19-065",
+        "sl_bp": 250,
+        "period": "historical",
+        "total_profit_bp": 1433.99037,
+        "trades": 766,
+        "stop_count": 27,
+        "stop_fraction": 0.0352,
+        "worst_single_leg_trade_bp": -488.91189,
+        "worst_portfolio_allocated_trade_bp": -122.22797,
+        "winning_orders": 381,
+        "losing_orders": 385,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 3,
+            "realized_bp_unweighted": 1399.48079
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 440,
+            "stop_count": 8,
+            "realized_bp_unweighted": 1285.31692
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 79,
+            "stop_count": 9,
+            "realized_bp_unweighted": 491.28198
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 123,
+            "stop_count": 7,
+            "realized_bp_unweighted": 2559.88178
+          }
+        ],
+        "positive_months": 19,
+        "month_total": 22,
+        "profit_2025_bp": 830.14967,
+        "profit_2026_jan_oct_bp": 603.8407,
+        "min_month_bp": -190.42191,
+        "max_month_bp": 255.33636,
+        "monthly_bp": [
+          30.78712,
+          69.67568,
+          88.64949,
+          78.74399,
+          38.95895,
+          117.75265,
+          44.26205,
+          30.45607,
+          153.70071,
+          27.22356,
+          139.40083,
+          10.53857,
+          -190.42191,
+          52.97528,
+          -55.80602,
+          255.33636,
+          195.81304,
+          127.73428,
+          -28.70271,
+          7.59759,
+          81.56378,
+          157.751
+        ],
+        "max_month_end_equity_drawdown_bp": 193.25265
+      },
+      "november": {
+        "portfolio": "V19-065",
+        "sl_bp": 250,
+        "period": "november",
+        "total_profit_bp": 220.43036,
+        "trades": 17,
+        "stop_count": 3,
+        "stop_fraction": 0.1765,
+        "worst_single_leg_trade_bp": -251.9911,
+        "worst_portfolio_allocated_trade_bp": -62.99777,
+        "winning_orders": 11,
+        "losing_orders": 6,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 9,
+            "stop_count": 0,
+            "realized_bp_unweighted": 1006.75271
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 0,
+            "stop_count": 0,
+            "realized_bp_unweighted": 0.0
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 7,
+            "stop_count": 3,
+            "realized_bp_unweighted": -187.64447
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-051",
+      "stop_basis_points": 250,
+      "stop_pct": 2.5,
+      "historical": {
+        "portfolio": "V19-051",
+        "sl_bp": 250,
+        "period": "historical",
+        "total_profit_bp": 1851.50222,
+        "trades": 694,
+        "stop_count": 14,
+        "stop_fraction": 0.0202,
+        "worst_single_leg_trade_bp": -488.91189,
+        "worst_portfolio_allocated_trade_bp": -122.22797,
+        "winning_orders": 379,
+        "losing_orders": 315,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 2,
+            "realized_bp_unweighted": 1471.07619
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 4,
+            "realized_bp_unweighted": 2001.99353
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 5,
+            "realized_bp_unweighted": 1751.73136
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 3,
+            "realized_bp_unweighted": 2181.20781
+          }
+        ],
+        "positive_months": 21,
+        "month_total": 22,
+        "profit_2025_bp": 879.26254,
+        "profit_2026_jan_oct_bp": 972.23968,
+        "min_month_bp": -115.63672,
+        "max_month_bp": 299.18347,
+        "monthly_bp": [
+          21.93393,
+          38.93264,
+          50.56557,
+          117.8164,
+          11.54608,
+          153.34488,
+          111.84678,
+          11.0043,
+          85.78972,
+          10.03655,
+          188.71535,
+          77.73035,
+          145.04822,
+          60.97401,
+          175.97274,
+          243.9016,
+          43.44573,
+          299.18347,
+          21.21564,
+          -115.63672,
+          14.21677,
+          83.91821
+        ],
+        "max_month_end_equity_drawdown_bp": 115.63672
+      },
+      "november": {
+        "portfolio": "V19-051",
+        "sl_bp": 250,
+        "period": "november",
+        "total_profit_bp": 102.34087,
+        "trades": 14,
+        "stop_count": 3,
+        "stop_fraction": 0.2143,
+        "worst_single_leg_trade_bp": -251.9911,
+        "worst_portfolio_allocated_trade_bp": -62.99777,
+        "winning_orders": 9,
+        "losing_orders": 5,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -77.49456
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 0,
+            "realized_bp_unweighted": 585.12788
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 3,
+            "realized_bp_unweighted": -247.25151
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-043",
+      "stop_basis_points": 250,
+      "stop_pct": 2.5,
+      "historical": {
+        "portfolio": "V19-043",
+        "sl_bp": 250,
+        "period": "historical",
+        "total_profit_bp": 1563.81136,
+        "trades": 708,
+        "stop_count": 11,
+        "stop_fraction": 0.0155,
+        "worst_single_leg_trade_bp": -252.00574,
+        "worst_portfolio_allocated_trade_bp": -63.00144,
+        "winning_orders": 379,
+        "losing_orders": 329,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 124,
+            "stop_count": 0,
+            "realized_bp_unweighted": 1317.83499
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 116,
+            "stop_count": 2,
+            "realized_bp_unweighted": 1183.68558
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 4,
+            "realized_bp_unweighted": 2001.99353
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 5,
+            "realized_bp_unweighted": 1751.73136
+          }
+        ],
+        "positive_months": 21,
+        "month_total": 22,
+        "profit_2025_bp": 573.60824,
+        "profit_2026_jan_oct_bp": 990.20312,
+        "min_month_bp": -88.98514,
+        "max_month_bp": 310.98028,
+        "monthly_bp": [
+          49.17978,
+          17.58714,
+          43.00545,
+          56.8226,
+          -88.98514,
+          167.26762,
+          79.04775,
+          25.2012,
+          46.65869,
+          5.48059,
+          136.84818,
+          35.49438,
+          115.09107,
+          22.55311,
+          9.34194,
+          219.80301,
+          133.68793,
+          310.98028,
+          4.859,
+          30.6707,
+          69.16004,
+          74.05604
+        ],
+        "max_month_end_equity_drawdown_bp": 88.98514
+      },
+      "november": {
+        "portfolio": "V19-043",
+        "sl_bp": 250,
+        "period": "november",
+        "total_profit_bp": 89.13657,
+        "trades": 9,
+        "stop_count": 1,
+        "stop_fraction": 0.1111,
+        "worst_single_leg_trade_bp": -251.98877,
+        "worst_portfolio_allocated_trade_bp": -62.99719,
+        "winning_orders": 5,
+        "losing_orders": 4,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -27.79854
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 2,
+            "stop_count": 1,
+            "realized_bp_unweighted": -349.76473
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 0,
+            "realized_bp_unweighted": 585.12788
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-025",
+      "stop_basis_points": 250,
+      "stop_pct": 2.5,
+      "historical": {
+        "portfolio": "V19-025",
+        "sl_bp": 250,
+        "period": "historical",
+        "total_profit_bp": 1661.11628,
+        "trades": 570,
+        "stop_count": 14,
+        "stop_fraction": 0.0246,
+        "worst_single_leg_trade_bp": -488.91189,
+        "worst_portfolio_allocated_trade_bp": -122.22797,
+        "winning_orders": 307,
+        "losing_orders": 263,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 2,
+            "realized_bp_unweighted": 1471.07619
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 3,
+            "realized_bp_unweighted": 1399.48079
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 220,
+            "stop_count": 6,
+            "realized_bp_unweighted": 1592.70031
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 3,
+            "realized_bp_unweighted": 2181.20781
+          }
+        ],
+        "positive_months": 20,
+        "month_total": 22,
+        "profit_2025_bp": 753.34445,
+        "profit_2026_jan_oct_bp": 907.77183,
+        "min_month_bp": -37.17404,
+        "max_month_bp": 262.69538,
+        "monthly_bp": [
+          49.64616,
+          48.69524,
+          48.00287,
+          95.66118,
+          -37.17404,
+          150.19191,
+          36.27436,
+          17.2445,
+          79.82587,
+          92.25685,
+          122.56566,
+          50.15389,
+          97.60141,
+          51.45868,
+          73.64454,
+          262.69538,
+          155.4371,
+          138.26251,
+          0.54982,
+          -11.27507,
+          101.2536,
+          38.14384
+        ],
+        "max_month_end_equity_drawdown_bp": 37.17404
+      },
+      "november": {
+        "portfolio": "V19-025",
+        "sl_bp": 250,
+        "period": "november",
+        "total_profit_bp": 85.13898,
+        "trades": 15,
+        "stop_count": 3,
+        "stop_fraction": 0.2,
+        "worst_single_leg_trade_bp": -251.9911,
+        "worst_portfolio_allocated_trade_bp": -62.99777,
+        "winning_orders": 10,
+        "losing_orders": 5,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -77.49456
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 6,
+            "stop_count": 0,
+            "realized_bp_unweighted": 602.68876
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 3,
+            "realized_bp_unweighted": -247.25151
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-065",
+      "stop_basis_points": 300,
+      "stop_pct": 3.0,
+      "historical": {
+        "portfolio": "V19-065",
+        "sl_bp": 300,
+        "period": "historical",
+        "total_profit_bp": 1434.7442,
+        "trades": 766,
+        "stop_count": 17,
+        "stop_fraction": 0.0222,
+        "worst_single_leg_trade_bp": -488.91189,
+        "worst_portfolio_allocated_trade_bp": -122.22797,
+        "winning_orders": 381,
+        "losing_orders": 385,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 1,
+            "realized_bp_unweighted": 1551.67357
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 440,
+            "stop_count": 4,
+            "realized_bp_unweighted": 1342.9127
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 79,
+            "stop_count": 6,
+            "realized_bp_unweighted": 438.40301
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 123,
+            "stop_count": 6,
+            "realized_bp_unweighted": 2405.98751
+          }
+        ],
+        "positive_months": 19,
+        "month_total": 22,
+        "profit_2025_bp": 805.63447,
+        "profit_2026_jan_oct_bp": 629.10973,
+        "min_month_bp": -190.42191,
+        "max_month_bp": 230.33793,
+        "monthly_bp": [
+          30.78712,
+          69.67568,
+          88.64949,
+          66.23882,
+          26.45902,
+          105.26102,
+          44.26205,
+          30.45607,
+          153.70071,
+          40.20508,
+          139.40083,
+          10.53857,
+          -190.42191,
+          52.97528,
+          -56.7101,
+          230.33793,
+          183.31276,
+          170.56666,
+          -6.90099,
+          6.63531,
+          81.56378,
+          157.751
+        ],
+        "max_month_end_equity_drawdown_bp": 194.15672
+      },
+      "november": {
+        "portfolio": "V19-065",
+        "sl_bp": 300,
+        "period": "november",
+        "total_profit_bp": 222.23413,
+        "trades": 17,
+        "stop_count": 2,
+        "stop_fraction": 0.1176,
+        "worst_single_leg_trade_bp": -301.98929,
+        "worst_portfolio_allocated_trade_bp": -75.49732,
+        "winning_orders": 11,
+        "losing_orders": 6,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 9,
+            "stop_count": 0,
+            "realized_bp_unweighted": 1006.75271
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 0,
+            "stop_count": 0,
+            "realized_bp_unweighted": 0.0
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 7,
+            "stop_count": 2,
+            "realized_bp_unweighted": -180.42939
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-051",
+      "stop_basis_points": 300,
+      "stop_pct": 3.0,
+      "historical": {
+        "portfolio": "V19-051",
+        "sl_bp": 300,
+        "period": "historical",
+        "total_profit_bp": 1806.3386,
+        "trades": 694,
+        "stop_count": 10,
+        "stop_fraction": 0.0144,
+        "worst_single_leg_trade_bp": -488.91189,
+        "worst_portfolio_allocated_trade_bp": -122.22797,
+        "winning_orders": 379,
+        "losing_orders": 315,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 1,
+            "realized_bp_unweighted": 1458.36161
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 4,
+            "realized_bp_unweighted": 1802.00271
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 3,
+            "realized_bp_unweighted": 1823.06474
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 2,
+            "realized_bp_unweighted": 2141.92535
+          }
+        ],
+        "positive_months": 20,
+        "month_total": 22,
+        "profit_2025_bp": 829.25968,
+        "profit_2026_jan_oct_bp": 977.07892,
+        "min_month_bp": -100.44645,
+        "max_month_bp": 354.51612,
+        "monthly_bp": [
+          21.93393,
+          38.93264,
+          50.56557,
+          92.81215,
+          -0.95385,
+          140.8462,
+          111.84678,
+          11.0043,
+          85.78972,
+          10.03655,
+          188.71535,
+          77.73035,
+          145.04822,
+          60.97401,
+          147.78923,
+          218.90172,
+          30.94545,
+          354.51612,
+          21.21564,
+          -100.44645,
+          14.21677,
+          83.91821
+        ],
+        "max_month_end_equity_drawdown_bp": 100.44645
+      },
+      "november": {
+        "portfolio": "V19-051",
+        "sl_bp": 300,
+        "period": "november",
+        "total_profit_bp": 106.77376,
+        "trades": 14,
+        "stop_count": 2,
+        "stop_fraction": 0.1429,
+        "worst_single_leg_trade_bp": -301.98929,
+        "worst_portfolio_allocated_trade_bp": -75.49732,
+        "winning_orders": 9,
+        "losing_orders": 5,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -77.49456
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 0,
+            "realized_bp_unweighted": 585.12788
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 2,
+            "realized_bp_unweighted": -229.51994
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-043",
+      "stop_basis_points": 300,
+      "stop_pct": 3.0,
+      "historical": {
+        "portfolio": "V19-043",
+        "sl_bp": 300,
+        "period": "historical",
+        "total_profit_bp": 1506.64748,
+        "trades": 708,
+        "stop_count": 9,
+        "stop_fraction": 0.0127,
+        "worst_single_leg_trade_bp": -302.00692,
+        "worst_portfolio_allocated_trade_bp": -75.50173,
+        "winning_orders": 379,
+        "losing_orders": 329,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 124,
+            "stop_count": 0,
+            "realized_bp_unweighted": 1317.83499
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 116,
+            "stop_count": 2,
+            "realized_bp_unweighted": 1083.68747
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 4,
+            "realized_bp_unweighted": 1802.00271
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 3,
+            "realized_bp_unweighted": 1823.06474
+          }
+        ],
+        "positive_months": 20,
+        "month_total": 22,
+        "profit_2025_bp": 536.11054,
+        "profit_2026_jan_oct_bp": 970.53693,
+        "min_month_bp": -101.48507,
+        "max_month_bp": 366.31293,
+        "monthly_bp": [
+          49.17978,
+          17.58714,
+          43.00545,
+          44.32351,
+          -101.48507,
+          154.76894,
+          79.04775,
+          25.2012,
+          46.65869,
+          5.48059,
+          136.84818,
+          35.49438,
+          115.09107,
+          22.55311,
+          -40.65633,
+          207.30271,
+          121.18765,
+          366.31293,
+          4.859,
+          30.6707,
+          69.16004,
+          74.05604
+        ],
+        "max_month_end_equity_drawdown_bp": 101.48507
+      },
+      "november": {
+        "portfolio": "V19-043",
+        "sl_bp": 300,
+        "period": "november",
+        "total_profit_bp": 76.63714,
+        "trades": 9,
+        "stop_count": 1,
+        "stop_fraction": 0.1111,
+        "worst_single_leg_trade_bp": -301.9865,
+        "worst_portfolio_allocated_trade_bp": -75.49662,
+        "winning_orders": 5,
+        "losing_orders": 4,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -27.79854
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 2,
+            "stop_count": 1,
+            "realized_bp_unweighted": -399.76246
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 0,
+            "realized_bp_unweighted": 585.12788
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-025",
+      "stop_basis_points": 300,
+      "stop_pct": 3.0,
+      "historical": {
+        "portfolio": "V19-025",
+        "sl_bp": 300,
+        "period": "historical",
+        "total_profit_bp": 1715.03489,
+        "trades": 570,
+        "stop_count": 7,
+        "stop_fraction": 0.0123,
+        "worst_single_leg_trade_bp": -488.91189,
+        "worst_portfolio_allocated_trade_bp": -122.22797,
+        "winning_orders": 307,
+        "losing_orders": 263,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 1,
+            "realized_bp_unweighted": 1458.36161
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 1,
+            "realized_bp_unweighted": 1551.67357
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 220,
+            "stop_count": 3,
+            "realized_bp_unweighted": 1708.17903
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 2,
+            "realized_bp_unweighted": 2141.92535
+          }
+        ],
+        "positive_months": 21,
+        "month_total": 22,
+        "profit_2025_bp": 715.84026,
+        "profit_2026_jan_oct_bp": 999.19463,
+        "min_month_bp": -49.67397,
+        "max_month_bp": 237.69622,
+        "monthly_bp": [
+          49.64616,
+          48.69524,
+          48.00287,
+          70.65692,
+          -49.67397,
+          150.19191,
+          36.27436,
+          17.2445,
+          79.82587,
+          92.25685,
+          122.56566,
+          50.15389,
+          97.60141,
+          51.45868,
+          132.04387,
+          237.69622,
+          142.93682,
+          193.59516,
+          0.54982,
+          3.9152,
+          101.2536,
+          38.14384
+        ],
+        "max_month_end_equity_drawdown_bp": 49.67397
+      },
+      "november": {
+        "portfolio": "V19-025",
+        "sl_bp": 300,
+        "period": "november",
+        "total_profit_bp": 89.57187,
+        "trades": 15,
+        "stop_count": 2,
+        "stop_fraction": 0.1333,
+        "worst_single_leg_trade_bp": -301.98929,
+        "worst_portfolio_allocated_trade_bp": -75.49732,
+        "winning_orders": 10,
+        "losing_orders": 5,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -77.49456
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 6,
+            "stop_count": 0,
+            "realized_bp_unweighted": 602.68876
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 2,
+            "realized_bp_unweighted": -229.51994
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-065",
+      "stop_basis_points": 400,
+      "stop_pct": 4.0,
+      "historical": {
+        "portfolio": "V19-065",
+        "sl_bp": 400,
+        "period": "historical",
+        "total_profit_bp": 1490.59335,
+        "trades": 766,
+        "stop_count": 9,
+        "stop_fraction": 0.0117,
+        "worst_single_leg_trade_bp": -488.91189,
+        "worst_portfolio_allocated_trade_bp": -122.22797,
+        "winning_orders": 382,
+        "losing_orders": 384,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 0,
+            "realized_bp_unweighted": 1634.42624
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 440,
+            "stop_count": 2,
+            "realized_bp_unweighted": 1126.20303
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 79,
+            "stop_count": 3,
+            "realized_bp_unweighted": 842.64418
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 123,
+            "stop_count": 4,
+            "realized_bp_unweighted": 2359.09997
+          }
+        ],
+        "positive_months": 20,
+        "month_total": 22,
+        "profit_2025_bp": 795.7708,
+        "profit_2026_jan_oct_bp": 694.82255,
+        "min_month_bp": -190.42191,
+        "max_month_bp": 364.49514,
+        "monthly_bp": [
+          30.78712,
+          69.67568,
+          88.64949,
+          67.65609,
+          40.16136,
+          80.27776,
+          44.26205,
+          30.45607,
+          153.70071,
+          40.20508,
+          139.40083,
+          10.53857,
+          -190.42191,
+          52.97528,
+          -103.29752,
+          364.49514,
+          158.3122,
+          138.01575,
+          28.79352,
+          6.63531,
+          81.56378,
+          157.751
+        ],
+        "max_month_end_equity_drawdown_bp": 240.74415
+      },
+      "november": {
+        "portfolio": "V19-065",
+        "sl_bp": 400,
+        "period": "november",
+        "total_profit_bp": 172.23601,
+        "trades": 17,
+        "stop_count": 2,
+        "stop_fraction": 0.1176,
+        "worst_single_leg_trade_bp": -401.98568,
+        "worst_portfolio_allocated_trade_bp": -100.49642,
+        "winning_orders": 11,
+        "losing_orders": 6,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+            "trades": 9,
+            "stop_count": 0,
+            "realized_bp_unweighted": 1006.75271
+          },
+          {
+            "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+            "trades": 0,
+            "stop_count": 0,
+            "realized_bp_unweighted": 0.0
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+            "trades": 7,
+            "stop_count": 2,
+            "realized_bp_unweighted": -380.42186
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-051",
+      "stop_basis_points": 400,
+      "stop_pct": 4.0,
+      "historical": {
+        "portfolio": "V19-051",
+        "sl_bp": 400,
+        "period": "historical",
+        "total_profit_bp": 1687.0269,
+        "trades": 694,
+        "stop_count": 7,
+        "stop_fraction": 0.0101,
+        "worst_single_leg_trade_bp": -488.91189,
+        "worst_portfolio_allocated_trade_bp": -122.22797,
+        "winning_orders": 379,
+        "losing_orders": 315,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 0,
+            "realized_bp_unweighted": 1541.11428
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 3,
+            "realized_bp_unweighted": 1587.27595
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 2,
+            "realized_bp_unweighted": 1677.87908
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 2,
+            "realized_bp_unweighted": 1941.83829
+          }
+        ],
+        "positive_months": 21,
+        "month_total": 22,
+        "profit_2025_bp": 767.95616,
+        "profit_2026_jan_oct_bp": 919.07074,
+        "min_month_bp": -100.44645,
+        "max_month_bp": 354.51612,
+        "monthly_bp": [
+          21.93393,
+          38.93264,
+          50.56557,
+          42.80364,
+          12.74848,
+          115.84885,
+          111.84678,
+          11.0043,
+          85.78972,
+          10.03655,
+          188.71535,
+          77.73035,
+          145.04822,
+          60.97401,
+          119.09403,
+          214.5893,
+          5.94489,
+          354.51612,
+          21.21564,
+          -100.44645,
+          14.21677,
+          83.91821
+        ],
+        "max_month_end_equity_drawdown_bp": 100.44645
+      },
+      "november": {
+        "portfolio": "V19-051",
+        "sl_bp": 400,
+        "period": "november",
+        "total_profit_bp": 56.77565,
+        "trades": 14,
+        "stop_count": 2,
+        "stop_fraction": 0.1429,
+        "worst_single_leg_trade_bp": -401.98568,
+        "worst_portfolio_allocated_trade_bp": -100.49642,
+        "winning_orders": 9,
+        "losing_orders": 5,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -77.49456
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 0,
+            "realized_bp_unweighted": 585.12788
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 2,
+            "realized_bp_unweighted": -429.51242
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-043",
+      "stop_basis_points": 400,
+      "stop_pct": 4.0,
+      "historical": {
+        "portfolio": "V19-043",
+        "sl_bp": 400,
+        "period": "historical",
+        "total_profit_bp": 1366.67031,
+        "trades": 708,
+        "stop_count": 7,
+        "stop_fraction": 0.0099,
+        "worst_single_leg_trade_bp": -402.00928,
+        "worst_portfolio_allocated_trade_bp": -100.50232,
+        "winning_orders": 379,
+        "losing_orders": 329,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 124,
+            "stop_count": 0,
+            "realized_bp_unweighted": 1317.83499
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 116,
+            "stop_count": 2,
+            "realized_bp_unweighted": 883.69124
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 251,
+            "stop_count": 3,
+            "realized_bp_unweighted": 1587.27595
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 217,
+            "stop_count": 2,
+            "realized_bp_unweighted": 1677.87908
+          }
+        ],
+        "positive_months": 20,
+        "month_total": 22,
+        "profit_2025_bp": 499.81734,
+        "profit_2026_jan_oct_bp": 866.85297,
+        "min_month_bp": -94.33913,
+        "max_month_bp": 366.31293,
+        "monthly_bp": [
+          49.17978,
+          17.58714,
+          43.00545,
+          19.32532,
+          -87.78274,
+          129.77159,
+          79.04775,
+          25.2012,
+          46.65869,
+          5.48059,
+          136.84818,
+          35.49438,
+          115.09107,
+          22.55311,
+          -94.33913,
+          182.30212,
+          96.18708,
+          366.31293,
+          4.859,
+          30.6707,
+          69.16004,
+          74.05604
+        ],
+        "max_month_end_equity_drawdown_bp": 94.33913
+      },
+      "november": {
+        "portfolio": "V19-043",
+        "sl_bp": 400,
+        "period": "november",
+        "total_profit_bp": 51.63827,
+        "trades": 9,
+        "stop_count": 1,
+        "stop_fraction": 0.1111,
+        "worst_single_leg_trade_bp": -401.98196,
+        "worst_portfolio_allocated_trade_bp": -100.49549,
+        "winning_orders": 5,
+        "losing_orders": 4,
+        "by_leg": [
+          {
+            "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -27.79854
+          },
+          {
+            "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+            "trades": 2,
+            "stop_count": 1,
+            "realized_bp_unweighted": -499.75792
+          },
+          {
+            "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 148.98168
+          },
+          {
+            "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+            "trades": 5,
+            "stop_count": 0,
+            "realized_bp_unweighted": 585.12788
+          }
+        ]
+      }
+    },
+    {
+      "portfolio": "V19-025",
+      "stop_basis_points": 400,
+      "stop_pct": 4.0,
+      "historical": {
+        "portfolio": "V19-025",
+        "sl_bp": 400,
+        "period": "historical",
+        "total_profit_bp": 1670.09305,
+        "trades": 570,
+        "stop_count": 4,
+        "stop_fraction": 0.007,
+        "worst_single_leg_trade_bp": -488.91189,
+        "worst_portfolio_allocated_trade_bp": -122.22797,
+        "winning_orders": 307,
+        "losing_orders": 263,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 103,
+            "stop_count": 0,
+            "realized_bp_unweighted": 1541.11428
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 124,
+            "stop_count": 0,
+            "realized_bp_unweighted": 1634.42624
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 220,
+            "stop_count": 2,
+            "realized_bp_unweighted": 1562.99337
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 123,
+            "stop_count": 2,
+            "realized_bp_unweighted": 1941.83829
+          }
+        ],
+        "positive_months": 21,
+        "month_total": 22,
+        "profit_2025_bp": 679.53409,
+        "profit_2026_jan_oct_bp": 990.55896,
+        "min_month_bp": -35.97164,
+        "max_month_bp": 279.07255,
+        "monthly_bp": [
+          49.64616,
+          48.69524,
+          48.00287,
+          20.64841,
+          -35.97164,
+          150.19191,
+          36.27436,
+          17.2445,
+          79.82587,
+          92.25685,
+          122.56566,
+          50.15389,
+          97.60141,
+          51.45868,
+          107.03243,
+          279.07255,
+          117.93626,
+          193.59516,
+          0.54982,
+          3.9152,
+          101.2536,
+          38.14384
+        ],
+        "max_month_end_equity_drawdown_bp": 35.97164
+      },
+      "november": {
+        "portfolio": "V19-025",
+        "sl_bp": 400,
+        "period": "november",
+        "total_profit_bp": 39.57375,
+        "trades": 15,
+        "stop_count": 2,
+        "stop_fraction": 0.1333,
+        "worst_single_leg_trade_bp": -401.98568,
+        "worst_portfolio_allocated_trade_bp": -100.49642,
+        "winning_orders": 10,
+        "losing_orders": 5,
+        "by_leg": [
+          {
+            "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": -77.49456
+          },
+          {
+            "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+            "trades": 1,
+            "stop_count": 0,
+            "realized_bp_unweighted": 62.61321
+          },
+          {
+            "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+            "trades": 6,
+            "stop_count": 0,
+            "realized_bp_unweighted": 602.68876
+          },
+          {
+            "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+            "trades": 7,
+            "stop_count": 2,
+            "realized_bp_unweighted": -429.51242
+          }
+        ]
+      }
+    }
+  ]
+}
