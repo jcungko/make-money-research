@@ -1,4 +1,5 @@
 name: V21 November 2026 replay — freeze 199 portfolios and exclude losers
+# Re-run with Exness current-month daily archive appended to monthly source
 on:
   push:
     branches: [main]
