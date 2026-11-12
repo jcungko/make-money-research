@@ -1,0 +1,139 @@
+{
+  "version": "V17",
+  "symbol": "EURUSD",
+  "price_source": "Exness publicly archived ticks",
+  "price_type": "bid_and_ask",
+  "timezone": "UTC",
+  "year": 2026,
+  "source_v12_workflow_run_id": 42964857297,
+  "source_months": [
+    {
+      "month": 1,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/01/Exness_EURUSD_2026_01.zip",
+      "zip_bytes": 7515516,
+      "m5_bars": 6043,
+      "first_utc": "2026-01-01T22:05:00+00:00",
+      "last_utc": "2026-01-30T21:55:00+00:00"
+    },
+    {
+      "month": 2,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/02/Exness_EURUSD_2026_02.zip",
+      "zip_bytes": 6287560,
+      "m5_bars": 5753,
+      "first_utc": "2026-02-01T22:05:00+00:00",
+      "last_utc": "2026-02-27T21:55:00+00:00"
+    },
+    {
+      "month": 3,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/03/Exness_EURUSD_2026_03.zip",
+      "zip_bytes": 11670227,
+      "m5_bars": 6362,
+      "first_utc": "2026-03-01T22:05:00+00:00",
+      "last_utc": "2026-03-31T23:55:00+00:00"
+    },
+    {
+      "month": 4,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/04/Exness_EURUSD_2026_04.zip",
+      "zip_bytes": 7229161,
+      "m5_bars": 6328,
+      "first_utc": "2026-04-01T00:00:00+00:00",
+      "last_utc": "2026-04-30T23:55:00+00:00"
+    },
+    {
+      "month": 5,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/05/Exness_EURUSD_2026_05.zip",
+      "zip_bytes": 5741214,
+      "m5_bars": 6041,
+      "first_utc": "2026-05-01T00:00:00+00:00",
+      "last_utc": "2026-05-31T23:55:00+00:00"
+    },
+    {
+      "month": 6,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/06/Exness_EURUSD_2026_06.zip",
+      "zip_bytes": 6099097,
+      "m5_bars": 6328,
+      "first_utc": "2026-06-01T00:00:00+00:00",
+      "last_utc": "2026-06-30T23:55:00+00:00"
+    },
+    {
+      "month": 7,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/07/Exness_EURUSD_2026_07.zip",
+      "zip_bytes": 5965838,
+      "m5_bars": 6583,
+      "first_utc": "2026-07-01T00:00:00+00:00",
+      "last_utc": "2026-07-31T20:55:00+00:00"
+    },
+    {
+      "month": 8,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/08/Exness_EURUSD_2026_08.zip",
+      "zip_bytes": 4670617,
+      "m5_bars": 6077,
+      "first_utc": "2026-08-02T21:05:00+00:00",
+      "last_utc": "2026-08-31T23:55:00+00:00"
+    },
+    {
+      "month": 9,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/09/Exness_EURUSD_2026_09.zip",
+      "zip_bytes": 5467945,
+      "m5_bars": 6325,
+      "first_utc": "2026-09-01T00:00:00+00:00",
+      "last_utc": "2026-09-30T23:55:00+00:00"
+    },
+    {
+      "month": 10,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/10/Exness_EURUSD_2026_10.zip",
+      "zip_bytes": 6858716,
+      "m5_bars": 6285,
+      "first_utc": "2026-10-01T00:00:00+00:00",
+      "last_utc": "2026-10-30T20:55:00+00:00"
+    },
+    {
+      "month": 11,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/11/Exness_EURUSD_2026_11.zip",
+      "zip_bytes": 2472838,
+      "m5_bars": 2036,
+      "first_utc": "2026-11-01T22:05:00+00:00",
+      "last_utc": "2026-11-10T23:55:00+00:00"
+    }
+  ],
+  "source_cutoff_utc": "2026-11-11T05:05:00+00:00",
+  "note": "D1 and W1 derived from M5 using UTC calendar, weekly Monday 00 UTC; latest partial daily/weekly bucket excluded. Forex market holidays/weekends remain gaps. M5-H4 retain original V12 bars.",
+  "frames": {
+    "M5": {
+      "rows": 64161,
+      "first": "2026-01-01T22:05:00+00:00",
+      "last": "2026-11-10T23:55:00+00:00"
+    },
+    "M15": {
+      "rows": 21414,
+      "first": "2026-01-01T22:00:00+00:00",
+      "last": "2026-11-10T23:45:00+00:00"
+    },
+    "M30": {
+      "rows": 10708,
+      "first": "2026-01-01T22:00:00+00:00",
+      "last": "2026-11-10T23:30:00+00:00"
+    },
+    "H1": {
+      "rows": 5354,
+      "first": "2026-01-01T22:00:00+00:00",
+      "last": "2026-11-10T23:00:00+00:00"
+    },
+    "H4": {
+      "rows": 1384,
+      "first": "2026-01-01T20:00:00+00:00",
+      "last": "2026-11-10T20:00:00+00:00"
+    },
+    "D1": {
+      "rows": 269,
+      "first": "2026-01-01T00:00:00+00:00",
+      "last": "2026-11-10T00:00:00+00:00"
+    },
+    "W1": {
+      "rows": 44,
+      "first": "2026-01-05T00:00:00+00:00",
+      "last": "2026-11-02T00:00:00+00:00"
+    }
+  },
+  "assembled_at_utc": "2026-11-12T16:10:32.194062+00:00"
+}
