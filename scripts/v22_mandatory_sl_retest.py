@@ -255,15 +255,15 @@ def summarize_all():
         annual2026=float(m_pnl[12:22].sum())
         profitable_hist=int((m_pnl[:22]>EPS).sum())
         oct=float(m_pnl[oct_index])
-        nov=float(m_pnl[nov_index])
+        nov_pnl=float(m_pnl[nov_index])
         retained=(annual2025>EPS and annual2026>EPS and profitable_hist>=17 and
-            oct>EPS and nov>EPS and ss['trades']>1 and ss['wins']>ss['losses'])
+            oct>EPS and nov_pnl>EPS and ss['trades']>1 and ss['wins']>ss['losses'])
         reasons=[]
         if annual2025<=EPS: reasons.append('2025_nonprofitable')
         if annual2026<=EPS: reasons.append('2026_JanOct_nonprofitable')
         if profitable_hist<17: reasons.append('under_17_of_22_profitable_months')
         if oct<=EPS: reasons.append('Oct2026_nonprofitable')
-        if nov<=EPS: reasons.append('Nov2026_to_date_nonprofitable')
+        if nov_pnl<=EPS: reasons.append('Nov2026_to_date_nonprofitable')
         if ss['trades']<=1: reasons.append('Nov2026_under_2_trades')
         if ss['wins']<=ss['losses']: reasons.append('Nov2026_win_count_not_above_loss_count')
         o=dict(rec)
@@ -272,7 +272,7 @@ def summarize_all():
             sl_2025_bps=round(annual2025,6),
             sl_2026_JanOct_bps=round(annual2026,6),
             sl_oct2026_bps=round(oct,6),
-            sl_nov2026_to_date_bps=round(nov,6),
+            sl_nov2026_to_date_bps=round(nov_pnl,6),
             sl_profitable_months_22=profitable_hist,
             sl_nov_trades=ss['trades'],
             sl_nov_wins=ss['wins'],sl_nov_losses=ss['losses'],
