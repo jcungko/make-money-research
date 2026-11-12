@@ -1,0 +1,44 @@
+name: V22 assess 21 profitable months out of 22
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v22-21month-screen.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install research dependencies
+        run: pip install 'pandas>=2.2,<3' 'numpy>=1.26,<3'
+      - name: Backtest 21/22 months (same candidate universe as V22)
+        run: python -u scripts/v22_21month_screen.py --root data/v22_exness --out results/v22_21month_screen
+      - name: Export auditable report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: V22-21of22-Months
+          path: results/v22_21month_screen/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit verified report to GitHub
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v22_21month_screen/
+          if ! git diff --cached --quiet; then
+            git commit -m "V22: 21 profitable month screening results"
+            for n in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && exit 0
+              sleep "$((n * 3))"
+            done
+            exit 1
+          fi
