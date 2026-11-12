@@ -1,0 +1,45 @@
+name: V22 deduplicate 47 portfolios using historical trade time overlap
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v22-dedup-47.yml'
+      - 'scripts/v22_dedup_47.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deduplicate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install analysis dependencies
+        run: pip install 'pandas>=2.2,<3' 'numpy>=1.26,<3'
+      - name: Historical 2025-2026 and November 2026 trade overlap analysis
+        run: python -u scripts/v22_dedup_47.py --data data/v22_exness --selection results/v22_november_2026/v22_nov_after_profit_trade_filter_47.csv --nov-trades results/v22_november_2026/v22_nov2026_component_trades.json --out results/v22_november_2026/deduplicated
+      - name: Upload audited duplicates and unique strategies
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: V22-47-trade-schedule-deduplication
+          path: results/v22_november_2026/deduplicated/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Persist audited selection
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v22_november_2026/deduplicated/
+          if ! git diff --cached --quiet; then
+            git commit -m "V22: preserve independent trade-schedule strategy shortlist"
+            for n in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && exit 0
+              sleep "$((n*3))"
+            done
+            exit 1
+          fi
