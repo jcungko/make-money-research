@@ -1,0 +1,56 @@
+name: V19 screen Exness energy strategies 2025 2026
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v19-strategy-screen.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: v19-strategy-screen-22-months
+  cancel-in-progress: false
+jobs:
+  screen:
+    name: Backtest 22 months and publish reproducible counts
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install research dependencies
+        run: pip install 'numpy>=1.26,<3' 'pandas>=2.2,<3'
+      - name: Confirm six Exness historical archives are present
+        shell: bash
+        run: |
+          for symbol in USOIL UKOIL XNGUSD; do
+            for year in 2025 2026; do
+              test -s "data/v19_energies/${symbol}_${year}_UTC_7TF.zip"
+              test -s "data/v19_energies/${symbol}_${year}_manifest.json"
+            done
+          done
+      - name: Run V19 monthly-profit census
+        run: python scripts/v19_strategy_screen.py --root data/v19_energies --out data/v19_strategy_screen
+      - name: Save reproducible reports to GitHub
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/v19_strategy_screen/
+          if ! git diff --cached --quiet; then
+            git commit -m "V19: publish energy strategy census and 22-month profit results"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo "V19 results already published"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: V19-22-Month-Strategy-Census
+          path: data/v19_strategy_screen/
+          if-no-files-found: warn
+          retention-days: 30
