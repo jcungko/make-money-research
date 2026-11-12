@@ -1,0 +1,45 @@
+name: V22 deduplicate overlapping same-symbol same-entry EA bots and portfolios
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v22-deduplicate.yml'
+      - 'scripts/v22_deduplicate.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deduplicate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install research dependencies
+        run: pip install 'pandas>=2.2,<3' 'numpy>=1.26,<3' 'requests>=2.31'
+      - name: Reconstruct trades and deduplicate V22 portfolios
+        run: python -u scripts/v22_deduplicate.py --out results/v22_deduplicated
+      - name: Preserve research output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: V22-Deduplicated-Research
+          path: results/v22_deduplicated/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit verified reports
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v22_deduplicated/
+          if ! git diff --cached --quiet; then
+            git commit -m "V22: actual trade overlap portfolio dedup results"
+            for n in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && exit 0
+              sleep "$((n * 3))"
+            done
+            exit 1
+          fi
