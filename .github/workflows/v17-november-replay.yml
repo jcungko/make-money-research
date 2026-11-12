@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/v17-november-replay.yml'
+      - 'scripts/v17_november_replay.py'
 permissions:
   contents: write
 concurrency:
