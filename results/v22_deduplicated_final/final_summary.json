@@ -1,0 +1,625 @@
+{
+  "version": "V22-PORTFOLIO-DISTINCT-FINAL",
+  "data_cutoff_utc": "2026-11-12T19:55:00+00:00",
+  "starting_portfolios": 1860,
+  "first_stage_trade_overlap_kept": 367,
+  "first_stage_trade_overlap_removed": 1493,
+  "first_stage_unique_eas": 91,
+  "first_stage_distinct_ea_signal_clusters": 42,
+  "second_stage_same_hours_removed": 100,
+  "final_distinct_portfolios": 267,
+  "total_removed": 1593,
+  "assets_must_match_exactly": true,
+  "definition": "A multi-symbol portfolio is near duplicate if the same asset set has >=80% of time windows within 1 hour and (>=60% same trade-pattern EA clusters with 22-month pnl correlation>=0.86 OR 22-month pnl correlation>=0.96). Keep strongest by profitable-month count, worst monthly pnl, then Nov, then total.",
+  "thresholds": {
+    "min_fraction_ea_clusters": 0.6,
+    "min_fraction_matching_hours": 0.8,
+    "max_hour_difference": 1,
+    "min_monthly_pnl_correlation": 0.86,
+    "alternate_monthly_pnl_correlation": 0.96
+  },
+  "by_number_of_components": {
+    "1": {
+      "initial_1860": 2,
+      "after_trade_dedup": 1,
+      "after_time_window_dedup": 1
+    },
+    "2": {
+      "initial_1860": 57,
+      "after_trade_dedup": 28,
+      "after_time_window_dedup": 28
+    },
+    "3": {
+      "initial_1860": 355,
+      "after_trade_dedup": 103,
+      "after_time_window_dedup": 84
+    },
+    "4": {
+      "initial_1860": 857,
+      "after_trade_dedup": 158,
+      "after_time_window_dedup": 113
+    },
+    "5": {
+      "initial_1860": 589,
+      "after_trade_dedup": 77,
+      "after_time_window_dedup": 41
+    }
+  },
+  "by_historic_positive_months": {
+    "17": {
+      "original_1860": 1435,
+      "after_trade_dedup": 240,
+      "after_time_window_dedup": 171
+    },
+    "18": {
+      "original_1860": 364,
+      "after_trade_dedup": 103,
+      "after_time_window_dedup": 77
+    },
+    "19": {
+      "original_1860": 59,
+      "after_trade_dedup": 22,
+      "after_time_window_dedup": 18
+    },
+    "20": {
+      "original_1860": 2,
+      "after_trade_dedup": 2,
+      "after_time_window_dedup": 1
+    }
+  },
+  "top20": [
+    {
+      "id": "V22-K0002",
+      "symbols": "NVDA+AMD+AVGO+XOM+GOOGL",
+      "n_strategies": "5",
+      "months_profitable": "20",
+      "nov_2026_bps": "185.469927",
+      "total_bps": "1639.9569",
+      "profit_2025_bps": "676.6002",
+      "profit_2026_bps": "963.3567",
+      "components": "NVDA M30 RSI_14_30 FADE ANY entry_14:00_UTC window_2h hold_120min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | XOM M30 MOMENTUM_4 LONG_ONLY ANY entry_14:00_UTC window_2h hold_120min | GOOGL M5 DAILY_PREVIOUS FADE W1_ALIGN entry_17:00_UTC window_2h hold_120min"
+    },
+    {
+      "id": "V22-K0071",
+      "symbols": "NVDA+AMD+AVGO+GOOGL",
+      "n_strategies": "4",
+      "months_profitable": "19",
+      "nov_2026_bps": "49.366584",
+      "total_bps": "2094.647",
+      "profit_2025_bps": "939.9636",
+      "profit_2026_bps": "1154.6834",
+      "components": "NVDA M30 RSI_14_30 FADE ANY entry_14:00_UTC window_2h hold_120min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_14:00_UTC window_2h hold_240min | AVGO M30 ZSCORE_16_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | GOOGL H1 ZSCORE_16_1p0 FADE W1_ALIGN entry_16:00_UTC window_2h hold_180min"
+    },
+    {
+      "id": "V22-K0035",
+      "symbols": "NVDA+AMD+AVGO+XOM+GOOGL",
+      "n_strategies": "5",
+      "months_profitable": "19",
+      "nov_2026_bps": "216.160589",
+      "total_bps": "1809.8487",
+      "profit_2025_bps": "942.1269",
+      "profit_2026_bps": "867.7217",
+      "components": "NVDA M30 RSI_14_30 FADE ANY entry_14:00_UTC window_2h hold_120min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | XOM M30 MOMENTUM_4 LONG_ONLY ANY entry_14:00_UTC window_2h hold_240min | GOOGL H1 MOMENTUM_32 FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
+    },
+    {
+      "id": "V22-K0054",
+      "symbols": "NVDA+AMD+AVGO+GOOGL",
+      "n_strategies": "4",
+      "months_profitable": "19",
+      "nov_2026_bps": "186.264221",
+      "total_bps": "2010.0691",
+      "profit_2025_bps": "881.3591",
+      "profit_2026_bps": "1128.71",
+      "components": "NVDA M30 RSI_14_30 FADE ANY entry_14:00_UTC window_2h hold_120min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | GOOGL M30 RSI_14_30 FADE ANY entry_15:00_UTC window_2h hold_240min"
+    },
+    {
+      "id": "V22-K0036",
+      "symbols": "NVDA+AMD+AVGO+GOOGL",
+      "n_strategies": "4",
+      "months_profitable": "19",
+      "nov_2026_bps": "261.384147",
+      "total_bps": "1611.7208",
+      "profit_2025_bps": "708.5734",
+      "profit_2026_bps": "903.1474",
+      "components": "NVDA M30 RSI_14_30 FADE ANY entry_14:00_UTC window_2h hold_120min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M30 MOMENTUM_2 SHORT_ONLY D1_ALIGN entry_15:00_UTC window_2h hold_120min | GOOGL M30 DAILY_PREVIOUS FADE W1_ALIGN entry_17:00_UTC window_2h hold_180min"
+    },
+    {
+      "id": "V22-K0019",
+      "symbols": "NVDA+AMD+AVGO+GOOGL",
+      "n_strategies": "4",
+      "months_profitable": "19",
+      "nov_2026_bps": "136.363222",
+      "total_bps": "1658.8572",
+      "profit_2025_bps": "763.6684",
+      "profit_2026_bps": "895.1888",
+      "components": "NVDA M5 MOMENTUM_8 FADE ANY entry_15:00_UTC window_2h hold_180min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | GOOGL M30 RSI_14_30 FADE ANY entry_15:00_UTC window_2h hold_240min"
+    },
+    {
+      "id": "V22-K0070",
+      "symbols": "NVDA+AMD+AVGO+XOM+GOOGL",
+      "n_strategies": "5",
+      "months_profitable": "19",
+      "nov_2026_bps": "159.359316",
+      "total_bps": "1773.8368",
+      "profit_2025_bps": "766.2299",
+      "profit_2026_bps": "1007.6069",
+      "components": "NVDA M30 RSI_14_30 FADE ANY entry_14:00_UTC window_2h hold_120min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 ZSCORE_32_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | XOM M30 MOMENTUM_4 LONG_ONLY ANY entry_14:00_UTC window_2h hold_120min | GOOGL M30 RSI_14_30 FADE ANY entry_15:00_UTC window_2h hold_240min"
+    },
+    {
+      "id": "V22-K0062",
+      "symbols": "NVDA+AMD+AVGO+XOM+GOOGL",
+      "n_strategies": "5",
+      "months_profitable": "19",
+      "nov_2026_bps": "140.870109",
+      "total_bps": "1221.0017",
+      "profit_2025_bps": "476.0446",
+      "profit_2026_bps": "744.9571",
+      "components": "NVDA M5 ZSCORE_64_1p0 LONG_ONLY D1_ALIGN entry_12:00_UTC window_2h hold_120min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 ZSCORE_32_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | XOM H1 MOMENTUM_2 LONG_ONLY ANY entry_14:00_UTC window_2h hold_240min | GOOGL M5 DAILY_PREVIOUS FADE W1_ALIGN entry_17:00_UTC window_2h hold_120min"
+    },
+    {
+      "id": "V22-K0020",
+      "symbols": "NVDA+AMD+AVGO+GOOGL",
+      "n_strategies": "4",
+      "months_profitable": "19",
+      "nov_2026_bps": "184.733495",
+      "total_bps": "2001.2928",
+      "profit_2025_bps": "839.7431",
+      "profit_2026_bps": "1161.5497",
+      "components": "NVDA M30 RSI_14_30 FADE ANY entry_14:00_UTC window_2h hold_120min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | GOOGL M30 DAILY_PREVIOUS FADE W1_ALIGN entry_17:00_UTC window_2h hold_180min"
+    },
+    {
+      "id": "V22-K0061",
+      "symbols": "AMD+AVGO+XOM+GOOGL",
+      "n_strategies": "4",
+      "months_profitable": "19",
+      "nov_2026_bps": "166.480465",
+      "total_bps": "1632.3335",
+      "profit_2025_bps": "669.2997",
+      "profit_2026_bps": "963.0339",
+      "components": "AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M30 ZSCORE_16_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | XOM M30 MOMENTUM_4 LONG_ONLY ANY entry_14:00_UTC window_2h hold_240min | GOOGL H1 MOMENTUM_32 FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
+    },
+    {
+      "id": "V22-K0067",
+      "symbols": "NVDA+AMD+AVGO+GOOGL",
+      "n_strategies": "4",
+      "months_profitable": "19",
+      "nov_2026_bps": "217.897215",
+      "total_bps": "1605.9196",
+      "profit_2025_bps": "669.9669",
+      "profit_2026_bps": "935.9526",
+      "components": "NVDA M30 DAILY_PREVIOUS FADE W1_ALIGN entry_19:00_UTC window_2h hold_60min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | GOOGL H1 MOMENTUM_32 FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
+    },
+    {
+      "id": "V22-K0004",
+      "symbols": "NVDA+AMD+AVGO+XOM+GOOGL",
+      "n_strategies": "5",
+      "months_profitable": "19",
+      "nov_2026_bps": "205.219748",
+      "total_bps": "1570.9896",
+      "profit_2025_bps": "870.4346",
+      "profit_2026_bps": "700.555",
+      "components": "NVDA M5 MOMENTUM_8 FADE ANY entry_15:00_UTC window_2h hold_180min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 ZSCORE_32_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | XOM H1 MOMENTUM_2 LONG_ONLY ANY entry_14:00_UTC window_2h hold_240min | GOOGL H1 MOMENTUM_32 FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
+    },
+    {
+      "id": "V22-K0049",
+      "symbols": "NVDA+AVGO+GOOGL",
+      "n_strategies": "3",
+      "months_profitable": "19",
+      "nov_2026_bps": "157.902106",
+      "total_bps": "1250.352",
+      "profit_2025_bps": "746.4541",
+      "profit_2026_bps": "503.8979",
+      "components": "NVDA M30 DAILY_PREVIOUS FADE W1_ALIGN entry_19:00_UTC window_2h hold_60min | AVGO M15 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | GOOGL M5 DAILY_PREVIOUS FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
+    },
+    {
+      "id": "V22-K0063",
+      "symbols": "NVDA+AVGO+XOM+GOOGL",
+      "n_strategies": "4",
+      "months_profitable": "19",
+      "nov_2026_bps": "62.61208",
+      "total_bps": "1281.2603",
+      "profit_2025_bps": "767.0125",
+      "profit_2026_bps": "514.2478",
+      "components": "NVDA M5 SMA_16 FADE ANY entry_15:00_UTC window_2h hold_240min | AVGO M15 ZSCORE_32_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | XOM M5 ZSCORE_32_1p0 LONG_ONLY ANY entry_14:00_UTC window_2h hold_120min | GOOGL M5 DAILY_PREVIOUS FADE W1_ALIGN entry_17:00_UTC window_2h hold_120min"
+    },
+    {
+      "id": "V22-K0044",
+      "symbols": "AVGO+GOOGL",
+      "n_strategies": "2",
+      "months_profitable": "19",
+      "nov_2026_bps": "62.978084",
+      "total_bps": "1848.0255",
+      "profit_2025_bps": "798.1987",
+      "profit_2026_bps": "1049.8268",
+      "components": "AVGO M30 ZSCORE_16_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | GOOGL M30 DAILY_PREVIOUS FADE W1_ALIGN entry_16:00_UTC window_2h hold_240min"
+    },
+    {
+      "id": "V22-K0060",
+      "symbols": "AVGO+XOM+GOOGL",
+      "n_strategies": "3",
+      "months_profitable": "19",
+      "nov_2026_bps": "184.469564",
+      "total_bps": "1299.8916",
+      "profit_2025_bps": "698.4112",
+      "profit_2026_bps": "601.4804",
+      "components": "AVGO M30 ZSCORE_32_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | XOM M5 ZSCORE_32_1p0 LONG_ONLY ANY entry_14:00_UTC window_2h hold_120min | GOOGL M5 DAILY_PREVIOUS FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
+    },
+    {
+      "id": "V22-K0041",
+      "symbols": "NVDA+AMD+AVGO+XOM",
+      "n_strategies": "4",
+      "months_profitable": "19",
+      "nov_2026_bps": "164.46048",
+      "total_bps": "1327.677",
+      "profit_2025_bps": "554.6293",
+      "profit_2026_bps": "773.0477",
+      "components": "NVDA M5 ZSCORE_64_1p0 LONG_ONLY D1_ALIGN entry_12:00_UTC window_2h hold_120min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 ZSCORE_32_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | XOM H1 MOMENTUM_2 LONG_ONLY ANY entry_14:00_UTC window_2h hold_240min"
+    },
+    {
+      "id": "V22-K0013",
+      "symbols": "NVDA+AMD+AVGO+GOOGL",
+      "n_strategies": "4",
+      "months_profitable": "19",
+      "nov_2026_bps": "0.751333",
+      "total_bps": "2012.6481",
+      "profit_2025_bps": "836.4884",
+      "profit_2026_bps": "1176.1597",
+      "components": "NVDA M5 MOMENTUM_2 FADE ANY entry_14:00_UTC window_2h hold_240min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M30 ZSCORE_16_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | GOOGL H1 MOMENTUM_32 FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
+    },
+    {
+      "id": "V22-K0016",
+      "symbols": "NVDA+AMD+AVGO+GOOGL",
+      "n_strategies": "4",
+      "months_profitable": "19",
+      "nov_2026_bps": "41.204781",
+      "total_bps": "1969.0102",
+      "profit_2025_bps": "1066.5195",
+      "profit_2026_bps": "902.4907",
+      "components": "NVDA M5 MOMENTUM_2 FADE ANY entry_14:00_UTC window_2h hold_180min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | GOOGL H1 ZSCORE_16_1p0 FADE W1_ALIGN entry_16:00_UTC window_2h hold_180min"
+    },
+    {
+      "id": "V22-K0574",
+      "symbols": "NVDA+AMD+AVGO+GOOGL",
+      "n_strategies": "4",
+      "months_profitable": "18",
+      "nov_2026_bps": "135.729397",
+      "total_bps": "2218.0107",
+      "profit_2025_bps": "998.2024",
+      "profit_2026_bps": "1219.8083",
+      "components": "NVDA M30 RSI_14_30 FADE ANY entry_14:00_UTC window_2h hold_120min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_14:00_UTC window_2h hold_240min | AVGO M30 ZSCORE_32_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | GOOGL M15 RSI_14_30 FADE ANY entry_16:00_UTC window_2h hold_180min"
+    }
+  ],
+  "removal_examples": [
+    {
+      "id": "V22-K0001",
+      "replacement_id": "V22-K0002",
+      "same_ea_clusters": 4,
+      "assets": 5,
+      "same_ea_fraction": 0.8,
+      "entry_hours_within_one_hour": 5,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.89161,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0048",
+      "replacement_id": "V22-K0070",
+      "same_ea_clusters": 3,
+      "assets": 5,
+      "same_ea_fraction": 0.6,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 0.8,
+      "monthly_profit_correlation": 0.86443,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0064",
+      "replacement_id": "V22-K0002",
+      "same_ea_clusters": 4,
+      "assets": 5,
+      "same_ea_fraction": 0.8,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 0.8,
+      "monthly_profit_correlation": 0.90894,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0027",
+      "replacement_id": "V22-K0035",
+      "same_ea_clusters": 4,
+      "assets": 5,
+      "same_ea_fraction": 0.8,
+      "entry_hours_within_one_hour": 5,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.9099,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0023",
+      "replacement_id": "V22-K0004",
+      "same_ea_clusters": 4,
+      "assets": 5,
+      "same_ea_fraction": 0.8,
+      "entry_hours_within_one_hour": 5,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.93955,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0542",
+      "replacement_id": "V22-K0574",
+      "same_ea_clusters": 3,
+      "assets": 4,
+      "same_ea_fraction": 0.75,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.88157,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0346",
+      "replacement_id": "V22-K0574",
+      "same_ea_clusters": 3,
+      "assets": 4,
+      "same_ea_fraction": 0.75,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.87967,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0417",
+      "replacement_id": "V22-K0070",
+      "same_ea_clusters": 4,
+      "assets": 5,
+      "same_ea_fraction": 0.8,
+      "entry_hours_within_one_hour": 5,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.89002,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0290",
+      "replacement_id": "V22-K0357",
+      "same_ea_clusters": 3,
+      "assets": 4,
+      "same_ea_fraction": 0.75,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.92981,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0431",
+      "replacement_id": "V22-K0020",
+      "same_ea_clusters": 3,
+      "assets": 4,
+      "same_ea_fraction": 0.75,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.87158,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0367",
+      "replacement_id": "V22-K0035",
+      "same_ea_clusters": 4,
+      "assets": 5,
+      "same_ea_fraction": 0.8,
+      "entry_hours_within_one_hour": 5,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.90184,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0314",
+      "replacement_id": "V22-K0422",
+      "same_ea_clusters": 4,
+      "assets": 5,
+      "same_ea_fraction": 0.8,
+      "entry_hours_within_one_hour": 5,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.88207,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0436",
+      "replacement_id": "V22-K0036",
+      "same_ea_clusters": 3,
+      "assets": 4,
+      "same_ea_fraction": 0.75,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.93625,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0312",
+      "replacement_id": "V22-K0424",
+      "same_ea_clusters": 4,
+      "assets": 5,
+      "same_ea_fraction": 0.8,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 0.8,
+      "monthly_profit_correlation": 0.93948,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0515",
+      "replacement_id": "V22-K0172",
+      "same_ea_clusters": 3,
+      "assets": 4,
+      "same_ea_fraction": 0.75,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.91604,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0477",
+      "replacement_id": "V22-K0505",
+      "same_ea_clusters": 2,
+      "assets": 3,
+      "same_ea_fraction": 0.6667,
+      "entry_hours_within_one_hour": 3,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.86254,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0536",
+      "replacement_id": "V22-K0422",
+      "same_ea_clusters": 4,
+      "assets": 5,
+      "same_ea_fraction": 0.8,
+      "entry_hours_within_one_hour": 5,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.86895,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0277",
+      "replacement_id": "V22-K0061",
+      "same_ea_clusters": 3,
+      "assets": 4,
+      "same_ea_fraction": 0.75,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.87295,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0253",
+      "replacement_id": "V22-K0054",
+      "same_ea_clusters": 3,
+      "assets": 4,
+      "same_ea_fraction": 0.75,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.86174,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0099",
+      "replacement_id": "V22-K0422",
+      "same_ea_clusters": 3,
+      "assets": 5,
+      "same_ea_fraction": 0.6,
+      "entry_hours_within_one_hour": 5,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.8647,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0545",
+      "replacement_id": "V22-K0063",
+      "same_ea_clusters": 3,
+      "assets": 4,
+      "same_ea_fraction": 0.75,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.88347,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0086",
+      "replacement_id": "V22-K0019",
+      "same_ea_clusters": 3,
+      "assets": 4,
+      "same_ea_fraction": 0.75,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.90431,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0284",
+      "replacement_id": "V22-K0004",
+      "same_ea_clusters": 4,
+      "assets": 5,
+      "same_ea_fraction": 0.8,
+      "entry_hours_within_one_hour": 5,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.87197,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0583",
+      "replacement_id": "V22-K0223",
+      "same_ea_clusters": 3,
+      "assets": 4,
+      "same_ea_fraction": 0.75,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.89752,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0579",
+      "replacement_id": "V22-K0067",
+      "same_ea_clusters": 3,
+      "assets": 4,
+      "same_ea_fraction": 0.75,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.92645,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0561",
+      "replacement_id": "V22-K0551",
+      "same_ea_clusters": 4,
+      "assets": 5,
+      "same_ea_fraction": 0.8,
+      "entry_hours_within_one_hour": 5,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.86822,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0543",
+      "replacement_id": "V22-K0062",
+      "same_ea_clusters": 4,
+      "assets": 5,
+      "same_ea_fraction": 0.8,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 0.8,
+      "monthly_profit_correlation": 0.90569,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0445",
+      "replacement_id": "V22-K0291",
+      "same_ea_clusters": 2,
+      "assets": 3,
+      "same_ea_fraction": 0.6667,
+      "entry_hours_within_one_hour": 3,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.90937,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0214",
+      "replacement_id": "V22-K0013",
+      "same_ea_clusters": 3,
+      "assets": 4,
+      "same_ea_fraction": 0.75,
+      "entry_hours_within_one_hour": 4,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.93496,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    },
+    {
+      "id": "V22-K0244",
+      "replacement_id": "V22-K0094",
+      "same_ea_clusters": 2,
+      "assets": 3,
+      "same_ea_fraction": 0.6667,
+      "entry_hours_within_one_hour": 3,
+      "entry_hour_overlap": 1.0,
+      "monthly_profit_correlation": 0.92526,
+      "reason": "same_assets_overlapping_hours_similar_ea_and_returns"
+    }
+  ],
+  "created_at_utc": "2026-11-12T20:45:42.631973+00:00"
+}
