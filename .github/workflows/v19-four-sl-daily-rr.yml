@@ -1,0 +1,58 @@
+name: V19 four 1pct SL portfolios daily winloss and realized RR
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v19-four-sl-daily-rr.yml'
+      - 'scripts/v19_four_portfolios_sl_daily_rr.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: v19-four-sl-daily-rr
+  cancel-in-progress: false
+jobs:
+  daily-report:
+    name: Count November 2026 daily wins losses and achieved RR for four portfolios
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install requirements
+        run: pip install 'numpy>=1.26,<3' 'pandas>=2.2,<3' 'requests>=2.31,<3'
+      - name: Reconstruct 1pct SL events and group by UTC exit date
+        run: python scripts/v19_four_portfolios_sl_daily_rr.py
+      - name: Cross-validate and commit daily report
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("results/v19_sl_research/V19_four_SL1pct_Nov2026_daily_winloss_RR.json"))
+          assert len(x["rows"])==4
+          assert all(r["sl_pct"]==1. and r["november_realized_profit_bp"]>0 for r in x["rows"])
+          assert all(r["profitable_days"]+r["losing_days"]+r["breakeven_days"]==r["days_with_closed_orders"] for r in x["rows"])
+          assert all(r["winning_orders"]+r["losing_orders"]+r["break_even_orders"]==r["november_orders"] for r in x["rows"])
+          assert all(r["realized_rr_reward_to_risk"]>0 for r in x["rows"])
+          print("Validated four daily SL + RR report")
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v19_sl_research/V19_four_SL1pct_Nov2026_daily_winloss_RR.json results/v19_sl_research/V19_four_SL1pct_Nov2026_daily_winloss_RR.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "V19: store 4 portfolios daily win/loss and achieved risk reward after 1pct SL"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: V19-4-SL1pct-Nov-Daily-RR
+          path: |
+            results/v19_sl_research/V19_four_SL1pct_Nov2026_daily_winloss_RR.json
+            results/v19_sl_research/V19_four_SL1pct_Nov2026_daily_winloss_RR.csv
+          if-no-files-found: warn
+          retention-days: 30
