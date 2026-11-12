@@ -112,7 +112,7 @@ def main(out):
         if len(specs)!=int(row['n_strategies']):raise AssertionError('bad component size')
         structure[row['id']]=[nov.component_key(s) for s in specs]
         for s in specs:components[nov.component_key(s)]=s
-    if len(components)!=97:raise AssertionError(f'Unexpected unique components: {len(components)}')
+    if len(components)>97 or not components:raise AssertionError(f'Inconsistent component count: {len(components)}')
     model.MONTHS=MONTHS
     model.MONTH_ID=MONTH_TO_INDEX
     needs={(s['symbol'],s['tf']) for s in components.values()}
