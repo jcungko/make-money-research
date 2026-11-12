@@ -1,0 +1,44 @@
+name: V17 selected 8 strategies Exness November 2026 replay
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v17-november-replay.yml'
+permissions:
+  contents: write
+concurrency:
+  group: v17-november-replay
+  cancel-in-progress: false
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install offline research dependencies and HTTP reader
+        run: pip install 'pandas>=2.2,<3' 'numpy>=1.26,<3' 'requests>=2.31,<3'
+      - name: Replay eight fixed V17 strategies with November 2026 Exness public ticks
+        run: python scripts/v17_november_replay.py
+      - name: Commit dated research report and trade ledger
+        if: success()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v17_november_2026/
+          if ! git diff --cached --quiet; then
+            git commit -m "V17: replay retained eight strategies against Nov 2026 latest Exness quotes"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: V17-eight-strategies-November-2026
+          path: results/v17_november_2026/
+          if-no-files-found: warn
+          retention-days: 30
