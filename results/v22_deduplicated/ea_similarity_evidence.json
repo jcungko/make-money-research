@@ -1,0 +1,345 @@
+[
+  {
+    "component": "AVGO | M15 | ZSCORE_32_1p0 | FOLLOW | D1_ALIGN | 15 | 2 | 180",
+    "representative": "AVGO | M15 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "trade_match": 0.9533,
+    "trade_pnl_corr": 0.8596,
+    "matched_trades": 204
+  },
+  {
+    "component": "AVGO | M30 | RSI_7_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "representative": "AVGO | M15 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "trade_match": 0.9673,
+    "trade_pnl_corr": 0.9828,
+    "matched_trades": 207
+  },
+  {
+    "component": "AVGO | M15 | ZSCORE_32_1p0 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "representative": "AVGO | M15 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "trade_match": 0.9579,
+    "trade_pnl_corr": 0.9757,
+    "matched_trades": 205
+  },
+  {
+    "component": "AVGO | M30 | ZSCORE_32_1p0 | FOLLOW | D1_ALIGN | 15 | 2 | 180",
+    "representative": "AVGO | M15 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "trade_match": 0.8785,
+    "trade_pnl_corr": 0.8425,
+    "matched_trades": 188
+  },
+  {
+    "component": "AVGO | M15 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 180",
+    "representative": "AVGO | M15 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "trade_match": 1.0,
+    "trade_pnl_corr": 0.8564,
+    "matched_trades": 213
+  },
+  {
+    "component": "AVGO | H1 | ZSCORE_16_1p0 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "representative": "AVGO | M15 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "trade_match": 0.8785,
+    "trade_pnl_corr": 0.9554,
+    "matched_trades": 188
+  },
+  {
+    "component": "AVGO | M30 | ZSCORE_16_1p0 | FOLLOW | D1_ALIGN | 15 | 2 | 180",
+    "representative": "AVGO | M15 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "trade_match": 0.9393,
+    "trade_pnl_corr": 0.8516,
+    "matched_trades": 201
+  },
+  {
+    "component": "AVGO | M30 | ZSCORE_16_1p0 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "representative": "AVGO | M15 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "trade_match": 0.9439,
+    "trade_pnl_corr": 0.975,
+    "matched_trades": 202
+  },
+  {
+    "component": "AVGO | M5 | ZSCORE_64_1p0 | FOLLOW | D1_ALIGN | 15 | 2 | 180",
+    "representative": "AVGO | M15 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "trade_match": 0.9486,
+    "trade_pnl_corr": 0.8567,
+    "matched_trades": 203
+  },
+  {
+    "component": "AVGO | M15 | RSI_28_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "representative": "AVGO | M15 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "trade_match": 0.9345,
+    "trade_pnl_corr": 0.9584,
+    "matched_trades": 157
+  },
+  {
+    "component": "GOOGL | M30 | DAILY_PREVIOUS | FADE | W1_ALIGN | 17 | 2 | 180",
+    "representative": "GOOGL | M5 | DAILY_PREVIOUS | FADE | W1_ALIGN | 17 | 2 | 120",
+    "trade_match": 1.0,
+    "trade_pnl_corr": 0.8572,
+    "matched_trades": 218
+  },
+  {
+    "component": "AVGO | H1 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "representative": "AVGO | M15 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "trade_match": 0.8226,
+    "trade_pnl_corr": 0.9696,
+    "matched_trades": 153
+  },
+  {
+    "component": "AVGO | M30 | RSI_7_40 | FOLLOW | D1_ALIGN | 15 | 2 | 180",
+    "representative": "AVGO | M15 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "trade_match": 0.9626,
+    "trade_pnl_corr": 0.8581,
+    "matched_trades": 206
+  },
+  {
+    "component": "AVGO | M5 | RSI_28_40 | FOLLOW | D1_ALIGN | 15 | 2 | 180",
+    "representative": "AVGO | H1 | MOMENTUM_4 | FOLLOW | D1_ALIGN | 16 | 2 | 120",
+    "trade_match": 0.9893,
+    "trade_pnl_corr": 0.7313,
+    "matched_trades": 185
+  },
+  {
+    "component": "AVGO | M5 | RSI_28_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "representative": "AVGO | H1 | MOMENTUM_4 | FOLLOW | D1_ALIGN | 16 | 2 | 120",
+    "trade_match": 0.9842,
+    "trade_pnl_corr": 0.5329,
+    "matched_trades": 187
+  },
+  {
+    "component": "AVGO | M5 | ZSCORE_16_1p0 | SHORT_ONLY | D1_ALIGN | 15 | 2 | 120",
+    "representative": "AVGO | M30 | MOMENTUM_2 | SHORT_ONLY | D1_ALIGN | 15 | 2 | 120",
+    "trade_match": 0.9263,
+    "trade_pnl_corr": 0.9367,
+    "matched_trades": 176
+  },
+  {
+    "component": "AMD | M15 | RSI_7_30 | LONG_ONLY | ANY | 12 | 2 | 240",
+    "representative": "AMD | H1 | BREAKOUT_4 | LONG_ONLY | ANY | 12 | 2 | 240",
+    "trade_match": 0.8489,
+    "trade_pnl_corr": 0.9042,
+    "matched_trades": 118
+  },
+  {
+    "component": "AVGO | H1 | RSI_7_30 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "representative": "AVGO | M15 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "trade_match": 0.9801,
+    "trade_pnl_corr": 0.911,
+    "matched_trades": 148
+  },
+  {
+    "component": "AVGO | M15 | ZSCORE_64_1p0 | FOLLOW | D1_ALIGN | 15 | 2 | 180",
+    "representative": "AVGO | M15 | RSI_28_40 | FOLLOW | D1_ALIGN | 15 | 2 | 180",
+    "trade_match": 0.9464,
+    "trade_pnl_corr": 0.97,
+    "matched_trades": 159
+  },
+  {
+    "component": "AVGO | H1 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 180",
+    "representative": "AVGO | M15 | RSI_28_40 | FOLLOW | D1_ALIGN | 15 | 2 | 180",
+    "trade_match": 0.9167,
+    "trade_pnl_corr": 0.969,
+    "matched_trades": 154
+  },
+  {
+    "component": "AVGO | H1 | ZSCORE_16_1p0 | FOLLOW | D1_ALIGN | 15 | 2 | 180",
+    "representative": "AVGO | M15 | RSI_28_40 | FOLLOW | D1_ALIGN | 15 | 2 | 180",
+    "trade_match": 0.9226,
+    "trade_pnl_corr": 0.969,
+    "matched_trades": 155
+  },
+  {
+    "component": "AVGO | H1 | RSI_7_30 | FOLLOW | D1_ALIGN | 15 | 2 | 180",
+    "representative": "AVGO | M15 | RSI_14_40 | FOLLOW | D1_ALIGN | 15 | 2 | 120",
+    "trade_match": 0.98,
+    "trade_pnl_corr": 0.7364,
+    "matched_trades": 147
+  },
+  {
+    "component": "AVGO | H1 | RSI_14_40 | FOLLOW | ANY | 15 | 2 | 120",
+    "representative": "AVGO | M15 | RSI_28_40 | FOLLOW | D1_ALIGN | 15 | 2 | 180",
+    "trade_match": 0.9167,
+    "trade_pnl_corr": 0.8448,
+    "matched_trades": 154
+  },
+  {
+    "component": "AMD | H1 | BREAKOUT_4 | LONG_ONLY | ANY | 12 | 2 | 180",
+    "representative": "AMD | H1 | BREAKOUT_4 | LONG_ONLY | ANY | 12 | 2 | 240",
+    "trade_match": 1.0,
+    "trade_pnl_corr": 0.9067,
+    "matched_trades": 139
+  },
+  {
+    "component": "NVDA | M5 | SMA_16 | FADE | ANY | 15 | 2 | 240",
+    "representative": "NVDA | M5 | MOMENTUM_8 | FADE | ANY | 15 | 2 | 180",
+    "trade_match": 0.9201,
+    "trade_pnl_corr": 0.9424,
+    "matched_trades": 426
+  },
+  {
+    "component": "NVDA | M15 | MOMENTUM_32 | FADE | ANY | 14 | 2 | 120",
+    "representative": "NVDA | M30 | RSI_14_30 | FADE | ANY | 14 | 2 | 120",
+    "trade_match": 0.8957,
+    "trade_pnl_corr": 0.8503,
+    "matched_trades": 146
+  },
+  {
+    "component": "NVDA | M5 | MOMENTUM_2 | FADE | ANY | 14 | 2 | 240",
+    "representative": "NVDA | M5 | MOMENTUM_2 | FADE | ANY | 14 | 2 | 180",
+    "trade_match": 1.0,
+    "trade_pnl_corr": 0.903,
+    "matched_trades": 465
+  },
+  {
+    "component": "GOOGL | M30 | RSI_14_40 | FADE | W1_ALIGN | 16 | 2 | 180",
+    "representative": "GOOGL | H4 | EMA_8 | FADE | W1_ALIGN | 15 | 2 | 240",
+    "trade_match": 0.9062,
+    "trade_pnl_corr": 0.9171,
+    "matched_trades": 116
+  },
+  {
+    "component": "GOOGL | H1 | ZSCORE_16_1p0 | FADE | W1_ALIGN | 16 | 2 | 180",
+    "representative": "GOOGL | H4 | EMA_8 | FADE | W1_ALIGN | 15 | 2 | 240",
+    "trade_match": 0.8671,
+    "trade_pnl_corr": 0.9001,
+    "matched_trades": 124
+  },
+  {
+    "component": "GOOGL | H1 | MOMENTUM_8 | FADE | W1_ALIGN | 17 | 2 | 180",
+    "representative": "GOOGL | H1 | RSI_7_40 | FADE | W1_ALIGN | 17 | 2 | 180",
+    "trade_match": 0.9776,
+    "trade_pnl_corr": 0.983,
+    "matched_trades": 131
+  },
+  {
+    "component": "GOOGL | H1 | ZSCORE_16_0p5 | FADE | W1_ALIGN | 16 | 2 | 240",
+    "representative": "GOOGL | H1 | RSI_7_40 | FADE | W1_ALIGN | 17 | 2 | 180",
+    "trade_match": 0.9179,
+    "trade_pnl_corr": 0.8677,
+    "matched_trades": 123
+  },
+  {
+    "component": "NVDA | M30 | RSI_14_30 | FADE | ANY | 14 | 2 | 180",
+    "representative": "NVDA | M30 | RSI_14_30 | FADE | ANY | 14 | 2 | 120",
+    "trade_match": 1.0,
+    "trade_pnl_corr": 0.9265,
+    "matched_trades": 163
+  },
+  {
+    "component": "GOOGL | M30 | SMA_16 | FADE | W1_ALIGN | 17 | 2 | 180",
+    "representative": "GOOGL | H1 | RSI_7_40 | FADE | W1_ALIGN | 17 | 2 | 180",
+    "trade_match": 0.9851,
+    "trade_pnl_corr": 0.9915,
+    "matched_trades": 132
+  },
+  {
+    "component": "NVDA | H1 | RSI_7_30 | FADE | ANY | 14 | 2 | 120",
+    "representative": "NVDA | M30 | RSI_14_30 | FADE | ANY | 14 | 2 | 120",
+    "trade_match": 0.9448,
+    "trade_pnl_corr": 0.9124,
+    "matched_trades": 154
+  },
+  {
+    "component": "XOM | M30 | MOMENTUM_4 | LONG_ONLY | ANY | 14 | 2 | 120",
+    "representative": "XOM | M30 | ZSCORE_64_1p0 | LONG_ONLY | ANY | 14 | 2 | 120",
+    "trade_match": 0.8524,
+    "trade_pnl_corr": 0.8951,
+    "matched_trades": 179
+  },
+  {
+    "component": "NVDA | M5 | MOMENTUM_2 | FADE | ANY | 14 | 2 | 60",
+    "representative": "NVDA | M5 | MOMENTUM_2 | FADE | ANY | 14 | 2 | 180",
+    "trade_match": 1.0,
+    "trade_pnl_corr": 0.7375,
+    "matched_trades": 466
+  },
+  {
+    "component": "NVDA | M5 | MOMENTUM_2 | FADE | ANY | 14 | 2 | 120",
+    "representative": "NVDA | M5 | MOMENTUM_2 | FADE | ANY | 14 | 2 | 180",
+    "trade_match": 1.0,
+    "trade_pnl_corr": 0.899,
+    "matched_trades": 466
+  },
+  {
+    "component": "GOOGL | M30 | RSI_7_40 | FADE | W1_ALIGN | 17 | 2 | 180",
+    "representative": "GOOGL | H1 | RSI_7_40 | FADE | W1_ALIGN | 17 | 2 | 180",
+    "trade_match": 0.9104,
+    "trade_pnl_corr": 0.9993,
+    "matched_trades": 122
+  },
+  {
+    "component": "NVDA | M5 | ZSCORE_32_1p0 | LONG_ONLY | D1_ALIGN | 15 | 2 | 60",
+    "representative": "NVDA | M5 | ZSCORE_32_1p0 | LONG_ONLY | D1_ALIGN | 15 | 2 | 120",
+    "trade_match": 1.0,
+    "trade_pnl_corr": 0.7386,
+    "matched_trades": 147
+  },
+  {
+    "component": "GOOGL | M5 | DAILY_PREVIOUS | FADE | W1_ALIGN | 16 | 2 | 180",
+    "representative": "GOOGL | M5 | DAILY_PREVIOUS | FADE | W1_ALIGN | 17 | 2 | 120",
+    "trade_match": 1.0,
+    "trade_pnl_corr": 0.7958,
+    "matched_trades": 218
+  },
+  {
+    "component": "GOOGL | H4 | MOMENTUM_8 | FADE | W1_ALIGN | 15 | 2 | 240",
+    "representative": "GOOGL | H4 | EMA_8 | FADE | W1_ALIGN | 15 | 2 | 240",
+    "trade_match": 0.8274,
+    "trade_pnl_corr": 1.0,
+    "matched_trades": 139
+  },
+  {
+    "component": "GOOGL | M30 | DAILY_PREVIOUS | FADE | W1_ALIGN | 16 | 2 | 240",
+    "representative": "GOOGL | M5 | DAILY_PREVIOUS | FADE | W1_ALIGN | 15 | 2 | 240",
+    "trade_match": 1.0,
+    "trade_pnl_corr": 0.7056,
+    "matched_trades": 218
+  },
+  {
+    "component": "GOOGL | H4 | DAILY_PREVIOUS | FADE | W1_ALIGN | 15 | 2 | 240",
+    "representative": "GOOGL | M5 | DAILY_PREVIOUS | FADE | W1_ALIGN | 15 | 2 | 240",
+    "trade_match": 1.0,
+    "trade_pnl_corr": 0.7056,
+    "matched_trades": 218
+  },
+  {
+    "component": "GOOGL | H4 | ZSCORE_16_1p0 | FADE | ANY | 12 | 2 | 240",
+    "representative": "GOOGL | H4 | RSI_7_40 | FADE | ANY | 12 | 2 | 240",
+    "trade_match": 0.9603,
+    "trade_pnl_corr": 1.0,
+    "matched_trades": 242
+  },
+  {
+    "component": "GOOGL | M30 | RSI_14_30 | FADE | ANY | 14 | 2 | 240",
+    "representative": "GOOGL | M30 | RSI_14_30 | FADE | ANY | 14 | 2 | 180",
+    "trade_match": 1.0,
+    "trade_pnl_corr": 0.9001,
+    "matched_trades": 165
+  },
+  {
+    "component": "GOOGL | H1 | ZSCORE_16_1p0 | FADE | W1_ALIGN | 16 | 2 | 240",
+    "representative": "GOOGL | H4 | EMA_8 | FADE | W1_ALIGN | 15 | 2 | 240",
+    "trade_match": 0.9062,
+    "trade_pnl_corr": 0.9974,
+    "matched_trades": 116
+  },
+  {
+    "component": "XOM | M5 | ZSCORE_32_1p0 | LONG_ONLY | ANY | 14 | 2 | 120",
+    "representative": "XOM | M30 | ZSCORE_64_1p0 | LONG_ONLY | ANY | 14 | 2 | 120",
+    "trade_match": 0.8238,
+    "trade_pnl_corr": 0.9101,
+    "matched_trades": 173
+  },
+  {
+    "component": "XOM | H1 | MOMENTUM_2 | LONG_ONLY | ANY | 14 | 2 | 240",
+    "representative": "XOM | M30 | MOMENTUM_4 | LONG_ONLY | ANY | 14 | 2 | 240",
+    "trade_match": 0.9868,
+    "trade_pnl_corr": 0.9647,
+    "matched_trades": 300
+  },
+  {
+    "component": "GOOGL | M15 | ZSCORE_64_1p0 | FADE | W1_ALIGN | 16 | 2 | 180",
+    "representative": "GOOGL | H4 | EMA_8 | FADE | W1_ALIGN | 15 | 2 | 240",
+    "trade_match": 0.8958,
+    "trade_pnl_corr": 0.8982,
+    "matched_trades": 129
+  }
+]
