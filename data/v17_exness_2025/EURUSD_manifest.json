@@ -1,0 +1,147 @@
+{
+  "version": "V17",
+  "symbol": "EURUSD",
+  "price_source": "Exness publicly archived ticks",
+  "price_type": "bid_and_ask",
+  "timezone": "UTC",
+  "year": 2025,
+  "source_v12_workflow_run_id": 42975297240,
+  "source_months": [
+    {
+      "month": 1,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/01/Exness_EURUSD_2025_01.zip",
+      "zip_bytes": 11337963,
+      "m5_bars": 6318,
+      "first_utc": "2025-01-01T22:05:00+00:00",
+      "last_utc": "2025-01-31T21:55:00+00:00"
+    },
+    {
+      "month": 2,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/02/Exness_EURUSD_2025_02.zip",
+      "zip_bytes": 9598001,
+      "m5_bars": 5756,
+      "first_utc": "2025-02-02T22:05:00+00:00",
+      "last_utc": "2025-02-28T21:55:00+00:00"
+    },
+    {
+      "month": 3,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/03/Exness_EURUSD_2025_03.zip",
+      "zip_bytes": 11277923,
+      "m5_bars": 6079,
+      "first_utc": "2025-03-02T22:05:00+00:00",
+      "last_utc": "2025-03-31T23:55:00+00:00"
+    },
+    {
+      "month": 4,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/04/Exness_EURUSD_2025_04.zip",
+      "zip_bytes": 20474422,
+      "m5_bars": 6316,
+      "first_utc": "2025-04-01T00:00:00+00:00",
+      "last_utc": "2025-04-30T23:55:00+00:00"
+    },
+    {
+      "month": 5,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/05/Exness_EURUSD_2025_05.zip",
+      "zip_bytes": 12903873,
+      "m5_bars": 6296,
+      "first_utc": "2025-05-01T00:00:00+00:00",
+      "last_utc": "2025-05-30T20:55:00+00:00"
+    },
+    {
+      "month": 6,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/06/Exness_EURUSD_2025_06.zip",
+      "zip_bytes": 10945509,
+      "m5_bars": 6079,
+      "first_utc": "2025-06-01T21:05:00+00:00",
+      "last_utc": "2025-06-30T23:55:00+00:00"
+    },
+    {
+      "month": 7,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/07/Exness_EURUSD_2025_07.zip",
+      "zip_bytes": 10219866,
+      "m5_bars": 6620,
+      "first_utc": "2025-07-01T00:00:00+00:00",
+      "last_utc": "2025-07-31T23:55:00+00:00"
+    },
+    {
+      "month": 8,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/08/Exness_EURUSD_2025_08.zip",
+      "zip_bytes": 8519456,
+      "m5_bars": 6043,
+      "first_utc": "2025-08-01T00:00:00+00:00",
+      "last_utc": "2025-08-31T23:55:00+00:00"
+    },
+    {
+      "month": 9,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/09/Exness_EURUSD_2025_09.zip",
+      "zip_bytes": 7586602,
+      "m5_bars": 6332,
+      "first_utc": "2025-09-01T00:00:00+00:00",
+      "last_utc": "2025-09-30T23:55:00+00:00"
+    },
+    {
+      "month": 10,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/10/Exness_EURUSD_2025_10.zip",
+      "zip_bytes": 7782940,
+      "m5_bars": 6584,
+      "first_utc": "2025-10-01T00:00:00+00:00",
+      "last_utc": "2025-10-31T20:55:00+00:00"
+    },
+    {
+      "month": 11,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/11/Exness_EURUSD_2025_11.zip",
+      "zip_bytes": 5373035,
+      "m5_bars": 5748,
+      "first_utc": "2025-11-02T22:05:00+00:00",
+      "last_utc": "2025-11-28T21:55:00+00:00"
+    },
+    {
+      "month": 12,
+      "url": "https://ticks.ex2archive.com/ticks/EURUSD/2025/12/Exness_EURUSD_2025_12.zip",
+      "zip_bytes": 5651770,
+      "m5_bars": 6305,
+      "first_utc": "2025-12-01T00:00:00+00:00",
+      "last_utc": "2025-12-31T21:55:00+00:00"
+    }
+  ],
+  "source_cutoff_utc": "2026-01-01T00:00:00+00:00",
+  "note": "D1 and W1 derived from M5 using UTC calendar, weekly Monday 00 UTC; latest partial daily/weekly bucket excluded. Forex market holidays/weekends remain gaps. M5-H4 retain original V12 bars.",
+  "frames": {
+    "M5": {
+      "rows": 74476,
+      "first": "2025-01-01T22:05:00+00:00",
+      "last": "2025-12-31T21:55:00+00:00"
+    },
+    "M15": {
+      "rows": 24851,
+      "first": "2025-01-01T22:00:00+00:00",
+      "last": "2025-12-31T21:45:00+00:00"
+    },
+    "M30": {
+      "rows": 12427,
+      "first": "2025-01-01T22:00:00+00:00",
+      "last": "2025-12-31T21:30:00+00:00"
+    },
+    "H1": {
+      "rows": 6214,
+      "first": "2025-01-01T22:00:00+00:00",
+      "last": "2025-12-31T21:00:00+00:00"
+    },
+    "H4": {
+      "rows": 1607,
+      "first": "2025-01-01T20:00:00+00:00",
+      "last": "2025-12-31T20:00:00+00:00"
+    },
+    "D1": {
+      "rows": 311,
+      "first": "2025-01-01T00:00:00+00:00",
+      "last": "2025-12-30T00:00:00+00:00"
+    },
+    "W1": {
+      "rows": 51,
+      "first": "2025-01-06T00:00:00+00:00",
+      "last": "2025-12-22T00:00:00+00:00"
+    }
+  },
+  "assembled_at_utc": "2026-11-12T16:11:46.089265+00:00"
+}
