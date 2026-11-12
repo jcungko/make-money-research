@@ -1,0 +1,56 @@
+name: V19 deduplicate 22 energy portfolios by historical order time
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v19-deduplicate-portfolios.yml'
+      - 'scripts/v19_deduplicate_portfolios.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: v19-22-deduplicate-portfolios
+  cancel-in-progress: false
+jobs:
+  deduplicate:
+    name: Compare historical entry times and remove overlapping variants
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install research dependencies
+        run: pip install 'numpy>=1.26,<3' 'pandas>=2.2,<3'
+      - name: Compare and choose representative portfolio configurations
+        run: python scripts/v19_deduplicate_portfolios.py
+      - name: Save results to repository
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open("results/v19_november_2026/V19_22_deduplicated_by_time_and_strategy.json"))
+          assert d["counts"]["initial"]==22
+          assert d["counts"]["retained"]+d["counts"]["removed_redundant"]==22
+          assert d["counts"]["historical_pairs_compared"]==231
+          print("V19 dedup validation passed",d["counts"])
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v19_november_2026/V19_22_deduplicated_by_time_and_strategy.json results/v19_november_2026/V19_22_deduplicated_by_time_and_strategy.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "V19: save nonredundant energy portfolios based on 22-month entry overlap"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: V19-Portfolios-Deduplicated
+          path: |
+            results/v19_november_2026/V19_22_deduplicated_by_time_and_strategy.json
+            results/v19_november_2026/V19_22_deduplicated_by_time_and_strategy.csv
+          if-no-files-found: warn
+          retention-days: 30
