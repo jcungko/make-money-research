@@ -9,10 +9,10 @@ import numpy as np
 import pandas as pd
 
 SYMBOLS=('NVDA','AMD','AVGO','XOM','GOOGL')
-TFS={'M5':(5,[6,12,24]),'M15':(15,[2,4,8]),'M30':(30,[1,2,4]),'H1':(60,[1,2,3]),'H4':(240,[1])}
+TFS={'M5':(5,[6,12,24,36,48]),'M15':(15,[2,4,8,12,16]),'M30':(30,[1,2,4,6,8]),'H1':(60,[1,2,3,4]),'H4':(240,[1])}
 MONTHS=[y*100+m for y in (2025,2026) for m in range(1,13 if y==2025 else 11)]
 MONTH_ID={m:i for i,m in enumerate(MONTHS)}
-SESSIONS=(12,14,15,16,17,18)
+SESSIONS=(12,14,15,16,17,18,19)
 SLIPPAGE_ROUND_TRIP_BPS=2.0  # assumed beyond observed bid-ask; no overnight holds
 MIN_TRADES_EACH_MONTH=3
 
@@ -43,6 +43,7 @@ def signal_library(df,day_previous,week_previous):
         v=np.asarray(s,dtype='float64')
         v=np.where(np.isfinite(v),np.sign(v),0).astype('int8')
         signals.append((name,v))
+    add('CONSTANT_DIRECTION',np.ones(len(df)))
     add('PREVIOUS_CANDLE',cl.shift(1)-op.shift(1))
     for n in (2,4,8,16,32):
         add(f'MOMENTUM_{n}',past-cl.shift(n+1))
@@ -136,8 +137,11 @@ def evaluate_one(symbol,tf,df,daysig,weeksig):
     near=[]
     # All signals use completed previous candles; entry/exit use historical executable bid/ask.
     for signame,base_signal in signals:
-        for orientation in (1,-1):
-            side=base_signal*orientation
+        for orientation in (1,-1,2,-2):
+            if orientation==1: side=base_signal
+            elif orientation==-1: side=-base_signal
+            elif orientation==2: side=np.where(base_signal>0,1,0).astype('int8')
+            else: side=np.where(base_signal<0,-1,0).astype('int8')
             for regime in ('ANY','D1_ALIGN','W1_ALIGN'):
                 eligible=(side!=0)
                 if regime=='D1_ALIGN': eligible &= side==ds
@@ -161,7 +165,7 @@ def evaluate_one(symbol,tf,df,daysig,weeksig):
                         profit2026=float(pnl[12:].sum())
                         if profit2025<=0 or profit2026<=0:continue
                         annual_positive+=1
-                        record=dict(symbol=symbol,tf=tf,family=signame,orientation=('FOLLOW' if orientation==1 else 'FADE'),
+                        record=dict(symbol=symbol,tf=tf,family=signame,orientation={1:'FOLLOW',-1:'FADE',2:'LONG_ONLY',-2:'SHORT_ONLY'}[orientation],
                           regime=regime,entry_start_utc=hour,entry_window_hours=2,
                           hold_bars=hold,hold_minutes=TFS[tf][0]*hold,
                           pnl_2025_bps=round(profit2025,4),pnl_2026_bps=round(profit2026,4),
@@ -172,7 +176,7 @@ def evaluate_one(symbol,tf,df,daysig,weeksig):
                         if posmonths==22:
                             all_months+=1
                             result.append(record)
-                        elif posmonths>=12:
+                        elif posmonths>=8:
                             near.append(record)
     return dict(total=total,annual_positive=annual_positive,qualifying=all_months,
                 records=result,near=dedup(near,limit=90),signals=len(signals))
@@ -193,6 +197,7 @@ def combo_record(pool,group):
 def screen(root,out):
     out.mkdir(parents=True,exist_ok=True)
     allqualified=[]
+    allnear=[]
     pools=collections.defaultdict(list)
     bydataset={}
     for symbol in SYMBOLS:
@@ -205,6 +210,7 @@ def screen(root,out):
             key=f'{symbol}/{tf}'
             bydataset[key]={k:results[k] for k in ('total','annual_positive','qualifying','signals')}
             allqualified.extend(results['records'])
+            allnear.extend(results['near'])
             pools[symbol].extend(results['near'])
             pools[symbol].extend(results['records'])
             print('SCAN',key,bydataset[key],flush=True)
@@ -212,6 +218,8 @@ def screen(root,out):
     groups={s:dedup(candidates,limit=75) for s,candidates in pools.items()}
     portfolio_pairs=[]
     portfolio_triples=[]
+    portfolio_quads=[]
+    portfolio_quints=[]
     pairtrials=0
     tripletrials=0
     for a,b in itertools.combinations(SYMBOLS,2):
@@ -225,8 +233,21 @@ def screen(root,out):
             tripletrials+=1
             p=combo_record(None,tri)
             if p:portfolio_triples.append(p)
+    quadtrials=0
+    quinttrials=0
+    for names in itertools.combinations(SYMBOLS,4):
+        for quad in itertools.product(*(groups[s][:12] for s in names)):
+            quadtrials+=1
+            p=combo_record(None,quad)
+            if p:portfolio_quads.append(p)
+    for quint in itertools.product(*(groups[s][:8] for s in SYMBOLS)):
+        quinttrials+=1
+        p=combo_record(None,quint)
+        if p:portfolio_quints.append(p)
     portfolio_pairs.sort(key=lambda x:(x['min_month_bps'],x['total_bps']),reverse=True)
     portfolio_triples.sort(key=lambda x:(x['min_month_bps'],x['total_bps']),reverse=True)
+    portfolio_quads.sort(key=lambda x:(x['min_month_bps'],x['total_bps']),reverse=True)
+    portfolio_quints.sort(key=lambda x:(x['min_month_bps'],x['total_bps']),reverse=True)
     report=dict(version='V22',source='Exness public bid/ask tick OHLC',
       period_2025='2025-01-01 to 2025-12-31 inclusive',
       period_2026='2026-01-01 to 2026-10-31 inclusive',
@@ -242,16 +263,23 @@ def screen(root,out):
       single_all_22_months=len(singles),
       tested_pairs=pairtrials,pairs_all_22_months=len(portfolio_pairs),
       tested_triples=tripletrials,triples_all_22_months=len(portfolio_triples),
+      tested_quads=quadtrials,quads_all_22_months=len(portfolio_quads),
+      tested_quints=quinttrials,quints_all_22_months=len(portfolio_quints),
+      best_month_count_of_annual_profitable=max((r['months_positive'] for r in allnear+allqualified),default=0),
+      top_near=sorted(allnear,key=lambda r:(r['months_positive'],r['min_month_bps'],r['total_bps']),reverse=True)[:20],
       top_single=singles[:60],top_pairs=portfolio_pairs[:30],top_triples=portfolio_triples[:30],
+      top_quads=portfolio_quads[:30],top_quints=portfolio_quints[:30],
       pool_sizes={s:len(p) for s,p in groups.items()},
       completed_at_utc=datetime.now(timezone.utc).isoformat())
     (out/'screen_summary.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     (out/'qualified_singles.json').write_text(json.dumps(singles,ensure_ascii=False)+'\n')
     (out/'qualified_pairs_top1000.json').write_text(json.dumps(portfolio_pairs[:1000],ensure_ascii=False)+'\n')
     (out/'qualified_triples_top1000.json').write_text(json.dumps(portfolio_triples[:1000],ensure_ascii=False)+'\n')
+    (out/'qualified_quads_top1000.json').write_text(json.dumps(portfolio_quads[:1000],ensure_ascii=False)+'\\n')
+    (out/'qualified_quints_top1000.json').write_text(json.dumps(portfolio_quints[:1000],ensure_ascii=False)+'\\n')
     print('FINAL',json.dumps({k:report[k] for k in ('total_configs_tested','single_annual_positive',
       'single_all_22_months','tested_pairs','pairs_all_22_months','tested_triples',
-      'triples_all_22_months','pool_sizes')}),flush=True)
+      'triples_all_22_months','tested_quads','quads_all_22_months','tested_quints','quints_all_22_months','best_month_count_of_annual_profitable','pool_sizes')}),flush=True)
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
