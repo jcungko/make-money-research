@@ -255,8 +255,8 @@ def main():
     rows=[]
     for item in candidates:
         all_legs=[leg_results[x] for x in item["legs"]]
-        closed=sum((record for leg in all_legs for record in leg if record["status"]=="closed"),[])
-        open_now=sum((record for leg in all_legs for record in leg if record["status"]=="open"),[])
+        closed=[record for leg in all_legs for record in leg if record["status"]=="closed"]
+        open_now=[record for leg in all_legs for record in leg if record["status"]=="open"]
         total_bp=sum(x["pnl_bp"] for x in closed)/4
         rows.append({
             "id":item["portfolio"],"family":item["family"],
