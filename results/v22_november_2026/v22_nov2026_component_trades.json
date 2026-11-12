@@ -1,0 +1,2085 @@
+{
+  "AMD|H1|BREAKOUT_4|LONG_ONLY|ANY|14|2|4": {
+    "symbol": "AMD",
+    "tf": "H1",
+    "family": "BREAKOUT_4",
+    "orientation": "LONG_ONLY",
+    "regime": "ANY",
+    "entry_hour_utc": 14,
+    "hold_bars": 4,
+    "trades": 4,
+    "net_bps": -258.166552,
+    "items": [
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T14:00:00+00:00",
+        "exit_utc": "2026-11-03T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": 47.431335
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T15:00:00+00:00",
+        "exit_utc": "2026-11-06T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": -259.630977
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T15:00:00+00:00",
+        "exit_utc": "2026-11-09T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": 360.334407
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T15:00:00+00:00",
+        "exit_utc": "2026-11-10T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": -406.301317
+      }
+    ]
+  },
+  "AVGO|M15|ZSCORE_32_1p0|FOLLOW|D1_ALIGN|15|2|12": {
+    "symbol": "AVGO",
+    "tf": "M15",
+    "family": "ZSCORE_32_1p0",
+    "orientation": "FOLLOW",
+    "regime": "D1_ALIGN",
+    "entry_hour_utc": 15,
+    "hold_bars": 12,
+    "trades": 5,
+    "net_bps": 405.33999,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T15:30:00+00:00",
+        "exit_utc": "2026-11-04T18:30:00+00:00",
+        "direction": "short",
+        "net_bps": 18.357626
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T15:00:00+00:00",
+        "exit_utc": "2026-11-05T18:00:00+00:00",
+        "direction": "short",
+        "net_bps": 380.138812
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T16:15:00+00:00",
+        "exit_utc": "2026-11-06T19:15:00+00:00",
+        "direction": "short",
+        "net_bps": 49.50011
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T15:00:00+00:00",
+        "exit_utc": "2026-11-10T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": -130.537807
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": 87.881249
+      }
+    ]
+  },
+  "XOM|H1|MOMENTUM_2|LONG_ONLY|ANY|14|2|4": {
+    "symbol": "XOM",
+    "tf": "H1",
+    "family": "MOMENTUM_2",
+    "orientation": "LONG_ONLY",
+    "regime": "ANY",
+    "entry_hour_utc": 14,
+    "hold_bars": 4,
+    "trades": 6,
+    "net_bps": -56.568005,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T14:00:00+00:00",
+        "exit_utc": "2026-11-02T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": -61.77188
+      },
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T14:00:00+00:00",
+        "exit_utc": "2026-11-03T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": -87.298545
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T14:00:00+00:00",
+        "exit_utc": "2026-11-05T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": -148.321558
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T14:00:00+00:00",
+        "exit_utc": "2026-11-09T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": 49.962343
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T14:00:00+00:00",
+        "exit_utc": "2026-11-10T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": 188.019313
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": 2.842322
+      }
+    ]
+  },
+  "GOOGL|M5|SMA_32|FADE|ANY|14|2|48": {
+    "symbol": "GOOGL",
+    "tf": "M5",
+    "family": "SMA_32",
+    "orientation": "FADE",
+    "regime": "ANY",
+    "entry_hour_utc": 14,
+    "hold_bars": 48,
+    "trades": 8,
+    "net_bps": -776.131312,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T14:40:00+00:00",
+        "exit_utc": "2026-11-02T18:40:00+00:00",
+        "direction": "short",
+        "net_bps": 11.326787
+      },
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T14:40:00+00:00",
+        "exit_utc": "2026-11-03T18:40:00+00:00",
+        "direction": "long",
+        "net_bps": 46.109719
+      },
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T14:40:00+00:00",
+        "exit_utc": "2026-11-04T18:40:00+00:00",
+        "direction": "long",
+        "net_bps": 82.96324
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T14:40:00+00:00",
+        "exit_utc": "2026-11-05T18:40:00+00:00",
+        "direction": "long",
+        "net_bps": -275.154662
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T14:40:00+00:00",
+        "exit_utc": "2026-11-06T18:40:00+00:00",
+        "direction": "long",
+        "net_bps": -153.08137
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T14:40:00+00:00",
+        "exit_utc": "2026-11-09T18:40:00+00:00",
+        "direction": "long",
+        "net_bps": -186.419283
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T14:40:00+00:00",
+        "exit_utc": "2026-11-10T18:40:00+00:00",
+        "direction": "long",
+        "net_bps": -151.058036
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T14:40:00+00:00",
+        "exit_utc": "2026-11-11T18:40:00+00:00",
+        "direction": "short",
+        "net_bps": -150.817707
+      }
+    ]
+  },
+  "AVGO|M30|ZSCORE_16_1p0|FOLLOW|D1_ALIGN|15|2|6": {
+    "symbol": "AVGO",
+    "tf": "M30",
+    "family": "ZSCORE_16_1p0",
+    "orientation": "FOLLOW",
+    "regime": "D1_ALIGN",
+    "entry_hour_utc": 15,
+    "hold_bars": 6,
+    "trades": 4,
+    "net_bps": 355.83988,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T15:30:00+00:00",
+        "exit_utc": "2026-11-04T18:30:00+00:00",
+        "direction": "short",
+        "net_bps": 18.357626
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T15:00:00+00:00",
+        "exit_utc": "2026-11-05T18:00:00+00:00",
+        "direction": "short",
+        "net_bps": 380.138812
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T15:00:00+00:00",
+        "exit_utc": "2026-11-10T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": -130.537807
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": 87.881249
+      }
+    ]
+  },
+  "NVDA|M5|MOMENTUM_2|FADE|ANY|14|2|48": {
+    "symbol": "NVDA",
+    "tf": "M5",
+    "family": "MOMENTUM_2",
+    "orientation": "FADE",
+    "regime": "ANY",
+    "entry_hour_utc": 14,
+    "hold_bars": 48,
+    "trades": 8,
+    "net_bps": -1260.445153,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T14:00:00+00:00",
+        "exit_utc": "2026-11-02T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": -44.003621
+      },
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T14:00:00+00:00",
+        "exit_utc": "2026-11-03T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": 36.104425
+      },
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T14:00:00+00:00",
+        "exit_utc": "2026-11-04T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": -44.637653
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T14:00:00+00:00",
+        "exit_utc": "2026-11-05T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": -742.440001
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T14:05:00+00:00",
+        "exit_utc": "2026-11-06T18:05:00+00:00",
+        "direction": "long",
+        "net_bps": -195.897768
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T14:00:00+00:00",
+        "exit_utc": "2026-11-09T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": 71.443594
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T14:00:00+00:00",
+        "exit_utc": "2026-11-10T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": -450.906254
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T14:00:00+00:00",
+        "exit_utc": "2026-11-11T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": 109.892125
+      }
+    ]
+  },
+  "AMD|H1|BREAKOUT_4|LONG_ONLY|ANY|12|2|3": {
+    "symbol": "AMD",
+    "tf": "H1",
+    "family": "BREAKOUT_4",
+    "orientation": "LONG_ONLY",
+    "regime": "ANY",
+    "entry_hour_utc": 12,
+    "hold_bars": 3,
+    "trades": 5,
+    "net_bps": 371.639791,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T12:00:00+00:00",
+        "exit_utc": "2026-11-02T15:00:00+00:00",
+        "direction": "long",
+        "net_bps": -192.907052
+      },
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T12:00:00+00:00",
+        "exit_utc": "2026-11-04T15:00:00+00:00",
+        "direction": "long",
+        "net_bps": -145.933319
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T12:00:00+00:00",
+        "exit_utc": "2026-11-06T15:00:00+00:00",
+        "direction": "long",
+        "net_bps": 464.066204
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T12:00:00+00:00",
+        "exit_utc": "2026-11-09T15:00:00+00:00",
+        "direction": "long",
+        "net_bps": 517.074758
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T12:00:00+00:00",
+        "exit_utc": "2026-11-11T15:00:00+00:00",
+        "direction": "long",
+        "net_bps": -270.6608
+      }
+    ]
+  },
+  "AVGO|M15|ZSCORE_32_1p0|FOLLOW|D1_ALIGN|15|2|8": {
+    "symbol": "AVGO",
+    "tf": "M15",
+    "family": "ZSCORE_32_1p0",
+    "orientation": "FOLLOW",
+    "regime": "D1_ALIGN",
+    "entry_hour_utc": 15,
+    "hold_bars": 8,
+    "trades": 5,
+    "net_bps": 142.903024,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T15:30:00+00:00",
+        "exit_utc": "2026-11-04T17:30:00+00:00",
+        "direction": "short",
+        "net_bps": 9.849961
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T15:00:00+00:00",
+        "exit_utc": "2026-11-05T17:00:00+00:00",
+        "direction": "short",
+        "net_bps": 177.25902
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T16:15:00+00:00",
+        "exit_utc": "2026-11-06T18:15:00+00:00",
+        "direction": "short",
+        "net_bps": 100.322587
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T15:00:00+00:00",
+        "exit_utc": "2026-11-10T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": -225.583369
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": 81.054825
+      }
+    ]
+  },
+  "GOOGL|H1|MOMENTUM_32|FADE|W1_ALIGN|15|2|4": {
+    "symbol": "GOOGL",
+    "tf": "H1",
+    "family": "MOMENTUM_32",
+    "orientation": "FADE",
+    "regime": "W1_ALIGN",
+    "entry_hour_utc": 15,
+    "hold_bars": 4,
+    "trades": 3,
+    "net_bps": 293.946774,
+    "items": [
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T15:00:00+00:00",
+        "exit_utc": "2026-11-05T19:00:00+00:00",
+        "direction": "short",
+        "net_bps": 109.134337
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T15:00:00+00:00",
+        "exit_utc": "2026-11-06T19:00:00+00:00",
+        "direction": "short",
+        "net_bps": 40.103066
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": 144.709371
+      }
+    ]
+  },
+  "AVGO|M30|ZSCORE_32_1p0|FOLLOW|D1_ALIGN|15|2|6": {
+    "symbol": "AVGO",
+    "tf": "M30",
+    "family": "ZSCORE_32_1p0",
+    "orientation": "FOLLOW",
+    "regime": "D1_ALIGN",
+    "entry_hour_utc": 15,
+    "hold_bars": 6,
+    "trades": 5,
+    "net_bps": 490.086469,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T16:00:00+00:00",
+        "exit_utc": "2026-11-04T19:00:00+00:00",
+        "direction": "short",
+        "net_bps": -54.065683
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T15:00:00+00:00",
+        "exit_utc": "2026-11-05T18:00:00+00:00",
+        "direction": "short",
+        "net_bps": 380.138812
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T15:30:00+00:00",
+        "exit_utc": "2026-11-06T18:30:00+00:00",
+        "direction": "short",
+        "net_bps": 206.669898
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T15:00:00+00:00",
+        "exit_utc": "2026-11-10T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": -130.537807
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": 87.881249
+      }
+    ]
+  },
+  "AVGO|H1|ZSCORE_16_1p0|FOLLOW|D1_ALIGN|15|2|2": {
+    "symbol": "AVGO",
+    "tf": "H1",
+    "family": "ZSCORE_16_1p0",
+    "orientation": "FOLLOW",
+    "regime": "D1_ALIGN",
+    "entry_hour_utc": 15,
+    "hold_bars": 2,
+    "trades": 4,
+    "net_bps": -133.476678,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T16:00:00+00:00",
+        "exit_utc": "2026-11-04T18:00:00+00:00",
+        "direction": "short",
+        "net_bps": -166.207154
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T15:00:00+00:00",
+        "exit_utc": "2026-11-05T17:00:00+00:00",
+        "direction": "short",
+        "net_bps": 177.25902
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T15:00:00+00:00",
+        "exit_utc": "2026-11-10T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": -225.583369
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": 81.054825
+      }
+    ]
+  },
+  "AVGO|M30|ZSCORE_16_1p0|FOLLOW|D1_ALIGN|15|2|4": {
+    "symbol": "AVGO",
+    "tf": "M30",
+    "family": "ZSCORE_16_1p0",
+    "orientation": "FOLLOW",
+    "regime": "D1_ALIGN",
+    "entry_hour_utc": 15,
+    "hold_bars": 4,
+    "trades": 4,
+    "net_bps": 42.580437,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T15:30:00+00:00",
+        "exit_utc": "2026-11-04T17:30:00+00:00",
+        "direction": "short",
+        "net_bps": 9.849961
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T15:00:00+00:00",
+        "exit_utc": "2026-11-05T17:00:00+00:00",
+        "direction": "short",
+        "net_bps": 177.25902
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T15:00:00+00:00",
+        "exit_utc": "2026-11-10T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": -225.583369
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": 81.054825
+      }
+    ]
+  },
+  "NVDA|M30|RSI_14_30|FADE|ANY|14|2|4": {
+    "symbol": "NVDA",
+    "tf": "M30",
+    "family": "RSI_14_30",
+    "orientation": "FADE",
+    "regime": "ANY",
+    "entry_hour_utc": 14,
+    "hold_bars": 4,
+    "trades": 2,
+    "net_bps": -294.593585,
+    "items": [
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T14:30:00+00:00",
+        "exit_utc": "2026-11-05T16:30:00+00:00",
+        "direction": "long",
+        "net_bps": -504.384413
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T14:00:00+00:00",
+        "exit_utc": "2026-11-09T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": 209.790828
+      }
+    ]
+  },
+  "XOM|M30|MOMENTUM_4|LONG_ONLY|ANY|14|2|8": {
+    "symbol": "XOM",
+    "tf": "M30",
+    "family": "MOMENTUM_4",
+    "orientation": "LONG_ONLY",
+    "regime": "ANY",
+    "entry_hour_utc": 14,
+    "hold_bars": 8,
+    "trades": 6,
+    "net_bps": -201.467797,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T14:30:00+00:00",
+        "exit_utc": "2026-11-02T18:30:00+00:00",
+        "direction": "long",
+        "net_bps": -112.22154
+      },
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T14:30:00+00:00",
+        "exit_utc": "2026-11-03T18:30:00+00:00",
+        "direction": "long",
+        "net_bps": -87.298545
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T14:30:00+00:00",
+        "exit_utc": "2026-11-05T18:30:00+00:00",
+        "direction": "long",
+        "net_bps": -167.559053
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T14:30:00+00:00",
+        "exit_utc": "2026-11-09T18:30:00+00:00",
+        "direction": "long",
+        "net_bps": 8.392469
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T14:30:00+00:00",
+        "exit_utc": "2026-11-10T18:30:00+00:00",
+        "direction": "long",
+        "net_bps": 154.37655
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": 2.842322
+      }
+    ]
+  },
+  "AVGO|M30|RSI_7_40|FOLLOW|D1_ALIGN|15|2|4": {
+    "symbol": "AVGO",
+    "tf": "M30",
+    "family": "RSI_7_40",
+    "orientation": "FOLLOW",
+    "regime": "D1_ALIGN",
+    "entry_hour_utc": 15,
+    "hold_bars": 4,
+    "trades": 4,
+    "net_bps": 42.580437,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T15:30:00+00:00",
+        "exit_utc": "2026-11-04T17:30:00+00:00",
+        "direction": "short",
+        "net_bps": 9.849961
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T15:00:00+00:00",
+        "exit_utc": "2026-11-05T17:00:00+00:00",
+        "direction": "short",
+        "net_bps": 177.25902
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T15:00:00+00:00",
+        "exit_utc": "2026-11-10T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": -225.583369
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": 81.054825
+      }
+    ]
+  },
+  "GOOGL|M30|DAILY_PREVIOUS|FADE|W1_ALIGN|17|2|6": {
+    "symbol": "GOOGL",
+    "tf": "M30",
+    "family": "DAILY_PREVIOUS",
+    "orientation": "FADE",
+    "regime": "W1_ALIGN",
+    "entry_hour_utc": 17,
+    "hold_bars": 6,
+    "trades": 5,
+    "net_bps": -90.167332,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T17:00:00+00:00",
+        "exit_utc": "2026-11-04T20:00:00+00:00",
+        "direction": "short",
+        "net_bps": 23.328587
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T17:00:00+00:00",
+        "exit_utc": "2026-11-05T20:00:00+00:00",
+        "direction": "short",
+        "net_bps": -42.746075
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T17:00:00+00:00",
+        "exit_utc": "2026-11-09T20:00:00+00:00",
+        "direction": "long",
+        "net_bps": -89.222279
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T17:00:00+00:00",
+        "exit_utc": "2026-11-10T20:00:00+00:00",
+        "direction": "long",
+        "net_bps": -4.090884
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T17:00:00+00:00",
+        "exit_utc": "2026-11-11T20:00:00+00:00",
+        "direction": "long",
+        "net_bps": 22.563319
+      }
+    ]
+  },
+  "AVGO|M15|RSI_14_40|FOLLOW|D1_ALIGN|15|2|8": {
+    "symbol": "AVGO",
+    "tf": "M15",
+    "family": "RSI_14_40",
+    "orientation": "FOLLOW",
+    "regime": "D1_ALIGN",
+    "entry_hour_utc": 15,
+    "hold_bars": 8,
+    "trades": 5,
+    "net_bps": 142.903024,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T15:30:00+00:00",
+        "exit_utc": "2026-11-04T17:30:00+00:00",
+        "direction": "short",
+        "net_bps": 9.849961
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T15:00:00+00:00",
+        "exit_utc": "2026-11-05T17:00:00+00:00",
+        "direction": "short",
+        "net_bps": 177.25902
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T16:15:00+00:00",
+        "exit_utc": "2026-11-06T18:15:00+00:00",
+        "direction": "short",
+        "net_bps": 100.322587
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T15:00:00+00:00",
+        "exit_utc": "2026-11-10T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": -225.583369
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": 81.054825
+      }
+    ]
+  },
+  "XOM|M30|MOMENTUM_4|LONG_ONLY|ANY|14|2|4": {
+    "symbol": "XOM",
+    "tf": "M30",
+    "family": "MOMENTUM_4",
+    "orientation": "LONG_ONLY",
+    "regime": "ANY",
+    "entry_hour_utc": 14,
+    "hold_bars": 4,
+    "trades": 6,
+    "net_bps": -37.959433,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T14:30:00+00:00",
+        "exit_utc": "2026-11-02T16:30:00+00:00",
+        "direction": "long",
+        "net_bps": -61.77188
+      },
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T14:30:00+00:00",
+        "exit_utc": "2026-11-03T16:30:00+00:00",
+        "direction": "long",
+        "net_bps": -115.731393
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T14:30:00+00:00",
+        "exit_utc": "2026-11-05T16:30:00+00:00",
+        "direction": "long",
+        "net_bps": -29.398857
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T14:30:00+00:00",
+        "exit_utc": "2026-11-09T16:30:00+00:00",
+        "direction": "long",
+        "net_bps": 55.464238
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T14:30:00+00:00",
+        "exit_utc": "2026-11-10T16:30:00+00:00",
+        "direction": "long",
+        "net_bps": 148.769422
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": -35.290963
+      }
+    ]
+  },
+  "GOOGL|M30|RSI_14_30|FADE|ANY|15|2|8": {
+    "symbol": "GOOGL",
+    "tf": "M30",
+    "family": "RSI_14_30",
+    "orientation": "FADE",
+    "regime": "ANY",
+    "entry_hour_utc": 15,
+    "hold_bars": 8,
+    "trades": 1,
+    "net_bps": 54.798741,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T15:00:00+00:00",
+        "exit_utc": "2026-11-04T19:00:00+00:00",
+        "direction": "short",
+        "net_bps": 54.798741
+      }
+    ]
+  },
+  "GOOGL|M5|DAILY_PREVIOUS|FADE|W1_ALIGN|17|2|24": {
+    "symbol": "GOOGL",
+    "tf": "M5",
+    "family": "DAILY_PREVIOUS",
+    "orientation": "FADE",
+    "regime": "W1_ALIGN",
+    "entry_hour_utc": 17,
+    "hold_bars": 24,
+    "trades": 5,
+    "net_bps": 46.508627,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T17:00:00+00:00",
+        "exit_utc": "2026-11-04T19:00:00+00:00",
+        "direction": "short",
+        "net_bps": 51.3954
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T17:00:00+00:00",
+        "exit_utc": "2026-11-05T19:00:00+00:00",
+        "direction": "short",
+        "net_bps": 27.505778
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T17:00:00+00:00",
+        "exit_utc": "2026-11-09T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": -59.346932
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T17:00:00+00:00",
+        "exit_utc": "2026-11-10T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": -22.560357
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T17:00:00+00:00",
+        "exit_utc": "2026-11-11T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": 49.514738
+      }
+    ]
+  },
+  "GOOGL|H4|EMA_8|FADE|W1_ALIGN|15|2|1": {
+    "symbol": "GOOGL",
+    "tf": "H4",
+    "family": "EMA_8",
+    "orientation": "FADE",
+    "regime": "W1_ALIGN",
+    "entry_hour_utc": 15,
+    "hold_bars": 1,
+    "trades": 3,
+    "net_bps": 120.053471,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T16:00:00+00:00",
+        "exit_utc": "2026-11-04T20:00:00+00:00",
+        "direction": "short",
+        "net_bps": 70.560041
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T16:00:00+00:00",
+        "exit_utc": "2026-11-06T20:00:00+00:00",
+        "direction": "short",
+        "net_bps": 74.792105
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T16:00:00+00:00",
+        "exit_utc": "2026-11-10T20:00:00+00:00",
+        "direction": "long",
+        "net_bps": -25.298675
+      }
+    ]
+  },
+  "AMD|H1|BREAKOUT_4|LONG_ONLY|ANY|12|2|4": {
+    "symbol": "AMD",
+    "tf": "H1",
+    "family": "BREAKOUT_4",
+    "orientation": "LONG_ONLY",
+    "regime": "ANY",
+    "entry_hour_utc": 12,
+    "hold_bars": 4,
+    "trades": 5,
+    "net_bps": 171.076663,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T12:00:00+00:00",
+        "exit_utc": "2026-11-02T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": -367.823933
+      },
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T12:00:00+00:00",
+        "exit_utc": "2026-11-04T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": -474.386383
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T12:00:00+00:00",
+        "exit_utc": "2026-11-06T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": 139.127876
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T12:00:00+00:00",
+        "exit_utc": "2026-11-09T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": 767.45453
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T12:00:00+00:00",
+        "exit_utc": "2026-11-11T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": 106.704573
+      }
+    ]
+  },
+  "NVDA|M5|MOMENTUM_8|FADE|ANY|15|2|36": {
+    "symbol": "NVDA",
+    "tf": "M5",
+    "family": "MOMENTUM_8",
+    "orientation": "FADE",
+    "regime": "ANY",
+    "entry_hour_utc": 15,
+    "hold_bars": 36,
+    "trades": 8,
+    "net_bps": -1.637374,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T15:00:00+00:00",
+        "exit_utc": "2026-11-02T18:00:00+00:00",
+        "direction": "short",
+        "net_bps": 60.516531
+      },
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T15:00:00+00:00",
+        "exit_utc": "2026-11-03T18:00:00+00:00",
+        "direction": "short",
+        "net_bps": -32.789214
+      },
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T15:00:00+00:00",
+        "exit_utc": "2026-11-04T18:00:00+00:00",
+        "direction": "short",
+        "net_bps": 66.267707
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T15:00:00+00:00",
+        "exit_utc": "2026-11-05T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": -399.50769
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T15:00:00+00:00",
+        "exit_utc": "2026-11-06T18:00:00+00:00",
+        "direction": "short",
+        "net_bps": 352.179054
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T15:00:00+00:00",
+        "exit_utc": "2026-11-09T18:00:00+00:00",
+        "direction": "short",
+        "net_bps": 79.662332
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T15:00:00+00:00",
+        "exit_utc": "2026-11-10T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": -322.503566
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": 194.537472
+      }
+    ]
+  },
+  "XOM|M5|ZSCORE_32_1p0|LONG_ONLY|ANY|14|2|24": {
+    "symbol": "XOM",
+    "tf": "M5",
+    "family": "ZSCORE_32_1p0",
+    "orientation": "LONG_ONLY",
+    "regime": "ANY",
+    "entry_hour_utc": 14,
+    "hold_bars": 24,
+    "trades": 4,
+    "net_bps": -20.352873,
+    "items": [
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T14:40:00+00:00",
+        "exit_utc": "2026-11-03T16:40:00+00:00",
+        "direction": "long",
+        "net_bps": -120.748955
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T14:40:00+00:00",
+        "exit_utc": "2026-11-05T16:40:00+00:00",
+        "direction": "long",
+        "net_bps": -108.097703
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T14:40:00+00:00",
+        "exit_utc": "2026-11-10T16:40:00+00:00",
+        "direction": "long",
+        "net_bps": 161.229705
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T14:45:00+00:00",
+        "exit_utc": "2026-11-11T16:45:00+00:00",
+        "direction": "long",
+        "net_bps": 47.26408
+      }
+    ]
+  },
+  "AMD|M15|RSI_7_30|LONG_ONLY|ANY|12|2|16": {
+    "symbol": "AMD",
+    "tf": "M15",
+    "family": "RSI_7_30",
+    "orientation": "LONG_ONLY",
+    "regime": "ANY",
+    "entry_hour_utc": 12,
+    "hold_bars": 16,
+    "trades": 5,
+    "net_bps": 739.911882,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T12:00:00+00:00",
+        "exit_utc": "2026-11-02T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": -367.823933
+      },
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T13:30:00+00:00",
+        "exit_utc": "2026-11-03T17:30:00+00:00",
+        "direction": "long",
+        "net_bps": 94.448836
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T12:00:00+00:00",
+        "exit_utc": "2026-11-06T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": 139.127876
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T12:00:00+00:00",
+        "exit_utc": "2026-11-09T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": 767.45453
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T12:00:00+00:00",
+        "exit_utc": "2026-11-11T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": 106.704573
+      }
+    ]
+  },
+  "AVGO|M15|RSI_28_40|FOLLOW|ANY|16|2|4": {
+    "symbol": "AVGO",
+    "tf": "M15",
+    "family": "RSI_28_40",
+    "orientation": "FOLLOW",
+    "regime": "ANY",
+    "entry_hour_utc": 16,
+    "hold_bars": 4,
+    "trades": 6,
+    "net_bps": -539.607218,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T16:00:00+00:00",
+        "exit_utc": "2026-11-04T17:00:00+00:00",
+        "direction": "short",
+        "net_bps": -133.242491
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T16:00:00+00:00",
+        "exit_utc": "2026-11-05T17:00:00+00:00",
+        "direction": "short",
+        "net_bps": -280.727944
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T16:00:00+00:00",
+        "exit_utc": "2026-11-06T17:00:00+00:00",
+        "direction": "short",
+        "net_bps": 7.758888
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T16:00:00+00:00",
+        "exit_utc": "2026-11-09T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": -60.395528
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T16:00:00+00:00",
+        "exit_utc": "2026-11-10T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": -91.916506
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T16:00:00+00:00",
+        "exit_utc": "2026-11-11T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": 18.916363
+      }
+    ]
+  },
+  "NVDA|M5|MOMENTUM_2|FADE|ANY|14|2|36": {
+    "symbol": "NVDA",
+    "tf": "M5",
+    "family": "MOMENTUM_2",
+    "orientation": "FADE",
+    "regime": "ANY",
+    "entry_hour_utc": 14,
+    "hold_bars": 36,
+    "trades": 8,
+    "net_bps": -1023.381205,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T14:00:00+00:00",
+        "exit_utc": "2026-11-02T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": -20.346409
+      },
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T14:00:00+00:00",
+        "exit_utc": "2026-11-03T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": 43.821777
+      },
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T14:00:00+00:00",
+        "exit_utc": "2026-11-04T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": -19.153079
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T14:00:00+00:00",
+        "exit_utc": "2026-11-05T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": -564.8156
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T14:05:00+00:00",
+        "exit_utc": "2026-11-06T17:05:00+00:00",
+        "direction": "long",
+        "net_bps": -91.816405
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T14:00:00+00:00",
+        "exit_utc": "2026-11-09T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": 29.88249
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T14:00:00+00:00",
+        "exit_utc": "2026-11-10T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": -502.812823
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T14:00:00+00:00",
+        "exit_utc": "2026-11-11T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": 101.858844
+      }
+    ]
+  },
+  "AVGO|M5|ZSCORE_64_1p0|FOLLOW|D1_ALIGN|15|2|36": {
+    "symbol": "AVGO",
+    "tf": "M5",
+    "family": "ZSCORE_64_1p0",
+    "orientation": "FOLLOW",
+    "regime": "D1_ALIGN",
+    "entry_hour_utc": 15,
+    "hold_bars": 36,
+    "trades": 5,
+    "net_bps": 497.431404,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T15:20:00+00:00",
+        "exit_utc": "2026-11-04T18:20:00+00:00",
+        "direction": "short",
+        "net_bps": 82.495142
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T15:00:00+00:00",
+        "exit_utc": "2026-11-05T18:00:00+00:00",
+        "direction": "short",
+        "net_bps": 380.138812
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T15:35:00+00:00",
+        "exit_utc": "2026-11-06T18:35:00+00:00",
+        "direction": "short",
+        "net_bps": 77.454008
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T15:00:00+00:00",
+        "exit_utc": "2026-11-10T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": -130.537807
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": 87.881249
+      }
+    ]
+  },
+  "AVGO|M15|RSI_14_40|FOLLOW|D1_ALIGN|15|2|12": {
+    "symbol": "AVGO",
+    "tf": "M15",
+    "family": "RSI_14_40",
+    "orientation": "FOLLOW",
+    "regime": "D1_ALIGN",
+    "entry_hour_utc": 15,
+    "hold_bars": 12,
+    "trades": 5,
+    "net_bps": 405.33999,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T15:30:00+00:00",
+        "exit_utc": "2026-11-04T18:30:00+00:00",
+        "direction": "short",
+        "net_bps": 18.357626
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T15:00:00+00:00",
+        "exit_utc": "2026-11-05T18:00:00+00:00",
+        "direction": "short",
+        "net_bps": 380.138812
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T16:15:00+00:00",
+        "exit_utc": "2026-11-06T19:15:00+00:00",
+        "direction": "short",
+        "net_bps": 49.50011
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T15:00:00+00:00",
+        "exit_utc": "2026-11-10T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": -130.537807
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": 87.881249
+      }
+    ]
+  },
+  "GOOGL|H1|MOMENTUM_8|FADE|W1_ALIGN|17|2|3": {
+    "symbol": "GOOGL",
+    "tf": "H1",
+    "family": "MOMENTUM_8",
+    "orientation": "FADE",
+    "regime": "W1_ALIGN",
+    "entry_hour_utc": 17,
+    "hold_bars": 3,
+    "trades": 4,
+    "net_bps": 57.993864,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T17:00:00+00:00",
+        "exit_utc": "2026-11-02T20:00:00+00:00",
+        "direction": "short",
+        "net_bps": -9.067887
+      },
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T17:00:00+00:00",
+        "exit_utc": "2026-11-04T20:00:00+00:00",
+        "direction": "short",
+        "net_bps": 23.328587
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T17:00:00+00:00",
+        "exit_utc": "2026-11-06T20:00:00+00:00",
+        "direction": "short",
+        "net_bps": 47.824048
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T17:00:00+00:00",
+        "exit_utc": "2026-11-10T20:00:00+00:00",
+        "direction": "long",
+        "net_bps": -4.090884
+      }
+    ]
+  },
+  "NVDA|M5|SMA_16|FADE|ANY|15|2|48": {
+    "symbol": "NVDA",
+    "tf": "M5",
+    "family": "SMA_16",
+    "orientation": "FADE",
+    "regime": "ANY",
+    "entry_hour_utc": 15,
+    "hold_bars": 48,
+    "trades": 8,
+    "net_bps": 140.220473,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T15:00:00+00:00",
+        "exit_utc": "2026-11-02T19:00:00+00:00",
+        "direction": "short",
+        "net_bps": 111.491548
+      },
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T15:00:00+00:00",
+        "exit_utc": "2026-11-03T19:00:00+00:00",
+        "direction": "short",
+        "net_bps": -3.443244
+      },
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T15:00:00+00:00",
+        "exit_utc": "2026-11-04T19:00:00+00:00",
+        "direction": "short",
+        "net_bps": 97.963428
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T15:00:00+00:00",
+        "exit_utc": "2026-11-05T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": -367.433657
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T15:00:00+00:00",
+        "exit_utc": "2026-11-06T19:00:00+00:00",
+        "direction": "short",
+        "net_bps": 295.303586
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T15:00:00+00:00",
+        "exit_utc": "2026-11-09T19:00:00+00:00",
+        "direction": "short",
+        "net_bps": 104.832229
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T15:00:00+00:00",
+        "exit_utc": "2026-11-10T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": -314.418791
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": 215.925374
+      }
+    ]
+  },
+  "GOOGL|H1|ZSCORE_16_1p0|FADE|W1_ALIGN|16|2|3": {
+    "symbol": "GOOGL",
+    "tf": "H1",
+    "family": "ZSCORE_16_1p0",
+    "orientation": "FADE",
+    "regime": "W1_ALIGN",
+    "entry_hour_utc": 16,
+    "hold_bars": 3,
+    "trades": 1,
+    "net_bps": 98.493953,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T16:00:00+00:00",
+        "exit_utc": "2026-11-04T19:00:00+00:00",
+        "direction": "short",
+        "net_bps": 98.493953
+      }
+    ]
+  },
+  "NVDA|M15|MOMENTUM_32|FADE|ANY|14|2|8": {
+    "symbol": "NVDA",
+    "tf": "M15",
+    "family": "MOMENTUM_32",
+    "orientation": "FADE",
+    "regime": "ANY",
+    "entry_hour_utc": 14,
+    "hold_bars": 8,
+    "trades": 8,
+    "net_bps": -1157.395583,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T14:00:00+00:00",
+        "exit_utc": "2026-11-02T16:00:00+00:00",
+        "direction": "short",
+        "net_bps": -21.79481
+      },
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T14:00:00+00:00",
+        "exit_utc": "2026-11-03T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": 7.164355
+      },
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T14:00:00+00:00",
+        "exit_utc": "2026-11-04T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": -110.79953
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T14:00:00+00:00",
+        "exit_utc": "2026-11-05T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": -698.28765
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T14:00:00+00:00",
+        "exit_utc": "2026-11-06T16:00:00+00:00",
+        "direction": "short",
+        "net_bps": -16.238629
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T14:00:00+00:00",
+        "exit_utc": "2026-11-09T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": 209.790828
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T14:00:00+00:00",
+        "exit_utc": "2026-11-10T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": -400.14049
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T14:00:00+00:00",
+        "exit_utc": "2026-11-11T16:00:00+00:00",
+        "direction": "short",
+        "net_bps": -127.089657
+      }
+    ]
+  },
+  "NVDA|M30|DAILY_PREVIOUS|FADE|W1_ALIGN|19|2|2": {
+    "symbol": "NVDA",
+    "tf": "M30",
+    "family": "DAILY_PREVIOUS",
+    "orientation": "FADE",
+    "regime": "W1_ALIGN",
+    "entry_hour_utc": 19,
+    "hold_bars": 2,
+    "trades": 2,
+    "net_bps": 63.099273,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T19:00:00+00:00",
+        "exit_utc": "2026-11-04T20:00:00+00:00",
+        "direction": "short",
+        "net_bps": 13.278086
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T19:00:00+00:00",
+        "exit_utc": "2026-11-10T20:00:00+00:00",
+        "direction": "short",
+        "net_bps": 49.821187
+      }
+    ]
+  },
+  "XOM|M30|ZSCORE_64_1p0|LONG_ONLY|ANY|14|2|4": {
+    "symbol": "XOM",
+    "tf": "M30",
+    "family": "ZSCORE_64_1p0",
+    "orientation": "LONG_ONLY",
+    "regime": "ANY",
+    "entry_hour_utc": 14,
+    "hold_bars": 4,
+    "trades": 1,
+    "net_bps": -61.77188,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T14:30:00+00:00",
+        "exit_utc": "2026-11-02T16:30:00+00:00",
+        "direction": "long",
+        "net_bps": -61.77188
+      }
+    ]
+  },
+  "GOOGL|M15|RSI_14_30|FADE|ANY|16|2|12": {
+    "symbol": "GOOGL",
+    "tf": "M15",
+    "family": "RSI_14_30",
+    "orientation": "FADE",
+    "regime": "ANY",
+    "entry_hour_utc": 16,
+    "hold_bars": 12,
+    "trades": 3,
+    "net_bps": 118.908939,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T16:00:00+00:00",
+        "exit_utc": "2026-11-04T19:00:00+00:00",
+        "direction": "short",
+        "net_bps": 98.493953
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T16:00:00+00:00",
+        "exit_utc": "2026-11-05T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": 106.7887
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T16:15:00+00:00",
+        "exit_utc": "2026-11-11T19:15:00+00:00",
+        "direction": "short",
+        "net_bps": -86.373714
+      }
+    ]
+  },
+  "NVDA|M5|MOMENTUM_2|FADE|ANY|14|2|24": {
+    "symbol": "NVDA",
+    "tf": "M5",
+    "family": "MOMENTUM_2",
+    "orientation": "FADE",
+    "regime": "ANY",
+    "entry_hour_utc": 14,
+    "hold_bars": 24,
+    "trades": 8,
+    "net_bps": -954.296169,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T14:00:00+00:00",
+        "exit_utc": "2026-11-02T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": -9.242004
+      },
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T14:00:00+00:00",
+        "exit_utc": "2026-11-03T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": 7.164355
+      },
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T14:00:00+00:00",
+        "exit_utc": "2026-11-04T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": -110.79953
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T14:00:00+00:00",
+        "exit_utc": "2026-11-05T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": -698.28765
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T14:05:00+00:00",
+        "exit_utc": "2026-11-06T16:05:00+00:00",
+        "direction": "long",
+        "net_bps": -43.738212
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T14:00:00+00:00",
+        "exit_utc": "2026-11-09T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": 209.790828
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T14:00:00+00:00",
+        "exit_utc": "2026-11-10T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": -400.14049
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T14:00:00+00:00",
+        "exit_utc": "2026-11-11T16:00:00+00:00",
+        "direction": "long",
+        "net_bps": 90.956534
+      }
+    ]
+  },
+  "GOOGL|M30|RSI_14_40|FADE|W1_ALIGN|16|2|6": {
+    "symbol": "GOOGL",
+    "tf": "M30",
+    "family": "RSI_14_40",
+    "orientation": "FADE",
+    "regime": "W1_ALIGN",
+    "entry_hour_utc": 16,
+    "hold_bars": 6,
+    "trades": 1,
+    "net_bps": 98.493953,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T16:00:00+00:00",
+        "exit_utc": "2026-11-04T19:00:00+00:00",
+        "direction": "short",
+        "net_bps": 98.493953
+      }
+    ]
+  },
+  "AVGO|M30|MOMENTUM_2|SHORT_ONLY|D1_ALIGN|15|2|4": {
+    "symbol": "AVGO",
+    "tf": "M30",
+    "family": "MOMENTUM_2",
+    "orientation": "SHORT_ONLY",
+    "regime": "D1_ALIGN",
+    "entry_hour_utc": 15,
+    "hold_bars": 4,
+    "trades": 5,
+    "net_bps": 449.505632,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T16:30:00+00:00",
+        "exit_utc": "2026-11-02T18:30:00+00:00",
+        "direction": "short",
+        "net_bps": 25.54946
+      },
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T16:30:00+00:00",
+        "exit_utc": "2026-11-03T18:30:00+00:00",
+        "direction": "short",
+        "net_bps": 18.410001
+      },
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T15:00:00+00:00",
+        "exit_utc": "2026-11-04T17:00:00+00:00",
+        "direction": "short",
+        "net_bps": 91.98015
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T15:00:00+00:00",
+        "exit_utc": "2026-11-05T17:00:00+00:00",
+        "direction": "short",
+        "net_bps": 177.25902
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T16:00:00+00:00",
+        "exit_utc": "2026-11-06T18:00:00+00:00",
+        "direction": "short",
+        "net_bps": 136.307001
+      }
+    ]
+  },
+  "GOOGL|H1|RSI_7_40|FADE|W1_ALIGN|17|2|3": {
+    "symbol": "GOOGL",
+    "tf": "H1",
+    "family": "RSI_7_40",
+    "orientation": "FADE",
+    "regime": "W1_ALIGN",
+    "entry_hour_utc": 17,
+    "hold_bars": 3,
+    "trades": 2,
+    "net_bps": 48.578447,
+    "items": [
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T17:00:00+00:00",
+        "exit_utc": "2026-11-04T20:00:00+00:00",
+        "direction": "short",
+        "net_bps": 23.328587
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T18:00:00+00:00",
+        "exit_utc": "2026-11-10T21:00:00+00:00",
+        "direction": "long",
+        "net_bps": 25.24986
+      }
+    ]
+  },
+  "GOOGL|M30|RSI_14_30|FADE|ANY|14|2|6": {
+    "symbol": "GOOGL",
+    "tf": "M30",
+    "family": "RSI_14_30",
+    "orientation": "FADE",
+    "regime": "ANY",
+    "entry_hour_utc": 14,
+    "hold_bars": 6,
+    "trades": 2,
+    "net_bps": -104.729205,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T14:30:00+00:00",
+        "exit_utc": "2026-11-02T17:30:00+00:00",
+        "direction": "long",
+        "net_bps": -105.808655
+      },
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T15:00:00+00:00",
+        "exit_utc": "2026-11-04T18:00:00+00:00",
+        "direction": "short",
+        "net_bps": 1.07945
+      }
+    ]
+  },
+  "AMD|M30|RSI_7_40|LONG_ONLY|ANY|16|2|2": {
+    "symbol": "AMD",
+    "tf": "M30",
+    "family": "RSI_7_40",
+    "orientation": "LONG_ONLY",
+    "regime": "ANY",
+    "entry_hour_utc": 16,
+    "hold_bars": 2,
+    "trades": 4,
+    "net_bps": -347.956031,
+    "items": [
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T16:00:00+00:00",
+        "exit_utc": "2026-11-03T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": -56.619844
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T16:00:00+00:00",
+        "exit_utc": "2026-11-09T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": -43.762831
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T16:00:00+00:00",
+        "exit_utc": "2026-11-10T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": -260.353857
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T16:00:00+00:00",
+        "exit_utc": "2026-11-11T17:00:00+00:00",
+        "direction": "long",
+        "net_bps": 12.780501
+      }
+    ]
+  },
+  "NVDA|M5|WEEKLY_PREVIOUS|FADE|ANY|15|2|48": {
+    "symbol": "NVDA",
+    "tf": "M5",
+    "family": "WEEKLY_PREVIOUS",
+    "orientation": "FADE",
+    "regime": "ANY",
+    "entry_hour_utc": 15,
+    "hold_bars": 48,
+    "trades": 8,
+    "net_bps": -1147.646293,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T15:00:00+00:00",
+        "exit_utc": "2026-11-02T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": -126.071269
+      },
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T15:00:00+00:00",
+        "exit_utc": "2026-11-03T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": -11.140548
+      },
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T15:00:00+00:00",
+        "exit_utc": "2026-11-04T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": -112.691211
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T15:00:00+00:00",
+        "exit_utc": "2026-11-05T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": -367.433657
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T15:00:00+00:00",
+        "exit_utc": "2026-11-06T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": -310.678679
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T15:00:00+00:00",
+        "exit_utc": "2026-11-09T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": -121.137512
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T15:00:00+00:00",
+        "exit_utc": "2026-11-10T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": -314.418791
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T19:00:00+00:00",
+        "direction": "long",
+        "net_bps": 215.925374
+      }
+    ]
+  },
+  "NVDA|M30|SMA_64|SHORT_ONLY|ANY|14|2|2": {
+    "symbol": "NVDA",
+    "tf": "M30",
+    "family": "SMA_64",
+    "orientation": "SHORT_ONLY",
+    "regime": "ANY",
+    "entry_hour_utc": 14,
+    "hold_bars": 2,
+    "trades": 8,
+    "net_bps": -92.662324,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T14:00:00+00:00",
+        "exit_utc": "2026-11-02T15:00:00+00:00",
+        "direction": "short",
+        "net_bps": -57.039228
+      },
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T14:00:00+00:00",
+        "exit_utc": "2026-11-03T15:00:00+00:00",
+        "direction": "short",
+        "net_bps": -39.622091
+      },
+      {
+        "date": "2026-11-04",
+        "entry_utc": "2026-11-04T14:00:00+00:00",
+        "exit_utc": "2026-11-04T15:00:00+00:00",
+        "direction": "short",
+        "net_bps": -72.572668
+      },
+      {
+        "date": "2026-11-05",
+        "entry_utc": "2026-11-05T14:00:00+00:00",
+        "exit_utc": "2026-11-05T15:00:00+00:00",
+        "direction": "short",
+        "net_bps": 332.94887
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T14:00:00+00:00",
+        "exit_utc": "2026-11-06T15:00:00+00:00",
+        "direction": "short",
+        "net_bps": -220.852999
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T14:00:00+00:00",
+        "exit_utc": "2026-11-09T15:00:00+00:00",
+        "direction": "short",
+        "net_bps": -195.002932
+      },
+      {
+        "date": "2026-11-10",
+        "entry_utc": "2026-11-10T14:00:00+00:00",
+        "exit_utc": "2026-11-10T15:00:00+00:00",
+        "direction": "short",
+        "net_bps": 103.524342
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T14:00:00+00:00",
+        "exit_utc": "2026-11-11T15:00:00+00:00",
+        "direction": "short",
+        "net_bps": 55.954382
+      }
+    ]
+  },
+  "NVDA|M30|MOMENTUM_8|LONG_ONLY|ANY|15|2|6": {
+    "symbol": "NVDA",
+    "tf": "M30",
+    "family": "MOMENTUM_8",
+    "orientation": "LONG_ONLY",
+    "regime": "ANY",
+    "entry_hour_utc": 15,
+    "hold_bars": 6,
+    "trades": 5,
+    "net_bps": -397.685742,
+    "items": [
+      {
+        "date": "2026-11-02",
+        "entry_utc": "2026-11-02T15:00:00+00:00",
+        "exit_utc": "2026-11-02T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": -75.096251
+      },
+      {
+        "date": "2026-11-03",
+        "entry_utc": "2026-11-03T15:00:00+00:00",
+        "exit_utc": "2026-11-03T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": 18.205422
+      },
+      {
+        "date": "2026-11-06",
+        "entry_utc": "2026-11-06T15:00:00+00:00",
+        "exit_utc": "2026-11-06T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": -367.554148
+      },
+      {
+        "date": "2026-11-09",
+        "entry_utc": "2026-11-09T15:30:00+00:00",
+        "exit_utc": "2026-11-09T18:30:00+00:00",
+        "direction": "long",
+        "net_bps": -167.778237
+      },
+      {
+        "date": "2026-11-11",
+        "entry_utc": "2026-11-11T15:00:00+00:00",
+        "exit_utc": "2026-11-11T18:00:00+00:00",
+        "direction": "long",
+        "net_bps": 194.537472
+      }
+    ]
+  }
+}
