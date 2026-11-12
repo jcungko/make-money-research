@@ -1,0 +1,460 @@
+{
+  "study": "V19-065 B1/B3 entry-time audit, signal eligibility and source coverage",
+  "source_period": "2026-11-01 to 2026-11-12 18:00 UTC exclusive",
+  "server_mt5_live_status": "unknown (no access to deployed VPS/EA runtime logs)",
+  "source_archive_summary": {
+    "USOIL": {
+      "archives_ok": 11,
+      "archives_missing_or_market_closed": [
+        "2026-11-07"
+      ],
+      "first_market_tick_each_day_utc": {
+        "2026-11-01": "2026-11-01T23:01:00.065000+00:00",
+        "2026-11-02": "2026-11-02T00:00:00.073000+00:00",
+        "2026-11-03": "2026-11-03T00:00:00.074000+00:00",
+        "2026-11-04": "2026-11-04T00:00:02.096000+00:00",
+        "2026-11-05": "2026-11-05T00:00:00.083000+00:00",
+        "2026-11-06": "2026-11-06T00:00:00.131000+00:00",
+        "2026-11-08": "2026-11-08T23:01:00.013000+00:00",
+        "2026-11-09": "2026-11-09T00:00:00.106000+00:00",
+        "2026-11-10": "2026-11-10T00:00:00.077000+00:00",
+        "2026-11-11": "2026-11-11T00:00:00.249000+00:00",
+        "2026-11-12": "2026-11-12T00:00:00.642000+00:00"
+      },
+      "m5_available_from": "2026-11-01T23:00:00+00:00",
+      "m5_available_until": "2026-11-12T17:50:00+00:00",
+      "m5_row_count": 2435
+    },
+    "UKOIL": {
+      "archives_ok": 9,
+      "archives_missing_or_market_closed": [
+        "2026-11-01",
+        "2026-11-07",
+        "2026-11-08"
+      ],
+      "first_market_tick_each_day_utc": {
+        "2026-11-02": "2026-11-02T01:10:00.126000+00:00",
+        "2026-11-03": "2026-11-03T01:10:00.127000+00:00",
+        "2026-11-04": "2026-11-04T01:10:00.020000+00:00",
+        "2026-11-05": "2026-11-05T01:10:00.069000+00:00",
+        "2026-11-06": "2026-11-06T01:10:00.087000+00:00",
+        "2026-11-09": "2026-11-09T01:10:00.134000+00:00",
+        "2026-11-10": "2026-11-10T01:10:00.190000+00:00",
+        "2026-11-11": "2026-11-11T01:10:00.393000+00:00",
+        "2026-11-12": "2026-11-12T01:10:00.186000+00:00"
+      },
+      "m5_available_from": "2026-11-02T01:10:00+00:00",
+      "m5_available_until": "2026-11-12T17:50:00+00:00",
+      "m5_row_count": 2193
+    }
+  },
+  "checks": {
+    "B1": {
+      "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+      "signal_definition": "previous_completed_H1_close_position_within_prior_20_H1_high_low_range > 0.75",
+      "session_hours_utc": 8,
+      "session_label_hour_ict": 15,
+      "timeframe": "H1",
+      "nov_bar_count_all_hours": 203,
+      "nov_scheduled_bars": 9,
+      "qualified_nov_scheduled_bars": 1,
+      "other_hours_qualified_bars": 36,
+      "nov_closed_orders": 1,
+      "nov_open_orders": 0,
+      "nov_qualified_min": 0.04488,
+      "nov_qualified_max": 0.78703,
+      "historical_qualifying_session_bars_count": 124,
+      "historical_distinct_calendar_days_in_dataset": 570,
+      "days_with_no_candle_data": 0,
+      "days_with_available_m5_at_exact_label": 9,
+      "sessions": [
+        {
+          "date_ict": "2026-11-02",
+          "candle_label_utc": "2026-11-02T08:00:00+00:00",
+          "candle_label_ict": "2026-11-02T15:00:00+07:00",
+          "indicator_value": 0.10946,
+          "qualified": false,
+          "candle_open_bid": 99.846,
+          "candle_open_ask": 99.856,
+          "candle_data_tick_count": 20870,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-02T08:00:00+00:00",
+            "last_m5": "2026-11-02T08:55:00+00:00",
+            "m5_candles": 12,
+            "first_quote_delay_minutes": 0,
+            "expected_m5_per_full_session": 12,
+            "valid_bid_ask": true,
+            "sum_tick_count": 20870
+          }
+        },
+        {
+          "date_ict": "2026-11-03",
+          "candle_label_utc": "2026-11-03T08:00:00+00:00",
+          "candle_label_ict": "2026-11-03T15:00:00+07:00",
+          "indicator_value": 0.53704,
+          "qualified": false,
+          "candle_open_bid": 96.861,
+          "candle_open_ask": 96.871,
+          "candle_data_tick_count": 21749,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-03T08:00:00+00:00",
+            "last_m5": "2026-11-03T08:55:00+00:00",
+            "m5_candles": 12,
+            "first_quote_delay_minutes": 0,
+            "expected_m5_per_full_session": 12,
+            "valid_bid_ask": true,
+            "sum_tick_count": 21749
+          }
+        },
+        {
+          "date_ict": "2026-11-04",
+          "candle_label_utc": "2026-11-04T08:00:00+00:00",
+          "candle_label_ict": "2026-11-04T15:00:00+07:00",
+          "indicator_value": 0.49749,
+          "qualified": false,
+          "candle_open_bid": 95.393,
+          "candle_open_ask": 95.403,
+          "candle_data_tick_count": 21139,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-04T08:00:00+00:00",
+            "last_m5": "2026-11-04T08:55:00+00:00",
+            "m5_candles": 12,
+            "first_quote_delay_minutes": 0,
+            "expected_m5_per_full_session": 12,
+            "valid_bid_ask": true,
+            "sum_tick_count": 21139
+          }
+        },
+        {
+          "date_ict": "2026-11-05",
+          "candle_label_utc": "2026-11-05T08:00:00+00:00",
+          "candle_label_ict": "2026-11-05T15:00:00+07:00",
+          "indicator_value": 0.14615,
+          "qualified": false,
+          "candle_open_bid": 87.366,
+          "candle_open_ask": 87.376,
+          "candle_data_tick_count": 23860,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-05T08:00:00+00:00",
+            "last_m5": "2026-11-05T08:55:00+00:00",
+            "m5_candles": 12,
+            "first_quote_delay_minutes": 0,
+            "expected_m5_per_full_session": 12,
+            "valid_bid_ask": true,
+            "sum_tick_count": 23860
+          }
+        },
+        {
+          "date_ict": "2026-11-06",
+          "candle_label_utc": "2026-11-06T08:00:00+00:00",
+          "candle_label_ict": "2026-11-06T15:00:00+07:00",
+          "indicator_value": 0.64034,
+          "qualified": false,
+          "candle_open_bid": 90.119,
+          "candle_open_ask": 90.129,
+          "candle_data_tick_count": 25407,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-06T08:00:00+00:00",
+            "last_m5": "2026-11-06T08:55:00+00:00",
+            "m5_candles": 12,
+            "first_quote_delay_minutes": 0,
+            "expected_m5_per_full_session": 12,
+            "valid_bid_ask": true,
+            "sum_tick_count": 25407
+          }
+        },
+        {
+          "date_ict": "2026-11-09",
+          "candle_label_utc": "2026-11-09T08:00:00+00:00",
+          "candle_label_ict": "2026-11-09T15:00:00+07:00",
+          "indicator_value": 0.39526,
+          "qualified": false,
+          "candle_open_bid": 89.18,
+          "candle_open_ask": 89.19,
+          "candle_data_tick_count": 19142,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-09T08:00:00+00:00",
+            "last_m5": "2026-11-09T08:55:00+00:00",
+            "m5_candles": 12,
+            "first_quote_delay_minutes": 0,
+            "expected_m5_per_full_session": 12,
+            "valid_bid_ask": true,
+            "sum_tick_count": 19142
+          }
+        },
+        {
+          "date_ict": "2026-11-10",
+          "candle_label_utc": "2026-11-10T08:00:00+00:00",
+          "candle_label_ict": "2026-11-10T15:00:00+07:00",
+          "indicator_value": 0.04488,
+          "qualified": false,
+          "candle_open_bid": 84.451,
+          "candle_open_ask": 84.461,
+          "candle_data_tick_count": 31144,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-10T08:00:00+00:00",
+            "last_m5": "2026-11-10T08:55:00+00:00",
+            "m5_candles": 12,
+            "first_quote_delay_minutes": 0,
+            "expected_m5_per_full_session": 12,
+            "valid_bid_ask": true,
+            "sum_tick_count": 31144
+          }
+        },
+        {
+          "date_ict": "2026-11-11",
+          "candle_label_utc": "2026-11-11T08:00:00+00:00",
+          "candle_label_ict": "2026-11-11T15:00:00+07:00",
+          "indicator_value": 0.78703,
+          "qualified": true,
+          "candle_open_bid": 85.263,
+          "candle_open_ask": 85.273,
+          "candle_data_tick_count": 16010,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-11T08:00:00+00:00",
+            "last_m5": "2026-11-11T08:55:00+00:00",
+            "m5_candles": 12,
+            "first_quote_delay_minutes": 0,
+            "expected_m5_per_full_session": 12,
+            "valid_bid_ask": true,
+            "sum_tick_count": 16010
+          }
+        },
+        {
+          "date_ict": "2026-11-12",
+          "candle_label_utc": "2026-11-12T08:00:00+00:00",
+          "candle_label_ict": "2026-11-12T15:00:00+07:00",
+          "indicator_value": 0.50988,
+          "qualified": false,
+          "candle_open_bid": 85.953,
+          "candle_open_ask": 85.963,
+          "candle_data_tick_count": 19514,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-12T08:00:00+00:00",
+            "last_m5": "2026-11-12T08:55:00+00:00",
+            "m5_candles": 12,
+            "first_quote_delay_minutes": 0,
+            "expected_m5_per_full_session": 12,
+            "valid_bid_ask": true,
+            "sum_tick_count": 19514
+          }
+        }
+      ]
+    },
+    "B3": {
+      "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+      "signal_definition": "RSI7_from_previous_completed_H4_bar > 70",
+      "session_hours_utc": 0,
+      "session_label_hour_ict": 7,
+      "timeframe": "H4",
+      "nov_bar_count_all_hours": 53,
+      "nov_scheduled_bars": 9,
+      "qualified_nov_scheduled_bars": 0,
+      "other_hours_qualified_bars": 0,
+      "nov_closed_orders": 0,
+      "nov_open_orders": 0,
+      "nov_qualified_min": 12.3552,
+      "nov_qualified_max": 51.26862,
+      "historical_qualifying_session_bars_count": 79,
+      "historical_distinct_calendar_days_in_dataset": 473,
+      "days_with_no_candle_data": 0,
+      "days_with_available_m5_at_exact_label": 0,
+      "sessions": [
+        {
+          "date_ict": "2026-11-02",
+          "candle_label_utc": "2026-11-02T00:00:00+00:00",
+          "candle_label_ict": "2026-11-02T07:00:00+07:00",
+          "indicator_value": 51.26862,
+          "qualified": false,
+          "candle_open_bid": 110.558,
+          "candle_open_ask": 110.57,
+          "candle_data_tick_count": 22904,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-02T01:10:00+00:00",
+            "last_m5": "2026-11-02T03:55:00+00:00",
+            "m5_candles": 34,
+            "first_quote_delay_minutes": 70,
+            "expected_m5_per_full_session": 48,
+            "valid_bid_ask": true,
+            "sum_tick_count": 22904
+          }
+        },
+        {
+          "date_ict": "2026-11-03",
+          "candle_label_utc": "2026-11-03T00:00:00+00:00",
+          "candle_label_ict": "2026-11-03T07:00:00+07:00",
+          "indicator_value": 15.38051,
+          "qualified": false,
+          "candle_open_bid": 104.148,
+          "candle_open_ask": 104.16,
+          "candle_data_tick_count": 21187,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-03T01:10:00+00:00",
+            "last_m5": "2026-11-03T03:55:00+00:00",
+            "m5_candles": 34,
+            "first_quote_delay_minutes": 70,
+            "expected_m5_per_full_session": 48,
+            "valid_bid_ask": true,
+            "sum_tick_count": 21187
+          }
+        },
+        {
+          "date_ict": "2026-11-04",
+          "candle_label_utc": "2026-11-04T00:00:00+00:00",
+          "candle_label_ict": "2026-11-04T07:00:00+07:00",
+          "indicator_value": 35.44774,
+          "qualified": false,
+          "candle_open_bid": 103.601,
+          "candle_open_ask": 103.613,
+          "candle_data_tick_count": 22304,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-04T01:10:00+00:00",
+            "last_m5": "2026-11-04T03:55:00+00:00",
+            "m5_candles": 34,
+            "first_quote_delay_minutes": 70,
+            "expected_m5_per_full_session": 48,
+            "valid_bid_ask": true,
+            "sum_tick_count": 22304
+          }
+        },
+        {
+          "date_ict": "2026-11-05",
+          "candle_label_utc": "2026-11-05T00:00:00+00:00",
+          "candle_label_ict": "2026-11-05T07:00:00+07:00",
+          "indicator_value": 12.3552,
+          "qualified": false,
+          "candle_open_bid": 93.536,
+          "candle_open_ask": 93.548,
+          "candle_data_tick_count": 37773,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-05T01:10:00+00:00",
+            "last_m5": "2026-11-05T03:55:00+00:00",
+            "m5_candles": 34,
+            "first_quote_delay_minutes": 70,
+            "expected_m5_per_full_session": 48,
+            "valid_bid_ask": true,
+            "sum_tick_count": 37773
+          }
+        },
+        {
+          "date_ict": "2026-11-06",
+          "candle_label_utc": "2026-11-06T00:00:00+00:00",
+          "candle_label_ict": "2026-11-06T07:00:00+07:00",
+          "indicator_value": 48.64241,
+          "qualified": false,
+          "candle_open_bid": 97.856,
+          "candle_open_ask": 97.868,
+          "candle_data_tick_count": 25696,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-06T01:10:00+00:00",
+            "last_m5": "2026-11-06T03:55:00+00:00",
+            "m5_candles": 34,
+            "first_quote_delay_minutes": 70,
+            "expected_m5_per_full_session": 48,
+            "valid_bid_ask": true,
+            "sum_tick_count": 25696
+          }
+        },
+        {
+          "date_ict": "2026-11-09",
+          "candle_label_utc": "2026-11-09T00:00:00+00:00",
+          "candle_label_ict": "2026-11-09T07:00:00+07:00",
+          "indicator_value": 44.45748,
+          "qualified": false,
+          "candle_open_bid": 96.242,
+          "candle_open_ask": 96.254,
+          "candle_data_tick_count": 21456,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-09T01:10:00+00:00",
+            "last_m5": "2026-11-09T03:55:00+00:00",
+            "m5_candles": 34,
+            "first_quote_delay_minutes": 70,
+            "expected_m5_per_full_session": 48,
+            "valid_bid_ask": true,
+            "sum_tick_count": 21456
+          }
+        },
+        {
+          "date_ict": "2026-11-10",
+          "candle_label_utc": "2026-11-10T00:00:00+00:00",
+          "candle_label_ict": "2026-11-10T07:00:00+07:00",
+          "indicator_value": 23.3053,
+          "qualified": false,
+          "candle_open_bid": 91.357,
+          "candle_open_ask": 91.369,
+          "candle_data_tick_count": 23031,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-10T01:10:00+00:00",
+            "last_m5": "2026-11-10T03:55:00+00:00",
+            "m5_candles": 34,
+            "first_quote_delay_minutes": 70,
+            "expected_m5_per_full_session": 48,
+            "valid_bid_ask": true,
+            "sum_tick_count": 23031
+          }
+        },
+        {
+          "date_ict": "2026-11-11",
+          "candle_label_utc": "2026-11-11T00:00:00+00:00",
+          "candle_label_ict": "2026-11-11T07:00:00+07:00",
+          "indicator_value": 38.26649,
+          "qualified": false,
+          "candle_open_bid": 91.203,
+          "candle_open_ask": 91.215,
+          "candle_data_tick_count": 15110,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-11T01:10:00+00:00",
+            "last_m5": "2026-11-11T03:55:00+00:00",
+            "m5_candles": 34,
+            "first_quote_delay_minutes": 70,
+            "expected_m5_per_full_session": 48,
+            "valid_bid_ask": true,
+            "sum_tick_count": 15110
+          }
+        },
+        {
+          "date_ict": "2026-11-12",
+          "candle_label_utc": "2026-11-12T00:00:00+00:00",
+          "candle_label_ict": "2026-11-12T07:00:00+07:00",
+          "indicator_value": 46.11874,
+          "qualified": false,
+          "candle_open_bid": 91.013,
+          "candle_open_ask": 91.025,
+          "candle_data_tick_count": 12549,
+          "first_quote_of_candle": {
+            "has_ohlc_bar": true,
+            "first_m5": "2026-11-12T01:10:00+00:00",
+            "last_m5": "2026-11-12T03:55:00+00:00",
+            "m5_candles": 34,
+            "first_quote_delay_minutes": 70,
+            "expected_m5_per_full_session": 48,
+            "valid_bid_ask": true,
+            "sum_tick_count": 12549
+          }
+        }
+      ]
+    }
+  },
+  "interpretation": {
+    "b1": "At 08:00 UTC USOIL H1, all US market-open trading dates available; range_top20 fires only if previous price closes in top quarter of prior 20-bar range.",
+    "b3": "00:00 UTC H4 label has no tradable quote on all 9 days: first tick near 01:10 UTC; aggregated candle opens at first actual trade quote. RSI7 stayed below 70, so even at delayed executable quote time no trigger in frozen strategy.",
+    "disclaimer": "Backtesting tick data does not prove a running MT5 EA or VPS is healthy, to verify runtime check Journal/Experts logs."
+  }
+}
