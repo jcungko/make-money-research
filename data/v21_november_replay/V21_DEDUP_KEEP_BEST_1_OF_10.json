@@ -1,0 +1,159 @@
+{
+  "asof_utc": "2026-11-12T18:00:00Z",
+  "rule": "Among portfolios with any shared identical bot configuration AND entry time, select the portfolio with highest 2026-Nov modeled profit; tie-break 22-month profit and number of November closed leg trades.",
+  "input_10": "data/v21_november_replay/V21_NOV_SURVIVORS.json",
+  "shared_identical_bot_all_10": [
+    "BTCUSD|H4|range_top_20|short|H3|20utc"
+  ],
+  "initial": 10,
+  "eliminated": 9,
+  "remaining": 1,
+  "selected": {
+    "id": "V21-P4-195",
+    "composition": "4 BTCUSD + 0 ETHUSD",
+    "november_profit_bp": 32.03916,
+    "november_closed_trades": 16,
+    "historical_2025_to_oct2026_bp": 3050.6204,
+    "legs": [
+      "BTCUSD|H1|range_top_20|long|H2|08utc",
+      "BTCUSD|H1|above_sma_50|short|H8|00utc",
+      "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+      "BTCUSD|H4|range_top_20|short|H3|20utc"
+    ],
+    "leg_november_bp": [
+      34.58516,
+      54.5855,
+      88.31421,
+      -49.32824
+    ],
+    "leg_november_trades": [
+      4,
+      4,
+      7,
+      1
+    ],
+    "passed_november_profit_filter": true
+  },
+  "excluded": [
+    {
+      "id": "V21-P4-041",
+      "november_profit_bp": 30.31055,
+      "november_closed_trades": 14,
+      "historical_2025_to_oct2026_bp": 3096.20017,
+      "shared_legs_with_chosen": [
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "common_conflict": [
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ]
+    },
+    {
+      "id": "V21-P4-047",
+      "november_profit_bp": 30.31055,
+      "november_closed_trades": 14,
+      "historical_2025_to_oct2026_bp": 3028.91909,
+      "shared_legs_with_chosen": [
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "common_conflict": [
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ]
+    },
+    {
+      "id": "V21-P4-052",
+      "november_profit_bp": 22.56308,
+      "november_closed_trades": 12,
+      "historical_2025_to_oct2026_bp": 3023.47932,
+      "shared_legs_with_chosen": [
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "common_conflict": [
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ]
+    },
+    {
+      "id": "V21-P4-194",
+      "november_profit_bp": 17.12303,
+      "november_closed_trades": 15,
+      "historical_2025_to_oct2026_bp": 3174.875,
+      "shared_legs_with_chosen": [
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "common_conflict": [
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ]
+    },
+    {
+      "id": "V21-P4-085",
+      "november_profit_bp": 14.71576,
+      "november_closed_trades": 13,
+      "historical_2025_to_oct2026_bp": 3067.70238,
+      "shared_legs_with_chosen": [
+        "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "common_conflict": [
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ]
+    },
+    {
+      "id": "V21-P4-064",
+      "november_profit_bp": 12.20877,
+      "november_closed_trades": 12,
+      "historical_2025_to_oct2026_bp": 3109.12974,
+      "shared_legs_with_chosen": [
+        "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "common_conflict": [
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ]
+    },
+    {
+      "id": "V21-P4-095",
+      "november_profit_bp": 12.20877,
+      "november_closed_trades": 12,
+      "historical_2025_to_oct2026_bp": 3040.08716,
+      "shared_legs_with_chosen": [
+        "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "common_conflict": [
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ]
+    },
+    {
+      "id": "V21-P4-098",
+      "november_profit_bp": 9.37556,
+      "november_closed_trades": 13,
+      "historical_2025_to_oct2026_bp": 3102.15416,
+      "shared_legs_with_chosen": [
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "common_conflict": [
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ]
+    },
+    {
+      "id": "V21-P4-089",
+      "november_profit_bp": 4.82974,
+      "november_closed_trades": 14,
+      "historical_2025_to_oct2026_bp": 3076.20199,
+      "shared_legs_with_chosen": [
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "common_conflict": [
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ]
+    }
+  ],
+  "caveats": [
+    "The 10 four-bot portfolios are overlapping, not identical portfolios.",
+    "No claims of forward profitability; simulated Exness Bid/Ask plus assumed slippage, no swap or commission.",
+    "Retained complete four-bot portfolio; removing any component requires re-backtesting its monthly historical returns."
+  ]
+}
