@@ -1,0 +1,115 @@
+{
+  "portfolio": "V19-065",
+  "bot": "B3",
+  "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+  "period": "2026-11-01 through 2026-11-12 18:00 UTC exclusive",
+  "source": "Existing frozen 2026-Nov M5 from Exness and 2025-2026 historical warm-up",
+  "signal": "At H4 bars labelled 00:00 UTC (07:00 ICT), SHORT only when RSI7 of previous fully closed H4 bar > 70; fixed holding 3 H4 bars unless SL hits, hard SL 4%. No forced daily trade.",
+  "scheduled_00utc_h4_bars": 9,
+  "qualified_00utc_signals": 0,
+  "maximum_00utc_prev_rsi7": 51.26862,
+  "minimum_00utc_prev_rsi7": 12.3552,
+  "h4_bars_all_schedules": 53,
+  "qualified_h4_signals_at_any_hour": 0,
+  "signal_by_h4_bar_start_hour": {
+    "00:00": {
+      "bar_count": 9,
+      "rsi_above_70": 0
+    },
+    "04:00": {
+      "bar_count": 9,
+      "rsi_above_70": 0
+    },
+    "08:00": {
+      "bar_count": 9,
+      "rsi_above_70": 0
+    },
+    "12:00": {
+      "bar_count": 9,
+      "rsi_above_70": 0
+    },
+    "16:00": {
+      "bar_count": 9,
+      "rsi_above_70": 0
+    },
+    "20:00": {
+      "bar_count": 8,
+      "rsi_above_70": 0
+    }
+  },
+  "all_00utc_checks": [
+    {
+      "date_utc": "2026-11-02",
+      "bar_utc": "2026-11-02T00:00:00+00:00",
+      "previous_closed_h4_rsi7": 51.269,
+      "above_70": false,
+      "bar_bid_open": 110.558,
+      "bar_ask_open": 110.57
+    },
+    {
+      "date_utc": "2026-11-03",
+      "bar_utc": "2026-11-03T00:00:00+00:00",
+      "previous_closed_h4_rsi7": 15.381,
+      "above_70": false,
+      "bar_bid_open": 104.148,
+      "bar_ask_open": 104.16
+    },
+    {
+      "date_utc": "2026-11-04",
+      "bar_utc": "2026-11-04T00:00:00+00:00",
+      "previous_closed_h4_rsi7": 35.448,
+      "above_70": false,
+      "bar_bid_open": 103.601,
+      "bar_ask_open": 103.613
+    },
+    {
+      "date_utc": "2026-11-05",
+      "bar_utc": "2026-11-05T00:00:00+00:00",
+      "previous_closed_h4_rsi7": 12.355,
+      "above_70": false,
+      "bar_bid_open": 93.536,
+      "bar_ask_open": 93.548
+    },
+    {
+      "date_utc": "2026-11-06",
+      "bar_utc": "2026-11-06T00:00:00+00:00",
+      "previous_closed_h4_rsi7": 48.642,
+      "above_70": false,
+      "bar_bid_open": 97.856,
+      "bar_ask_open": 97.868
+    },
+    {
+      "date_utc": "2026-11-09",
+      "bar_utc": "2026-11-09T00:00:00+00:00",
+      "previous_closed_h4_rsi7": 44.457,
+      "above_70": false,
+      "bar_bid_open": 96.242,
+      "bar_ask_open": 96.254
+    },
+    {
+      "date_utc": "2026-11-10",
+      "bar_utc": "2026-11-10T00:00:00+00:00",
+      "previous_closed_h4_rsi7": 23.305,
+      "above_70": false,
+      "bar_bid_open": 91.357,
+      "bar_ask_open": 91.369
+    },
+    {
+      "date_utc": "2026-11-11",
+      "bar_utc": "2026-11-11T00:00:00+00:00",
+      "previous_closed_h4_rsi7": 38.266,
+      "above_70": false,
+      "bar_bid_open": 91.203,
+      "bar_ask_open": 91.215
+    },
+    {
+      "date_utc": "2026-11-12",
+      "bar_utc": "2026-11-12T00:00:00+00:00",
+      "previous_closed_h4_rsi7": 46.119,
+      "above_70": false,
+      "bar_bid_open": 91.013,
+      "bar_ask_open": 91.025
+    }
+  ],
+  "any_h4_rsi7_above_70": []
+}
