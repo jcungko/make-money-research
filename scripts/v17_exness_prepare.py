@@ -51,8 +51,8 @@ def build_from_m5(m5, freq, first_full=None):
     bar_end = bars.index + (pd.Timedelta(days=1) if freq == '1D' else pd.Timedelta(days=7))
     return bars.loc[bar_end <= cutoff]
 
-def pack(symbol, root, outdir, run_id):
-    found = list(root.rglob(f'{symbol}_M5_2026_UTC.csv.gz'))
+def pack(symbol, root, outdir, run_id, year):
+    found = list(root.rglob(f'{symbol}_M5_{year}_UTC.csv.gz'))
     if len(found) != 1:
         raise ValueError(f'{symbol}: expected one M5 archive, found {len(found)}')
     folder = found[0].parent
@@ -60,14 +60,14 @@ def pack(symbol, root, outdir, run_id):
     if not source_manifest.is_file():
         raise ValueError(f'{symbol}: missing V12 provenance manifest')
     provenance = json.loads(source_manifest.read_text(encoding='utf-8'))
-    if provenance.get('symbol') != symbol or provenance.get('year') != 2026:
+    if provenance.get('symbol') != symbol or provenance.get('year') != year:
         raise ValueError(f'{symbol}: inconsistent source provenance')
     if not provenance.get('complete_monthly_download') or provenance.get('errors'):
         raise ValueError(f'{symbol}: upstream monthly archive incomplete; check V12 manifest')
 
     raw = {}
     for tf in FRAMES:
-        p = folder / f'{symbol}_{tf}_2026_UTC.csv.gz'
+        p = folder / f'{symbol}_{tf}_{year}_UTC.csv.gz'
         if not p.is_file():
             raise ValueError(f'{symbol}: missing {tf} source frame')
         raw[tf] = load_csv(p)
@@ -84,7 +84,7 @@ def pack(symbol, root, outdir, run_id):
 
     meta = {
         'version':'V17', 'symbol':symbol, 'price_source':'Exness publicly archived ticks',
-        'price_type':'bid_and_ask', 'timezone':'UTC', 'year':2026,
+        'price_type':'bid_and_ask', 'timezone':'UTC', 'year':year,
         'source_v12_workflow_run_id':run_id,
         'source_months':provenance.get('months',[]),
         'source_cutoff_utc':provenance.get('last_complete_candle_cutoff_exclusive_utc'),
@@ -98,12 +98,12 @@ def pack(symbol, root, outdir, run_id):
         'assembled_at_utc':datetime.now(timezone.utc).isoformat()
     }
     outdir.mkdir(parents=True, exist_ok=True)
-    target = outdir / f'{symbol}_2026_UTC_7TF.zip'
+    target = outdir / f'{symbol}_{year}_UTC_7TF.zip'
     with zipfile.ZipFile(target, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=6) as z:
         for tf, bars in raw.items():
             # UTF-8 CSV with timestamp_utc index, all nine bid/ask + tick_count fields.
             payload = bars.to_csv(index_label='timestamp_utc',float_format='%.6f')
-            z.writestr(f'{symbol}_{tf}_2026_UTC.csv',payload)
+            z.writestr(f'{symbol}_{tf}_{year}_UTC.csv',payload)
         z.writestr('manifest.json',json.dumps(meta,ensure_ascii=False,indent=2)+'\n')
     (outdir / f'{symbol}_manifest.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'symbol':symbol, 'zip':str(target), 'bytes':target.stat().st_size,
@@ -114,6 +114,7 @@ if __name__ == '__main__':
     cli.add_argument('--input',required=True,type=Path)
     cli.add_argument('--out',default='data/v17_exness_2026',type=Path)
     cli.add_argument('--run-id',type=int,default=42964857297)
+    cli.add_argument('--year',type=int,choices=[2025,2026],default=2026)
     args = cli.parse_args()
     for s in ('EURUSD','USDJPY','GBPUSD'):
-        pack(s,args.input,args.out,args.run_id)
+        pack(s,args.input,args.out,args.run_id,args.year)
