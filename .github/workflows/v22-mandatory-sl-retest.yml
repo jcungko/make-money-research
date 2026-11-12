@@ -1,0 +1,45 @@
+name: V22 hard stop loss replay 2025 2026 November
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v22-mandatory-sl-retest.yml'
+      - 'scripts/v22_mandatory_sl_retest.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install quantitative research packages
+        run: pip install 'pandas>=2.2,<3' 'numpy>=1.26,<3' 'requests>=2.31'
+      - name: Backtest mandatory SL on 276 EA portfolios with Exness Bid/Ask history
+        run: python -u scripts/v22_mandatory_sl_retest.py
+      - name: Export complete SL backtest and removed-strategy audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: V22-Mandatory-SL-Replay-2025-to-Nov2026
+          path: results/v22_sl_backtest_2025_2026_nov/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Publish audited final list
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v22_sl_backtest_2025_2026_nov/
+          if ! git diff --cached --quiet; then
+            git commit -m "V22: mandatory bid-ask stop-loss full retest and survivors"
+            for n in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && exit 0
+              sleep "$((n * 3))"
+            done
+            exit 1
+          fi
