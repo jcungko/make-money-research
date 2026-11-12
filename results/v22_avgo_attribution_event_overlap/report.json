@@ -1,0 +1,1779 @@
+{
+  "version": "V22-AVGO-RISK-ATTRIBUTION-NEWS-EXCLUSION",
+  "date_of_analysis": "2026-11-12T21:43:00.801118+00:00",
+  "original_backtest_period": "2025-01-01 through 2026-10-31 plus 2026-11-01 to 2026-11-12 19:55 UTC",
+  "november_partial": true,
+  "source": "Original V22 strategy signals + mandatory ATR SL + Exness Bid/Ask M5 exit simulations",
+  "basis_points_explainer": "Component raw bps sums are not dollars or account ROI; portfolio bps is arithmetic mean per EA component with equal notionals",
+  "news_exclusion_definition": "Skip new entries on UTC calendar dates 2026-11-09,10,11,12 for all symbols; keep historical candle signals unchanged; no trade opened on excluded day. Only November 2-6 remains in observed sample.",
+  "avgo_only_exclusion_definition": "Only skip AVGO EA new entries on excluded dates; non-AVGO entries on dates continue.",
+  "overlap_definition": "Both AVGO EA positions simultaneously open based on signal timestamps and M5 bar exit timing. Since exact stop hit is unknown within M5, exit time upper-bound is end of first M5 stop bar, and some borderline overlaps may be false positives.",
+  "no_live_trading_authorization": "No proven fills, commission not included; event filter is hindsight and not a forward-tradable news classifier.",
+  "portfolios": {
+    "V22-K0549": {
+      "portfolio_id": "V22-K0549",
+      "original_number_of_bots": 2,
+      "baseline": {
+        "portfolio_bps": 368.822218,
+        "trades": 8,
+        "wins": 7,
+        "losses": 1,
+        "flat": 0,
+        "win_rate_percent": 87.5,
+        "profitable": true,
+        "wins_gt_losses": true,
+        "two_or_more_trades": true,
+        "passes_nov_filters": true
+      },
+      "exclusion_09to12_all_assets": {
+        "portfolio_bps": 298.616975,
+        "trades": 5,
+        "wins": 5,
+        "losses": 0,
+        "flat": 0,
+        "win_rate_percent": 100.0,
+        "profitable": true,
+        "wins_gt_losses": true,
+        "two_or_more_trades": true,
+        "passes_nov_filters": true
+      },
+      "exclusion_09to12_only_avgo_trades": {
+        "portfolio_bps": 370.971661,
+        "trades": 6,
+        "wins": 6,
+        "losses": 0,
+        "flat": 0,
+        "win_rate_percent": 100.0,
+        "profitable": true,
+        "wins_gt_losses": true,
+        "two_or_more_trades": true,
+        "passes_nov_filters": true
+      },
+      "event_trades_all_assets": 3,
+      "event_profit_contribution_bps": 70.205243,
+      "event_profit_fraction_of_baseline_percent": 19.035,
+      "nov_component_avgo_contribution_bps": 221.848832,
+      "nov_component_rest_contribution_bps": 146.973387,
+      "nov_avgo_trades": 5,
+      "nov_non_avgo_trades": 3,
+      "hypothetical_remove_avgo_and_reweight_other_bots": {
+        "2025_bps": 1133.440958,
+        "2026_JanOct_bps": -213.536399,
+        "nov_to_date_bps": 293.946773,
+        "nov_remaining_wins": 3,
+        "nov_remaining_losses": 0,
+        "nov_remaining_trades": 3
+      },
+      "components": [
+        {
+          "component_index": 1,
+          "symbol": "AVGO",
+          "tf": "M15",
+          "family": "RSI_14_40",
+          "orientation": "FOLLOW",
+          "regime": "D1_ALIGN",
+          "entry_window_start_utc": 15,
+          "hold_minutes": 180,
+          "component_weight": 0.5,
+          "gross_2025_component_bps": 605.927327,
+          "gross_2026_JanOct_component_bps": 924.695935,
+          "gross_Nov_component_bps": 443.697663,
+          "portfolio_contribution_2025_bps": 302.963664,
+          "portfolio_contribution_2026_JanOct_bps": 462.347967,
+          "portfolio_contribution_Nov_bps": 221.848832,
+          "nov_trades": 5,
+          "nov_wins": 4,
+          "nov_losses": 1,
+          "nov_stops": 1,
+          "nov_event_09to12_trades": 2,
+          "nov_event_09to12_contribution_bps": -2.149443,
+          "nov_non_event_contribution_bps": 223.998274
+        },
+        {
+          "component_index": 2,
+          "symbol": "GOOGL",
+          "tf": "H1",
+          "family": "MOMENTUM_32",
+          "orientation": "FADE",
+          "regime": "W1_ALIGN",
+          "entry_window_start_utc": 15,
+          "hold_minutes": 240,
+          "component_weight": 0.5,
+          "gross_2025_component_bps": 1133.440958,
+          "gross_2026_JanOct_component_bps": -213.536399,
+          "gross_Nov_component_bps": 293.946773,
+          "portfolio_contribution_2025_bps": 566.720479,
+          "portfolio_contribution_2026_JanOct_bps": -106.7682,
+          "portfolio_contribution_Nov_bps": 146.973387,
+          "nov_trades": 3,
+          "nov_wins": 3,
+          "nov_losses": 0,
+          "nov_stops": 0,
+          "nov_event_09to12_trades": 1,
+          "nov_event_09to12_contribution_bps": 72.354685,
+          "nov_non_event_contribution_bps": 74.618701
+        }
+      ],
+      "nov_daily_portfolio_bps": {
+        "20261104": {
+          "portfolio_bps": 9.178813,
+          "trades": 1,
+          "wins": 1,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261105": {
+          "portfolio_bps": 244.636575,
+          "trades": 2,
+          "wins": 2,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": true,
+          "passes_nov_filters": true
+        },
+        "20261106": {
+          "portfolio_bps": 44.801588,
+          "trades": 2,
+          "wins": 2,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": true,
+          "passes_nov_filters": true
+        },
+        "20261110": {
+          "portfolio_bps": -46.090067,
+          "trades": 1,
+          "wins": 0,
+          "losses": 1,
+          "flat": 0,
+          "win_rate_percent": 0.0,
+          "profitable": false,
+          "wins_gt_losses": false,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261111": {
+          "portfolio_bps": 116.29531,
+          "trades": 2,
+          "wins": 2,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": true,
+          "passes_nov_filters": true
+        }
+      },
+      "nov_daily_AVGO_bps": {
+        "20261104": {
+          "portfolio_bps": 9.178813,
+          "trades": 1,
+          "wins": 1,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261105": {
+          "portfolio_bps": 190.069406,
+          "trades": 1,
+          "wins": 1,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261106": {
+          "portfolio_bps": 24.750055,
+          "trades": 1,
+          "wins": 1,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261110": {
+          "portfolio_bps": -46.090067,
+          "trades": 1,
+          "wins": 0,
+          "losses": 1,
+          "flat": 0,
+          "win_rate_percent": 0.0,
+          "profitable": false,
+          "wins_gt_losses": false,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261111": {
+          "portfolio_bps": 43.940624,
+          "trades": 1,
+          "wins": 1,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        }
+      }
+    },
+    "V22-K1736": {
+      "portfolio_id": "V22-K1736",
+      "original_number_of_bots": 4,
+      "baseline": {
+        "portfolio_bps": 280.934584,
+        "trades": 24,
+        "wins": 13,
+        "losses": 11,
+        "flat": 0,
+        "win_rate_percent": 54.167,
+        "profitable": true,
+        "wins_gt_losses": true,
+        "two_or_more_trades": true,
+        "passes_nov_filters": true
+      },
+      "exclusion_09to12_all_assets": {
+        "portfolio_bps": 208.8481,
+        "trades": 13,
+        "wins": 8,
+        "losses": 5,
+        "flat": 0,
+        "win_rate_percent": 61.538,
+        "profitable": true,
+        "wins_gt_losses": true,
+        "two_or_more_trades": true,
+        "passes_nov_filters": true
+      },
+      "exclusion_09to12_only_avgo_trades": {
+        "portfolio_bps": 282.009305,
+        "trades": 22,
+        "wins": 12,
+        "losses": 10,
+        "flat": 0,
+        "win_rate_percent": 54.545,
+        "profitable": true,
+        "wins_gt_losses": true,
+        "two_or_more_trades": true,
+        "passes_nov_filters": true
+      },
+      "event_trades_all_assets": 11,
+      "event_profit_contribution_bps": 72.086484,
+      "event_profit_fraction_of_baseline_percent": 25.66,
+      "nov_component_avgo_contribution_bps": 110.924416,
+      "nov_component_rest_contribution_bps": 170.010168,
+      "nov_avgo_trades": 5,
+      "nov_non_avgo_trades": 19,
+      "hypothetical_remove_avgo_and_reweight_other_bots": {
+        "2025_bps": 4.250034,
+        "2026_JanOct_bps": 1033.506139,
+        "nov_to_date_bps": 226.680224,
+        "nov_remaining_wins": 9,
+        "nov_remaining_losses": 10,
+        "nov_remaining_trades": 19
+      },
+      "components": [
+        {
+          "component_index": 1,
+          "symbol": "NVDA",
+          "tf": "M5",
+          "family": "SMA_16",
+          "orientation": "FADE",
+          "regime": "ANY",
+          "entry_window_start_utc": 15,
+          "hold_minutes": 240,
+          "component_weight": 0.25,
+          "gross_2025_component_bps": 946.577646,
+          "gross_2026_JanOct_component_bps": -617.459698,
+          "gross_Nov_component_bps": 248.493074,
+          "portfolio_contribution_2025_bps": 236.644412,
+          "portfolio_contribution_2026_JanOct_bps": -154.364924,
+          "portfolio_contribution_Nov_bps": 62.123268,
+          "nov_trades": 9,
+          "nov_wins": 4,
+          "nov_losses": 5,
+          "nov_stops": 4,
+          "nov_event_09to12_trades": 4,
+          "nov_event_09to12_contribution_bps": 0.016151,
+          "nov_non_event_contribution_bps": 62.107117
+        },
+        {
+          "component_index": 2,
+          "symbol": "AMD",
+          "tf": "H1",
+          "family": "BREAKOUT_4",
+          "orientation": "LONG_ONLY",
+          "regime": "ANY",
+          "entry_window_start_utc": 12,
+          "hold_minutes": 180,
+          "component_weight": 0.25,
+          "gross_2025_component_bps": -761.757851,
+          "gross_2026_JanOct_component_bps": 3148.623574,
+          "gross_Nov_component_bps": 375.140962,
+          "portfolio_contribution_2025_bps": -190.439463,
+          "portfolio_contribution_2026_JanOct_bps": 787.155893,
+          "portfolio_contribution_Nov_bps": 93.785241,
+          "nov_trades": 5,
+          "nov_wins": 2,
+          "nov_losses": 3,
+          "nov_stops": 3,
+          "nov_event_09to12_trades": 2,
+          "nov_event_09to12_contribution_bps": 78.76869,
+          "nov_non_event_contribution_bps": 15.016551
+        },
+        {
+          "component_index": 3,
+          "symbol": "AVGO",
+          "tf": "M15",
+          "family": "ZSCORE_32_1p0",
+          "orientation": "FOLLOW",
+          "regime": "D1_ALIGN",
+          "entry_window_start_utc": 15,
+          "hold_minutes": 180,
+          "component_weight": 0.25,
+          "gross_2025_component_bps": 929.509591,
+          "gross_2026_JanOct_component_bps": 797.364487,
+          "gross_Nov_component_bps": 443.697663,
+          "portfolio_contribution_2025_bps": 232.377398,
+          "portfolio_contribution_2026_JanOct_bps": 199.341122,
+          "portfolio_contribution_Nov_bps": 110.924416,
+          "nov_trades": 5,
+          "nov_wins": 4,
+          "nov_losses": 1,
+          "nov_stops": 1,
+          "nov_event_09to12_trades": 2,
+          "nov_event_09to12_contribution_bps": -1.074721,
+          "nov_non_event_contribution_bps": 111.999137
+        },
+        {
+          "component_index": 4,
+          "symbol": "GOOGL",
+          "tf": "M5",
+          "family": "DAILY_PREVIOUS",
+          "orientation": "FADE",
+          "regime": "W1_ALIGN",
+          "entry_window_start_utc": 17,
+          "hold_minutes": 120,
+          "component_weight": 0.25,
+          "gross_2025_component_bps": -172.069692,
+          "gross_2026_JanOct_component_bps": 569.354542,
+          "gross_Nov_component_bps": 56.406636,
+          "portfolio_contribution_2025_bps": -43.017423,
+          "portfolio_contribution_2026_JanOct_bps": 142.338636,
+          "portfolio_contribution_Nov_bps": 14.101659,
+          "nov_trades": 5,
+          "nov_wins": 3,
+          "nov_losses": 2,
+          "nov_stops": 2,
+          "nov_event_09to12_trades": 3,
+          "nov_event_09to12_contribution_bps": -5.623635,
+          "nov_non_event_contribution_bps": 19.725294
+        }
+      ],
+      "nov_daily_portfolio_bps": {
+        "20261102": {
+          "portfolio_bps": -63.84251,
+          "trades": 2,
+          "wins": 0,
+          "losses": 2,
+          "flat": 0,
+          "win_rate_percent": 0.0,
+          "profitable": false,
+          "wins_gt_losses": false,
+          "two_or_more_trades": true,
+          "passes_nov_filters": false
+        },
+        "20261103": {
+          "portfolio_bps": -0.860811,
+          "trades": 1,
+          "wins": 0,
+          "losses": 1,
+          "flat": 0,
+          "win_rate_percent": 0.0,
+          "profitable": false,
+          "wins_gt_losses": false,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261104": {
+          "portfolio_bps": -8.570887,
+          "trades": 4,
+          "wins": 3,
+          "losses": 1,
+          "flat": 0,
+          "win_rate_percent": 75.0,
+          "profitable": false,
+          "wins_gt_losses": true,
+          "two_or_more_trades": true,
+          "passes_nov_filters": false
+        },
+        "20261105": {
+          "portfolio_bps": 79.904832,
+          "trades": 3,
+          "wins": 2,
+          "losses": 1,
+          "flat": 0,
+          "win_rate_percent": 66.667,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": true,
+          "passes_nov_filters": true
+        },
+        "20261106": {
+          "portfolio_bps": 202.217475,
+          "trades": 3,
+          "wins": 3,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": true,
+          "passes_nov_filters": true
+        },
+        "20261109": {
+          "portfolio_bps": 147.476747,
+          "trades": 3,
+          "wins": 2,
+          "losses": 1,
+          "flat": 0,
+          "win_rate_percent": 66.667,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": true,
+          "passes_nov_filters": true
+        },
+        "20261110": {
+          "portfolio_bps": -62.720603,
+          "trades": 3,
+          "wins": 0,
+          "losses": 3,
+          "flat": 0,
+          "win_rate_percent": 0.0,
+          "profitable": false,
+          "wins_gt_losses": false,
+          "two_or_more_trades": true,
+          "passes_nov_filters": false
+        },
+        "20261111": {
+          "portfolio_bps": 37.83034,
+          "trades": 4,
+          "wins": 3,
+          "losses": 1,
+          "flat": 0,
+          "win_rate_percent": 75.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": true,
+          "passes_nov_filters": true
+        },
+        "20261112": {
+          "portfolio_bps": -50.5,
+          "trades": 1,
+          "wins": 0,
+          "losses": 1,
+          "flat": 0,
+          "win_rate_percent": 0.0,
+          "profitable": false,
+          "wins_gt_losses": false,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        }
+      },
+      "nov_daily_AVGO_bps": {
+        "20261104": {
+          "portfolio_bps": 4.589406,
+          "trades": 1,
+          "wins": 1,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261105": {
+          "portfolio_bps": 95.034703,
+          "trades": 1,
+          "wins": 1,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261106": {
+          "portfolio_bps": 12.375028,
+          "trades": 1,
+          "wins": 1,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261110": {
+          "portfolio_bps": -23.045033,
+          "trades": 1,
+          "wins": 0,
+          "losses": 1,
+          "flat": 0,
+          "win_rate_percent": 0.0,
+          "profitable": false,
+          "wins_gt_losses": false,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261111": {
+          "portfolio_bps": 21.970312,
+          "trades": 1,
+          "wins": 1,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        }
+      }
+    },
+    "V22-K0722": {
+      "portfolio_id": "V22-K0722",
+      "original_number_of_bots": 2,
+      "baseline": {
+        "portfolio_bps": 122.575813,
+        "trades": 12,
+        "wins": 7,
+        "losses": 5,
+        "flat": 0,
+        "win_rate_percent": 58.333,
+        "profitable": true,
+        "wins_gt_losses": true,
+        "two_or_more_trades": true,
+        "passes_nov_filters": true
+      },
+      "exclusion_09to12_all_assets": {
+        "portfolio_bps": -16.974916,
+        "trades": 6,
+        "wins": 2,
+        "losses": 4,
+        "flat": 0,
+        "win_rate_percent": 33.333,
+        "profitable": false,
+        "wins_gt_losses": false,
+        "two_or_more_trades": true,
+        "passes_nov_filters": false
+      },
+      "exclusion_09to12_only_avgo_trades": {
+        "portfolio_bps": 183.0484,
+        "trades": 10,
+        "wins": 6,
+        "losses": 4,
+        "flat": 0,
+        "win_rate_percent": 60.0,
+        "profitable": true,
+        "wins_gt_losses": true,
+        "two_or_more_trades": true,
+        "passes_nov_filters": true
+      },
+      "event_trades_all_assets": 6,
+      "event_profit_contribution_bps": 139.550729,
+      "event_profit_fraction_of_baseline_percent": 113.849,
+      "nov_component_avgo_contribution_bps": 71.248487,
+      "nov_component_rest_contribution_bps": 51.327325,
+      "nov_avgo_trades": 5,
+      "nov_non_avgo_trades": 7,
+      "hypothetical_remove_avgo_and_reweight_other_bots": {
+        "2025_bps": 647.387614,
+        "2026_JanOct_bps": -723.565199,
+        "nov_to_date_bps": 102.654651,
+        "nov_remaining_wins": 4,
+        "nov_remaining_losses": 3,
+        "nov_remaining_trades": 7
+      },
+      "components": [
+        {
+          "component_index": 1,
+          "symbol": "AVGO",
+          "tf": "H1",
+          "family": "RSI_14_40",
+          "orientation": "FOLLOW",
+          "regime": "D1_ALIGN",
+          "entry_window_start_utc": 15,
+          "hold_minutes": 120,
+          "component_weight": 0.5,
+          "gross_2025_component_bps": 195.613003,
+          "gross_2026_JanOct_component_bps": 1900.854976,
+          "gross_Nov_component_bps": 142.496975,
+          "portfolio_contribution_2025_bps": 97.806502,
+          "portfolio_contribution_2026_JanOct_bps": 950.427488,
+          "portfolio_contribution_Nov_bps": 71.248487,
+          "nov_trades": 5,
+          "nov_wins": 3,
+          "nov_losses": 2,
+          "nov_stops": 1,
+          "nov_event_09to12_trades": 2,
+          "nov_event_09to12_contribution_bps": -60.472588,
+          "nov_non_event_contribution_bps": 131.721075
+        },
+        {
+          "component_index": 2,
+          "symbol": "XOM",
+          "tf": "H1",
+          "family": "MOMENTUM_2",
+          "orientation": "LONG_ONLY",
+          "regime": "ANY",
+          "entry_window_start_utc": 14,
+          "hold_minutes": 240,
+          "component_weight": 0.5,
+          "gross_2025_component_bps": 647.387614,
+          "gross_2026_JanOct_component_bps": -723.565199,
+          "gross_Nov_component_bps": 102.654651,
+          "portfolio_contribution_2025_bps": 323.693807,
+          "portfolio_contribution_2026_JanOct_bps": -361.7826,
+          "portfolio_contribution_Nov_bps": 51.327325,
+          "nov_trades": 7,
+          "nov_wins": 4,
+          "nov_losses": 3,
+          "nov_stops": 0,
+          "nov_event_09to12_trades": 4,
+          "nov_event_09to12_contribution_bps": 200.023316,
+          "nov_non_event_contribution_bps": -148.695991
+        }
+      ],
+      "nov_daily_portfolio_bps": {
+        "20261102": {
+          "portfolio_bps": -30.88594,
+          "trades": 1,
+          "wins": 0,
+          "losses": 1,
+          "flat": 0,
+          "win_rate_percent": 0.0,
+          "profitable": false,
+          "wins_gt_losses": false,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261103": {
+          "portfolio_bps": -43.649272,
+          "trades": 1,
+          "wins": 0,
+          "losses": 1,
+          "flat": 0,
+          "win_rate_percent": 0.0,
+          "profitable": false,
+          "wins_gt_losses": false,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261104": {
+          "portfolio_bps": -83.103577,
+          "trades": 1,
+          "wins": 0,
+          "losses": 1,
+          "flat": 0,
+          "win_rate_percent": 0.0,
+          "profitable": false,
+          "wins_gt_losses": false,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261105": {
+          "portfolio_bps": 14.468731,
+          "trades": 2,
+          "wins": 1,
+          "losses": 1,
+          "flat": 0,
+          "win_rate_percent": 50.0,
+          "profitable": true,
+          "wins_gt_losses": false,
+          "two_or_more_trades": true,
+          "passes_nov_filters": false
+        },
+        "20261106": {
+          "portfolio_bps": 126.195142,
+          "trades": 1,
+          "wins": 1,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261109": {
+          "portfolio_bps": 24.981171,
+          "trades": 1,
+          "wins": 1,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261110": {
+          "portfolio_bps": -6.990343,
+          "trades": 2,
+          "wins": 1,
+          "losses": 1,
+          "flat": 0,
+          "win_rate_percent": 50.0,
+          "profitable": false,
+          "wins_gt_losses": false,
+          "two_or_more_trades": true,
+          "passes_nov_filters": false
+        },
+        "20261111": {
+          "portfolio_bps": 41.948573,
+          "trades": 2,
+          "wins": 2,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": true,
+          "passes_nov_filters": true
+        },
+        "20261112": {
+          "portfolio_bps": 79.611328,
+          "trades": 1,
+          "wins": 1,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        }
+      },
+      "nov_daily_AVGO_bps": {
+        "20261104": {
+          "portfolio_bps": -83.103577,
+          "trades": 1,
+          "wins": 0,
+          "losses": 1,
+          "flat": 0,
+          "win_rate_percent": 0.0,
+          "profitable": false,
+          "wins_gt_losses": false,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261105": {
+          "portfolio_bps": 88.62951,
+          "trades": 1,
+          "wins": 1,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261106": {
+          "portfolio_bps": 126.195142,
+          "trades": 1,
+          "wins": 1,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261110": {
+          "portfolio_bps": -101.0,
+          "trades": 1,
+          "wins": 0,
+          "losses": 1,
+          "flat": 0,
+          "win_rate_percent": 0.0,
+          "profitable": false,
+          "wins_gt_losses": false,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        },
+        "20261111": {
+          "portfolio_bps": 40.527412,
+          "trades": 1,
+          "wins": 1,
+          "losses": 0,
+          "flat": 0,
+          "win_rate_percent": 100.0,
+          "profitable": true,
+          "wins_gt_losses": true,
+          "two_or_more_trades": false,
+          "passes_nov_filters": false
+        }
+      }
+    }
+  },
+  "avgo_concurrent_risk": {
+    "unique_avgo_components_in_three_portfolios": 3,
+    "avgo_component_specs": {
+      "V22-K0549": {
+        "symbol": "AVGO",
+        "tf": "M15",
+        "family": "RSI_14_40",
+        "orientation": "FOLLOW",
+        "regime": "D1_ALIGN",
+        "hour": 15,
+        "window": 2,
+        "hold": 180
+      },
+      "V22-K1736": {
+        "symbol": "AVGO",
+        "tf": "M15",
+        "family": "ZSCORE_32_1p0",
+        "orientation": "FOLLOW",
+        "regime": "D1_ALIGN",
+        "hour": 15,
+        "window": 2,
+        "hold": 180
+      },
+      "V22-K0722": {
+        "symbol": "AVGO",
+        "tf": "H1",
+        "family": "RSI_14_40",
+        "orientation": "FOLLOW",
+        "regime": "D1_ALIGN",
+        "hour": 15,
+        "window": 2,
+        "hold": 120
+      }
+    },
+    "avgo_total_trades_nov_to_date": {
+      "V22-K0549": 5,
+      "V22-K1736": 5,
+      "V22-K0722": 5
+    },
+    "pairwise": {
+      "V22-K0549 | V22-K1736": {
+        "overlapping_intervals_all_dates": 204,
+        "overlap_same_direction_all_dates": 204,
+        "overlap_opposite_direction_all_dates": 0,
+        "overlapping_intervals_nov_to_date": 5,
+        "overlap_same_direction_nov_to_date": 5,
+        "overlap_opposite_direction_nov_to_date": 0,
+        "overlap_dates_nov_to_date": [
+          20261104,
+          20261105,
+          20261106,
+          20261110,
+          20261111
+        ],
+        "sample_nov_to_date": [
+          {
+            "pair": "V22-K0549|V22-K1736",
+            "day": 20261104,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-04T15:30:00+00:00",
+            "entry_time_B": "2026-11-04T15:30:00+00:00",
+            "exit_upper_bound_A": "2026-11-04T18:30:00+00:00",
+            "exit_upper_bound_B": "2026-11-04T18:30:00+00:00",
+            "pnl_A_bps": 18.357626,
+            "pnl_B_bps": 18.357626,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K0549|V22-K1736",
+            "day": 20261105,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-05T15:00:00+00:00",
+            "entry_time_B": "2026-11-05T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-05T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-11-05T18:00:00+00:00",
+            "pnl_A_bps": 380.138812,
+            "pnl_B_bps": 380.138812,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K0549|V22-K1736",
+            "day": 20261106,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-06T16:15:00+00:00",
+            "entry_time_B": "2026-11-06T16:15:00+00:00",
+            "exit_upper_bound_A": "2026-11-06T19:15:00+00:00",
+            "exit_upper_bound_B": "2026-11-06T19:15:00+00:00",
+            "pnl_A_bps": 49.50011,
+            "pnl_B_bps": 49.50011,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K0549|V22-K1736",
+            "day": 20261110,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-11-10T15:00:00+00:00",
+            "entry_time_B": "2026-11-10T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-10T15:50:00+00:00",
+            "exit_upper_bound_B": "2026-11-10T15:50:00+00:00",
+            "pnl_A_bps": -92.180134,
+            "pnl_B_bps": -92.180134,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K0549|V22-K1736",
+            "day": 20261111,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-11-11T15:00:00+00:00",
+            "entry_time_B": "2026-11-11T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-11T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-11-11T18:00:00+00:00",
+            "pnl_A_bps": 87.881249,
+            "pnl_B_bps": 87.881249,
+            "Nov2026": true
+          }
+        ],
+        "sample_recent_all": [
+          {
+            "pair": "V22-K0549|V22-K1736",
+            "day": 20261021,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-10-21T15:45:00+00:00",
+            "entry_time_B": "2026-10-21T15:45:00+00:00",
+            "exit_upper_bound_A": "2026-10-21T18:45:00+00:00",
+            "exit_upper_bound_B": "2026-10-21T18:45:00+00:00",
+            "pnl_A_bps": 3.621634,
+            "pnl_B_bps": 3.621634,
+            "Nov2026": false
+          },
+          {
+            "pair": "V22-K0549|V22-K1736",
+            "day": 20261022,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-10-22T15:00:00+00:00",
+            "entry_time_B": "2026-10-22T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-10-22T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-10-22T18:00:00+00:00",
+            "pnl_A_bps": -13.104257,
+            "pnl_B_bps": -13.104257,
+            "Nov2026": false
+          },
+          {
+            "pair": "V22-K0549|V22-K1736",
+            "day": 20261026,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-10-26T15:00:00+00:00",
+            "entry_time_B": "2026-10-26T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-10-26T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-10-26T18:00:00+00:00",
+            "pnl_A_bps": 36.506435,
+            "pnl_B_bps": 36.506435,
+            "Nov2026": false
+          },
+          {
+            "pair": "V22-K0549|V22-K1736",
+            "day": 20261027,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-10-27T15:00:00+00:00",
+            "entry_time_B": "2026-10-27T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-10-27T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-10-27T18:00:00+00:00",
+            "pnl_A_bps": 55.333549,
+            "pnl_B_bps": 55.333549,
+            "Nov2026": false
+          },
+          {
+            "pair": "V22-K0549|V22-K1736",
+            "day": 20261028,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-10-28T15:15:00+00:00",
+            "entry_time_B": "2026-10-28T15:15:00+00:00",
+            "exit_upper_bound_A": "2026-10-28T18:15:00+00:00",
+            "exit_upper_bound_B": "2026-10-28T18:15:00+00:00",
+            "pnl_A_bps": 66.60418,
+            "pnl_B_bps": 66.60418,
+            "Nov2026": false
+          },
+          {
+            "pair": "V22-K0549|V22-K1736",
+            "day": 20261104,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-04T15:30:00+00:00",
+            "entry_time_B": "2026-11-04T15:30:00+00:00",
+            "exit_upper_bound_A": "2026-11-04T18:30:00+00:00",
+            "exit_upper_bound_B": "2026-11-04T18:30:00+00:00",
+            "pnl_A_bps": 18.357626,
+            "pnl_B_bps": 18.357626,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K0549|V22-K1736",
+            "day": 20261105,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-05T15:00:00+00:00",
+            "entry_time_B": "2026-11-05T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-05T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-11-05T18:00:00+00:00",
+            "pnl_A_bps": 380.138812,
+            "pnl_B_bps": 380.138812,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K0549|V22-K1736",
+            "day": 20261106,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-06T16:15:00+00:00",
+            "entry_time_B": "2026-11-06T16:15:00+00:00",
+            "exit_upper_bound_A": "2026-11-06T19:15:00+00:00",
+            "exit_upper_bound_B": "2026-11-06T19:15:00+00:00",
+            "pnl_A_bps": 49.50011,
+            "pnl_B_bps": 49.50011,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K0549|V22-K1736",
+            "day": 20261110,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-11-10T15:00:00+00:00",
+            "entry_time_B": "2026-11-10T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-10T15:50:00+00:00",
+            "exit_upper_bound_B": "2026-11-10T15:50:00+00:00",
+            "pnl_A_bps": -92.180134,
+            "pnl_B_bps": -92.180134,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K0549|V22-K1736",
+            "day": 20261111,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-11-11T15:00:00+00:00",
+            "entry_time_B": "2026-11-11T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-11T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-11-11T18:00:00+00:00",
+            "pnl_A_bps": 87.881249,
+            "pnl_B_bps": 87.881249,
+            "Nov2026": true
+          }
+        ]
+      },
+      "V22-K0549 | V22-K0722": {
+        "overlapping_intervals_all_dates": 154,
+        "overlap_same_direction_all_dates": 154,
+        "overlap_opposite_direction_all_dates": 0,
+        "overlapping_intervals_nov_to_date": 5,
+        "overlap_same_direction_nov_to_date": 5,
+        "overlap_opposite_direction_nov_to_date": 0,
+        "overlap_dates_nov_to_date": [
+          20261104,
+          20261105,
+          20261106,
+          20261110,
+          20261111
+        ],
+        "sample_nov_to_date": [
+          {
+            "pair": "V22-K0549|V22-K0722",
+            "day": 20261104,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-04T15:30:00+00:00",
+            "entry_time_B": "2026-11-04T16:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-04T18:30:00+00:00",
+            "exit_upper_bound_B": "2026-11-04T18:00:00+00:00",
+            "pnl_A_bps": 18.357626,
+            "pnl_B_bps": -166.207154,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K0549|V22-K0722",
+            "day": 20261105,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-05T15:00:00+00:00",
+            "entry_time_B": "2026-11-05T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-05T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-11-05T17:00:00+00:00",
+            "pnl_A_bps": 380.138812,
+            "pnl_B_bps": 177.25902,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K0549|V22-K0722",
+            "day": 20261106,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-06T16:15:00+00:00",
+            "entry_time_B": "2026-11-06T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-06T19:15:00+00:00",
+            "exit_upper_bound_B": "2026-11-06T17:00:00+00:00",
+            "pnl_A_bps": 49.50011,
+            "pnl_B_bps": 252.390284,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K0549|V22-K0722",
+            "day": 20261110,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-11-10T15:00:00+00:00",
+            "entry_time_B": "2026-11-10T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-10T15:50:00+00:00",
+            "exit_upper_bound_B": "2026-11-10T16:50:00+00:00",
+            "pnl_A_bps": -92.180134,
+            "pnl_B_bps": -202.0,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K0549|V22-K0722",
+            "day": 20261111,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-11-11T15:00:00+00:00",
+            "entry_time_B": "2026-11-11T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-11T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-11-11T17:00:00+00:00",
+            "pnl_A_bps": 87.881249,
+            "pnl_B_bps": 81.054825,
+            "Nov2026": true
+          }
+        ],
+        "sample_recent_all": [
+          {
+            "pair": "V22-K0549|V22-K0722",
+            "day": 20261013,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-10-13T15:00:00+00:00",
+            "entry_time_B": "2026-10-13T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-10-13T16:25:00+00:00",
+            "exit_upper_bound_B": "2026-10-13T17:00:00+00:00",
+            "pnl_A_bps": -56.618587,
+            "pnl_B_bps": -39.541458,
+            "Nov2026": false
+          },
+          {
+            "pair": "V22-K0549|V22-K0722",
+            "day": 20261015,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-10-15T15:00:00+00:00",
+            "entry_time_B": "2026-10-15T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-10-15T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-10-15T17:00:00+00:00",
+            "pnl_A_bps": 57.500256,
+            "pnl_B_bps": 46.948487,
+            "Nov2026": false
+          },
+          {
+            "pair": "V22-K0549|V22-K0722",
+            "day": 20261022,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-10-22T15:00:00+00:00",
+            "entry_time_B": "2026-10-22T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-10-22T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-10-22T17:00:00+00:00",
+            "pnl_A_bps": -13.104257,
+            "pnl_B_bps": -20.198643,
+            "Nov2026": false
+          },
+          {
+            "pair": "V22-K0549|V22-K0722",
+            "day": 20261027,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-10-27T15:00:00+00:00",
+            "entry_time_B": "2026-10-27T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-10-27T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-10-27T17:00:00+00:00",
+            "pnl_A_bps": 55.333549,
+            "pnl_B_bps": 77.678932,
+            "Nov2026": false
+          },
+          {
+            "pair": "V22-K0549|V22-K0722",
+            "day": 20261028,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-10-28T15:15:00+00:00",
+            "entry_time_B": "2026-10-28T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-10-28T18:15:00+00:00",
+            "exit_upper_bound_B": "2026-10-28T17:00:00+00:00",
+            "pnl_A_bps": 66.60418,
+            "pnl_B_bps": 109.154644,
+            "Nov2026": false
+          },
+          {
+            "pair": "V22-K0549|V22-K0722",
+            "day": 20261104,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-04T15:30:00+00:00",
+            "entry_time_B": "2026-11-04T16:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-04T18:30:00+00:00",
+            "exit_upper_bound_B": "2026-11-04T18:00:00+00:00",
+            "pnl_A_bps": 18.357626,
+            "pnl_B_bps": -166.207154,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K0549|V22-K0722",
+            "day": 20261105,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-05T15:00:00+00:00",
+            "entry_time_B": "2026-11-05T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-05T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-11-05T17:00:00+00:00",
+            "pnl_A_bps": 380.138812,
+            "pnl_B_bps": 177.25902,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K0549|V22-K0722",
+            "day": 20261106,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-06T16:15:00+00:00",
+            "entry_time_B": "2026-11-06T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-06T19:15:00+00:00",
+            "exit_upper_bound_B": "2026-11-06T17:00:00+00:00",
+            "pnl_A_bps": 49.50011,
+            "pnl_B_bps": 252.390284,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K0549|V22-K0722",
+            "day": 20261110,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-11-10T15:00:00+00:00",
+            "entry_time_B": "2026-11-10T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-10T15:50:00+00:00",
+            "exit_upper_bound_B": "2026-11-10T16:50:00+00:00",
+            "pnl_A_bps": -92.180134,
+            "pnl_B_bps": -202.0,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K0549|V22-K0722",
+            "day": 20261111,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-11-11T15:00:00+00:00",
+            "entry_time_B": "2026-11-11T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-11T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-11-11T17:00:00+00:00",
+            "pnl_A_bps": 87.881249,
+            "pnl_B_bps": 81.054825,
+            "Nov2026": true
+          }
+        ]
+      },
+      "V22-K1736 | V22-K0722": {
+        "overlapping_intervals_all_dates": 155,
+        "overlap_same_direction_all_dates": 155,
+        "overlap_opposite_direction_all_dates": 0,
+        "overlapping_intervals_nov_to_date": 5,
+        "overlap_same_direction_nov_to_date": 5,
+        "overlap_opposite_direction_nov_to_date": 0,
+        "overlap_dates_nov_to_date": [
+          20261104,
+          20261105,
+          20261106,
+          20261110,
+          20261111
+        ],
+        "sample_nov_to_date": [
+          {
+            "pair": "V22-K1736|V22-K0722",
+            "day": 20261104,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-04T15:30:00+00:00",
+            "entry_time_B": "2026-11-04T16:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-04T18:30:00+00:00",
+            "exit_upper_bound_B": "2026-11-04T18:00:00+00:00",
+            "pnl_A_bps": 18.357626,
+            "pnl_B_bps": -166.207154,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K1736|V22-K0722",
+            "day": 20261105,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-05T15:00:00+00:00",
+            "entry_time_B": "2026-11-05T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-05T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-11-05T17:00:00+00:00",
+            "pnl_A_bps": 380.138812,
+            "pnl_B_bps": 177.25902,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K1736|V22-K0722",
+            "day": 20261106,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-06T16:15:00+00:00",
+            "entry_time_B": "2026-11-06T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-06T19:15:00+00:00",
+            "exit_upper_bound_B": "2026-11-06T17:00:00+00:00",
+            "pnl_A_bps": 49.50011,
+            "pnl_B_bps": 252.390284,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K1736|V22-K0722",
+            "day": 20261110,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-11-10T15:00:00+00:00",
+            "entry_time_B": "2026-11-10T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-10T15:50:00+00:00",
+            "exit_upper_bound_B": "2026-11-10T16:50:00+00:00",
+            "pnl_A_bps": -92.180134,
+            "pnl_B_bps": -202.0,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K1736|V22-K0722",
+            "day": 20261111,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-11-11T15:00:00+00:00",
+            "entry_time_B": "2026-11-11T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-11T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-11-11T17:00:00+00:00",
+            "pnl_A_bps": 87.881249,
+            "pnl_B_bps": 81.054825,
+            "Nov2026": true
+          }
+        ],
+        "sample_recent_all": [
+          {
+            "pair": "V22-K1736|V22-K0722",
+            "day": 20261013,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-10-13T15:00:00+00:00",
+            "entry_time_B": "2026-10-13T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-10-13T16:25:00+00:00",
+            "exit_upper_bound_B": "2026-10-13T17:00:00+00:00",
+            "pnl_A_bps": -56.618587,
+            "pnl_B_bps": -39.541458,
+            "Nov2026": false
+          },
+          {
+            "pair": "V22-K1736|V22-K0722",
+            "day": 20261015,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-10-15T15:00:00+00:00",
+            "entry_time_B": "2026-10-15T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-10-15T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-10-15T17:00:00+00:00",
+            "pnl_A_bps": 57.500256,
+            "pnl_B_bps": 46.948487,
+            "Nov2026": false
+          },
+          {
+            "pair": "V22-K1736|V22-K0722",
+            "day": 20261022,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-10-22T15:00:00+00:00",
+            "entry_time_B": "2026-10-22T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-10-22T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-10-22T17:00:00+00:00",
+            "pnl_A_bps": -13.104257,
+            "pnl_B_bps": -20.198643,
+            "Nov2026": false
+          },
+          {
+            "pair": "V22-K1736|V22-K0722",
+            "day": 20261027,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-10-27T15:00:00+00:00",
+            "entry_time_B": "2026-10-27T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-10-27T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-10-27T17:00:00+00:00",
+            "pnl_A_bps": 55.333549,
+            "pnl_B_bps": 77.678932,
+            "Nov2026": false
+          },
+          {
+            "pair": "V22-K1736|V22-K0722",
+            "day": 20261028,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-10-28T15:15:00+00:00",
+            "entry_time_B": "2026-10-28T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-10-28T18:15:00+00:00",
+            "exit_upper_bound_B": "2026-10-28T17:00:00+00:00",
+            "pnl_A_bps": 66.60418,
+            "pnl_B_bps": 109.154644,
+            "Nov2026": false
+          },
+          {
+            "pair": "V22-K1736|V22-K0722",
+            "day": 20261104,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-04T15:30:00+00:00",
+            "entry_time_B": "2026-11-04T16:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-04T18:30:00+00:00",
+            "exit_upper_bound_B": "2026-11-04T18:00:00+00:00",
+            "pnl_A_bps": 18.357626,
+            "pnl_B_bps": -166.207154,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K1736|V22-K0722",
+            "day": 20261105,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-05T15:00:00+00:00",
+            "entry_time_B": "2026-11-05T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-05T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-11-05T17:00:00+00:00",
+            "pnl_A_bps": 380.138812,
+            "pnl_B_bps": 177.25902,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K1736|V22-K0722",
+            "day": 20261106,
+            "both_sides": "SHORT/SHORT",
+            "same_direction": true,
+            "entry_time_A": "2026-11-06T16:15:00+00:00",
+            "entry_time_B": "2026-11-06T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-06T19:15:00+00:00",
+            "exit_upper_bound_B": "2026-11-06T17:00:00+00:00",
+            "pnl_A_bps": 49.50011,
+            "pnl_B_bps": 252.390284,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K1736|V22-K0722",
+            "day": 20261110,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-11-10T15:00:00+00:00",
+            "entry_time_B": "2026-11-10T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-10T15:50:00+00:00",
+            "exit_upper_bound_B": "2026-11-10T16:50:00+00:00",
+            "pnl_A_bps": -92.180134,
+            "pnl_B_bps": -202.0,
+            "Nov2026": true
+          },
+          {
+            "pair": "V22-K1736|V22-K0722",
+            "day": 20261111,
+            "both_sides": "LONG/LONG",
+            "same_direction": true,
+            "entry_time_A": "2026-11-11T15:00:00+00:00",
+            "entry_time_B": "2026-11-11T15:00:00+00:00",
+            "exit_upper_bound_A": "2026-11-11T18:00:00+00:00",
+            "exit_upper_bound_B": "2026-11-11T17:00:00+00:00",
+            "pnl_A_bps": 87.881249,
+            "pnl_B_bps": 81.054825,
+            "Nov2026": true
+          }
+        ]
+      }
+    },
+    "triple_concurrent_all_dates": 148,
+    "triple_same_direction_all_dates": 148,
+    "triple_mixed_direction_all_dates": 0,
+    "triple_concurrent_nov_to_date": 5,
+    "triple_same_direction_nov_to_date": 5,
+    "triple_mixed_direction_nov_to_date": 0,
+    "triple_overlap_samples_nov": [
+      {
+        "day": 20261104,
+        "simultaneous_upper_bound_start_utc": "2026-11-04T16:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-11-04T18:00:00+00:00",
+        "sides": [
+          "SHORT",
+          "SHORT",
+          "SHORT"
+        ],
+        "all_same_side": true,
+        "Nov2026": true
+      },
+      {
+        "day": 20261105,
+        "simultaneous_upper_bound_start_utc": "2026-11-05T15:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-11-05T17:00:00+00:00",
+        "sides": [
+          "SHORT",
+          "SHORT",
+          "SHORT"
+        ],
+        "all_same_side": true,
+        "Nov2026": true
+      },
+      {
+        "day": 20261106,
+        "simultaneous_upper_bound_start_utc": "2026-11-06T16:15:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-11-06T17:00:00+00:00",
+        "sides": [
+          "SHORT",
+          "SHORT",
+          "SHORT"
+        ],
+        "all_same_side": true,
+        "Nov2026": true
+      },
+      {
+        "day": 20261110,
+        "simultaneous_upper_bound_start_utc": "2026-11-10T15:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-11-10T15:50:00+00:00",
+        "sides": [
+          "LONG",
+          "LONG",
+          "LONG"
+        ],
+        "all_same_side": true,
+        "Nov2026": true
+      },
+      {
+        "day": 20261111,
+        "simultaneous_upper_bound_start_utc": "2026-11-11T15:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-11-11T17:00:00+00:00",
+        "sides": [
+          "LONG",
+          "LONG",
+          "LONG"
+        ],
+        "all_same_side": true,
+        "Nov2026": true
+      }
+    ],
+    "triple_overlap_recent_history": [
+      {
+        "day": 20260928,
+        "simultaneous_upper_bound_start_utc": "2026-09-28T15:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-09-28T15:40:00+00:00",
+        "sides": [
+          "SHORT",
+          "SHORT",
+          "SHORT"
+        ],
+        "all_same_side": true,
+        "Nov2026": false
+      },
+      {
+        "day": 20261001,
+        "simultaneous_upper_bound_start_utc": "2026-10-01T15:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-10-01T15:30:00+00:00",
+        "sides": [
+          "SHORT",
+          "SHORT",
+          "SHORT"
+        ],
+        "all_same_side": true,
+        "Nov2026": false
+      },
+      {
+        "day": 20261005,
+        "simultaneous_upper_bound_start_utc": "2026-10-05T15:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-10-05T17:00:00+00:00",
+        "sides": [
+          "LONG",
+          "LONG",
+          "LONG"
+        ],
+        "all_same_side": true,
+        "Nov2026": false
+      },
+      {
+        "day": 20261006,
+        "simultaneous_upper_bound_start_utc": "2026-10-06T15:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-10-06T17:00:00+00:00",
+        "sides": [
+          "LONG",
+          "LONG",
+          "LONG"
+        ],
+        "all_same_side": true,
+        "Nov2026": false
+      },
+      {
+        "day": 20261012,
+        "simultaneous_upper_bound_start_utc": "2026-10-12T15:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-10-12T17:00:00+00:00",
+        "sides": [
+          "SHORT",
+          "SHORT",
+          "SHORT"
+        ],
+        "all_same_side": true,
+        "Nov2026": false
+      },
+      {
+        "day": 20261013,
+        "simultaneous_upper_bound_start_utc": "2026-10-13T15:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-10-13T16:25:00+00:00",
+        "sides": [
+          "SHORT",
+          "SHORT",
+          "SHORT"
+        ],
+        "all_same_side": true,
+        "Nov2026": false
+      },
+      {
+        "day": 20261015,
+        "simultaneous_upper_bound_start_utc": "2026-10-15T15:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-10-15T17:00:00+00:00",
+        "sides": [
+          "SHORT",
+          "SHORT",
+          "SHORT"
+        ],
+        "all_same_side": true,
+        "Nov2026": false
+      },
+      {
+        "day": 20261022,
+        "simultaneous_upper_bound_start_utc": "2026-10-22T15:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-10-22T17:00:00+00:00",
+        "sides": [
+          "SHORT",
+          "SHORT",
+          "SHORT"
+        ],
+        "all_same_side": true,
+        "Nov2026": false
+      },
+      {
+        "day": 20261027,
+        "simultaneous_upper_bound_start_utc": "2026-10-27T15:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-10-27T17:00:00+00:00",
+        "sides": [
+          "LONG",
+          "LONG",
+          "LONG"
+        ],
+        "all_same_side": true,
+        "Nov2026": false
+      },
+      {
+        "day": 20261028,
+        "simultaneous_upper_bound_start_utc": "2026-10-28T15:15:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-10-28T17:00:00+00:00",
+        "sides": [
+          "LONG",
+          "LONG",
+          "LONG"
+        ],
+        "all_same_side": true,
+        "Nov2026": false
+      },
+      {
+        "day": 20261104,
+        "simultaneous_upper_bound_start_utc": "2026-11-04T16:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-11-04T18:00:00+00:00",
+        "sides": [
+          "SHORT",
+          "SHORT",
+          "SHORT"
+        ],
+        "all_same_side": true,
+        "Nov2026": true
+      },
+      {
+        "day": 20261105,
+        "simultaneous_upper_bound_start_utc": "2026-11-05T15:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-11-05T17:00:00+00:00",
+        "sides": [
+          "SHORT",
+          "SHORT",
+          "SHORT"
+        ],
+        "all_same_side": true,
+        "Nov2026": true
+      },
+      {
+        "day": 20261106,
+        "simultaneous_upper_bound_start_utc": "2026-11-06T16:15:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-11-06T17:00:00+00:00",
+        "sides": [
+          "SHORT",
+          "SHORT",
+          "SHORT"
+        ],
+        "all_same_side": true,
+        "Nov2026": true
+      },
+      {
+        "day": 20261110,
+        "simultaneous_upper_bound_start_utc": "2026-11-10T15:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-11-10T15:50:00+00:00",
+        "sides": [
+          "LONG",
+          "LONG",
+          "LONG"
+        ],
+        "all_same_side": true,
+        "Nov2026": true
+      },
+      {
+        "day": 20261111,
+        "simultaneous_upper_bound_start_utc": "2026-11-11T15:00:00+00:00",
+        "simultaneous_upper_bound_end_utc": "2026-11-11T17:00:00+00:00",
+        "sides": [
+          "LONG",
+          "LONG",
+          "LONG"
+        ],
+        "all_same_side": true,
+        "Nov2026": true
+      }
+    ]
+  }
+}
