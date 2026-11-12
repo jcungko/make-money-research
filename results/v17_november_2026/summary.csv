@@ -1,0 +1,9 @@
+id,symbol,timeframe,signal,entry_hour_utc,entry_hour_ict,holding_hours,direction,closed_trades,winning_trades,losing_trades,profit_pips,pending_entries,last_closed_trade_exit_utc
+2,USDJPY,M15,ema_3_8,18,1,2,long_only,4,4,0,63.3,0,2026-11-06T19:55:00+00:00
+6,USDJPY,D1,close_vs_sma_10,14,21,6,long_only,2,2,0,31.5,0,2026-11-10T19:55:00+00:00
+9,USDJPY,M5,close_vs_sma_40,18,1,2,long_only,3,2,1,-0.8,0,2026-11-09T19:55:00+00:00
+10,USDJPY,M15,rsi50_7,18,1,2,long_only,3,3,0,42.4,0,2026-11-05T19:55:00+00:00
+11,USDJPY,M5,ema_8_21,18,1,2,long_only,5,4,1,29.5,0,2026-11-09T19:55:00+00:00
+12,USDJPY,D1,return_1,18,1,2,long_only,4,2,2,-3.8,0,2026-11-10T19:55:00+00:00
+13,USDJPY,D1,body_1,18,1,2,long_only,4,2,2,-3.8,0,2026-11-10T19:55:00+00:00
+15,EURUSD,H4,return_20,14,21,1,long_only,4,1,3,-13.7,0,2026-11-05T14:55:00+00:00

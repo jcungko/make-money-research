@@ -1,0 +1,627 @@
+{
+  "created_utc": "2026-11-12T16:51:15.268559+00:00",
+  "safety_cutoff_exclusive_utc": "2026-11-12T16:45:00+00:00",
+  "requested_date_ict": "2026-11-12",
+  "strategies": [
+    2,
+    6,
+    9,
+    10,
+    11,
+    12,
+    13,
+    15
+  ],
+  "execution": "entry long at ask_open; exit at bid_close after H hours; extra 0.2 pip full round trip",
+  "symbols": {
+    "USDJPY": {
+      "historical_source": "V17 Exness 2026 UTC seven-timeframe archive",
+      "archive_last_M5_utc": "2026-11-10T23:55:00+00:00",
+      "new_source_tick_history": [
+        {
+          "url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/11/11/Exness_USDJPY_2026_11_11.zip",
+          "date": "2026-11-11",
+          "zip_status": "valid_zip",
+          "download_bytes": 307280,
+          "tick_count": 45547,
+          "last_modified": "Thu, 12 Nov 2026 00:41:20 GMT",
+          "first_tick_utc": "2026-11-11T00:00:00.111000+00:00",
+          "last_tick_utc": "2026-11-11T23:59:58.952000+00:00"
+        },
+        {
+          "url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/11/12/Exness_USDJPY_2026_11_12.zip",
+          "date": "2026-11-12",
+          "zip_status": "valid_zip",
+          "download_bytes": 331936,
+          "tick_count": 50280,
+          "last_modified": "Thu, 12 Nov 2026 16:41:19 GMT",
+          "first_tick_utc": "2026-11-12T00:00:00.104000+00:00",
+          "last_tick_utc": "2026-11-12T16:30:41.490000+00:00"
+        }
+      ],
+      "fresh_last_tick_utc": "2026-11-12T16:30:41.490000+00:00",
+      "last_completed_m5_candle_utc": "2026-11-12T16:25:00+00:00",
+      "cutoff_exclusive_utc": "2026-11-12T16:30:00+00:00",
+      "total_closed_trades": 25,
+      "data_provenance": [
+        {
+          "month": 1,
+          "url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/01/Exness_USDJPY_2026_01.zip",
+          "zip_bytes": 11312771,
+          "m5_bars": 6034,
+          "first_utc": "2026-01-01T22:10:00+00:00",
+          "last_utc": "2026-01-30T21:55:00+00:00"
+        },
+        {
+          "month": 2,
+          "url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/02/Exness_USDJPY_2026_02.zip",
+          "zip_bytes": 10647270,
+          "m5_bars": 5746,
+          "first_utc": "2026-02-01T22:05:00+00:00",
+          "last_utc": "2026-02-27T21:55:00+00:00"
+        },
+        {
+          "month": 3,
+          "url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/03/Exness_USDJPY_2026_03.zip",
+          "zip_bytes": 11453828,
+          "m5_bars": 6354,
+          "first_utc": "2026-03-01T22:05:00+00:00",
+          "last_utc": "2026-03-31T23:55:00+00:00"
+        },
+        {
+          "month": 4,
+          "url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/04/Exness_USDJPY_2026_04.zip",
+          "zip_bytes": 8616628,
+          "m5_bars": 6318,
+          "first_utc": "2026-04-01T00:00:00+00:00",
+          "last_utc": "2026-04-30T23:55:00+00:00"
+        },
+        {
+          "month": 5,
+          "url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/05/Exness_USDJPY_2026_05.zip",
+          "zip_bytes": 7120871,
+          "m5_bars": 6035,
+          "first_utc": "2026-05-01T00:00:00+00:00",
+          "last_utc": "2026-05-31T23:55:00+00:00"
+        },
+        {
+          "month": 6,
+          "url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/06/Exness_USDJPY_2026_06.zip",
+          "zip_bytes": 5208928,
+          "m5_bars": 6329,
+          "first_utc": "2026-06-01T00:00:00+00:00",
+          "last_utc": "2026-06-30T23:55:00+00:00"
+        },
+        {
+          "month": 7,
+          "url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/07/Exness_USDJPY_2026_07.zip",
+          "zip_bytes": 8444433,
+          "m5_bars": 6576,
+          "first_utc": "2026-07-01T00:00:00+00:00",
+          "last_utc": "2026-07-31T20:55:00+00:00"
+        },
+        {
+          "month": 8,
+          "url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/08/Exness_USDJPY_2026_08.zip",
+          "zip_bytes": 7882248,
+          "m5_bars": 6077,
+          "first_utc": "2026-08-02T21:05:00+00:00",
+          "last_utc": "2026-08-31T23:55:00+00:00"
+        },
+        {
+          "month": 9,
+          "url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/09/Exness_USDJPY_2026_09.zip",
+          "zip_bytes": 13733887,
+          "m5_bars": 6316,
+          "first_utc": "2026-09-01T00:00:00+00:00",
+          "last_utc": "2026-09-30T23:55:00+00:00"
+        },
+        {
+          "month": 10,
+          "url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/10/Exness_USDJPY_2026_10.zip",
+          "zip_bytes": 10373211,
+          "m5_bars": 6275,
+          "first_utc": "2026-10-01T00:00:00+00:00",
+          "last_utc": "2026-10-30T20:55:00+00:00"
+        },
+        {
+          "month": 11,
+          "url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/11/Exness_USDJPY_2026_11.zip",
+          "zip_bytes": 3417568,
+          "m5_bars": 2029,
+          "first_utc": "2026-11-01T22:05:00+00:00",
+          "last_utc": "2026-11-10T23:55:00+00:00"
+        }
+      ]
+    },
+    "EURUSD": {
+      "historical_source": "V17 Exness 2026 UTC seven-timeframe archive",
+      "archive_last_M5_utc": "2026-11-10T23:55:00+00:00",
+      "new_source_tick_history": [
+        {
+          "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/11/11/Exness_EURUSD_2026_11_11.zip",
+          "date": "2026-11-11",
+          "zip_status": "valid_zip",
+          "download_bytes": 233013,
+          "tick_count": 34785,
+          "last_modified": "Thu, 12 Nov 2026 00:41:14 GMT",
+          "first_tick_utc": "2026-11-11T00:00:03.436000+00:00",
+          "last_tick_utc": "2026-11-11T23:59:55.031000+00:00"
+        },
+        {
+          "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/11/12/Exness_EURUSD_2026_11_12.zip",
+          "date": "2026-11-12",
+          "zip_status": "valid_zip",
+          "download_bytes": 257555,
+          "tick_count": 39094,
+          "last_modified": "Thu, 12 Nov 2026 16:41:11 GMT",
+          "first_tick_utc": "2026-11-12T00:00:00.041000+00:00",
+          "last_tick_utc": "2026-11-12T16:30:46.725000+00:00"
+        }
+      ],
+      "fresh_last_tick_utc": "2026-11-12T16:30:46.725000+00:00",
+      "last_completed_m5_candle_utc": "2026-11-12T16:25:00+00:00",
+      "cutoff_exclusive_utc": "2026-11-12T16:30:00+00:00",
+      "total_closed_trades": 4,
+      "data_provenance": [
+        {
+          "month": 1,
+          "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/01/Exness_EURUSD_2026_01.zip",
+          "zip_bytes": 7515516,
+          "m5_bars": 6043,
+          "first_utc": "2026-01-01T22:05:00+00:00",
+          "last_utc": "2026-01-30T21:55:00+00:00"
+        },
+        {
+          "month": 2,
+          "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/02/Exness_EURUSD_2026_02.zip",
+          "zip_bytes": 6287560,
+          "m5_bars": 5753,
+          "first_utc": "2026-02-01T22:05:00+00:00",
+          "last_utc": "2026-02-27T21:55:00+00:00"
+        },
+        {
+          "month": 3,
+          "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/03/Exness_EURUSD_2026_03.zip",
+          "zip_bytes": 11670227,
+          "m5_bars": 6362,
+          "first_utc": "2026-03-01T22:05:00+00:00",
+          "last_utc": "2026-03-31T23:55:00+00:00"
+        },
+        {
+          "month": 4,
+          "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/04/Exness_EURUSD_2026_04.zip",
+          "zip_bytes": 7229161,
+          "m5_bars": 6328,
+          "first_utc": "2026-04-01T00:00:00+00:00",
+          "last_utc": "2026-04-30T23:55:00+00:00"
+        },
+        {
+          "month": 5,
+          "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/05/Exness_EURUSD_2026_05.zip",
+          "zip_bytes": 5741214,
+          "m5_bars": 6041,
+          "first_utc": "2026-05-01T00:00:00+00:00",
+          "last_utc": "2026-05-31T23:55:00+00:00"
+        },
+        {
+          "month": 6,
+          "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/06/Exness_EURUSD_2026_06.zip",
+          "zip_bytes": 6099097,
+          "m5_bars": 6328,
+          "first_utc": "2026-06-01T00:00:00+00:00",
+          "last_utc": "2026-06-30T23:55:00+00:00"
+        },
+        {
+          "month": 7,
+          "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/07/Exness_EURUSD_2026_07.zip",
+          "zip_bytes": 5965838,
+          "m5_bars": 6583,
+          "first_utc": "2026-07-01T00:00:00+00:00",
+          "last_utc": "2026-07-31T20:55:00+00:00"
+        },
+        {
+          "month": 8,
+          "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/08/Exness_EURUSD_2026_08.zip",
+          "zip_bytes": 4670617,
+          "m5_bars": 6077,
+          "first_utc": "2026-08-02T21:05:00+00:00",
+          "last_utc": "2026-08-31T23:55:00+00:00"
+        },
+        {
+          "month": 9,
+          "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/09/Exness_EURUSD_2026_09.zip",
+          "zip_bytes": 5467945,
+          "m5_bars": 6325,
+          "first_utc": "2026-09-01T00:00:00+00:00",
+          "last_utc": "2026-09-30T23:55:00+00:00"
+        },
+        {
+          "month": 10,
+          "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/10/Exness_EURUSD_2026_10.zip",
+          "zip_bytes": 6858716,
+          "m5_bars": 6285,
+          "first_utc": "2026-10-01T00:00:00+00:00",
+          "last_utc": "2026-10-30T20:55:00+00:00"
+        },
+        {
+          "month": 11,
+          "url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/11/Exness_EURUSD_2026_11.zip",
+          "zip_bytes": 2472838,
+          "m5_bars": 2036,
+          "first_utc": "2026-11-01T22:05:00+00:00",
+          "last_utc": "2026-11-10T23:55:00+00:00"
+        }
+      ]
+    }
+  },
+  "trades": [
+    {
+      "strategy": 2,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-02T18:00:00+00:00",
+      "exit_utc": "2026-11-02T19:55:00+00:00",
+      "pnl_pips": 9.4
+    },
+    {
+      "strategy": 2,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-04T18:00:00+00:00",
+      "exit_utc": "2026-11-04T19:55:00+00:00",
+      "pnl_pips": 19.4
+    },
+    {
+      "strategy": 2,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-05T18:00:00+00:00",
+      "exit_utc": "2026-11-05T19:55:00+00:00",
+      "pnl_pips": 13.6
+    },
+    {
+      "strategy": 2,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-06T18:00:00+00:00",
+      "exit_utc": "2026-11-06T19:55:00+00:00",
+      "pnl_pips": 20.9
+    },
+    {
+      "strategy": 6,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-06T14:00:00+00:00",
+      "exit_utc": "2026-11-06T19:55:00+00:00",
+      "pnl_pips": 6.1
+    },
+    {
+      "strategy": 6,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-10T14:00:00+00:00",
+      "exit_utc": "2026-11-10T19:55:00+00:00",
+      "pnl_pips": 25.4
+    },
+    {
+      "strategy": 9,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-04T18:00:00+00:00",
+      "exit_utc": "2026-11-04T19:55:00+00:00",
+      "pnl_pips": 19.4
+    },
+    {
+      "strategy": 9,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-05T18:00:00+00:00",
+      "exit_utc": "2026-11-05T19:55:00+00:00",
+      "pnl_pips": 13.6
+    },
+    {
+      "strategy": 9,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-09T18:00:00+00:00",
+      "exit_utc": "2026-11-09T19:55:00+00:00",
+      "pnl_pips": -33.8
+    },
+    {
+      "strategy": 10,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-02T18:00:00+00:00",
+      "exit_utc": "2026-11-02T19:55:00+00:00",
+      "pnl_pips": 9.4
+    },
+    {
+      "strategy": 10,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-04T18:00:00+00:00",
+      "exit_utc": "2026-11-04T19:55:00+00:00",
+      "pnl_pips": 19.4
+    },
+    {
+      "strategy": 10,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-05T18:00:00+00:00",
+      "exit_utc": "2026-11-05T19:55:00+00:00",
+      "pnl_pips": 13.6
+    },
+    {
+      "strategy": 11,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-02T18:00:00+00:00",
+      "exit_utc": "2026-11-02T19:55:00+00:00",
+      "pnl_pips": 9.4
+    },
+    {
+      "strategy": 11,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-04T18:00:00+00:00",
+      "exit_utc": "2026-11-04T19:55:00+00:00",
+      "pnl_pips": 19.4
+    },
+    {
+      "strategy": 11,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-05T18:00:00+00:00",
+      "exit_utc": "2026-11-05T19:55:00+00:00",
+      "pnl_pips": 13.6
+    },
+    {
+      "strategy": 11,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-06T18:00:00+00:00",
+      "exit_utc": "2026-11-06T19:55:00+00:00",
+      "pnl_pips": 20.9
+    },
+    {
+      "strategy": 11,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-09T18:00:00+00:00",
+      "exit_utc": "2026-11-09T19:55:00+00:00",
+      "pnl_pips": -33.8
+    },
+    {
+      "strategy": 12,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-05T18:00:00+00:00",
+      "exit_utc": "2026-11-05T19:55:00+00:00",
+      "pnl_pips": 13.6
+    },
+    {
+      "strategy": 12,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-06T18:00:00+00:00",
+      "exit_utc": "2026-11-06T19:55:00+00:00",
+      "pnl_pips": 20.9
+    },
+    {
+      "strategy": 12,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-09T18:00:00+00:00",
+      "exit_utc": "2026-11-09T19:55:00+00:00",
+      "pnl_pips": -33.8
+    },
+    {
+      "strategy": 12,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-10T18:00:00+00:00",
+      "exit_utc": "2026-11-10T19:55:00+00:00",
+      "pnl_pips": -4.5
+    },
+    {
+      "strategy": 13,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-05T18:00:00+00:00",
+      "exit_utc": "2026-11-05T19:55:00+00:00",
+      "pnl_pips": 13.6
+    },
+    {
+      "strategy": 13,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-06T18:00:00+00:00",
+      "exit_utc": "2026-11-06T19:55:00+00:00",
+      "pnl_pips": 20.9
+    },
+    {
+      "strategy": 13,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-09T18:00:00+00:00",
+      "exit_utc": "2026-11-09T19:55:00+00:00",
+      "pnl_pips": -33.8
+    },
+    {
+      "strategy": 13,
+      "symbol": "USDJPY",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-10T18:00:00+00:00",
+      "exit_utc": "2026-11-10T19:55:00+00:00",
+      "pnl_pips": -4.5
+    },
+    {
+      "strategy": 15,
+      "symbol": "EURUSD",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-02T14:00:00+00:00",
+      "exit_utc": "2026-11-02T14:55:00+00:00",
+      "pnl_pips": -2.0
+    },
+    {
+      "strategy": 15,
+      "symbol": "EURUSD",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-03T14:00:00+00:00",
+      "exit_utc": "2026-11-03T14:55:00+00:00",
+      "pnl_pips": 4.6
+    },
+    {
+      "strategy": 15,
+      "symbol": "EURUSD",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-04T14:00:00+00:00",
+      "exit_utc": "2026-11-04T14:55:00+00:00",
+      "pnl_pips": -11.4
+    },
+    {
+      "strategy": 15,
+      "symbol": "EURUSD",
+      "status": "CLOSED",
+      "entry_utc": "2026-11-05T14:00:00+00:00",
+      "exit_utc": "2026-11-05T14:55:00+00:00",
+      "pnl_pips": -4.9
+    }
+  ],
+  "errors": [],
+  "result": [
+    {
+      "id": 2,
+      "symbol": "USDJPY",
+      "timeframe": "M15",
+      "signal": "ema_3_8",
+      "entry_hour_utc": 18,
+      "entry_hour_ict": 1,
+      "holding_hours": 2,
+      "direction": "long_only",
+      "closed_trades": 4,
+      "winning_trades": 4,
+      "losing_trades": 0,
+      "profit_pips": 63.3,
+      "pending_entries": 0,
+      "last_closed_trade_exit_utc": "2026-11-06T19:55:00+00:00"
+    },
+    {
+      "id": 6,
+      "symbol": "USDJPY",
+      "timeframe": "D1",
+      "signal": "close_vs_sma_10",
+      "entry_hour_utc": 14,
+      "entry_hour_ict": 21,
+      "holding_hours": 6,
+      "direction": "long_only",
+      "closed_trades": 2,
+      "winning_trades": 2,
+      "losing_trades": 0,
+      "profit_pips": 31.5,
+      "pending_entries": 0,
+      "last_closed_trade_exit_utc": "2026-11-10T19:55:00+00:00"
+    },
+    {
+      "id": 9,
+      "symbol": "USDJPY",
+      "timeframe": "M5",
+      "signal": "close_vs_sma_40",
+      "entry_hour_utc": 18,
+      "entry_hour_ict": 1,
+      "holding_hours": 2,
+      "direction": "long_only",
+      "closed_trades": 3,
+      "winning_trades": 2,
+      "losing_trades": 1,
+      "profit_pips": -0.8,
+      "pending_entries": 0,
+      "last_closed_trade_exit_utc": "2026-11-09T19:55:00+00:00"
+    },
+    {
+      "id": 10,
+      "symbol": "USDJPY",
+      "timeframe": "M15",
+      "signal": "rsi50_7",
+      "entry_hour_utc": 18,
+      "entry_hour_ict": 1,
+      "holding_hours": 2,
+      "direction": "long_only",
+      "closed_trades": 3,
+      "winning_trades": 3,
+      "losing_trades": 0,
+      "profit_pips": 42.4,
+      "pending_entries": 0,
+      "last_closed_trade_exit_utc": "2026-11-05T19:55:00+00:00"
+    },
+    {
+      "id": 11,
+      "symbol": "USDJPY",
+      "timeframe": "M5",
+      "signal": "ema_8_21",
+      "entry_hour_utc": 18,
+      "entry_hour_ict": 1,
+      "holding_hours": 2,
+      "direction": "long_only",
+      "closed_trades": 5,
+      "winning_trades": 4,
+      "losing_trades": 1,
+      "profit_pips": 29.5,
+      "pending_entries": 0,
+      "last_closed_trade_exit_utc": "2026-11-09T19:55:00+00:00"
+    },
+    {
+      "id": 12,
+      "symbol": "USDJPY",
+      "timeframe": "D1",
+      "signal": "return_1",
+      "entry_hour_utc": 18,
+      "entry_hour_ict": 1,
+      "holding_hours": 2,
+      "direction": "long_only",
+      "closed_trades": 4,
+      "winning_trades": 2,
+      "losing_trades": 2,
+      "profit_pips": -3.8,
+      "pending_entries": 0,
+      "last_closed_trade_exit_utc": "2026-11-10T19:55:00+00:00"
+    },
+    {
+      "id": 13,
+      "symbol": "USDJPY",
+      "timeframe": "D1",
+      "signal": "body_1",
+      "entry_hour_utc": 18,
+      "entry_hour_ict": 1,
+      "holding_hours": 2,
+      "direction": "long_only",
+      "closed_trades": 4,
+      "winning_trades": 2,
+      "losing_trades": 2,
+      "profit_pips": -3.8,
+      "pending_entries": 0,
+      "last_closed_trade_exit_utc": "2026-11-10T19:55:00+00:00"
+    },
+    {
+      "id": 15,
+      "symbol": "EURUSD",
+      "timeframe": "H4",
+      "signal": "return_20",
+      "entry_hour_utc": 14,
+      "entry_hour_ict": 21,
+      "holding_hours": 1,
+      "direction": "long_only",
+      "closed_trades": 4,
+      "winning_trades": 1,
+      "losing_trades": 3,
+      "profit_pips": -13.7,
+      "pending_entries": 0,
+      "last_closed_trade_exit_utc": "2026-11-05T14:55:00+00:00"
+    }
+  ],
+  "total_closed_trades": 29,
+  "total_profit_pips": 144.6,
+  "all_8_positive": false,
+  "all_sources_complete": true
+}
