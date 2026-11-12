@@ -1,0 +1,38 @@
+name: V19 cost stress check on 22-month candidates
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v19-cost-stress.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  stress:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'numpy>=1.26,<3' 'pandas>=2.2,<3'
+      - run: python scripts/v19_cost_stress.py --root data/v19_energies --out data/v19_strategy_screen
+      - name: Persist verified sensitivity report
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/v19_strategy_screen/V19_portfolio_cost_sensitivity.json
+          if ! git diff --cached --quiet; then
+            git commit -m "V19: save slippage sensitivity for three profitable 22-month USOIL portfolios"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: V19-Portfolio-Cost-Sensitivity
+          path: data/v19_strategy_screen/V19_portfolio_cost_sensitivity.json
+          if-no-files-found: warn
+          retention-days: 30
