@@ -4,14 +4,14 @@
   "november_incomplete": true,
   "source": "results/v22_nov2026_filter/surviving_oct_and_nov_to_date.csv",
   "original": 1860,
-  "retained": 299,
-  "removed": 1561,
+  "retained": 308,
+  "removed": 1552,
   "unique_asset_combinations_before": 22,
   "unique_asset_combinations_after": 22,
   "methods": {
     "ranking": "22-month positive-month count, then worst monthly P&L, worse of 2025/2026 P&L, total P&L, Nov-to-date P&L",
     "comparison": "same symbols with same/within-1-hour UTC entry times and similar timeframe, direction, indicators, regime, duration; monthly P&L similarity. Optional 4/5 overlap only if extremely high correlation",
-    "suppress_when_same_assets": "60% exact hours, >=90% within 1h, structural similarity >=0.82 and (monthly corr >=0.88 or profit/loss month sign agree >=90%) OR structural >=0.76 and corr >=0.97",
+    "suppress_when_same_assets": "60% exact hours, >=90% within 1h, structural similarity >=0.82 and (monthly corr >=0.88 or monthly corr >=0.70 with >=90% profitable-month sign agreement); OR structural >=0.76 and corr >=0.97",
     "suppress_when_4of5_asset_overlap": "structural >=0.91, monthly corr >=0.97, monthly sign agreement >=95%",
     "direct_only": "Every removed configuration compared directly with final retained representative. No transitive single-linkage overmerging.",
     "disclaimer": "In-sample monthly-return similarity over only 22 months; not trade-by-trade correlation or proven independence."
@@ -24,23 +24,23 @@
     },
     "pair": {
       "before": 57,
-      "kept": 28,
-      "removed": 29
+      "kept": 29,
+      "removed": 28
     },
     "triple": {
       "before": 355,
-      "kept": 102,
-      "removed": 253
+      "kept": 104,
+      "removed": 251
     },
     "quad": {
       "before": 857,
-      "kept": 116,
-      "removed": 741
+      "kept": 119,
+      "removed": 738
     },
     "quint": {
       "before": 589,
-      "kept": 52,
-      "removed": 537
+      "kept": 55,
+      "removed": 534
     }
   },
   "by_historical_profitable_months": {
@@ -51,18 +51,18 @@
     },
     "19": {
       "before": 59,
-      "kept": 14,
-      "removed": 45
+      "kept": 16,
+      "removed": 43
     },
     "18": {
       "before": 364,
-      "kept": 76,
-      "removed": 288
+      "kept": 80,
+      "removed": 284
     },
     "17": {
       "before": 1435,
-      "kept": 208,
-      "removed": 1227
+      "kept": 211,
+      "removed": 1224
     }
   },
   "monthly_thresholds": {
@@ -72,18 +72,18 @@
     },
     "19": {
       "before": 61,
-      "kept": 15
+      "kept": 17
     },
     "18": {
       "before": 425,
-      "kept": 91
+      "kept": 97
     },
     "17": {
       "before": 1860,
-      "kept": 299
+      "kept": 308
     }
   },
-  "removed_same_assets": 1559,
+  "removed_same_assets": 1550,
   "removed_subset_assets": 2,
   "top30": [
     {
@@ -195,6 +195,18 @@
       "components": "NVDA M30 DAILY_PREVIOUS FADE W1_ALIGN entry_19:00_UTC window_2h hold_60min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | GOOGL H1 MOMENTUM_32 FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
     },
     {
+      "id": "V22-K0004",
+      "category": "quint",
+      "months_profitable": "19",
+      "symbols": "NVDA+AMD+AVGO+XOM+GOOGL",
+      "nov_2026_bps": "205.219748",
+      "profit_2025_bps": "870.4346",
+      "profit_2026_bps": "700.555",
+      "min_month_bps": "-245.1316",
+      "total_bps": "1570.9896",
+      "components": "NVDA M5 MOMENTUM_8 FADE ANY entry_15:00_UTC window_2h hold_180min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 ZSCORE_32_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | XOM H1 MOMENTUM_2 LONG_ONLY ANY entry_14:00_UTC window_2h hold_240min | GOOGL H1 MOMENTUM_32 FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
+    },
+    {
       "id": "V22-K0049",
       "category": "triple",
       "months_profitable": "19",
@@ -253,6 +265,18 @@
       "min_month_bps": "-334.5393",
       "total_bps": "1299.8916",
       "components": "AVGO M30 ZSCORE_32_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | XOM M5 ZSCORE_32_1p0 LONG_ONLY ANY entry_14:00_UTC window_2h hold_120min | GOOGL M5 DAILY_PREVIOUS FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
+    },
+    {
+      "id": "V22-K0037",
+      "category": "pair",
+      "months_profitable": "19",
+      "symbols": "AVGO+GOOGL",
+      "nov_2026_bps": "247.676762",
+      "profit_2025_bps": "901.4724",
+      "profit_2026_bps": "883.5721",
+      "min_month_bps": "-350.0767",
+      "total_bps": "1785.0446",
+      "components": "AVGO M30 ZSCORE_32_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_180min | GOOGL M5 DAILY_PREVIOUS FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
     },
     {
       "id": "V22-K0013",
@@ -421,30 +445,6 @@
       "min_month_bps": "-154.7842",
       "total_bps": "1790.0445",
       "components": "AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_14:00_UTC window_2h hold_240min | AVGO H1 ZSCORE_16_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | XOM H1 MOMENTUM_2 LONG_ONLY ANY entry_14:00_UTC window_2h hold_240min | GOOGL H1 MOMENTUM_32 FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
-    },
-    {
-      "id": "V22-K0357",
-      "category": "quad",
-      "months_profitable": "18",
-      "symbols": "NVDA+AVGO+XOM+GOOGL",
-      "nov_2026_bps": "152.210141",
-      "profit_2025_bps": "995.627",
-      "profit_2026_bps": "707.7514",
-      "min_month_bps": "-155.6566",
-      "total_bps": "1703.3783",
-      "components": "NVDA M30 RSI_14_30 FADE ANY entry_14:00_UTC window_2h hold_120min | AVGO M30 ZSCORE_16_1p0 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | XOM M30 MOMENTUM_4 LONG_ONLY ANY entry_14:00_UTC window_2h hold_240min | GOOGL H1 MOMENTUM_32 FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
-    },
-    {
-      "id": "V22-K0424",
-      "category": "quint",
-      "months_profitable": "18",
-      "symbols": "NVDA+AMD+AVGO+XOM+GOOGL",
-      "nov_2026_bps": "16.588096",
-      "profit_2025_bps": "911.4906",
-      "profit_2026_bps": "948.3623",
-      "min_month_bps": "-155.7112",
-      "total_bps": "1859.8529",
-      "components": "NVDA M5 MOMENTUM_8 FADE ANY entry_15:00_UTC window_2h hold_180min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_14:00_UTC window_2h hold_240min | AVGO M15 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | XOM M30 MOMENTUM_4 LONG_ONLY ANY entry_14:00_UTC window_2h hold_120min | GOOGL H1 MOMENTUM_32 FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
     }
   ],
   "examples_of_removed": [
@@ -633,14 +633,6 @@
       "monthly_profit_loss_sign_agreement": 1.0
     },
     {
-      "id": "V22-K0004",
-      "representative_id": "V22-K0035",
-      "assets": "exact",
-      "structural_similarity": 0.8782,
-      "monthly_correlation": 0.4726,
-      "monthly_profit_loss_sign_agreement": 0.9091
-    },
-    {
       "id": "V22-K0038",
       "representative_id": "V22-K0002",
       "assets": "exact",
@@ -682,11 +674,11 @@
     },
     {
       "id": "V22-K0023",
-      "representative_id": "V22-K0035",
+      "representative_id": "V22-K0004",
       "assets": "exact",
-      "structural_similarity": 0.8837,
-      "monthly_correlation": 0.5374,
-      "monthly_profit_loss_sign_agreement": 0.9091
+      "structural_similarity": 0.9657,
+      "monthly_correlation": 0.9396,
+      "monthly_profit_loss_sign_agreement": 1.0
     },
     {
       "id": "V22-K0014",
@@ -714,19 +706,19 @@
     },
     {
       "id": "V22-K0015",
-      "representative_id": "V22-K0035",
+      "representative_id": "V22-K0004",
       "assets": "exact",
-      "structural_similarity": 0.8981,
-      "monthly_correlation": 0.525,
-      "monthly_profit_loss_sign_agreement": 0.9091
+      "structural_similarity": 0.9801,
+      "monthly_correlation": 0.9536,
+      "monthly_profit_loss_sign_agreement": 1.0
     },
     {
       "id": "V22-K0018",
-      "representative_id": "V22-K0035",
+      "representative_id": "V22-K0004",
       "assets": "exact",
-      "structural_similarity": 0.8287,
-      "monthly_correlation": 0.505,
-      "monthly_profit_loss_sign_agreement": 0.9091
+      "structural_similarity": 0.9216,
+      "monthly_correlation": 0.9378,
+      "monthly_profit_loss_sign_agreement": 1.0
     },
     {
       "id": "V22-K0050",
@@ -761,13 +753,21 @@
       "monthly_profit_loss_sign_agreement": 1.0
     },
     {
-      "id": "V22-K0037",
-      "representative_id": "V22-K0045",
+      "id": "V22-K0030",
+      "representative_id": "V22-K0037",
       "assets": "exact",
-      "structural_similarity": 0.8978,
-      "monthly_correlation": 0.6935,
+      "structural_similarity": 0.9503,
+      "monthly_correlation": 0.8692,
       "monthly_profit_loss_sign_agreement": 0.9091
+    },
+    {
+      "id": "V22-K0005",
+      "representative_id": "V22-K0013",
+      "assets": "exact",
+      "structural_similarity": 0.9864,
+      "monthly_correlation": 0.9932,
+      "monthly_profit_loss_sign_agreement": 1.0
     }
   ],
-  "finished_at_utc": "2026-11-12T20:51:55.566454+00:00"
+  "finished_at_utc": "2026-11-12T20:53:03.384192+00:00"
 }
