@@ -1,0 +1,41 @@
+name: V22 probe current November 2026 Exness stock tick archives
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v22-nov2026-probe.yml'
+      - 'scripts/v22_nov2026_probe.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - run: python -u scripts/v22_nov2026_probe.py
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: V22-Nov-Exness-Archive-Probe
+          path: results/v22_nov2026_probe/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Publish probe
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v22_nov2026_probe/
+          if ! git diff --cached --quiet; then
+            git commit -m "V22: source availability audit Nov 2026"
+            for n in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && exit 0
+              sleep "$((n*3))"
+            done
+            exit 1
+          fi
