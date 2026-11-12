@@ -1,0 +1,230 @@
+{
+  "at": "2026-11-12T20:11:38.431641+00:00",
+  "results": [
+    {
+      "symbol": "NVDA",
+      "kind": "control_oct",
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2026/10/Exness_NVDA_2026_10.zip",
+      "http_head": 200,
+      "length": "3407712",
+      "type": "application/zip",
+      "last_modified": "Sat, 31 Oct 2026 01:41:12 GMT"
+    },
+    {
+      "symbol": "NVDA",
+      "kind": "nov_month",
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2026/11/Exness_NVDA_2026_11.zip",
+      "http_head": 200,
+      "length": "2495463",
+      "type": "application/zip",
+      "last_modified": "Thu, 12 Nov 2026 01:41:18 GMT"
+    },
+    {
+      "symbol": "NVDA",
+      "kind": "nov_day_12_subdir",
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2026/11/12/Exness_NVDA_2026_11_12.zip",
+      "http_head": 200,
+      "length": "559069",
+      "type": "application/zip",
+      "last_modified": "Thu, 12 Nov 2026 20:01:14 GMT"
+    },
+    {
+      "symbol": "NVDA",
+      "kind": "nov_day_12",
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2026/11/Exness_NVDA_2026_11_12.zip",
+      "http_head": 404,
+      "length": "146",
+      "type": "text/html",
+      "last_modified": null
+    },
+    {
+      "symbol": "NVDA",
+      "kind": "nov_day_11_subdir",
+      "url": "https://ticks.ex2archive.com/ticks/NVDA/2026/11/11/Exness_NVDA_2026_11_11.zip",
+      "http_head": 200,
+      "length": "264982",
+      "type": "application/zip",
+      "last_modified": "Thu, 12 Nov 2026 00:41:17 GMT"
+    },
+    {
+      "symbol": "AMD",
+      "kind": "control_oct",
+      "url": "https://ticks.ex2archive.com/ticks/AMD/2026/10/Exness_AMD_2026_10.zip",
+      "http_head": 200,
+      "length": "3553353",
+      "type": "application/zip",
+      "last_modified": "Sat, 31 Oct 2026 01:41:02 GMT"
+    },
+    {
+      "symbol": "AMD",
+      "kind": "nov_month",
+      "url": "https://ticks.ex2archive.com/ticks/AMD/2026/11/Exness_AMD_2026_11.zip",
+      "http_head": 200,
+      "length": "2358142",
+      "type": "application/zip",
+      "last_modified": "Thu, 12 Nov 2026 01:41:03 GMT"
+    },
+    {
+      "symbol": "AMD",
+      "kind": "nov_day_12_subdir",
+      "url": "https://ticks.ex2archive.com/ticks/AMD/2026/11/12/Exness_AMD_2026_11_12.zip",
+      "http_head": 200,
+      "length": "391359",
+      "type": "application/zip",
+      "last_modified": "Thu, 12 Nov 2026 20:01:04 GMT"
+    },
+    {
+      "symbol": "AMD",
+      "kind": "nov_day_12",
+      "url": "https://ticks.ex2archive.com/ticks/AMD/2026/11/Exness_AMD_2026_11_12.zip",
+      "http_head": 404,
+      "length": "146",
+      "type": "text/html",
+      "last_modified": null
+    },
+    {
+      "symbol": "AMD",
+      "kind": "nov_day_11_subdir",
+      "url": "https://ticks.ex2archive.com/ticks/AMD/2026/11/11/Exness_AMD_2026_11_11.zip",
+      "http_head": 200,
+      "length": "265933",
+      "type": "application/zip",
+      "last_modified": "Thu, 12 Nov 2026 00:41:03 GMT"
+    },
+    {
+      "symbol": "AVGO",
+      "kind": "control_oct",
+      "url": "https://ticks.ex2archive.com/ticks/AVGO/2026/10/Exness_AVGO_2026_10.zip",
+      "http_head": 200,
+      "length": "2675963",
+      "type": "application/zip",
+      "last_modified": "Sat, 31 Oct 2026 01:41:04 GMT"
+    },
+    {
+      "symbol": "AVGO",
+      "kind": "nov_month",
+      "url": "https://ticks.ex2archive.com/ticks/AVGO/2026/11/Exness_AVGO_2026_11.zip",
+      "http_head": 200,
+      "length": "1523293",
+      "type": "application/zip",
+      "last_modified": "Thu, 12 Nov 2026 01:41:07 GMT"
+    },
+    {
+      "symbol": "AVGO",
+      "kind": "nov_day_12_subdir",
+      "url": "https://ticks.ex2archive.com/ticks/AVGO/2026/11/12/Exness_AVGO_2026_11_12.zip",
+      "http_head": 200,
+      "length": "217069",
+      "type": "application/zip",
+      "last_modified": "Thu, 12 Nov 2026 20:01:07 GMT"
+    },
+    {
+      "symbol": "AVGO",
+      "kind": "nov_day_12",
+      "url": "https://ticks.ex2archive.com/ticks/AVGO/2026/11/Exness_AVGO_2026_11_12.zip",
+      "http_head": 404,
+      "length": "146",
+      "type": "text/html",
+      "last_modified": null
+    },
+    {
+      "symbol": "AVGO",
+      "kind": "nov_day_11_subdir",
+      "url": "https://ticks.ex2archive.com/ticks/AVGO/2026/11/11/Exness_AVGO_2026_11_11.zip",
+      "http_head": 200,
+      "length": "168316",
+      "type": "application/zip",
+      "last_modified": "Thu, 12 Nov 2026 00:41:07 GMT"
+    },
+    {
+      "symbol": "XOM",
+      "kind": "control_oct",
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2026/10/Exness_XOM_2026_10.zip",
+      "http_head": 200,
+      "length": "1509822",
+      "type": "application/zip",
+      "last_modified": "Sat, 31 Oct 2026 01:41:18 GMT"
+    },
+    {
+      "symbol": "XOM",
+      "kind": "nov_month",
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2026/11/Exness_XOM_2026_11.zip",
+      "http_head": 200,
+      "length": "664702",
+      "type": "application/zip",
+      "last_modified": "Thu, 12 Nov 2026 01:41:28 GMT"
+    },
+    {
+      "symbol": "XOM",
+      "kind": "nov_day_12_subdir",
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2026/11/12/Exness_XOM_2026_11_12.zip",
+      "http_head": 200,
+      "length": "58918",
+      "type": "application/zip",
+      "last_modified": "Thu, 12 Nov 2026 20:01:22 GMT"
+    },
+    {
+      "symbol": "XOM",
+      "kind": "nov_day_12",
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2026/11/Exness_XOM_2026_11_12.zip",
+      "http_head": 404,
+      "length": "146",
+      "type": "text/html",
+      "last_modified": null
+    },
+    {
+      "symbol": "XOM",
+      "kind": "nov_day_11_subdir",
+      "url": "https://ticks.ex2archive.com/ticks/XOM/2026/11/11/Exness_XOM_2026_11_11.zip",
+      "http_head": 200,
+      "length": "54689",
+      "type": "application/zip",
+      "last_modified": "Thu, 12 Nov 2026 00:41:22 GMT"
+    },
+    {
+      "symbol": "GOOGL",
+      "kind": "control_oct",
+      "url": "https://ticks.ex2archive.com/ticks/GOOGL/2026/10/Exness_GOOGL_2026_10.zip",
+      "http_head": 200,
+      "length": "2415349",
+      "type": "application/zip",
+      "last_modified": "Sat, 31 Oct 2026 01:41:11 GMT"
+    },
+    {
+      "symbol": "GOOGL",
+      "kind": "nov_month",
+      "url": "https://ticks.ex2archive.com/ticks/GOOGL/2026/11/Exness_GOOGL_2026_11.zip",
+      "http_head": 200,
+      "length": "1042368",
+      "type": "application/zip",
+      "last_modified": "Thu, 12 Nov 2026 01:41:16 GMT"
+    },
+    {
+      "symbol": "GOOGL",
+      "kind": "nov_day_12_subdir",
+      "url": "https://ticks.ex2archive.com/ticks/GOOGL/2026/11/12/Exness_GOOGL_2026_11_12.zip",
+      "http_head": 200,
+      "length": "119770",
+      "type": "application/zip",
+      "last_modified": "Thu, 12 Nov 2026 20:01:13 GMT"
+    },
+    {
+      "symbol": "GOOGL",
+      "kind": "nov_day_12",
+      "url": "https://ticks.ex2archive.com/ticks/GOOGL/2026/11/Exness_GOOGL_2026_11_12.zip",
+      "http_head": 404,
+      "length": "146",
+      "type": "text/html",
+      "last_modified": null
+    },
+    {
+      "symbol": "GOOGL",
+      "kind": "nov_day_11_subdir",
+      "url": "https://ticks.ex2archive.com/ticks/GOOGL/2026/11/11/Exness_GOOGL_2026_11_11.zip",
+      "http_head": 200,
+      "length": "92688",
+      "type": "application/zip",
+      "last_modified": "Thu, 12 Nov 2026 00:41:15 GMT"
+    }
+  ]
+}
