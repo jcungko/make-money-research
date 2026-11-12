@@ -1,0 +1,47 @@
+name: V19 count daily entry orders across 89 portfolios
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v19-daily-orders.yml'
+      - 'scripts/v19_89_portfolio_daily_trades.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: v19-89-daily-entry-count
+  cancel-in-progress: false
+jobs:
+  count:
+    name: Count exact order frequency for 89 qualifying 4-bot portfolios
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'numpy>=1.26,<3' 'pandas>=2.2,<3'
+      - name: Replay entry signals and count daily orders
+        run: python scripts/v19_89_portfolio_daily_trades.py --root data/v19_energies --out data/v19_strategy_screen
+      - name: Commit verified daily-trade report to repo
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/v19_strategy_screen/V19_89_portfolios_daily_trade_report.json data/v19_strategy_screen/V19_89_portfolios_trade_frequency.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "V19: store exact daily trade frequencies for 89 qualifying portfolios"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: V19-89-Portfolio-Daily-Trade-Frequencies
+          path: |
+            data/v19_strategy_screen/V19_89_portfolios_daily_trade_report.json
+            data/v19_strategy_screen/V19_89_portfolios_trade_frequency.csv
+          if-no-files-found: warn
+          retention-days: 30
