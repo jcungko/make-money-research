@@ -28,27 +28,39 @@ OCT_START = pd.Timestamp("2026-10-01T00:00:00Z")
 LEG_FIELDS = ("bid_open", "ask_open", "bid_close", "ask_close")
 
 def load_month(symbol):
-    url = f"https://ticks.ex2archive.com/ticks/{symbol}/2026/11/Exness_{symbol}_2026_11.zip"
+    monthly_url = f"https://ticks.ex2archive.com/ticks/{symbol}/2026/11/Exness_{symbol}_2026_11.zip"
+    daily_url = f"https://ticks.ex2archive.com/ticks/{symbol}/2026/11/12/Exness_{symbol}_2026_11_12.zip"
     with requests.Session() as session:
-        response = session.get(url, timeout=(20, 180))
-        response.raise_for_status()
-        raw = response.content
-    if not zipfile.is_zipfile(io.BytesIO(raw)):
-        raise ValueError(f"Not a ZIP for {symbol}")
-    m5 = reader.ticks_to_5m(raw, CUTOFF, START)
-    if m5.empty:
-        raise ValueError(f"No usable November ticks for {symbol}")
-    latest = m5.index.max()
+        r = session.get(monthly_url, timeout=(20,180))
+        r.raise_for_status()
+        raw_month = r.content
+        r = session.get(daily_url, timeout=(20,180))
+        r.raise_for_status()
+        raw_day = r.content
+    if not zipfile.is_zipfile(io.BytesIO(raw_month)) or not zipfile.is_zipfile(io.BytesIO(raw_day)):
+        raise ValueError(f"Not Exness monthly/daily ZIP for {symbol}")
+    m5_month = reader.ticks_to_5m(raw_month, CUTOFF, START)
+    m5_daily = reader.ticks_to_5m(raw_day, CUTOFF, pd.Timestamp("2026-11-12T00:00:00Z"))
+    if m5_month.empty or m5_daily.empty:
+        raise ValueError(f"No usable November month and day-12 ticks for {symbol}")
+    if m5_daily.index.min() != pd.Timestamp("2026-11-12T00:00:00Z"):
+        raise ValueError(f"Day-12 archive does not start at midnight for {symbol}")
+    m5_month = m5_month.loc[m5_month.index < m5_daily.index.min()]
+    m5 = reader.merge_parts([m5_month,m5_daily])
+    latest=m5.index.max()
     if latest < CUTOFF - pd.Timedelta(hours=1):
         raise ValueError(f"Insufficient November data for {symbol}: latest 5m {latest}")
-    frames = reader.build_frames(m5)
-    result = {}
+    frames=reader.build_frames(m5)
+    result={}
     for tf, frame in frames.items():
-        freq = {"M5":"5min","M15":"15min","M30":"30min","H1":"1h","H4":"4h"}[tf]
-        frame = frame.loc[frame.index + pd.Timedelta(freq) <= CUTOFF]
-        result[tf] = frame.reset_index()
-    return result, {"url":url, "zip_sha256":hashlib.sha256(raw).hexdigest(),
-                    "zip_bytes":len(raw), "last_usable_m5_utc":latest.isoformat(),
+        freq={"M5":"5min","M15":"15min","M30":"30min","H1":"1h","H4":"4h"}[tf]
+        frame=frame.loc[frame.index + pd.Timedelta(freq) <= CUTOFF]
+        result[tf]=frame.reset_index()
+    return result, {"urls":[monthly_url,daily_url],
+                    "monthly_zip_sha256":hashlib.sha256(raw_month).hexdigest(),
+                    "daily12_zip_sha256":hashlib.sha256(raw_day).hexdigest(),
+                    "archive_bytes":len(raw_month)+len(raw_day),
+                    "last_usable_m5_utc":latest.isoformat(),
                     "frames":{tf:len(fr) for tf,fr in result.items()}}
 
 def replay_legs(symbol, tf, ids, novframe):
