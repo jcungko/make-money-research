@@ -102,9 +102,8 @@ def signals(df):
     add("tick_active", volume.shift(1) > 1.5 * med)
     add("tick_quiet", volume.shift(1) < 0.7 * med)
 
-    # Negligible warm-up can inflate early results; suppress first 60 bars.
-    for name in out:
-        out[name][:60] = False
+    # Rolling indicators enforce their own minimum lookback. Do not suppress
+    # January daily/weekly trades with an unrelated 60-bar blanket warm-up.
     return out
 
 
@@ -256,7 +255,7 @@ def assemble_portfolios(all_records):
                             "min_month_bp": round(float(monthly.min()), 4),
                         }
                         passes.append(r)
-                if len(best_portfolios) < 8 or int((monthly > 0).sum()) >= best_portfolios[-1][0]:
+                if len(best_portfolios) < 8 or int((monthly > 0).sum()) >= best_portfolios[-1][0][0]:
                     score = (int((monthly > 0).sum()), float(monthly.min()), float(monthly.sum()))
                     candidate = (score, [r["id"] for r in legs], monthly.tolist())
                     best_portfolios.append(candidate)
