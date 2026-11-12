@@ -1,0 +1,85 @@
+name: V19 Exness USOIL UKOIL XNGUSD 2025-2026 7TF
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v19-exness-energies.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: v19-exness-energies-historical
+  cancel-in-progress: false
+jobs:
+  collect:
+    name: ${{ matrix.symbol }} ${{ matrix.year }} public tick archives
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        symbol: [USOIL, UKOIL, XNGUSD]
+        year: [2025, 2026]
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install read-only research dependencies
+        run: pip install 'pandas>=2.2,<3' 'requests>=2.31,<3'
+      - name: Download Exness public monthly tick archives and produce 7 UTC periods
+        run: python scripts/v19_exness_energy_collect.py --symbol ${{ matrix.symbol }} --year ${{ matrix.year }} --out data/v19_energies
+      - name: Upload verified individual dataset
+        uses: actions/upload-artifact@v4
+        with:
+          name: V19-Exness-${{ matrix.symbol }}-${{ matrix.year }}
+          path: data/v19_energies/
+          if-no-files-found: error
+          retention-days: 30
+  publish:
+    name: Publish six verified datasets to research repository
+    needs: collect
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download all six prepared data artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: V19-Exness-*
+          path: v19_packed
+          merge-multiple: true
+      - name: Verify exact symbol-year-timeframe coverage
+        shell: bash
+        run: |
+          mkdir -p data/v19_energies
+          mv v19_packed/* data/v19_energies/
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("data/v19_energies")
+          expected={"M5","M15","M30","H1","H4","D1","W1"}
+          for s in ("USOIL","UKOIL","XNGUSD"):
+              for y in (2025,2026):
+                  m=json.loads((p/f"{s}_{y}_manifest.json").read_text())
+                  assert m["month_count"]==(12 if y==2025 else 10), (s,y,"month coverage")
+                  assert set(m["frames"])==expected, (s,y,"period coverage")
+                  assert all(v["rows"]>0 for v in m["frames"].values()), (s,y,"empty period")
+                  assert (p/f"{s}_{y}_UTC_7TF.zip").is_file(),(s,y,"missing archive")
+                  print(s,y,m["month_count"],{tf:v["rows"] for tf,v in m["frames"].items()})
+          PY
+      - name: Commit complete historical datasets to GitHub
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/v19_energies/
+          if ! git diff --cached --quiet; then
+            git commit -m "V19: save Exness USOIL UKOIL XNGUSD 2025-2026 7 timeframe datasets"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo "All six datasets already present"
+          fi
