@@ -285,8 +285,8 @@ def screen(root,out):
     (out/'qualified_quads_top1000.json').write_text(json.dumps(portfolio_quads[:1000],ensure_ascii=False)+'\n')
     (out/'qualified_quints_top1000.json').write_text(json.dumps(portfolio_quints[:1000],ensure_ascii=False)+'\n')
     print('FINAL',json.dumps({k:report[k] for k in ('total_configs_tested','single_annual_positive',
-      'single_at_least_21_months','tested_pairs','pairs_at_least_21_months','tested_triples',
-      'triples_at_least_21_months','tested_quads','quads_at_least_21_months','tested_quints','quints_at_least_21_months','best_month_count_of_annual_profitable','pool_sizes')}),flush=True)
+      'single_at_least_17_months','tested_pairs','pairs_at_least_17_months','tested_triples',
+      'triples_at_least_17_months','tested_quads','quads_at_least_17_months','tested_quints','quints_at_least_17_months','best_month_count_of_annual_profitable','pool_sizes')}),flush=True)
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
