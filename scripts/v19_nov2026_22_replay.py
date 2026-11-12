@@ -101,7 +101,7 @@ def ticks_to_m5(ticks):
     data["bucket"] = data.ts.dt.floor("5min")
     m5 = data.groupby("bucket",sort=True).agg(
         bid_open=("bid","first"),bid_high=("bid","max"),bid_low=("bid","min"),bid_close=("bid","last"),
-        ask_open=("ask","first"),ask_high=("ask","max"),ask_low=("bid","min") if False else ("ask","min"),
+        ask_open=("ask","first"),ask_high=("ask","max"),ask_low=("ask","min"),
         ask_close=("ask","last"),tick_count=("bid","size")
     )
     m5.index.name="timestamp_utc"
@@ -165,7 +165,11 @@ def rebuild_frames(history_dir, symbol, m5):
     for tf,freq in FRQ.items():
         prior = v19.read_frame(history_dir, symbol, tf)
         old = prior[prior.timestamp_utc < START].copy()
-        next_data = m5 if tf=="M5" else m5.resample(freq,origin="epoch",label="left",closed="left").agg(v19.reader.FIELDS)
+        next_data = m5 if tf=="M5" else m5.resample(freq,origin="epoch",label="left",closed="left").agg({
+            "bid_open":"first", "bid_high":"max", "bid_low":"min", "bid_close":"last",
+            "ask_open":"first", "ask_high":"max", "ask_low":"min", "ask_close":"last",
+            "tick_count":"sum"
+        })
         next_data = next_data[next_data.tick_count > 0].copy()
         next_data = next_data.reset_index()
         frames[tf] = pd.concat([old,next_data],ignore_index=True)
