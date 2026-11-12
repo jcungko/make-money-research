@@ -91,14 +91,56 @@
   ],
   "counts": {
     "candidates": 598752,
-    "every_month_has_trades": 370088
+    "every_month_has_trades": 370088,
+    "profitable_exactly_6_of_22": 25037,
+    "profitable_exactly_9_of_22": 54119,
+    "profitable_exactly_5_of_22": 14599,
+    "profitable_exactly_8_of_22": 47911,
+    "profitable_exactly_10_of_22": 53387,
+    "profitable_exactly_7_of_22": 36847,
+    "profitable_exactly_12_of_22": 33983,
+    "profitable_exactly_11_of_22": 45925,
+    "profitable_exactly_4_of_22": 8040,
+    "profitable_exactly_3_of_22": 4618,
+    "profitable_exactly_14_of_22": 11933,
+    "profitable_exactly_15_of_22": 5142,
+    "profitable_exactly_13_of_22": 21571,
+    "profitable_exactly_16_of_22": 1915,
+    "profitable_exactly_17_of_22": 438,
+    "profitable_exactly_2_of_22": 2532,
+    "profitable_exactly_18_of_22": 102,
+    "profitable_exactly_0_of_22": 683,
+    "profitable_exactly_1_of_22": 1290,
+    "profitable_exactly_19_of_22": 11,
+    "profitable_exactly_20_of_22": 5
   },
   "unique_all_22_months_profitable": 0,
   "per_symbol": {
     "EURUSD": {
       "counts": {
         "candidates": 199584,
-        "every_month_has_trades": 134948
+        "every_month_has_trades": 134948,
+        "profitable_exactly_6_of_22": 9426,
+        "profitable_exactly_9_of_22": 19954,
+        "profitable_exactly_5_of_22": 5772,
+        "profitable_exactly_8_of_22": 17871,
+        "profitable_exactly_10_of_22": 19786,
+        "profitable_exactly_7_of_22": 13955,
+        "profitable_exactly_12_of_22": 11825,
+        "profitable_exactly_11_of_22": 16534,
+        "profitable_exactly_4_of_22": 3331,
+        "profitable_exactly_3_of_22": 1966,
+        "profitable_exactly_14_of_22": 3644,
+        "profitable_exactly_15_of_22": 1453,
+        "profitable_exactly_13_of_22": 6933,
+        "profitable_exactly_16_of_22": 506,
+        "profitable_exactly_17_of_22": 123,
+        "profitable_exactly_2_of_22": 1053,
+        "profitable_exactly_18_of_22": 20,
+        "profitable_exactly_0_of_22": 264,
+        "profitable_exactly_1_of_22": 530,
+        "profitable_exactly_19_of_22": 1,
+        "profitable_exactly_20_of_22": 1
       },
       "source_rows": {
         "M5": 138637,
@@ -113,7 +155,27 @@
     "GBPUSD": {
       "counts": {
         "candidates": 199584,
-        "every_month_has_trades": 130506
+        "every_month_has_trades": 130506,
+        "profitable_exactly_9_of_22": 18304,
+        "profitable_exactly_12_of_22": 11456,
+        "profitable_exactly_6_of_22": 9913,
+        "profitable_exactly_8_of_22": 16648,
+        "profitable_exactly_10_of_22": 17729,
+        "profitable_exactly_7_of_22": 13867,
+        "profitable_exactly_11_of_22": 15192,
+        "profitable_exactly_13_of_22": 7402,
+        "profitable_exactly_4_of_22": 3202,
+        "profitable_exactly_3_of_22": 1813,
+        "profitable_exactly_5_of_22": 5992,
+        "profitable_exactly_14_of_22": 4168,
+        "profitable_exactly_15_of_22": 1858,
+        "profitable_exactly_16_of_22": 663,
+        "profitable_exactly_2_of_22": 1086,
+        "profitable_exactly_1_of_22": 674,
+        "profitable_exactly_0_of_22": 398,
+        "profitable_exactly_17_of_22": 124,
+        "profitable_exactly_18_of_22": 16,
+        "profitable_exactly_19_of_22": 1
       },
       "source_rows": {
         "M5": 138580,
@@ -128,7 +190,28 @@
     "USDJPY": {
       "counts": {
         "candidates": 199584,
-        "every_month_has_trades": 104634
+        "every_month_has_trades": 104634,
+        "profitable_exactly_13_of_22": 7236,
+        "profitable_exactly_12_of_22": 10702,
+        "profitable_exactly_14_of_22": 4121,
+        "profitable_exactly_4_of_22": 1507,
+        "profitable_exactly_6_of_22": 5698,
+        "profitable_exactly_16_of_22": 746,
+        "profitable_exactly_5_of_22": 2835,
+        "profitable_exactly_8_of_22": 13392,
+        "profitable_exactly_11_of_22": 14199,
+        "profitable_exactly_10_of_22": 15872,
+        "profitable_exactly_7_of_22": 9025,
+        "profitable_exactly_9_of_22": 15861,
+        "profitable_exactly_15_of_22": 1831,
+        "profitable_exactly_17_of_22": 191,
+        "profitable_exactly_18_of_22": 66,
+        "profitable_exactly_3_of_22": 839,
+        "profitable_exactly_2_of_22": 393,
+        "profitable_exactly_20_of_22": 4,
+        "profitable_exactly_1_of_22": 86,
+        "profitable_exactly_0_of_22": 21,
+        "profitable_exactly_19_of_22": 9
       },
       "source_rows": {
         "M5": 138532,
@@ -320,5 +403,5 @@
       "long_only"
     ]
   ],
-  "elapsed_seconds": 16.8
+  "elapsed_seconds": 17.8
 }
