@@ -1,0 +1,46 @@
+name: V17 Exness 2025-2026 all-month strategy census
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v17-strategy-census.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: v17-strategy-census
+  cancel-in-progress: false
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install isolated research dependencies
+        run: pip install "numpy>=1.26,<3" "pandas>=2.2,<3"
+      - name: Verify independently downloaded public Exness archives
+        run: |
+          test "$(find data/v17_exness_2025 data/v17_exness_2026 -name '*_UTC_7TF.zip' | wc -l)" -eq 6
+          test "$(find data/v17_exness_2025 data/v17_exness_2026 -name '*_manifest.json' | wc -l)" -eq 6
+      - name: Exhaustively screen predetermined strategy grids on completed 22 months
+        run: python scripts/v17_strategy_screen.py --input data --out results/v17_strategy_screen
+      - name: Commit verified numerical results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v17_strategy_screen/
+          if ! git diff --cached --quiet; then
+            git commit -m "V17: count strategies positive in every complete month of 2025-2026"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: V17-all-month-strategy-census
+          path: results/v17_strategy_screen/
+          if-no-files-found: warn
+          retention-days: 30
