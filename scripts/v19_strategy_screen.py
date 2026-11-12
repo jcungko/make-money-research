@@ -274,6 +274,112 @@ def assemble_portfolios(all_records):
     ]
 
 
+
+def expand_portfolios(all_records):
+    """Exhaustive 2-4 leg portfolios within top-40 per symbol.
+
+    Test same-asset combinations and 2+2 / 3+1 across different assets.
+    All counts are exact for these enumerated groups, though in-sample.
+    """
+    pools = {}
+    for sym in SYMBOLS:
+        rows = [r for r in all_records if r["symbol"] == sym]
+        rows.sort(key=best_key, reverse=True)
+        selected, seen = [], set()
+        for r in rows:
+            key = tuple(np.round(r["monthly_bp"], 2))
+            if key not in seen:
+                selected.append(r)
+                seen.add(key)
+            if len(selected) >= 40:
+                break
+        pools[sym] = selected
+    vals = {s: np.asarray([x["monthly_bp"] for x in pools[s]], dtype=float) for s in SYMBOLS}
+    counts = {}
+    examples = []
+    near_misses = []
+
+    def evaluate(group, leg_syms, leg_indices, monthly):
+        n = monthly.shape[0]
+        if not n:
+            return
+        assert len(leg_syms) == leg_indices.shape[1]
+        assert monthly.shape == (n, 22)
+        positive_year = (monthly[:, :12].sum(axis=1) > 0) & (monthly[:, 12:].sum(axis=1) > 0)
+        months_positive = (monthly > 0).sum(axis=1)
+        qualified = positive_year & (months_positive == 22)
+        pass_idx = np.flatnonzero(qualified)
+        counts[group] = {
+            "tested": int(n),
+            "profitable_in_both_years": int(positive_year.sum()),
+            "profitable_in_all_22_months": int(len(pass_idx)),
+            "best_positive_months": int(months_positive.max())
+        }
+        def as_result(j):
+            series = monthly[j]
+            legs = [pools[sym][int(idx)]["id"] for sym, idx in zip(leg_syms, leg_indices[j])]
+            return {
+                "group": group, "legs": legs,
+                "positive_months": int(months_positive[j]),
+                "profit_2025_bp": round(float(series[:12].sum()), 3),
+                "profit_2026_bp": round(float(series[12:].sum()), 3),
+                "total_bp": round(float(series.sum()), 3),
+                "min_month_bp": round(float(series.min()), 3),
+                "monthly_bp": np.round(series, 3).tolist()
+            }
+        if len(pass_idx):
+            worst_month = monthly[pass_idx].min(axis=1)
+            total_profit = monthly[pass_idx].sum(axis=1)
+            ranks = np.lexsort((total_profit, worst_month))
+            for j in pass_idx[ranks[-5:][::-1]]:
+                examples.append(as_result(int(j)))
+        best_m = int(months_positive.max())
+        nearby = np.flatnonzero(months_positive == best_m)
+        if len(nearby):
+            best_min = monthly[nearby].min(axis=1)
+            j = int(nearby[np.argmax(best_min)])
+            near_misses.append(as_result(j))
+        print("V19_EXTENDED", group, json.dumps(counts[group]), flush=True)
+
+    for sym in SYMBOLS:
+        a = vals[sym]
+        for d in (2, 3, 4):
+            ids = np.asarray(list(itertools.combinations(range(len(a)), d)), dtype=np.int32)
+            evaluate(f"same_{sym}_{d}", [sym]*d, ids, a[ids].mean(axis=1))
+
+    for first, second in itertools.combinations(SYMBOLS, 2):
+        a = vals[first]
+        b = vals[second]
+        ia = np.asarray(list(itertools.combinations(range(len(a)), 2)), dtype=np.int32)
+        ib = np.asarray(list(itertools.combinations(range(len(b)), 2)), dtype=np.int32)
+        pa = a[ia].sum(axis=1)
+        pb = b[ib].sum(axis=1)
+        monthly = ((pa[:, None, :] + pb[None, :, :]) / 4).reshape(-1, 22)
+        indices = np.concatenate((
+            np.repeat(ia, len(ib), axis=0),
+            np.tile(ib, (len(ia), 1))
+        ), axis=1)
+        evaluate(f"mix_{first}_{second}_2plus2", [first,first,second,second], indices, monthly)
+        del monthly, indices
+
+    for first, second in itertools.permutations(SYMBOLS, 2):
+        a = vals[first]
+        b = vals[second]
+        ia = np.asarray(list(itertools.combinations(range(len(a)), 3)), dtype=np.int32)
+        p3 = a[ia].sum(axis=1)
+        monthly = ((p3[:, None, :] + b[None, :, :]) / 4).reshape(-1, 22)
+        indices = np.concatenate((
+            np.repeat(ia, len(b), axis=0),
+            np.tile(np.arange(len(b), dtype=np.int32), (len(ia), 1)).reshape(-1, 1)
+        ), axis=1)
+        evaluate(f"mix_{first}_{second}_3plus1", [first,first,first,second], indices, monthly)
+        del monthly, indices
+
+    examples.sort(key=lambda r: (r["min_month_bp"], r["total_bp"]), reverse=True)
+    near_misses.sort(key=lambda r: (r["positive_months"], r["min_month_bp"], r["total_bp"]), reverse=True)
+    return counts, examples[:100], near_misses[:15]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", type=Path, default=Path("data/v19_energies"))
@@ -304,6 +410,9 @@ def main():
         json.dump(pass_single, f, indent=2)
 
     c, passing_portfolios, top_portfolios = assemble_portfolios(recs)
+    extended_counts, extended_examples, extended_best_near_misses = expand_portfolios(recs)
+    with (args.out / "expanded_portfolio_examples.json").open("w") as f:
+        json.dump(extended_examples, f, indent=2)
     with (args.out / "passing_portfolio_strategies.json").open("w") as f:
         json.dump(passing_portfolios, f, indent=2)
     best_single = sorted(recs, key=best_key, reverse=True)[:25]
@@ -324,7 +433,10 @@ def main():
             "profitable_in_all_22_months": len(pass_single),
         },
         "portfolio_counts_by_leg_count": c,
-        "total_pass_all_22": len(pass_single) + len(passing_portfolios),
+        "extended_portfolio_counts": extended_counts,
+        "extended_portfolio_examples": extended_examples,
+        "extended_best_near_misses": extended_best_near_misses,
+        "total_pass_all_22": len(pass_single) + len(passing_portfolios) + sum(x["profitable_in_all_22_months"] for x in extended_counts.values()),
         "best_single_candidates": best_single,
         "best_portfolio_candidates": top_portfolios,
         "passing_single_strategies_file": "passing_single_strategies.json",
@@ -334,6 +446,7 @@ def main():
     print("V19_FINAL", json.dumps({
         "single": report["single_totals"],
         "portfolio": c,
+        "extended": extended_counts,
         "all_22_total": report["total_pass_all_22"]
     }), flush=True)
 
