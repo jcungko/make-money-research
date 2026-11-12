@@ -1,0 +1,45 @@
+name: V22 filter October 2026 losses from 17-to-22-month candidates
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v22-oct2026-filter.yml'
+      - 'scripts/v22_oct2026_filter.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install data analysis
+        run: pip install 'pandas>=2.2,<3' 'numpy>=1.26,<3'
+      - name: Replay V22 universe and filter loss in October 2026
+        run: python -u scripts/v22_oct2026_filter.py --root data/v22_exness --out results/v22_oct2026_filter
+      - name: Publish report as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: V22-October-2026-Loss-Filtered
+          path: results/v22_oct2026_filter/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit October-filtered complete candidate list
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v22_oct2026_filter/
+          if ! git diff --cached --quiet; then
+            git commit -m "V22: retain October nonloss strategies and publish full CSV"
+            for n in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && exit 0
+              sleep "$((n * 3))"
+            done
+            exit 1
+          fi
