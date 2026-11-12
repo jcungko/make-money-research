@@ -1,0 +1,254 @@
+name: V21 Exness Crypto 2025-2026 — 22 month strategy census
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v21-exness-crypto.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: v21-exness-crypto-22-month-screen
+  cancel-in-progress: false
+jobs:
+  collect:
+    name: "${{ matrix.symbol }} / ${{ matrix.year }} Exness monthly ticks"
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        symbol: [BTCUSD, ETHUSD, BTCUSDT]
+        year: [2025, 2026]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install read-only research dependencies
+        run: pip install 'pandas>=2.2,<3' 'numpy>=1.26,<3' 'requests>=2.31,<3'
+      - name: Get real Exness ticks and aggregate seven UTC candle periods
+        env:
+          SYMBOL: ${{ matrix.symbol }}
+          YEAR: ${{ matrix.year }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import os, sys, io, json, zipfile, hashlib, time
+          from pathlib import Path
+          from datetime import datetime, timezone
+          import pandas as pd
+          import requests
+          sys.path.insert(0, 'scripts')
+          import v12_exness_collect as reader
+
+          symbol = os.environ['SYMBOL']
+          year = int(os.environ['YEAR'])
+          first = pd.Timestamp(f'{year}-01-01T00:00:00Z')
+          end = pd.Timestamp('2026-11-01T00:00:00Z') if year == 2026 else pd.Timestamp('2026-01-01T00:00:00Z')
+          limit = 10 if year == 2026 else 12
+          out = Path('data/v21_crypto')
+          out.mkdir(parents=True, exist_ok=True)
+          months, pieces = [], []
+          with requests.Session() as sess:
+              sess.headers.update({'User-Agent': 'V21 Exness public history research; no trading'})
+              for month in range(1, limit+1):
+                  url = f'https://ticks.ex2archive.com/ticks/{symbol}/{year}/{month:02d}/Exness_{symbol}_{year}_{month:02d}.zip'
+                  record = {'month': f'{year}-{month:02d}', 'url': url, 'status': 'error'}
+                  for attempt in range(3):
+                      try:
+                          response = sess.get(url, timeout=(20, 180))
+                          if response.status_code == 404:
+                              record['error'] = 'HTTP 404 — this symbol/month unavailable'
+                              break
+                          response.raise_for_status()
+                          raw = response.content
+                          if not zipfile.is_zipfile(io.BytesIO(raw)):
+                              raise ValueError('not a ZIP archive')
+                          bars = reader.ticks_to_5m(raw, end, first)
+                          if bars.empty:
+                              raise ValueError('no valid Bid/Ask ticks')
+                          pieces.append(bars)
+                          record.update(status='ok', error=None,
+                              sha256=hashlib.sha256(raw).hexdigest(), archive_bytes=len(raw),
+                              m5_candles=len(bars), first_m5_utc=bars.index.min().isoformat(),
+                              last_m5_utc=bars.index.max().isoformat())
+                          break
+                      except (requests.RequestException, ValueError, OSError, zipfile.BadZipFile) as exc:
+                          record['error'] = f'{type(exc).__name__}: {str(exc)[:200]}'
+                          if attempt != 2: time.sleep(2 ** attempt)
+                  months.append(record)
+                  print('V21_MONTH', symbol, record['month'], record['status'], record.get('error',''), flush=True)
+          frames={}
+          if pieces:
+              m5=reader.merge_parts(pieces)
+              m5=m5[(m5.index>=first)&(m5.index<end)]
+              frames=reader.build_frames(m5)
+              for label, interval in (('D1','1D'),('W1','7D')):
+                  if label == 'W1':
+                      bars=m5.resample('7D',origin=pd.Timestamp('2024-12-30T00:00:00Z'),
+                                       closed='left',label='left').agg(reader.FIELDS)
+                      bars=bars[(bars.index>=first)&(bars.index+pd.Timedelta(days=7)<=end)]
+                  else:
+                      bars=m5.resample(interval,closed='left',label='left',origin='epoch').agg(reader.FIELDS)
+                  frames[label]=bars.loc[bars.tick_count>0]
+          complete=len(months)==limit and all(m['status']=='ok' for m in months)
+          manifest=dict(dataset='V21 Exness crypto',symbol=symbol,year=year,
+              period_start=first.isoformat(),period_end_exclusive=end.isoformat(),
+              source='Exness indicative Bid/Ask public tick mirror at ticks.ex2archive.com',
+              quote_variant='unsuffixed symbol', complete_months=complete,
+              month_count_ok=sum(m['status']=='ok' for m in months),
+              month_count_requested=limit,months=months,
+              frames={tf:{'rows':len(df),'quotes':int(df.tick_count.sum())} for tf,df in frames.items()},
+              calendar='UTC; complete Monday-Sunday weeks only at year boundaries',
+              warning='Broker historical quotes; spread included, swap and commissions excluded',
+              created_utc=datetime.now(timezone.utc).isoformat())
+          (out/f'{symbol}_{year}_manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          if frames:
+              with zipfile.ZipFile(out/f'{symbol}_{year}_UTC_7TF.zip','w',compression=zipfile.ZIP_DEFLATED) as z:
+                  for tf, df in frames.items():
+                      z.writestr(f'{symbol}_{tf}_{year}_UTC.csv',df.to_csv(index_label='timestamp_utc',float_format='%.8f'))
+                  z.writestr('manifest.json',json.dumps(manifest,indent=2))
+          print('V21_YEAR',symbol,year,'complete',complete,
+                'months',manifest['month_count_ok'],'frames',{tf:len(df) for tf,df in frames.items()},flush=True)
+          PY
+      - name: Preserve each verified dataset or failure manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: "V21-${{ matrix.symbol }}-${{ matrix.year }}"
+          path: data/v21_crypto/
+          retention-days: 30
+          if-no-files-found: warn
+  analyze:
+    name: Count profitable strategies over both years and every month
+    if: always()
+    needs: [collect]
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install reproducible research dependencies
+        run: pip install 'numpy>=1.26,<3' 'pandas>=2.2,<3'
+      - name: Collect all Exness download results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: V21-*
+          path: data/v21_crypto
+          merge-multiple: true
+      - name: Screen only complete verified 22-month symbols
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, zipfile, sys
+          from pathlib import Path
+          from datetime import datetime, timezone
+          import pandas as pd
+          sys.path.insert(0,'scripts')
+          import v19_strategy_screen as engine
+          symbols=('BTCUSD','ETHUSD','BTCUSDT')
+          root=Path('data/v21_crypto')
+          output=Path('data/v21_crypto_screen')
+          output.mkdir(parents=True,exist_ok=True)
+          valid=[]; coverage={}
+          for sym in symbols:
+              reasons=[]; total=0
+              for year,requested in ((2025,12),(2026,10)):
+                  m=root/f'{sym}_{year}_manifest.json'
+                  a=root/f'{sym}_{year}_UTC_7TF.zip'
+                  if not m.is_file():
+                      reasons.append(f'{year} manifest missing'); continue
+                  info=json.loads(m.read_text())
+                  total+=int(info.get('month_count_ok',0))
+                  if not info.get('complete_months') or info.get('month_count_ok') != requested:
+                      reasons.append(f'{year}: incomplete monthly data')
+                  if not a.is_file(): reasons.append(f'{year}: 7TF archive missing')
+                  elif not zipfile.is_zipfile(a): reasons.append(f'{year}: invalid ZIP')
+              coverage[sym]={'downloaded_months':total,'required_months':22,
+                  'complete':not reasons, 'issues':reasons}
+              if not reasons: valid.append(sym)
+          engine.SYMBOLS=tuple(valid)
+          results=[]; counts={}
+          for sym in valid:
+              try:
+                  recs=engine.screen(root,sym)
+                  results.extend(recs)
+                  counts[sym]={'tested_fully_active':len(recs),
+                      'profit_both_years':sum(x['passed_both_years'] for x in recs),
+                      'profit_all_22_months':sum(x['passed_all_22_months'] for x in recs),
+                      'best_positive_months':max((x['positive_months'] for x in recs), default=0)}
+              except Exception as ex:
+                  coverage[sym]['issues'].append(f'screen error: {type(ex).__name__}: {str(ex)[:200]}')
+                  coverage[sym]['complete']=False
+                  counts[sym]={'screen_error':str(ex)[:200]}
+          passing=[r for r in results if r['passed_all_22_months']]
+          passing.sort(key=lambda r:(r['min_month_bp'],r['total_bp']),reverse=True)
+          both=[r for r in results if r['passed_both_years']]
+          near=sorted(results,key=lambda r:(r['positive_months'],r['min_month_bp'],r['total_bp']),reverse=True)[:50]
+          complete=(len(valid)==3 and all(coverage[s]['complete'] for s in valid))
+          summary={'created_utc':datetime.now(timezone.utc).isoformat(),
+              'period':'2025-01 to 2026-10 UTC (22 months)', 'source':'Exness historical Bid/Ask ticks',
+              'symbols_requested':list(symbols),'symbols_validated':valid,'coverage':coverage,
+              'screened_fully_active_variants':len(results),
+              'both_years_profitable_pre_swap':len(both) if valid else None,
+              'all_22_months_profitable_pre_swap':len(passing) if valid else None,
+              'per_symbol_counts':counts,'full_universe_complete':complete,
+              'notes':['V21 exploratory enumeration using existing vetted V19 single-asset signal census',
+                       'Includes observed Bid/Ask spread and assumed 1 basis point slippage per side',
+                       'Fixed one-notional PnL basis points, not USD account returns',
+                       'Excludes swap, broker commissions, execution latency and margin',
+                       'Data-selected strategies require new unseen-period forward testing',
+                       'Counts represent eligible single-method variants with at least one closed trade each month',
+                       'If any symbol is missing, total does NOT include unverified symbols']}
+          (output/'v21_summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False)+'\n')
+          (output/'v21_passing_22_months.json').write_text(json.dumps(passing,indent=2,ensure_ascii=False)+'\n')
+          (output/'v21_best_near_misses.json').write_text(json.dumps(near,indent=2,ensure_ascii=False)+'\n')
+          pd.DataFrame([{k:v for k,v in r.items() if k!='monthly_bp'} for r in results]).to_csv(
+              output/'v21_all_tested_fully_active.csv',index=False)
+          lines=['# V21 Exness BTCUSD / ETHUSD / BTCUSDT — 2025 and Jan-Oct 2026',
+                 '','Source: real historical Exness Bid/Ask quotes only. 22 monthly net-profit requirements.','',
+                 f'Complete symbol datasets: {len(valid)}/3',
+                 f'Fully-active strategies tested: {len(results)}',
+                 f'Profitable both years, before swap: {len(both) if valid else "UNDETERMINED"}',
+                 f'Profitable all 22 months, before swap: {len(passing) if valid else "UNDETERMINED"}','',
+                 'Caution: does not include overnight swap/commission; not approved for live trading.',
+                 '','## Data coverage']
+          for sym,c in coverage.items():
+              lines.append(f"- {sym}: {c['downloaded_months']}/22 months; "+(', '.join(c['issues']) or 'complete'))
+          lines+=['','## Top qualifying single strategies']
+          if not passing:
+              lines.append('None confirmed among completed symbols, or no completed symbols.')
+          for r in passing[:30]:
+              lines.append(f"- {r['id']}: 2025 {r['profit_2025_bp']} bp, 2026 {r['profit_2026_bp']} bp, worst month {r['min_month_bp']} bp, trades {r['trades']}")
+          (output/'V21_REPORT.md').write_text('\n'.join(lines)+'\n')
+          print('V21_RESULT',json.dumps({'coverage':coverage,'counts':counts,
+               'profitable_22months_verified_symbols':len(passing) if valid else None,
+               'full_universe_complete':complete}),flush=True)
+          PY
+      - name: Publish datasets and reproducible V21 report
+        if: always()
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/v21_crypto/ data/v21_crypto_screen/ || true
+          if ! git diff --cached --quiet; then
+            git commit -m 'V21: Exness crypto historical datasets and 22-month strategy screen'
+            for trial in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && exit 0
+              sleep $((trial * 4))
+            done
+            exit 1
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: V21-22-month-final-report
+          path: data/v21_crypto_screen/
+          if-no-files-found: warn
+          retention-days: 30
