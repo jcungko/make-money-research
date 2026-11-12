@@ -1,0 +1,14 @@
+{
+  "version": "V22-SL-STRICT",
+  "evaluated_at_vietnam": "2026-11-13",
+  "source_candidates": "results/v22_nov2026_deduplicated/unique_strategies.csv",
+  "source_backtest_code": "scripts/v22_17to20_month_screen.py",
+  "total_before": 308,
+  "rule": "retain only configurations already backtested with an explicit protective Stop Loss trigger, fill simulation and loss accounting",
+  "configurations_with_backtested_stop_loss": 0,
+  "excluded_without_backtested_stop_loss": 308,
+  "total_after": 0,
+  "evidence": "Baseline V22 computes exits using fixed hold-bar exitindices, quote Bid/Ask closes and round-trip slippage. No stop-loss price, trigger, spread/slippage-on-stop or gap-fill simulation is present. Portfolio combinations inherit same stop-free component execution.",
+  "scope": "Only historical V22 simulated methodology. Cannot infer whether independently deployed live MT5 EAs were modified with an SL after the backtests.",
+  "status": "All 308 excluded; need new full SL-aware replay before restoring any candidate."
+}
