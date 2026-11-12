@@ -1,0 +1,180 @@
+{
+  "dataset": "V19 Exness energies",
+  "source": "Exness publicly accessible archived Bid/Ask tick files",
+  "source_variant": "unsuffixed / Standard",
+  "symbol": "USOIL",
+  "year": 2025,
+  "start_inclusive_utc": "2025-01-01T00:00:00+00:00",
+  "end_exclusive_utc": "2026-01-01T00:00:00+00:00",
+  "timezone": "UTC",
+  "price_fields": [
+    "bid_open",
+    "bid_high",
+    "bid_low",
+    "bid_close",
+    "ask_open",
+    "ask_high",
+    "ask_low",
+    "ask_close",
+    "tick_count"
+  ],
+  "weekly_rule": "W1 opens Monday 00:00 UTC; incomplete boundary weeks are excluded",
+  "daily_rule": "D1 opens 00:00 UTC; only elapsed calendar days with ticks are retained",
+  "note": "Market-closed periods have no candles. Tick count is quote count, not exchange trade volume. CFD rollover and trading schedule can affect prices.",
+  "month_count": 12,
+  "months": [
+    {
+      "month": "2025-01",
+      "url": "https://ticks.ex2archive.com/ticks/USOIL/2025/01/Exness_USOIL_2025_01.zip",
+      "archive_bytes": 8357830,
+      "archive_sha256": "42322d05ea0a4345e8a0e15723d370f198b03f94f5fe3a415086224c7ff031df",
+      "m5_candles": 5920,
+      "first_tick_bucket_utc": "2025-01-01T23:10:00+00:00",
+      "last_tick_bucket_utc": "2025-01-31T21:40:00+00:00"
+    },
+    {
+      "month": "2025-02",
+      "url": "https://ticks.ex2archive.com/ticks/USOIL/2025/02/Exness_USOIL_2025_02.zip",
+      "archive_bytes": 5925797,
+      "archive_sha256": "ab63f0ddf2deac3ecf00edc4ee30cca4965f077990352c45200d957cf3767fcc",
+      "m5_candles": 5390,
+      "first_tick_bucket_utc": "2025-02-02T23:10:00+00:00",
+      "last_tick_bucket_utc": "2025-02-28T21:40:00+00:00"
+    },
+    {
+      "month": "2025-03",
+      "url": "https://ticks.ex2archive.com/ticks/USOIL/2025/03/Exness_USOIL_2025_03.zip",
+      "archive_bytes": 6151772,
+      "archive_sha256": "b826ef2df878dbd485737d4d22a32c44863eb09f9197323b809b5d54a2e1bb15",
+      "m5_candles": 5698,
+      "first_tick_bucket_utc": "2025-03-02T23:10:00+00:00",
+      "last_tick_bucket_utc": "2025-03-31T23:55:00+00:00"
+    },
+    {
+      "month": "2025-04",
+      "url": "https://ticks.ex2archive.com/ticks/USOIL/2025/04/Exness_USOIL_2025_04.zip",
+      "archive_bytes": 10830447,
+      "archive_sha256": "1a41b3c926c591ee2a7e9d3801bbecb453936e2d20dc07c678a3b798bbf0281b",
+      "m5_candles": 5688,
+      "first_tick_bucket_utc": "2025-04-01T00:00:00+00:00",
+      "last_tick_bucket_utc": "2025-04-30T23:55:00+00:00"
+    },
+    {
+      "month": "2025-05",
+      "url": "https://ticks.ex2archive.com/ticks/USOIL/2025/05/Exness_USOIL_2025_05.zip",
+      "archive_bytes": 7149769,
+      "archive_sha256": "7369cdcf056caefd515c031ea6e66766915a6d21e6a91b52389f7d0b46eefb0e",
+      "m5_candles": 5910,
+      "first_tick_bucket_utc": "2025-05-01T00:00:00+00:00",
+      "last_tick_bucket_utc": "2025-05-30T20:40:00+00:00"
+    },
+    {
+      "month": "2025-06",
+      "url": "https://ticks.ex2archive.com/ticks/USOIL/2025/06/Exness_USOIL_2025_06.zip",
+      "archive_bytes": 10041580,
+      "archive_sha256": "f50b1e161501faad6ca31a080587b487b0c11c213d4afbcfe45db90790472ed5",
+      "m5_candles": 5654,
+      "first_tick_bucket_utc": "2025-06-01T22:10:00+00:00",
+      "last_tick_bucket_utc": "2025-06-30T23:55:00+00:00"
+    },
+    {
+      "month": "2025-07",
+      "url": "https://ticks.ex2archive.com/ticks/USOIL/2025/07/Exness_USOIL_2025_07.zip",
+      "archive_bytes": 6832607,
+      "archive_sha256": "e345adca52effb0e6b6e2ac3b7899a630aa8eabe5301cb3e2d23d2c8ddb9536e",
+      "m5_candles": 6185,
+      "first_tick_bucket_utc": "2025-07-01T00:00:00+00:00",
+      "last_tick_bucket_utc": "2025-07-31T23:55:00+00:00"
+    },
+    {
+      "month": "2025-08",
+      "url": "https://ticks.ex2archive.com/ticks/USOIL/2025/08/Exness_USOIL_2025_08.zip",
+      "archive_bytes": 5691662,
+      "archive_sha256": "04eeeb8ffb9259749ab61c30beab9ff3743950621953dc2f377c0ff77417e1f6",
+      "m5_candles": 5691,
+      "first_tick_bucket_utc": "2025-08-01T00:00:00+00:00",
+      "last_tick_bucket_utc": "2025-08-31T23:55:00+00:00"
+    },
+    {
+      "month": "2025-09",
+      "url": "https://ticks.ex2archive.com/ticks/USOIL/2025/09/Exness_USOIL_2025_09.zip",
+      "archive_bytes": 4843433,
+      "archive_sha256": "d916763dfdfa6d89bb56c2e3ef3be93b22ad54494f1eff4cca52f83f82f50bc4",
+      "m5_candles": 5932,
+      "first_tick_bucket_utc": "2025-09-01T00:00:00+00:00",
+      "last_tick_bucket_utc": "2025-09-30T23:55:00+00:00"
+    },
+    {
+      "month": "2025-10",
+      "url": "https://ticks.ex2archive.com/ticks/USOIL/2025/10/Exness_USOIL_2025_10.zip",
+      "archive_bytes": 6722122,
+      "archive_sha256": "d3719483c92df8c21fb89e454055e79f49c7742b7a10edb7bdca3ece089b985c",
+      "m5_candles": 6211,
+      "first_tick_bucket_utc": "2025-10-01T00:00:00+00:00",
+      "last_tick_bucket_utc": "2025-10-31T20:40:00+00:00"
+    },
+    {
+      "month": "2025-11",
+      "url": "https://ticks.ex2archive.com/ticks/USOIL/2025/11/Exness_USOIL_2025_11.zip",
+      "archive_bytes": 5300945,
+      "archive_sha256": "db68a2659e0e48905c5aa90d01922448ea54ade311fda58c8d6769e8af76de1b",
+      "m5_candles": 5182,
+      "first_tick_bucket_utc": "2025-11-02T23:10:00+00:00",
+      "last_tick_bucket_utc": "2025-11-28T18:25:00+00:00"
+    },
+    {
+      "month": "2025-12",
+      "url": "https://ticks.ex2archive.com/ticks/USOIL/2025/12/Exness_USOIL_2025_12.zip",
+      "archive_bytes": 4635820,
+      "archive_sha256": "ba53deb59c0664216031ae278802910567a24b3b35aae3efb4014981726171ca",
+      "m5_candles": 6009,
+      "first_tick_bucket_utc": "2025-12-01T00:00:00+00:00",
+      "last_tick_bucket_utc": "2025-12-31T21:55:00+00:00"
+    }
+  ],
+  "frames": {
+    "M5": {
+      "rows": 69470,
+      "first_utc": "2025-01-01T23:10:00+00:00",
+      "last_utc": "2025-12-31T21:55:00+00:00",
+      "tick_count_sum": 10921499
+    },
+    "M15": {
+      "rows": 23320,
+      "first_utc": "2025-01-01T23:00:00+00:00",
+      "last_utc": "2025-12-31T21:45:00+00:00",
+      "tick_count_sum": 10921499
+    },
+    "M30": {
+      "rows": 11782,
+      "first_utc": "2025-01-01T23:00:00+00:00",
+      "last_utc": "2025-12-31T21:30:00+00:00",
+      "tick_count_sum": 10921499
+    },
+    "H1": {
+      "rows": 5898,
+      "first_utc": "2025-01-01T23:00:00+00:00",
+      "last_utc": "2025-12-31T21:00:00+00:00",
+      "tick_count_sum": 10921499
+    },
+    "H4": {
+      "rows": 1596,
+      "first_utc": "2025-01-01T20:00:00+00:00",
+      "last_utc": "2025-12-31T20:00:00+00:00",
+      "tick_count_sum": 10921499
+    },
+    "D1": {
+      "rows": 311,
+      "first_utc": "2025-01-01T00:00:00+00:00",
+      "last_utc": "2025-12-31T00:00:00+00:00",
+      "tick_count_sum": 10921499
+    },
+    "W1": {
+      "rows": 51,
+      "first_utc": "2025-01-06T00:00:00+00:00",
+      "last_utc": "2025-12-22T00:00:00+00:00",
+      "tick_count_sum": 10768958
+    }
+  },
+  "assembled_utc": "2026-11-12T17:34:03.993245+00:00"
+}

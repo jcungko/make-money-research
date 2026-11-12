@@ -1,0 +1,162 @@
+{
+  "dataset": "V19 Exness energies",
+  "source": "Exness publicly accessible archived Bid/Ask tick files",
+  "source_variant": "unsuffixed / Standard",
+  "symbol": "XNGUSD",
+  "year": 2026,
+  "start_inclusive_utc": "2026-01-01T00:00:00+00:00",
+  "end_exclusive_utc": "2026-11-01T00:00:00+00:00",
+  "timezone": "UTC",
+  "price_fields": [
+    "bid_open",
+    "bid_high",
+    "bid_low",
+    "bid_close",
+    "ask_open",
+    "ask_high",
+    "ask_low",
+    "ask_close",
+    "tick_count"
+  ],
+  "weekly_rule": "W1 opens Monday 00:00 UTC; incomplete boundary weeks are excluded",
+  "daily_rule": "D1 opens 00:00 UTC; only elapsed calendar days with ticks are retained",
+  "note": "Market-closed periods have no candles. Tick count is quote count, not exchange trade volume. CFD rollover and trading schedule can affect prices.",
+  "month_count": 10,
+  "months": [
+    {
+      "month": "2026-01",
+      "url": "https://ticks.ex2archive.com/ticks/XNGUSD/2026/01/Exness_XNGUSD_2026_01.zip",
+      "archive_bytes": 2666635,
+      "archive_sha256": "dd1a3be328348282835592db064de196af24d810a416dc3be2dfd3c2a65c8e81",
+      "m5_candles": 5645,
+      "first_tick_bucket_utc": "2026-01-01T23:10:00+00:00",
+      "last_tick_bucket_utc": "2026-01-30T21:40:00+00:00"
+    },
+    {
+      "month": "2026-02",
+      "url": "https://ticks.ex2archive.com/ticks/XNGUSD/2026/02/Exness_XNGUSD_2026_02.zip",
+      "archive_bytes": 1829009,
+      "archive_sha256": "70403f6aa7d1dd491d8a59f38e20931c307766460ca7d8f896249a7117bde14f",
+      "m5_candles": 5381,
+      "first_tick_bucket_utc": "2026-02-01T23:10:00+00:00",
+      "last_tick_bucket_utc": "2026-02-27T21:40:00+00:00"
+    },
+    {
+      "month": "2026-03",
+      "url": "https://ticks.ex2archive.com/ticks/XNGUSD/2026/03/Exness_XNGUSD_2026_03.zip",
+      "archive_bytes": 1468425,
+      "archive_sha256": "420f02c908d45de67dec22ccecf1048da05f521bb2604e17a7ca9fe9dc2753e9",
+      "m5_candles": 5423,
+      "first_tick_bucket_utc": "2026-03-01T23:15:00+00:00",
+      "last_tick_bucket_utc": "2026-03-29T23:55:00+00:00"
+    },
+    {
+      "month": "2026-04",
+      "url": "https://ticks.ex2archive.com/ticks/XNGUSD/2026/04/Exness_XNGUSD_2026_04.zip",
+      "archive_bytes": 771766,
+      "archive_sha256": "cd1718def9b986eb9d3862ab6f1eb5d3a84782d15c21d9fe9c902c3df6b9ddb2",
+      "m5_candles": 5583,
+      "first_tick_bucket_utc": "2026-04-01T00:00:00+00:00",
+      "last_tick_bucket_utc": "2026-04-30T23:55:00+00:00"
+    },
+    {
+      "month": "2026-05",
+      "url": "https://ticks.ex2archive.com/ticks/XNGUSD/2026/05/Exness_XNGUSD_2026_05.zip",
+      "archive_bytes": 855149,
+      "archive_sha256": "f7825c978f56c948bee2298f11a9a51ba139bc8dcbb7e46a3e0eadfa9a6ca533",
+      "m5_candles": 5540,
+      "first_tick_bucket_utc": "2026-05-01T00:00:00+00:00",
+      "last_tick_bucket_utc": "2026-05-31T23:55:00+00:00"
+    },
+    {
+      "month": "2026-06",
+      "url": "https://ticks.ex2archive.com/ticks/XNGUSD/2026/06/Exness_XNGUSD_2026_06.zip",
+      "archive_bytes": 1219639,
+      "archive_sha256": "7a6f10c855a19bf177edeb99ec66a55c4f4d887ec1eba26b667a64b84bdb590a",
+      "m5_candles": 5774,
+      "first_tick_bucket_utc": "2026-06-01T00:00:00+00:00",
+      "last_tick_bucket_utc": "2026-06-30T23:55:00+00:00"
+    },
+    {
+      "month": "2026-07",
+      "url": "https://ticks.ex2archive.com/ticks/XNGUSD/2026/07/Exness_XNGUSD_2026_07.zip",
+      "archive_bytes": 2265146,
+      "archive_sha256": "8c3957829f389b5251bb7b27da31b6da3ef5f7949004524bdc10b701bbb6fb74",
+      "m5_candles": 6155,
+      "first_tick_bucket_utc": "2026-07-01T00:00:00+00:00",
+      "last_tick_bucket_utc": "2026-07-31T20:40:00+00:00"
+    },
+    {
+      "month": "2026-08",
+      "url": "https://ticks.ex2archive.com/ticks/XNGUSD/2026/08/Exness_XNGUSD_2026_08.zip",
+      "archive_bytes": 1891937,
+      "archive_sha256": "bb8706976505e6ca2cad825d4a247217aeb80c43e5467a13ea39675421c730fc",
+      "m5_candles": 5698,
+      "first_tick_bucket_utc": "2026-08-02T22:10:00+00:00",
+      "last_tick_bucket_utc": "2026-08-31T23:55:00+00:00"
+    },
+    {
+      "month": "2026-09",
+      "url": "https://ticks.ex2archive.com/ticks/XNGUSD/2026/09/Exness_XNGUSD_2026_09.zip",
+      "archive_bytes": 2023705,
+      "archive_sha256": "f76a3deaf69814c2b56e852b4cec05ee6147cc7f8395a81576603b1a82983e4c",
+      "m5_candles": 5882,
+      "first_tick_bucket_utc": "2026-09-01T00:00:00+00:00",
+      "last_tick_bucket_utc": "2026-09-30T23:55:00+00:00"
+    },
+    {
+      "month": "2026-10",
+      "url": "https://ticks.ex2archive.com/ticks/XNGUSD/2026/10/Exness_XNGUSD_2026_10.zip",
+      "archive_bytes": 2384678,
+      "archive_sha256": "be39116b95cf902fb16d331d638096b5dd2a39e2e6964511022e3a92d84bff28",
+      "m5_candles": 5923,
+      "first_tick_bucket_utc": "2026-10-01T00:00:00+00:00",
+      "last_tick_bucket_utc": "2026-10-30T20:40:00+00:00"
+    }
+  ],
+  "frames": {
+    "M5": {
+      "rows": 57004,
+      "first_utc": "2026-01-01T23:10:00+00:00",
+      "last_utc": "2026-10-30T20:40:00+00:00",
+      "tick_count_sum": 1979467
+    },
+    "M15": {
+      "rows": 19278,
+      "first_utc": "2026-01-01T23:00:00+00:00",
+      "last_utc": "2026-10-30T20:30:00+00:00",
+      "tick_count_sum": 1979467
+    },
+    "M30": {
+      "rows": 9757,
+      "first_utc": "2026-01-01T23:00:00+00:00",
+      "last_utc": "2026-10-30T20:30:00+00:00",
+      "tick_count_sum": 1979467
+    },
+    "H1": {
+      "rows": 4882,
+      "first_utc": "2026-01-01T23:00:00+00:00",
+      "last_utc": "2026-10-30T20:00:00+00:00",
+      "tick_count_sum": 1979467
+    },
+    "H4": {
+      "rows": 1320,
+      "first_utc": "2026-01-01T20:00:00+00:00",
+      "last_utc": "2026-10-30T20:00:00+00:00",
+      "tick_count_sum": 1979467
+    },
+    "D1": {
+      "rows": 257,
+      "first_utc": "2026-01-01T00:00:00+00:00",
+      "last_utc": "2026-10-30T00:00:00+00:00",
+      "tick_count_sum": 1979467
+    },
+    "W1": {
+      "rows": 42,
+      "first_utc": "2026-01-05T00:00:00+00:00",
+      "last_utc": "2026-10-19T00:00:00+00:00",
+      "tick_count_sum": 1905323
+    }
+  },
+  "assembled_utc": "2026-11-12T17:34:52.971490+00:00"
+}

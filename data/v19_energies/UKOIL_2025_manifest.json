@@ -1,0 +1,180 @@
+{
+  "dataset": "V19 Exness energies",
+  "source": "Exness publicly accessible archived Bid/Ask tick files",
+  "source_variant": "unsuffixed / Standard",
+  "symbol": "UKOIL",
+  "year": 2025,
+  "start_inclusive_utc": "2025-01-01T00:00:00+00:00",
+  "end_exclusive_utc": "2026-01-01T00:00:00+00:00",
+  "timezone": "UTC",
+  "price_fields": [
+    "bid_open",
+    "bid_high",
+    "bid_low",
+    "bid_close",
+    "ask_open",
+    "ask_high",
+    "ask_low",
+    "ask_close",
+    "tick_count"
+  ],
+  "weekly_rule": "W1 opens Monday 00:00 UTC; incomplete boundary weeks are excluded",
+  "daily_rule": "D1 opens 00:00 UTC; only elapsed calendar days with ticks are retained",
+  "note": "Market-closed periods have no candles. Tick count is quote count, not exchange trade volume. CFD rollover and trading schedule can affect prices.",
+  "month_count": 12,
+  "months": [
+    {
+      "month": "2025-01",
+      "url": "https://ticks.ex2archive.com/ticks/UKOIL/2025/01/Exness_UKOIL_2025_01.zip",
+      "archive_bytes": 4907958,
+      "archive_sha256": "204cbafaafe98cd43e41ad7439dc1bcde7e5c90215e7678e3cc64e4c835ddfb3",
+      "m5_candles": 5434,
+      "first_tick_bucket_utc": "2025-01-02T01:10:00+00:00",
+      "last_tick_bucket_utc": "2025-01-31T21:50:00+00:00"
+    },
+    {
+      "month": "2025-02",
+      "url": "https://ticks.ex2archive.com/ticks/UKOIL/2025/02/Exness_UKOIL_2025_02.zip",
+      "archive_bytes": 3711180,
+      "archive_sha256": "f9cc9b425b1ae2b08bd575c6d5935c18199eae13393fe763dcf69cafc8a32832",
+      "m5_candles": 4945,
+      "first_tick_bucket_utc": "2025-02-03T01:10:00+00:00",
+      "last_tick_bucket_utc": "2025-02-28T21:50:00+00:00"
+    },
+    {
+      "month": "2025-03",
+      "url": "https://ticks.ex2archive.com/ticks/UKOIL/2025/03/Exness_UKOIL_2025_03.zip",
+      "archive_bytes": 3984607,
+      "archive_sha256": "545ebd4bcba0f89e859e217077200ddc761c69b1b5d59a0b0bf2878c5ece007e",
+      "m5_candles": 5229,
+      "first_tick_bucket_utc": "2025-03-03T01:10:00+00:00",
+      "last_tick_bucket_utc": "2025-03-31T20:50:00+00:00"
+    },
+    {
+      "month": "2025-04",
+      "url": "https://ticks.ex2archive.com/ticks/UKOIL/2025/04/Exness_UKOIL_2025_04.zip",
+      "archive_bytes": 5575946,
+      "archive_sha256": "19a092d721e152d49f84a5460f4e02f01ee53809efa94a013370c8dcc1b1fb68",
+      "m5_candles": 5226,
+      "first_tick_bucket_utc": "2025-04-01T00:10:00+00:00",
+      "last_tick_bucket_utc": "2025-04-30T20:50:00+00:00"
+    },
+    {
+      "month": "2025-05",
+      "url": "https://ticks.ex2archive.com/ticks/UKOIL/2025/05/Exness_UKOIL_2025_05.zip",
+      "archive_bytes": 4389641,
+      "archive_sha256": "5fb1453c2db6c9d2c3f3a40cc378ab1e2480d465f5a1bb60662f5106eed598ff",
+      "m5_candles": 5437,
+      "first_tick_bucket_utc": "2025-05-01T00:10:00+00:00",
+      "last_tick_bucket_utc": "2025-05-30T20:50:00+00:00"
+    },
+    {
+      "month": "2025-06",
+      "url": "https://ticks.ex2archive.com/ticks/UKOIL/2025/06/Exness_UKOIL_2025_06.zip",
+      "archive_bytes": 5090218,
+      "archive_sha256": "398f1df5a5b2d473d1da11c79271727fff1d015ca6d4cb917b5ed5811e2f1d7f",
+      "m5_candles": 5185,
+      "first_tick_bucket_utc": "2025-06-02T00:10:00+00:00",
+      "last_tick_bucket_utc": "2025-06-30T20:50:00+00:00"
+    },
+    {
+      "month": "2025-07",
+      "url": "https://ticks.ex2archive.com/ticks/UKOIL/2025/07/Exness_UKOIL_2025_07.zip",
+      "archive_bytes": 4055907,
+      "archive_sha256": "18078765405af4305bfa5d1f784cf9bf6f1dfe352fbf224aab94485073a94387",
+      "m5_candles": 5677,
+      "first_tick_bucket_utc": "2025-07-01T00:10:00+00:00",
+      "last_tick_bucket_utc": "2025-07-31T20:50:00+00:00"
+    },
+    {
+      "month": "2025-08",
+      "url": "https://ticks.ex2archive.com/ticks/UKOIL/2025/08/Exness_UKOIL_2025_08.zip",
+      "archive_bytes": 3458020,
+      "archive_sha256": "7b638a298fcba2142c0b094334a93dd81df931c563095345617b483cc06db2cc",
+      "m5_candles": 5223,
+      "first_tick_bucket_utc": "2025-08-01T00:10:00+00:00",
+      "last_tick_bucket_utc": "2025-08-29T20:20:00+00:00"
+    },
+    {
+      "month": "2025-09",
+      "url": "https://ticks.ex2archive.com/ticks/UKOIL/2025/09/Exness_UKOIL_2025_09.zip",
+      "archive_bytes": 3172303,
+      "archive_sha256": "39bad425ae77bdcc699eb6cf9f861a50366900ebb3d6a27c13eaef8213b9806e",
+      "m5_candles": 5438,
+      "first_tick_bucket_utc": "2025-09-01T00:10:00+00:00",
+      "last_tick_bucket_utc": "2025-09-30T20:50:00+00:00"
+    },
+    {
+      "month": "2025-10",
+      "url": "https://ticks.ex2archive.com/ticks/UKOIL/2025/10/Exness_UKOIL_2025_10.zip",
+      "archive_bytes": 4277640,
+      "archive_sha256": "164fc6e2df4c05a0cd6169ba9b03d5baf95058514e073e33098e4cf69aa89359",
+      "m5_candles": 5727,
+      "first_tick_bucket_utc": "2025-10-01T00:10:00+00:00",
+      "last_tick_bucket_utc": "2025-10-31T20:50:00+00:00"
+    },
+    {
+      "month": "2025-11",
+      "url": "https://ticks.ex2archive.com/ticks/UKOIL/2025/11/Exness_UKOIL_2025_11.zip",
+      "archive_bytes": 3239084,
+      "archive_sha256": "22b1ce6de8d7b426656d867482c73d95e89c585014b9c68f6daff2cdd6675c09",
+      "m5_candles": 4894,
+      "first_tick_bucket_utc": "2025-11-03T01:10:00+00:00",
+      "last_tick_bucket_utc": "2025-11-28T18:25:00+00:00"
+    },
+    {
+      "month": "2025-12",
+      "url": "https://ticks.ex2archive.com/ticks/UKOIL/2025/12/Exness_UKOIL_2025_12.zip",
+      "archive_bytes": 2969935,
+      "archive_sha256": "c446c19fd6868f671735d55e20a1014821baa3f6bc8cde823505952f161e3263",
+      "m5_candles": 5399,
+      "first_tick_bucket_utc": "2025-12-01T01:10:00+00:00",
+      "last_tick_bucket_utc": "2025-12-31T19:25:00+00:00"
+    }
+  ],
+  "frames": {
+    "M5": {
+      "rows": 63814,
+      "first_utc": "2025-01-02T01:10:00+00:00",
+      "last_utc": "2025-12-31T19:25:00+00:00",
+      "tick_count_sum": 5720693
+    },
+    "M15": {
+      "rows": 21530,
+      "first_utc": "2025-01-02T01:00:00+00:00",
+      "last_utc": "2025-12-31T19:15:00+00:00",
+      "tick_count_sum": 5720693
+    },
+    "M30": {
+      "rows": 10769,
+      "first_utc": "2025-01-02T01:00:00+00:00",
+      "last_utc": "2025-12-31T19:00:00+00:00",
+      "tick_count_sum": 5720693
+    },
+    "H1": {
+      "rows": 5390,
+      "first_utc": "2025-01-02T01:00:00+00:00",
+      "last_utc": "2025-12-31T19:00:00+00:00",
+      "tick_count_sum": 5720693
+    },
+    "H4": {
+      "rows": 1538,
+      "first_utc": "2025-01-02T00:00:00+00:00",
+      "last_utc": "2025-12-31T16:00:00+00:00",
+      "tick_count_sum": 5720693
+    },
+    "D1": {
+      "rows": 258,
+      "first_utc": "2025-01-02T00:00:00+00:00",
+      "last_utc": "2025-12-31T00:00:00+00:00",
+      "tick_count_sum": 5720693
+    },
+    "W1": {
+      "rows": 51,
+      "first_utc": "2025-01-06T00:00:00+00:00",
+      "last_utc": "2025-12-22T00:00:00+00:00",
+      "tick_count_sum": 5629503
+    }
+  },
+  "assembled_utc": "2026-11-12T17:33:49.897987+00:00"
+}
