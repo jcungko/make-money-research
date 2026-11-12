@@ -1,0 +1,45 @@
+name: V22 AVGO attribution event-day exclusions and simultaneous risk
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v22-avgo-event-overlap.yml'
+      - 'scripts/v22_avgo_event_overlap.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numeric research dependencies
+        run: pip install 'pandas>=2.2,<3' 'numpy>=1.26,<3' 'requests>=2.31'
+      - name: Replay 3 retained portfolios and analyze AVGO and news days
+        run: python -u scripts/v22_avgo_event_overlap.py
+      - name: Upload auditable output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: V22-AVGO-Attribution-EventDay-Overlap
+          path: results/v22_avgo_attribution_event_overlap/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit verified results
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v22_avgo_attribution_event_overlap/
+          if ! git diff --cached --quiet; then
+            git commit -m "V22: AVGO profitability attribution and November event-day exclusion risk study"
+            for n in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && exit 0
+              sleep "$((n * 3))"
+            done
+            exit 1
+          fi
