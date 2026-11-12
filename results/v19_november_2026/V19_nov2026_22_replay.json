@@ -1,0 +1,1132 @@
+{
+  "project": "V19",
+  "study": "Out-of-sample November 2026 replay of locked 22 selected four-leg energy strategies",
+  "source_selection": "data/v19_strategy_screen/V19_22_profit_then_orders_filtered.json",
+  "no_reoptimization": true,
+  "no_live_trade_execution": true,
+  "month": "2026-11",
+  "requested_cutoff_exclusive_utc": "2026-11-12T18:00:00+00:00",
+  "complete_m5_source_cutoff_by_symbol_utc": {
+    "USOIL": "2026-11-12T17:55:00+00:00",
+    "UKOIL": "2026-11-12T17:55:00+00:00"
+  },
+  "execution_assumptions": "Previous completed bar signal, open first bid/ask; exit at future frame open H bars later; no overlapping positions within each leg, different legs allowed hedged overlaps.",
+  "costs": "Observed Bid-Ask spread plus 1bp slippage per side; no swaps, financing, commissions or margin rules",
+  "pnl_units": "bp of equal unit notional allocated 1/4 per independent leg; monthly realized profit only, unfinished trades excluded from PnL",
+  "counts": {
+    "tested": 22,
+    "profitable": 7,
+    "losing": 15,
+    "break_even": 0
+  },
+  "source": {
+    "USOIL": [
+      {
+        "date": "2026-11-01",
+        "url": "https://ticks.ex2archive.com/ticks/USOIL/2026/11/01/Exness_USOIL_2026_11_01.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "e48b6ea9ade4ec46628609c80c7205986f39912b98d10e2bde745c56fa54436f",
+        "compressed_bytes": 31121,
+        "valid_ticks": 4445,
+        "first_tick_utc": "2026-11-01T23:01:00.065000+00:00",
+        "last_tick_utc": "2026-11-01T23:59:57.519000+00:00",
+        "source_last_modified": "Mon, 02 Nov 2026 00:41:22 GMT"
+      },
+      {
+        "date": "2026-11-02",
+        "url": "https://ticks.ex2archive.com/ticks/USOIL/2026/11/02/Exness_USOIL_2026_11_02.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "409d7032ea4ad908ed7be011aea2af211f2c2e89bfa4dcafd08411f851555df9",
+        "compressed_bytes": 2441519,
+        "valid_ticks": 380035,
+        "first_tick_utc": "2026-11-02T00:00:00.073000+00:00",
+        "last_tick_utc": "2026-11-02T23:59:54.440000+00:00",
+        "source_last_modified": "Tue, 03 Nov 2026 00:41:17 GMT"
+      },
+      {
+        "date": "2026-11-03",
+        "url": "https://ticks.ex2archive.com/ticks/USOIL/2026/11/03/Exness_USOIL_2026_11_03.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "57dfdffbb4bee57e8b6bce1762e7bc54cd30364715e43fb6ff90a27b2f487825",
+        "compressed_bytes": 2676837,
+        "valid_ticks": 407537,
+        "first_tick_utc": "2026-11-03T00:00:00.074000+00:00",
+        "last_tick_utc": "2026-11-03T23:59:41.956000+00:00",
+        "source_last_modified": "Wed, 04 Nov 2026 00:41:17 GMT"
+      },
+      {
+        "date": "2026-11-04",
+        "url": "https://ticks.ex2archive.com/ticks/USOIL/2026/11/04/Exness_USOIL_2026_11_04.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "36cb6ec257ed968db9fb0b4e4fa5733487bff8a84feb042220c57e12b634c6fc",
+        "compressed_bytes": 3081012,
+        "valid_ticks": 479385,
+        "first_tick_utc": "2026-11-04T00:00:02.096000+00:00",
+        "last_tick_utc": "2026-11-04T23:59:53.337000+00:00",
+        "source_last_modified": "Thu, 05 Nov 2026 00:41:18 GMT"
+      },
+      {
+        "date": "2026-11-05",
+        "url": "https://ticks.ex2archive.com/ticks/USOIL/2026/11/05/Exness_USOIL_2026_11_05.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "c18e3598965d182918bf4bb3c3f880e17a90888b59278ca78a78d91a7ec837ed",
+        "compressed_bytes": 2520450,
+        "valid_ticks": 390098,
+        "first_tick_utc": "2026-11-05T00:00:00.083000+00:00",
+        "last_tick_utc": "2026-11-05T23:59:57.761000+00:00",
+        "source_last_modified": "Fri, 06 Nov 2026 00:41:20 GMT"
+      },
+      {
+        "date": "2026-11-06",
+        "url": "https://ticks.ex2archive.com/ticks/USOIL/2026/11/06/Exness_USOIL_2026_11_06.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "d29e8e4a852a8a6f6ad80df0debbd29b86327a41b37e2399c68a95f8347b11f8",
+        "compressed_bytes": 2411621,
+        "valid_ticks": 378274,
+        "first_tick_utc": "2026-11-06T00:00:00.131000+00:00",
+        "last_tick_utc": "2026-11-06T21:56:58.481000+00:00",
+        "source_last_modified": "Sat, 07 Nov 2026 00:41:20 GMT"
+      },
+      {
+        "date": "2026-11-07",
+        "url": "https://ticks.ex2archive.com/ticks/USOIL/2026/11/07/Exness_USOIL_2026_11_07.zip",
+        "status": "404_missing_or_market_closed"
+      },
+      {
+        "date": "2026-11-08",
+        "url": "https://ticks.ex2archive.com/ticks/USOIL/2026/11/08/Exness_USOIL_2026_11_08.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "9cee43a4fac6a6e23d9eab740740073e70745758ca0969f9583a74b0c23e8efa",
+        "compressed_bytes": 53730,
+        "valid_ticks": 7108,
+        "first_tick_utc": "2026-11-08T23:01:00.013000+00:00",
+        "last_tick_utc": "2026-11-08T23:59:59.111000+00:00",
+        "source_last_modified": "Mon, 09 Nov 2026 00:41:18 GMT"
+      },
+      {
+        "date": "2026-11-09",
+        "url": "https://ticks.ex2archive.com/ticks/USOIL/2026/11/09/Exness_USOIL_2026_11_09.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "72899871cab2a6c38395a842c3ebee2acc3e3eaa43f8916e7402c43af061d5d2",
+        "compressed_bytes": 2782958,
+        "valid_ticks": 425284,
+        "first_tick_utc": "2026-11-09T00:00:00.106000+00:00",
+        "last_tick_utc": "2026-11-09T23:59:55.988000+00:00",
+        "source_last_modified": "Tue, 10 Nov 2026 00:41:17 GMT"
+      },
+      {
+        "date": "2026-11-10",
+        "url": "https://ticks.ex2archive.com/ticks/USOIL/2026/11/10/Exness_USOIL_2026_11_10.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "03d1cd9d63db15c95c0aeb805a2a6bc7b6e8a9ef13a71c8594d707fbe57f26da",
+        "compressed_bytes": 2220482,
+        "valid_ticks": 346046,
+        "first_tick_utc": "2026-11-10T00:00:00.077000+00:00",
+        "last_tick_utc": "2026-11-10T23:59:59.816000+00:00",
+        "source_last_modified": "Wed, 11 Nov 2026 00:41:17 GMT"
+      },
+      {
+        "date": "2026-11-11",
+        "url": "https://ticks.ex2archive.com/ticks/USOIL/2026/11/11/Exness_USOIL_2026_11_11.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "6dfa7e21d9cc1da117b3ac84cfd529c71dde79a2d7ad984621e7c55fc2f3ed23",
+        "compressed_bytes": 1534602,
+        "valid_ticks": 240284,
+        "first_tick_utc": "2026-11-11T00:00:00.249000+00:00",
+        "last_tick_utc": "2026-11-11T23:59:43.137000+00:00",
+        "source_last_modified": "Thu, 12 Nov 2026 00:41:21 GMT"
+      },
+      {
+        "date": "2026-11-12",
+        "url": "https://ticks.ex2archive.com/ticks/USOIL/2026/11/12/Exness_USOIL_2026_11_12.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "495d7dc302084ccdc47637e5ee129bc8a6e03224a4bd8d06f9d16e8c1e186692",
+        "compressed_bytes": 1618008,
+        "valid_ticks": 253697,
+        "first_tick_utc": "2026-11-12T00:00:00.642000+00:00",
+        "last_tick_utc": "2026-11-12T17:59:59.797000+00:00",
+        "source_last_modified": "Thu, 12 Nov 2026 18:01:34 GMT"
+      }
+    ],
+    "USOIL_summary": {
+      "first_tick_utc": "2026-11-01T23:01:00.065000+00:00",
+      "last_tick_utc": "2026-11-12T17:59:59.797000+00:00",
+      "last_complete_m5_candle_utc": "2026-11-12T17:50:00+00:00",
+      "complete_m5_cutoff_exclusive_utc": "2026-11-12T17:55:00+00:00",
+      "m5_rows": 2435,
+      "total_ticks_used": 3309038,
+      "downloaded_day_archives": 11,
+      "missing_days": [
+        "2026-11-07"
+      ]
+    },
+    "UKOIL": [
+      {
+        "date": "2026-11-01",
+        "url": "https://ticks.ex2archive.com/ticks/UKOIL/2026/11/01/Exness_UKOIL_2026_11_01.zip",
+        "status": "404_missing_or_market_closed"
+      },
+      {
+        "date": "2026-11-02",
+        "url": "https://ticks.ex2archive.com/ticks/UKOIL/2026/11/02/Exness_UKOIL_2026_11_02.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "60facee9205c08387cdb8b1e45af3a1bde34eb04fa73748eab07aecd73dfc7a9",
+        "compressed_bytes": 1682794,
+        "valid_ticks": 241421,
+        "first_tick_utc": "2026-11-02T01:10:00.126000+00:00",
+        "last_tick_utc": "2026-11-02T21:53:59.950000+00:00",
+        "source_last_modified": "Tue, 03 Nov 2026 00:41:15 GMT"
+      },
+      {
+        "date": "2026-11-03",
+        "url": "https://ticks.ex2archive.com/ticks/UKOIL/2026/11/03/Exness_UKOIL_2026_11_03.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "3380c271ed3f20a2ed1ceee22d8894830bf2b47ec0f4aced68cb1ad4ee8b9513",
+        "compressed_bytes": 1735979,
+        "valid_ticks": 239494,
+        "first_tick_utc": "2026-11-03T01:10:00.127000+00:00",
+        "last_tick_utc": "2026-11-03T21:53:59.221000+00:00",
+        "source_last_modified": "Wed, 04 Nov 2026 00:41:15 GMT"
+      },
+      {
+        "date": "2026-11-04",
+        "url": "https://ticks.ex2archive.com/ticks/UKOIL/2026/11/04/Exness_UKOIL_2026_11_04.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "c15d619e3259d013d021bb883619b6bb1ee294ecca63424fc9887bb52dc0a471",
+        "compressed_bytes": 2088299,
+        "valid_ticks": 301804,
+        "first_tick_utc": "2026-11-04T01:10:00.020000+00:00",
+        "last_tick_utc": "2026-11-04T21:53:54.318000+00:00",
+        "source_last_modified": "Thu, 05 Nov 2026 00:41:15 GMT"
+      },
+      {
+        "date": "2026-11-05",
+        "url": "https://ticks.ex2archive.com/ticks/UKOIL/2026/11/05/Exness_UKOIL_2026_11_05.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "9931e11750433e73c2882f674a5daa08ff4356eae2728d4ab95d7e979f1cd95a",
+        "compressed_bytes": 1743469,
+        "valid_ticks": 254083,
+        "first_tick_utc": "2026-11-05T01:10:00.069000+00:00",
+        "last_tick_utc": "2026-11-05T21:53:59.572000+00:00",
+        "source_last_modified": "Fri, 06 Nov 2026 00:41:18 GMT"
+      },
+      {
+        "date": "2026-11-06",
+        "url": "https://ticks.ex2archive.com/ticks/UKOIL/2026/11/06/Exness_UKOIL_2026_11_06.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "a06b8d6eed396aa34e7ba51171be25056288455981b626e247ff0ec09efe0983",
+        "compressed_bytes": 1474530,
+        "valid_ticks": 212668,
+        "first_tick_utc": "2026-11-06T01:10:00.087000+00:00",
+        "last_tick_utc": "2026-11-06T21:53:56.950000+00:00",
+        "source_last_modified": "Sat, 07 Nov 2026 00:41:17 GMT"
+      },
+      {
+        "date": "2026-11-07",
+        "url": "https://ticks.ex2archive.com/ticks/UKOIL/2026/11/07/Exness_UKOIL_2026_11_07.zip",
+        "status": "404_missing_or_market_closed"
+      },
+      {
+        "date": "2026-11-08",
+        "url": "https://ticks.ex2archive.com/ticks/UKOIL/2026/11/08/Exness_UKOIL_2026_11_08.zip",
+        "status": "404_missing_or_market_closed"
+      },
+      {
+        "date": "2026-11-09",
+        "url": "https://ticks.ex2archive.com/ticks/UKOIL/2026/11/09/Exness_UKOIL_2026_11_09.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "819f5addc77a2bc8f86bbef4e955ee909f7c07ed9bd2d3469d10e8ee1f1f350e",
+        "compressed_bytes": 1708746,
+        "valid_ticks": 238837,
+        "first_tick_utc": "2026-11-09T01:10:00.134000+00:00",
+        "last_tick_utc": "2026-11-09T21:53:59.345000+00:00",
+        "source_last_modified": "Tue, 10 Nov 2026 00:41:15 GMT"
+      },
+      {
+        "date": "2026-11-10",
+        "url": "https://ticks.ex2archive.com/ticks/UKOIL/2026/11/10/Exness_UKOIL_2026_11_10.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "c0b8e5b7ed5161df367d2c60d8350e3d02c8ccacdee7e7c825bd17341460b6ba",
+        "compressed_bytes": 1437115,
+        "valid_ticks": 207830,
+        "first_tick_utc": "2026-11-10T01:10:00.190000+00:00",
+        "last_tick_utc": "2026-11-10T21:53:54.679000+00:00",
+        "source_last_modified": "Wed, 11 Nov 2026 00:41:15 GMT"
+      },
+      {
+        "date": "2026-11-11",
+        "url": "https://ticks.ex2archive.com/ticks/UKOIL/2026/11/11/Exness_UKOIL_2026_11_11.zip",
+        "zip_status": "complete_zip",
+        "zip_sha256": "37b3d29323e285b281daf6d4c732297f5c1135df3c84b5123ff85dac43951de3",
+        "compressed_bytes": 994970,
+        "valid_ticks": 144761,
+        "first_tick_utc": "2026-11-11T01:10:00.393000+00:00",
+        "last_tick_utc": "2026-11-11T21:53:53.287000+00:00",
+        "source_last_modified": "Thu, 12 Nov 2026 00:41:18 GMT"
+      },
+      {
+        "date": "2026-11-12",
+        "url": "https://ticks.ex2archive.com/ticks/UKOIL/2026/11/12/Exness_UKOIL_2026_11_12.zip",
+        "zip_status": "recovered_partial_zip",
+        "zip_sha256": "1fe4e6e4320d442ea1a76ec0c55a4520585da1b786b0ce5fb69c6cdb586d39ff",
+        "compressed_bytes": 987141,
+        "valid_ticks": 142461,
+        "first_tick_utc": "2026-11-12T01:10:00.186000+00:00",
+        "last_tick_utc": "2026-11-12T17:59:59.497000+00:00",
+        "source_last_modified": "Thu, 12 Nov 2026 18:01:29 GMT"
+      }
+    ],
+    "UKOIL_summary": {
+      "first_tick_utc": "2026-11-02T01:10:00.126000+00:00",
+      "last_tick_utc": "2026-11-12T17:59:59.497000+00:00",
+      "last_complete_m5_candle_utc": "2026-11-12T17:50:00+00:00",
+      "complete_m5_cutoff_exclusive_utc": "2026-11-12T17:55:00+00:00",
+      "m5_rows": 2193,
+      "total_ticks_used": 1981785,
+      "downloaded_day_archives": 9,
+      "missing_days": [
+        "2026-11-01",
+        "2026-11-07",
+        "2026-11-08"
+      ]
+    }
+  },
+  "rows": [
+    {
+      "id": "V19-065",
+      "family": "2 USOIL + 2 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1754.86144,
+      "november_realized_profit_bp": 141.65308,
+      "november_closed_orders": 17,
+      "november_open_orders": 0,
+      "november_total_order_signals": 17,
+      "november_winning_orders": 11,
+      "november_losing_orders": 6,
+      "leg_details": [
+        {
+          "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": 62.61321
+        },
+        {
+          "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+          "closed_orders": 9,
+          "open_orders": 0,
+          "realized_profit_bp": 1006.75271
+        },
+        {
+          "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+          "closed_orders": 0,
+          "open_orders": 0,
+          "realized_profit_bp": 0
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -502.75359
+        }
+      ]
+    },
+    {
+      "id": "V19-034",
+      "family": "3 USOIL + 1 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1476.704,
+      "november_realized_profit_bp": 125.21773,
+      "november_closed_orders": 20,
+      "november_open_orders": 0,
+      "november_total_order_signals": 20,
+      "november_winning_orders": 12,
+      "november_losing_orders": 8,
+      "leg_details": [
+        {
+          "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+          "closed_orders": 9,
+          "open_orders": 0,
+          "realized_profit_bp": 1006.75271
+        },
+        {
+          "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -27.79854
+        },
+        {
+          "leg": "USOIL|M15|rsi14_above_60|long|H8|08utc",
+          "closed_orders": 3,
+          "open_orders": 0,
+          "realized_profit_bp": -64.20563
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -413.87761
+        }
+      ]
+    },
+    {
+      "id": "V19-051",
+      "family": "3 USOIL + 1 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1733.65945,
+      "november_realized_profit_bp": 60.68435,
+      "november_closed_orders": 14,
+      "november_open_orders": 0,
+      "november_total_order_signals": 14,
+      "november_winning_orders": 9,
+      "november_losing_orders": 5,
+      "leg_details": [
+        {
+          "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -77.49456
+        },
+        {
+          "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": 148.98168
+        },
+        {
+          "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+          "closed_orders": 5,
+          "open_orders": 0,
+          "realized_profit_bp": 585.12788
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -413.87761
+        }
+      ]
+    },
+    {
+      "id": "V19-043",
+      "family": "4 USOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1542.47956,
+      "november_realized_profit_bp": 52.19107,
+      "november_closed_orders": 9,
+      "november_open_orders": 0,
+      "november_total_order_signals": 9,
+      "november_winning_orders": 5,
+      "november_losing_orders": 4,
+      "leg_details": [
+        {
+          "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -27.79854
+        },
+        {
+          "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+          "closed_orders": 2,
+          "open_orders": 0,
+          "realized_profit_bp": -497.54675
+        },
+        {
+          "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": 148.98168
+        },
+        {
+          "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+          "closed_orders": 5,
+          "open_orders": 0,
+          "realized_profit_bp": 585.12788
+        }
+      ]
+    },
+    {
+      "id": "V19-025",
+      "family": "3 USOIL + 1 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1796.39833,
+      "november_realized_profit_bp": 43.48245,
+      "november_closed_orders": 15,
+      "november_open_orders": 0,
+      "november_total_order_signals": 15,
+      "november_winning_orders": 10,
+      "november_losing_orders": 5,
+      "leg_details": [
+        {
+          "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -77.49456
+        },
+        {
+          "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": 62.61321
+        },
+        {
+          "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+          "closed_orders": 6,
+          "open_orders": 0,
+          "realized_profit_bp": 602.68876
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -413.87761
+        }
+      ]
+    },
+    {
+      "id": "V19-047",
+      "family": "3 USOIL + 1 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1650.33481,
+      "november_realized_profit_bp": 24.58569,
+      "november_closed_orders": 17,
+      "november_open_orders": 0,
+      "november_total_order_signals": 17,
+      "november_winning_orders": 10,
+      "november_losing_orders": 7,
+      "leg_details": [
+        {
+          "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": 62.61321
+        },
+        {
+          "leg": "USOIL|M15|rsi14_above_60|long|H8|08utc",
+          "closed_orders": 3,
+          "open_orders": 0,
+          "realized_profit_bp": -64.20563
+        },
+        {
+          "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+          "closed_orders": 6,
+          "open_orders": 0,
+          "realized_profit_bp": 602.68876
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -502.75359
+        }
+      ]
+    },
+    {
+      "id": "V19-076",
+      "family": "3 USOIL + 1 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1680.73299,
+      "november_realized_profit_bp": 23.47356,
+      "november_closed_orders": 15,
+      "november_open_orders": 0,
+      "november_total_order_signals": 15,
+      "november_winning_orders": 10,
+      "november_losing_orders": 5,
+      "leg_details": [
+        {
+          "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -77.49456
+        },
+        {
+          "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": 62.61321
+        },
+        {
+          "leg": "USOIL|M30|below_sma_50|short|H4|12utc",
+          "closed_orders": 6,
+          "open_orders": 0,
+          "realized_profit_bp": 600.70662
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H4|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -491.93102
+        }
+      ]
+    },
+    {
+      "id": "V19-059",
+      "family": "3 USOIL + 1 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1693.32611,
+      "november_realized_profit_bp": -1.83502,
+      "november_closed_orders": 15,
+      "november_open_orders": 0,
+      "november_total_order_signals": 15,
+      "november_winning_orders": 8,
+      "november_losing_orders": 7,
+      "leg_details": [
+        {
+          "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -77.49456
+        },
+        {
+          "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -27.79854
+        },
+        {
+          "leg": "USOIL|M30|below_sma_50|short|H4|12utc",
+          "closed_orders": 6,
+          "open_orders": 0,
+          "realized_profit_bp": 600.70662
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -502.75359
+        }
+      ]
+    },
+    {
+      "id": "V19-012",
+      "family": "4 USOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1563.95487,
+      "november_realized_profit_bp": -85.55973,
+      "november_closed_orders": 7,
+      "november_open_orders": 0,
+      "november_total_order_signals": 7,
+      "november_winning_orders": 4,
+      "november_losing_orders": 3,
+      "leg_details": [
+        {
+          "leg": "USOIL|H1|momentum_up_40|short|H2|00utc",
+          "closed_orders": 3,
+          "open_orders": 0,
+          "realized_profit_bp": 115.71409
+        },
+        {
+          "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -27.79854
+        },
+        {
+          "leg": "USOIL|M30|rsi7_below_30|short|H2|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": 67.3923
+        },
+        {
+          "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+          "closed_orders": 2,
+          "open_orders": 0,
+          "realized_profit_bp": -497.54675
+        }
+      ]
+    },
+    {
+      "id": "V19-020",
+      "family": "2 USOIL + 2 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1927.20897,
+      "november_realized_profit_bp": -103.70951,
+      "november_closed_orders": 11,
+      "november_open_orders": 0,
+      "november_total_order_signals": 11,
+      "november_winning_orders": 6,
+      "november_losing_orders": 5,
+      "leg_details": [
+        {
+          "leg": "USOIL|H1|momentum_up_40|short|H2|00utc",
+          "closed_orders": 3,
+          "open_orders": 0,
+          "realized_profit_bp": 115.71409
+        },
+        {
+          "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -27.79854
+        },
+        {
+          "leg": "UKOIL|H4|rsi7_above_70|short|H3|00utc",
+          "closed_orders": 0,
+          "open_orders": 0,
+          "realized_profit_bp": 0
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -502.75359
+        }
+      ]
+    },
+    {
+      "id": "V19-011",
+      "family": "3 USOIL + 1 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1782.02734,
+      "november_realized_profit_bp": -103.70951,
+      "november_closed_orders": 11,
+      "november_open_orders": 0,
+      "november_total_order_signals": 11,
+      "november_winning_orders": 6,
+      "november_losing_orders": 5,
+      "leg_details": [
+        {
+          "leg": "USOIL|H1|momentum_up_40|short|H2|00utc",
+          "closed_orders": 3,
+          "open_orders": 0,
+          "realized_profit_bp": 115.71409
+        },
+        {
+          "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -27.79854
+        },
+        {
+          "leg": "USOIL|H1|rsi14_above_60|long|H2|08utc",
+          "closed_orders": 0,
+          "open_orders": 0,
+          "realized_profit_bp": 0
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -502.75359
+        }
+      ]
+    },
+    {
+      "id": "V19-056",
+      "family": "3 USOIL + 1 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1639.55435,
+      "november_realized_profit_bp": -113.42787,
+      "november_closed_orders": 11,
+      "november_open_orders": 0,
+      "november_total_order_signals": 11,
+      "november_winning_orders": 7,
+      "november_losing_orders": 4,
+      "leg_details": [
+        {
+          "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -77.49456
+        },
+        {
+          "leg": "USOIL|H1|momentum_up_40|short|H2|00utc",
+          "closed_orders": 3,
+          "open_orders": 0,
+          "realized_profit_bp": 115.71409
+        },
+        {
+          "leg": "USOIL|H1|rsi14_above_60|long|H1|08utc",
+          "closed_orders": 0,
+          "open_orders": 0,
+          "realized_profit_bp": 0
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H4|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -491.93102
+        }
+      ]
+    },
+    {
+      "id": "V19-053",
+      "family": "2 USOIL + 2 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1830.02601,
+      "november_realized_profit_bp": -114.00285,
+      "november_closed_orders": 11,
+      "november_open_orders": 0,
+      "november_total_order_signals": 11,
+      "november_winning_orders": 6,
+      "november_losing_orders": 5,
+      "leg_details": [
+        {
+          "leg": "USOIL|H1|momentum_up_40|short|H2|00utc",
+          "closed_orders": 3,
+          "open_orders": 0,
+          "realized_profit_bp": 115.71409
+        },
+        {
+          "leg": "USOIL|H1|red_streak_3|short|H2|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -68.97191
+        },
+        {
+          "leg": "UKOIL|H4|range_top_10|long|H2|12utc",
+          "closed_orders": 0,
+          "open_orders": 0,
+          "realized_profit_bp": 0
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -502.75359
+        }
+      ]
+    },
+    {
+      "id": "V19-026",
+      "family": "4 USOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1728.9056,
+      "november_realized_profit_bp": -114.8318,
+      "november_closed_orders": 6,
+      "november_open_orders": 0,
+      "november_total_order_signals": 6,
+      "november_winning_orders": 3,
+      "november_losing_orders": 3,
+      "leg_details": [
+        {
+          "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -77.49456
+        },
+        {
+          "leg": "USOIL|H1|momentum_up_40|short|H2|00utc",
+          "closed_orders": 3,
+          "open_orders": 0,
+          "realized_profit_bp": 115.71409
+        },
+        {
+          "leg": "USOIL|H1|rsi14_above_60|long|H2|08utc",
+          "closed_orders": 0,
+          "open_orders": 0,
+          "realized_profit_bp": 0
+        },
+        {
+          "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+          "closed_orders": 2,
+          "open_orders": 0,
+          "realized_profit_bp": -497.54675
+        }
+      ]
+    },
+    {
+      "id": "V19-018",
+      "family": "4 USOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1622.35372,
+      "november_realized_profit_bp": -114.8318,
+      "november_closed_orders": 6,
+      "november_open_orders": 0,
+      "november_total_order_signals": 6,
+      "november_winning_orders": 3,
+      "november_losing_orders": 3,
+      "leg_details": [
+        {
+          "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -77.49456
+        },
+        {
+          "leg": "USOIL|H1|momentum_up_40|short|H2|00utc",
+          "closed_orders": 3,
+          "open_orders": 0,
+          "realized_profit_bp": 115.71409
+        },
+        {
+          "leg": "USOIL|H1|rsi14_above_60|long|H1|08utc",
+          "closed_orders": 0,
+          "open_orders": 0,
+          "realized_profit_bp": 0
+        },
+        {
+          "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+          "closed_orders": 2,
+          "open_orders": 0,
+          "realized_profit_bp": -497.54675
+        }
+      ]
+    },
+    {
+      "id": "V19-037",
+      "family": "3 USOIL + 1 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1837.84716,
+      "november_realized_profit_bp": -116.13351,
+      "november_closed_orders": 11,
+      "november_open_orders": 0,
+      "november_total_order_signals": 11,
+      "november_winning_orders": 6,
+      "november_losing_orders": 5,
+      "leg_details": [
+        {
+          "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -77.49456
+        },
+        {
+          "leg": "USOIL|H1|momentum_up_40|short|H2|00utc",
+          "closed_orders": 3,
+          "open_orders": 0,
+          "realized_profit_bp": 115.71409
+        },
+        {
+          "leg": "USOIL|H1|rsi14_above_60|long|H2|08utc",
+          "closed_orders": 0,
+          "open_orders": 0,
+          "realized_profit_bp": 0
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -502.75359
+        }
+      ]
+    },
+    {
+      "id": "V19-033",
+      "family": "3 USOIL + 1 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1731.29528,
+      "november_realized_profit_bp": -116.13351,
+      "november_closed_orders": 11,
+      "november_open_orders": 0,
+      "november_total_order_signals": 11,
+      "november_winning_orders": 6,
+      "november_losing_orders": 5,
+      "leg_details": [
+        {
+          "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -77.49456
+        },
+        {
+          "leg": "USOIL|H1|momentum_up_40|short|H2|00utc",
+          "closed_orders": 3,
+          "open_orders": 0,
+          "realized_profit_bp": 115.71409
+        },
+        {
+          "leg": "USOIL|H1|rsi14_above_60|long|H1|08utc",
+          "closed_orders": 0,
+          "open_orders": 0,
+          "realized_profit_bp": 0
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -502.75359
+        }
+      ]
+    },
+    {
+      "id": "V19-060",
+      "family": "3 USOIL + 1 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1729.68489,
+      "november_realized_profit_bp": -120.3775,
+      "november_closed_orders": 12,
+      "november_open_orders": 0,
+      "november_total_order_signals": 12,
+      "november_winning_orders": 7,
+      "november_losing_orders": 5,
+      "leg_details": [
+        {
+          "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -77.49456
+        },
+        {
+          "leg": "USOIL|H1|momentum_up_40|short|H2|00utc",
+          "closed_orders": 3,
+          "open_orders": 0,
+          "realized_profit_bp": 115.71409
+        },
+        {
+          "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -27.79854
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H4|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -491.93102
+        }
+      ]
+    },
+    {
+      "id": "V19-068",
+      "family": "3 USOIL + 1 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1618.55389,
+      "november_realized_profit_bp": -130.37424,
+      "november_closed_orders": 13,
+      "november_open_orders": 0,
+      "november_total_order_signals": 13,
+      "november_winning_orders": 7,
+      "november_losing_orders": 6,
+      "leg_details": [
+        {
+          "leg": "USOIL|H1|rsi7_above_60|long|H2|08utc",
+          "closed_orders": 2,
+          "open_orders": 0,
+          "realized_profit_bp": -117.48149
+        },
+        {
+          "leg": "USOIL|H1|momentum_up_40|short|H2|00utc",
+          "closed_orders": 3,
+          "open_orders": 0,
+          "realized_profit_bp": 115.71409
+        },
+        {
+          "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -27.79854
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H4|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -491.93102
+        }
+      ]
+    },
+    {
+      "id": "V19-044",
+      "family": "3 USOIL + 1 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1658.81066,
+      "november_realized_profit_bp": -132.68417,
+      "november_closed_orders": 9,
+      "november_open_orders": 0,
+      "november_total_order_signals": 9,
+      "november_winning_orders": 4,
+      "november_losing_orders": 5,
+      "leg_details": [
+        {
+          "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -77.49456
+        },
+        {
+          "leg": "USOIL|H1|rsi14_above_60|long|H2|08utc",
+          "closed_orders": 0,
+          "open_orders": 0,
+          "realized_profit_bp": 0
+        },
+        {
+          "leg": "USOIL|H1|ema_above_10_40|short|H2|00utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": 49.51146
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -502.75359
+        }
+      ]
+    },
+    {
+      "id": "V19-061",
+      "family": "3 USOIL + 1 UKOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1550.64839,
+      "november_realized_profit_bp": -136.92816,
+      "november_closed_orders": 10,
+      "november_open_orders": 0,
+      "november_total_order_signals": 10,
+      "november_winning_orders": 5,
+      "november_losing_orders": 5,
+      "leg_details": [
+        {
+          "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -77.49456
+        },
+        {
+          "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -27.79854
+        },
+        {
+          "leg": "USOIL|H1|ema_above_10_40|short|H2|00utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": 49.51146
+        },
+        {
+          "leg": "UKOIL|H4|range_bottom_20|long|H4|16utc",
+          "closed_orders": 7,
+          "open_orders": 0,
+          "realized_profit_bp": -491.93102
+        }
+      ]
+    },
+    {
+      "id": "V19-004",
+      "family": "4 USOIL",
+      "historical_21plus_months": 21,
+      "historical_profit_bp": 1533.44776,
+      "november_realized_profit_bp": -138.3321,
+      "november_closed_orders": 5,
+      "november_open_orders": 0,
+      "november_total_order_signals": 5,
+      "november_winning_orders": 1,
+      "november_losing_orders": 4,
+      "leg_details": [
+        {
+          "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -77.49456
+        },
+        {
+          "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": -27.79854
+        },
+        {
+          "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+          "closed_orders": 2,
+          "open_orders": 0,
+          "realized_profit_bp": -497.54675
+        },
+        {
+          "leg": "USOIL|H1|ema_above_10_40|short|H2|00utc",
+          "closed_orders": 1,
+          "open_orders": 0,
+          "realized_profit_bp": 49.51146
+        }
+      ]
+    }
+  ]
+}

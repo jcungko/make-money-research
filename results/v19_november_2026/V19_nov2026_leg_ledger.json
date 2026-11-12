@@ -1,0 +1,682 @@
+{
+  "UKOIL|H4|range_bottom_20|long|H2|16utc": [
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-02T16:00:00+00:00",
+      "exit_utc": "2026-11-03T00:00:00+00:00",
+      "pnl_bp": -134.261517
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-03T16:00:00+00:00",
+      "exit_utc": "2026-11-04T00:00:00+00:00",
+      "pnl_bp": 105.903112
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-04T16:00:00+00:00",
+      "exit_utc": "2026-11-05T00:00:00+00:00",
+      "pnl_bp": -513.453252
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-05T16:00:00+00:00",
+      "exit_utc": "2026-11-06T00:00:00+00:00",
+      "pnl_bp": 202.912374
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-06T16:00:00+00:00",
+      "exit_utc": "2026-11-09T00:00:00+00:00",
+      "pnl_bp": 36.277452
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-09T16:00:00+00:00",
+      "exit_utc": "2026-11-10T00:00:00+00:00",
+      "pnl_bp": -274.882094
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H2|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-10T16:00:00+00:00",
+      "exit_utc": "2026-11-11T00:00:00+00:00",
+      "pnl_bp": 163.626311
+    }
+  ],
+  "UKOIL|H4|range_bottom_20|long|H3|16utc": [
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-02T16:00:00+00:00",
+      "exit_utc": "2026-11-03T04:00:00+00:00",
+      "pnl_bp": -144.778004
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-03T16:00:00+00:00",
+      "exit_utc": "2026-11-04T04:00:00+00:00",
+      "pnl_bp": -6.975763
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-04T16:00:00+00:00",
+      "exit_utc": "2026-11-05T04:00:00+00:00",
+      "pnl_bp": -571.780414
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-05T16:00:00+00:00",
+      "exit_utc": "2026-11-06T04:00:00+00:00",
+      "pnl_bp": 285.815904
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-06T16:00:00+00:00",
+      "exit_utc": "2026-11-09T04:00:00+00:00",
+      "pnl_bp": 116.274458
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-09T16:00:00+00:00",
+      "exit_utc": "2026-11-10T04:00:00+00:00",
+      "pnl_bp": -354.521466
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H3|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-10T16:00:00+00:00",
+      "exit_utc": "2026-11-11T04:00:00+00:00",
+      "pnl_bp": 173.211691
+    }
+  ],
+  "UKOIL|H4|range_bottom_20|long|H4|16utc": [
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H4|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-02T16:00:00+00:00",
+      "exit_utc": "2026-11-03T08:00:00+00:00",
+      "pnl_bp": 9.369061
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H4|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-03T16:00:00+00:00",
+      "exit_utc": "2026-11-04T08:00:00+00:00",
+      "pnl_bp": 41.902643
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H4|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-04T16:00:00+00:00",
+      "exit_utc": "2026-11-05T08:00:00+00:00",
+      "pnl_bp": -434.736944
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H4|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-05T16:00:00+00:00",
+      "exit_utc": "2026-11-06T08:00:00+00:00",
+      "pnl_bp": 189.460103
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H4|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-06T16:00:00+00:00",
+      "exit_utc": "2026-11-09T08:00:00+00:00",
+      "pnl_bp": -15.246044
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H4|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-09T16:00:00+00:00",
+      "exit_utc": "2026-11-10T08:00:00+00:00",
+      "pnl_bp": -422.342697
+    },
+    {
+      "symbol": "UKOIL",
+      "timeframe": "H4",
+      "leg": "UKOIL|H4|range_bottom_20|long|H4|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-10T16:00:00+00:00",
+      "exit_utc": "2026-11-11T08:00:00+00:00",
+      "pnl_bp": 139.662862
+    }
+  ],
+  "UKOIL|H4|range_top_10|long|H2|12utc": [],
+  "UKOIL|H4|rsi7_above_70|short|H3|00utc": [],
+  "USOIL|H1|below_sma_20|short|H2|12utc": [
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-02T12:00:00+00:00",
+      "exit_utc": "2026-11-02T14:00:00+00:00",
+      "pnl_bp": 199.846232
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-04T12:00:00+00:00",
+      "exit_utc": "2026-11-04T14:00:00+00:00",
+      "pnl_bp": 205.896041
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-09T12:00:00+00:00",
+      "exit_utc": "2026-11-09T14:00:00+00:00",
+      "pnl_bp": 173.928632
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-10T12:00:00+00:00",
+      "exit_utc": "2026-11-10T14:00:00+00:00",
+      "pnl_bp": 92.225063
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|below_sma_20|short|H2|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-12T12:00:00+00:00",
+      "exit_utc": "2026-11-12T14:00:00+00:00",
+      "pnl_bp": -86.768088
+    }
+  ],
+  "USOIL|H1|ema_above_10_40|short|H2|00utc": [
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|ema_above_10_40|short|H2|00utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-02T00:00:00+00:00",
+      "exit_utc": "2026-11-02T02:00:00+00:00",
+      "pnl_bp": 49.511461
+    }
+  ],
+  "USOIL|H1|ema_above_10_40|short|H4|00utc": [
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|ema_above_10_40|short|H4|00utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-02T00:00:00+00:00",
+      "exit_utc": "2026-11-02T04:00:00+00:00",
+      "pnl_bp": 148.981677
+    }
+  ],
+  "USOIL|H1|momentum_up_40|short|H2|00utc": [
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|momentum_up_40|short|H2|00utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-02T00:00:00+00:00",
+      "exit_utc": "2026-11-02T02:00:00+00:00",
+      "pnl_bp": 49.511461
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|momentum_up_40|short|H2|00utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-09T00:00:00+00:00",
+      "exit_utc": "2026-11-09T02:00:00+00:00",
+      "pnl_bp": 4.146184
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|momentum_up_40|short|H2|00utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-12T00:00:00+00:00",
+      "exit_utc": "2026-11-12T02:00:00+00:00",
+      "pnl_bp": 62.056448
+    }
+  ],
+  "USOIL|H1|range_top_20|long|H1|08utc": [
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|range_top_20|long|H1|08utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-11T08:00:00+00:00",
+      "exit_utc": "2026-11-11T09:00:00+00:00",
+      "pnl_bp": -27.798541
+    }
+  ],
+  "USOIL|H1|range_top_20|long|H2|08utc": [
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|range_top_20|long|H2|08utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-11T08:00:00+00:00",
+      "exit_utc": "2026-11-11T10:00:00+00:00",
+      "pnl_bp": 62.613208
+    }
+  ],
+  "USOIL|H1|red_streak_3|short|H2|08utc": [
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|red_streak_3|short|H2|08utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-11T08:00:00+00:00",
+      "exit_utc": "2026-11-11T10:00:00+00:00",
+      "pnl_bp": -68.971912
+    }
+  ],
+  "USOIL|H1|rsi14_above_60|long|H1|08utc": [],
+  "USOIL|H1|rsi14_above_60|long|H2|08utc": [],
+  "USOIL|H1|rsi14_below_40|long|H4|16utc": [
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-02T16:00:00+00:00",
+      "exit_utc": "2026-11-02T20:00:00+00:00",
+      "pnl_bp": -97.775966
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|rsi14_below_40|long|H4|16utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-04T16:00:00+00:00",
+      "exit_utc": "2026-11-04T20:00:00+00:00",
+      "pnl_bp": -399.770786
+    }
+  ],
+  "USOIL|H1|rsi7_above_60|long|H2|08utc": [
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|rsi7_above_60|long|H2|08utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-03T08:00:00+00:00",
+      "exit_utc": "2026-11-03T10:00:00+00:00",
+      "pnl_bp": -39.98693
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "H1",
+      "leg": "USOIL|H1|rsi7_above_60|long|H2|08utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-12T08:00:00+00:00",
+      "exit_utc": "2026-11-12T10:00:00+00:00",
+      "pnl_bp": -77.494555
+    }
+  ],
+  "USOIL|M15|below_sma_50|short|H8|12utc": [
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-02T12:00:00+00:00",
+      "exit_utc": "2026-11-02T14:00:00+00:00",
+      "pnl_bp": 199.846232
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-04T12:00:00+00:00",
+      "exit_utc": "2026-11-04T14:00:00+00:00",
+      "pnl_bp": 205.896041
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-06T12:00:00+00:00",
+      "exit_utc": "2026-11-06T14:00:00+00:00",
+      "pnl_bp": 17.560882
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-09T12:00:00+00:00",
+      "exit_utc": "2026-11-09T14:00:00+00:00",
+      "pnl_bp": 173.928632
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-10T12:00:00+00:00",
+      "exit_utc": "2026-11-10T14:00:00+00:00",
+      "pnl_bp": 92.225063
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|below_sma_50|short|H8|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-12T12:00:00+00:00",
+      "exit_utc": "2026-11-12T14:00:00+00:00",
+      "pnl_bp": -86.768088
+    }
+  ],
+  "USOIL|M15|rsi14_above_30|short|H8|12utc": [
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-02T12:00:00+00:00",
+      "exit_utc": "2026-11-02T14:00:00+00:00",
+      "pnl_bp": 199.846232
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-03T12:00:00+00:00",
+      "exit_utc": "2026-11-03T14:00:00+00:00",
+      "pnl_bp": 390.834721
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-04T12:00:00+00:00",
+      "exit_utc": "2026-11-04T14:00:00+00:00",
+      "pnl_bp": 205.896041
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-05T12:00:00+00:00",
+      "exit_utc": "2026-11-05T14:00:00+00:00",
+      "pnl_bp": 15.578741
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-06T12:00:00+00:00",
+      "exit_utc": "2026-11-06T14:00:00+00:00",
+      "pnl_bp": 17.560882
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-09T12:00:00+00:00",
+      "exit_utc": "2026-11-09T14:00:00+00:00",
+      "pnl_bp": 173.928632
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-10T12:00:00+00:00",
+      "exit_utc": "2026-11-10T14:00:00+00:00",
+      "pnl_bp": 92.225063
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-11T12:00:00+00:00",
+      "exit_utc": "2026-11-11T14:00:00+00:00",
+      "pnl_bp": -2.349516
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|rsi14_above_30|short|H8|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-12T12:00:00+00:00",
+      "exit_utc": "2026-11-12T14:00:00+00:00",
+      "pnl_bp": -86.768088
+    }
+  ],
+  "USOIL|M15|rsi14_above_60|long|H8|08utc": [
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|rsi14_above_60|long|H8|08utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-03T08:00:00+00:00",
+      "exit_utc": "2026-11-03T10:00:00+00:00",
+      "pnl_bp": -39.98693
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|rsi14_above_60|long|H8|08utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-05T08:00:00+00:00",
+      "exit_utc": "2026-11-05T10:00:00+00:00",
+      "pnl_bp": 53.275858
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M15",
+      "leg": "USOIL|M15|rsi14_above_60|long|H8|08utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-12T08:00:00+00:00",
+      "exit_utc": "2026-11-12T10:00:00+00:00",
+      "pnl_bp": -77.494555
+    }
+  ],
+  "USOIL|M30|below_sma_50|short|H4|12utc": [
+    {
+      "symbol": "USOIL",
+      "timeframe": "M30",
+      "leg": "USOIL|M30|below_sma_50|short|H4|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-02T12:00:00+00:00",
+      "exit_utc": "2026-11-02T14:00:00+00:00",
+      "pnl_bp": 199.846232
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M30",
+      "leg": "USOIL|M30|below_sma_50|short|H4|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-04T12:00:00+00:00",
+      "exit_utc": "2026-11-04T14:00:00+00:00",
+      "pnl_bp": 205.896041
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M30",
+      "leg": "USOIL|M30|below_sma_50|short|H4|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-05T12:00:00+00:00",
+      "exit_utc": "2026-11-05T14:00:00+00:00",
+      "pnl_bp": 15.578741
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M30",
+      "leg": "USOIL|M30|below_sma_50|short|H4|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-09T12:00:00+00:00",
+      "exit_utc": "2026-11-09T14:00:00+00:00",
+      "pnl_bp": 173.928632
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M30",
+      "leg": "USOIL|M30|below_sma_50|short|H4|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-10T12:00:00+00:00",
+      "exit_utc": "2026-11-10T14:00:00+00:00",
+      "pnl_bp": 92.225063
+    },
+    {
+      "symbol": "USOIL",
+      "timeframe": "M30",
+      "leg": "USOIL|M30|below_sma_50|short|H4|12utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-12T12:00:00+00:00",
+      "exit_utc": "2026-11-12T14:00:00+00:00",
+      "pnl_bp": -86.768088
+    }
+  ],
+  "USOIL|M30|rsi14_above_60|long|H4|08utc": [
+    {
+      "symbol": "USOIL",
+      "timeframe": "M30",
+      "leg": "USOIL|M30|rsi14_above_60|long|H4|08utc",
+      "side": "long",
+      "status": "closed",
+      "entry_utc": "2026-11-12T08:00:00+00:00",
+      "exit_utc": "2026-11-12T10:00:00+00:00",
+      "pnl_bp": -77.494555
+    }
+  ],
+  "USOIL|M30|rsi7_below_30|short|H2|08utc": [
+    {
+      "symbol": "USOIL",
+      "timeframe": "M30",
+      "leg": "USOIL|M30|rsi7_below_30|short|H2|08utc",
+      "side": "short",
+      "status": "closed",
+      "entry_utc": "2026-11-10T08:00:00+00:00",
+      "exit_utc": "2026-11-10T09:00:00+00:00",
+      "pnl_bp": 67.392299
+    }
+  ]
+}
