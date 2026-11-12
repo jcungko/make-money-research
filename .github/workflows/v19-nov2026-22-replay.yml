@@ -1,0 +1,56 @@
+name: V19 replay November 2026 22 selected energy portfolios
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v19-nov2026-22-replay.yml'
+      - 'scripts/v19_nov2026_22_replay.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: v19-nov2026-22-replay
+  cancel-in-progress: false
+jobs:
+  replay:
+    name: Out-of-sample Exness daily ticks through Nov 12 UTC
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install read-only replay dependencies
+        run: pip install 'pandas>=2.2,<3' 'numpy>=1.26,<3' 'requests>=2.31,<3'
+      - name: Replay the locked 22 portfolio specifications
+        run: python scripts/v19_nov2026_22_replay.py --history data/v19_energies --selected data/v19_strategy_screen/V19_22_profit_then_orders_filtered.json --out results/v19_november_2026 --until 2026-11-12T18:00:00Z
+      - name: Validate and store portable results in repo
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          p="results/v19_november_2026/V19_nov2026_22_replay.json"
+          x=json.load(open(p))
+          c=x["counts"]
+          assert c["tested"]==22 and c["profitable"]+c["losing"]+c["break_even"]==22
+          assert x["requested_cutoff_exclusive_utc"]=="2026-11-12T18:00:00+00:00"
+          assert len(set(r["id"] for r in x["rows"]))==22
+          print("Verified replay:",c)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v19_november_2026/
+          if ! git diff --cached --quiet; then
+            git commit -m "V19: replay 22 selected energy portfolios in November 2026"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: V19-Nov-2026-22-Portfolio-Replay
+          path: results/v19_november_2026/
+          if-no-files-found: warn
+          retention-days: 30
