@@ -1,0 +1,55 @@
+name: V19-065 daily November 2026 report with 4 percent SL
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v19-065-daily-sl4-report.yml'
+      - 'scripts/v19_065_daily_sl4_report.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: v19-065-daily-sl4-report
+  cancel-in-progress: false
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'pandas>=2.2,<3' 'numpy>=1.26,<3' 'requests>=2.31,<3'
+      - name: Replay exact November trade ledger with SL 4 percent and daily ICT aggregation
+        run: python scripts/v19_065_daily_sl4_report.py
+      - name: Save validated daily reports
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('results/v19_sl_research/V19_065_SL4_nov2026_daily_report.json'))
+          assert x['counts']['closed_orders']==17
+          assert x['counts']['stop_exits']==2
+          assert abs(x['counts']['total_portfolio_bp']-172.23601)<.0002
+          print('Validated V19-065 daily report',x['counts'])
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v19_sl_research/V19_065_SL4_nov2026_daily_report.json results/v19_sl_research/V19_065_SL4_nov2026_daily_report.csv results/v19_sl_research/V19_065_SL4_nov2026_trade_ledger.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "V19-065: publish day-by-day 2026 November realised SL 4 percent report"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: V19-065-Daily-SL4-Nov2026
+          path: |
+            results/v19_sl_research/V19_065_SL4_nov2026_daily_report.json
+            results/v19_sl_research/V19_065_SL4_nov2026_daily_report.csv
+            results/v19_sl_research/V19_065_SL4_nov2026_trade_ledger.csv
+          if-no-files-found: warn
+          retention-days: 30
