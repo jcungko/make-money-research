@@ -1,0 +1,196 @@
+{
+  "created_utc": "2026-11-12T15:42:39.149312+00:00",
+  "target_entry_utc": "2026-11-12T16:00:00+00:00",
+  "target_entry_ict": "2026-11-12 23:00:00+07:00",
+  "last_complete_M5_cutoff_exclusive_utc": "2026-11-12T15:35:00+00:00",
+  "source": "Exness public tick-history archive (indicative)",
+  "execution": "RESEARCH_ONLY, no orders or API credentials",
+  "symbols": {
+    "EURUSD": {
+      "symbol": "EURUSD",
+      "asof_utc": "2026-11-12T15:15:41.975000+00:00",
+      "bid": 1.10631,
+      "ask": 1.10637,
+      "spread_pips": 0.6,
+      "median_spread_pips": 0.6,
+      "trend_H4": -1,
+      "trend_H1": -1,
+      "trend_M30": -1,
+      "trend_M15": -1,
+      "score": -5,
+      "direction_preliminary": "SELL",
+      "direction_confirmed": true,
+      "rsi_M5": 25.06,
+      "atr14_M15_pips": 9.0,
+      "suggested_SL_pips": 12.6,
+      "suggested_TP_pips": 18.9,
+      "closed_bars": {
+        "M5": 760,
+        "M15": 254,
+        "M30": 127,
+        "H1": 63,
+        "H4": 15
+      },
+      "latest_closed_M5_utc": "2026-11-12 15:15:00+00:00",
+      "days": [
+        {
+          "date_utc": "2026-11-10",
+          "status": "complete_zip",
+          "source": "https://ticks.ex2archive.com/ticks/EURUSD/2026/11/10/Exness_EURUSD_2026_11_10.zip",
+          "ticks": 46506,
+          "first_utc": "2026-11-10T00:00:00.392000+00:00",
+          "last_utc": "2026-11-10T23:59:42.949000+00:00",
+          "download_bytes": 305020,
+          "last_modified": "Wed, 11 Nov 2026 00:41:10 GMT"
+        },
+        {
+          "date_utc": "2026-11-11",
+          "status": "complete_zip",
+          "source": "https://ticks.ex2archive.com/ticks/EURUSD/2026/11/11/Exness_EURUSD_2026_11_11.zip",
+          "ticks": 34785,
+          "first_utc": "2026-11-11T00:00:03.436000+00:00",
+          "last_utc": "2026-11-11T23:59:55.031000+00:00",
+          "download_bytes": 233013,
+          "last_modified": "Thu, 12 Nov 2026 00:41:14 GMT"
+        },
+        {
+          "date_utc": "2026-11-12",
+          "status": "complete_zip",
+          "source": "https://ticks.ex2archive.com/ticks/EURUSD/2026/11/12/Exness_EURUSD_2026_11_12.zip",
+          "ticks": 34250,
+          "first_utc": "2026-11-12T00:00:00.041000+00:00",
+          "last_utc": "2026-11-12T15:15:41.975000+00:00",
+          "download_bytes": 225831,
+          "last_modified": "Thu, 12 Nov 2026 15:21:12 GMT"
+        }
+      ],
+      "trade_status": "NO_ORDER_PLACED",
+      "condition_at_23_ict": "Enter only if fresh H4/H1/M30 trend alignment, M5 break of last 3 completed candles in same direction, and current spread <= 2x trailing median; otherwise NO_TRADE."
+    },
+    "GBPUSD": {
+      "symbol": "GBPUSD",
+      "asof_utc": "2026-11-12T15:15:51.870000+00:00",
+      "bid": 1.32365,
+      "ask": 1.32372,
+      "spread_pips": 0.7,
+      "median_spread_pips": 0.7,
+      "trend_H4": -1,
+      "trend_H1": -1,
+      "trend_M30": -1,
+      "trend_M15": -1,
+      "score": -5,
+      "direction_preliminary": "SELL",
+      "direction_confirmed": true,
+      "rsi_M5": 25.64,
+      "atr14_M15_pips": 10.24,
+      "suggested_SL_pips": 14.3,
+      "suggested_TP_pips": 21.5,
+      "closed_bars": {
+        "M5": 758,
+        "M15": 254,
+        "M30": 127,
+        "H1": 63,
+        "H4": 15
+      },
+      "latest_closed_M5_utc": "2026-11-12 15:15:00+00:00",
+      "days": [
+        {
+          "date_utc": "2026-11-10",
+          "status": "complete_zip",
+          "source": "https://ticks.ex2archive.com/ticks/GBPUSD/2026/11/10/Exness_GBPUSD_2026_11_10.zip",
+          "ticks": 56482,
+          "first_utc": "2026-11-10T00:00:00.045000+00:00",
+          "last_utc": "2026-11-10T23:59:44.974000+00:00",
+          "download_bytes": 378842,
+          "last_modified": "Wed, 11 Nov 2026 00:41:11 GMT"
+        },
+        {
+          "date_utc": "2026-11-11",
+          "status": "complete_zip",
+          "source": "https://ticks.ex2archive.com/ticks/GBPUSD/2026/11/11/Exness_GBPUSD_2026_11_11.zip",
+          "ticks": 47266,
+          "first_utc": "2026-11-11T00:00:00.051000+00:00",
+          "last_utc": "2026-11-11T23:59:58.141000+00:00",
+          "download_bytes": 319454,
+          "last_modified": "Thu, 12 Nov 2026 00:41:15 GMT"
+        },
+        {
+          "date_utc": "2026-11-12",
+          "status": "complete_zip",
+          "source": "https://ticks.ex2archive.com/ticks/GBPUSD/2026/11/12/Exness_GBPUSD_2026_11_12.zip",
+          "ticks": 40566,
+          "first_utc": "2026-11-12T00:00:00.113000+00:00",
+          "last_utc": "2026-11-12T15:15:51.870000+00:00",
+          "download_bytes": 272113,
+          "last_modified": "Thu, 12 Nov 2026 15:21:13 GMT"
+        }
+      ],
+      "trade_status": "NO_ORDER_PLACED",
+      "condition_at_23_ict": "Enter only if fresh H4/H1/M30 trend alignment, M5 break of last 3 completed candles in same direction, and current spread <= 2x trailing median; otherwise NO_TRADE."
+    },
+    "USDJPY": {
+      "symbol": "USDJPY",
+      "asof_utc": "2026-11-12T15:15:36.901000+00:00",
+      "bid": 159.935,
+      "ask": 159.942,
+      "spread_pips": 0.7,
+      "median_spread_pips": 0.7,
+      "trend_H4": -1,
+      "trend_H1": 1,
+      "trend_M30": 1,
+      "trend_M15": 1,
+      "score": 3,
+      "direction_preliminary": "BUY",
+      "direction_confirmed": false,
+      "rsi_M5": 72.88,
+      "atr14_M15_pips": 9.44,
+      "suggested_SL_pips": 13.2,
+      "suggested_TP_pips": 19.8,
+      "closed_bars": {
+        "M5": 757,
+        "M15": 254,
+        "M30": 127,
+        "H1": 63,
+        "H4": 15
+      },
+      "latest_closed_M5_utc": "2026-11-12 15:15:00+00:00",
+      "days": [
+        {
+          "date_utc": "2026-11-10",
+          "status": "complete_zip",
+          "source": "https://ticks.ex2archive.com/ticks/USDJPY/2026/11/10/Exness_USDJPY_2026_11_10.zip",
+          "ticks": 52869,
+          "first_utc": "2026-11-10T00:00:00.013000+00:00",
+          "last_utc": "2026-11-10T23:59:37.610000+00:00",
+          "download_bytes": 350107,
+          "last_modified": "Wed, 11 Nov 2026 00:41:17 GMT"
+        },
+        {
+          "date_utc": "2026-11-11",
+          "status": "complete_zip",
+          "source": "https://ticks.ex2archive.com/ticks/USDJPY/2026/11/11/Exness_USDJPY_2026_11_11.zip",
+          "ticks": 45547,
+          "first_utc": "2026-11-11T00:00:00.111000+00:00",
+          "last_utc": "2026-11-11T23:59:58.952000+00:00",
+          "download_bytes": 307280,
+          "last_modified": "Thu, 12 Nov 2026 00:41:20 GMT"
+        },
+        {
+          "date_utc": "2026-11-12",
+          "status": "complete_zip",
+          "source": "https://ticks.ex2archive.com/ticks/USDJPY/2026/11/12/Exness_USDJPY_2026_11_12.zip",
+          "ticks": 46595,
+          "first_utc": "2026-11-12T00:00:00.104000+00:00",
+          "last_utc": "2026-11-12T15:15:36.901000+00:00",
+          "download_bytes": 307446,
+          "last_modified": "Thu, 12 Nov 2026 15:21:19 GMT"
+        }
+      ],
+      "trade_status": "NO_ORDER_PLACED",
+      "condition_at_23_ict": "Enter only if fresh H4/H1/M30 trend alignment, M5 break of last 3 completed candles in same direction, and current spread <= 2x trailing median; otherwise NO_TRADE."
+    }
+  },
+  "errors": [],
+  "top_conditional_candidate": "EURUSD",
+  "win_probability": "NOT_ESTIMABLE_FROM_THREE_DAYS"
+}
