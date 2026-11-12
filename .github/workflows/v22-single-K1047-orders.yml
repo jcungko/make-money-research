@@ -1,0 +1,43 @@
+name: V22 audit standalone AVGO K1047 daily November orders
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v22-single-K1047-orders.yml'
+      - 'scripts/v22_single_K1047_orders.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  k1047:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Dependencies
+        run: pip install 'pandas>=2.2,<3' 'numpy>=1.26,<3'
+      - name: Derive real November trade ledger from archived Exness bid ask
+        run: python -u scripts/v22_single_K1047_orders.py
+      - name: Save trade log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: V22-K1047-November-Order-Log
+          path: results/v22_single_K1047/
+          if-no-files-found: warn
+      - name: Save audited trade log to repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v22_single_K1047/
+          if ! git diff --cached --quiet; then
+            git commit -m "V22: five verified November orders for solo AVGO K1047"
+            for n in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && exit 0
+              sleep "$((n*3))"
+            done
+            exit 1
+          fi
