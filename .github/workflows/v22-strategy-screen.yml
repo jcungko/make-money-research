@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/v22-strategy-screen.yml'
+      - 'scripts/v22_strategy_screen.py'
   workflow_dispatch:
 permissions:
   contents: write
