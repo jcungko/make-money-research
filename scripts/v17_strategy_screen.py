@@ -196,7 +196,28 @@ def screen_symbol(root, symbol):
                             month_wins = int((month_sum[:NOV_CODE] > 1e-9).sum())
                             counters[f"profitable_exactly_{month_wins}_of_22"] += 1
                             if month_wins>=19:
-                                nearest.append((month_wins,float(month_sum[:NOV_CODE].sum()),symbol,tf,name,hour,hold,polarity,side))
+                                fingerprint = hashlib.sha256(
+                                    np.asarray(selected, dtype="<i4").tobytes()
+                                    + np.asarray(dir_selected, dtype=np.int8).tobytes()
+                                    + bytes([hold])
+                                ).hexdigest()
+                                months = {m: round(float(v), 3) for m, v in zip(CUTOFF_MONTHS, month_sum[:NOV_CODE])}
+                                nearest.append({
+                                    "symbol": symbol, "signal_timeframe": tf, "signal": name,
+                                    "entry_hour_utc": int(hour), "holding_hours": int(hold),
+                                    "polarity": "follow" if polarity == 1 else "reverse",
+                                    "side": side, "profitable_months": month_wins,
+                                    "profit_pips_2025": round(float(month_sum[:12].sum()), 3),
+                                    "profit_pips_2026_jan_oct": round(float(month_sum[12:NOV_CODE].sum()), 3),
+                                    "profit_pips_total": round(float(month_sum[:NOV_CODE].sum()), 3),
+                                    "months_non_positive": [m for m, v in months.items() if v <= 0],
+                                    "monthly_pips": months,
+                                    "num_trades": int(month_n[:NOV_CODE].sum()),
+                                    "min_month_trades": int(np.min(month_n[:NOV_CODE])),
+                                    "win_rate": round(float((pnl[mc < NOV_CODE] > 0).mean()), 4),
+                                    "max_drawdown_pips": round(max_drawdown(pnl[mc < NOV_CODE]), 3),
+                                    "fingerprint": fingerprint
+                                })
                             if month_wins!=NOV_CODE:
                                 continue
                             p2025 = float(month_sum[:12].sum())
@@ -230,7 +251,7 @@ def screen_symbol(root, symbol):
                                 "monthly_pips":{m:round(float(v),3) for m,v in zip(CUTOFF_MONTHS,month_sum[:NOV_CODE])},
                                 "fingerprint":fingerprint
                             })
-    nearest.sort(reverse=True)
+    nearest.sort(key=lambda r: (r["profitable_months"], r["profit_pips_total"]), reverse=True)
     print(json.dumps({"symbol":symbol,"features":nfeatures,"checked":counters["candidates"],
         "with_trades_every_month":counters["every_month_has_trades"],
         "profitable_all_22":counters["all_22_months_profitable"],
@@ -265,7 +286,8 @@ def main():
     unique_list=list(unique.values())
     unique_list.sort(key=lambda r:(r["min_month_pips"],r["profit_pips_total"]),reverse=True)
     all_passed.sort(key=lambda r:(r["min_month_pips"],r["profit_pips_total"]),reverse=True)
-    near_list=sorted(nearest,reverse=True)[:45]
+    near_list = sorted(nearest, key=lambda r: (r["profitable_months"], r["profit_pips_total"]), reverse=True)
+    near_unique = {(r["symbol"],r["fingerprint"]) for r in near_list}
     summary = {
         "research":"V17 Exness public 2025/2026 multi-timeframe strategy census",
         "status":"EXPLORATORY_BACKTEST_ONLY_NOT_APPROVED_FOR_LIVE_TRADING",
@@ -287,13 +309,28 @@ def main():
         "unique_all_22_months_profitable":len(unique_list),
         "per_symbol":bysymbol,
         "strongest_by_minimum_month_pips":unique_list[:25],
-        "near_miss_highest_months":near_list,
+        "near_miss_highest_months": [
+            [r["profitable_months"], r["profit_pips_total"], r["symbol"], r["signal_timeframe"],
+             r["signal"], r["entry_hour_utc"], r["holding_hours"],
+             1 if r["polarity"] == "follow" else -1, r["side"]]
+            for r in near_list
+        ],
+        "qualified_19_or_more_details": near_list,
+        "screened_19_or_more_configs": len(near_list),
+        "screened_19_or_more_unique_execution_signatures": len(near_unique),
+        "screened_19_or_more_positive_both_years": sum(
+            r["profit_pips_2025"] > 0 and r["profit_pips_2026_jan_oct"] > 0 for r in near_list
+        ),
         "elapsed_seconds":round(time.perf_counter()-began,1)
     }
     (args.out/"summary.json").write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     pd.DataFrame(all_passed).drop(columns=["monthly_pips","fingerprint"],errors="ignore").to_csv(args.out/"all_qualifying_configs.csv",index=False)
     pd.DataFrame(unique_list).drop(columns=["monthly_pips","fingerprint"],errors="ignore").to_csv(args.out/"unique_qualifying_configs.csv",index=False)
     (args.out/"all_unique_details.json").write_text(json.dumps(unique_list,ensure_ascii=False)+"\n",encoding="utf-8")
+    (args.out/"all_19plus_details.json").write_text(json.dumps(near_list,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+    pd.DataFrame(near_list).drop(columns=["monthly_pips","fingerprint"],errors="ignore").to_csv(
+        args.out/"all_19plus_profit_report.csv",index=False
+    )
     print("FINAL_COUNT",json.dumps({k:summary[k] for k in ("counts","unique_all_22_months_profitable","elapsed_seconds")}),flush=True)
 
 if __name__=="__main__":
