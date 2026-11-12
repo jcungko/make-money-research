@@ -1,0 +1,55 @@
+name: V19 mandatory Stop-Loss replay for four portfolios
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v19-four-portfolio-sl-replay.yml'
+      - 'scripts/v19_four_portfolios_sl_replay.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: v19-four-portfolio-sl-replay
+  cancel-in-progress: false
+jobs:
+  sl-replay:
+    name: Historical M5 intrabar stop checks plus frozen Nov 2026 validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'numpy>=1.26,<3' 'pandas>=2.2,<3' 'requests>=2.31,<3'
+      - name: Recompute 4x11 bot entry and stop-exit sequences
+        run: python scripts/v19_four_portfolios_sl_replay.py
+      - name: Validate research outputs and save them
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          p="results/v19_sl_research/V19_four_portfolios_with_SL_report.json"
+          d=json.load(open(p))
+          assert len(d["selection_ids"])==4
+          assert len(d["comparison"])==36
+          assert len(d["fixed_1pct_default"])==4
+          assert all(r["historical"]["trades"]==d["baseline"][r["portfolio"]]["historical_orders"] for r in d["fixed_1pct_default"])
+          print("V19 SL research validated; baseline/replay assertions passed")
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v19_sl_research/V19_four_portfolios_with_SL_report.json results/v19_sl_research/V19_SL_sensitivity_4_portfolios.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "V19: verify mandatory SL by M5 intrabar bid/ask for four strategies"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: V19-4-Portfolio-SL-Comparison
+          path: results/v19_sl_research/
+          if-no-files-found: warn
+          retention-days: 30
