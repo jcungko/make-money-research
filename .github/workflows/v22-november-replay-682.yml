@@ -1,0 +1,49 @@
+name: V22 replay 682 fixed strategies on November 2026 Exness ticks
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v22-november-replay-682.yml'
+      - 'scripts/v22_november_replay_682.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: v22-november-replay-682
+  cancel-in-progress: false
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install read-only research dependencies
+        run: pip install 'pandas>=2.2,<3' 'numpy>=1.26,<3' 'requests>=2.31,<3'
+      - name: Fetch public Exness November tick archives and replay frozen strategies
+        run: python -u scripts/v22_november_replay_682.py --data data/v22_exness --selection results/v22_profit_orders_filter/v22_final_682_strategies.csv --out results/v22_november_2026
+      - name: Upload replay results even if GitHub publication fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: V22-November-2026-Replay-682
+          path: results/v22_november_2026/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit verified results to project
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v22_november_2026/
+          if ! git diff --cached --quiet; then
+            git commit -m "V22: November 2026 replay of 682 frozen stock portfolios"
+            for n in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && exit 0
+              sleep "$((n*3))"
+            done
+            exit 1
+          fi
