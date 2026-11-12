@@ -37,10 +37,10 @@
       "last_m5_start_utc": "2026-11-12T19:50:00+00:00",
       "frames": {
         "M5": 1043,
-        "M15": 348,
-        "M30": 178,
-        "H1": 89,
-        "H4": 35
+        "M15": 347,
+        "M30": 177,
+        "H1": 88,
+        "H4": 34
       },
       "saved_archive": "results/v22_nov2026_filter/november_candles/NVDA_202611_through_20261112_1955UTC_5TF.zip"
     },
@@ -68,10 +68,10 @@
       "last_m5_start_utc": "2026-11-12T19:50:00+00:00",
       "frames": {
         "M5": 1043,
-        "M15": 348,
-        "M30": 178,
-        "H1": 89,
-        "H4": 35
+        "M15": 347,
+        "M30": 177,
+        "H1": 88,
+        "H4": 34
       },
       "saved_archive": "results/v22_nov2026_filter/november_candles/AMD_202611_through_20261112_1955UTC_5TF.zip"
     },
@@ -99,10 +99,10 @@
       "last_m5_start_utc": "2026-11-12T19:50:00+00:00",
       "frames": {
         "M5": 647,
-        "M15": 222,
-        "M30": 115,
-        "H1": 62,
-        "H4": 26
+        "M15": 221,
+        "M30": 114,
+        "H1": 61,
+        "H4": 25
       },
       "saved_archive": "results/v22_nov2026_filter/november_candles/AVGO_202611_through_20261112_1955UTC_5TF.zip"
     },
@@ -130,10 +130,10 @@
       "last_m5_start_utc": "2026-11-12T19:50:00+00:00",
       "frames": {
         "M5": 647,
-        "M15": 222,
-        "M30": 115,
-        "H1": 62,
-        "H4": 26
+        "M15": 221,
+        "M30": 114,
+        "H1": 61,
+        "H4": 25
       },
       "saved_archive": "results/v22_nov2026_filter/november_candles/XOM_202611_through_20261112_1955UTC_5TF.zip"
     },
@@ -161,10 +161,10 @@
       "last_m5_start_utc": "2026-11-12T19:50:00+00:00",
       "frames": {
         "M5": 647,
-        "M15": 222,
-        "M30": 115,
-        "H1": 62,
-        "H4": 26
+        "M15": 221,
+        "M30": 114,
+        "H1": 61,
+        "H4": 25
       },
       "saved_archive": "results/v22_nov2026_filter/november_candles/GOOGL_202611_through_20261112_1955UTC_5TF.zip"
     }
@@ -460,5 +460,5 @@
       "components": "NVDA M30 RSI_14_30 FADE ANY entry_14:00_UTC window_2h hold_120min | AMD H1 BREAKOUT_4 LONG_ONLY ANY entry_12:00_UTC window_2h hold_180min | AVGO M15 RSI_14_40 FOLLOW D1_ALIGN entry_15:00_UTC window_2h hold_120min | XOM M5 ZSCORE_32_1p0 LONG_ONLY ANY entry_14:00_UTC window_2h hold_120min | GOOGL H4 EMA_8 FADE W1_ALIGN entry_15:00_UTC window_2h hold_240min"
     }
   ],
-  "created_at_utc": "2026-11-12T20:15:32.053000+00:00"
+  "created_at_utc": "2026-11-12T20:17:04.410367+00:00"
 }
