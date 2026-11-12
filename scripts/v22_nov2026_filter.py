@@ -66,8 +66,12 @@ def collect_november(out):
             # Using hourly aggregations from the complete five-minute bars ensures exact
             # baseline 5/15/30/60/240-minute UTC frame alignment.
             groups=build_frames(complete)
-            # Rebuild last partial intraday candle only where future ticks exist; outcomes
-            # are excluded if a complete exit candle is not available before CUTOFF.
+            # Current trading day is still open. Exclude a frame whose scheduled
+            # closing timestamp exceeds the as-of cutoff; otherwise an H1/H4
+            # candle still forming would be treated as a completed exit.
+            frame_minutes={'M5':5,'M15':15,'M30':30,'H1':60,'H4':240}
+            groups={tf:frame.loc[frame.index+pd.Timedelta(minutes=frame_minutes[tf])<=CUTOFF].copy()
+                    for tf,frame in groups.items()}
             archive=savedir/f'{symbol}_202611_through_20261112_1955UTC_5TF.zip'
             with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:
                 for tf,frame in groups.items():
