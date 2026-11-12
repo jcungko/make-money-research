@@ -275,8 +275,8 @@ def screen(root,out):
     (out/'qualified_singles.json').write_text(json.dumps(singles,ensure_ascii=False)+'\n')
     (out/'qualified_pairs_top1000.json').write_text(json.dumps(portfolio_pairs[:1000],ensure_ascii=False)+'\n')
     (out/'qualified_triples_top1000.json').write_text(json.dumps(portfolio_triples[:1000],ensure_ascii=False)+'\n')
-    (out/'qualified_quads_top1000.json').write_text(json.dumps(portfolio_quads[:1000],ensure_ascii=False)+'\\n')
-    (out/'qualified_quints_top1000.json').write_text(json.dumps(portfolio_quints[:1000],ensure_ascii=False)+'\\n')
+    (out/'qualified_quads_top1000.json').write_text(json.dumps(portfolio_quads[:1000],ensure_ascii=False)+'\n')
+    (out/'qualified_quints_top1000.json').write_text(json.dumps(portfolio_quints[:1000],ensure_ascii=False)+'\n')
     print('FINAL',json.dumps({k:report[k] for k in ('total_configs_tested','single_annual_positive',
       'single_all_22_months','tested_pairs','pairs_all_22_months','tested_triples',
       'triples_all_22_months','tested_quads','quads_all_22_months','tested_quints','quints_all_22_months','best_month_count_of_annual_profitable','pool_sizes')}),flush=True)
