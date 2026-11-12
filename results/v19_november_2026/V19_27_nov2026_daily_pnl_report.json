@@ -1,0 +1,4941 @@
+{
+  "project": "V19",
+  "date_range_inclusive_utc": [
+    "2026-11-01",
+    "2026-11-12"
+  ],
+  "cutoff_exclusive_utc": "2026-11-12T18:00:00+00:00",
+  "calendar_days": 12,
+  "profit_unit": "basis points (bp) of equal-weighted fixed portfolio notional, NOT USD",
+  "daily_pnl_definition": "By UTC exit date of closed orders. Four EA legs each carry 1/4 portfolio weight. Each day net PnL is sum of closed-order realized PnL divided by 4; no unclosed PnL.",
+  "days_with_closed_orders": "Number of dates when at least one position CLOSED.",
+  "profitable_days": "Number of closed-order dates with NET realized portfolio PnL > 0.",
+  "losing_days": "Number of closed-order dates with NET realized portfolio PnL < 0.",
+  "avg_net_bp_per_day_with_closed_orders": "Net November realized profit divided by number of dates with closed orders, including losing days.",
+  "avg_profit_bp_per_profitable_day": "Sum of positive daily net PnL divided by number of profitable days (excluding losing days).",
+  "avg_net_bp_per_calendar_day": "Net November realized profit divided by 12 calendar days including weekends and inactive days.",
+  "count": 27,
+  "retained": [
+    {
+      "portfolio": "V19-065",
+      "november_profit_bp": 141.65308,
+      "closed_orders": 17,
+      "days_with_closed_orders": 9,
+      "profitable_days": 6,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 15.73923,
+      "avg_profit_bp_per_profitable_day": 61.32827,
+      "avg_net_bp_per_calendar_day": 11.80442,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-034",
+      "november_profit_bp": 125.21773,
+      "closed_orders": 20,
+      "days_with_closed_orders": 9,
+      "profitable_days": 6,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 13.91308,
+      "avg_profit_bp_per_profitable_day": 53.84955,
+      "avg_net_bp_per_calendar_day": 10.43481,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-036",
+      "november_profit_bp": 62.85609,
+      "closed_orders": 14,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 6.98401,
+      "avg_profit_bp_per_profitable_day": 58.42821,
+      "avg_net_bp_per_calendar_day": 5.23801,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-051",
+      "november_profit_bp": 60.68435,
+      "closed_orders": 14,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 6.74271,
+      "avg_profit_bp_per_profitable_day": 61.86859,
+      "avg_net_bp_per_calendar_day": 5.05703,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-028",
+      "november_profit_bp": 57.48517,
+      "closed_orders": 15,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 6.38724,
+      "avg_profit_bp_per_profitable_day": 61.40856,
+      "avg_net_bp_per_calendar_day": 4.79043,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-009",
+      "november_profit_bp": 57.07541,
+      "closed_orders": 7,
+      "days_with_closed_orders": 6,
+      "profitable_days": 5,
+      "losing_days": 1,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 9.51257,
+      "avg_profit_bp_per_profitable_day": 12.18699,
+      "avg_net_bp_per_calendar_day": 4.75628,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-055",
+      "november_profit_bp": 52.65134,
+      "closed_orders": 6,
+      "days_with_closed_orders": 6,
+      "profitable_days": 5,
+      "losing_days": 1,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 8.77522,
+      "avg_profit_bp_per_profitable_day": 11.9202,
+      "avg_net_bp_per_calendar_day": 4.38761,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-043",
+      "november_profit_bp": 52.19107,
+      "closed_orders": 9,
+      "days_with_closed_orders": 6,
+      "profitable_days": 3,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 8.69851,
+      "avg_profit_bp_per_profitable_day": 43.10047,
+      "avg_net_bp_per_calendar_day": 4.34926,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-010",
+      "november_profit_bp": 47.07868,
+      "closed_orders": 8,
+      "days_with_closed_orders": 6,
+      "profitable_days": 5,
+      "losing_days": 1,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 7.84645,
+      "avg_profit_bp_per_profitable_day": 10.18764,
+      "avg_net_bp_per_calendar_day": 3.92322,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-021",
+      "november_profit_bp": 45.61311,
+      "closed_orders": 15,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 5.06812,
+      "avg_profit_bp_per_profitable_day": 54.97962,
+      "avg_net_bp_per_calendar_day": 3.80109,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-025",
+      "november_profit_bp": 43.48245,
+      "closed_orders": 15,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 4.83138,
+      "avg_profit_bp_per_profitable_day": 58.42821,
+      "avg_net_bp_per_calendar_day": 3.62354,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-039",
+      "november_profit_bp": 40.25315,
+      "closed_orders": 14,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 4.47257,
+      "avg_profit_bp_per_profitable_day": 53.90762,
+      "avg_net_bp_per_calendar_day": 3.35443,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-008",
+      "november_profit_bp": 26.40296,
+      "closed_orders": 5,
+      "days_with_closed_orders": 4,
+      "profitable_days": 3,
+      "losing_days": 1,
+      "break_even_days": 0,
+      "days_without_closed_orders": 8,
+      "avg_net_bp_per_day_with_closed_orders": 6.60074,
+      "avg_profit_bp_per_profitable_day": 10.0875,
+      "avg_net_bp_per_calendar_day": 2.20025,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-047",
+      "november_profit_bp": 24.58569,
+      "closed_orders": 17,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 2.73174,
+      "avg_profit_bp_per_profitable_day": 61.40856,
+      "avg_net_bp_per_calendar_day": 2.04881,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-030",
+      "november_profit_bp": 24.17593,
+      "closed_orders": 9,
+      "days_with_closed_orders": 5,
+      "profitable_days": 4,
+      "losing_days": 1,
+      "break_even_days": 0,
+      "days_without_closed_orders": 7,
+      "avg_net_bp_per_day_with_closed_orders": 4.83519,
+      "avg_profit_bp_per_profitable_day": 11.85227,
+      "avg_net_bp_per_calendar_day": 2.01466,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-076",
+      "november_profit_bp": 23.47356,
+      "closed_orders": 15,
+      "days_with_closed_orders": 9,
+      "profitable_days": 6,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 2.60817,
+      "avg_profit_bp_per_profitable_day": 41.97636,
+      "avg_net_bp_per_calendar_day": 1.95613,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-006",
+      "november_profit_bp": 21.77071,
+      "closed_orders": 7,
+      "days_with_closed_orders": 6,
+      "profitable_days": 4,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 3.62845,
+      "avg_profit_bp_per_profitable_day": 8.90674,
+      "avg_net_bp_per_calendar_day": 1.81423,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-022",
+      "november_profit_bp": 18.2416,
+      "closed_orders": 7,
+      "days_with_closed_orders": 6,
+      "profitable_days": 4,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 3.04027,
+      "avg_profit_bp_per_profitable_day": 8.02446,
+      "avg_net_bp_per_calendar_day": 1.52013,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-027",
+      "november_profit_bp": 18.2416,
+      "closed_orders": 7,
+      "days_with_closed_orders": 6,
+      "profitable_days": 4,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 3.04027,
+      "avg_profit_bp_per_profitable_day": 8.02446,
+      "avg_net_bp_per_calendar_day": 1.52013,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-050",
+      "november_profit_bp": 18.17495,
+      "closed_orders": 9,
+      "days_with_closed_orders": 6,
+      "profitable_days": 4,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 3.02916,
+      "avg_profit_bp_per_profitable_day": 26.92732,
+      "avg_net_bp_per_calendar_day": 1.51458,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-014",
+      "november_profit_bp": 16.72704,
+      "closed_orders": 5,
+      "days_with_closed_orders": 5,
+      "profitable_days": 3,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 7,
+      "avg_net_bp_per_day_with_closed_orders": 3.34541,
+      "avg_profit_bp_per_profitable_day": 14.35011,
+      "avg_net_bp_per_calendar_day": 1.39392,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-001",
+      "november_profit_bp": 14.91936,
+      "closed_orders": 5,
+      "days_with_closed_orders": 4,
+      "profitable_days": 3,
+      "losing_days": 1,
+      "break_even_days": 0,
+      "days_without_closed_orders": 8,
+      "avg_net_bp_per_day_with_closed_orders": 3.72984,
+      "avg_profit_bp_per_profitable_day": 6.25963,
+      "avg_net_bp_per_calendar_day": 1.24328,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-015",
+      "november_profit_bp": 12.98763,
+      "closed_orders": 8,
+      "days_with_closed_orders": 6,
+      "profitable_days": 4,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 2.1646,
+      "avg_profit_bp_per_profitable_day": 8.52253,
+      "avg_net_bp_per_calendar_day": 1.0823,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-003",
+      "november_profit_bp": 7.96973,
+      "closed_orders": 6,
+      "days_with_closed_orders": 4,
+      "profitable_days": 2,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 8,
+      "avg_net_bp_per_day_with_closed_orders": 1.99243,
+      "avg_profit_bp_per_profitable_day": 6.70721,
+      "avg_net_bp_per_calendar_day": 0.66414,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-074",
+      "november_profit_bp": 7.82026,
+      "closed_orders": 14,
+      "days_with_closed_orders": 9,
+      "profitable_days": 6,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 0.86892,
+      "avg_profit_bp_per_profitable_day": 39.36748,
+      "avg_net_bp_per_calendar_day": 0.65169,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-075",
+      "november_profit_bp": 7.82026,
+      "closed_orders": 14,
+      "days_with_closed_orders": 9,
+      "profitable_days": 6,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 0.86892,
+      "avg_profit_bp_per_profitable_day": 39.36748,
+      "avg_net_bp_per_calendar_day": 0.65169,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-049",
+      "november_profit_bp": 2.60525,
+      "closed_orders": 5,
+      "days_with_closed_orders": 4,
+      "profitable_days": 2,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 8,
+      "avg_net_bp_per_day_with_closed_orders": 0.65131,
+      "avg_profit_bp_per_profitable_day": 6.70721,
+      "avg_net_bp_per_calendar_day": 0.2171,
+      "retained": true
+    }
+  ],
+  "all_89": [
+    {
+      "portfolio": "V19-065",
+      "november_profit_bp": 141.65308,
+      "closed_orders": 17,
+      "days_with_closed_orders": 9,
+      "profitable_days": 6,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 15.73923,
+      "avg_profit_bp_per_profitable_day": 61.32827,
+      "avg_net_bp_per_calendar_day": 11.80442,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-034",
+      "november_profit_bp": 125.21773,
+      "closed_orders": 20,
+      "days_with_closed_orders": 9,
+      "profitable_days": 6,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 13.91308,
+      "avg_profit_bp_per_profitable_day": 53.84955,
+      "avg_net_bp_per_calendar_day": 10.43481,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-036",
+      "november_profit_bp": 62.85609,
+      "closed_orders": 14,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 6.98401,
+      "avg_profit_bp_per_profitable_day": 58.42821,
+      "avg_net_bp_per_calendar_day": 5.23801,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-051",
+      "november_profit_bp": 60.68435,
+      "closed_orders": 14,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 6.74271,
+      "avg_profit_bp_per_profitable_day": 61.86859,
+      "avg_net_bp_per_calendar_day": 5.05703,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-028",
+      "november_profit_bp": 57.48517,
+      "closed_orders": 15,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 6.38724,
+      "avg_profit_bp_per_profitable_day": 61.40856,
+      "avg_net_bp_per_calendar_day": 4.79043,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-009",
+      "november_profit_bp": 57.07541,
+      "closed_orders": 7,
+      "days_with_closed_orders": 6,
+      "profitable_days": 5,
+      "losing_days": 1,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 9.51257,
+      "avg_profit_bp_per_profitable_day": 12.18699,
+      "avg_net_bp_per_calendar_day": 4.75628,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-055",
+      "november_profit_bp": 52.65134,
+      "closed_orders": 6,
+      "days_with_closed_orders": 6,
+      "profitable_days": 5,
+      "losing_days": 1,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 8.77522,
+      "avg_profit_bp_per_profitable_day": 11.9202,
+      "avg_net_bp_per_calendar_day": 4.38761,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-043",
+      "november_profit_bp": 52.19107,
+      "closed_orders": 9,
+      "days_with_closed_orders": 6,
+      "profitable_days": 3,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 8.69851,
+      "avg_profit_bp_per_profitable_day": 43.10047,
+      "avg_net_bp_per_calendar_day": 4.34926,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-010",
+      "november_profit_bp": 47.07868,
+      "closed_orders": 8,
+      "days_with_closed_orders": 6,
+      "profitable_days": 5,
+      "losing_days": 1,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 7.84645,
+      "avg_profit_bp_per_profitable_day": 10.18764,
+      "avg_net_bp_per_calendar_day": 3.92322,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-021",
+      "november_profit_bp": 45.61311,
+      "closed_orders": 15,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 5.06812,
+      "avg_profit_bp_per_profitable_day": 54.97962,
+      "avg_net_bp_per_calendar_day": 3.80109,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-025",
+      "november_profit_bp": 43.48245,
+      "closed_orders": 15,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 4.83138,
+      "avg_profit_bp_per_profitable_day": 58.42821,
+      "avg_net_bp_per_calendar_day": 3.62354,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-039",
+      "november_profit_bp": 40.25315,
+      "closed_orders": 14,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 4.47257,
+      "avg_profit_bp_per_profitable_day": 53.90762,
+      "avg_net_bp_per_calendar_day": 3.35443,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-008",
+      "november_profit_bp": 26.40296,
+      "closed_orders": 5,
+      "days_with_closed_orders": 4,
+      "profitable_days": 3,
+      "losing_days": 1,
+      "break_even_days": 0,
+      "days_without_closed_orders": 8,
+      "avg_net_bp_per_day_with_closed_orders": 6.60074,
+      "avg_profit_bp_per_profitable_day": 10.0875,
+      "avg_net_bp_per_calendar_day": 2.20025,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-047",
+      "november_profit_bp": 24.58569,
+      "closed_orders": 17,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 2.73174,
+      "avg_profit_bp_per_profitable_day": 61.40856,
+      "avg_net_bp_per_calendar_day": 2.04881,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-030",
+      "november_profit_bp": 24.17593,
+      "closed_orders": 9,
+      "days_with_closed_orders": 5,
+      "profitable_days": 4,
+      "losing_days": 1,
+      "break_even_days": 0,
+      "days_without_closed_orders": 7,
+      "avg_net_bp_per_day_with_closed_orders": 4.83519,
+      "avg_profit_bp_per_profitable_day": 11.85227,
+      "avg_net_bp_per_calendar_day": 2.01466,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-076",
+      "november_profit_bp": 23.47356,
+      "closed_orders": 15,
+      "days_with_closed_orders": 9,
+      "profitable_days": 6,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 2.60817,
+      "avg_profit_bp_per_profitable_day": 41.97636,
+      "avg_net_bp_per_calendar_day": 1.95613,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-006",
+      "november_profit_bp": 21.77071,
+      "closed_orders": 7,
+      "days_with_closed_orders": 6,
+      "profitable_days": 4,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 3.62845,
+      "avg_profit_bp_per_profitable_day": 8.90674,
+      "avg_net_bp_per_calendar_day": 1.81423,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-022",
+      "november_profit_bp": 18.2416,
+      "closed_orders": 7,
+      "days_with_closed_orders": 6,
+      "profitable_days": 4,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 3.04027,
+      "avg_profit_bp_per_profitable_day": 8.02446,
+      "avg_net_bp_per_calendar_day": 1.52013,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-027",
+      "november_profit_bp": 18.2416,
+      "closed_orders": 7,
+      "days_with_closed_orders": 6,
+      "profitable_days": 4,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 3.04027,
+      "avg_profit_bp_per_profitable_day": 8.02446,
+      "avg_net_bp_per_calendar_day": 1.52013,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-050",
+      "november_profit_bp": 18.17495,
+      "closed_orders": 9,
+      "days_with_closed_orders": 6,
+      "profitable_days": 4,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 3.02916,
+      "avg_profit_bp_per_profitable_day": 26.92732,
+      "avg_net_bp_per_calendar_day": 1.51458,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-014",
+      "november_profit_bp": 16.72704,
+      "closed_orders": 5,
+      "days_with_closed_orders": 5,
+      "profitable_days": 3,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 7,
+      "avg_net_bp_per_day_with_closed_orders": 3.34541,
+      "avg_profit_bp_per_profitable_day": 14.35011,
+      "avg_net_bp_per_calendar_day": 1.39392,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-001",
+      "november_profit_bp": 14.91936,
+      "closed_orders": 5,
+      "days_with_closed_orders": 4,
+      "profitable_days": 3,
+      "losing_days": 1,
+      "break_even_days": 0,
+      "days_without_closed_orders": 8,
+      "avg_net_bp_per_day_with_closed_orders": 3.72984,
+      "avg_profit_bp_per_profitable_day": 6.25963,
+      "avg_net_bp_per_calendar_day": 1.24328,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-015",
+      "november_profit_bp": 12.98763,
+      "closed_orders": 8,
+      "days_with_closed_orders": 6,
+      "profitable_days": 4,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": 2.1646,
+      "avg_profit_bp_per_profitable_day": 8.52253,
+      "avg_net_bp_per_calendar_day": 1.0823,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-003",
+      "november_profit_bp": 7.96973,
+      "closed_orders": 6,
+      "days_with_closed_orders": 4,
+      "profitable_days": 2,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 8,
+      "avg_net_bp_per_day_with_closed_orders": 1.99243,
+      "avg_profit_bp_per_profitable_day": 6.70721,
+      "avg_net_bp_per_calendar_day": 0.66414,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-074",
+      "november_profit_bp": 7.82026,
+      "closed_orders": 14,
+      "days_with_closed_orders": 9,
+      "profitable_days": 6,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 0.86892,
+      "avg_profit_bp_per_profitable_day": 39.36748,
+      "avg_net_bp_per_calendar_day": 0.65169,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-075",
+      "november_profit_bp": 7.82026,
+      "closed_orders": 14,
+      "days_with_closed_orders": 9,
+      "profitable_days": 6,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": 0.86892,
+      "avg_profit_bp_per_profitable_day": 39.36748,
+      "avg_net_bp_per_calendar_day": 0.65169,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-049",
+      "november_profit_bp": 2.60525,
+      "closed_orders": 5,
+      "days_with_closed_orders": 4,
+      "profitable_days": 2,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 8,
+      "avg_net_bp_per_day_with_closed_orders": 0.65131,
+      "avg_profit_bp_per_profitable_day": 6.70721,
+      "avg_net_bp_per_calendar_day": 0.2171,
+      "retained": true
+    },
+    {
+      "portfolio": "V19-038",
+      "november_profit_bp": -1.13204,
+      "closed_orders": 8,
+      "days_with_closed_orders": 6,
+      "profitable_days": 4,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": -0.18867,
+      "avg_profit_bp_per_profitable_day": 8.02446,
+      "avg_net_bp_per_calendar_day": -0.09434,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-059",
+      "november_profit_bp": -1.83502,
+      "closed_orders": 15,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -0.20389,
+      "avg_profit_bp_per_profitable_day": 56.00993,
+      "avg_net_bp_per_calendar_day": -0.15292,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-002",
+      "november_profit_bp": -2.96741,
+      "closed_orders": 7,
+      "days_with_closed_orders": 5,
+      "profitable_days": 3,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 7,
+      "avg_net_bp_per_day_with_closed_orders": -0.59348,
+      "avg_profit_bp_per_profitable_day": 10.0875,
+      "avg_net_bp_per_calendar_day": -0.24728,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-005",
+      "november_profit_bp": -7.68809,
+      "closed_orders": 5,
+      "days_with_closed_orders": 4,
+      "profitable_days": 2,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 8,
+      "avg_net_bp_per_day_with_closed_orders": -1.92202,
+      "avg_profit_bp_per_profitable_day": 6.70721,
+      "avg_net_bp_per_calendar_day": -0.64067,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-013",
+      "november_profit_bp": -14.45101,
+      "closed_orders": 7,
+      "days_with_closed_orders": 5,
+      "profitable_days": 3,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 7,
+      "avg_net_bp_per_day_with_closed_orders": -2.8902,
+      "avg_profit_bp_per_profitable_day": 6.25963,
+      "avg_net_bp_per_calendar_day": -1.20425,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-007",
+      "november_profit_bp": -14.63773,
+      "closed_orders": 6,
+      "days_with_closed_orders": 4,
+      "profitable_days": 2,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 8,
+      "avg_net_bp_per_day_with_closed_orders": -3.65943,
+      "avg_profit_bp_per_profitable_day": 6.70721,
+      "avg_net_bp_per_calendar_day": -1.21981,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-058",
+      "november_profit_bp": -15.4226,
+      "closed_orders": 6,
+      "days_with_closed_orders": 5,
+      "profitable_days": 2,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 7,
+      "avg_net_bp_per_day_with_closed_orders": -3.08452,
+      "avg_profit_bp_per_profitable_day": 25.28219,
+      "avg_net_bp_per_calendar_day": -1.28522,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-019",
+      "november_profit_bp": -17.68483,
+      "closed_orders": 6,
+      "days_with_closed_orders": 5,
+      "profitable_days": 2,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 7,
+      "avg_net_bp_per_day_with_closed_orders": -3.53697,
+      "avg_profit_bp_per_profitable_day": 6.70721,
+      "avg_net_bp_per_calendar_day": -1.47374,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-040",
+      "november_profit_bp": -23.7395,
+      "closed_orders": 8,
+      "days_with_closed_orders": 6,
+      "profitable_days": 3,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": -3.95658,
+      "avg_profit_bp_per_profitable_day": 8.91113,
+      "avg_net_bp_per_calendar_day": -1.97829,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-024",
+      "november_profit_bp": -27.32235,
+      "closed_orders": 7,
+      "days_with_closed_orders": 5,
+      "profitable_days": 2,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 7,
+      "avg_net_bp_per_day_with_closed_orders": -5.46447,
+      "avg_profit_bp_per_profitable_day": 8.87117,
+      "avg_net_bp_per_calendar_day": -2.27686,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-069",
+      "november_profit_bp": -33.83014,
+      "closed_orders": 3,
+      "days_with_closed_orders": 2,
+      "profitable_days": 0,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 10,
+      "avg_net_bp_per_day_with_closed_orders": -16.91507,
+      "avg_profit_bp_per_profitable_day": 0,
+      "avg_net_bp_per_calendar_day": -2.81918,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-046",
+      "november_profit_bp": -35.42505,
+      "closed_orders": 4,
+      "days_with_closed_orders": 3,
+      "profitable_days": 1,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 9,
+      "avg_net_bp_per_day_with_closed_orders": -11.80835,
+      "avg_profit_bp_per_profitable_day": 13.31896,
+      "avg_net_bp_per_calendar_day": -2.95209,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-016",
+      "november_profit_bp": -37.05846,
+      "closed_orders": 7,
+      "days_with_closed_orders": 5,
+      "profitable_days": 2,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 7,
+      "avg_net_bp_per_day_with_closed_orders": -7.41169,
+      "avg_profit_bp_per_profitable_day": 6.70721,
+      "avg_net_bp_per_calendar_day": -3.08821,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-045",
+      "november_profit_bp": -38.7415,
+      "closed_orders": 8,
+      "days_with_closed_orders": 5,
+      "profitable_days": 2,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 7,
+      "avg_net_bp_per_day_with_closed_orders": -7.7483,
+      "avg_profit_bp_per_profitable_day": 12.84841,
+      "avg_net_bp_per_calendar_day": -3.22846,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-052",
+      "november_profit_bp": -38.7415,
+      "closed_orders": 8,
+      "days_with_closed_orders": 5,
+      "profitable_days": 2,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 7,
+      "avg_net_bp_per_day_with_closed_orders": -7.7483,
+      "avg_profit_bp_per_profitable_day": 12.84841,
+      "avg_net_bp_per_calendar_day": -3.22846,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-023",
+      "november_profit_bp": -53.60912,
+      "closed_orders": 5,
+      "days_with_closed_orders": 4,
+      "profitable_days": 1,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 8,
+      "avg_net_bp_per_day_with_closed_orders": -13.40228,
+      "avg_profit_bp_per_profitable_day": 12.37787,
+      "avg_net_bp_per_calendar_day": -4.46743,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-017",
+      "november_profit_bp": -74.44038,
+      "closed_orders": 7,
+      "days_with_closed_orders": 5,
+      "profitable_days": 3,
+      "losing_days": 2,
+      "break_even_days": 0,
+      "days_without_closed_orders": 7,
+      "avg_net_bp_per_day_with_closed_orders": -14.88808,
+      "avg_profit_bp_per_profitable_day": 12.52281,
+      "avg_net_bp_per_calendar_day": -6.20337,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-063",
+      "november_profit_bp": -79.9118,
+      "closed_orders": 11,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -8.87909,
+      "avg_profit_bp_per_profitable_day": 34.55081,
+      "avg_net_bp_per_calendar_day": -6.65932,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-012",
+      "november_profit_bp": -85.55973,
+      "closed_orders": 7,
+      "days_with_closed_orders": 6,
+      "profitable_days": 3,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": -14.25995,
+      "avg_profit_bp_per_profitable_day": 11.13291,
+      "avg_net_bp_per_calendar_day": -7.12998,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-067",
+      "november_profit_bp": -96.46246,
+      "closed_orders": 9,
+      "days_with_closed_orders": 8,
+      "profitable_days": 4,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 4,
+      "avg_net_bp_per_day_with_closed_orders": -12.05781,
+      "avg_profit_bp_per_profitable_day": 39.05084,
+      "avg_net_bp_per_calendar_day": -8.03854,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-064",
+      "november_profit_bp": -96.75988,
+      "closed_orders": 10,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -10.7511,
+      "avg_profit_bp_per_profitable_day": 34.55081,
+      "avg_net_bp_per_calendar_day": -8.06332,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-042",
+      "november_profit_bp": -99.28544,
+      "closed_orders": 12,
+      "days_with_closed_orders": 9,
+      "profitable_days": 4,
+      "losing_days": 5,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -11.03172,
+      "avg_profit_bp_per_profitable_day": 39.30998,
+      "avg_net_bp_per_calendar_day": -8.27379,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-011",
+      "november_profit_bp": -103.70951,
+      "closed_orders": 11,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -11.52328,
+      "avg_profit_bp_per_profitable_day": 33.16088,
+      "avg_net_bp_per_calendar_day": -8.64246,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-020",
+      "november_profit_bp": -103.70951,
+      "closed_orders": 11,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -11.52328,
+      "avg_profit_bp_per_profitable_day": 33.16088,
+      "avg_net_bp_per_calendar_day": -8.64246,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-066",
+      "november_profit_bp": -108.84032,
+      "closed_orders": 8,
+      "days_with_closed_orders": 7,
+      "profitable_days": 3,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 5,
+      "avg_net_bp_per_day_with_closed_orders": -15.54862,
+      "avg_profit_bp_per_profitable_day": 47.94184,
+      "avg_net_bp_per_calendar_day": -9.07003,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-035",
+      "november_profit_bp": -110.0351,
+      "closed_orders": 8,
+      "days_with_closed_orders": 7,
+      "profitable_days": 3,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 5,
+      "avg_net_bp_per_day_with_closed_orders": -15.7193,
+      "avg_profit_bp_per_profitable_day": 53.15961,
+      "avg_net_bp_per_calendar_day": -9.16959,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-054",
+      "november_profit_bp": -110.60489,
+      "closed_orders": 8,
+      "days_with_closed_orders": 8,
+      "profitable_days": 5,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 4,
+      "avg_net_bp_per_day_with_closed_orders": -13.82561,
+      "avg_profit_bp_per_profitable_day": 21.49531,
+      "avg_net_bp_per_calendar_day": -9.21707,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-072",
+      "november_profit_bp": -113.31053,
+      "closed_orders": 8,
+      "days_with_closed_orders": 8,
+      "profitable_days": 4,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 4,
+      "avg_net_bp_per_day_with_closed_orders": -14.16382,
+      "avg_profit_bp_per_profitable_day": 39.05084,
+      "avg_net_bp_per_calendar_day": -9.44254,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-056",
+      "november_profit_bp": -113.42787,
+      "closed_orders": 11,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -12.6031,
+      "avg_profit_bp_per_profitable_day": 21.49531,
+      "avg_net_bp_per_calendar_day": -9.45232,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-053",
+      "november_profit_bp": -114.00285,
+      "closed_orders": 11,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -12.66698,
+      "avg_profit_bp_per_profitable_day": 31.10221,
+      "avg_net_bp_per_calendar_day": -9.50024,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-018",
+      "november_profit_bp": -114.8318,
+      "closed_orders": 6,
+      "days_with_closed_orders": 4,
+      "profitable_days": 1,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 8,
+      "avg_net_bp_per_day_with_closed_orders": -28.70795,
+      "avg_profit_bp_per_profitable_day": 1.03655,
+      "avg_net_bp_per_calendar_day": -9.56932,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-026",
+      "november_profit_bp": -114.8318,
+      "closed_orders": 6,
+      "days_with_closed_orders": 4,
+      "profitable_days": 1,
+      "losing_days": 3,
+      "break_even_days": 0,
+      "days_without_closed_orders": 8,
+      "avg_net_bp_per_day_with_closed_orders": -28.70795,
+      "avg_profit_bp_per_profitable_day": 1.03655,
+      "avg_net_bp_per_calendar_day": -9.56932,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-033",
+      "november_profit_bp": -116.13351,
+      "closed_orders": 11,
+      "days_with_closed_orders": 9,
+      "profitable_days": 4,
+      "losing_days": 5,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -12.90372,
+      "avg_profit_bp_per_profitable_day": 39.30998,
+      "avg_net_bp_per_calendar_day": -9.67779,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-037",
+      "november_profit_bp": -116.13351,
+      "closed_orders": 11,
+      "days_with_closed_orders": 9,
+      "profitable_days": 4,
+      "losing_days": 5,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -12.90372,
+      "avg_profit_bp_per_profitable_day": 39.30998,
+      "avg_net_bp_per_calendar_day": -9.67779,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-048",
+      "november_profit_bp": -116.13351,
+      "closed_orders": 11,
+      "days_with_closed_orders": 9,
+      "profitable_days": 4,
+      "losing_days": 5,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -12.90372,
+      "avg_profit_bp_per_profitable_day": 39.30998,
+      "avg_net_bp_per_calendar_day": -9.67779,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-060",
+      "november_profit_bp": -120.3775,
+      "closed_orders": 12,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -13.37528,
+      "avg_profit_bp_per_profitable_day": 20.10538,
+      "avg_net_bp_per_calendar_day": -10.03146,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-031",
+      "november_profit_bp": -122.84304,
+      "closed_orders": 8,
+      "days_with_closed_orders": 8,
+      "profitable_days": 4,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 4,
+      "avg_net_bp_per_day_with_closed_orders": -15.35538,
+      "avg_profit_bp_per_profitable_day": 31.79495,
+      "avg_net_bp_per_calendar_day": -10.23692,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-085",
+      "november_profit_bp": -128.19273,
+      "closed_orders": 9,
+      "days_with_closed_orders": 8,
+      "profitable_days": 4,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 4,
+      "avg_net_bp_per_day_with_closed_orders": -16.02409,
+      "avg_profit_bp_per_profitable_day": 35.33029,
+      "avg_net_bp_per_calendar_day": -10.68273,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-088",
+      "november_profit_bp": -128.19273,
+      "closed_orders": 9,
+      "days_with_closed_orders": 8,
+      "profitable_days": 4,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 4,
+      "avg_net_bp_per_day_with_closed_orders": -16.02409,
+      "avg_profit_bp_per_profitable_day": 35.33029,
+      "avg_net_bp_per_calendar_day": -10.68273,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-032",
+      "november_profit_bp": -128.21396,
+      "closed_orders": 9,
+      "days_with_closed_orders": 8,
+      "profitable_days": 3,
+      "losing_days": 5,
+      "break_even_days": 0,
+      "days_without_closed_orders": 4,
+      "avg_net_bp_per_day_with_closed_orders": -16.02675,
+      "avg_profit_bp_per_profitable_day": 47.94184,
+      "avg_net_bp_per_calendar_day": -10.6845,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-068",
+      "november_profit_bp": -130.37424,
+      "closed_orders": 13,
+      "days_with_closed_orders": 9,
+      "profitable_days": 4,
+      "losing_days": 5,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -14.48603,
+      "avg_profit_bp_per_profitable_day": 24.54616,
+      "avg_net_bp_per_calendar_day": -10.86452,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-044",
+      "november_profit_bp": -132.68417,
+      "closed_orders": 9,
+      "days_with_closed_orders": 9,
+      "profitable_days": 4,
+      "losing_days": 5,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -14.74269,
+      "avg_profit_bp_per_profitable_day": 39.05084,
+      "avg_net_bp_per_calendar_day": -11.05701,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-029",
+      "november_profit_bp": -135.00986,
+      "closed_orders": 7,
+      "days_with_closed_orders": 6,
+      "profitable_days": 1,
+      "losing_days": 5,
+      "break_even_days": 0,
+      "days_without_closed_orders": 6,
+      "avg_net_bp_per_day_with_closed_orders": -22.50164,
+      "avg_profit_bp_per_profitable_day": 13.31896,
+      "avg_net_bp_per_calendar_day": -11.25082,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-089",
+      "november_profit_bp": -135.14237,
+      "closed_orders": 10,
+      "days_with_closed_orders": 8,
+      "profitable_days": 4,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 4,
+      "avg_net_bp_per_day_with_closed_orders": -16.8928,
+      "avg_profit_bp_per_profitable_day": 33.59289,
+      "avg_net_bp_per_calendar_day": -11.26186,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-070",
+      "november_profit_bp": -136.69982,
+      "closed_orders": 10,
+      "days_with_closed_orders": 8,
+      "profitable_days": 3,
+      "losing_days": 5,
+      "break_even_days": 0,
+      "days_without_closed_orders": 4,
+      "avg_net_bp_per_day_with_closed_orders": -17.08748,
+      "avg_profit_bp_per_profitable_day": 36.13657,
+      "avg_net_bp_per_calendar_day": -11.39165,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-061",
+      "november_profit_bp": -136.92816,
+      "closed_orders": 10,
+      "days_with_closed_orders": 9,
+      "profitable_days": 5,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -15.21424,
+      "avg_profit_bp_per_profitable_day": 20.10538,
+      "avg_net_bp_per_calendar_day": -11.41068,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-004",
+      "november_profit_bp": -138.3321,
+      "closed_orders": 5,
+      "days_with_closed_orders": 4,
+      "profitable_days": 0,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 8,
+      "avg_net_bp_per_day_with_closed_orders": -34.58302,
+      "avg_profit_bp_per_profitable_day": 0,
+      "avg_net_bp_per_calendar_day": -11.52767,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-041",
+      "november_profit_bp": -142.93138,
+      "closed_orders": 8,
+      "days_with_closed_orders": 7,
+      "profitable_days": 3,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 5,
+      "avg_net_bp_per_day_with_closed_orders": -20.41877,
+      "avg_profit_bp_per_profitable_day": 42.19418,
+      "avg_net_bp_per_calendar_day": -11.91095,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-057",
+      "november_profit_bp": -143.41035,
+      "closed_orders": 9,
+      "days_with_closed_orders": 8,
+      "profitable_days": 4,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 4,
+      "avg_net_bp_per_day_with_closed_orders": -17.92629,
+      "avg_profit_bp_per_profitable_day": 23.51118,
+      "avg_net_bp_per_calendar_day": -11.95086,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-071",
+      "november_profit_bp": -146.9249,
+      "closed_orders": 11,
+      "days_with_closed_orders": 9,
+      "profitable_days": 4,
+      "losing_days": 5,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -16.32499,
+      "avg_profit_bp_per_profitable_day": 24.54616,
+      "avg_net_bp_per_calendar_day": -12.24374,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-087",
+      "november_profit_bp": -148.59008,
+      "closed_orders": 9,
+      "days_with_closed_orders": 7,
+      "profitable_days": 3,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 5,
+      "avg_net_bp_per_day_with_closed_orders": -21.22715,
+      "avg_profit_bp_per_profitable_day": 34.69192,
+      "avg_net_bp_per_calendar_day": -12.38251,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-080",
+      "november_profit_bp": -149.78485,
+      "closed_orders": 9,
+      "days_with_closed_orders": 7,
+      "profitable_days": 3,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 5,
+      "avg_net_bp_per_day_with_closed_orders": -21.39784,
+      "avg_profit_bp_per_profitable_day": 39.90969,
+      "avg_net_bp_per_calendar_day": -12.48207,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-084",
+      "november_profit_bp": -149.78485,
+      "closed_orders": 9,
+      "days_with_closed_orders": 7,
+      "profitable_days": 3,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 5,
+      "avg_net_bp_per_day_with_closed_orders": -21.39784,
+      "avg_profit_bp_per_profitable_day": 39.90969,
+      "avg_net_bp_per_calendar_day": -12.48207,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-086",
+      "november_profit_bp": -149.78485,
+      "closed_orders": 9,
+      "days_with_closed_orders": 7,
+      "profitable_days": 3,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 5,
+      "avg_net_bp_per_day_with_closed_orders": -21.39784,
+      "avg_profit_bp_per_profitable_day": 39.90969,
+      "avg_net_bp_per_calendar_day": -12.48207,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-062",
+      "november_profit_bp": -150.35999,
+      "closed_orders": 10,
+      "days_with_closed_orders": 8,
+      "profitable_days": 4,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 4,
+      "avg_net_bp_per_day_with_closed_orders": -18.795,
+      "avg_profit_bp_per_profitable_day": 21.77377,
+      "avg_net_bp_per_calendar_day": -12.53,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-077",
+      "november_profit_bp": -155.88327,
+      "closed_orders": 12,
+      "days_with_closed_orders": 9,
+      "profitable_days": 4,
+      "losing_days": 5,
+      "break_even_days": 0,
+      "days_without_closed_orders": 3,
+      "avg_net_bp_per_day_with_closed_orders": -17.32036,
+      "avg_profit_bp_per_profitable_day": 29.37254,
+      "avg_net_bp_per_calendar_day": -12.99027,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-078",
+      "november_profit_bp": -160.03376,
+      "closed_orders": 9,
+      "days_with_closed_orders": 7,
+      "profitable_days": 3,
+      "losing_days": 4,
+      "break_even_days": 0,
+      "days_without_closed_orders": 5,
+      "avg_net_bp_per_day_with_closed_orders": -22.86197,
+      "avg_profit_bp_per_profitable_day": 36.49338,
+      "avg_net_bp_per_calendar_day": -13.33615,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-073",
+      "november_profit_bp": -160.35672,
+      "closed_orders": 11,
+      "days_with_closed_orders": 8,
+      "profitable_days": 3,
+      "losing_days": 5,
+      "break_even_days": 0,
+      "days_without_closed_orders": 4,
+      "avg_net_bp_per_day_with_closed_orders": -20.04459,
+      "avg_profit_bp_per_profitable_day": 28.25094,
+      "avg_net_bp_per_calendar_day": -13.36306,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-083",
+      "november_profit_bp": -167.96372,
+      "closed_orders": 10,
+      "days_with_closed_orders": 8,
+      "profitable_days": 3,
+      "losing_days": 5,
+      "break_even_days": 0,
+      "days_without_closed_orders": 4,
+      "avg_net_bp_per_day_with_closed_orders": -20.99546,
+      "avg_profit_bp_per_profitable_day": 34.69192,
+      "avg_net_bp_per_calendar_day": -13.99698,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-079",
+      "november_profit_bp": -169.15849,
+      "closed_orders": 10,
+      "days_with_closed_orders": 8,
+      "profitable_days": 3,
+      "losing_days": 5,
+      "break_even_days": 0,
+      "days_without_closed_orders": 4,
+      "avg_net_bp_per_day_with_closed_orders": -21.14481,
+      "avg_profit_bp_per_profitable_day": 39.90969,
+      "avg_net_bp_per_calendar_day": -14.09654,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-081",
+      "november_profit_bp": -184.81179,
+      "closed_orders": 9,
+      "days_with_closed_orders": 8,
+      "profitable_days": 3,
+      "losing_days": 5,
+      "break_even_days": 0,
+      "days_without_closed_orders": 4,
+      "avg_net_bp_per_day_with_closed_orders": -23.10147,
+      "avg_profit_bp_per_profitable_day": 34.69192,
+      "avg_net_bp_per_calendar_day": -15.40098,
+      "retained": false
+    },
+    {
+      "portfolio": "V19-082",
+      "november_profit_bp": -191.76143,
+      "closed_orders": 10,
+      "days_with_closed_orders": 8,
+      "profitable_days": 3,
+      "losing_days": 5,
+      "break_even_days": 0,
+      "days_without_closed_orders": 4,
+      "avg_net_bp_per_day_with_closed_orders": -23.97018,
+      "avg_profit_bp_per_profitable_day": 32.37537,
+      "avg_net_bp_per_calendar_day": -15.98012,
+      "retained": false
+    }
+  ],
+  "daily_utc_by_portfolio": {
+    "V19-065": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 49.961558,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 61.514179,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 49.730069,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -139.050418,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 75.844196,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 72.550772,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -65.574101,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 58.368846,
+        "closed_orders": 3
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -21.692022,
+        "closed_orders": 1
+      }
+    ],
+    "V19-034": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 49.961558,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 54.146569,
+        "closed_orders": 3
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 77.949788,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -111.149663,
+        "closed_orders": 3
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 55.118314,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 52.551521,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -45.664258,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 33.369563,
+        "closed_orders": 3
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -41.065661,
+        "closed_orders": 2
+      }
+    ],
+    "V19-036": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 49.961558,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -33.565379,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 77.949788,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -128.363313,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 55.118314,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 52.551521,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -45.664258,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 56.55988,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -21.692022,
+        "closed_orders": 1
+      }
+    ],
+    "V19-051": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 87.206977,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -33.565379,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 77.949788,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -128.363313,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 50.728093,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 52.551521,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -45.664258,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 40.906578,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -41.065661,
+        "closed_orders": 2
+      }
+    ],
+    "V19-028": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 49.961558,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 49.730069,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 75.844196,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 72.550772,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -48.726026,
+        "closed_orders": 3
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 58.956225,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -21.692022,
+        "closed_orders": 1
+      }
+    ],
+    "V19-009": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 30.017418,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": 0.655034,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": 16.848075,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-055": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 30.017418,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": 0.655034,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -6.949635,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": 15.514112,
+        "closed_orders": 1
+      }
+    ],
+    "V19-043": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 62.762986,
+        "closed_orders": 3
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -48.468686,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 43.482158,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": 23.056266,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -6.949635,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -21.692022,
+        "closed_orders": 1
+      }
+    ],
+    "V19-010": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 20.020685,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": 0.655034,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": 16.848075,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-021": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 49.961558,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -33.565379,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 77.949788,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -128.363313,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 55.118314,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 52.551521,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -45.664258,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 39.316902,
+        "closed_orders": 3
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -21.692022,
+        "closed_orders": 1
+      }
+    ],
+    "V19-025": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 49.961558,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -33.565379,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 77.949788,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -128.363313,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 55.118314,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 52.551521,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -45.664258,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 56.55988,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -41.065661,
+        "closed_orders": 2
+      }
+    ],
+    "V19-039": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 49.961558,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -33.565379,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 77.949788,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -128.363313,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 55.118314,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 52.551521,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -45.664258,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 33.956942,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -21.692022,
+        "closed_orders": 1
+      }
+    ],
+    "V19-008": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": 16.848075,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-047": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 49.961558,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -46.191234,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 49.730069,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -129.626139,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 75.844196,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 72.550772,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -65.574101,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 58.956225,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -41.065661,
+        "closed_orders": 2
+      }
+    ],
+    "V19-030": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 20.020685,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": 13.973999,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -23.233166,
+        "closed_orders": 3
+      }
+    ],
+    "V19-076": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 49.961558,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 2.342265,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 61.949671,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -104.789551,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 47.365026,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 39.670647,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -82.529408,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 50.569018,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -41.065661,
+        "closed_orders": 2
+      }
+    ],
+    "V19-006": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -9.996733,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": 16.848075,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 5.36448,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-022": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -9.996733,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": 13.318964,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 5.36448,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-027": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -9.996733,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": 13.318964,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 5.36448,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-050": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 25.517566,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -48.468686,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 43.482158,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": 23.056266,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 15.653302,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -41.065661,
+        "closed_orders": 2
+      }
+    ],
+    "V19-014": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 30.017418,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": 0.655034,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -6.949635,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -19.373639,
+        "closed_orders": 1
+      }
+    ],
+    "V19-001": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 5.36448,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-015": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 20.020685,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": 0.655034,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -17.242978,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-003": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -1.585155,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-074": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 49.961558,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 2.342265,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 61.949671,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -104.789551,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 47.365026,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 39.670647,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -82.529408,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 34.915715,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -41.065661,
+        "closed_orders": 2
+      }
+    ],
+    "V19-075": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 49.961558,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 2.342265,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 61.949671,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -104.789551,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 47.365026,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 39.670647,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -82.529408,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 34.915715,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -41.065661,
+        "closed_orders": 2
+      }
+    ],
+    "V19-049": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -6.949635,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-038": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -9.996733,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": 13.318964,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 5.36448,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -23.233166,
+        "closed_orders": 3
+      }
+    ],
+    "V19-059": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 49.961558,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 49.730069,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -139.050418,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 72.550772,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -65.574101,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 36.353288,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -41.065661,
+        "closed_orders": 2
+      }
+    ],
+    "V19-002": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -9.996733,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": 16.848075,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -23.233166,
+        "closed_orders": 3
+      }
+    ],
+    "V19-005": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -17.242978,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-013": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -9.996733,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 5.36448,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -23.233166,
+        "closed_orders": 3
+      }
+    ],
+    "V19-007": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -24.192613,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-058": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 37.245419,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -9.996733,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": 13.318964,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -17.242978,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -38.747278,
+        "closed_orders": 2
+      }
+    ],
+    "V19-019": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -9.996733,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -17.242978,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-040": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -9.996733,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": 13.318964,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -17.242978,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -23.233166,
+        "closed_orders": 3
+      }
+    ],
+    "V19-024": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -9.996733,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": -31.208436,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 5.36448,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-069": [
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": -32.244982,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -1.585155,
+        "closed_orders": 2
+      }
+    ],
+    "V19-046": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -9.996733,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": 13.318964,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -38.747278,
+        "closed_orders": 2
+      }
+    ],
+    "V19-016": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -9.996733,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -17.242978,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -23.233166,
+        "closed_orders": 3
+      }
+    ],
+    "V19-045": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -9.996733,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": 13.318964,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": -31.208436,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -23.233166,
+        "closed_orders": 3
+      }
+    ],
+    "V19-052": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -9.996733,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": 13.318964,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": -31.208436,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -23.233166,
+        "closed_orders": 3
+      }
+    ],
+    "V19-023": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -9.996733,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -17.242978,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -38.747278,
+        "closed_orders": 2
+      }
+    ],
+    "V19-017": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": -12.066126,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -99.942696,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 21.017782,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": 15.514112,
+        "closed_orders": 1
+      }
+    ],
+    "V19-063": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 30.105161,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -71.782292,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": 15.514112,
+        "closed_orders": 1
+      }
+    ],
+    "V19-012": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": -12.066126,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -99.942696,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": 16.848075,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -6.949635,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": 15.514112,
+        "closed_orders": 1
+      }
+    ],
+    "V19-067": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -71.782292,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      }
+    ],
+    "V19-064": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 30.105161,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": 15.514112,
+        "closed_orders": 1
+      }
+    ],
+    "V19-042": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 30.105161,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -71.782292,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-011": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 30.105161,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 36.353288,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": 15.514112,
+        "closed_orders": 1
+      }
+    ],
+    "V19-020": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 30.105161,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 36.353288,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": 15.514112,
+        "closed_orders": 1
+      }
+    ],
+    "V19-066": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -71.782292,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      }
+    ],
+    "V19-035": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 58.956225,
+        "closed_orders": 2
+      }
+    ],
+    "V19-054": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 2.342265,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 10.475661,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -108.684236,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 47.365026,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": -3.811511,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -105.585674,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 34.915715,
+        "closed_orders": 1
+      }
+    ],
+    "V19-072": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      }
+    ],
+    "V19-056": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 2.342265,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 10.475661,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -108.684236,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 47.365026,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": -2.774965,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -105.585674,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 34.915715,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-053": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 30.105161,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 26.059945,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": 15.514112,
+        "closed_orders": 1
+      }
+    ],
+    "V19-018": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": -12.066126,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -99.942696,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-026": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": -12.066126,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -99.942696,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 1.036546,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-033": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 30.105161,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-037": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 30.105161,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-048": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 30.105161,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-060": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 2.342265,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 10.475661,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -108.684236,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 47.365026,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": -2.774965,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -105.585674,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 27.96608,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-031": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -33.565379,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 26.475778,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -128.363313,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 50.728093,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 9.069363,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -68.720523,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 40.906578,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -19.373639,
+        "closed_orders": 1
+      }
+    ],
+    "V19-085": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 37.245419,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 31.70422,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      }
+    ],
+    "V19-088": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 37.245419,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 31.70422,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      }
+    ],
+    "V19-032": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -71.782292,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -19.373639,
+        "closed_orders": 1
+      }
+    ],
+    "V19-068": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -7.654467,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 10.475661,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -108.684236,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 47.365026,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": -2.774965,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -105.585674,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 27.96608,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-044": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -19.373639,
+        "closed_orders": 1
+      }
+    ],
+    "V19-029": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": -12.066126,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -9.996733,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -99.942696,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": 13.318964,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -6.949635,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -19.373639,
+        "closed_orders": 1
+      }
+    ],
+    "V19-089": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 37.245419,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 31.70422,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 36.353288,
+        "closed_orders": 2
+      }
+    ],
+    "V19-070": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -7.654467,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 10.475661,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -108.684236,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 47.365026,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": -3.811511,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -105.585674,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 50.569018,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -19.373639,
+        "closed_orders": 1
+      }
+    ],
+    "V19-061": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 2.342265,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 10.475661,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -108.684236,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 47.365026,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": -3.811511,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -105.585674,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 27.96608,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -19.373639,
+        "closed_orders": 1
+      }
+    ],
+    "V19-004": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": -12.066126,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -99.942696,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": -6.949635,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -19.373639,
+        "closed_orders": 1
+      }
+    ],
+    "V19-041": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 71.453976,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 26.059945,
+        "closed_orders": 2
+      }
+    ],
+    "V19-057": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 2.342265,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 10.475661,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -108.684236,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 46.311067,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": -3.811511,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -105.585674,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 34.915715,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -19.373639,
+        "closed_orders": 1
+      }
+    ],
+    "V19-071": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -7.654467,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 10.475661,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -108.684236,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 47.365026,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": -3.811511,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -105.585674,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 27.96608,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -19.373639,
+        "closed_orders": 1
+      }
+    ],
+    "V19-087": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 31.70422,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -71.782292,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      }
+    ],
+    "V19-080": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 31.70422,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 58.956225,
+        "closed_orders": 2
+      }
+    ],
+    "V19-084": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 31.70422,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 58.956225,
+        "closed_orders": 2
+      }
+    ],
+    "V19-086": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 31.70422,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 58.956225,
+        "closed_orders": 2
+      }
+    ],
+    "V19-062": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": 2.342265,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 10.475661,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -108.684236,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 46.311067,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": -3.811511,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -105.585674,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 27.96608,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -19.373639,
+        "closed_orders": 1
+      }
+    ],
+    "V19-077": [
+      {
+        "exit_date_utc": "2026-11-02",
+        "realized_net_bp": 12.377865,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 31.70422,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 30.105161,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -3.859527,
+        "closed_orders": 2
+      }
+    ],
+    "V19-078": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 44.058251,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 36.353288,
+        "closed_orders": 2
+      }
+    ],
+    "V19-073": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -7.654467,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": 10.475661,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -108.684236,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 46.311067,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": -3.811511,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -105.585674,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 27.96608,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -19.373639,
+        "closed_orders": 1
+      }
+    ],
+    "V19-083": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 31.70422,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -71.782292,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -19.373639,
+        "closed_orders": 1
+      }
+    ],
+    "V19-079": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 31.70422,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 58.956225,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -19.373639,
+        "closed_orders": 1
+      }
+    ],
+    "V19-081": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 31.70422,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 43.302923,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -19.373639,
+        "closed_orders": 1
+      }
+    ],
+    "V19-082": [
+      {
+        "exit_date_utc": "2026-11-03",
+        "realized_net_bp": -36.194501,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-04",
+        "realized_net_bp": -1.743941,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-05",
+        "realized_net_bp": -142.945103,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-06",
+        "realized_net_bp": 31.70422,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-09",
+        "realized_net_bp": 29.068614,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-10",
+        "realized_net_bp": -88.630366,
+        "closed_orders": 1
+      },
+      {
+        "exit_date_utc": "2026-11-11",
+        "realized_net_bp": 36.353288,
+        "closed_orders": 2
+      },
+      {
+        "exit_date_utc": "2026-11-12",
+        "realized_net_bp": -19.373639,
+        "closed_orders": 1
+      }
+    ]
+  }
+}
