@@ -1,0 +1,324 @@
+{
+  "research": "V17 Exness public 2025/2026 multi-timeframe strategy census",
+  "status": "EXPLORATORY_BACKTEST_ONLY_NOT_APPROVED_FOR_LIVE_TRADING",
+  "symbols": [
+    "EURUSD",
+    "GBPUSD",
+    "USDJPY"
+  ],
+  "data_years": [
+    2025,
+    2026
+  ],
+  "calendar_complete_months": [
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09",
+    "2026-10"
+  ],
+  "2026_november": "partial_as_of_Nov10_UTC_excluded_from_all_months_criterion",
+  "entry_hours_utc": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "holds_hours": [
+    1,
+    2,
+    4,
+    6,
+    8,
+    12
+  ],
+  "timeframes": [
+    "M5",
+    "M15",
+    "M30",
+    "H1",
+    "H4",
+    "D1",
+    "W1"
+  ],
+  "entry_exit": "enter at M5 next decision bar open, exit at M5 close after fixed H hours",
+  "no_lookahead": "all signal features use only previous fully closed source-timeframe candle",
+  "execution_model": "buy at ask_open sell at bid_open; exit long bid_close short ask_close; 0.1 pip additional adverse slippage each side",
+  "limitations": [
+    "indicative Exness quotes, not broker-executed MT5 fills",
+    "no swap financing, no special news slippage, no commissions beyond observed bid/ask spread",
+    "no stop loss or forced liquidation; fixed holding horizon only",
+    "D1 W1 use UTC calendar not necessarily MT5 broker server time",
+    "strategy mining creates severe data-snooping risk, all 22 months are used as selection set",
+    "not an untouched out-of-sample demonstration"
+  ],
+  "counts": {
+    "candidates": 598752,
+    "every_month_has_trades": 370088
+  },
+  "unique_all_22_months_profitable": 0,
+  "per_symbol": {
+    "EURUSD": {
+      "counts": {
+        "candidates": 199584,
+        "every_month_has_trades": 134948
+      },
+      "source_rows": {
+        "M5": 138637,
+        "M15": 46265,
+        "M30": 23135,
+        "H1": 11568,
+        "H4": 2991,
+        "D1": 580,
+        "W1": 95
+      }
+    },
+    "GBPUSD": {
+      "counts": {
+        "candidates": 199584,
+        "every_month_has_trades": 130506
+      },
+      "source_rows": {
+        "M5": 138580,
+        "M15": 46266,
+        "M30": 23135,
+        "H1": 11568,
+        "H4": 2991,
+        "D1": 580,
+        "W1": 95
+      }
+    },
+    "USDJPY": {
+      "counts": {
+        "candidates": 199584,
+        "every_month_has_trades": 104634
+      },
+      "source_rows": {
+        "M5": 138532,
+        "M15": 46254,
+        "M30": 23129,
+        "H1": 11565,
+        "H4": 2990,
+        "D1": 579,
+        "W1": 95
+      }
+    }
+  },
+  "strongest_by_minimum_month_pips": [],
+  "near_miss_highest_months": [
+    [
+      20,
+      1087.7999999999881,
+      "USDJPY",
+      "M5",
+      "return_2",
+      16,
+      4,
+      -1,
+      "long_only"
+    ],
+    [
+      20,
+      900.8000000000054,
+      "USDJPY",
+      "M15",
+      "ema_3_8",
+      18,
+      2,
+      -1,
+      "long_only"
+    ],
+    [
+      20,
+      563.000000000015,
+      "EURUSD",
+      "H4",
+      "ema_8_21",
+      14,
+      1,
+      1,
+      "long_only"
+    ],
+    [
+      20,
+      391.900000000012,
+      "USDJPY",
+      "M15",
+      "close_breakout_3",
+      9,
+      1,
+      1,
+      "long_only"
+    ],
+    [
+      20,
+      265.2000000000125,
+      "USDJPY",
+      "M15",
+      "close_breakout_5",
+      9,
+      1,
+      1,
+      "long_only"
+    ],
+    [
+      19,
+      1512.1000000000065,
+      "USDJPY",
+      "D1",
+      "close_vs_sma_10",
+      14,
+      6,
+      -1,
+      "long_only"
+    ],
+    [
+      19,
+      1373.5000000000152,
+      "USDJPY",
+      "D1",
+      "close_vs_sma_5",
+      12,
+      8,
+      -1,
+      "long_only"
+    ],
+    [
+      19,
+      1090.0999999999897,
+      "USDJPY",
+      "M5",
+      "body_2",
+      16,
+      4,
+      -1,
+      "long_only"
+    ],
+    [
+      19,
+      945.8000000000166,
+      "USDJPY",
+      "M5",
+      "close_vs_sma_40",
+      18,
+      2,
+      -1,
+      "long_only"
+    ],
+    [
+      19,
+      914.6000000000142,
+      "USDJPY",
+      "M15",
+      "rsi50_7",
+      18,
+      2,
+      -1,
+      "long_only"
+    ],
+    [
+      19,
+      893.9000000000123,
+      "USDJPY",
+      "M5",
+      "ema_8_21",
+      18,
+      2,
+      -1,
+      "long_only"
+    ],
+    [
+      19,
+      852.5000000000077,
+      "USDJPY",
+      "D1",
+      "return_1",
+      18,
+      2,
+      -1,
+      "long_only"
+    ],
+    [
+      19,
+      793.3999999999995,
+      "USDJPY",
+      "D1",
+      "body_1",
+      18,
+      2,
+      -1,
+      "long_only"
+    ],
+    [
+      19,
+      705.7999999999954,
+      "USDJPY",
+      "M15",
+      "close_breakout_5",
+      7,
+      2,
+      -1,
+      "both"
+    ],
+    [
+      19,
+      591.0000000000034,
+      "EURUSD",
+      "H4",
+      "return_20",
+      14,
+      1,
+      1,
+      "long_only"
+    ],
+    [
+      19,
+      422.4000000000018,
+      "GBPUSD",
+      "M15",
+      "rsi_extreme_7_40",
+      22,
+      8,
+      1,
+      "long_only"
+    ]
+  ],
+  "elapsed_seconds": 16.8
+}
