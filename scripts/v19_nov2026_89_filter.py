@@ -85,6 +85,78 @@ def run(args):
             raise AssertionError(f"Replay disagreement vs previously checked 22: {sid} {v} != {r}")
     assert len(old_lookup) == 22
 
+    # Daily results by the UTC calendar date on which each position CLOSED.
+    # Portfolio BP is weighted 1/4 for each of the 4 independent EA legs,
+    # identical to the historical selection and November PnL screen.
+    day_rows = []
+    day_details = {}
+    n_calendar_days = len(pd.date_range(replay.START, cutoff - pd.Timedelta(nanoseconds=1), freq="D"))
+    for item in rows:
+        daily_pnl = {}
+        daily_closed = {}
+        for leg in item["legs"]:
+            for entry in leg_cache[leg]:
+                if entry["status"] != "closed":
+                    continue
+                day = pd.Timestamp(entry["exit_utc"]).tz_convert("UTC").strftime("%Y-%m-%d")
+                assert "2026-11-01" <= day <= "2026-11-12", (item["portfolio"],day)
+                daily_pnl[day] = daily_pnl.get(day,0.0) + float(entry["pnl_bp"]) / 4
+                daily_closed[day] = daily_closed.get(day,0) + 1
+        active_days = len(daily_pnl)
+        profit_days = [v for v in daily_pnl.values() if v > 1e-9]
+        loss_days = [v for v in daily_pnl.values() if v < -1e-9]
+        even_days = active_days - len(profit_days) - len(loss_days)
+        exact_pnl = sum(daily_pnl.values())
+        assert abs(exact_pnl - item["november_realized_profit_bp"]) < 0.0001, (item["portfolio"],exact_pnl,item["november_realized_profit_bp"])
+        assert sum(daily_closed.values()) == item["november_closed_orders"]
+        row = {
+            "portfolio":item["portfolio"],
+            "november_profit_bp":item["november_realized_profit_bp"],
+            "closed_orders":item["november_closed_orders"],
+            "days_with_closed_orders":active_days,
+            "profitable_days":len(profit_days),
+            "losing_days":len(loss_days),
+            "break_even_days":even_days,
+            "days_without_closed_orders":n_calendar_days-active_days,
+            "avg_net_bp_per_day_with_closed_orders":round(exact_pnl/active_days,5) if active_days else 0,
+            "avg_profit_bp_per_profitable_day":round(sum(profit_days)/len(profit_days),5) if profit_days else 0,
+            "avg_net_bp_per_calendar_day":round(exact_pnl/n_calendar_days,5),
+            "retained":item["retained"]
+        }
+        assert 0 <= active_days <= n_calendar_days
+        assert row["profitable_days"]+row["losing_days"]+row["break_even_days"]==active_days
+        day_rows.append(row)
+        day_details[item["portfolio"]] = [
+            {"exit_date_utc":d,"realized_net_bp":round(v,6),"closed_orders":daily_closed[d]}
+            for d,v in sorted(daily_pnl.items())
+        ]
+    day_retained = [q for q in day_rows if q["retained"]]
+    daily_output = {
+        "project":"V19",
+        "date_range_inclusive_utc":["2026-11-01","2026-11-12"],
+        "cutoff_exclusive_utc":cutoff.isoformat(),
+        "calendar_days":n_calendar_days,
+        "profit_unit":"basis points (bp) of equal-weighted fixed portfolio notional, NOT USD",
+        "daily_pnl_definition":"By UTC exit date of closed orders. Four EA legs each carry 1/4 portfolio weight. Each day net PnL is sum of closed-order realized PnL divided by 4; no unclosed PnL.",
+        "days_with_closed_orders":"Number of dates when at least one position CLOSED.",
+        "profitable_days":"Number of closed-order dates with NET realized portfolio PnL > 0.",
+        "losing_days":"Number of closed-order dates with NET realized portfolio PnL < 0.",
+        "avg_net_bp_per_day_with_closed_orders":"Net November realized profit divided by number of dates with closed orders, including losing days.",
+        "avg_profit_bp_per_profitable_day":"Sum of positive daily net PnL divided by number of profitable days (excluding losing days).",
+        "avg_net_bp_per_calendar_day":"Net November realized profit divided by 12 calendar days including weekends and inactive days.",
+        "count":len(day_retained),
+        "retained":day_retained,
+        "all_89":day_rows,
+        "daily_utc_by_portfolio":day_details,
+    }
+    assert len(day_retained)==27
+    (args.novdir/"V19_27_nov2026_daily_pnl_report.json").write_text(json.dumps(daily_output,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    pd.DataFrame(day_retained).to_csv(args.novdir/"V19_27_nov2026_daily_pnl_summary.csv",index=False)
+    print("V19_27_DAILY_PROFITS",json.dumps([
+        {k:q[k] for k in ("portfolio","profitable_days","losing_days","days_with_closed_orders","avg_net_bp_per_day_with_closed_orders","november_profit_bp")}
+        for q in day_retained
+    ]),flush=True)
+
     retained = [x for x in rows if x["retained"]]
     removed = [x for x in rows if not x["retained"]]
     losses = sum(x["november_realized_profit_bp"] < 0 for x in rows)
