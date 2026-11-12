@@ -194,6 +194,7 @@ def screen_symbol(root, symbol):
                                 continue
                             counters["every_month_has_trades"]+=1
                             month_wins = int((month_sum[:NOV_CODE] > 1e-9).sum())
+                            counters[f"profitable_exactly_{month_wins}_of_22"] += 1
                             if month_wins>=19:
                                 nearest.append((month_wins,float(month_sum[:NOV_CODE].sum()),symbol,tf,name,hour,hold,polarity,side))
                             if month_wins!=NOV_CODE:
