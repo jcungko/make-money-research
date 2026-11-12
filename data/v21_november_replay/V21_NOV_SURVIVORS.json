@@ -1,0 +1,262 @@
+[
+  {
+    "id": "V21-P4-195",
+    "composition": "4 BTCUSD + 0 ETHUSD",
+    "november_profit_bp": 32.03916,
+    "november_closed_trades": 16,
+    "historical_2025_to_oct2026_bp": 3050.6204,
+    "legs": [
+      "BTCUSD|H1|range_top_20|long|H2|08utc",
+      "BTCUSD|H1|above_sma_50|short|H8|00utc",
+      "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+      "BTCUSD|H4|range_top_20|short|H3|20utc"
+    ],
+    "leg_november_bp": [
+      34.58516,
+      54.5855,
+      88.31421,
+      -49.32824
+    ],
+    "leg_november_trades": [
+      4,
+      4,
+      7,
+      1
+    ],
+    "passed_november_profit_filter": true
+  },
+  {
+    "id": "V21-P4-041",
+    "composition": "3 BTCUSD + 1 ETHUSD",
+    "november_profit_bp": 30.31055,
+    "november_closed_trades": 14,
+    "historical_2025_to_oct2026_bp": 3096.20017,
+    "legs": [
+      "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+      "BTCUSD|H1|below_sma_10|long|H4|20utc",
+      "BTCUSD|H4|range_top_20|short|H3|20utc",
+      "ETHUSD|H4|above_sma_50|long|H1|08utc"
+    ],
+    "leg_november_bp": [
+      27.77155,
+      28.6497,
+      -49.32824,
+      114.14919
+    ],
+    "leg_november_trades": [
+      5,
+      6,
+      1,
+      2
+    ],
+    "passed_november_profit_filter": true
+  },
+  {
+    "id": "V21-P4-047",
+    "composition": "3 BTCUSD + 1 ETHUSD",
+    "november_profit_bp": 30.31055,
+    "november_closed_trades": 14,
+    "historical_2025_to_oct2026_bp": 3028.91909,
+    "legs": [
+      "BTCUSD|H1|below_sma_20|long|H4|20utc",
+      "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+      "BTCUSD|H4|range_top_20|short|H3|20utc",
+      "ETHUSD|H4|above_sma_50|long|H1|08utc"
+    ],
+    "leg_november_bp": [
+      28.6497,
+      27.77155,
+      -49.32824,
+      114.14919
+    ],
+    "leg_november_trades": [
+      6,
+      5,
+      1,
+      2
+    ],
+    "passed_november_profit_filter": true
+  },
+  {
+    "id": "V21-P4-052",
+    "composition": "3 BTCUSD + 1 ETHUSD",
+    "november_profit_bp": 22.56308,
+    "november_closed_trades": 12,
+    "historical_2025_to_oct2026_bp": 3023.47932,
+    "legs": [
+      "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+      "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+      "BTCUSD|H4|range_top_20|short|H3|20utc",
+      "ETHUSD|H4|above_sma_50|long|H1|08utc"
+    ],
+    "leg_november_bp": [
+      -2.34017,
+      27.77155,
+      -49.32824,
+      114.14919
+    ],
+    "leg_november_trades": [
+      4,
+      5,
+      1,
+      2
+    ],
+    "passed_november_profit_filter": true
+  },
+  {
+    "id": "V21-P4-194",
+    "composition": "4 BTCUSD + 0 ETHUSD",
+    "november_profit_bp": 17.12303,
+    "november_closed_trades": 15,
+    "historical_2025_to_oct2026_bp": 3174.875,
+    "legs": [
+      "BTCUSD|H1|range_top_20|long|H2|08utc",
+      "BTCUSD|H1|above_sma_50|short|H8|00utc",
+      "BTCUSD|H1|below_sma_10|long|H4|20utc",
+      "BTCUSD|H4|range_top_20|short|H3|20utc"
+    ],
+    "leg_november_bp": [
+      34.58516,
+      54.5855,
+      28.6497,
+      -49.32824
+    ],
+    "leg_november_trades": [
+      4,
+      4,
+      6,
+      1
+    ],
+    "passed_november_profit_filter": true
+  },
+  {
+    "id": "V21-P4-085",
+    "composition": "3 BTCUSD + 1 ETHUSD",
+    "november_profit_bp": 14.71576,
+    "november_closed_trades": 13,
+    "historical_2025_to_oct2026_bp": 3067.70238,
+    "legs": [
+      "BTCUSD|H1|range_bottom_10|long|H2|20utc",
+      "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+      "BTCUSD|H4|range_top_20|short|H3|20utc",
+      "ETHUSD|H4|above_sma_50|long|H1|08utc"
+    ],
+    "leg_november_bp": [
+      -94.27213,
+      88.31421,
+      -49.32824,
+      114.14919
+    ],
+    "leg_november_trades": [
+      3,
+      7,
+      1,
+      2
+    ],
+    "passed_november_profit_filter": true
+  },
+  {
+    "id": "V21-P4-064",
+    "composition": "3 BTCUSD + 1 ETHUSD",
+    "november_profit_bp": 12.20877,
+    "november_closed_trades": 12,
+    "historical_2025_to_oct2026_bp": 3109.12974,
+    "legs": [
+      "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+      "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+      "BTCUSD|H4|range_top_20|short|H3|20utc",
+      "ETHUSD|H4|above_sma_50|long|H1|08utc"
+    ],
+    "leg_november_bp": [
+      -104.30006,
+      88.31421,
+      -49.32824,
+      114.14919
+    ],
+    "leg_november_trades": [
+      2,
+      7,
+      1,
+      2
+    ],
+    "passed_november_profit_filter": true
+  },
+  {
+    "id": "V21-P4-095",
+    "composition": "3 BTCUSD + 1 ETHUSD",
+    "november_profit_bp": 12.20877,
+    "november_closed_trades": 12,
+    "historical_2025_to_oct2026_bp": 3040.08716,
+    "legs": [
+      "BTCUSD|M30|rsi14_below_40|long|H4|20utc",
+      "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+      "BTCUSD|H4|range_top_20|short|H3|20utc",
+      "ETHUSD|H4|above_sma_50|long|H1|08utc"
+    ],
+    "leg_november_bp": [
+      -104.30006,
+      88.31421,
+      -49.32824,
+      114.14919
+    ],
+    "leg_november_trades": [
+      2,
+      7,
+      1,
+      2
+    ],
+    "passed_november_profit_filter": true
+  },
+  {
+    "id": "V21-P4-098",
+    "composition": "4 BTCUSD + 0 ETHUSD",
+    "november_profit_bp": 9.37556,
+    "november_closed_trades": 13,
+    "historical_2025_to_oct2026_bp": 3102.15416,
+    "legs": [
+      "BTCUSD|H1|range_top_20|long|H2|08utc",
+      "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+      "BTCUSD|H1|above_sma_50|short|H8|00utc",
+      "BTCUSD|H4|range_top_20|short|H3|20utc"
+    ],
+    "leg_november_bp": [
+      34.58516,
+      -2.34017,
+      54.5855,
+      -49.32824
+    ],
+    "leg_november_trades": [
+      4,
+      4,
+      4,
+      1
+    ],
+    "passed_november_profit_filter": true
+  },
+  {
+    "id": "V21-P4-089",
+    "composition": "3 BTCUSD + 1 ETHUSD",
+    "november_profit_bp": 4.82974,
+    "november_closed_trades": 14,
+    "historical_2025_to_oct2026_bp": 3076.20199,
+    "legs": [
+      "BTCUSD|M30|prev_red|long|H8|20utc",
+      "BTCUSD|M30|below_sma_20|long|H8|20utc",
+      "BTCUSD|H4|range_top_20|short|H3|20utc",
+      "ETHUSD|H4|above_sma_50|long|H1|08utc"
+    ],
+    "leg_november_bp": [
+      68.49334,
+      -113.99533,
+      -49.32824,
+      114.14919
+    ],
+    "leg_november_trades": [
+      4,
+      7,
+      1,
+      2
+    ],
+    "passed_november_profit_filter": true
+  }
+]

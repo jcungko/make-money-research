@@ -1,0 +1,1758 @@
+{
+  "method": "V21 exact V19 signal replay of frozen 50 portfolios",
+  "source_frozen_50": "data/v21_crypto_screen/V21_filtered_top_profit_then_top_trades_50.json",
+  "date_start_utc": "2026-11-01T00:00:00+00:00",
+  "planned_date_end_exclusive_utc": "2026-11-13T00:00:00+00:00",
+  "asof_utc": "2026-11-12T18:23:48.455592+00:00",
+  "last_closed_m5_cutoff_exclusive_utc": "2026-11-12T18:00:00+00:00",
+  "spread": "archived Exness Bid/Ask",
+  "assumed_slippage_per_side_bp": 1,
+  "excluded_costs": [
+    "swap",
+    "broker commissions",
+    "liquidation",
+    "market impact"
+  ],
+  "units": "fixed-notional portfolio basis points (four legs equally weighted)",
+  "symbols": {
+    "BTCUSD": {
+      "source_days": [
+        {
+          "day": "2026-11-01",
+          "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/11/01/Exness_BTCUSD_2026_11_01.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 927773,
+          "valid_ticks": 86496,
+          "first_tick_utc": "2026-11-01T00:00:00.883000+00:00",
+          "last_tick_utc": "2026-11-01T23:59:59.684000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Mon, 02 Nov 2026 00:41:06 GMT"
+        },
+        {
+          "day": "2026-11-02",
+          "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/11/02/Exness_BTCUSD_2026_11_02.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 1329964,
+          "valid_ticks": 122439,
+          "first_tick_utc": "2026-11-02T00:00:00.397000+00:00",
+          "last_tick_utc": "2026-11-02T23:59:59.443000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Tue, 03 Nov 2026 00:41:07 GMT"
+        },
+        {
+          "day": "2026-11-03",
+          "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/11/03/Exness_BTCUSD_2026_11_03.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 1243180,
+          "valid_ticks": 114449,
+          "first_tick_utc": "2026-11-03T00:00:00.481000+00:00",
+          "last_tick_utc": "2026-11-03T23:59:59.981000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Wed, 04 Nov 2026 00:41:07 GMT"
+        },
+        {
+          "day": "2026-11-04",
+          "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/11/04/Exness_BTCUSD_2026_11_04.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 1785124,
+          "valid_ticks": 164052,
+          "first_tick_utc": "2026-11-04T00:00:00.983000+00:00",
+          "last_tick_utc": "2026-11-04T23:59:59.515000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Thu, 05 Nov 2026 00:41:07 GMT"
+        },
+        {
+          "day": "2026-11-05",
+          "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/11/05/Exness_BTCUSD_2026_11_05.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 2079035,
+          "valid_ticks": 192258,
+          "first_tick_utc": "2026-11-05T00:00:00.527000+00:00",
+          "last_tick_utc": "2026-11-05T23:59:59.541000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Fri, 06 Nov 2026 00:41:09 GMT"
+        },
+        {
+          "day": "2026-11-06",
+          "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/11/06/Exness_BTCUSD_2026_11_06.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 1673397,
+          "valid_ticks": 154282,
+          "first_tick_utc": "2026-11-06T00:00:00.543000+00:00",
+          "last_tick_utc": "2026-11-06T23:59:59.840000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Sat, 07 Nov 2026 00:41:07 GMT"
+        },
+        {
+          "day": "2026-11-07",
+          "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/11/07/Exness_BTCUSD_2026_11_07.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 879180,
+          "valid_ticks": 82702,
+          "first_tick_utc": "2026-11-07T00:00:00.873000+00:00",
+          "last_tick_utc": "2026-11-07T23:59:59.717000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Sun, 08 Nov 2026 00:41:07 GMT"
+        },
+        {
+          "day": "2026-11-08",
+          "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/11/08/Exness_BTCUSD_2026_11_08.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 1145232,
+          "valid_ticks": 107276,
+          "first_tick_utc": "2026-11-08T00:00:00.776000+00:00",
+          "last_tick_utc": "2026-11-08T23:59:59.886000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Mon, 09 Nov 2026 00:41:07 GMT"
+        },
+        {
+          "day": "2026-11-09",
+          "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/11/09/Exness_BTCUSD_2026_11_09.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 1694154,
+          "valid_ticks": 155636,
+          "first_tick_utc": "2026-11-09T00:00:00.469000+00:00",
+          "last_tick_utc": "2026-11-09T23:59:59.747000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Tue, 10 Nov 2026 00:41:07 GMT"
+        },
+        {
+          "day": "2026-11-10",
+          "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/11/10/Exness_BTCUSD_2026_11_10.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 1678093,
+          "valid_ticks": 154633,
+          "first_tick_utc": "2026-11-10T00:00:00.208000+00:00",
+          "last_tick_utc": "2026-11-10T23:59:59.279000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Wed, 11 Nov 2026 00:41:07 GMT"
+        },
+        {
+          "day": "2026-11-11",
+          "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/11/11/Exness_BTCUSD_2026_11_11.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 1466632,
+          "valid_ticks": 134813,
+          "first_tick_utc": "2026-11-11T00:00:00.373000+00:00",
+          "last_tick_utc": "2026-11-11T23:59:56.985000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Thu, 12 Nov 2026 00:41:09 GMT"
+        },
+        {
+          "day": "2026-11-12",
+          "url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/11/12/Exness_BTCUSD_2026_11_12.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 1297279,
+          "valid_ticks": 120109,
+          "first_tick_utc": "2026-11-12T00:00:00.085000+00:00",
+          "last_tick_utc": "2026-11-12T18:00:50.608000+00:00",
+          "m5_bars": 217,
+          "last_modified": "Thu, 12 Nov 2026 18:01:10 GMT"
+        }
+      ],
+      "historical_m5_bars": 87548,
+      "nov_m5_bars": 3385,
+      "first_nov_m5_utc": "2026-11-01T00:00:00+00:00",
+      "last_nov_m5_utc": "2026-11-12T18:00:00+00:00"
+    },
+    "ETHUSD": {
+      "source_days": [
+        {
+          "day": "2026-11-01",
+          "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2026/11/01/Exness_ETHUSD_2026_11_01.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 213666,
+          "valid_ticks": 24051,
+          "first_tick_utc": "2026-11-01T00:00:00.788000+00:00",
+          "last_tick_utc": "2026-11-01T23:59:58.191000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Mon, 02 Nov 2026 00:41:09 GMT"
+        },
+        {
+          "day": "2026-11-02",
+          "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2026/11/02/Exness_ETHUSD_2026_11_02.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 543202,
+          "valid_ticks": 62306,
+          "first_tick_utc": "2026-11-02T00:00:00.193000+00:00",
+          "last_tick_utc": "2026-11-02T23:59:55.152000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Tue, 03 Nov 2026 00:41:10 GMT"
+        },
+        {
+          "day": "2026-11-03",
+          "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2026/11/03/Exness_ETHUSD_2026_11_03.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 423023,
+          "valid_ticks": 48318,
+          "first_tick_utc": "2026-11-03T00:00:00.387000+00:00",
+          "last_tick_utc": "2026-11-03T23:59:59.271000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Wed, 04 Nov 2026 00:41:10 GMT"
+        },
+        {
+          "day": "2026-11-04",
+          "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2026/11/04/Exness_ETHUSD_2026_11_04.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 830820,
+          "valid_ticks": 96289,
+          "first_tick_utc": "2026-11-04T00:00:00.136000+00:00",
+          "last_tick_utc": "2026-11-04T23:59:59.427000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Thu, 05 Nov 2026 00:41:10 GMT"
+        },
+        {
+          "day": "2026-11-05",
+          "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2026/11/05/Exness_ETHUSD_2026_11_05.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 961885,
+          "valid_ticks": 112176,
+          "first_tick_utc": "2026-11-05T00:00:00.234000+00:00",
+          "last_tick_utc": "2026-11-05T23:59:57.562000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Fri, 06 Nov 2026 00:41:12 GMT"
+        },
+        {
+          "day": "2026-11-06",
+          "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2026/11/06/Exness_ETHUSD_2026_11_06.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 725313,
+          "valid_ticks": 84840,
+          "first_tick_utc": "2026-11-06T00:00:00.114000+00:00",
+          "last_tick_utc": "2026-11-06T23:59:59.798000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Sat, 07 Nov 2026 00:41:10 GMT"
+        },
+        {
+          "day": "2026-11-07",
+          "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2026/11/07/Exness_ETHUSD_2026_11_07.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 175808,
+          "valid_ticks": 20006,
+          "first_tick_utc": "2026-11-07T00:00:05.691000+00:00",
+          "last_tick_utc": "2026-11-07T23:59:58.868000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Sun, 08 Nov 2026 00:41:10 GMT"
+        },
+        {
+          "day": "2026-11-08",
+          "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2026/11/08/Exness_ETHUSD_2026_11_08.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 413217,
+          "valid_ticks": 47941,
+          "first_tick_utc": "2026-11-08T00:00:00.687000+00:00",
+          "last_tick_utc": "2026-11-08T23:59:59.717000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Mon, 09 Nov 2026 00:41:10 GMT"
+        },
+        {
+          "day": "2026-11-09",
+          "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2026/11/09/Exness_ETHUSD_2026_11_09.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 738249,
+          "valid_ticks": 85385,
+          "first_tick_utc": "2026-11-09T00:00:00.471000+00:00",
+          "last_tick_utc": "2026-11-09T23:59:52.798000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Tue, 10 Nov 2026 00:41:10 GMT"
+        },
+        {
+          "day": "2026-11-10",
+          "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2026/11/10/Exness_ETHUSD_2026_11_10.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 770823,
+          "valid_ticks": 89796,
+          "first_tick_utc": "2026-11-10T00:00:00.202000+00:00",
+          "last_tick_utc": "2026-11-10T23:59:59.199000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Wed, 11 Nov 2026 00:41:09 GMT"
+        },
+        {
+          "day": "2026-11-11",
+          "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2026/11/11/Exness_ETHUSD_2026_11_11.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 562961,
+          "valid_ticks": 64632,
+          "first_tick_utc": "2026-11-11T00:00:01.184000+00:00",
+          "last_tick_utc": "2026-11-11T23:59:57.347000+00:00",
+          "m5_bars": 288,
+          "last_modified": "Thu, 12 Nov 2026 00:41:12 GMT"
+        },
+        {
+          "day": "2026-11-12",
+          "url": "https://ticks.ex2archive.com/ticks/ETHUSD/2026/11/12/Exness_ETHUSD_2026_11_12.zip",
+          "status": "valid_complete_zip",
+          "archive_bytes": 530547,
+          "valid_ticks": 61975,
+          "first_tick_utc": "2026-11-12T00:00:00.316000+00:00",
+          "last_tick_utc": "2026-11-12T18:00:32.500000+00:00",
+          "m5_bars": 217,
+          "last_modified": "Thu, 12 Nov 2026 18:01:15 GMT"
+        }
+      ],
+      "historical_m5_bars": 87547,
+      "nov_m5_bars": 3385,
+      "first_nov_m5_utc": "2026-11-01T00:00:00+00:00",
+      "last_nov_m5_utc": "2026-11-12T18:00:00+00:00"
+    }
+  },
+  "validation": {
+    "BTCUSD|H1|above_sma_50|short|H8|00utc": {
+      "oct2026_expected_bp": 120.52777,
+      "oct2026_replayed_bp": 120.52777,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H1|below_sma_10|long|H4|20utc": {
+      "oct2026_expected_bp": 140.10666,
+      "oct2026_replayed_bp": 140.10666,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H1|below_sma_20|long|H4|20utc": {
+      "oct2026_expected_bp": 60.46098,
+      "oct2026_replayed_bp": 60.46098,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H1|ema_above_10_40|long|H2|08utc": {
+      "oct2026_expected_bp": 31.10557,
+      "oct2026_replayed_bp": 31.10557,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H1|ema_below_5_20|long|H2|20utc": {
+      "oct2026_expected_bp": -50.34176,
+      "oct2026_replayed_bp": -50.34176,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H1|range_bottom_10|long|H2|20utc": {
+      "oct2026_expected_bp": 103.2065,
+      "oct2026_replayed_bp": 103.2065,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H1|range_bottom_10|long|H4|20utc": {
+      "oct2026_expected_bp": 162.54743,
+      "oct2026_replayed_bp": 162.54743,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H1|range_bottom_10|long|H8|20utc": {
+      "oct2026_expected_bp": -13.87493,
+      "oct2026_replayed_bp": -13.87493,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H1|range_bottom_20|long|H2|20utc": {
+      "oct2026_expected_bp": 11.43306,
+      "oct2026_replayed_bp": 11.43306,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H1|range_bottom_20|long|H4|20utc": {
+      "oct2026_expected_bp": 160.74763,
+      "oct2026_replayed_bp": 160.74763,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H1|range_bottom_20|long|H8|20utc": {
+      "oct2026_expected_bp": 121.17725,
+      "oct2026_replayed_bp": 121.17725,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H1|range_top_20|long|H2|08utc": {
+      "oct2026_expected_bp": 19.87381,
+      "oct2026_replayed_bp": 19.87381,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H1|rsi14_below_40|long|H4|20utc": {
+      "oct2026_expected_bp": 156.06438,
+      "oct2026_replayed_bp": 156.06438,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H1|rsi7_below_40|long|H2|20utc": {
+      "oct2026_expected_bp": 70.05114,
+      "oct2026_replayed_bp": 70.05114,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H1|rsi7_below_40|long|H4|20utc": {
+      "oct2026_expected_bp": 212.41664,
+      "oct2026_replayed_bp": 212.41664,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H4|above_sma_10|short|H3|20utc": {
+      "oct2026_expected_bp": 400.49557,
+      "oct2026_replayed_bp": 400.49557,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H4|above_sma_20|short|H2|20utc": {
+      "oct2026_expected_bp": 584.77141,
+      "oct2026_replayed_bp": 584.77141,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H4|above_sma_20|short|H3|20utc": {
+      "oct2026_expected_bp": 532.03902,
+      "oct2026_replayed_bp": 532.03902,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H4|below_sma_5|long|H1|20utc": {
+      "oct2026_expected_bp": 46.09287,
+      "oct2026_replayed_bp": 46.09287,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H4|momentum_down_3|long|H1|20utc": {
+      "oct2026_expected_bp": 40.79384,
+      "oct2026_replayed_bp": 40.79384,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|H4|range_top_20|short|H3|20utc": {
+      "oct2026_expected_bp": 406.1805,
+      "oct2026_replayed_bp": 406.1805,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|M15|ema_below_3_10|long|H8|20utc": {
+      "oct2026_expected_bp": -148.43857,
+      "oct2026_replayed_bp": -148.43857,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|M30|below_sma_20|long|H8|20utc": {
+      "oct2026_expected_bp": 193.61645,
+      "oct2026_replayed_bp": 193.61645,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|M30|ema_below_3_10|long|H8|20utc": {
+      "oct2026_expected_bp": -233.11304,
+      "oct2026_replayed_bp": -233.11304,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|M30|prev_red|long|H8|20utc": {
+      "oct2026_expected_bp": 246.55954,
+      "oct2026_replayed_bp": 246.55954,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|M30|range_bottom_20|long|H8|20utc": {
+      "oct2026_expected_bp": 162.54743,
+      "oct2026_replayed_bp": 162.54743,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|M30|rsi14_below_40|long|H4|20utc": {
+      "oct2026_expected_bp": 18.80674,
+      "oct2026_replayed_bp": 18.80674,
+      "absolute_error_bp": 0.0
+    },
+    "BTCUSD|M30|rsi14_below_40|long|H8|20utc": {
+      "oct2026_expected_bp": 189.03178,
+      "oct2026_replayed_bp": 189.03178,
+      "absolute_error_bp": 0.0
+    },
+    "ETHUSD|H4|above_sma_50|long|H1|08utc": {
+      "oct2026_expected_bp": 39.1056,
+      "oct2026_replayed_bp": 39.1056,
+      "absolute_error_bp": 0.0
+    },
+    "ETHUSD|M30|above_sma_20|long|H8|16utc": {
+      "oct2026_expected_bp": -300.22029,
+      "oct2026_replayed_bp": -300.22029,
+      "absolute_error_bp": 0.0
+    }
+  },
+  "results": [
+    {
+      "id": "V21-P4-195",
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "november_profit_bp": 32.03916,
+      "november_closed_trades": 16,
+      "historical_2025_to_oct2026_bp": 3050.6204,
+      "legs": [
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "leg_november_bp": [
+        34.58516,
+        54.5855,
+        88.31421,
+        -49.32824
+      ],
+      "leg_november_trades": [
+        4,
+        4,
+        7,
+        1
+      ],
+      "passed_november_profit_filter": true
+    },
+    {
+      "id": "V21-P4-041",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": 30.31055,
+      "november_closed_trades": 14,
+      "historical_2025_to_oct2026_bp": 3096.20017,
+      "legs": [
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        27.77155,
+        28.6497,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        5,
+        6,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": true
+    },
+    {
+      "id": "V21-P4-047",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": 30.31055,
+      "november_closed_trades": 14,
+      "historical_2025_to_oct2026_bp": 3028.91909,
+      "legs": [
+        "BTCUSD|H1|below_sma_20|long|H4|20utc",
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        28.6497,
+        27.77155,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        6,
+        5,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": true
+    },
+    {
+      "id": "V21-P4-052",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": 22.56308,
+      "november_closed_trades": 12,
+      "historical_2025_to_oct2026_bp": 3023.47932,
+      "legs": [
+        "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -2.34017,
+        27.77155,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        4,
+        5,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": true
+    },
+    {
+      "id": "V21-P4-194",
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "november_profit_bp": 17.12303,
+      "november_closed_trades": 15,
+      "historical_2025_to_oct2026_bp": 3174.875,
+      "legs": [
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "leg_november_bp": [
+        34.58516,
+        54.5855,
+        28.6497,
+        -49.32824
+      ],
+      "leg_november_trades": [
+        4,
+        4,
+        6,
+        1
+      ],
+      "passed_november_profit_filter": true
+    },
+    {
+      "id": "V21-P4-085",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": 14.71576,
+      "november_closed_trades": 13,
+      "historical_2025_to_oct2026_bp": 3067.70238,
+      "legs": [
+        "BTCUSD|H1|range_bottom_10|long|H2|20utc",
+        "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -94.27213,
+        88.31421,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        3,
+        7,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": true
+    },
+    {
+      "id": "V21-P4-064",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": 12.20877,
+      "november_closed_trades": 12,
+      "historical_2025_to_oct2026_bp": 3109.12974,
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+        "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -104.30006,
+        88.31421,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        2,
+        7,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": true
+    },
+    {
+      "id": "V21-P4-095",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": 12.20877,
+      "november_closed_trades": 12,
+      "historical_2025_to_oct2026_bp": 3040.08716,
+      "legs": [
+        "BTCUSD|M30|rsi14_below_40|long|H4|20utc",
+        "BTCUSD|M30|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -104.30006,
+        88.31421,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        2,
+        7,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": true
+    },
+    {
+      "id": "V21-P4-098",
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "november_profit_bp": 9.37556,
+      "november_closed_trades": 13,
+      "historical_2025_to_oct2026_bp": 3102.15416,
+      "legs": [
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "leg_november_bp": [
+        34.58516,
+        -2.34017,
+        54.5855,
+        -49.32824
+      ],
+      "leg_november_trades": [
+        4,
+        4,
+        4,
+        1
+      ],
+      "passed_november_profit_filter": true
+    },
+    {
+      "id": "V21-P4-089",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": 4.82974,
+      "november_closed_trades": 14,
+      "historical_2025_to_oct2026_bp": 3076.20199,
+      "legs": [
+        "BTCUSD|M30|prev_red|long|H8|20utc",
+        "BTCUSD|M30|below_sma_20|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        68.49334,
+        -113.99533,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        4,
+        7,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": true
+    },
+    {
+      "id": "V21-P4-090",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -2.70735,
+      "november_closed_trades": 11,
+      "historical_2025_to_oct2026_bp": 3233.38434,
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -104.30006,
+        28.6497,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        2,
+        6,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-094",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -2.70735,
+      "november_closed_trades": 11,
+      "historical_2025_to_oct2026_bp": 3164.34176,
+      "legs": [
+        "BTCUSD|M30|rsi14_below_40|long|H4|20utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -104.30006,
+        28.6497,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        2,
+        6,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-138",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -2.70735,
+      "november_closed_trades": 11,
+      "historical_2025_to_oct2026_bp": 3166.10327,
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+        "BTCUSD|H1|below_sma_20|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -104.30006,
+        28.6497,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        2,
+        6,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-144",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -2.70735,
+      "november_closed_trades": 11,
+      "historical_2025_to_oct2026_bp": 3097.06068,
+      "legs": [
+        "BTCUSD|M30|rsi14_below_40|long|H4|20utc",
+        "BTCUSD|H1|below_sma_20|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -104.30006,
+        28.6497,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        2,
+        6,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-087",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -3.25581,
+      "november_closed_trades": 14,
+      "historical_2025_to_oct2026_bp": 3023.844,
+      "legs": [
+        "BTCUSD|H4|momentum_down_3|long|H1|20utc",
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -105.61576,
+        27.77155,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        6,
+        5,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-030",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -5.35071,
+      "november_closed_trades": 15,
+      "historical_2025_to_oct2026_bp": 3109.87961,
+      "legs": [
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|M30|below_sma_20|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        27.77155,
+        -113.99533,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        5,
+        7,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-183",
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "november_profit_bp": -12.57351,
+      "november_closed_trades": 15,
+      "historical_2025_to_oct2026_bp": 3060.9333,
+      "legs": [
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|ema_below_5_20|long|H2|20utc",
+        "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "leg_november_bp": [
+        48.5467,
+        -47.17234,
+        -2.34017,
+        -49.32824
+      ],
+      "leg_november_trades": [
+        4,
+        6,
+        4,
+        1
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-142",
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "november_profit_bp": -14.26606,
+      "november_closed_trades": 12,
+      "historical_2025_to_oct2026_bp": 3138.01568,
+      "legs": [
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "leg_november_bp": [
+        48.5467,
+        -84.05424,
+        27.77155,
+        -49.32824
+      ],
+      "leg_november_trades": [
+        4,
+        2,
+        5,
+        1
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-070",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -14.51863,
+      "november_closed_trades": 11,
+      "historical_2025_to_oct2026_bp": 3111.21066,
+      "legs": [
+        "BTCUSD|H1|ema_below_5_20|long|H2|20utc",
+        "BTCUSD|H1|range_bottom_20|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -47.17234,
+        -75.72314,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        6,
+        2,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-123",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -14.51863,
+      "november_closed_trades": 11,
+      "historical_2025_to_oct2026_bp": 3147.63313,
+      "legs": [
+        "BTCUSD|M30|rsi14_below_40|long|H8|20utc",
+        "BTCUSD|H1|ema_below_5_20|long|H2|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -75.72314,
+        -47.17234,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        2,
+        6,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-177",
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "november_profit_bp": -16.44334,
+      "november_closed_trades": 15,
+      "historical_2025_to_oct2026_bp": 3102.51885,
+      "legs": [
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H4|momentum_down_3|long|H1|20utc",
+        "BTCUSD|H1|above_sma_50|short|H8|00utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "leg_november_bp": [
+        34.58516,
+        -105.61576,
+        54.5855,
+        -49.32824
+      ],
+      "leg_november_trades": [
+        4,
+        6,
+        4,
+        1
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-126",
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "november_profit_bp": -19.10798,
+      "november_closed_trades": 13,
+      "historical_2025_to_oct2026_bp": 3019.84302,
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|below_sma_20|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "leg_november_bp": [
+        -104.30006,
+        48.5467,
+        28.6497,
+        -49.32824
+      ],
+      "leg_november_trades": [
+        2,
+        4,
+        6,
+        1
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-179",
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "november_profit_bp": -21.79399,
+      "november_closed_trades": 11,
+      "historical_2025_to_oct2026_bp": 3327.00201,
+      "legs": [
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "leg_november_bp": [
+        48.5467,
+        -84.05424,
+        -2.34017,
+        -49.32824
+      ],
+      "leg_november_trades": [
+        4,
+        2,
+        4,
+        1
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-199",
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "november_profit_bp": -29.53551,
+      "november_closed_trades": 14,
+      "historical_2025_to_oct2026_bp": 3025.87387,
+      "legs": [
+        "BTCUSD|M30|prev_red|long|H8|20utc",
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|rsi7_below_40|long|H2|20utc",
+        "BTCUSD|H4|above_sma_20|short|H3|20utc"
+      ],
+      "leg_november_bp": [
+        68.49334,
+        34.58516,
+        -103.9406,
+        -117.27995
+      ],
+      "leg_november_trades": [
+        4,
+        4,
+        4,
+        2
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-077",
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "november_profit_bp": -29.66848,
+      "november_closed_trades": 16,
+      "historical_2025_to_oct2026_bp": 3258.79784,
+      "legs": [
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|above_sma_10|short|H3|20utc"
+      ],
+      "leg_november_bp": [
+        48.5467,
+        -84.05424,
+        27.77155,
+        -110.93793
+      ],
+      "leg_november_trades": [
+        4,
+        2,
+        5,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-093",
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "november_profit_bp": -31.25398,
+      "november_closed_trades": 13,
+      "historical_2025_to_oct2026_bp": 3266.83309,
+      "legs": [
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|above_sma_20|short|H3|20utc"
+      ],
+      "leg_november_bp": [
+        48.5467,
+        -84.05424,
+        27.77155,
+        -117.27995
+      ],
+      "leg_november_trades": [
+        4,
+        2,
+        5,
+        2
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-116",
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "november_profit_bp": -33.15886,
+      "november_closed_trades": 16,
+      "historical_2025_to_oct2026_bp": 3344.19303,
+      "legs": [
+        "BTCUSD|H1|range_top_20|long|H2|08utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|M15|ema_below_3_10|long|H8|20utc",
+        "BTCUSD|H4|above_sma_10|short|H3|20utc"
+      ],
+      "leg_november_bp": [
+        34.58516,
+        -84.05424,
+        27.77155,
+        -110.93793
+      ],
+      "leg_november_trades": [
+        4,
+        2,
+        5,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-131",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -33.76674,
+      "november_closed_trades": 12,
+      "historical_2025_to_oct2026_bp": 3068.61749,
+      "legs": [
+        "BTCUSD|H1|range_bottom_10|long|H2|20utc",
+        "BTCUSD|H4|below_sma_5|long|H1|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -94.27213,
+        -105.61576,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        3,
+        6,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-072",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -36.27372,
+      "november_closed_trades": 11,
+      "historical_2025_to_oct2026_bp": 3110.04486,
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+        "BTCUSD|H4|below_sma_5|long|H1|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -104.30006,
+        -105.61576,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        2,
+        6,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-145",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -36.27372,
+      "november_closed_trades": 11,
+      "historical_2025_to_oct2026_bp": 3041.00227,
+      "legs": [
+        "BTCUSD|M30|rsi14_below_40|long|H4|20utc",
+        "BTCUSD|H4|below_sma_5|long|H1|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -104.30006,
+        -105.61576,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        2,
+        6,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-146",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -36.27372,
+      "november_closed_trades": 11,
+      "historical_2025_to_oct2026_bp": 3161.02818,
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+        "BTCUSD|H4|momentum_down_3|long|H1|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -104.30006,
+        -105.61576,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        2,
+        6,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-147",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -36.27372,
+      "november_closed_trades": 11,
+      "historical_2025_to_oct2026_bp": 3091.9856,
+      "legs": [
+        "BTCUSD|M30|rsi14_below_40|long|H4|20utc",
+        "BTCUSD|H4|momentum_down_3|long|H1|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -104.30006,
+        -105.61576,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        2,
+        6,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-075",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -38.36861,
+      "november_closed_trades": 12,
+      "historical_2025_to_oct2026_bp": 3247.06379,
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H2|20utc",
+        "BTCUSD|M30|below_sma_20|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc"
+      ],
+      "leg_november_bp": [
+        -104.30006,
+        -113.99533,
+        -49.32824,
+        114.14919
+      ],
+      "leg_november_trades": [
+        2,
+        7,
+        1,
+        2
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-078",
+      "composition": "4 BTCUSD + 0 ETHUSD",
+      "november_profit_bp": -47.19409,
+      "november_closed_trades": 11,
+      "historical_2025_to_oct2026_bp": 3295.12183,
+      "legs": [
+        "BTCUSD|H1|rsi7_below_40|long|H2|20utc",
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc"
+      ],
+      "leg_november_bp": [
+        -103.9406,
+        48.5467,
+        -84.05424,
+        -49.32824
+      ],
+      "leg_november_trades": [
+        4,
+        4,
+        2,
+        1
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-198",
+      "composition": "2 BTCUSD + 2 ETHUSD",
+      "november_profit_bp": -53.67455,
+      "november_closed_trades": 15,
+      "historical_2025_to_oct2026_bp": 4123.26975,
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "leg_november_bp": [
+        -84.05424,
+        28.6497,
+        114.14919,
+        -273.44286
+      ],
+      "leg_november_trades": [
+        2,
+        6,
+        2,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-105",
+      "composition": "2 BTCUSD + 2 ETHUSD",
+      "november_profit_bp": -61.42202,
+      "november_closed_trades": 13,
+      "historical_2025_to_oct2026_bp": 4050.5489,
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H1|rsi7_below_40|long|H4|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "leg_november_bp": [
+        -84.05424,
+        -2.34017,
+        114.14919,
+        -273.44286
+      ],
+      "leg_november_trades": [
+        2,
+        4,
+        2,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-108",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -63.55376,
+      "november_closed_trades": 15,
+      "historical_2025_to_oct2026_bp": 4444.45145,
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|above_sma_20|short|H2|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "leg_november_bp": [
+        -84.05424,
+        28.6497,
+        74.63236,
+        -273.44286
+      ],
+      "leg_november_trades": [
+        2,
+        6,
+        2,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-173",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -68.62613,
+      "november_closed_trades": 15,
+      "historical_2025_to_oct2026_bp": 4222.27489,
+      "legs": [
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "BTCUSD|H1|range_bottom_10|long|H8|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "leg_november_bp": [
+        28.6497,
+        -49.32824,
+        19.6169,
+        -273.44286
+      ],
+      "leg_november_trades": [
+        6,
+        1,
+        3,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-151",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -79.23973,
+      "november_closed_trades": 14,
+      "historical_2025_to_oct2026_bp": 3853.6372,
+      "legs": [
+        "BTCUSD|H1|range_bottom_10|long|H4|20utc",
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "leg_november_bp": [
+        -8.00852,
+        48.5467,
+        -84.05424,
+        -273.44286
+      ],
+      "leg_november_trades": [
+        3,
+        4,
+        2,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-086",
+      "composition": "2 BTCUSD + 2 ETHUSD",
+      "november_profit_bp": -79.76776,
+      "november_closed_trades": 11,
+      "historical_2025_to_oct2026_bp": 3990.98847,
+      "legs": [
+        "BTCUSD|M30|rsi14_below_40|long|H8|20utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "leg_november_bp": [
+        -75.72314,
+        -84.05424,
+        114.14919,
+        -273.44286
+      ],
+      "leg_november_trades": [
+        2,
+        2,
+        2,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-128",
+      "composition": "2 BTCUSD + 2 ETHUSD",
+      "november_profit_bp": -79.76776,
+      "november_closed_trades": 11,
+      "historical_2025_to_oct2026_bp": 3954.56601,
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H1|range_bottom_20|long|H4|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "leg_november_bp": [
+        -84.05424,
+        -75.72314,
+        114.14919,
+        -273.44286
+      ],
+      "leg_november_trades": [
+        2,
+        2,
+        2,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-163",
+      "composition": "2 BTCUSD + 2 ETHUSD",
+      "november_profit_bp": -79.76776,
+      "november_closed_trades": 11,
+      "historical_2025_to_oct2026_bp": 3756.69843,
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H1|rsi14_below_40|long|H4|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "leg_november_bp": [
+        -84.05424,
+        -75.72314,
+        114.14919,
+        -273.44286
+      ],
+      "leg_november_trades": [
+        2,
+        2,
+        2,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-045",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -85.32344,
+      "november_closed_trades": 18,
+      "historical_2025_to_oct2026_bp": 4270.04148,
+      "legs": [
+        "BTCUSD|H1|ema_below_5_20|long|H2|20utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "leg_november_bp": [
+        -47.17234,
+        28.6497,
+        -49.32824,
+        -273.44286
+      ],
+      "leg_november_trades": [
+        6,
+        6,
+        1,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-181",
+      "composition": "2 BTCUSD + 2 ETHUSD",
+      "november_profit_bp": -89.33581,
+      "november_closed_trades": 16,
+      "historical_2025_to_oct2026_bp": 4136.94919,
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|M30|below_sma_20|long|H8|20utc",
+        "ETHUSD|H4|above_sma_50|long|H1|08utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "leg_november_bp": [
+        -84.05424,
+        -113.99533,
+        114.14919,
+        -273.44286
+      ],
+      "leg_november_trades": [
+        2,
+        7,
+        2,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-171",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -94.54391,
+      "november_closed_trades": 14,
+      "historical_2025_to_oct2026_bp": 4536.11018,
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H1|below_sma_10|long|H4|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "leg_november_bp": [
+        -84.05424,
+        28.6497,
+        -49.32824,
+        -273.44286
+      ],
+      "leg_november_trades": [
+        2,
+        6,
+        1,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-152",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -96.16838,
+      "november_closed_trades": 13,
+      "historical_2025_to_oct2026_bp": 3790.89676,
+      "legs": [
+        "BTCUSD|M30|range_bottom_20|long|H8|20utc",
+        "BTCUSD|H1|ema_above_10_40|long|H2|08utc",
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "leg_november_bp": [
+        -75.72314,
+        48.5467,
+        -84.05424,
+        -273.44286
+      ],
+      "leg_november_trades": [
+        2,
+        4,
+        2,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-107",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -99.21502,
+      "november_closed_trades": 16,
+      "historical_2025_to_oct2026_bp": 4458.13089,
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|M30|below_sma_20|long|H8|20utc",
+        "BTCUSD|H4|above_sma_20|short|H2|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "leg_november_bp": [
+        -84.05424,
+        -113.99533,
+        74.63236,
+        -273.44286
+      ],
+      "leg_november_trades": [
+        2,
+        7,
+        2,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-172",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -104.28738,
+      "november_closed_trades": 16,
+      "historical_2025_to_oct2026_bp": 4235.95433,
+      "legs": [
+        "BTCUSD|M30|below_sma_20|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "BTCUSD|H1|range_bottom_10|long|H8|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "leg_november_bp": [
+        -113.99533,
+        -49.32824,
+        19.6169,
+        -273.44286
+      ],
+      "leg_november_trades": [
+        7,
+        1,
+        3,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-044",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -120.98469,
+      "november_closed_trades": 19,
+      "historical_2025_to_oct2026_bp": 4283.72092,
+      "legs": [
+        "BTCUSD|H1|ema_below_5_20|long|H2|20utc",
+        "BTCUSD|M30|below_sma_20|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "leg_november_bp": [
+        -47.17234,
+        -113.99533,
+        -49.32824,
+        -273.44286
+      ],
+      "leg_november_trades": [
+        6,
+        7,
+        1,
+        5
+      ],
+      "passed_november_profit_filter": false
+    },
+    {
+      "id": "V21-P4-170",
+      "composition": "3 BTCUSD + 1 ETHUSD",
+      "november_profit_bp": -130.20517,
+      "november_closed_trades": 15,
+      "historical_2025_to_oct2026_bp": 4549.78962,
+      "legs": [
+        "BTCUSD|H1|range_bottom_20|long|H8|20utc",
+        "BTCUSD|M30|below_sma_20|long|H8|20utc",
+        "BTCUSD|H4|range_top_20|short|H3|20utc",
+        "ETHUSD|M30|above_sma_20|long|H8|16utc"
+      ],
+      "leg_november_bp": [
+        -84.05424,
+        -113.99533,
+        -49.32824,
+        -273.44286
+      ],
+      "leg_november_trades": [
+        2,
+        7,
+        1,
+        5
+      ],
+      "passed_november_profit_filter": false
+    }
+  ],
+  "status": "PASS_COMPLETE_DATA_AND_PARITY",
+  "errors": [],
+  "original_portfolios": 50,
+  "validated_profit_filter_count": 10,
+  "excluded_breakeven_or_negative": 40
+}
