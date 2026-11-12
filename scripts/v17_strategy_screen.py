@@ -327,7 +327,7 @@ def main():
     pd.DataFrame(all_passed).drop(columns=["monthly_pips","fingerprint"],errors="ignore").to_csv(args.out/"all_qualifying_configs.csv",index=False)
     pd.DataFrame(unique_list).drop(columns=["monthly_pips","fingerprint"],errors="ignore").to_csv(args.out/"unique_qualifying_configs.csv",index=False)
     (args.out/"all_unique_details.json").write_text(json.dumps(unique_list,ensure_ascii=False)+"\n",encoding="utf-8")
-    (args.out/"all_19plus_details.json").write_text(json.dumps(near_list,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+    (args.out/"all_19plus_details.json").write_text(json.dumps(near_list,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     pd.DataFrame(near_list).drop(columns=["monthly_pips","fingerprint"],errors="ignore").to_csv(
         args.out/"all_19plus_profit_report.csv",index=False
     )
