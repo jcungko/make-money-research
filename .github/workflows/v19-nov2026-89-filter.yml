@@ -1,0 +1,59 @@
+name: V19 Nov 2026 filter all 89 portfolios by profit and entries
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/v19-nov2026-89-filter.yml'
+      - 'scripts/v19_nov2026_89_filter.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: v19-nov2026-89-filter
+  cancel-in-progress: false
+jobs:
+  replay-and-filter:
+    name: Replay 89 locked V19 portfolios through November 12, 2026 18 UTC
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install 'numpy>=1.26,<3' 'pandas>=2.2,<3' 'requests>=2.31,<3'
+      - name: Replay all 89 with verified Nov 2026 source candles
+        run: python scripts/v19_nov2026_89_filter.py --history data/v19_energies --selected data/v19_strategy_screen/V19_89_filtered_oct2026.json --novdir results/v19_november_2026 --until 2026-11-12T18:00:00Z
+      - name: Check count and push results
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          p="results/v19_november_2026/V19_89_nov2026_profit_and_orders_filter.json"
+          x=json.load(open(p))
+          c=x["counts"]
+          assert c["original"]==89 and c["retained"]+c["removed_union"]==89
+          assert c["verified_22_subportfolio_reproduced"]==22
+          assert all(q["november_realized_profit_bp"]>0 and q["november_total_entry_orders"]>2 for q in x["retained"])
+          assert len(x["all_89"])==89 and all(not q["retained"] for q in x["removed"])
+          print("V19 validated",c)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v19_november_2026/V19_89_nov2026_profit_and_orders_filter.json results/v19_november_2026/V19_89_nov2026_profit_and_orders_filter.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "V19: save verified Nov 2026 profit and trade-count filter for all 89"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: V19-Nov-2026-All-89-filter
+          path: |
+            results/v19_november_2026/V19_89_nov2026_profit_and_orders_filter.json
+            results/v19_november_2026/V19_89_nov2026_profit_and_orders_filter.csv
+          if-no-files-found: warn
+          retention-days: 30
