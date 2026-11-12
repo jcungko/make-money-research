@@ -1,0 +1,219 @@
+{
+  "version": "V22",
+  "source": "Exness public bid/ask tick OHLC",
+  "period_2025": "2025-01-01 to 2025-12-31 inclusive",
+  "period_2026": "2026-01-01 to 2026-10-31 inclusive",
+  "months": [
+    202501,
+    202502,
+    202503,
+    202504,
+    202505,
+    202506,
+    202507,
+    202508,
+    202509,
+    202510,
+    202511,
+    202512,
+    202601,
+    202602,
+    202603,
+    202604,
+    202605,
+    202606,
+    202607,
+    202608,
+    202609,
+    202610
+  ],
+  "symbols": [
+    "NVDA",
+    "AMD",
+    "AVGO",
+    "XOM",
+    "GOOGL"
+  ],
+  "timeframes": [
+    "M5",
+    "M15",
+    "M30",
+    "H1",
+    "H4"
+  ],
+  "slippage_roundtrip_bps": 2.0,
+  "commission_assumption": "none (verify Exness account type); bid/ask spread included",
+  "overnight": "not held; exit inside same UTC day",
+  "minimum_monthly_trades": 3,
+  "risk_warning": "IS sample search and cost assumptions. Not validated on untouched future data. Do not trade live based only on this.",
+  "datasets": {
+    "NVDA/M5": {
+      "total": 3240,
+      "annual_positive": 3,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "NVDA/M15": {
+      "total": 3240,
+      "annual_positive": 2,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "NVDA/M30": {
+      "total": 3240,
+      "annual_positive": 1,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "NVDA/H1": {
+      "total": 3240,
+      "annual_positive": 3,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "NVDA/H4": {
+      "total": 1080,
+      "annual_positive": 0,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "AMD/M5": {
+      "total": 3240,
+      "annual_positive": 1,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "AMD/M15": {
+      "total": 3240,
+      "annual_positive": 0,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "AMD/M30": {
+      "total": 3240,
+      "annual_positive": 1,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "AMD/H1": {
+      "total": 3240,
+      "annual_positive": 0,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "AMD/H4": {
+      "total": 1080,
+      "annual_positive": 0,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "AVGO/M5": {
+      "total": 3240,
+      "annual_positive": 6,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "AVGO/M15": {
+      "total": 3240,
+      "annual_positive": 19,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "AVGO/M30": {
+      "total": 3240,
+      "annual_positive": 37,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "AVGO/H1": {
+      "total": 3240,
+      "annual_positive": 54,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "AVGO/H4": {
+      "total": 1080,
+      "annual_positive": 0,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "XOM/M5": {
+      "total": 3240,
+      "annual_positive": 0,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "XOM/M15": {
+      "total": 3240,
+      "annual_positive": 0,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "XOM/M30": {
+      "total": 3240,
+      "annual_positive": 0,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "XOM/H1": {
+      "total": 3240,
+      "annual_positive": 0,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "XOM/H4": {
+      "total": 1080,
+      "annual_positive": 0,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "GOOGL/M5": {
+      "total": 3240,
+      "annual_positive": 1,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "GOOGL/M15": {
+      "total": 3240,
+      "annual_positive": 1,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "GOOGL/M30": {
+      "total": 3240,
+      "annual_positive": 3,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "GOOGL/H1": {
+      "total": 3240,
+      "annual_positive": 10,
+      "qualifying": 0,
+      "signals": 30
+    },
+    "GOOGL/H4": {
+      "total": 1080,
+      "annual_positive": 11,
+      "qualifying": 0,
+      "signals": 30
+    }
+  },
+  "total_configs_tested": 70200,
+  "single_annual_positive": 153,
+  "single_all_22_months": 0,
+  "tested_pairs": 1128,
+  "pairs_all_22_months": 0,
+  "tested_triples": 1435,
+  "triples_all_22_months": 0,
+  "top_single": [],
+  "top_pairs": [],
+  "top_triples": [],
+  "pool_sizes": {
+    "NVDA": 7,
+    "AMD": 1,
+    "AVGO": 71,
+    "XOM": 0,
+    "GOOGL": 7
+  },
+  "completed_at_utc": "2026-11-12T17:47:49.541568+00:00"
+}
