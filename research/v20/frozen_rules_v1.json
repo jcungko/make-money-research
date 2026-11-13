@@ -1,0 +1,71 @@
+{
+  "project": "V20 Micro Scalping Forex",
+  "version": "V20-FROZEN-1.0",
+  "freeze_date_utc": "2026-11-13",
+  "purpose": "Research only. No live trade orders. Trading PnL after costs, no rebate/backcom.",
+  "instrument": "EURUSDm",
+  "broker": "Exness",
+  "account_type": "Standard",
+  "source": "https://ticks.ex2archive.com/ticks/EURUSDm/{year}/{month:02d}/Exness_EURUSDm_{year}_{month:02d}.zip",
+  "historical_period": {"start_utc":"2025-01-01T00:00:00Z", "end_exclusive_utc":"2026-11-13T00:00:00Z", "nov_2026_partial":true},
+  "price_fields": ["Timestamp", "Bid", "Ask"],
+  "candles": {"frames_minutes":[1,5], "price":"mid=(Bid+Ask)/2", "timezone":"UTC", "atr":"SMA of last 14 completed true ranges, not Wilder", "ema":"pandas adjust=False equivalent, computed from completed close values"},
+  "capital_usd": 100.0,
+  "leverage": 200,
+  "lot": 0.01,
+  "contract_size_eur_per_lot":100000,
+  "pip_size": 0.0001,
+  "commission_usd_per_lot_per_side":0.0,
+  "swap":"Prohibit overnight holds: no entry after 16:00 UTC; hard flat at 17:00 UTC before Exness rollover. Record swap=0 for all genuinely same-day trades; if an exceptional trade crosses rollover, mark invalid and require historical per-day broker swap data instead of imputing zero.",
+  "fill_policy": {
+    "reference_quote": "first quote whose timestamp is at or after signal-or-trigger time plus latency",
+    "entry_long":"ask + adverse_slippage", "entry_short":"bid - adverse_slippage",
+    "exit_long":"bid - adverse_slippage", "exit_short":"ask + adverse_slippage",
+    "stop_tp":"Evaluate on actual bid for long and actual ask for short; stop wins if both appear to trigger on same quote; market exit at first eligible quote after latency, not guaranteed stop price.",
+    "entry_latency_ms_base":2,
+    "entry_latency_ms_scenarios":[2,100,300],
+    "exit_latency_ms_scenarios":[2,100,300],
+    "slippage_pips_per_side_base":0.10,
+    "stress_cases":[{"spread_multiplier":1.0,"slippage_pips_per_side":0.10},{"spread_multiplier":1.5,"slippage_pips_per_side":0.20},{"spread_multiplier":2.0,"slippage_pips_per_side":0.30}],
+    "spread_stress":"Hold mid fixed; bid_stress=mid-(original_spread*factor)/2; ask_stress=mid+(original_spread*factor)/2. Keep signals based on unperturbed mid candles."
+  },
+  "entry_session_utc":{"inclusive":"07:00","exclusive":"16:00"},
+  "forced_flat_utc":"17:00",
+  "position_policy":{"one_open_position_per_backtest":true,"allow_same_bar_reentry":false,"skip_if_entry_quote_stale_ms":2000,"skip_if_flat_quote_stale_ms":2000,"margin_formula":"0.01*100000*EURUSD_price/200 in USD; check free margin and equity > 0, no additional deposits; reject otherwise.","stop_out":"equity <= 0 forces liquidating; no negative balance protection assumed","risk_cap":"estimated SL loss + 2 side slippage + spread must be <= 2% current equity; skip otherwise"},
+  "min_atr_pips":{"M1":0.40,"M5":0.70},
+  "spread_filter":"At signal and entry: spread <= 0.40 * ATR14 and spread <= 0.30 * planned gross TP distance; skip otherwise",
+  "stop_target": {
+    "parameter_grid_stop_atr":[1.2,1.8],
+    "parameter_grid_reward_r":[1.5,2.2],
+    "stop_pips":"max(stop_atr * ATR14_pips, 2.5 * entry_spread_pips, 0.8)",
+    "target_pips":"max(reward_r * stop_pips, 4.0 * (entry_spread_pips + 2*slippage_pips_per_side))",
+    "anchoring":"SL and TP anchored to the actual filled entry price",
+    "no_mid_trade_recalibration":true
+  },
+  "strategies":{
+    "S1_Candle_Pressure":{
+      "long":"For last 3 fully closed candles P=sum(close-open)/sum(abs(close-open)); P >= +0.65, final body/range >= 0.55, and (final close-low)/(high-low) >= 0.70",
+      "short":"Mirror: P <= -0.65, final body/range >= 0.55, final close location <= 0.30",
+      "max_hold_bars":{"M1":5,"M5":3}
+    },
+    "S2_Micro_Range_Breakout":{
+      "long":"Signal candle close > max(high of 12 candles strictly before signal candle)+0.15*ATR14 and signal candle open <= that max; signal close location >= 0.70",
+      "short":"Signal candle close < min(low of 12 candles strictly before signal candle)-0.15*ATR14 and signal candle open >= that min; signal close location <= 0.30",
+      "max_hold_bars":{"M1":8,"M5":4}
+    },
+    "S3_Micro_Trend_Pullback":{
+      "long":"EMA9 > EMA21, EMA9 > EMA9 three candles earlier, preceding candle low <= its EMA9 and preceding candle close > its EMA21, current close > preceding high and current close > its EMA9",
+      "short":"Mirror: EMA9 < EMA21, EMA9 < EMA9 3 candles earlier, preceding high >= preceding EMA9 and preceding close < preceding EMA21, current close < preceding low and current close < its EMA9",
+      "max_hold_bars":{"M1":10,"M5":5}
+    }
+  },
+  "validation":{
+    "walk_forward":"6 whole calendar months training; next 1 whole month out-of-sample; roll 1 month each fold. First OOS=2025-07; last complete OOS=2026-10. Never include partial 2026-11 in final accept/reject.",
+    "candidate_universe":"S1,S2,S3 x M1,M5 x stop_atr(1.2,1.8) x reward_r(1.5,2.2) = 24 candidates, immutable grid",
+    "training_select":"For each strategy/timeframe choose among 4 combinations in the immediately prior 6 months; must have >=30 completed trades, PF>1.0 and expectancy>0. Select highest training expectancy; if none, no trade in that OOS month. Train and evaluate each strategy/timeframe independently.",
+    "oos_metrics":["monthly_USD_net", "trade_count", "win_rate", "profit_factor", "expectancy_USD_per_trade", "intratrade_mark_to_market_max_equity_drawdown", "max_consecutive_losses"],
+    "primary_selection":"At most one strategy + timeframe. Require total OOS net USD > 0, PF >=1.15, >=200 OOS trades, positive net in each of OOS 2025 and 2026, >=60% profitable OOS months with trades, daily-block bootstrap 95% lower CI of mean trade PnL >0, and net positive under both spread/slippage stress scenarios and 300ms model. Rank those passing by stressed OOS net USD. If none pass report NO EDGE.",
+    "data_quality":"Must verify ZIP/CSV content and UTC ms timestamps, positive bid/ask, ask>=bid, ordered ticks, duplicate handling, missing days and market closure, full 2025 and all completed months of 2026. On any missing or untrusted months return INCOMPLETE not zero fills.",
+    "data_leakage_policy":"No thresholds may be changed after this file is hashed; performance discovered during implementation cannot change rules. Any bugfix must be versioned with new SHA, never claim same frozen version."
+  }
+}
