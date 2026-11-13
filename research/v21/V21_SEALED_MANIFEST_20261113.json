@@ -1,0 +1,30 @@
+{
+  "status": "FROZEN_CLOSED_NO_EDGE",
+  "sealed_utc": "2026-11-13",
+  "dataset": "Exness EURUSDm public Bid/Ask 2025-01 through 2026-10 exploratory; no clean OOS",
+  "frozen_design_sha256": "4a4023cf2e0bc94f63be210bcd098cc827bbd73b8a8d1d884fa4f654c53f45b9",
+  "preregistered_h1_sha256": "e982949f0729cadf72a279158f66ab81ef7e1ac2bc29aae52b7ffa292bcf50f8",
+  "evidence_archive_sha256": "10a88c93643eb9b76640e7bf7d31dd804667c24bd20716f0be7390018cae28b8",
+  "ledger_sha256": "6f18521d8a392ab2eea0ac771ec2eccea002f6a86912c799f2745ec2c39ed09d",
+  "h1_events_sha256": "25a0353fb228a40942b67322fc798f532b36f227cc4137217cb033887061e945",
+  "monthly_sha256": "2d0b8a7c0734d95eddd314b82f39b17925d86d76ceaba9c4fc8c7659c3bb84fc",
+  "outcome": {
+    "tick_momentum": {
+      "trades": 707,
+      "net_usd": -87.13,
+      "pf": 0.313
+    },
+    "quote_reversal": {
+      "trades": 87,
+      "net_usd": -16.16,
+      "pf": 0.343
+    },
+    "vol_compression": {
+      "trades": 589,
+      "net_usd": -66.2,
+      "pf": 0.49
+    },
+    "h1_five_second_reversal_difference_percentage_points": -0.94
+  },
+  "rule": "Do not alter V21 rules, select outcomes from this history, or label 2025-2026 clean prospective OOS. No EA. No backcom."
+}
