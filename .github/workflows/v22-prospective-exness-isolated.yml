@@ -1,0 +1,58 @@
+name: V22 prospective EURUSDm raw Bid Ask — isolated research archive
+on:
+  schedule:
+    - cron: '43 2 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'preflight checks locally; collect fetches closed UTC dates'
+        type: choice
+        options: [preflight, collect]
+        default: preflight
+        required: true
+      utc_day:
+        description: 'Optional YYYY-MM-DD UTC; empty checks previous 7 closed UTC days'
+        type: string
+        required: false
+        default: ''
+permissions:
+  contents: read
+concurrency:
+  group: v22-raw-capture-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  capture:
+    if: ${{ github.repository == 'jcungko/make-money-research' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install read-only source dependencies
+        run: python -m pip install 'requests>=2.31,<3'
+      - name: Test file format, UTC dates, checksum and source guards locally
+        run: python scripts/v22_prospective_scheduler.py --mode preflight --out v22_preflight
+      - name: Collect only closed-day Exness EURUSDm original Bid Ask ZIP
+        if: ${{ github.event_name == 'schedule' || inputs.mode == 'collect' }}
+        env:
+          DAY: ${{ inputs.utc_day }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -n "$DAY" ]; then
+            python scripts/v22_prospective_scheduler.py --mode collect --day "$DAY" --out v22_prospective_daily
+          else
+            python scripts/v22_prospective_scheduler.py --mode collect --out v22_prospective_daily
+          fi
+      - name: Save raw sources or explicit unavailable manifests, no trade/fit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v22-prospective-readonly-${{ github.run_id }}
+          path: |
+            v22_preflight/
+            v22_prospective_daily/
+          if-no-files-found: error
+          retention-days: 90
