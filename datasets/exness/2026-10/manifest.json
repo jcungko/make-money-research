@@ -1,0 +1,145 @@
+{
+  "project": "Project X",
+  "period": "2026-10",
+  "timezone": "UTC",
+  "retrieved": "2026-11-13",
+  "source": "Exness-labelled bid/ask tick data on the third-party public mirror ticks.ex2archive.com; not yet independently compared against official Exness download",
+  "symbol_variant": "unsuffixed (not the Standard m-suffix feed)",
+  "candles": "Bid and Ask OHLC calculated independently from tick quote data; UTC M1/M5, no forward filling",
+  "columns": [
+    "timestamp_utc",
+    "bid_open",
+    "bid_high",
+    "bid_low",
+    "bid_close",
+    "ask_open",
+    "ask_high",
+    "ask_low",
+    "ask_close",
+    "tick_count",
+    "mean_spread",
+    "first_tick_utc",
+    "last_tick_utc"
+  ],
+  "validate": {
+    "out_of_order": 0,
+    "negative_spread": 0,
+    "raw_ticks": 16208435,
+    "M1_rows": 229894,
+    "M5_rows": 46138
+  },
+  "symbols": [
+    {
+      "symbol": "EURUSD",
+      "ticks": 1039321,
+      "archive_url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/10/Exness_EURUSD_2026_10.zip",
+      "archive_sha256": "43229b754eac1dc42d695cf6b92a12a223a431e101451823c82cefb4b9309ad1",
+      "M1": {
+        "rows": 31284,
+        "gzip_bytes": 911379,
+        "gzip_sha256": "2c91dd1ca90d6381cb6597cd160fc907697e6e4920c93e7c9816543e10568798"
+      },
+      "M5": {
+        "rows": 6285,
+        "gzip_bytes": 201932,
+        "gzip_sha256": "2afbff6a87366bed99e075ad86fa578c69c487d6b45eddfdb3cdd48628d62c36"
+      }
+    },
+    {
+      "symbol": "GBPUSD",
+      "ticks": 1280116,
+      "archive_url": "https://ticks.ex2archive.com/ticks/GBPUSD/2026/10/Exness_GBPUSD_2026_10.zip",
+      "archive_sha256": "c209352051c0f69feba47215157436b09663406394015351ddc7a4fb9e08584f",
+      "M1": {
+        "rows": 31292,
+        "gzip_bytes": 939811,
+        "gzip_sha256": "7a5676b7c43cee142cca92bea1e88cc61f2b335ba45f5d19534a52dd73db95ee"
+      },
+      "M5": {
+        "rows": 6289,
+        "gzip_bytes": 207229,
+        "gzip_sha256": "e282e236cbb2381d8a6adf87b1ead1190c1497ba29b553d96eaf16e44bb59ef4"
+      }
+    },
+    {
+      "symbol": "USDJPY",
+      "ticks": 1587435,
+      "archive_url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/10/Exness_USDJPY_2026_10.zip",
+      "archive_sha256": "b78b2f91755b1ebdb9cdc29feb70ec7552a07e83f11cf06d967040e5dbc97ba6",
+      "M1": {
+        "rows": 31281,
+        "gzip_bytes": 945711,
+        "gzip_sha256": "95d07a045561e5ccf0156a2da518348988517d4d2f9cd1e114eed0a1670218ed"
+      },
+      "M5": {
+        "rows": 6275,
+        "gzip_bytes": 206697,
+        "gzip_sha256": "52ea5281c7fda918bcdfb3833699ee09ab78e801dd871748ced71789592afa07"
+      }
+    },
+    {
+      "symbol": "DXY",
+      "ticks": 986573,
+      "archive_url": "https://ticks.ex2archive.com/ticks/DXY/2026/10/Exness_DXY_2026_10.zip",
+      "archive_sha256": "1889cef75a33db2e43eecb913f921df09d73f98f0df0fbe23c2e42c19df13dcb",
+      "M1": {
+        "rows": 31059,
+        "gzip_bytes": 889199,
+        "gzip_sha256": "152642f95ec34d0271c87e41134cf1c2049932a82589f2ce5975e4ed69cd0aef"
+      },
+      "M5": {
+        "rows": 6269,
+        "gzip_bytes": 198168,
+        "gzip_sha256": "3fc2fd0ef7219959dcf1252098ee3f243272a516e70f0b58458ba7fcde0f96ee"
+      }
+    },
+    {
+      "symbol": "XAGUSD",
+      "ticks": 1755276,
+      "archive_url": "https://ticks.ex2archive.com/ticks/XAGUSD/2026/10/Exness_XAGUSD_2026_10.zip",
+      "archive_sha256": "f1ed1fdf7ca11a774828cbb013f2a013ee93a884aab273cdc52fe4c9e6b15438",
+      "M1": {
+        "rows": 30156,
+        "gzip_bytes": 933149,
+        "gzip_sha256": "580257ba13ece4174ccd80530e96c48a77634b6170f48e12d4788d37df98a661"
+      },
+      "M5": {
+        "rows": 6044,
+        "gzip_bytes": 203137,
+        "gzip_sha256": "c707bd563679a8765f9d24b313bc04432b0d8b6fffa140dc4e91e16dc2c843e5"
+      }
+    },
+    {
+      "symbol": "XAUUSD",
+      "ticks": 5914198,
+      "archive_url": "https://ticks.ex2archive.com/ticks/XAUUSD/2026/10/Exness_XAUUSD_2026_10.zip",
+      "archive_sha256": "5f0d3751320641e1595cb019e349ae58cb7b93bdf7b50df23885ae82664fa4d2",
+      "M1": {
+        "rows": 30192,
+        "gzip_bytes": 1227006,
+        "gzip_sha256": "ed71ac5ddfd467a51fa2cf43fdd00934081d490c0bb3965ac106ffdebae0246b"
+      },
+      "M5": {
+        "rows": 6048,
+        "gzip_bytes": 265762,
+        "gzip_sha256": "7960bd82b835add92bc709ba78af348204cc1fabdd4b72461c735384dd716a9e"
+      }
+    },
+    {
+      "symbol": "BTCUSD",
+      "ticks": 3645516,
+      "archive_url": "https://ticks.ex2archive.com/ticks/BTCUSD/2026/10/Exness_BTCUSD_2026_10.zip",
+      "archive_sha256": "433a80ce770b1a00c2a8207e76cdde300eb65790e9eadd1dcf6983e034784bfc",
+      "M1": {
+        "rows": 44630,
+        "gzip_bytes": 1830615,
+        "gzip_sha256": "0bbf98e6ed0a184b35716cb1c38e62310f23fb80d5965215de06e613d0ad0660"
+      },
+      "M5": {
+        "rows": 8928,
+        "gzip_bytes": 392476,
+        "gzip_sha256": "429dd408696556fa21de28ffb128a156d78ab0c60b575b35b198f6472df4ff30"
+      }
+    }
+  ]
+}
