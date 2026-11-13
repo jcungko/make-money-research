@@ -1,0 +1,40 @@
+name: V22 sealed prospective EURUSDm tick archive — research only
+on:
+  workflow_dispatch:
+    inputs:
+      utc_day:
+        description: 'Closed UTC date YYYY-MM-DD; blank = yesterday'
+        required: false
+        default: ''
+  schedule:
+    - cron: '31 0 * * *'
+permissions:
+  contents: read
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install download-only dependencies
+        run: python -m pip install 'requests>=2.31,<3'
+      - name: Collect closed-day raw ZIP and lock source checksum
+        env:
+          TARGET_DAY: ${{ inputs.utc_day }}
+        run: |
+          set -euo pipefail
+          if [ -n "$TARGET_DAY" ]; then
+            python scripts/v22_prospective_collect.py --date "$TARGET_DAY" --out v22_prospective_daily
+          else
+            python scripts/v22_prospective_collect.py --out v22_prospective_daily
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v22-sealed-prospective-${{ github.run_id }}
+          path: v22_prospective_daily/
+          retention-days: 90
+          if-no-files-found: warn
