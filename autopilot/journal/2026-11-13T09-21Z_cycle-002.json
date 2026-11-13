@@ -1,0 +1,83 @@
+{
+  "entry_id": "2026-11-13T09-21Z_cycle-002",
+  "kind": "SCHEDULED_COORDINATION",
+  "observed_at_utc": "2026-11-13T09:21:05Z",
+  "status": "AUDIT_COMPLETE_NO_NEW_EDGE",
+  "idempotency_key": "2026-11-13T09-21Z_cycle-002",
+  "source": {
+    "control_state_sha": "99dd9ea209fde07c2e52ff80bd4e7394a542c671",
+    "v22_audit_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
+    "v23_prereg_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
+    "capture_workflow_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963",
+    "main_head": "793df3a248b77d086b3471c24b75df6f773c5862",
+    "v22_head": "7cfec4f333d855ed3cf8c9b358a6f1b0da906884",
+    "v23_head": "38f3826472b7782f1d739710992ab90e24228abf"
+  },
+  "checks": {
+    "journal_existing": [
+      "2026-11-13_bootstrap.json",
+      "2026-11-13T08-19Z_cycle-001.json"
+    ],
+    "branches": "No newly discovered V24 branch or new main commit since previous cycle",
+    "actions": "Latest Actions run 43382867249 created 2026-11-13T07:02:32Z, completed success for unrelated EURUSD November intrabar research; no prospective capture or V23 run in latest 30",
+    "artifacts": "Collection endpoint inaccessible; no artifact inventory verification",
+    "v22": "26,880,814 ticks, 36,126 grid slots, 7,074 anchors, 5,948 labels, Logistic 1 trade and LightGBM 5; no verified edge. Frozen class-label vs SL/TP exit mismatch remains",
+    "v23": "Frozen V23-PREREG-1.0 reviewed in full; future code/weights not SHA sealed, no training or independent validation",
+    "capture": "main YAML cron 02:43 UTC, contents read, concurrency guard and 25-minute timeout; next first eligible day 2026-11-14 UTC; first possible download 2026-11-15T02:43Z"
+  },
+  "v23_protocol_review": {
+    "primary_horizon_seconds": 300,
+    "minimum_trades": 200,
+    "minimum_trade_days": 20,
+    "minimum_complete_months": 2,
+    "profit_factor_min": 1.2,
+    "bootstrap_draws": 2000,
+    "bootstrap_seed": 23001,
+    "holm_fwer": 0.05,
+    "max_equity_dd_usd": 20,
+    "capital_usd": 100,
+    "notable_risks": [
+      "0.01-lot fixed and 2% planned stop risk must be enforced before entry",
+      "No trading on stale quote, no 2ms execution assumption",
+      "Outcome counterfactuals for LONG/SHORT are paired; use day-block bootstrap",
+      "No future-label inspection before source and weights seal",
+      "All spread stress tests require chronological quote-side barrier replay"
+    ]
+  },
+  "classification": {
+    "V20": "FAILED_NO_EDGE",
+    "V21": "FAILED_NO_EDGE",
+    "V22": "FAILED_NO_VERIFIED_EDGE",
+    "V23": "BLOCKED_PENDING_REPRODUCIBLE_RUNNER_AND_FUTURE_VALIDATION",
+    "prospective_capture": "PENDING_FIRST_ELIGIBLE_DATE"
+  },
+  "actions_taken": [
+    "Read control state, README and journal first",
+    "Verified V23 prereg and V22 audit unchanged",
+    "Checked latest main branches/commits/Actions and prospective scheduler date guard",
+    "Prepared cycle log and state update; no experiment executed"
+  ],
+  "actions_not_taken": [
+    "No live trading",
+    "No main merge",
+    "No workflow trading/Telegram/Cloudflare edit",
+    "No paid services",
+    "No V22 retune",
+    "No GitHub Actions dispatch"
+  ],
+  "blockers": [
+    "V23 reproducible runner and model weights not present or independently verified",
+    "Broker execution calibration not available",
+    "Artifact listing endpoint rejected; no artifact inventory"
+  ],
+  "next_steps": [
+    "Implement V23 offline deterministic quote-side barrier simulator and synthetic tests in research branch, separate from prereg",
+    "Verify first scheduled capture and artifact manifest after 2026-11-15T02:43Z",
+    "Seal V23 code/weights before accessing prospective labels",
+    "Continue cost-aware NO_EDGE status unless prospective gates pass"
+  ],
+  "notification": {
+    "daily_due": false,
+    "verified_new_candidate": false
+  }
+}
