@@ -1,0 +1,72 @@
+{
+  "entry_id": "2026-11-13T20-15Z_cycle-013",
+  "idempotency_key": "make-money-autopilot:2026-11-13T20:15Z:cycle-013",
+  "observed_at_utc_approx": "2026-11-13T20:15Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "AUDIT_ONLY_NO_NEW_EDGE",
+  "source": {
+    "repo": "jcungko/make-money-research",
+    "branch": "research/autopilot-control-20261113",
+    "prior_head": "28d37c6ea8b3fab28b0d4899ec2382c3b7014caf",
+    "prior_state_blob_sha": "60594235c4c0d4cb98e691c48f2b63f98351a20a"
+  },
+  "observations": {
+    "journal_previous_cycles": 12,
+    "github_actions_total_count": 133,
+    "latest_qa_run": 43470901587,
+    "latest_qa_status": "success",
+    "latest_qa_head": "baa0efde7d02536faed2f2dbc3543d87ff84a9cd",
+    "latest_qa_verified_tests_from_prior_log": 28,
+    "prospective_capture_run_seen_in_recent_100": false,
+    "prospective_capture_not_yet_due": true,
+    "first_eligible_capture_utc": "2026-11-15T02:43:00Z",
+    "v22_funnel": "26,880,814 ticks -> 36,126 slots -> 7,074 eligible -> 5,948 labels; 1 Logistic and 5 LightGBM trades; ZIP not redownloaded",
+    "v22_caveat": "label fixed 60-second exit differs from barrier execution",
+    "v23_status": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "new_independently_verified_candidate": false
+  },
+  "work": {
+    "state_read": true,
+    "readme_read": true,
+    "journal_list_read": true,
+    "prior_journal_read": true,
+    "v22_audit_read": true,
+    "v23_prereg_read": true,
+    "main_capture_workflow_read": true,
+    "actions_list_read": true,
+    "tests_executed": false,
+    "market_backtest_executed": false,
+    "models_trained": false,
+    "code_changed": false
+  },
+  "classification": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED"
+  },
+  "blocked": [
+    "V23 open-equity accounting and broker-calibrated fills incomplete",
+    "Future tick collection not yet due; no scheduled capture run evidenced",
+    "No sealed V23 model or independently validated positive after-cost Trading PnL"
+  ],
+  "next_steps": [
+    "Build and run conservative open-equity QA on isolated branch",
+    "Implement prereg-compatible event sampler and training; seal before future label inspection",
+    "Verify scheduled tick capture and artifacts after 2026-11-15T02:43Z"
+  ],
+  "safety": {
+    "live_trades": 0,
+    "main_changed": false,
+    "trade_telegram_cloudflare_changed": false,
+    "paid_api_used": false,
+    "backcom_in_trading_pnl": false
+  },
+  "notification": {
+    "local_date": "2026-11-14",
+    "local_time_approx": "03:15",
+    "daily_due_after": "20:00",
+    "new_verified_candidate": false,
+    "send_now": false
+  }
+}
