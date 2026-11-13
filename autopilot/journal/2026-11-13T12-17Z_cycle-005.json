@@ -1,0 +1,63 @@
+{
+  "entry_id": "2026-11-13T12-17Z_cycle-005",
+  "idempotency_key": "2026-11-13T12-17Z_cycle-005",
+  "kind": "SCHEDULED_COORDINATION",
+  "observed_at_utc": "2026-11-13T12:17:32Z",
+  "status": "V23_COMMITTED_QA_STATIC_REVIEW_ONLY_EXECUTION_BLOCKED_NO_EDGE",
+  "sources": {
+    "control_prior_state_blob_sha": "cb4ce515f3b4edca582c27068638dd6a03291e64",
+    "control_head_prior": "5ec9810269ca6b90ecef7efecab57f98d01e86a3",
+    "main_head": "793df3a248b77d086b3471c24b75df6f773c5862",
+    "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
+    "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
+    "qa_core_blob_sha": "7c87d05ec07f83f3ba06a15047771e1d65d34ee4",
+    "qa_tests_blob_sha": "0a4f072fa89512cebcd3727d71d08177522ac8ae"
+  },
+  "classifications": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED; PARTIAL QA SOURCE STATIC REVIEW",
+    "prospective_capture": "NOT_YET_ELIGIBLE_FOR_FIRST_CLOSED_DAY"
+  },
+  "observations": {
+    "actions": "131 total; latest 35 listed; latest unrelated main push workflow success 2026-11-13T07:02:32Z; no V23 QA Actions run or first eligible tick capture observed",
+    "artifacts": "GitHub connector disallows /actions/artifacts inventory endpoint; no artifact proof",
+    "v22": "Audit retains 26,880,814 filtered ticks, 7,074 anchors, 5,948 labelled; 2,080 historical predictions/model, Logistic 1 trade +$0.33 and LightGBM 5 trades -$1.10; abstention driven by after-cost EV threshold. No clean OOS.",
+    "v23": "V23 prereg unchanged, no model weights or complete pipeline. Source of QA core and tests reviewed via GitHub; no exact-source execution.",
+    "qa_execution": "Attempted exact-source retrieval from raw.githubusercontent.com using sandbox curl; DNS resolution failed. No tests executed this cycle. This is a network blocker, not test failure.",
+    "prospective": "Earliest valid day 2026-11-14 UTC; earliest scheduled download attempt 2026-11-15T02:43Z; 2026-11-14 Saturday; unavailable must not be equated to market closed."
+  },
+  "actions_taken": [
+    "Read state, README, journal before inspecting branch/actions",
+    "Inspected 35 recent Actions runs, frozen V22 audit, V23 prereg and exact GitHub QA source",
+    "Attempted but failed to retrieve GitHub QA source in execution container (DNS blocked)",
+    "Committed research-only static QA review file to control branch"
+  ],
+  "committed_static_audit": {
+    "path": "research/v23/qa/V23_QA_STATIC_AUDIT_20261113_CYCLE005.md",
+    "commit": "7f87c6e603fcf962fc94b08c50ce0a57d542987a"
+  },
+  "blocked": [
+    "Exact GitHub committed-source QA execution unavailable in local container due DNS",
+    "No GitHub Actions QA run or artifact available",
+    "Full V23 prereg-compatible event sampling/training/backtest missing",
+    "Broker-specific MT5 execution calibration missing",
+    "Future tick date not yet eligible"
+  ],
+  "next_steps": [
+    "Run exact committed QA in reproducible GitHub checkout and capture logs/sha",
+    "Add synthetic edge tests for censored stop exposure, timeout gaps, spread, same-ms ticks",
+    "Build V23 prereg-compliant pipeline on research branch without inspecting future outcomes",
+    "Verify prospective capture after 2026-11-15T02:43Z"
+  ],
+  "no_live_trade": true,
+  "no_main_merge": true,
+  "no_workflow_modifications": true,
+  "no_paid_ai_services": true,
+  "new_candidate_verified": false,
+  "notification": {
+    "daily_due": false,
+    "verified_new_candidate": false
+  }
+}
