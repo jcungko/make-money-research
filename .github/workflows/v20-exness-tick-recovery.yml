@@ -1,0 +1,154 @@
+name: V20 Exness EURUSDm tick recovery and frozen research (NO LIVE TRADING)
+
+on:
+  push:
+    branches:
+      - v20-tick-recovery-20261113
+    paths:
+      - .github/workflows/v20-exness-tick-recovery.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v20-exness-ticks-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  sample:
+    name: Verify first genuine EURUSDm tick sample (2025-01)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install isolated test dependency
+        run: python -m pip install 'pytest>=8,<10'
+      - name: Verify collector tests with synthetic fixture (not trading results)
+        run: python -m pytest -q tests/test_v20_tick_collect.py
+      - name: Verify original frozen engine unit tests and freeze hash
+        run: |
+          cd research/v20
+          sha256sum frozen_rules_v1.json
+          python -m pytest -q test_v20.py
+      - name: Download and audit actual historical Exness EURUSDm tick ZIP
+        run: python scripts/v20_tick_collect.py --month 2025-01 --out v20_exness_data
+      - name: Save source ZIP AND quality manifest even when download fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v20-raw-2025-01
+          path: v20_exness_data/
+          retention-days: 30
+          if-no-files-found: warn
+
+  backfill:
+    name: Backfill and validate EURUSDm ${{ matrix.month }} (raw ticks)
+    needs: sample
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        month:
+          - 2025-02
+          - 2025-03
+          - 2025-04
+          - 2025-05
+          - 2025-06
+          - 2025-07
+          - 2025-08
+          - 2025-09
+          - 2025-10
+          - 2025-11
+          - 2025-12
+          - 2026-01
+          - 2026-02
+          - 2026-03
+          - 2026-04
+          - 2026-05
+          - 2026-06
+          - 2026-07
+          - 2026-08
+          - 2026-09
+          - 2026-10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Collect and stream-validate tick Bid/Ask (never OHLC substitution)
+        run: python scripts/v20_tick_collect.py --month '${{ matrix.month }}' --out v20_exness_data
+      - name: Upload raw monthly ZIP and audit with sha256
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v20-raw-${{ matrix.month }}
+          path: v20_exness_data/
+          retention-days: 30
+          if-no-files-found: warn
+
+  replay:
+    name: Frozen V20 24 configurations full walk-forward tick replay
+    needs: [sample, backfill]
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Re-run original frozen runner unit tests
+        run: |
+          python -m pip install 'pytest>=8,<10'
+          cd research/v20
+          python -m pytest -q test_v20.py
+      - name: Restore 22 monthly original ZIPs from successful current run
+        uses: actions/download-artifact@v4
+        with:
+          pattern: v20-raw-*
+          merge-multiple: true
+          path: research/v20/data
+      - name: List archives; fail closed if any month is missing
+        run: |
+          python - <<'PY'
+          import pathlib
+          root=pathlib.Path('research/v20/data')
+          months=[f'{y}-{m:02d}' for y in (2025,2026) for m in range(1,13) if not (y==2026 and m>10)]
+          missing=[x for x in months if not (root/f'Exness_EURUSDm_{x.replace("-","_")}.zip').is_file()]
+          print({'total_months':len(months),'missing':missing},flush=True)
+          if missing:raise SystemExit('V20 missing raw tick archives, refusing backtest')
+          PY
+      - name: Replay original V20-FROZEN-1.0 on genuine tick quotes
+        run: python research/v20/v20_backtest.py --data-dir research/v20/data --out v20_replay_results
+      - name: Preserve honest results or error manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v20-walkforward-replay
+          path: v20_replay_results/
+          retention-days: 30
+          if-no-files-found: warn
+
+  november_preview:
+    name: Check last completed 2026-11-12 daily tick ZIP (not OOS selection)
+    needs: sample
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download optional latest-day tick archive; not required for 22-month OOS
+        run: python scripts/v20_tick_collect.py --month 2026-11 --day 2026-11-12 --out v20_nov_preview
+      - name: Record data or explicit error (no data invention)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v20-preview-2026-11-12
+          path: v20_nov_preview/
+          if-no-files-found: warn
+          retention-days: 14
