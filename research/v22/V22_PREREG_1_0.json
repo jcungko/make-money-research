@@ -1,0 +1,72 @@
+{
+  "project": "V22 — AI Microstructure & Cost-Aware Trading",
+  "version": "V22-PREREG-1.0",
+  "date_registered_utc": "2026-11-13",
+  "immutable_precedent": {
+    "v21_status": "CLOSED_NO_EDGE_DO_NOT_REOPTIMIZE",
+    "v21_design_sha256": "4a4023cf2e0bc94f63be210bcd098cc827bbd73b8a8d1d884fa4f654c53f45b9",
+    "v21_empirical_archive_sha256": "10a88c93643eb9b76640e7bf7d31dd804667c24bd20716f0be7390018cae28b8",
+    "source_2025_2026": "PRIOR_INSPECTED_RESEARCH_ONLY_NOT_CLEAN_OOS"
+  },
+  "predictive_objective": "Cost-aware 3-state classification LONG, SHORT, NO_TRADE of potential 60s executable USD net PnL; optimize trading expectancy not accuracy",
+  "symbol": "EURUSDm Exness Standard indicative Bid/Ask archive, actual MT5 specifications pending",
+  "anchor_sampling": {
+    "timezone": "UTC", "session": "07:00 <= t < 16:00", "grid_spacing_seconds": 600,
+    "anchor": "First tick timestamp >= each UTC 10-minute grid slot, must arrive <=2000ms after slot", "no_overlap": "Max label horizon 300s; 600s separation across all sampled anchors",
+    "no_signal_if_spread_points_gt": 20,
+    "quote_timestamp_tie_policy": "Preserve original sequence, for before-time lookups choose last quote <= boundary; after-time lookups first quote >= boundary; no future quotes in features"
+  },
+  "fixed_horizons_seconds": [5,10,30,60,120,300],
+  "label_rule": {
+    "primary_horizon_seconds": 60,
+    "future_quote": "first quote timestamp >= target, require lateness <=2000ms; otherwise censored",
+    "entry": "first quote timestamp >= signal time+100ms, require <=2000ms lateness",
+    "baseline_execution": "Buy Ask+1 point, close Bid-1 point; Sell Bid-1 point, close Ask+1 point; $0.01 per EURUSD point for 0.01 lot",
+    "class_names": ["NO_TRADE","LONG","SHORT"],
+    "class_threshold_usd": 0.04,
+    "class_assignment": "LONG when net long >0.04 USD and > net short; SHORT if net short >0.04 and > net long; otherwise NO_TRADE",
+    "missing": "drop anchors with missing primary outcome; never forward fill beyond 2000ms",
+    "profit_target_training": "Use quote-side 60s counterfactual payoff for class labels; final trading performance additionally enforces intrahorizon SL/TP and margin"
+  },
+  "past_only_features": [
+    "midpoint displacement last 5s points", "midpoint displacement last 10s points", "midpoint displacement last 30s points", "midpoint displacement last 60s points",
+    "trailing 60s midpoint range points", "trailing 60s absolute mid move sum points",
+    "quote counts last 10s", "quote counts last 60s", "rate_ratio_10s_vs_60s",
+    "last 30 quote-up minus quote-down fraction", "current spread points", "trailing 60s median spread points", "UTC hour integer"
+  ],
+  "model_comparison": {
+    "statistical_baseline": "sklearn LogisticRegression multinomial, StandardScaler, C=1.0, max_iter=1000, random_state=22",
+    "ai": "LightGBM LGBMClassifier, n_estimators=180, learning_rate=0.05, num_leaves=7, max_depth=3, min_child_samples=70, colsample_bytree=0.8, random_state=22, n_jobs=2, verbosity=-1",
+    "no_hyperparameter_search": true,
+    "cost_aware_decision": "For each predicted P(class), compute EV_long and EV_short by multiplying probabilities with TRAINING-ONLY average net action PnL per true class; take higher side if EV >= +0.02USD and difference from other action >=0.01USD and spread <=10pt; otherwise NO_TRADE",
+    "class_support": "if fewer than 25 examples for any class, report MODEL_UNAVAILABLE, no synthetic class repairs"
+  },
+  "walk_forward": {
+    "train_start": "2025-01-01T00:00:00Z", "first_eval_start": "2026-01-01T00:00:00Z",
+    "folds": ["2026-01/02", "2026-03/04", "2026-05/06", "2026-07/08", "2026-09/10"],
+    "train": "Expanding all earlier months, purged events whose t+300s or any label extends into eval start; do not train on any future", "embargo_seconds": 300,
+    "historical_label": "retrospective development only; Jul-Oct 2026 is NOT clean OOS (prior V21 research)"
+  },
+  "risk_and_execution": {
+    "initial_balance_usd": 100, "minimum_lot": 0.01, "contract_eur": 1000,"leverage_scenario": 200,
+    "max_planned_loss_pct_of_equity": 2.0,"one_position_max": true,
+    "stop_loss_points": 20,"take_profit_points": 34,"max_hold_seconds": 60,
+    "stop_order": "Preplaced broker-registered SL/TP simulated at filled entry, not demonstrated accepted by MT5; BUY stop triggers Bid, SELL stop triggers Ask, fill at first available quote after stop delay with adverse slip",
+    "base_delay_ms": 100,"base_adverse_slippage_points_per_side": 1,"stress_delay_ms": 300,"stress_adverse_slippage_points_per_side": 3,
+    "stress_spread_multipliers": [1.5,2.0],"stress_spread_definition": "preserve quote midpoint, widen bid/ask around midpoint, rerun stops with chronological ticks",
+    "commission_usd_per_lot_side": 0,"commission_status": "Exness Standard public terms zero; verify actual account",
+    "swap": "zero only for confirmed day trade closed before broker rollover; invalid otherwise",
+    "margin_usd": "contract_eur * entry_price / leverage, check free margin before entry; margin call/stop out specific details uncalibrated",
+    "no_live_order": true,"no_2ms_latency_claim": true,"no_backcom": true
+  },
+  "research_report": ["monthly trading PnL and trade counts", "PF", "expectancy", "win rate", "max marked-to-market equity DD", "longest loss streak", "gross directional mid movement", "spread cost", "slippage cost", "commission", "swap", "BUY/SELL/session/spread subgroup", "horizons 5/10/30/60/120/300", "nontrade rate", "sensitivity and model versions"],
+  "prospective_gate": {
+    "data_untouched_start_not_before_utc": "2026-11-14T00:00:00Z", "new_data_must_be_logged_before_inspecting": true,
+    "min_trades": 200,"min_distinct_trade_days": 20,"min_complete_calendar_months": 2,
+    "expectancy_usd": ">0", "profit_factor": ">=1.2", "day_block_bootstrap_95pct_lower_expectancy": ">0",
+    "max_marked_to_market_dd_pct_initial_balance": "<=20", "stress_expectancy_usd": ">0", "stress_profit_factor": ">=1.0",
+    "monthly_consistency": "positive net trading PnL in >=60% of complete prospective months and no one month contributes >50% of positive profit",
+    "execution_validation": "Need actual MT5 symbol stopsLevel/freezeLevel, order rejection stats, timestamps for requests/deals, realized commission, swap, margin and slippage before live order",
+    "winner_rule": "at most one model only after the independent prospective gate; if none, NO_EDGE. Never reoptimize an earlier registered strategy on failed prospective history."
+  }
+}
