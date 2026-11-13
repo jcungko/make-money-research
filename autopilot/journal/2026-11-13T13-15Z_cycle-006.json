@@ -1,0 +1,67 @@
+{
+  "entry_id": "2026-11-13T13-15Z_cycle-006",
+  "idempotency_key": "2026-11-13T13-15Z_cycle-006",
+  "observed_at_utc": "2026-11-13T13:15:17Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "V23_EXACT_COMMITTED_SOURCE_LOCAL_SYNTHETIC_QA_PASS_19_OF_19_NO_EDGE",
+  "source_identity": {
+    "prior_state_blob_sha": "9bfd4d145e8bf5da525016c77054f27e113ef090",
+    "main_head": "793df3a248b77d086b3471c24b75df6f773c5862",
+    "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
+    "core_blob_sha": "7c87d05ec07f83f3ba06a15047771e1d65d34ee4",
+    "original_test_blob_sha": "0a4f072fa89512cebcd3727d71d08177522ac8ae",
+    "new_adversarial_test_blob_sha": "e74e299e0133bbbff1d4082da8b161cf037e39d7"
+  },
+  "tests": {
+    "kind": "local byte-identical GitHub-source synthetic unit tests",
+    "command": "python -m unittest discover -v",
+    "count": 19,
+    "passed": 19,
+    "failed": 0,
+    "log_sha256": "98a27279767674294a7d1a09d50151893382b232a60180926f0ee88fea794148",
+    "github_actions_executed": false,
+    "exness_historical_backtest": false,
+    "prospective_validation": false
+  },
+  "committed_files": [
+    "research/v23/qa/test_v23_adversarial.py",
+    "research/v23/qa/V23_EXACT_SOURCE_EXECUTION_20261113_CYCLE006.md"
+  ],
+  "classifications": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "PARTIAL_QA_PASS_NO_TRAINING_NO_VALIDATION",
+    "prospective_capture": "NOT_YET_ELIGIBLE"
+  },
+  "blockers": [
+    "Unresolved stop-fill exposure cannot be counted as zero or ignored",
+    "Full prereg event-driven pipeline and broker execution calibration missing",
+    "No V23 GitHub Actions execution or artifact inventory access",
+    "First future closed day not yet eligible"
+  ],
+  "github_actions": {
+    "total_observed": 131,
+    "latest_run_utc": "2026-11-13T07:02:32Z",
+    "latest_run_unrelated_to_v23": true,
+    "artifacts_endpoint": "DISALLOWED"
+  },
+  "safety": {
+    "live_trades": 0,
+    "main_changed": false,
+    "trading_telegram_cloudflare_changed": false,
+    "paid_api_used": false,
+    "backcom_in_trading_pnl": false
+  },
+  "notification": {
+    "daily_due": true,
+    "local_date": "2026-11-13",
+    "verified_new_candidate": false
+  },
+  "next_steps": [
+    "Design explicit unresolved position accounting before full backtest",
+    "Implement V23 sampling and features with temporal QA",
+    "Seal V23 weights before evaluating any future outcomes",
+    "Check isolated tick workflow after 2026-11-15T02:43Z"
+  ]
+}
