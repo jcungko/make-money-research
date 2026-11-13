@@ -1,0 +1,15 @@
+{
+  "id": "V21-H1-PREREG-1.0",
+  "registered_utc_date": "2026-11-13",
+  "data_status": "EURUSDm archived Jan 2025-Oct 2026 exploratory only; not clean OOS",
+  "primary_hypothesis": "After a >=0.6pip midpoint move in previous 10s, slowed tick update rate (last 3s ticks/sec <= 50% of preceding 7s ticks/sec) increases 5s reversal probability relative to unslowed control (ratio >=90%).",
+  "event_eligibility": "tick asof; UTC 07:00-16:00; minimum 4 preceding-7s ticks, >=1 recent-3s tick, spread<=20 points; 10s price baseline at or before t-10s with <=2s staleness",
+  "sampling": "All qualified events sampled chronologically, minimum 20 seconds separation globally between treatment and control; last 3s tick update counts include current tick; no future information",
+  "direction": "Up after strong up means reversal if next midpoint down; down after strong down means reversal if next midpoint up",
+  "outcomes": "1,3,5,10 seconds; first tick at or after target, censor if >2 seconds late; report counts, reversal continuation flat, mean signed move and Wilson 95% CI",
+  "uncertainty": "5s reversal probability difference primary; 1000 day-cluster bootstrap draws seed 210521; 1/3/10s and subgroups descriptive",
+  "subgroups": "direction, spread <=10/11-15/16-20 points; previous 10s price movement 6-9/10-19/>=20 points; UTC session 07-10/10-13/13-16",
+  "economic_diagnostic": "Hypothetical reverse-side hold 5s: first quote >= t+100ms entry at adverse Bid/Ask + 1 point slippage; first quote >= entry+5s exit at opposite Bid/Ask +1 point slippage; 0.01 lot; commission zero Standard assumption; stress add 1 and 2 points each side; no backcom.",
+  "caveat": "Economic diagnostic is not an SL-registered broker trade. Actual execution, 2ms latency, broker stops and swap are unverified. No live trading.",
+  "decision": "CI day-cluster on 5s probability difference >0 and positive 5s diagnostic PnL after costs and stress needed for research candidate; independent untouched prospective broker-calibrated validation also needed."
+}
