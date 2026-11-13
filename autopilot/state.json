@@ -35,10 +35,10 @@
     "notes": "GitHub Actions cron can be delayed or skipped; archive 90-day retention requires durable backup. 2026-11-14 is Saturday; 404 means unavailable, not confirmed market closure."
   },
   "next_priorities": [
-    "Run exact GitHub-committed QA code and capture test logs with code SHA",
-    "Implement complete prereg-compatible V23 sampling and barrier counterfactual labels on research branch, test with synthetic data first",
-    "Seal full code and model weights before accessing future labels",
-    "Verify first prospective collection on or after 2026-11-15T02:43Z"
+    "Execute exact SHA-pinned GitHub QA source in an accessible environment and save reproducible test logs",
+    "Address censored stop-fill open exposure and timeout-gap synthetic tests",
+    "Implement full V23 prereg-compatible event-driven pipeline, then seal source and model weights before future label evaluation",
+    "Verify prospective capture after 2026-11-15T02:43Z"
   ],
   "risk_and_governance": {
     "trading_pnl_excludes_backcom": true,
@@ -53,21 +53,18 @@
   },
   "last_cycle": {
     "kind": "scheduled",
-    "status": "V23_SYNTHETIC_QA_SOURCE_COMMITTED_GITHUB_ACTIONS_NOT_RUN_NO_EDGE",
-    "run_utc": "2026-11-13T11:17:29Z",
-    "journal_path": "autopilot/journal/2026-11-13T11-17Z_cycle-004.json",
+    "status": "V23_COMMITTED_QA_STATIC_REVIEW_ONLY_EXECUTION_BLOCKED_NO_EDGE",
+    "run_utc": "2026-11-13T12:17:32Z",
+    "journal_path": "autopilot/journal/2026-11-13T12-17Z_cycle-005.json",
     "code_experiment_executed": false,
-    "local_synthetic_tests": {
-      "passed": 13,
-      "failed": 0,
-      "source_committed_to_github": true,
-      "exact_committed_source_tested": false
-    },
+    "static_review_committed": true,
+    "static_review_path": "research/v23/qa/V23_QA_STATIC_AUDIT_20261113_CYCLE005.md",
+    "exact_committed_source_tested": false,
     "new_candidate_verified": false,
     "blocked": [
-      "Committed GitHub QA needs independent execution/review",
-      "Full V23 event-driven pipeline and broker execution calibration absent",
-      "Artifact inventory unsupported through current connector",
+      "Sandbox cannot resolve raw.githubusercontent.com; exact committed QA not executed",
+      "No V23 GitHub Actions QA run or accessible artifacts",
+      "Full V23 pipeline and broker execution calibration missing",
       "Future tick date not yet eligible"
     ]
   },
@@ -77,13 +74,14 @@
     "alert_immediately_only_on_independently_verified_candidate": true
   },
   "last_verified_sources": {
-    "control_state_blob_sha": "79348ed70f5180b49f17a58c70e3e05ef5faadac",
+    "control_state_blob_sha": "cb4ce515f3b4edca582c27068638dd6a03291e64",
     "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
     "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
     "prospective_workflow_blob_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963",
     "main_head": "793df3a248b77d086b3471c24b75df6f773c5862",
     "v23_qa_core_blob_sha": "7c87d05ec07f83f3ba06a15047771e1d65d34ee4",
-    "v23_qa_tests_blob_sha": "0a4f072fa89512cebcd3727d71d08177522ac8ae"
+    "v23_qa_tests_blob_sha": "0a4f072fa89512cebcd3727d71d08177522ac8ae",
+    "v23_qa_static_audit_commit": "7f87c6e603fcf962fc94b08c50ce0a57d542987a"
   },
   "last_report_local_date": null
 }
