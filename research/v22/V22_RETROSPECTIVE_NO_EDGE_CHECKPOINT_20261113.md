@@ -19,6 +19,6 @@
 - Both are **NOT QUALIFIED**, primarily lack of independent validation and sample sizes, with LightGBM also net negative. No high-win-rate/accuracy shortcut and NO trade deployment.
 
 ## Reproducibility and prospective collection
-- Full local source/QA/results package SHA256 `297eda52d62cf8c6be9e1c29b4841782eab0fab053fdef7c799e5a52bb20a337`, filename `V22_AI_MICROSTRUCTURE_RESEARCH_20261113.zip`, made available as a ChatGPT conversation artifact; 18/18 source/collector test PASS. GitHub does NOT yet store this package or full source.
+- Full local source/QA/results package SHA256 `61d3578eaaf45ee812528ae781a8ba2be0996147c2b733d8bf73bc4feb595a5f`, filename `V22_AI_MICROSTRUCTURE_RESEARCH_20261113.zip`, made available as a ChatGPT conversation artifact; 19/19 source/collector test PASS. GitHub does NOT yet store this package or full source.
 - The downloadable research package includes `scripts/v22_prospective_collect.py` and `.github/workflows/v22-prospective-exness-daily.yml`. **Those are ready-to-install only, not active in main.** They collect closed daily raw ZIPs from 2026-11-14 UTC onward, preserve SHA and archive without training/evaluating future labels.
 - Fixed prospective acceptance gate: >=200 trades, >=20 days, >=2 complete months, PF>=1.2, positive expectancy and day-cluster lower CI>0, DD<=20% of $100, robust positive under latency/slippage/spread stress, MT5 actual stop/margin/fills calibrated. None met or even independently measurable yet. No backcom. NO_EDGE until genuinely future untouched evidence.
