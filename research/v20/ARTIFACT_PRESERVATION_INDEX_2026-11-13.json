@@ -1,0 +1,168 @@
+{
+  "version": "V20_SOURCE_INDEX_2026-11-13",
+  "source_run_id": 43361899089,
+  "source_run": "https://github.com/jcungko/make-money-research/actions/runs/43361899089",
+  "source_is_broker_fill_data": false,
+  "artifact_count": 22,
+  "artifact_metadata_only": true,
+  "original_source_zip_shas_verified_offline_by_v20_manifest": true,
+  "raw_zip_bundle_sha256": "fdc4cf05b437a93a6276abb9a0c91c2592eb77fe9606fa5cbb1a77ff84c858d7",
+  "raw_bundle_bytes": 174417836,
+  "archive_persistence": "NOT_PERMANENT: GitHub artifact expiry 2026-12-13; raw bundle produced in conversation for user to download and mirror; not uploaded to GitHub repository",
+  "artifacts": [
+    {
+      "name": "v20-raw-2025-01",
+      "id": 14008451933,
+      "size_in_bytes": 9562864,
+      "artifact_sha256": "sha256:d3d5ef9732317121f820d44ca5340b70580a249fc0b07bfcc7e1da7335a23cc6",
+      "expires_at": "2026-12-13T03:53:37Z"
+    },
+    {
+      "name": "v20-raw-2025-02",
+      "id": 14008403262,
+      "size_in_bytes": 7958250,
+      "artifact_sha256": "sha256:7bef24f20110b1b5bfcf3bf4d1327a4062a18f10006e7fd39ee39384b39116a1",
+      "expires_at": "2026-12-13T03:53:56Z"
+    },
+    {
+      "name": "v20-raw-2025-03",
+      "id": 14008149140,
+      "size_in_bytes": 9534672,
+      "artifact_sha256": "sha256:dca478c43fbf517b1252f7ad739c398214ace68823b7e947553d76e3dc2fc6e8",
+      "expires_at": "2026-12-13T03:53:59Z"
+    },
+    {
+      "name": "v20-raw-2025-04",
+      "id": 14008173999,
+      "size_in_bytes": 18247479,
+      "artifact_sha256": "sha256:4eae19ec593469d758606ca398d8530f920fa8d2be1613eeae35f3d23e397510",
+      "expires_at": "2026-12-13T03:54:18Z"
+    },
+    {
+      "name": "v20-raw-2025-05",
+      "id": 14008143164,
+      "size_in_bytes": 11009595,
+      "artifact_sha256": "sha256:3059d0be15af2535fdd1141eab88ee4c62e82c15d9a84aaafa6bbd3e291e0a0b",
+      "expires_at": "2026-12-13T03:54:19Z"
+    },
+    {
+      "name": "v20-raw-2025-06",
+      "id": 14008965389,
+      "size_in_bytes": 9201355,
+      "artifact_sha256": "sha256:9a075191c2f533ed5c4f0deba433b6a63d06816a2e57dbd9ba4810606a312120",
+      "expires_at": "2026-12-13T03:54:37Z"
+    },
+    {
+      "name": "v20-raw-2025-07",
+      "id": 14009190094,
+      "size_in_bytes": 8443074,
+      "artifact_sha256": "sha256:d2206bd9dc51d8bfc6cc73932a2740c47895b7f59b190f61db14f419667e2ee8",
+      "expires_at": "2026-12-13T03:54:35Z"
+    },
+    {
+      "name": "v20-raw-2025-08",
+      "id": 14008109175,
+      "size_in_bytes": 7309411,
+      "artifact_sha256": "sha256:a9088ff714fb2a3798d3a30c4060a493aa473f3986a076a3be75a0e08a2ad741",
+      "expires_at": "2026-12-13T03:54:49Z"
+    },
+    {
+      "name": "v20-raw-2025-09",
+      "id": 14008009582,
+      "size_in_bytes": 7590845,
+      "artifact_sha256": "sha256:8cbf6f2b48732e658edb0901322ff970a4e162264ac638c64e3619271859fb4d",
+      "expires_at": "2026-12-13T03:54:53Z"
+    },
+    {
+      "name": "v20-raw-2025-10",
+      "id": 14008672489,
+      "size_in_bytes": 7791688,
+      "artifact_sha256": "sha256:5124169317db1896de5896d01aacddefe2d04143a0385e2860a7bf7bac5adcb2",
+      "expires_at": "2026-12-13T03:55:12Z"
+    },
+    {
+      "name": "v20-raw-2025-11",
+      "id": 14008508120,
+      "size_in_bytes": 5381876,
+      "artifact_sha256": "sha256:ced20e97893ee70412eb9e496ae4b38bf9acefd8900972c35f32c4162462507a",
+      "expires_at": "2026-12-13T03:55:08Z"
+    },
+    {
+      "name": "v20-raw-2025-12",
+      "id": 14009055470,
+      "size_in_bytes": 5658384,
+      "artifact_sha256": "sha256:403afc6a12c0e9331016ee514cdc3e7dc70bc4a55ffe7892fd0087b22acc0ad2",
+      "expires_at": "2026-12-13T03:55:23Z"
+    },
+    {
+      "name": "v20-raw-2026-01",
+      "id": 14007944830,
+      "size_in_bytes": 7522673,
+      "artifact_sha256": "sha256:9c65c2aca980548970969d53d31383b5179ef63ca6de71eec4480293634ff037",
+      "expires_at": "2026-12-13T03:55:32Z"
+    },
+    {
+      "name": "v20-raw-2026-02",
+      "id": 14008432410,
+      "size_in_bytes": 6296782,
+      "artifact_sha256": "sha256:f24c1a0428d8dc8b86e9f97024ca67c8214090b6f0b724344458bc68e0ba7ca6",
+      "expires_at": "2026-12-13T03:55:37Z"
+    },
+    {
+      "name": "v20-raw-2026-03",
+      "id": 14009135386,
+      "size_in_bytes": 10860554,
+      "artifact_sha256": "sha256:1804e7aa33667feba615b2b7a37096c0fb691a58300ad7b94fdba97e32a4701e",
+      "expires_at": "2026-12-13T03:55:50Z"
+    },
+    {
+      "name": "v20-raw-2026-04",
+      "id": 14008543027,
+      "size_in_bytes": 7236559,
+      "artifact_sha256": "sha256:2747dc262a7cf0ec4a7ade812f27a2c9ad115f8430261a04a4931d9fce557f73",
+      "expires_at": "2026-12-13T03:55:56Z"
+    },
+    {
+      "name": "v20-raw-2026-05",
+      "id": 14009055568,
+      "size_in_bytes": 5751946,
+      "artifact_sha256": "sha256:acdf75680497e2e3e5f340cfc1bfc30679cdadced74eab6b645351f54a4c0759",
+      "expires_at": "2026-12-13T03:56:05Z"
+    },
+    {
+      "name": "v20-raw-2026-06",
+      "id": 14008900831,
+      "size_in_bytes": 6114999,
+      "artifact_sha256": "sha256:a0deec6e13e46030c18db9b550f41ced941b73fa47aba095c8c9c2b78a2a1f52",
+      "expires_at": "2026-12-13T03:56:13Z"
+    },
+    {
+      "name": "v20-raw-2026-07",
+      "id": 14009140462,
+      "size_in_bytes": 5975567,
+      "artifact_sha256": "sha256:161322286f4cbb12b738fafcd9e5150f3a94d024f68e529fca03e152e3f8d43d",
+      "expires_at": "2026-12-13T03:56:21Z"
+    },
+    {
+      "name": "v20-raw-2026-08",
+      "id": 14008691917,
+      "size_in_bytes": 4673863,
+      "artifact_sha256": "sha256:794fa8191899c19b3c7534570b62557e117cbb26b38ff3957c3c7332507a6209",
+      "expires_at": "2026-12-13T03:56:28Z"
+    },
+    {
+      "name": "v20-raw-2026-09",
+      "id": 14008179147,
+      "size_in_bytes": 5475273,
+      "artifact_sha256": "sha256:937d4dc6fb2aace545383128c8b5fa933850ba7c2eced418f8b6402f943c1515",
+      "expires_at": "2026-12-13T03:56:34Z"
+    },
+    {
+      "name": "v20-raw-2026-10",
+      "id": 14009290195,
+      "size_in_bytes": 6873767,
+      "artifact_sha256": "sha256:719b9e84cd9c4d63999705008853959423c361177e3814afb9cbc84076b958a6",
+      "expires_at": "2026-12-13T03:56:44Z"
+    }
+  ]
+}
