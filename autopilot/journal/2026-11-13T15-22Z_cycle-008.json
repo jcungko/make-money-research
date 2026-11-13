@@ -1,0 +1,62 @@
+{
+  "entry_id": "2026-11-13T15-22Z_cycle-008",
+  "idempotency_key": "2026-11-13T15-22Z_cycle-008",
+  "observed_at_utc": "2026-11-13T15:22:24Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "V23_EXPOSURE_LEDGER_SOURCE_COMMITTED_NOT_EXECUTED_NO_EDGE",
+  "prior_state_blob_sha": "301f48c8ecffd08e5f62ebe365b288a03ba4051b",
+  "audit": {
+    "v20": "CLOSED_NO_EDGE",
+    "v21": "SEALED_NO_EDGE",
+    "v22": "NO_VERIFIED_EDGE",
+    "v23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "v22_sampling": "26,880,814 filtered ticks -> 36,126 calendar slots -> 7,074 feature-valid anchors -> 5,948 labeled; 2026 eval 2,080 per model; 1 Logistic and 5 LightGBM simulated trades due cost-aware EV gate",
+    "v22_frozen_audit_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
+    "v23_frozen_prereg_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
+    "main_capture_workflow_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963",
+    "github_actions_total_observed": 131,
+    "latest_actions_run_utc": "2026-11-13T07:02:32Z",
+    "v23_actions_qa_executed": false,
+    "actions_artifacts_inventory": "BLOCKED_ENDPOINT_DISALLOWED",
+    "future_capture": "NOT_YET_ELIGIBLE; earliest closed 2026-11-14 UTC day fetch 2026-11-15T02:43Z"
+  },
+  "work": {
+    "new_source": "research/v23/qa/v23_exposure_ledger.py",
+    "new_source_blob_sha": "6fc0ce283b8948885b3fb5e7477b72a1a2f809db",
+    "new_tests": "research/v23/qa/test_v23_exposure_ledger.py",
+    "new_tests_blob_sha": "8305180d09ff31f38cd9828590f09a32770ce82b",
+    "source_committed_and_readback_verified": true,
+    "tests_defined": 5,
+    "tests_executed_this_cycle": 0,
+    "reason_not_executed": "Local git clone cannot resolve github.com; GitHub Actions QA workflow not configured. Do not claim test pass.",
+    "changes": "Conservative accounting adapter: unresolved stop/timeout remains unresolved with null realized PnL, blocks new entries, marks equity unaccounted, does not assert broker fills.",
+    "market_backtest_executed": false,
+    "independent_validation": false,
+    "new_candidate_verified": false
+  },
+  "blockers": [
+    "Committed V23 QA source and tests not yet executed against exact GitHub SHA",
+    "No complete V23 event sampler, label pipeline, sealed model weights or broker-calibrated execution",
+    "Unresolved exposure cannot be assigned zero PnL; current adapter lacks executable entry price for accurate mark-to-market",
+    "GitHub Actions artifacts inventory disallowed by connector",
+    "Prospective raw tick capture not yet eligible"
+  ],
+  "safety": {
+    "live_trades": 0,
+    "main_changed": false,
+    "trade_telegram_cloudflare_changed": false,
+    "paid_api_used": false,
+    "backcom_in_trading_pnl": false
+  },
+  "notification": {
+    "local_date": "2026-11-13",
+    "daily_already_reported": true,
+    "verified_new_candidate": false
+  },
+  "next_steps": [
+    "Run exact committed source SHA QA using isolated GitHub Actions on a research-only branch or a verified source checkout; log test output and checksums",
+    "Extend ledger with exact entry execution price and intratick marked-to-market accounting, retaining unresolved state",
+    "Implement prereg-compatible event sampling and barrier labels with time-purged historical development only",
+    "Monitor isolated future tick workflow after 2026-11-15T02:43Z"
+  ]
+}
