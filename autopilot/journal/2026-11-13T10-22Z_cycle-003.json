@@ -1,0 +1,89 @@
+{
+  "entry_id": "2026-11-13T10-22Z_cycle-003",
+  "kind": "SCHEDULED_COORDINATION",
+  "observed_at_utc": "2026-11-13T10:22:55Z",
+  "idempotency_key": "2026-11-13T10-22Z_cycle-003",
+  "status": "SYNTHETIC_UNIT_TESTS_PASS_NO_NEW_EDGE",
+  "source": {
+    "control_state_blob_sha": "f3c76af47c0d79fe6748b98411b2db80131cec85",
+    "control_head": "7c0d048ea3a4c6ab0fc6a0b337d97763eb219b5c",
+    "main_head": "793df3a248b77d086b3471c24b75df6f773c5862",
+    "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
+    "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
+    "capture_workflow_blob_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963"
+  },
+  "observations": {
+    "v22": "26,880,814 filtered tick rows; 36,126 ten-minute slots; 7,074 feature-valid anchors; 5,948 labels; 2,080 retrospective eval rows/model; 1 Logistic trade, 5 LightGBM trades, abstention driven by predicted after-cost EV. V22 audit unchanged.",
+    "v23": "V23-PREREG-1.0 still DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED; no weights or prospective results.",
+    "github_actions": "Latest run 43382867249 at 2026-11-13T07:02:32Z, success, unrelated EURUSD intrabar replay; no V23 or prospective capture run among 35 latest; main HEAD unchanged.",
+    "prospective_capture": "Main isolated workflow unchanged; first valid 2026-11-14 UTC day cannot be collected before 2026-11-15T02:43Z; cron execution and artifact not yet verified.",
+    "artifacts": "Artifact listing not verified; do not infer successful collection.",
+    "branches": "No new V24 research branch in branch list."
+  },
+  "synthetic_qa": {
+    "execution_environment": "Ephemeral isolated local container, not GitHub Actions",
+    "source_files": "/mnt/data/v23/v23_barrier_core.py and /mnt/data/v23/test_v23_barrier_core.py (local only, not yet uploaded to repository)",
+    "command": "python -m unittest -v test_v23_barrier_core.py",
+    "tests_run": 10,
+    "tests_passed": 10,
+    "tests_failed": 0,
+    "cases": [
+      "BUY stop gap",
+      "SELL stop gap",
+      "BUY target",
+      "missing stop fill censored",
+      "planned stop risk reject",
+      "stale entry reject",
+      "crossed quote reject",
+      "timeout exit",
+      "entry no-lookahead",
+      "commission/swap deduction"
+    ],
+    "limitations": [
+      "Not full V23 sampling/features/model pipeline",
+      "Quote-only target execution not broker certified",
+      "Broker stop/freeze/margin constraints not implemented",
+      "No real Exness historical backtest performed",
+      "Local test source not yet committed to GitHub; therefore not GitHub-reproducible or a sealed research artifact",
+      "No model trained or weights sealed"
+    ],
+    "classification": "LOCAL_SYNTHETIC_QA_ONLY_NOT_BACKTEST_NOT_EDGE"
+  },
+  "classification": {
+    "V20": "FAILED_NO_EDGE",
+    "V21": "FAILED_NO_EDGE",
+    "V22": "FAILED_NO_VERIFIED_EDGE",
+    "V23": "BLOCKED_PENDING_REPRODUCIBLE_RUNNER_AND_SEALED_WEIGHTS",
+    "prospective_capture": "PENDING_FIRST_ELIGIBLE_DATE"
+  },
+  "actions_taken": [
+    "Read control state README journal before other GitHub branches",
+    "Checked frozen V22 audit, V23 prereg, GitHub branches and 35 Actions runs",
+    "Built local deterministic quote-side barrier replay prototype and executed 10 passing synthetic unit tests",
+    "Recorded local-only test provenance and blockers in immutable GitHub journal"
+  ],
+  "actions_not_taken": [
+    "No live trading",
+    "No main merge or workflow modification",
+    "No historical backtest or prospective outcome inspection",
+    "No paid AI service",
+    "No V22 retune",
+    "No claim of independent validation"
+  ],
+  "blockers": [
+    "Full V23 runner and synthetic test source not yet committed/reproduced in GitHub Actions",
+    "Broker execution calibration unavailable",
+    "GitHub artifact inventory unavailable",
+    "Future prospective tick data not yet eligible"
+  ],
+  "next_steps": [
+    "Commit and review V23 QA kernel/tests on separate research branch before treating as reproducible",
+    "Extend quote-side replay to full registered broker stop/freeze/margin and counterfactual labels",
+    "Verify first prospective capture and artifacts after eligible UTC date",
+    "Train only on development history, SHA-seal weights and code before future validation"
+  ],
+  "notification": {
+    "daily_due": false,
+    "verified_new_candidate": false
+  }
+}
