@@ -1,0 +1,46 @@
+name: EURUSD October 2026 intrabar M1 M5 >30pct screen
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/eurusd-oct2026-intrabar-30pct.yml'
+permissions:
+  contents: write
+concurrency:
+  group: eurusd-oct2026-intrabar-30pct-research
+  cancel-in-progress: false
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical analysis libraries
+        run: python -m pip install 'numpy>=1.26,<3' 'pandas>=2.2,<3' 'requests>=2.31,<3'
+      - name: Verify Exness source and run causal strategy grid
+        run: python scripts/eurusd_oct2026_intrabar_30pct.py
+      - name: Commit read-only research reports
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/eurusd_oct2026_intrabar_30pct/
+          if git diff --cached --quiet; then
+            echo "No changed research reports"
+          else
+            git commit -m "Research results: EURUSD Oct 2026 intrabar 30pct screen"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Preserve output artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: EURUSD-Oct2026-Intrabar-M1-M5-30percent
+          path: results/eurusd_oct2026_intrabar_30pct/
+          if-no-files-found: warn
+          retention-days: 30
