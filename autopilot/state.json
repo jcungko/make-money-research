@@ -1,0 +1,73 @@
+{
+  "schema_version": "make-money-autopilot-state-v1",
+  "project": "MAKE MONEY — AI Research Autopilot",
+  "as_of_date_utc": "2026-11-13",
+  "authoritative_repo": "jcungko/make-money-research",
+  "control_branch": "research/autopilot-control-20261113",
+  "immutable_research_refs": {
+    "v22_branch": "v22-ai-microstructure-preregistered-20261113",
+    "v22_prereg": "research/v22/V22_PREREG_1_0.json",
+    "v22_audit": "research/v22/V22_AUDIT_LOCK_ADDENDUM_20261113.md",
+    "v23_branch": "v23-state-conditional-preregistered-20261113",
+    "v23_prereg": "research/v23/V23_PREREG_1_0.json"
+  },
+  "scheduler": {
+    "type": "chatgpt_scheduled_task",
+    "configured_interval_minutes": 60,
+    "enabled_at_bootstrap": true,
+    "first_scheduled_time_local": "2026-11-13T15:18:31+07:00",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "future_runs_not_yet_verified": true
+  },
+  "research_status": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE; 26,880,814 filtered ticks; 7,074 feature-valid anchors; 5,948 labelled anchors; Logistic 1 historical simulated trade, LightGBM 5; do not retune",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED"
+  },
+  "data_capture": {
+    "workflow_on_main": ".github/workflows/v22-prospective-exness-isolated.yml",
+    "cron_utc": "43 2 * * *",
+    "enabled_code_present": true,
+    "first_schedule_not_yet_observed": true,
+    "earliest_eligible_tick_date_utc": "2026-11-14",
+    "earliest_fetch_for_that_date_utc": "2026-11-15T02:43:00Z",
+    "notes": "GitHub Actions cron can be delayed or skipped; archive 90-day retention requires durable backup. 2026-11-14 is Saturday; 404 means unavailable, not confirmed market closure."
+  },
+  "next_priorities": [
+    "Verify first scheduled prospective workflow run, artifact manifests and raw-source SHA checks; never infer success from YAML alone",
+    "Review V22 audit limitations and ensure frozen original models/results remain immutable",
+    "Implement and unit-test V23 protocol against historical development data only, seal source/weights before any independent future test",
+    "Protect GitHub Actions minutes, prevent overlapping heavyweight jobs and avoid paid AI API",
+    "Write journal and state on this control branch using content SHA checks; no changes to main without explicit impact review"
+  ],
+  "risk_and_governance": {
+    "trading_pnl_excludes_backcom": true,
+    "after_cost_positive_required": true,
+    "no_live_trading": true,
+    "no_auto_merge_main": true,
+    "preserve_trade_telegram_cloudflare_workflows": true,
+    "no_paid_services_without_approval": true,
+    "vps_ping_2ms_not_fill_latency": true,
+    "no_historical_test_reoptimization": true,
+    "require_prospective_independent_test": true
+  },
+  "last_cycle": {
+    "kind": "bootstrap",
+    "status": "READ_ONLY_AUDIT_AND_CONTROL_BRANCH_BOOTSTRAP",
+    "run_date_utc": "2026-11-13",
+    "code_experiment_executed": false,
+    "new_candidate_verified": false,
+    "blocked": [
+      "First scheduled execution not yet observed",
+      "No V23 training or independent validation yet",
+      "Actual MT5 order fills, broker commissions, stopsLevel, freezeLevel and latency unverified",
+      "Shared ChatGPT history page not programmatically accessible; GitHub evidence used"
+    ]
+  },
+  "report_policy": {
+    "daily_after_local": "20:00",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "alert_immediately_only_on_independently_verified_candidate": true
+  }
+}
