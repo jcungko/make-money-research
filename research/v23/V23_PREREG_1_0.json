@@ -1,0 +1,108 @@
+{
+  "project": "V23 — State-Conditional Trading",
+  "protocol": "V23-PREREG-1.0",
+  "registered_utc": "2026-11-13",
+  "status": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+  "previous_studies": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "SEALED_NO_VERIFIED_EDGE",
+    "policy": "No retuning previous frozen strategies. Jan 2025-Oct 2026 Exness history is exploratory only, not untouched OOS."
+  },
+  "primary_hypothesis": "When trailing quote-driven volatility is large enough relative to executable roundtrip cost, a past-only state classifier can identify a 120-300-second directional trade with positive broker-feasible net payoff after slippage, spread, commissions, margin and hard stop risk; else NO_TRADE.",
+  "symbol": "EURUSDm indicative Bid/Ask; broker-specific stop level and fill audit required",
+  "feature_clock": "UTC, millisecond ticks in original source sequence; preserve same-time quote changes; do not interpolate prices across missing quotes",
+  "sampling": {
+    "kind": "past-only event-driven, not 10-minute fixed calendar sampling",
+    "sessions": "07:00:00 <= anchor <= 15:54:00 UTC on FX trading days with quotes",
+    "qualifications": [
+      "quote bid>0 and ask>=bid",
+      "spread at anchor <=10 EURUSD points",
+      "at least 20 quotes in preceding 60 seconds",
+      "midpoint high-low range in preceding 120 seconds >= 3*(anchor spread points + 2 points baseline roundtrip slip)",
+      "reference quotes to calculate 10,30,60,120 second features must be at/before anchor and no older than 2 seconds vs reference boundary",
+      "minimum 360 seconds since preceding accepted ANCHOR even if no trade or outcome censored; use first eligible quote after cooldown"
+    ],
+    "max_label_horizon_seconds": 300,
+    "policy": "One event/row, both long/short counterfactuals are correlated outcomes not independent observations; accept same-timestamp source ordering. Explicit missing outcomes, no forward fill >2 sec."
+  },
+  "features_past_only": [
+    "midpoint momentum 10,30,60,120 seconds in points",
+    "midpoint range and sum absolute tick moves 30,60,120 seconds",
+    "update quote counts 5,30,60,120 seconds and 5/60 relative update ratio",
+    "last 100 price-changing quote signed imbalance",
+    "current, trailing-60s mean and 90th percentile spread points",
+    "UTC session category 07-10,10-13,13-16 and weekday",
+    "cost_pressure_ratio = prior120s midpoint range/(spread+2)"
+  ],
+  "execution": {
+    "capital_usd": 100,
+    "minimum_lot": 0.01,
+    "contract_eur_per_0_01lot": 1000,
+    "leverage_scenario": 200,
+    "commission_usd_per_lot_side": 0,
+    "commission_status": "Exness Standard public assumption only; require actual account verification",
+    "swap": "0 only when position actually closed before broker rollover; otherwise charge actual swap or invalidate",
+    "latency_ms_baseline": 100,
+    "adverse_slippage_points_per_side": 1,
+    "spread": "recorded bid/ask tick stream; no mid-price fills",
+    "entry": "first quote at/after signal time +100ms, at most 2000ms late; BUY at Ask+slip and SELL at Bid-slip; fail/skip on stale quote",
+    "stop_points": "ceil(max(40,1.5*previous 60-second midpoint range in points)); skip if >80",
+    "target_points": "ceil(1.7*stop_points)",
+    "max_holding_seconds": 300,
+    "stop_order": "broker-registered SL/TP at entry; BUY trigger using Bid, SELL using Ask; fill on next quote after modeled 100ms broker trigger-to-fill delay with adverse slip and gap risk",
+    "margin": "contract_eur*actual_ask_or_bid/leverage, check available equity/free margin and broker stopout level; one simultaneous position per independent strategy",
+    "risk": "planned total stop cash loss including modeled slip and commission <=2% current equity, 0.01 lot fixed; gap losses may exceed planned risk; reject if StopsLevel/FreezeLevel prohibit registered stop",
+    "exit": "first SL/TP, then 300s time limit, no overnight or unidentified incomplete exits",
+    "stress": [
+      "100ms delay +3 points adverse slippage/side",
+      "300ms delay +3 points adverse slippage/side",
+      "spread 1.5x and 2.0x around unchanged midpoint with fully chronological stop/TP replay"
+    ],
+    "no_2ms_execution_claim": true,
+    "no_backcom": true,
+    "no_live_trade": true
+  },
+  "labels": {
+    "horizons": [
+      120,
+      300
+    ],
+    "primary_horizon": 300,
+    "secondary_horizon": "120 seconds descriptive only; no choosing winning horizon after results",
+    "counterfactual": "On each anchor simulate BUY and SELL separately with the SAME registered SL/TP, 300-second max hold, costs/margin/quote gaps; no real simultaneous funded opposing positions",
+    "class_rule": "NO_TRADE=0 unless a side has fully simulated net PnL>+$0.03 and exceeds the other side; LONG=1 if long net higher; SHORT=2 if short net higher; censor if outcome not executable at quote timestamp",
+    "objective": "expected realized barrier-exit Trading PnL with risk gate (not classification hit rate and not raw 300s midpoint movement)"
+  },
+  "models": {
+    "control": "ALWAYS_NO_TRADE, zero discretionary trades; helps assess overtrading not a viable profit-generating model",
+    "simple_rule": "Baseline momentum continuation: if trailing 60-second midpoint move >=+20 points buy; <=-20 points sell; otherwise NO_TRADE; all prequalifications, SL/TP and cost/risk gates still apply",
+    "statistical": "StandardScaler + multinomial LogisticRegression(C=1.0,max_iter=1000,random_state=23)",
+    "ai": "LightGBM LGBMClassifier(n_estimators=150,learning_rate=0.05,num_leaves=7,max_depth=3,min_child_samples=80,colsample_bytree=0.8,random_state=23,n_jobs=2)",
+    "decision": "For each class, compute TRAINING-ONLY conditional mean realized BUY and SELL barrier payoff, multiply by predict_proba to get expected net dollar payoffs; take side iff predicted EV>=+0.03 USD and exceeds other side by >=0.02 USD, then apply prequalifications and risk gates; otherwise NO_TRADE",
+    "no_hyperparameter_search": true,
+    "min_training_examples_per_class": 50,
+    "model_weights": "trained only on 2025-2026 pre-inspected exploratory history and SHA-frozen BEFORE inspecting any future validation outcomes; no retraining during independent test"
+  },
+  "validation": {
+    "retrospective": "2025-01 to 2026-10 previously examined; development-only exploratory expanding walk-forward; purge all labels crossing evaluation fold boundary with >=360s embargo; no title clean-OOS",
+    "prospective_start_not_before": "2026-11-14T00:00:00Z",
+    "prospective_embargo": "Archived raw future quotes must not be inspected for target labels or used for feature selection, tuning, or fitting until model weights and code are SHA-sealed; if not sealed, do not retroactively declare those dates clean OOS.",
+    "minimum_trades": 200,
+    "minimum_distinct_trade_days": 20,
+    "minimum_complete_months": 2,
+    "acceptance": [
+      "positive net Trading PnL and expectancy after executable Bid/Ask+slip+commission+swap+margin costs",
+      "profit factor >=1.2",
+      "day-block bootstrap 2000 draws fixed seed 23001, Holm familywise 0.05 adjustment across baseline momentum, Logistic and LightGBM; lower 95% adjusted confidence bound for mean net/trade >0",
+      "max intratick marked-to-market equity DD <=$20 for $100 initial equity",
+      "stress expectancy positive and stress PF>=1.0 in each predeclared stress scenario",
+      ">=60% of complete prospective months positive, no one month contributes >50% of positive gross month profits",
+      "no unresolved position, unregistered broker stop, or unaccounted open equity",
+      "broker-calibrated request/deal latency, stopsLevel/freezeLevel, reject counts, swap, commission and margin/stopout must be documented"
+    ],
+    "selection": "At most one strategy after all gates pass; if none pass => NO_EDGE. Do not increase lot/leverage to rescue losing strategy.",
+    "reporting": "Monthly net USD PnL, BUY/SELL trades, PF, expectancy, win rate (descriptive), intratick max DD, max loss streak, cost decomposition, session/spread/volatility quantile, missed/censored quotes, trade eligibility funnel, comparison against simple and ALWAYS_NO_TRADE baseline."
+  },
+  "governance": "Never relabel V20–V22 historical data as untouched prospective; code/threshold edits get a new prereg ID and a fresh future cutoff; no bot for live money without separate authorization."
+}
