@@ -55,14 +55,14 @@
   "last_cycle": {
     "kind": "scheduled",
     "status": "AUDIT_COMPLETE_NO_NEW_EDGE",
-    "run_utc": "2026-11-13T08:19:26Z",
-    "journal_path": "autopilot/journal/2026-11-13T08-19Z_cycle-001.json",
+    "run_utc": "2026-11-13T09:21:05Z",
+    "journal_path": "autopilot/journal/2026-11-13T09-21Z_cycle-002.json",
     "code_experiment_executed": false,
     "new_candidate_verified": false,
     "blocked": [
-      "No V23 reproducible runner/source/weights verified in repository",
-      "Broker MT5 execution calibration missing",
-      "GitHub artifacts listing inaccessible through connector; future runs may be checked via allowed workflow-run subresources"
+      "V23 reproducible runner and model weights not present or independently verified",
+      "Broker execution calibration not available",
+      "Artifact listing endpoint rejected; no artifact inventory"
     ]
   },
   "report_policy": {
@@ -71,10 +71,11 @@
     "alert_immediately_only_on_independently_verified_candidate": true
   },
   "last_verified_sources": {
-    "control_state_blob_sha": "2691c072e26676769bd79b7e7e532bca016db682",
+    "control_state_blob_sha": "99dd9ea209fde07c2e52ff80bd4e7394a542c671",
     "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
     "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
-    "prospective_workflow_blob_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963"
+    "prospective_workflow_blob_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963",
+    "main_head": "793df3a248b77d086b3471c24b75df6f773c5862"
   },
   "last_report_local_date": null
 }
