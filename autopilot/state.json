@@ -17,7 +17,7 @@
     "enabled_at_bootstrap": true,
     "first_scheduled_time_local": "2026-11-13T15:18:31+07:00",
     "timezone": "Asia/Ho_Chi_Minh",
-    "future_runs_not_yet_verified": true
+    "future_runs_not_yet_verified": false
   },
   "research_status": {
     "V20": "CLOSED_NO_EDGE",
@@ -53,21 +53,28 @@
     "require_prospective_independent_test": true
   },
   "last_cycle": {
-    "kind": "bootstrap",
-    "status": "READ_ONLY_AUDIT_AND_CONTROL_BRANCH_BOOTSTRAP",
-    "run_date_utc": "2026-11-13",
+    "kind": "scheduled",
+    "status": "AUDIT_COMPLETE_NO_NEW_EDGE",
+    "run_utc": "2026-11-13T08:19:26Z",
+    "journal_path": "autopilot/journal/2026-11-13T08-19Z_cycle-001.json",
     "code_experiment_executed": false,
     "new_candidate_verified": false,
     "blocked": [
-      "First scheduled execution not yet observed",
-      "No V23 training or independent validation yet",
-      "Actual MT5 order fills, broker commissions, stopsLevel, freezeLevel and latency unverified",
-      "Shared ChatGPT history page not programmatically accessible; GitHub evidence used"
+      "No V23 reproducible runner/source/weights verified in repository",
+      "Broker MT5 execution calibration missing",
+      "GitHub artifacts listing inaccessible through connector; future runs may be checked via allowed workflow-run subresources"
     ]
   },
   "report_policy": {
     "daily_after_local": "20:00",
     "timezone": "Asia/Ho_Chi_Minh",
     "alert_immediately_only_on_independently_verified_candidate": true
-  }
+  },
+  "last_verified_sources": {
+    "control_state_blob_sha": "2691c072e26676769bd79b7e7e532bca016db682",
+    "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
+    "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
+    "prospective_workflow_blob_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963"
+  },
+  "last_report_local_date": null
 }
