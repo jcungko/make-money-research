@@ -1,0 +1,31 @@
+name: V23 isolated research-only synthetic QA
+on:
+  push:
+    branches:
+      - research/autopilot-control-20261113
+    paths:
+      - '.github/workflows/v23-research-qa-isolated.yml'
+      - 'research/v23/qa/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v23-synthetic-qa-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  synthetic-qa:
+    if: ${{ github.repository == 'jcungko/make-money-research' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Source identity and synthetic QA (no broker, no paid APIs)
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "COMMIT_SHA=${GITHUB_SHA}"
+          sha256sum research/v23/qa/v23_barrier_core.py research/v23/qa/v23_exposure_ledger.py research/v23/qa/test_v23_barrier_core.py research/v23/qa/test_v23_adversarial.py research/v23/qa/test_v23_exposure_ledger.py
+          python -m unittest discover -s research/v23/qa -p 'test_v23_*.py' -v
