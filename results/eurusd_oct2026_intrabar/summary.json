@@ -1,0 +1,30 @@
+{
+  "symbol": "EURUSD",
+  "source_url": "https://ticks.ex2archive.com/ticks/EURUSD/2026/10/Exness_EURUSD_2026_10.zip",
+  "source_zip_sha256": "43229b754eac1dc42d695cf6b92a12a223a431e101451823c82cefb4b9309ad1",
+  "source_ticks": 1039321,
+  "timezone": "UTC",
+  "test_month": "2026-10",
+  "train_period": "2026-10-01..2026-10-14 UTC",
+  "untouched_holdout_period": "2026-10-15..2026-10-30 UTC",
+  "training_rule": "filter >=30 trades, positive train pips, PF>=1.05, t>=0.6; rank by train-only t-stat and keep top 3 per frame and style",
+  "candidate_count": 384,
+  "month_positive_exploratory_count": 7,
+  "holdout_selected_count": 0,
+  "holdout_selected_oct_positive_count": 0,
+  "holdout_selected_oct_and_holdout_positive_count": 0,
+  "holdout_selected_oct_and_holdout_stress_positive_count": 0,
+  "tick_time_first": "2026-10-01T00:00:01.069000+00:00",
+  "tick_time_last": "2026-10-30T20:58:59.779000+00:00",
+  "costs": {
+    "archived_spread": "included through buy at Ask, exit Bid; sell at Bid, exit Ask",
+    "base_extra_pips_roundtrip": 0.2,
+    "stress_extra_pips_roundtrip": 0.5,
+    "commission": "NOT INCLUDED; add according to specific Exness account",
+    "slippage_limits": "hypothetical fixed per trade; does not model liquidity, delay, reject/requote or adverse gaps"
+  },
+  "signals": "at scheduled second, use the last available tick strictly before second; execute at next tick; no future candle values consulted",
+  "exit": "first tick after entry touching TP/SL, or close at deadline using latest bid/ask quote at or before that deadline; all times inside same bar",
+  "rule_count_warning": "Multiple predefined rules tested on a single month; even holdout outcomes are exploratory, not independent multi-month validation.",
+  "generated_at_utc": "2026-11-13T06:54:53.575090+00:00"
+}

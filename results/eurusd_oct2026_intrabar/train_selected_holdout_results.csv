@@ -1,0 +1,1 @@
+id,frame,style,entry_sec,exit_sec,signal_move_min_pips,spread_max_pips,session_utc,sl_pips,tp_pips,n_train,train_pips,train_pf,train_t,n_test,test_pips,test_pf,n_oct,oct_net_pips,oct_win_pct,oct_pf,oct_max_dd_pips,oct_net_stress_05_pips,train_selection_score,train_only_selected,test_positive,oct_positive,oct_stress_positive
