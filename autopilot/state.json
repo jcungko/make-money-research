@@ -53,9 +53,9 @@
   "last_cycle": {
     "kind": "scheduled",
     "status": "AUDIT_ONLY_NO_NEW_EDGE",
-    "run_utc_approx": "2026-11-13T20:15Z",
-    "journal_path": "autopilot/journal/2026-11-13T20-15Z_cycle-013.json",
-    "journal_commit": "8f3fdf7769128e5dee2916e651a68890d9f7ed93",
+    "run_utc_approx": "2026-11-13T21:15Z",
+    "journal_path": "autopilot/journal/2026-11-13T21-15Z_cycle-014.json",
+    "journal_commit": "6c7630db649a5a9fcf6845cc6d788f557fcb8fb6",
     "code_experiment_executed": false,
     "code_committed": false,
     "market_backtest_executed": false,
@@ -73,7 +73,7 @@
     "alert_immediately_only_on_independently_verified_candidate": true
   },
   "last_verified_sources": {
-    "control_state_blob_sha": "60594235c4c0d4cb98e691c48f2b63f98351a20a",
+    "control_state_blob_sha": "6832146b823c7bc0c455fb75e56078366d8ab28e",
     "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
     "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
     "prospective_workflow_blob_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963",
