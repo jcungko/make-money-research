@@ -1,0 +1,82 @@
+{
+  "entry_id": "2026-11-13T11-17Z_cycle-004",
+  "idempotency_key": "2026-11-13T11-17Z_cycle-004",
+  "kind": "SCHEDULED_COORDINATION",
+  "observed_at_utc": "2026-11-13T11:17:29Z",
+  "status": "V23_SYNTHETIC_QA_SOURCE_COMMITTED_GITHUB_ACTIONS_NOT_RUN_NO_EDGE",
+  "source": {
+    "control_state_prior_blob_sha": "79348ed70f5180b49f17a58c70e3e05ef5faadac",
+    "main_head": "793df3a248b77d086b3471c24b75df6f773c5862",
+    "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
+    "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
+    "v23_qa_core_blob_sha": "7c87d05ec07f83f3ba06a15047771e1d65d34ee4",
+    "v23_qa_tests_blob_sha": "0a4f072fa89512cebcd3727d71d08177522ac8ae"
+  },
+  "classifications": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "PARTIAL_SYNTHETIC_QA_SOURCE_COMMITTED_NO_MODEL_TRAINED",
+    "prospective_capture": "NOT_YET_ELIGIBLE_FOR_FIRST_DAY"
+  },
+  "observations": {
+    "v22": "Frozen audit unchanged: 26,880,814 filtered ticks -> 36,126 calendar slots -> 7,074 feature anchors -> 5,948 labelled; Logistic 1 and LightGBM 5 historical trades, cost-aware EV abstention; no prospective proof.",
+    "v23": "V23-PREREG-1.0 remains frozen; no model weights, no full feature/event pipeline, no independent validation.",
+    "github_actions": "131 runs total in GitHub listing, 35 most recent inspected; latest run 43382867249 at 2026-11-13T07:02:32Z is unrelated EURUSD intrabar push success; no V23 QA or isolated prospective capture run among those 35.",
+    "artifacts": "GitHub connector rejects actions/artifacts and actions/workflows list endpoints; no artifact inventory verified.",
+    "prospective": "Main isolated capture cron 02:43 UTC; earliest 2026-11-14 UTC data can be requested 2026-11-15T02:43Z. No observed eligible capture yet."
+  },
+  "development": {
+    "github_source_paths": [
+      "research/v23/qa/v23_barrier_core.py",
+      "research/v23/qa/test_v23_barrier_core.py",
+      "research/v23/qa/README.md"
+    ],
+    "github_source_commits": [
+      "8c18a4c1651235cd6fe63d189de5dfff2ec6ba44",
+      "f4eb1560d969c4d9a94c993961c1751d4dcb2ec4",
+      "71b736cb8f73e1f8418fddcb4a454b1c5e1dbd3a"
+    ],
+    "github_source_verified_readback": true,
+    "local_synthetic_qa": {
+      "tests_passed": 13,
+      "tests_failed": 0,
+      "provenance": "Locally executed a separate prototype with analogous behavior; the GitHub-committed version has NOT been executed or verified on GitHub Actions. Do not equate local test pass with committed-source pass."
+    },
+    "limitations": [
+      "Partial QA kernel only, not complete V23 implementation",
+      "No broker stop/freeze, margin/stopout or actual deal execution calibration",
+      "No V23 historical Exness backtest",
+      "No GitHub Actions QA run",
+      "No future data inspected or model trained"
+    ]
+  },
+  "actions_taken": [
+    "Read control state README journal before other branches",
+    "Checked V22 audit and V23 frozen prereg, 35 latest GitHub Actions runs, control/main branch heads",
+    "Ran 13 deterministic local synthetic QA tests on separate local prototype",
+    "Committed 3 reviewable research-only V23 synthetic QA files to control branch; verified GitHub readback"
+  ],
+  "actions_not_taken": [
+    "No trade or live EA",
+    "No main merge, workflow changes, paid AI services or V22 retuning",
+    "No V23 historical or future outcome evaluation",
+    "No claim that committed GitHub QA tests passed"
+  ],
+  "blockers": [
+    "Committed GitHub QA needs independent execution/review",
+    "Full V23 event-driven pipeline and broker execution calibration absent",
+    "Artifact inventory unsupported through current connector",
+    "Future tick date not yet eligible"
+  ],
+  "next_steps": [
+    "Run exact GitHub-committed QA code and capture test logs with code SHA",
+    "Implement complete prereg-compatible V23 sampling and barrier counterfactual labels on research branch, test with synthetic data first",
+    "Seal full code and model weights before accessing future labels",
+    "Verify first prospective collection on or after 2026-11-15T02:43Z"
+  ],
+  "notification": {
+    "daily_due": false,
+    "verified_new_candidate": false
+  }
+}
