@@ -1,0 +1,75 @@
+{
+  "entry_id": "2026-11-13T22-22Z_cycle-015",
+  "idempotency_key": "make-money-autopilot:2026-11-13T22:22Z:cycle-015",
+  "observed_at_utc_approx": "2026-11-13T22:22Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "AUDIT_ONLY_NO_NEW_EDGE",
+  "source": {
+    "repo": "jcungko/make-money-research",
+    "branch": "research/autopilot-control-20261113",
+    "prior_state_blob_sha": "b67280b600d47a514410e589f51f10fbbf273170"
+  },
+  "observations": {
+    "github_actions_total_count": 133,
+    "latest_qa_run": 43470901587,
+    "latest_qa_conclusion": "success",
+    "prospective_capture_runs_seen_in_recent_100": 0,
+    "first_eligible_capture_utc": "2026-11-15T02:43:00Z",
+    "v22_filtered_ticks_from_frozen_audit": 26880814,
+    "v22_feature_anchors": 7074,
+    "v22_labelled_anchors": 5948,
+    "v22_trade_counts": {
+      "logistic": 1,
+      "lightgbm": 5
+    },
+    "v22_funnel": "36,126 10-minute slots; 14,229 no quote within 2s, 72 spread>20, 14,138 unavailable/stale features, 613 no timely entry; 1,126 incomplete future labels",
+    "v22_abstention": "2,077/2,080 eval predictions spread<=10 per model; EV >=$0.02 only 1 Logistic and 5 LightGBM; historical 60s label vs barrier exit mismatch",
+    "v22_zip_sha256_from_audit": "61d3578eaaf45ee812528ae781a8ba2be0996147c2b733d8bf73bc4feb595a5f",
+    "zip_downloaded_this_cycle": false,
+    "v23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "new_verified_candidate": false
+  },
+  "work": {
+    "state_read": true,
+    "readme_read": true,
+    "journal_list_read": true,
+    "prior_journal_read": true,
+    "v22_audit_read": true,
+    "v23_prereg_read": true,
+    "main_capture_workflow_read": true,
+    "actions_runs_read": true,
+    "tests_executed": false,
+    "models_trained": false,
+    "market_backtest_executed": false,
+    "code_changed": false
+  },
+  "classification": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED"
+  },
+  "blocked": [
+    "V23 untrained; open-equity and broker execution calibration incomplete",
+    "No independent prospective after-cost PnL; future raw capture not yet eligible",
+    "V22 final evidence ZIP not downloaded for independent checksum verification this cycle"
+  ],
+  "next_steps": [
+    "Implement conservative intratick open-equity accounting with synthetic tests on research branch only",
+    "Build V23 sampler/training under frozen prereg and seal code and weights before prospective labels",
+    "Verify first scheduled capture and raw ZIP manifests after 2026-11-15T02:43Z"
+  ],
+  "safety": {
+    "live_trades": 0,
+    "main_changed": false,
+    "trade_telegram_cloudflare_changed": false,
+    "paid_api_used": false,
+    "backcom_in_trading_pnl": false
+  },
+  "notification": {
+    "local_date": "2026-11-14",
+    "local_time_approx": "05:22",
+    "last_report_local_date": "2026-11-13",
+    "send_now": false
+  }
+}
