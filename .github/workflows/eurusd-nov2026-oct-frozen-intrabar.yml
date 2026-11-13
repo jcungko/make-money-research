@@ -1,0 +1,41 @@
+name: EURUSD Nov 2026 replay of frozen Oct intrabar 7
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/eurusd-nov2026-oct-frozen-intrabar.yml'
+permissions:
+  contents: write
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install data replay dependencies
+        run: pip install 'numpy>=1.26,<3' 'pandas>=2.2,<3' 'requests>=2.31,<3' 'numba>=0.60,<1'
+      - name: Strict no-optimization November replay
+        run: python scripts/eurusd_nov2026_oct_frozen_intrabar.py
+      - name: Store audit evidence in repo
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/eurusd_nov2026_oct_frozen_intrabar/
+          if ! git diff --cached --quiet; then
+            git commit -m "Results: November 2026 frozen October EURUSD intrabar test"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Preserve complete research files
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: EURUSD-Nov2026-Frozen-Oct7-Intrabar
+          path: results/eurusd_nov2026_oct_frozen_intrabar/
+          if-no-files-found: warn
+          retention-days: 30
