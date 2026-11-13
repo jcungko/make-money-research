@@ -1,0 +1,69 @@
+{
+  "entry_id": "2026-11-13T18-19Z_cycle-011",
+  "idempotency_key": "make-money-autopilot:2026-11-13T18:19Z:cycle-011",
+  "observed_at_utc": "2026-11-13T18:19:06Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "BLOCKED_NEW_QA_RUN_UNVERIFIED_NO_EDGE",
+  "source": {
+    "repository": "jcungko/make-money-research",
+    "control_branch": "research/autopilot-control-20261113",
+    "prior_state_blob_sha": "60297985e5a99a4a6d1c9dfd9933d3be59338e6e",
+    "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
+    "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
+    "v23_qa_workflow_blob_sha": "a5067029080cb698fa17c7e498a44d5a4e8bcb63"
+  },
+  "observations": {
+    "v22_funnel": "26,880,814 filtered ticks -> 36,126 10m grid slots -> 7,074 eligible anchors -> 5,948 labels; 2,080 retrospective eval per model; cost-adjusted predicted EV threshold +$0.02 yields Logistic 1, LightGBM 5 trades; no retune",
+    "v22_zip_sha256_from_addendum": "61d3578eaaf45ee812528ae781a8ba2be0996147c2b733d8bf73bc4feb595a5f",
+    "v22_zip_independently_downloaded_this_cycle": false,
+    "v23_status": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "qa_prior_run_id": 43461356345,
+    "qa_prior_run_job_conclusion": "success",
+    "qa_prior_run_artifacts": 0,
+    "qa_new_regression_commit": "baa0efde7d02536faed2f2dbc3543d87ff84a9cd",
+    "qa_new_regression_run_verified": false,
+    "reason_new_run_unverified": "GitHub connector fetch_commit_workflow_runs filters pull-request-triggered runs only, so empty list cannot establish whether push-triggered run occurred; no repository-wide Actions run listing available through connector",
+    "prospective_first_eligible_fetch_utc": "2026-11-15T02:43:00Z",
+    "prospective_capture_verified": false
+  },
+  "work": {
+    "read_state_readme_journal_v22_audit_v23_prereg_workflows_qa_core": true,
+    "static_audit_completed": true,
+    "code_changed": false,
+    "tests_executed": false,
+    "market_backtest_executed": false,
+    "models_trained": false,
+    "new_candidate_verified": false
+  },
+  "classification": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED"
+  },
+  "blockers": [
+    "Cannot verify push-triggered GitHub Actions run for cycle 010 regression commit through available connector; prior run cannot certify new tests",
+    "V23 synthetic core does not expose executable entry price for unresolved open-equity mark; performance claims blocked",
+    "No prospective independent holdout, sealed weights, or broker-calibrated execution",
+    "First eligible future tick fetch not before 2026-11-15T02:43Z"
+  ],
+  "next_steps": [
+    "Verify exact GitHub Actions push run head SHA and job logs for baa0efd using a repository-wide Actions runs endpoint when accessible",
+    "Implement and test conservative open-equity accounting on isolated research branch only",
+    "Develop V23 event-driven sampler and sealed training pipeline before future holdout inspection",
+    "Recheck isolated raw capture after 2026-11-15T02:43Z"
+  ],
+  "safety": {
+    "live_trades": 0,
+    "main_changed": false,
+    "trade_telegram_cloudflare_changed": false,
+    "paid_api_used": false,
+    "backcom_in_trading_pnl": false
+  },
+  "notification": {
+    "local_date": "2026-11-14",
+    "daily_due_after": "20:00",
+    "new_verified_candidate": false,
+    "send_now": false
+  }
+}
