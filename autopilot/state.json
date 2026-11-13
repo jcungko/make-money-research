@@ -35,10 +35,10 @@
     "notes": "GitHub Actions cron can be delayed or skipped; archive 90-day retention requires durable backup. 2026-11-14 is Saturday; 404 means unavailable, not confirmed market closure."
   },
   "next_priorities": [
-    "Verify Actions run for newly committed regression tests, not just previous successful run",
-    "Implement synthetic executable entry-price and conservative open-equity mark without representing broker fill",
-    "Implement V23 prereg-compatible event sampler, labels and model pipeline on research branch",
-    "Check prospective raw tick workflow after 2026-11-15T02:43Z"
+    "Verify push-triggered QA run for baa0efd using repository-wide Actions run list and logs",
+    "Implement synthetic entry price and conservative open-equity mark on research branch",
+    "Implement prereg-compatible V23 sampler and training pipeline without accessing future labels",
+    "Check prospective raw tick capture after 2026-11-15T02:43Z"
   ],
   "risk_and_governance": {
     "trading_pnl_excludes_backcom": true,
@@ -53,20 +53,18 @@
   },
   "last_cycle": {
     "kind": "scheduled",
-    "status": "V23_ADDITIONAL_SYNTHETIC_REGRESSION_COMMITTED_ACTIONS_PENDING_NO_EDGE",
-    "run_utc": "2026-11-13T17:14:08Z",
-    "journal_path": "autopilot/journal/2026-11-13T17-14Z_cycle-010.json",
+    "status": "BLOCKED_NEW_QA_RUN_UNVERIFIED_NO_EDGE",
+    "run_utc": "2026-11-13T18:19:06Z",
+    "journal_path": "autopilot/journal/2026-11-13T18-19Z_cycle-011.json",
     "code_experiment_executed": false,
-    "code_committed": true,
-    "new_test_count": 4,
-    "code_experiment_scope": "UNEXECUTED_SYNTHETIC_REGRESSION",
+    "code_committed": false,
+    "static_audit_completed": true,
     "market_backtest_executed": false,
     "new_candidate_verified": false,
     "blocked": [
-      "New synthetic regression tests not yet verified by GitHub Actions",
-      "No V23 event sampler, sealed weights, historical Exness backtest or prospective validation",
-      "Unresolved open equity not broker certified",
-      "Prospective tick capture earliest 2026-11-15T02:43Z"
+      "Push-triggered run for baa0efd cannot be verified with available GitHub connector; PR-only endpoint empty is not proof of absence",
+      "V23 lacks executable entry price and broker-certified open equity",
+      "Prospective raw tick capture earliest 2026-11-15T02:43Z"
     ]
   },
   "report_policy": {
@@ -90,7 +88,8 @@
     "v23_exposure_tests_blob_sha": "8305180d09ff31f38cd9828590f09a32770ce82b",
     "v23_qa_workflow_commit": "2699a91cf5173a585e85844ad823ec2d7490845a",
     "v23_qa_actions_run_id": 43461356345,
-    "v23_unresolved_conservative_test_commit": "baa0efde7d02536faed2f2dbc3543d87ff84a9cd"
+    "v23_unresolved_conservative_test_commit": "baa0efde7d02536faed2f2dbc3543d87ff84a9cd",
+    "v23_qa_workflow_blob_sha": "a5067029080cb698fa17c7e498a44d5a4e8bcb63"
   },
   "last_report_local_date": "2026-11-13"
 }
