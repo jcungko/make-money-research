@@ -35,11 +35,10 @@
     "notes": "GitHub Actions cron can be delayed or skipped; archive 90-day retention requires durable backup. 2026-11-14 is Saturday; 404 means unavailable, not confirmed market closure."
   },
   "next_priorities": [
-    "Implement unresolved position accounting in V23 research-only QA, preserve censoring and one-position rule",
-    "Add and execute synthetic tests with source SHA and log",
-    "Implement prereg-compatible event sampling and 300s barrier labels without leakage",
-    "Seal V23 code and weights before future holdout scoring",
-    "Verify future raw capture after 2026-11-15T02:43Z"
+    "Run exact committed source SHA QA using isolated GitHub Actions on a research-only branch or a verified source checkout; log test output and checksums",
+    "Extend ledger with exact entry execution price and intratick marked-to-market accounting, retaining unresolved state",
+    "Implement prereg-compatible event sampling and barrier labels with time-purged historical development only",
+    "Monitor isolated future tick workflow after 2026-11-15T02:43Z"
   ],
   "risk_and_governance": {
     "trading_pnl_excludes_backcom": true,
@@ -54,17 +53,18 @@
   },
   "last_cycle": {
     "kind": "scheduled",
-    "status": "V23_UNRESOLVED_EXPOSURE_DESIGN_GATE_RECORDED_NO_EDGE",
-    "run_utc": "2026-11-13T14:27:02Z",
-    "journal_path": "autopilot/journal/2026-11-13T14-27Z_cycle-007.json",
+    "status": "V23_EXPOSURE_LEDGER_SOURCE_COMMITTED_NOT_EXECUTED_NO_EDGE",
+    "run_utc": "2026-11-13T15:22:24Z",
+    "journal_path": "autopilot/journal/2026-11-13T15-22Z_cycle-008.json",
     "code_experiment_executed": false,
-    "code_experiment_scope": "DESIGN_REVIEW_ONLY",
+    "code_experiment_scope": "SOURCE_COMMITTED_NOT_TESTED",
     "new_candidate_verified": false,
     "blocked": [
-      "Full V23 pipeline and broker calibration missing",
-      "Unresolved fills cannot be counted as flat",
-      "GitHub Actions artifacts inventory inaccessible",
-      "Future tick capture not yet eligible"
+      "Committed V23 QA source and tests not yet executed against exact GitHub SHA",
+      "No complete V23 event sampler, label pipeline, sealed model weights or broker-calibrated execution",
+      "Unresolved exposure cannot be assigned zero PnL; current adapter lacks executable entry price for accurate mark-to-market",
+      "GitHub Actions artifacts inventory disallowed by connector",
+      "Prospective raw tick capture not yet eligible"
     ]
   },
   "report_policy": {
@@ -83,7 +83,9 @@
     "v23_qa_static_audit_commit": "7f87c6e603fcf962fc94b08c50ce0a57d542987a",
     "v23_qa_adversarial_blob_sha": "e74e299e0133bbbff1d4082da8b161cf037e39d7",
     "v23_qa_local_log_sha256": "98a27279767674294a7d1a09d50151893382b232a60180926f0ee88fea794148",
-    "v23_unresolved_exposure_design_commit": "3f19617d573decfd6f9e19f43f0a306a980a4d41"
+    "v23_unresolved_exposure_design_commit": "3f19617d573decfd6f9e19f43f0a306a980a4d41",
+    "v23_exposure_ledger_blob_sha": "6fc0ce283b8948885b3fb5e7477b72a1a2f809db",
+    "v23_exposure_tests_blob_sha": "8305180d09ff31f38cd9828590f09a32770ce82b"
   },
   "last_report_local_date": "2026-11-13"
 }
