@@ -1,0 +1,71 @@
+{
+  "entry_id": "2026-11-13T21-15Z_cycle-014",
+  "idempotency_key": "make-money-autopilot:2026-11-13T21:15Z:cycle-014",
+  "observed_at_utc_approx": "2026-11-13T21:15Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "AUDIT_ONLY_NO_NEW_EDGE",
+  "source": {
+    "repo": "jcungko/make-money-research",
+    "branch": "research/autopilot-control-20261113",
+    "prior_head": "fb71e64f7b3cc650ad253900b9b285bab0fc014e",
+    "prior_state_blob_sha": "6832146b823c7bc0c455fb75e56078366d8ab28e"
+  },
+  "observations": {
+    "journal_files_seen": 15,
+    "github_actions_total_count": 133,
+    "latest_qa_run": 43470901587,
+    "latest_qa_head": "baa0efde7d02536faed2f2dbc3543d87ff84a9cd",
+    "latest_qa_conclusion": "success",
+    "latest_qa_artifact_count": 0,
+    "prospective_capture_runs_seen_in_recent_100": 0,
+    "first_eligible_capture_utc": "2026-11-15T02:43:00Z",
+    "v22": "26,880,814 filtered ticks -> 7,074 eligible anchors -> 5,948 labels; 1 Logistic and 5 LightGBM trades per frozen audit; source ZIP not independently downloaded this cycle",
+    "v22_methodology_gap": "60s label vs SL/TP barrier execution; no retuning",
+    "v23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "new_verified_candidate": false
+  },
+  "work": {
+    "state_read": true,
+    "readme_read": true,
+    "journal_list_read": true,
+    "prior_journal_read": true,
+    "v22_audit_read": true,
+    "v23_prereg_read": true,
+    "main_capture_workflow_read": true,
+    "actions_runs_read": true,
+    "qa_artifacts_checked": true,
+    "market_backtest_executed": false,
+    "tests_executed": false,
+    "models_trained": false,
+    "code_changed": false
+  },
+  "classification": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED"
+  },
+  "blocked": [
+    "No sealed V23 trained model or independently verified future after-cost Trading PnL",
+    "V23 open-equity and broker execution calibration incomplete",
+    "Prospective first eligible capture not yet due; artifact availability unverified"
+  ],
+  "next_steps": [
+    "Implement conservative open-equity mark and QA without modifying frozen protocol",
+    "Build prereg-compatible sampler and training pipeline then seal weights before future outcomes",
+    "Check capture scheduled runs and artifact manifests after 2026-11-15T02:43Z"
+  ],
+  "safety": {
+    "live_trades": 0,
+    "main_changed": false,
+    "trade_telegram_cloudflare_changed": false,
+    "paid_api_used": false,
+    "backcom_in_trading_pnl": false
+  },
+  "notification": {
+    "local_date": "2026-11-14",
+    "local_time_approx": "04:15",
+    "last_report_local_date": "2026-11-13",
+    "send_now": false
+  }
+}
