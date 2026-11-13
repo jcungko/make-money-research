@@ -35,11 +35,10 @@
     "notes": "GitHub Actions cron can be delayed or skipped; archive 90-day retention requires durable backup. 2026-11-14 is Saturday; 404 means unavailable, not confirmed market closure."
   },
   "next_priorities": [
-    "Verify first scheduled prospective workflow run, artifact manifests and raw-source SHA checks; never infer success from YAML alone",
-    "Review V22 audit limitations and ensure frozen original models/results remain immutable",
-    "Implement and unit-test V23 protocol against historical development data only, seal source/weights before any independent future test",
-    "Protect GitHub Actions minutes, prevent overlapping heavyweight jobs and avoid paid AI API",
-    "Write journal and state on this control branch using content SHA checks; no changes to main without explicit impact review"
+    "Commit reproducible V23 synthetic QA source/tests to research branch and run via GitHub Actions without touching main",
+    "Complete V23 broker-executable quote-side simulator, preserve frozen prereg",
+    "Verify scheduled prospective workflow and artifact manifest after 2026-11-15T02:43Z",
+    "Seal V23 source and model weights before future-label inspection"
   ],
   "risk_and_governance": {
     "trading_pnl_excludes_backcom": true,
@@ -54,15 +53,21 @@
   },
   "last_cycle": {
     "kind": "scheduled",
-    "status": "AUDIT_COMPLETE_NO_NEW_EDGE",
-    "run_utc": "2026-11-13T09:21:05Z",
-    "journal_path": "autopilot/journal/2026-11-13T09-21Z_cycle-002.json",
+    "status": "SYNTHETIC_UNIT_TESTS_PASS_NO_NEW_EDGE",
+    "run_utc": "2026-11-13T10:22:55Z",
+    "journal_path": "autopilot/journal/2026-11-13T10-22Z_cycle-003.json",
     "code_experiment_executed": false,
+    "local_synthetic_tests": {
+      "passed": 10,
+      "failed": 0,
+      "source_committed_to_github": false
+    },
     "new_candidate_verified": false,
     "blocked": [
-      "V23 reproducible runner and model weights not present or independently verified",
-      "Broker execution calibration not available",
-      "Artifact listing endpoint rejected; no artifact inventory"
+      "Full V23 runner and synthetic QA source not yet GitHub-reproducible",
+      "Actual broker fills, commission, stop/freeze and margin not calibrated",
+      "No verified Actions artifact inventory",
+      "Future prospective tick capture not yet eligible"
     ]
   },
   "report_policy": {
@@ -71,7 +76,7 @@
     "alert_immediately_only_on_independently_verified_candidate": true
   },
   "last_verified_sources": {
-    "control_state_blob_sha": "99dd9ea209fde07c2e52ff80bd4e7394a542c671",
+    "control_state_blob_sha": "f3c76af47c0d79fe6748b98411b2db80131cec85",
     "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
     "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
     "prospective_workflow_blob_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963",
