@@ -52,20 +52,19 @@
   },
   "last_cycle": {
     "kind": "scheduled",
-    "status": "QA_REGRESSION_VERIFIED_NO_EDGE",
-    "run_utc": "2026-11-13T19:16:13Z",
-    "journal_path": "autopilot/journal/2026-11-13T19-16Z_cycle-012.json",
+    "status": "AUDIT_ONLY_NO_NEW_EDGE",
+    "run_utc_approx": "2026-11-13T20:15Z",
+    "journal_path": "autopilot/journal/2026-11-13T20-15Z_cycle-013.json",
+    "journal_commit": "8f3fdf7769128e5dee2916e651a68890d9f7ed93",
     "code_experiment_executed": false,
     "code_committed": false,
-    "static_audit_completed": true,
     "market_backtest_executed": false,
     "new_candidate_verified": false,
     "qa_run_id": 43470901587,
-    "qa_head_sha": "baa0efde7d02536faed2f2dbc3543d87ff84a9cd",
-    "qa_test_count_verified_from_job_logs": 28,
+    "qa_test_count_verified_from_prior_job_logs": 28,
     "blocked": [
-      "V23 open-equity accounting and broker calibration incomplete",
-      "Prospective raw tick capture earliest 2026-11-15T02:43Z"
+      "V23 open-equity and broker execution calibration incomplete",
+      "Prospective capture first eligible 2026-11-15T02:43Z"
     ]
   },
   "report_policy": {
@@ -74,7 +73,7 @@
     "alert_immediately_only_on_independently_verified_candidate": true
   },
   "last_verified_sources": {
-    "control_state_blob_sha": "22172addf1de71de6720633eda6dd32712f0ef79",
+    "control_state_blob_sha": "60594235c4c0d4cb98e691c48f2b63f98351a20a",
     "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
     "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
     "prospective_workflow_blob_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963",
