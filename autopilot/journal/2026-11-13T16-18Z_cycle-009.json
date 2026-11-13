@@ -1,0 +1,62 @@
+{
+  "entry_id": "2026-11-13T16-18Z_cycle-009",
+  "idempotency_key": "2026-11-13T16-18Z_cycle-009",
+  "observed_at_utc": "2026-11-13T16:18:13Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "V23_QA_WORKFLOW_COMMITTED_AND_ACTIONS_QUEUED_NOT_YET_PASSED_NO_EDGE",
+  "prior_state_blob_sha": "5a9b40914c4412141430921cf788495a9a16a1fc",
+  "evidence": {
+    "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
+    "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
+    "v23_exposure_ledger_blob_sha": "6fc0ce283b8948885b3fb5e7477b72a1a2f809db",
+    "v23_exposure_tests_blob_sha": "8305180d09ff31f38cd9828590f09a32770ce82b",
+    "main_head": "793df3a248b77d086b3471c24b75df6f773c5862",
+    "actions_recent_total": 131,
+    "latest_main_action_utc": "2026-11-13T07:02:32Z",
+    "actions_artifacts": "BLOCKED_FETCH_ENDPOINT_DISALLOWED",
+    "prospective_capture": "NOT_YET_ELIGIBLE; earliest 2026-11-15T02:43Z for closed 2026-11-14 UTC"
+  },
+  "work": {
+    "new_workflow": ".github/workflows/v23-research-qa-isolated.yml",
+    "workflow_commit_sha": "2699a91cf5173a585e85844ad823ec2d7490845a",
+    "github_actions_run_id": 43461356345,
+    "github_actions_run_url": "https://github.com/jcungko/make-money-research/actions/runs/43461356345",
+    "github_actions_run_status_at_observation": "queued",
+    "tests_completed_this_cycle": 0,
+    "qa_result": "PENDING",
+    "market_backtest_executed": false,
+    "new_candidate_verified": false,
+    "scope": "No main modification; push-triggered research branch QA, read-only contents, no paid AI API, 5-minute job limit, serialized workflow"
+  },
+  "classification": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED"
+  },
+  "blockers": [
+    "V23 QA job queued, must check conclusion and test logs before claiming pass",
+    "No V23 event sampler, sealed model weights or independent future validation",
+    "Unresolved exposure cannot count as closed PnL; mark-to-market lacks entry execution price",
+    "GitHub Actions artifacts endpoint inaccessible through connector",
+    "Broker fill latency, stopsLevel/freezeLevel, commissions, margin and swap not calibrated"
+  ],
+  "next_steps": [
+    "Check run 43461356345 conclusion and job logs; fix only on research branch if test failures, preserve SHA",
+    "Implement executable entry-price and intratick mark-to-market accounting with explicit unresolved state",
+    "Implement event sampling and barrier outcomes per prereg, seal code/weights before future test",
+    "Verify first prospective raw archive after 2026-11-15T02:43Z"
+  ],
+  "safety": {
+    "live_trades": 0,
+    "main_changed": false,
+    "trade_telegram_cloudflare_changed": false,
+    "paid_api_used": false,
+    "backcom_in_trading_pnl": false
+  },
+  "notification": {
+    "local_date": "2026-11-13",
+    "daily_already_reported": true,
+    "verified_new_candidate": false
+  }
+}
