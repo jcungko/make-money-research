@@ -53,18 +53,19 @@
   "last_cycle": {
     "kind": "scheduled",
     "status": "AUDIT_ONLY_NO_NEW_EDGE",
-    "run_utc_approx": "2026-11-13T22:22Z",
-    "journal_path": "autopilot/journal/2026-11-13T22-22Z_cycle-015.json",
-    "journal_commit": "eb30a0cb466c84ca987ffd2c2b86050ae3e8f70d",
+    "run_utc_approx": "2026-11-13T23:22Z",
+    "journal_path": "autopilot/journal/2026-11-13T23-22Z_cycle-016.json",
+    "journal_commit": "ce8877402799339a7adab7d286a9af2c3a436285",
     "code_experiment_executed": false,
     "code_committed": false,
     "market_backtest_executed": false,
     "new_candidate_verified": false,
     "qa_run_id": 43470901587,
     "blocked": [
-      "V23 untrained; open-equity and broker execution calibration incomplete",
-      "No independent prospective after-cost PnL; future raw capture not yet eligible",
-      "V22 final evidence ZIP not downloaded for independent checksum verification this cycle"
+      "Current Actions run list and full journal enumeration not available in connector",
+      "V22 ZIP not independently downloaded/checksummed this cycle",
+      "V23 open-equity and broker calibration incomplete",
+      "Prospective capture first eligible 2026-11-15T02:43Z"
     ]
   },
   "report_policy": {
@@ -73,7 +74,7 @@
     "alert_immediately_only_on_independently_verified_candidate": true
   },
   "last_verified_sources": {
-    "control_state_blob_sha": "6832146b823c7bc0c455fb75e56078366d8ab28e",
+    "control_state_blob_sha": "eebb6fb22f1d869b59b4f962b9b8922bfe7cdff0",
     "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
     "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
     "prospective_workflow_blob_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963",
