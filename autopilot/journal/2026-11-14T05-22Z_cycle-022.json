@@ -1,0 +1,78 @@
+{
+  "entry_id": "2026-11-14T05-22Z_cycle-022",
+  "idempotency_key": "make-money-autopilot:2026-11-14T05:22Z:cycle-022",
+  "observed_at_utc_approx": "2026-11-14T05:22Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
+  "source": {
+    "repo": "jcungko/make-money-research",
+    "branch": "research/autopilot-control-20261113",
+    "prior_control_head": "72c0b8dd3ac3d79faad622d1706898860f600882",
+    "state_blob_sha_before": "389c921dfeced572a7a7561722cfb4fe7e6c9ef5"
+  },
+  "verified": {
+    "state_read": true,
+    "readme_read": true,
+    "journal_enumerated": true,
+    "journal_count_before": 23,
+    "previous_journal_read": true,
+    "v22_audit_read": true,
+    "v23_prereg_read": true,
+    "main_capture_workflow_read": true,
+    "actions_runs_total": 134,
+    "latest_action_run_id": 43551671731,
+    "latest_action_event": "schedule",
+    "latest_action_conclusion": "success",
+    "latest_action_created_utc": "2026-11-14T03:26:45Z",
+    "capture_artifact_id": 14095913673,
+    "capture_artifact_size_bytes": 1101,
+    "capture_artifact_expired": false,
+    "artifact_zip_contents_independently_verified": false
+  },
+  "research": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "v22_reported_filtered_ticks": 26880814,
+    "v22_reported_eligible": 7074,
+    "v22_reported_labelled": 5948,
+    "v22_logistic_trades": 1,
+    "v22_lightgbm_trades": 5,
+    "v22_abstention_reason": "After-cost predicted EV >=$0.02 passes only 1 and 5 trades; fixed clock grid and strict quote availability censor anchors.",
+    "v22_zip_sha256_from_prior_audit": "61d3578eaaf45ee812528ae781a8ba2be0996147c2b733d8bf73bc4feb595a5f",
+    "v22_zip_independently_rehashed_this_cycle": false,
+    "new_independently_verified_candidate": false
+  },
+  "capture": {
+    "first_schedule_run": "https://github.com/jcungko/make-money-research/actions/runs/43551671731",
+    "first_schedule_log_status_from_prior_verified_cycle": "NOT_STARTED valid 0 unavailable 0",
+    "new_raw_data_verified": false,
+    "earliest_eligible_fetch_utc": "2026-11-15T02:43:00Z"
+  },
+  "execution": {
+    "new_tests_run": false,
+    "new_backtest_run": false,
+    "new_model_trained": false,
+    "code_changed": false,
+    "live_orders": 0,
+    "main_changed": false,
+    "paid_api_used": false
+  },
+  "blocked": [
+    "Original V22 ZIP not independently downloaded and rehashed this cycle",
+    "V23 open-equity and broker fill calibration incomplete",
+    "Prospective raw tick acquisition not yet eligible; artifact contents not independently downloaded"
+  ],
+  "notification": {
+    "local_date": "2026-11-14",
+    "local_time_approx": "12:22",
+    "last_report_local_date": "2026-11-13",
+    "send_now": false
+  },
+  "next_steps": [
+    "Verify scheduled raw ZIP and manifest on or after 2026-11-15T02:43Z",
+    "Implement conservative open-equity ledger and QA only on research branch",
+    "Seal V23 code and model weights before any prospective outcome labels"
+  ]
+}
