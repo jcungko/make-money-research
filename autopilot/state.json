@@ -54,21 +54,20 @@
   },
   "last_cycle": {
     "kind": "scheduled",
-    "status": "CAPTURE_SCHEDULE_CONFIRMED_NO_RAW_DATA_YET",
-    "run_utc_approx": "2026-11-14T04:19Z",
-    "journal_path": "autopilot/journal/2026-11-14T04-19Z_cycle-021.json",
-    "journal_commit": "bd3f31c2a79aef91fb9a2b6d06461d507f8e6071",
+    "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
+    "run_utc_approx": "2026-11-14T05:22Z",
+    "journal_path": "autopilot/journal/2026-11-14T05-22Z_cycle-022.json",
+    "journal_commit": "da87a29c5d08c6c3636f009b0b8ed0c33034f75b",
     "code_experiment_executed": false,
     "code_committed": false,
     "market_backtest_executed": false,
     "new_candidate_verified": false,
     "scheduled_capture_run_id": 43551671731,
     "scheduled_capture_artifact_id": 14095913673,
-    "scheduled_capture_log_status": "NOT_STARTED valid 0 unavailable 0",
     "blocked": [
-      "V22 final ZIP not independently downloaded/checksummed",
+      "V22 original ZIP not independently rehashed",
       "V23 broker calibration and open-equity incomplete",
-      "Raw future tick capture first eligible 2026-11-15T02:43Z"
+      "First eligible prospective capture 2026-11-15T02:43Z"
     ]
   },
   "report_policy": {
@@ -98,7 +97,7 @@
     "v23_qa_regression_head_sha": "baa0efde7d02536faed2f2dbc3543d87ff84a9cd",
     "actions_run_list_total": 134,
     "actions_latest_run_id": 43551671731,
-    "journal_enumeration_count_before": 22,
+    "journal_enumeration_count_before": 23,
     "first_capture_run_id": 43551671731,
     "first_capture_artifact_id": 14095913673
   },
