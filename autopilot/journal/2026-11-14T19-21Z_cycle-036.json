@@ -1,0 +1,71 @@
+{
+  "entry_id": "2026-11-14T19-21Z_cycle-036",
+  "idempotency_key": "make-money-autopilot:2026-11-14T19:21Z:cycle-036",
+  "observed_at_utc_approx": "2026-11-14T19:21Z",
+  "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
+  "verified": {
+    "control_state_blob_sha": "7742c821a8b3ef9664c43af63f1d575ade10018f",
+    "readme_blob_sha": "adf092ff50054189c267c871bbf3d98fb1cf98e5",
+    "prior_cycle_035_blob_sha": "58e5ad85a3cbc3ef0f127a5f6ee437ac59e8d22a",
+    "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
+    "v22_prereg_blob_sha": "053f6aed19514aef96e327d042f6130669d840d4",
+    "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
+    "main_workflow_blob_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963",
+    "main_latest_commit_from_commit_search": "793df3a248b77d086b3471c24b75df6f773c5862",
+    "capture_run_id": 43551671731,
+    "capture_job_id": 132315296691,
+    "capture_job_conclusion": "success",
+    "capture_log": "PRECHECK_PASS; V22_CAPTURE_STATUS NOT_STARTED valid 0 unavailable 0",
+    "capture_artifact_id": 14095913673,
+    "capture_artifact_bytes": 1101,
+    "capture_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
+    "capture_zip_contents_verified": false,
+    "v22_evidence_zip_rehashed_this_cycle": false,
+    "latest_actions_run_list_independently_enumerated": false,
+    "journal_directory_independently_enumerated": false
+  },
+  "research": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "new_independently_verified_candidate": false
+  },
+  "v22_diagnostics": {
+    "ticks_reported_by_frozen_audit": 26880814,
+    "eligible": 7074,
+    "labelled": 5948,
+    "eval_predictions_per_model": 2080,
+    "logistic_trades": 1,
+    "lightgbm_trades": 5,
+    "reason": "10-minute grid and 2-second quote/past feature/entry/label filters; training-only net EV threshold $0.02; barrier-exit execution differs from 60-second fixed-exit labels; no retuning"
+  },
+  "capture": {
+    "first_eligible_closed_day_fetch_utc": "2026-11-15T02:43:00Z",
+    "new_raw_ticks_verified": false
+  },
+  "execution": {
+    "training": false,
+    "backtest": false,
+    "live_orders": 0,
+    "main_changed": false,
+    "paid_api_used": false
+  },
+  "blocked": [
+    "Prospective eligible capture not yet due at cycle time",
+    "Latest Actions run enumeration unavailable via connector; checked known scheduled run directly",
+    "Artifact ZIP and original V22 evidence ZIP not independently inspected",
+    "V23 conservative open-equity certification and broker fill calibration incomplete"
+  ],
+  "notification": {
+    "last_report_local_date": "2026-11-14",
+    "current_local_date": "2026-11-15",
+    "daily_report_due": false,
+    "immediate_alert": false
+  },
+  "next_steps": [
+    "Check scheduled capture after 2026-11-15T02:43Z and independently inspect original ZIP manifest and tick rows",
+    "Seal V23 model weights/code before inspecting future labels",
+    "Maintain no live trades and no changes to main or external workflows"
+  ]
+}
