@@ -1,0 +1,84 @@
+{
+  "entry_id": "2026-11-14T09-22Z_cycle-026",
+  "idempotency_key": "make-money-autopilot:2026-11-14T09:22Z:cycle-026",
+  "observed_at_utc_approx": "2026-11-14T09:22Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
+  "source": {
+    "repo": "jcungko/make-money-research",
+    "branch": "research/autopilot-control-20261113",
+    "head_before": "3e122017b0b9d6bcf585730641173ddf0d0439c3",
+    "state_blob_sha_before": "df47b41b988c47fbe7bff5ec000a1cb2927c3cf3"
+  },
+  "verified": {
+    "state_read": true,
+    "readme_read": true,
+    "journal_directory_listed": true,
+    "previous_cycle_025_read": true,
+    "v22_audit_read": true,
+    "v23_prereg_read": true,
+    "main_workflow_read": true,
+    "actions_total": 134,
+    "actions_latest_run_id": 43551671731,
+    "actions_latest_run_event": "schedule",
+    "actions_latest_run_conclusion": "success",
+    "capture_job_success": true,
+    "capture_artifact_id": 14095913673,
+    "capture_artifact_bytes": 1101,
+    "capture_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
+    "capture_zip_contents_verified": false,
+    "v22_zip_independently_rehashed": false
+  },
+  "research": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "v22_filtered_ticks_reported": 26880814,
+    "v22_clock_slots": 36126,
+    "v22_no_quote": 14229,
+    "v22_spread_gt20": 72,
+    "v22_past_feature_unavailable": 14138,
+    "v22_no_entry_quote": 613,
+    "v22_eligible": 7074,
+    "v22_missing_future_label": 1126,
+    "v22_labelled": 5948,
+    "v22_eval_predictions_per_model": 2080,
+    "v22_logistic_trades": 1,
+    "v22_lightgbm_trades": 5,
+    "v22_reason": "Clock-grid plus past-only quote gates, future label censoring, and stringent predicted after-cost EV gate; do not tune on test",
+    "new_independently_verified_candidate": false
+  },
+  "capture": {
+    "first_run_id": 43551671731,
+    "first_run_preflight_only_per_prior_verified_log": true,
+    "raw_tick_verified": false,
+    "earliest_eligible_fetch_utc": "2026-11-15T02:43:00Z"
+  },
+  "execution": {
+    "new_tests_run": false,
+    "new_backtest_run": false,
+    "new_model_trained": false,
+    "code_changed": false,
+    "live_orders": 0,
+    "main_changed": false,
+    "paid_api_used": false
+  },
+  "blocked": [
+    "Raw prospective capture not eligible before 2026-11-15T02:43Z",
+    "Capture artifact ZIP not inspected for raw tick bytes",
+    "V22 final evidence ZIP not independently rehashed in this cycle",
+    "V23 open-equity mark and broker fill calibration incomplete"
+  ],
+  "notification": {
+    "local_date": "2026-11-14",
+    "local_time_approx": "16:22",
+    "last_report_local_date": "2026-11-13",
+    "send_now": false
+  },
+  "next_steps": [
+    "Inspect scheduled capture raw ZIP after eligible UTC time",
+    "Synthetic open-equity tests and broker-calibrated execution research-only",
+    "Seal V23 code/weights before any prospective labels"
+  ]
+}
