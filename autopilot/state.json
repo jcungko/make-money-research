@@ -29,10 +29,12 @@
     "workflow_on_main": ".github/workflows/v22-prospective-exness-isolated.yml",
     "cron_utc": "43 2 * * *",
     "enabled_code_present": true,
-    "first_schedule_not_yet_observed": true,
+    "first_schedule_not_yet_observed": false,
     "earliest_eligible_tick_date_utc": "2026-11-14",
     "earliest_fetch_for_that_date_utc": "2026-11-15T02:43:00Z",
-    "notes": "GitHub Actions cron can be delayed or skipped; archive 90-day retention requires durable backup. 2026-11-14 is Saturday; 404 means unavailable, not confirmed market closure."
+    "notes": "GitHub Actions cron can be delayed or skipped; archive 90-day retention requires durable backup. 2026-11-14 is Saturday; 404 means unavailable, not confirmed market closure.",
+    "first_schedule_run_id": 43551671731,
+    "first_schedule_status": "SUCCESSFUL_PREFLIGHT_NO_RAW_TICK_DATA"
   },
   "next_priorities": [
     "Implement and test conservative open-equity mark on research branch",
@@ -52,19 +54,21 @@
   },
   "last_cycle": {
     "kind": "scheduled",
-    "status": "AUDIT_ONLY_NO_NEW_EDGE",
-    "run_utc_approx": "2026-11-14T03:20Z",
-    "journal_path": "autopilot/journal/2026-11-14T03-20Z_cycle-020.json",
-    "journal_commit": "4f354417a8c5bb3b7922d0141b56ac6d21edfc12",
+    "status": "CAPTURE_SCHEDULE_CONFIRMED_NO_RAW_DATA_YET",
+    "run_utc_approx": "2026-11-14T04:19Z",
+    "journal_path": "autopilot/journal/2026-11-14T04-19Z_cycle-021.json",
+    "journal_commit": "bd3f31c2a79aef91fb9a2b6d06461d507f8e6071",
     "code_experiment_executed": false,
     "code_committed": false,
     "market_backtest_executed": false,
     "new_candidate_verified": false,
-    "qa_run_id": 43470901587,
+    "scheduled_capture_run_id": 43551671731,
+    "scheduled_capture_artifact_id": 14095913673,
+    "scheduled_capture_log_status": "NOT_STARTED valid 0 unavailable 0",
     "blocked": [
-      "V22 original final ZIP not independently downloaded and checksummed",
+      "V22 final ZIP not independently downloaded/checksummed",
       "V23 broker calibration and open-equity incomplete",
-      "Prospective first eligible fetch 2026-11-15T02:43Z; workflow-specific runs endpoint unsupported"
+      "Raw future tick capture first eligible 2026-11-15T02:43Z"
     ]
   },
   "report_policy": {
@@ -92,9 +96,11 @@
     "v23_qa_workflow_blob_sha": "a5067029080cb698fa17c7e498a44d5a4e8bcb63",
     "v23_qa_regression_run_id": 43470901587,
     "v23_qa_regression_head_sha": "baa0efde7d02536faed2f2dbc3543d87ff84a9cd",
-    "actions_run_list_total": 133,
-    "actions_latest_run_id": 43470901587,
-    "journal_enumeration_count_before": 21
+    "actions_run_list_total": 134,
+    "actions_latest_run_id": 43551671731,
+    "journal_enumeration_count_before": 22,
+    "first_capture_run_id": 43551671731,
+    "first_capture_artifact_id": 14095913673
   },
   "last_report_local_date": "2026-11-13"
 }
