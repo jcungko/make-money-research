@@ -55,19 +55,19 @@
   "last_cycle": {
     "kind": "scheduled",
     "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
-    "run_utc_approx": "2026-11-14T18:21Z",
-    "journal_path": "autopilot/journal/2026-11-14T18-21Z_cycle-035.json",
-    "journal_commit": "c99a8abaf54066978e7056811a3af6506d4af122",
+    "run_utc_approx": "2026-11-14T19:21Z",
+    "journal_path": "autopilot/journal/2026-11-14T19-21Z_cycle-036.json",
+    "journal_commit": "9bf39230897660053c5a89f62b4c02bb8e29c732",
     "code_experiment_executed": false,
     "code_committed": false,
     "market_backtest_executed": false,
     "new_candidate_verified": false,
     "scheduled_capture_run_id": 43551671731,
     "scheduled_capture_artifact_id": 14095913673,
-    "job_log_capture_status": "NOT_STARTED valid 0 unavailable 0 (previously verified)",
+    "job_log_capture_status": "NOT_STARTED valid 0 unavailable 0 (rechecked)",
     "blocked": [
-      "First eligible raw capture after 2026-11-15T02:43Z",
-      "Capture and V22 original evidence ZIP not independently inspected",
+      "Eligible raw capture earliest 2026-11-15T02:43Z",
+      "Latest Actions runs not independently enumerated; artifact ZIP and V22 original ZIP not independently inspected",
       "V23 broker calibration and conservative open-equity certification incomplete"
     ]
   },
@@ -77,7 +77,7 @@
     "alert_immediately_only_on_independently_verified_candidate": true
   },
   "last_verified_sources": {
-    "control_state_blob_sha": "42c3cee2e461beec61ded1f7e99e582ff3800444",
+    "control_state_blob_sha": "7742c821a8b3ef9664c43af63f1d575ade10018f",
     "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
     "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
     "prospective_workflow_blob_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963",
@@ -103,7 +103,8 @@
     "first_capture_artifact_id": 14095913673,
     "first_capture_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
     "capture_job_log_checked_id": 132315296691,
-    "capture_job_log_status": "V22_CAPTURE_STATUS NOT_STARTED valid 0 unavailable 0"
+    "capture_job_log_status": "V22_CAPTURE_STATUS NOT_STARTED valid 0 unavailable 0 (rechecked cycle 036)",
+    "latest_cycle_journal_commit": "9bf39230897660053c5a89f62b4c02bb8e29c732"
   },
   "last_report_local_date": "2026-11-14"
 }
