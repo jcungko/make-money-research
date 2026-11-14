@@ -55,20 +55,18 @@
   "last_cycle": {
     "kind": "scheduled",
     "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
-    "run_utc_approx": "2026-11-14T19:21Z",
-    "journal_path": "autopilot/journal/2026-11-14T19-21Z_cycle-036.json",
-    "journal_commit": "9bf39230897660053c5a89f62b4c02bb8e29c732",
+    "run_utc_approx": "2026-11-14T20:16Z",
+    "journal_path": "autopilot/journal/2026-11-14T20-16Z_cycle-037.json",
+    "journal_commit": "404e08045d3a250b31d7a2cd1f056e0e02e5d554",
     "code_experiment_executed": false,
     "code_committed": false,
     "market_backtest_executed": false,
     "new_candidate_verified": false,
     "scheduled_capture_run_id": 43551671731,
-    "scheduled_capture_artifact_id": 14095913673,
-    "job_log_capture_status": "NOT_STARTED valid 0 unavailable 0 (rechecked)",
     "blocked": [
-      "Eligible raw capture earliest 2026-11-15T02:43Z",
-      "Latest Actions runs not independently enumerated; artifact ZIP and V22 original ZIP not independently inspected",
-      "V23 broker calibration and conservative open-equity certification incomplete"
+      "First eligible prospective fetch not yet due",
+      "V22 original ZIP and prospective artifact ZIP not independently inspected",
+      "V23 broker execution calibration and open-equity certification incomplete"
     ]
   },
   "report_policy": {
@@ -98,13 +96,13 @@
     "v23_qa_regression_head_sha": "baa0efde7d02536faed2f2dbc3543d87ff84a9cd",
     "actions_run_list_total": 134,
     "actions_latest_run_id": 43551671731,
-    "journal_enumeration_count_before": 36,
+    "journal_enumeration_count_before": 37,
     "first_capture_run_id": 43551671731,
     "first_capture_artifact_id": 14095913673,
     "first_capture_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
     "capture_job_log_checked_id": 132315296691,
     "capture_job_log_status": "V22_CAPTURE_STATUS NOT_STARTED valid 0 unavailable 0 (rechecked cycle 036)",
-    "latest_cycle_journal_commit": "9bf39230897660053c5a89f62b4c02bb8e29c732"
+    "latest_cycle_journal_commit": "404e08045d3a250b31d7a2cd1f056e0e02e5d554"
   },
   "last_report_local_date": "2026-11-14"
 }
