@@ -1,0 +1,74 @@
+{
+  "entry_id": "2026-11-14T12-18Z_cycle-029",
+  "idempotency_key": "make-money-autopilot:2026-11-14T12:18Z:cycle-029",
+  "observed_at_utc_approx": "2026-11-14T12:18Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
+  "verified": {
+    "state_read": true,
+    "readme_read": true,
+    "journal_directory_listed": true,
+    "journal_entries_before": 30,
+    "previous_cycle_read": true,
+    "v22_prereg_read": true,
+    "v22_audit_read": true,
+    "v23_prereg_read": true,
+    "main_capture_workflow_read": true,
+    "actions_total": 134,
+    "actions_latest_run_id": 43551671731,
+    "actions_latest_event": "schedule",
+    "actions_latest_conclusion": "success",
+    "capture_artifact_id": 14095913673,
+    "capture_artifact_bytes": 1101,
+    "capture_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
+    "capture_zip_contents_verified": false,
+    "v22_final_zip_independently_rehashed": false
+  },
+  "research": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "v22_reported_ticks": 26880814,
+    "v22_clock_slots": 36126,
+    "v22_eligible": 7074,
+    "v22_labelled": 5948,
+    "v22_eval_predictions_per_model": 2080,
+    "v22_logistic_trades": 1,
+    "v22_lightgbm_trades": 5,
+    "explanation": "V22 10-minute grid; 14229 missing timely anchors, 72 spread >20, 14138 stale past features, 613 missing timely entries; 1126 missing 60s labels. EV >=0.02 USD admits 1 Logistic and 5 LightGBM. 60s training target mismatches barrier exits. No retuning.",
+    "new_independently_verified_candidate": false
+  },
+  "capture": {
+    "run_id": 43551671731,
+    "preflight_only_per_prior_log": true,
+    "raw_tick_verified": false,
+    "earliest_eligible_fetch_utc": "2026-11-15T02:43:00Z"
+  },
+  "execution": {
+    "new_tests_run": false,
+    "new_backtest_run": false,
+    "new_model_trained": false,
+    "code_changed": false,
+    "live_orders": 0,
+    "main_changed": false,
+    "paid_api_used": false
+  },
+  "blocked": [
+    "First eligible raw prospective capture not before 2026-11-15T02:43Z",
+    "Capture ZIP contents not independently inspected",
+    "V22 final evidence ZIP not independently rehashed",
+    "V23 open-equity and broker fill calibration incomplete"
+  ],
+  "notification": {
+    "local_date": "2026-11-14",
+    "local_time_approx": "19:18",
+    "last_report_local_date": "2026-11-13",
+    "send_now": false
+  },
+  "next_steps": [
+    "Inspect raw capture after 2026-11-15T02:43Z",
+    "Test conservative open-equity on research branch",
+    "Seal V23 pipeline and model weights before prospective outcome inspection"
+  ]
+}
