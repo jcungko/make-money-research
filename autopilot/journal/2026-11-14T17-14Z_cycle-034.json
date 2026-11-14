@@ -1,0 +1,72 @@
+{
+  "entry_id": "2026-11-14T17-14Z_cycle-034",
+  "idempotency_key": "make-money-autopilot:2026-11-14T17:14Z:cycle-034",
+  "observed_at_utc_approx": "2026-11-14T17:14Z",
+  "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
+  "verification": {
+    "control_state_read": true,
+    "readme_read": true,
+    "previous_cycle_033_read": true,
+    "journal_directory_listed": false,
+    "journal_directory_listing_blocker": "GitHub connector fetch_file does not enumerate directories; previous cycle and current state read",
+    "v22_audit_read": true,
+    "v22_prereg_read": true,
+    "v23_prereg_read": true,
+    "main_workflow_read": true,
+    "actions_latest_listing_verified_this_cycle": false,
+    "known_capture_run_id": 43551671731,
+    "known_capture_job_id": 132315296691,
+    "known_capture_job_success": true,
+    "job_log_inspected": true,
+    "log_preflight": "PRECHECK_PASS",
+    "log_capture": "V22_CAPTURE_STATUS NOT_STARTED valid 0 unavailable 0",
+    "artifact_id": 14095913673,
+    "artifact_size_bytes": 1101,
+    "artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
+    "artifact_zip_contents_verified": false,
+    "v22_evidence_zip_rehashed_this_cycle": false
+  },
+  "research": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "v22_reported_ticks": 26880814,
+    "feature_valid": 7074,
+    "labelled": 5948,
+    "logistic_trades": 1,
+    "lightgbm_trades": 5,
+    "explanation": "Frozen 10-minute grid 36126 slots; 14229 no timely quote; 72 spread exclusion; 14138 stale past features; 613 missing entry; 1126 missing 60s outcome; predicted EV >= USD 0.02 after spread and assumed slippage leaves 1 Logistic and 5 LightGBM trades. Do not retune frozen test.",
+    "new_independently_verified_candidate": false
+  },
+  "capture": {
+    "earliest_eligible_fetch_utc": "2026-11-15T02:43:00Z",
+    "raw_ticks_verified": false,
+    "first_schedule_was_preflight_only": true
+  },
+  "execution": {
+    "new_training": false,
+    "new_backtest": false,
+    "new_tests": false,
+    "live_orders": 0,
+    "main_changed": false,
+    "paid_api_used": false
+  },
+  "blocked": [
+    "First eligible 2026-11-14 UTC raw day fetch not before 2026-11-15T02:43Z",
+    "Cannot enumerate all journal files or latest Actions runs using current connector read operations",
+    "Capture artifact ZIP not independently inspected",
+    "V22 evidence ZIP not independently rehashed",
+    "V23 open equity and broker execution calibration incomplete"
+  ],
+  "notification": {
+    "last_report_local_date": "2026-11-14",
+    "send_daily_report": false,
+    "immediate_alert": false
+  },
+  "next_steps": [
+    "Check capture run and original ZIP manifest after 2026-11-15T02:43Z",
+    "Inspect artifact ZIP and hash-check V22 evidence",
+    "Implement V23 conservative open equity and broker calibration on isolated research branch before future outcome inspection"
+  ]
+}
