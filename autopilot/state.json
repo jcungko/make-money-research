@@ -53,19 +53,18 @@
   "last_cycle": {
     "kind": "scheduled",
     "status": "AUDIT_ONLY_NO_NEW_EDGE",
-    "run_utc_approx": "2026-11-14T01:16Z",
-    "journal_path": "autopilot/journal/2026-11-14T01-16Z_cycle-018.json",
-    "journal_commit": "fdb622e0adc8177bfb30d13b1581f85da1b3e66e",
+    "run_utc_approx": "2026-11-14T02:18Z",
+    "journal_path": "autopilot/journal/2026-11-14T02-18Z_cycle-019.json",
+    "journal_commit": "6528cacde59ee3058045118d1192b7bfd89aec6a",
     "code_experiment_executed": false,
     "code_committed": false,
     "market_backtest_executed": false,
     "new_candidate_verified": false,
     "qa_run_id": 43470901587,
     "blocked": [
-      "Current Actions run list and journal enumeration unavailable via connector",
-      "V22 final ZIP not independently downloaded/checksummed this cycle",
-      "V23 open-equity and broker calibration incomplete",
-      "Prospective first eligible capture 2026-11-15T02:43Z"
+      "V22 original final ZIP not independently downloaded and checksummed in this cycle",
+      "V23 broker execution calibration and open-equity implementation incomplete",
+      "Prospective raw-day collection cannot yet be validated before 2026-11-15T02:43Z"
     ]
   },
   "report_policy": {
@@ -74,7 +73,7 @@
     "alert_immediately_only_on_independently_verified_candidate": true
   },
   "last_verified_sources": {
-    "control_state_blob_sha": "17b7e3463e9d6d99716544662f4813b406967e84",
+    "control_state_blob_sha": "be994c320766ada499d94f82edcaa159c1316629",
     "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
     "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
     "prospective_workflow_blob_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963",
@@ -92,7 +91,10 @@
     "v23_unresolved_conservative_test_commit": "baa0efde7d02536faed2f2dbc3543d87ff84a9cd",
     "v23_qa_workflow_blob_sha": "a5067029080cb698fa17c7e498a44d5a4e8bcb63",
     "v23_qa_regression_run_id": 43470901587,
-    "v23_qa_regression_head_sha": "baa0efde7d02536faed2f2dbc3543d87ff84a9cd"
+    "v23_qa_regression_head_sha": "baa0efde7d02536faed2f2dbc3543d87ff84a9cd",
+    "actions_run_list_total": 133,
+    "actions_latest_run_id": 43470901587,
+    "journal_enumeration_count_before": 20
   },
   "last_report_local_date": "2026-11-13"
 }
