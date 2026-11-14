@@ -1,0 +1,74 @@
+{
+  "entry_id": "2026-11-14T03-20Z_cycle-020",
+  "idempotency_key": "make-money-autopilot:2026-11-14T03:20Z:cycle-020",
+  "observed_at_utc_approx": "2026-11-14T03:20Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "AUDIT_ONLY_NO_NEW_EDGE",
+  "source": {
+    "repo": "jcungko/make-money-research",
+    "branch": "research/autopilot-control-20261113",
+    "prior_control_head": "0075d28f9de3a7610912ab1e2ecaf64809070b71"
+  },
+  "verified": {
+    "state_read": true,
+    "readme_read": true,
+    "journal_directory_enumerated": true,
+    "journal_count_before": 21,
+    "prior_journal_read": true,
+    "v22_audit_read": true,
+    "v23_prereg_read": true,
+    "main_capture_workflow_read": true,
+    "actions_runs_total": 133,
+    "latest_actions_run_id": 43470901587,
+    "latest_actions_event": "push",
+    "latest_actions_conclusion": "success",
+    "qa_artifacts_count": 0
+  },
+  "research": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "v22_reported_filtered_ticks": 26880814,
+    "v22_reported_eligible": 7074,
+    "v22_reported_labelled": 5948,
+    "v22_reported_logistic_trades": 1,
+    "v22_reported_lightgbm_trades": 5,
+    "reason": "Cost-adjusted EV gate >= $0.02 passed only 1 Logistic and 5 LightGBM predictions among 2080 evaluation predictions/model; 2077 passed spread gate. V22 60-second class label differs from actual barrier-exit payoff. No threshold retuning.",
+    "original_zip_checksum_independently_verified_this_cycle": false,
+    "new_candidate_verified": false
+  },
+  "capture": {
+    "cron_utc": "43 2 * * *",
+    "earliest_eligible_fetch": "2026-11-15T02:43:00Z",
+    "scheduled_run_confirmed": false,
+    "workflow_specific_runs_endpoint": "BLOCKED: connector rejected endpoint",
+    "latest_30_repo_runs_no_schedule": true,
+    "notes": "No inference of nonexecution from partial list; 2026-11-14 is Saturday and 404 must mean unavailable, not closure."
+  },
+  "execution": {
+    "new_tests_run": false,
+    "new_backtest_run": false,
+    "new_model_trained": false,
+    "code_changed": false,
+    "live_orders": 0,
+    "main_changed": false,
+    "paid_api_used": false
+  },
+  "blocked": [
+    "V22 original final ZIP not independently downloaded and checksummed",
+    "V23 open-equity and broker calibration incomplete",
+    "Future raw-day capture not yet eligible; workflow-specific runs endpoint unsupported"
+  ],
+  "notification": {
+    "local_date": "2026-11-14",
+    "local_time_approx": "10:20",
+    "last_report_local_date": "2026-11-13",
+    "send_now": false
+  },
+  "next_steps": [
+    "Complete conservative open-equity mark and synthetic QA on research branch",
+    "Seal V23 weights/code before inspecting future labels",
+    "Check raw capture artifact after 2026-11-15T02:43Z"
+  ]
+}
