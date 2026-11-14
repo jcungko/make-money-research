@@ -1,0 +1,63 @@
+{
+  "entry_id": "2026-11-14T23-17Z_cycle-040",
+  "idempotency_key": "make-money-autopilot:2026-11-14T23-17Z:cycle-040",
+  "observed_at_utc_approx": "2026-11-14T23:17Z",
+  "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
+  "verified": {
+    "control_head_before": "423512e48b66f56a97a3820aea3a4644209f01f4",
+    "state_blob_sha": "6b9c2460c7e851225a9c6d0dccaaaabf2d7d608b",
+    "previous_journal": "autopilot/journal/2026-11-14T22-13Z_cycle-039.json",
+    "actions_total": 134,
+    "latest_actions_run_id": 43551671731,
+    "latest_actions_created_utc": "2026-11-14T03:26:45Z",
+    "latest_actions_conclusion": "success",
+    "artifact_id": 14095913673,
+    "artifact_bytes": 1101,
+    "artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
+    "artifact_zip_inspected": false,
+    "v22_audit_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
+    "v23_prereg_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
+    "capture_workflow_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963"
+  },
+  "v22": {
+    "status": "NO_VERIFIED_EDGE",
+    "filtered_ticks_reported": 26880814,
+    "feature_valid": 7074,
+    "labelled": 5948,
+    "logistic_trades": 1,
+    "lightgbm_trades": 5,
+    "reason": "36,126 10-minute grid slots; 14,229 no quote; 72 spread; 14,138 stale features; 613 entry missing; 1,126 label missing. EV gate +$0.02 accepted 1/5 trades. Label 60s exit vs barrier SL/TP simulator mismatch; frozen audit, no retuning."
+  },
+  "v23": {
+    "status": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "minimum_future_trades": 200,
+    "minimum_trade_days": 20,
+    "minimum_months": 2,
+    "profit_factor_min": 1.2,
+    "after_cost_expectancy_required": true,
+    "unresolved_open_equity_and_execution_calibration": "INCOMPLETE"
+  },
+  "capture": {
+    "earliest_eligible_fetch_utc": "2026-11-15T02:43:00Z",
+    "verified_new_raw_tick": false,
+    "previous_schedule": "PREFLIGHT_ONLY_NO_RAW"
+  },
+  "execution": {
+    "training": false,
+    "backtest": false,
+    "live_trading": false,
+    "main_modified": false,
+    "paid_api": false
+  },
+  "blocked": [
+    "First eligible closed UTC day fetch not yet due",
+    "Original V22 ZIP and capture artifact ZIP not independently inspected",
+    "V23 broker fill calibration and open-equity accounting incomplete"
+  ],
+  "notification": {
+    "local_date": "2026-11-15",
+    "last_report_local_date": "2026-11-14",
+    "daily_due": false,
+    "independently_verified_new_candidate": false
+  }
+}
