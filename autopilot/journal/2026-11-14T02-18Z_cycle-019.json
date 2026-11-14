@@ -1,0 +1,77 @@
+{
+  "entry_id": "2026-11-14T02-18Z_cycle-019",
+  "idempotency_key": "make-money-autopilot:2026-11-14T02:18Z:cycle-019",
+  "observed_at_utc_approx": "2026-11-14T02:18Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "AUDIT_ONLY_NO_NEW_EDGE",
+  "source": {
+    "repo": "jcungko/make-money-research",
+    "branch": "research/autopilot-control-20261113",
+    "prior_control_head": "2366f14874df7504023b3f414fa621cf9418d606"
+  },
+  "verified": {
+    "state_read": true,
+    "readme_read": true,
+    "journal_directory_enumerated": true,
+    "prior_journal_read": true,
+    "journal_count_before": 20,
+    "actions_runs_total": 133,
+    "actions_latest_run_id": 43470901587,
+    "actions_latest_run_event": "push",
+    "actions_latest_run_conclusion": "success",
+    "actions_latest_run_at": "2026-11-13T17:14:59Z",
+    "qa_job_synthetic_success": true,
+    "v22_audit_read": true,
+    "v23_prereg_read": true,
+    "main_capture_workflow_read": true
+  },
+  "research": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "v22_filtered_ticks_reported": 26880814,
+    "v22_feature_valid_reported": 7074,
+    "v22_labelled_reported": 5948,
+    "v22_trades_logistic": 1,
+    "v22_trades_lightgbm": 5,
+    "v22_funnel": "36126 clock slots, 14229 no timely quote, 72 spread>20, 14138 stale/missing features, 613 no entry, 7074 eligible, 1126 no future quote, 5948 labelled",
+    "v22_abstention": "2077 of 2080 predictions pass spread<=10; net EV >=0.02 USD only 1 Logistic and 5 LightGBM",
+    "v22_zip_sha256_from_prior_audit": "61d3578eaaf45ee812528ae781a8ba2be0996147c2b733d8bf73bc4feb595a5f",
+    "zip_independently_downloaded_this_cycle": false,
+    "new_candidate_verified": false
+  },
+  "capture": {
+    "workflow": ".github/workflows/v22-prospective-exness-isolated.yml",
+    "cron_utc": "02:43",
+    "earliest_eligible_fetch": "2026-11-15T02:43:00Z",
+    "scheduled_run_observed_in_latest_30": false,
+    "scheduled_run_confirmed": false,
+    "notes": "Latest Actions 30 list has no scheduled event; do not infer absence from partial listing. Current time precedes first eligible future raw-day fetch."
+  },
+  "execution": {
+    "new_tests_run": false,
+    "new_backtest_run": false,
+    "new_model_trained": false,
+    "code_changed": false,
+    "live_orders": 0,
+    "main_changed": false,
+    "paid_api_used": false
+  },
+  "blocked": [
+    "V22 original final ZIP not independently downloaded and checksummed in this cycle",
+    "V23 broker execution calibration and open-equity implementation incomplete",
+    "Prospective raw-day collection cannot yet be validated before 2026-11-15T02:43Z"
+  ],
+  "next_steps": [
+    "Implement conservative intratick open-equity and synthetic QA on research branch",
+    "Develop V23 prereg-compatible pipeline and SHA-seal before inspecting future labels",
+    "Verify future raw capture Actions artifact after first eligible date"
+  ],
+  "notification": {
+    "local_date": "2026-11-14",
+    "local_time_approx": "09:18",
+    "last_report_local_date": "2026-11-13",
+    "send_now": false
+  }
+}
