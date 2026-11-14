@@ -1,0 +1,77 @@
+{
+  "entry_id": "2026-11-14T08-13Z_cycle-025",
+  "idempotency_key": "make-money-autopilot:2026-11-14T08:13Z:cycle-025",
+  "observed_at_utc_approx": "2026-11-14T08:13Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
+  "source": {
+    "repo": "jcungko/make-money-research",
+    "branch": "research/autopilot-control-20261113",
+    "state_blob_sha_before": "6c40e51d9ce947b7425f71532119d80e5b5a2d0f"
+  },
+  "verified": {
+    "state_read": true,
+    "readme_read": true,
+    "previous_journal_024_read": true,
+    "v22_prereg_read": true,
+    "v22_audit_read": true,
+    "v23_prereg_read": true,
+    "main_capture_workflow_read": true,
+    "main_head": "793df3a248b77d086b3471c24b75df6f773c5862",
+    "scheduled_capture_run_id": 43551671731,
+    "scheduled_capture_artifact_id": 14095913673,
+    "artifact_size_bytes": 1101,
+    "artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
+    "artifact_zip_contents_verified": false,
+    "full_actions_run_listing_verified_this_cycle": false,
+    "full_journal_enumeration_verified_this_cycle": false,
+    "v22_evidence_zip_rehashed_this_cycle": false
+  },
+  "research": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "v22_reported_filtered_ticks": 26880814,
+    "v22_clock_slots": 36126,
+    "v22_eligible_anchors": 7074,
+    "v22_labelled_anchors": 5948,
+    "v22_eval_predictions_per_model": 2080,
+    "v22_logistic_trades": 1,
+    "v22_lightgbm_trades": 5,
+    "interpretation": "600s grid; quote availability and past-only feature gates reduce samples; future label censorship; predicted net EV gate leaves 1/5 trades; historical target/barrier mismatch; no retuning",
+    "new_independently_verified_candidate": false
+  },
+  "capture": {
+    "first_schedule_run_url": "https://github.com/jcungko/make-money-research/actions/runs/43551671731",
+    "previously_verified_preflight_only": true,
+    "raw_tick_verified": false,
+    "earliest_eligible_fetch_utc": "2026-11-15T02:43:00Z"
+  },
+  "execution": {
+    "new_tests_run": false,
+    "new_backtest_run": false,
+    "new_model_trained": false,
+    "code_changed": false,
+    "live_orders": 0,
+    "main_changed": false,
+    "paid_api_used": false
+  },
+  "blocked": [
+    "First eligible raw tick fetch is 2026-11-15T02:43Z",
+    "Full GitHub Actions run listing unavailable through current connector; cannot rule out later runs",
+    "V22 evidence ZIP not independently rehashed",
+    "V23 open-equity accounting and broker fill calibration incomplete"
+  ],
+  "notification": {
+    "local_date": "2026-11-14",
+    "local_time_approx": "15:13",
+    "last_report_local_date": "2026-11-13",
+    "send_now": false
+  },
+  "next_steps": [
+    "Inspect scheduled capture artifacts after 2026-11-15T02:43Z",
+    "Conservative open-equity synthetic QA on isolated research branch",
+    "Seal V23 code and weights before future labels"
+  ]
+}
