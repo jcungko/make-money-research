@@ -55,9 +55,9 @@
   "last_cycle": {
     "kind": "scheduled",
     "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
-    "run_utc_approx": "2026-11-14T22-13Z",
-    "journal_path": "autopilot/journal/2026-11-14T22-13Z_cycle-039.json",
-    "journal_commit": "9315b0365ed2b2ac6105571525b0c15c9b5efc7c",
+    "run_utc_approx": "2026-11-14T23-17Z",
+    "journal_path": "autopilot/journal/2026-11-14T23-17Z_cycle-040.json",
+    "journal_commit": "6d1df1eb3c81d6caf7f8f7759fcd153c843aa3ad",
     "code_experiment_executed": false,
     "code_committed": false,
     "market_backtest_executed": false,
@@ -65,8 +65,8 @@
     "scheduled_capture_run_id": 43551671731,
     "blocked": [
       "First eligible raw capture not yet due",
-      "Original V22 and capture artifact ZIP contents not independently inspected",
-      "V23 broker execution calibration and open-equity certification incomplete"
+      "V22 and capture ZIP not independently inspected",
+      "V23 execution calibration and open-equity accounting incomplete"
     ]
   },
   "report_policy": {
@@ -75,7 +75,7 @@
     "alert_immediately_only_on_independently_verified_candidate": true
   },
   "last_verified_sources": {
-    "control_state_blob_sha": "7742c821a8b3ef9664c43af63f1d575ade10018f",
+    "control_state_blob_sha": "6b9c2460c7e851225a9c6d0dccaaaabf2d7d608b",
     "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
     "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
     "prospective_workflow_blob_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963",
@@ -102,7 +102,7 @@
     "first_capture_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
     "capture_job_log_checked_id": 132315296691,
     "capture_job_log_status": "V22_CAPTURE_STATUS NOT_STARTED valid 0 unavailable 0 (rechecked cycle 036)",
-    "latest_cycle_journal_commit": "9315b0365ed2b2ac6105571525b0c15c9b5efc7c"
+    "latest_cycle_journal_commit": "6d1df1eb3c81d6caf7f8f7759fcd153c843aa3ad"
   },
   "last_report_local_date": "2026-11-14"
 }
