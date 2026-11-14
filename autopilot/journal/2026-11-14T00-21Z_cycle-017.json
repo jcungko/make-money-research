@@ -1,0 +1,74 @@
+{
+  "entry_id": "2026-11-14T00-21Z_cycle-017",
+  "idempotency_key": "make-money-autopilot:2026-11-14T00:21Z:cycle-017",
+  "observed_at_utc_approx": "2026-11-14T00:21Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "AUDIT_ONLY_NO_NEW_EDGE",
+  "source": {
+    "repo": "jcungko/make-money-research",
+    "branch": "research/autopilot-control-20261113",
+    "prior_state_blob_sha": "9fae1ffd35a518a95b5c062448326bca2e63274d"
+  },
+  "verified": {
+    "state_read": true,
+    "readme_read": true,
+    "prior_journal_read": true,
+    "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
+    "v22_prereg_blob_sha": "053f6aed19514aef96e327d042f6130669d840d4",
+    "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
+    "capture_workflow_main_blob_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963",
+    "qa_run_id": 43470901587,
+    "qa_job": "synthetic-qa",
+    "qa_job_conclusion": "success",
+    "qa_artifact_count": 0,
+    "repository_push_permission": true
+  },
+  "research": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "v22_filtered_ticks_from_audit": 26880814,
+    "v22_feature_valid": 7074,
+    "v22_labelled": 5948,
+    "v22_trades_logistic": 1,
+    "v22_trades_lightgbm": 5,
+    "v22_reason": "10-minute clock grid and missing/stale quote/feature filters; EV>=+$0.02 after spread/slip accepted only 1 and 5 of 2080 eval predictions",
+    "v22_zip_independently_verified_this_cycle": false,
+    "new_candidate_independently_verified": false
+  },
+  "capture": {
+    "schedule_utc": "02:43",
+    "first_eligible_fetch_utc": "2026-11-15T02:43:00Z",
+    "first_scheduled_run_confirmed": false,
+    "commit_workflow_runs_query_result_count": 0,
+    "query_limitation": "commit workflow endpoint filters pull-request runs; zero cannot prove scheduled/push absence"
+  },
+  "execution": {
+    "new_tests_run": false,
+    "new_backtest_run": false,
+    "new_model_trained": false,
+    "code_changed": false,
+    "live_orders": 0,
+    "main_changed": false,
+    "trade_telegram_cloudflare_changed": false,
+    "paid_ai_api_used": false
+  },
+  "blocked": [
+    "Cannot enumerate all current Actions runs or journal directory through current connector; cannot confirm first schedule or all new branches",
+    "V22 delivered ZIP not downloaded/checksummed independently in this cycle",
+    "V23 open-equity and broker fill calibration incomplete",
+    "Future closed-day capture earliest eligible 2026-11-15T02:43Z"
+  ],
+  "next_steps": [
+    "Implement conservative executable-side open-equity accounting and tests on research branch",
+    "Freeze V23 training code and weights before reading future labels",
+    "Inspect first eligible prospective capture logs and original ZIP after 2026-11-15T02:43Z"
+  ],
+  "notification": {
+    "local_date": "2026-11-14",
+    "local_time_approx": "07:21",
+    "last_report_local_date": "2026-11-13",
+    "send_now": false
+  }
+}
