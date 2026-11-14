@@ -1,0 +1,78 @@
+{
+  "entry_id": "2026-11-14T10-13Z_cycle-027",
+  "idempotency_key": "make-money-autopilot:2026-11-14T10:13Z:cycle-027",
+  "observed_at_utc_approx": "2026-11-14T10:13Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
+  "source": {
+    "repo": "jcungko/make-money-research",
+    "branch": "research/autopilot-control-20261113",
+    "state_blob_sha_before": "885dd9010c0967b402c139a6c8c7e4f119961c60"
+  },
+  "verified": {
+    "state_read": true,
+    "readme_read": true,
+    "journal_directory_listed": true,
+    "journal_entries_before": 28,
+    "previous_cycle_026_read": true,
+    "v22_audit_read": true,
+    "v23_prereg_read": true,
+    "main_workflow_read": true,
+    "actions_total": 134,
+    "actions_latest_run_id": 43551671731,
+    "actions_latest_event": "schedule",
+    "actions_latest_conclusion": "success",
+    "capture_artifact_id": 14095913673,
+    "capture_artifact_bytes": 1101,
+    "capture_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
+    "capture_zip_contents_verified": false,
+    "v22_final_zip_independently_rehashed": false
+  },
+  "research": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "v22_reported_ticks": 26880814,
+    "v22_clock_slots": 36126,
+    "v22_eligible": 7074,
+    "v22_labelled": 5948,
+    "v22_eval_predictions_per_model": 2080,
+    "v22_logistic_trades": 1,
+    "v22_lightgbm_trades": 5,
+    "v22_reason": "Fixed clock-grid and past-only quote/feature gates; future-label censoring; predicted after-cost EV abstention. Original barrier exit differs from fixed 60s training label. No test retuning.",
+    "new_independently_verified_candidate": false
+  },
+  "capture": {
+    "first_scheduled_run_id": 43551671731,
+    "first_run_preflight_only_per_prior_log": true,
+    "raw_tick_verified": false,
+    "earliest_eligible_fetch_utc": "2026-11-15T02:43:00Z"
+  },
+  "execution": {
+    "new_tests_run": false,
+    "new_backtest_run": false,
+    "new_model_trained": false,
+    "code_changed": false,
+    "live_orders": 0,
+    "main_changed": false,
+    "paid_api_used": false
+  },
+  "blocked": [
+    "First eligible prospective day fetch not before 2026-11-15T02:43Z",
+    "Capture artifact ZIP content not independently inspected",
+    "V22 final ZIP not independently rehashed",
+    "V23 open-equity and broker fill calibration incomplete"
+  ],
+  "notification": {
+    "local_date": "2026-11-14",
+    "local_time_approx": "17:13",
+    "last_report_local_date": "2026-11-13",
+    "send_now": false
+  },
+  "next_steps": [
+    "Inspect raw capture after eligible time",
+    "Conservative open-equity synthetic tests on research branch",
+    "Seal V23 model/code before future labels"
+  ]
+}
