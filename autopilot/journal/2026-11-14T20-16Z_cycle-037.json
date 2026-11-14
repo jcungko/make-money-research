@@ -1,0 +1,53 @@
+{
+  "entry_id": "2026-11-14T20-16Z_cycle-037",
+  "idempotency_key": "make-money-autopilot:2026-11-14T20:16Z:cycle-037",
+  "observed_at_utc_approx": "2026-11-14T20:16Z",
+  "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
+  "verified": {
+    "control_head_before": "f8e94bac22d9829982756941fdb45d365d21f7f3",
+    "control_state_blob_sha": "cdbf1d87cc2c492158f4de2a1c51d3427fa9baac",
+    "prior_cycle": "autopilot/journal/2026-11-14T19-21Z_cycle-036.json",
+    "actions_total": 134,
+    "latest_actions_run_id": 43551671731,
+    "latest_actions_run_created_utc": "2026-11-14T03:26:45Z",
+    "latest_actions_run_conclusion": "success",
+    "latest_run_capture_log_from_prior_independent_check": "V22_CAPTURE_STATUS NOT_STARTED valid 0 unavailable 0",
+    "journal_directory_enumerated": true,
+    "original_v22_evidence_zip_rehashed": false,
+    "prospective_artifact_zip_inspected": false
+  },
+  "v22": {
+    "status": "NO_VERIFIED_EDGE",
+    "filtered_ticks_reported": 26880814,
+    "eligible_anchors": 7074,
+    "labelled_anchors": 5948,
+    "logistic_trades": 1,
+    "lightgbm_trades": 5,
+    "diagnosis": "10-minute clock grid, missing/stale quote and features, entry/label censoring; EV abstention; frozen simulator barrier exits differ from 60s training labels; no threshold changes"
+  },
+  "v23": {
+    "status": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED"
+  },
+  "capture": {
+    "next_eligible_utc": "2026-11-15T02:43:00Z",
+    "new_raw_ticks_verified": false
+  },
+  "execution": {
+    "training": false,
+    "backtest": false,
+    "live_orders": 0,
+    "main_changed": false,
+    "paid_api_used": false
+  },
+  "blocked": [
+    "First eligible prospective fetch not yet due",
+    "V22 original ZIP and prospective artifact ZIP not independently inspected",
+    "V23 broker execution calibration and open-equity certification incomplete"
+  ],
+  "notification": {
+    "last_report_local_date": "2026-11-14",
+    "local_date": "2026-11-15",
+    "daily_report_due": false,
+    "immediate_alert": false
+  }
+}
