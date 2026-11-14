@@ -1,0 +1,75 @@
+{
+  "entry_id": "2026-11-14T06-15Z_cycle-023",
+  "idempotency_key": "make-money-autopilot:2026-11-14T06:15Z:cycle-023",
+  "observed_at_utc_approx": "2026-11-14T06:15Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
+  "source": {
+    "repo": "jcungko/make-money-research",
+    "branch": "research/autopilot-control-20261113",
+    "state_blob_sha_before": "390ac3bd18cf4ec7451431b488fe252121db429e"
+  },
+  "verified": {
+    "state_read": true,
+    "readme_read": true,
+    "previous_journal_read": true,
+    "journal_full_enumeration": false,
+    "v22_audit_read": true,
+    "v22_prereg_read": true,
+    "v23_prereg_read": true,
+    "main_capture_workflow_read": true,
+    "first_schedule_run_id": 43551671731,
+    "first_schedule_job_success": true,
+    "first_schedule_artifact_id": 14095913673,
+    "first_schedule_artifact_size_bytes": 1101,
+    "first_schedule_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
+    "artifact_zip_contents_independently_verified": false,
+    "actions_full_recent_run_list_verified": false
+  },
+  "research": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "v22_audit_reported_ticks": 26880814,
+    "v22_eligible_anchors": 7074,
+    "v22_labelled_anchors": 5948,
+    "v22_logistic_trades": 1,
+    "v22_lightgbm_trades": 5,
+    "v22_sampling_explanation": "36126 10-minute clock slots; missing/stale quotes and past-only features reduce to 7074 eligible; 1126 missing future labels; 2077/2080 spread-qualified eval predictions but EV >=0.02 permits 1 Logistic and 5 LightGBM trades",
+    "v22_prereg_consistency": "Fixed clock, spread, EV gate and labels match audit description; simulator SL/TP exits differ from 60-second fixed-horizon class target; do not retune",
+    "new_independently_verified_candidate": false
+  },
+  "capture": {
+    "scheduled_run": "https://github.com/jcungko/make-money-research/actions/runs/43551671731",
+    "preflight_status_from_prior_journal": "NOT_STARTED valid 0 unavailable 0",
+    "raw_tick_data_verified": false,
+    "earliest_eligible_fetch_utc": "2026-11-15T02:43:00Z"
+  },
+  "execution": {
+    "new_tests_run": false,
+    "new_backtest_run": false,
+    "new_model_trained": false,
+    "code_changed": false,
+    "live_orders": 0,
+    "main_changed": false,
+    "paid_api_used": false
+  },
+  "blocked": [
+    "Full journal and Actions runs enumeration not available via current GitHub connector methods",
+    "Original V22 evidence ZIP not independently rehashed",
+    "Prospective raw tick ZIP not yet verified; first eligible collection 2026-11-15T02:43Z",
+    "V23 open-equity mark and broker execution calibration incomplete"
+  ],
+  "notification": {
+    "local_date": "2026-11-14",
+    "local_time_approx": "13:15",
+    "last_report_local_date": "2026-11-13",
+    "send_now": false
+  },
+  "next_steps": [
+    "Verify first eligible prospective raw tick artifact after 2026-11-15T02:43Z",
+    "Finish conservative open-equity accounting and synthetic QA on research-only branch",
+    "Seal V23 code and weights before examining future outcomes"
+  ]
+}
