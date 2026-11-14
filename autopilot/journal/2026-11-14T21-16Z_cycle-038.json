@@ -1,0 +1,60 @@
+{
+  "entry_id": "2026-11-14T21-16Z_cycle-038",
+  "idempotency_key": "make-money-autopilot:2026-11-14T21-16Z:cycle-038",
+  "observed_at_utc_approx": "2026-11-14T21-16Z",
+  "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
+  "verified": {
+    "control_state_blob_sha": "d8112106382d2fee9ce168512ce67678929f0b18",
+    "prior_cycle": "autopilot/journal/2026-11-14T20-16Z_cycle-037.json",
+    "readme": true,
+    "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
+    "v22_prereg_blob_sha": "053f6aed19514aef96e327d042f6130669d840d4",
+    "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
+    "capture_workflow_blob_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963",
+    "capture_run_id": 43551671731,
+    "capture_job_status": "completed success",
+    "capture_artifact_id": 14095913673,
+    "capture_artifact_bytes": 1101,
+    "capture_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
+    "latest_actions_run_independently_enumerated": false,
+    "journal_directory_independently_enumerated": false,
+    "raw_zip_inspected": false
+  },
+  "v22": {
+    "status": "NO_VERIFIED_EDGE",
+    "reported_filtered_ticks": 26880814,
+    "eligible_anchors": 7074,
+    "labelled_anchors": 5948,
+    "logistic_trades": 1,
+    "lightgbm_trades": 5,
+    "diagnosis": "10-minute grid and quote/feature/label censoring; EV abstention; training 60s labels versus barrier simulator mismatch; no retuning"
+  },
+  "v23": {
+    "status": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "preregistered_future_gate": "200 trades, 20 days, 2 months, PF>=1.2, positive after-cost expectancy, Holm-adjusted day bootstrap lower CI>0, intratick DD<=$20, positive stress"
+  },
+  "capture": {
+    "next_eligible_utc": "2026-11-15T02:43:00Z",
+    "new_raw_ticks_verified": false,
+    "prior_run_log_from_prior_cycle": "V22_CAPTURE_STATUS NOT_STARTED valid 0 unavailable 0"
+  },
+  "execution": {
+    "training": false,
+    "backtest": false,
+    "live_orders": 0,
+    "main_changed": false,
+    "paid_api_used": false
+  },
+  "blocked": [
+    "First eligible future-date fetch not yet due",
+    "Full newest Actions list and journal directory not independently enumerated",
+    "V22 original evidence ZIP and capture artifact ZIP not independently inspected",
+    "V23 broker execution calibration and open-equity certification incomplete"
+  ],
+  "notification": {
+    "last_report_local_date": "2026-11-14",
+    "local_date": "2026-11-15",
+    "daily_report_due": false,
+    "immediate_alert": false
+  }
+}
