@@ -1,0 +1,84 @@
+{
+  "entry_id": "2026-11-14T07-17Z_cycle-024",
+  "idempotency_key": "make-money-autopilot:2026-11-14T07:17Z:cycle-024",
+  "observed_at_utc_approx": "2026-11-14T07:17Z",
+  "kind": "SCHEDULED_COORDINATION",
+  "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
+  "source": {
+    "repo": "jcungko/make-money-research",
+    "branch": "research/autopilot-control-20261113",
+    "control_head_before": "30d9e788d95af74875855d5f5a3f6055137a9412",
+    "state_blob_sha_before": "5e631d6b97c88987c255c3d63a3258a0dfa13b47"
+  },
+  "verified": {
+    "state_read": true,
+    "readme_read": true,
+    "journal_full_enumeration": true,
+    "journal_file_count_before": 25,
+    "latest_previous_cycle": "023",
+    "v22_prereg_read": true,
+    "v22_audit_read": true,
+    "v23_prereg_read": true,
+    "main_capture_workflow_read": true,
+    "actions_total_count": 134,
+    "latest_action_run_id": 43551671731,
+    "latest_action_event": "schedule",
+    "latest_action_conclusion": "success",
+    "capture_job_id": 132315296691,
+    "capture_job_conclusion": "success",
+    "capture_artifact_id": 14095913673,
+    "capture_artifact_size_bytes": 1101,
+    "capture_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
+    "capture_zip_contents_verified": false,
+    "v22_evidence_zip_rehashed_this_cycle": false
+  },
+  "research": {
+    "V20": "CLOSED_NO_EDGE",
+    "V21": "SEALED_NO_EDGE",
+    "V22": "NO_VERIFIED_EDGE",
+    "V23": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "v22_reported_filtered_ticks": 26880814,
+    "v22_clock_slots": 36126,
+    "v22_eligible_anchors": 7074,
+    "v22_labelled_anchors": 5948,
+    "v22_eval_predictions_per_model": 2080,
+    "v22_spread_qualified_eval_predictions": 2077,
+    "v22_logistic_trades": 1,
+    "v22_lightgbm_trades": 5,
+    "v22_reason": "Fixed 600-second sampling and stale/missing past quotes shrink samples; 1126 future labels censored; predicted cost-adjusted EV >=0.02 admits only 1/5 trades. Training 60s quote-side target differs from simulated SL/TP exits; do not retune.",
+    "new_independently_verified_candidate": false
+  },
+  "capture": {
+    "scheduled_run_url": "https://github.com/jcungko/make-money-research/actions/runs/43551671731",
+    "first_run_preflight_only": true,
+    "raw_tick_verified": false,
+    "earliest_eligible_fetch_utc": "2026-11-15T02:43:00Z",
+    "workflow_cron_utc": "43 2 * * *"
+  },
+  "execution": {
+    "new_tests_run": false,
+    "new_backtest_run": false,
+    "new_model_trained": false,
+    "code_changed": false,
+    "live_orders": 0,
+    "main_changed": false,
+    "paid_api_used": false
+  },
+  "blocked": [
+    "First eligible raw tick collection is future 2026-11-15T02:43Z",
+    "V22 delivered evidence ZIP not independently rehashed in this cycle",
+    "V23 open-equity accounting and broker fill calibration not complete",
+    "Future outcome labels and trained V23 model unavailable"
+  ],
+  "notification": {
+    "local_date": "2026-11-14",
+    "local_time_approx": "14:17",
+    "last_report_local_date": "2026-11-13",
+    "send_now": false
+  },
+  "next_steps": [
+    "Inspect first eligible scheduled capture and artifact after 2026-11-15T02:43Z",
+    "Finish conservative intratick open-equity accounting with synthetic QA on isolated research branch",
+    "Seal V23 implementation and model weights before any future outcome inspection"
+  ]
+}
