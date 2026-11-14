@@ -55,17 +55,18 @@
   "last_cycle": {
     "kind": "scheduled",
     "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
-    "run_utc_approx": "2026-11-14T20:16Z",
-    "journal_path": "autopilot/journal/2026-11-14T20-16Z_cycle-037.json",
-    "journal_commit": "404e08045d3a250b31d7a2cd1f056e0e02e5d554",
+    "run_utc_approx": "2026-11-14T21-16Z",
+    "journal_path": "autopilot/journal/2026-11-14T21-16Z_cycle-038.json",
+    "journal_commit": "24645214c075d64060f6cd1623cc708ff9f84c6a",
     "code_experiment_executed": false,
     "code_committed": false,
     "market_backtest_executed": false,
     "new_candidate_verified": false,
     "scheduled_capture_run_id": 43551671731,
     "blocked": [
-      "First eligible prospective fetch not yet due",
-      "V22 original ZIP and prospective artifact ZIP not independently inspected",
+      "First eligible future-date fetch not yet due",
+      "Full newest Actions list and journal directory not independently enumerated",
+      "V22 original evidence ZIP and capture artifact ZIP not independently inspected",
       "V23 broker execution calibration and open-equity certification incomplete"
     ]
   },
@@ -102,7 +103,7 @@
     "first_capture_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
     "capture_job_log_checked_id": 132315296691,
     "capture_job_log_status": "V22_CAPTURE_STATUS NOT_STARTED valid 0 unavailable 0 (rechecked cycle 036)",
-    "latest_cycle_journal_commit": "404e08045d3a250b31d7a2cd1f056e0e02e5d554"
+    "latest_cycle_journal_commit": "24645214c075d64060f6cd1623cc708ff9f84c6a"
   },
   "last_report_local_date": "2026-11-14"
 }
