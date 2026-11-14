@@ -1,0 +1,61 @@
+{
+  "entry_id": "2026-11-14T22-13Z_cycle-039",
+  "idempotency_key": "make-money-autopilot:2026-11-14T22-13Z:cycle-039",
+  "observed_at_utc_approx": "2026-11-14T22:13Z",
+  "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
+  "verified": {
+    "control_head_before": "08844b82a011a40d47d8428027ecfba480c87a08",
+    "state_blob_sha": "6980b95a1c7d7423f7c3bbfe03435ed23f6b9fc0",
+    "readme_blob_sha": "adf092ff50054189c267c871bbf3d98fb1cf98e5",
+    "journal_directory_count_before": 40,
+    "previous_journal": "autopilot/journal/2026-11-14T21-16Z_cycle-038.json",
+    "v22_audit_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
+    "v22_prereg_sha": "053f6aed19514aef96e327d042f6130669d840d4",
+    "v23_prereg_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
+    "capture_workflow_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963",
+    "actions_total": 134,
+    "latest_actions_run_id": 43551671731,
+    "latest_actions_conclusion": "success",
+    "capture_artifact_id": 14095913673,
+    "capture_artifact_bytes": 1101,
+    "capture_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
+    "capture_zip_content_independently_inspected": false
+  },
+  "v22": {
+    "status": "NO_VERIFIED_EDGE",
+    "filtered_ticks_reported": 26880814,
+    "feature_anchors": 7074,
+    "labelled_anchors": 5948,
+    "logistic_trades": 1,
+    "lightgbm_trades": 5,
+    "reason": "600s grid, quote and feature censoring; training 60s exit labels vs barrier execution mismatch; cost-aware EV abstention. Audit reports original ZIP manifest verification, not independently repeated in this cycle.",
+    "no_test_retuning": true
+  },
+  "v23": {
+    "status": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "future_gate": "200 trades, 20 trade days, 2 complete months, PF>=1.2, positive after-cost expectancy and adjusted CI, DD <= $20, positive stress, execution calibration"
+  },
+  "capture": {
+    "next_eligible_utc": "2026-11-15T02:43:00Z",
+    "new_raw_tick_verified": false,
+    "prior_run_preflight_only": true
+  },
+  "execution": {
+    "training": false,
+    "backtest": false,
+    "live_orders": 0,
+    "main_changed": false,
+    "paid_api_used": false
+  },
+  "blocked": [
+    "First eligible capture not yet due",
+    "Original evidence ZIP and first capture artifact ZIP not independently unpacked",
+    "V23 broker execution calibration and unresolved-position open-equity certification incomplete"
+  ],
+  "notification": {
+    "local_date": "2026-11-15",
+    "last_report_local_date": "2026-11-14",
+    "daily_report_due": false,
+    "immediate_alert": false
+  }
+}
