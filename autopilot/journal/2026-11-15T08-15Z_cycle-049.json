@@ -1,0 +1,64 @@
+{
+  "entry_id": "2026-11-15T08-15Z_cycle-049",
+  "idempotency_key": "make-money-autopilot:2026-11-15T08-15Z:cycle-049",
+  "observed_at_utc_approx": "2026-11-15T08:15Z",
+  "status": "CAPTURE_WORKFLOW_VERIFIED_SOURCE_UNAVAILABLE_NO_NEW_RUN",
+  "sources": {
+    "control_head_before": "f2970b37f241220397e2a99b59f8c28cb6702fb1",
+    "state_blob_sha_before": "b949e3cc2212803cb51c4f79f004f452c465b970",
+    "journal_count_before": 50,
+    "previous_journal": "autopilot/journal/2026-11-15T07-23Z_cycle-048.json",
+    "actions_total": 135,
+    "latest_run_id": 43672504583,
+    "latest_run_created_at": "2026-11-15T03:28:17Z",
+    "latest_run_conclusion": "success",
+    "latest_run_url": "https://github.com/jcungko/make-money-research/actions/runs/43672504583",
+    "artifact_id_prior_verified": 14144527780
+  },
+  "capture": {
+    "status": "NO_NEW_RUN; PRIOR_VERIFIED_HTTP_404_ZERO_VALID_DAYS",
+    "checked_day_utc": "2026-11-14",
+    "valid_days": 0,
+    "raw_tick_zip_present": false,
+    "notes": "Saturday source HTTP 404 is unavailable, not proof of market closure. Existing 7-day backfill retries; scheduled workflow succeeded, not raw data."
+  },
+  "v22": {
+    "status": "NO_VERIFIED_EDGE",
+    "filtered_ticks_reported_by_frozen_audit": 26880814,
+    "feature_valid": 7074,
+    "labelled": 5948,
+    "logistic_trades": 1,
+    "lightgbm_trades": 5,
+    "sampling_funnel": "36126 slots; 14229 no quote; 72 spread; 14138 stale features; 613 missing entry; 1126 missing future label",
+    "trade_scarcity": "Predicted net EV +0.02 USD gate (not margin/spread)",
+    "methodological_limitation": "60s fixed-exit training labels vs barrier SL/TP execution",
+    "historical_evidence_zip_reverified_this_cycle": false
+  },
+  "v23": {
+    "status": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "broker_fill_calibration": "INCOMPLETE",
+    "open_equity_accounting": "INCOMPLETE",
+    "prospective_model_seal": "NOT_VERIFIED",
+    "independent_future_validation": false
+  },
+  "execution": {
+    "training": false,
+    "backtest": false,
+    "live_trading": false,
+    "main_modified": false,
+    "paid_api": false,
+    "code_committed": false
+  },
+  "blocked": [
+    "No prospective valid raw ticks yet; 2026-11-14 HTTP 404",
+    "V22 evidence ZIP not independently redownloaded this cycle",
+    "V23 broker fill calibration and open-equity accounting not certified"
+  ],
+  "notification": {
+    "local_date": "2026-11-15",
+    "local_time_approx": "15:15",
+    "daily_due": false,
+    "new_independently_verified_candidate": false,
+    "last_report_local_date": "2026-11-14"
+  }
+}
