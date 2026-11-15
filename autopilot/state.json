@@ -59,17 +59,17 @@
   },
   "last_cycle": {
     "kind": "scheduled",
-    "status": "CAPTURE_SCHEDULE_VERIFIED_SOURCE_UNAVAILABLE",
-    "run_utc_approx": "2026-11-15T04:22Z",
-    "journal_path": "autopilot/journal/2026-11-15T04-22Z_cycle-045.json",
-    "journal_commit": "7e7dc867fd16fbace7f623ca5edcf6e53f08a34c",
+    "status": "CAPTURE_WORKFLOW_VERIFIED_SOURCE_UNAVAILABLE_NO_NEW_RUN",
+    "run_utc_approx": "2026-11-15T05:15Z",
+    "journal_path": "autopilot/journal/2026-11-15T05-15Z_cycle-046.json",
+    "journal_commit": "5fd0c54fb486e1fddefa57cf8568c0cee300aa8b",
     "code_experiment_executed": false,
     "code_committed": false,
     "market_backtest_executed": false,
     "new_candidate_verified": false,
     "blocked": [
-      "2026-11-14 tick source HTTP 404; no raw ticks",
-      "Historical V22 ZIP not independently inspected",
+      "2026-11-14 source HTTP 404, zero raw tick days",
+      "V22 historical evidence ZIP not independently rechecked",
       "V23 broker fill calibration and open-equity accounting incomplete"
     ]
   },
@@ -106,7 +106,7 @@
     "first_capture_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
     "capture_job_log_checked_id": 132315296691,
     "capture_job_log_status": "V22_CAPTURE_STATUS NOT_STARTED valid 0 unavailable 0 (rechecked cycle 036)",
-    "latest_cycle_journal_commit": "7e7dc867fd16fbace7f623ca5edcf6e53f08a34c",
+    "latest_cycle_journal_commit": "5fd0c54fb486e1fddefa57cf8568c0cee300aa8b",
     "latest_capture_artifact_id": 14144527780,
     "latest_capture_artifact_digest": "sha256:605a85c74262d7e38938f2903376b533dd2538c5ecb8605283690bbd01b484f5",
     "latest_capture_artifact_contents_verified": true
