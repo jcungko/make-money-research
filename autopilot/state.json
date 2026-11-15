@@ -55,9 +55,9 @@
   "last_cycle": {
     "kind": "scheduled",
     "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
-    "run_utc_approx": "2026-11-15T00-17Z",
-    "journal_path": "autopilot/journal/2026-11-15T00-17Z_cycle-041.json",
-    "journal_commit": "2b176319c8d2af3e66ab326c78e5e0ee3a3c1081",
+    "run_utc_approx": "2026-11-15T01-21Z",
+    "journal_path": "autopilot/journal/2026-11-15T01-21Z_cycle-042.json",
+    "journal_commit": "b82fbaa7f8c2fb5ca6ea8452bb424ac8140b1ad8",
     "code_experiment_executed": false,
     "code_committed": false,
     "market_backtest_executed": false,
@@ -102,7 +102,7 @@
     "first_capture_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
     "capture_job_log_checked_id": 132315296691,
     "capture_job_log_status": "V22_CAPTURE_STATUS NOT_STARTED valid 0 unavailable 0 (rechecked cycle 036)",
-    "latest_cycle_journal_commit": "2b176319c8d2af3e66ab326c78e5e0ee3a3c1081"
+    "latest_cycle_journal_commit": "b82fbaa7f8c2fb5ca6ea8452bb424ac8140b1ad8"
   },
   "last_report_local_date": "2026-11-14"
 }
