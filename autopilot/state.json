@@ -37,9 +37,9 @@
     "first_schedule_status": "SUCCESSFUL_PREFLIGHT_NO_RAW_TICK_DATA"
   },
   "next_priorities": [
-    "Implement and test conservative open-equity mark on research branch",
-    "Develop prereg-compatible V23 sampler and training pipeline, seal before future labels",
-    "Check prospective raw tick capture after 2026-11-15T02:43Z"
+    "Verify GitHub Actions scheduled capture run after 2026-11-15T02:43Z using repository-wide Actions listing",
+    "Independently inspect original evidence ZIP and prospective artifact ZIP",
+    "Finish broker fill calibration and conservative open-equity ledger on research-only branch"
   ],
   "risk_and_governance": {
     "trading_pnl_excludes_backcom": true,
@@ -54,19 +54,18 @@
   },
   "last_cycle": {
     "kind": "scheduled",
-    "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
-    "run_utc_approx": "2026-11-15T02-14Z",
-    "journal_path": "autopilot/journal/2026-11-15T02-14Z_cycle-043.json",
-    "journal_commit": "95c1410feacc2381ce2b567939cf280a60562ec0",
+    "status": "BLOCKED_LATEST_ACTIONS_ENUMERATION",
+    "run_utc_approx": "2026-11-15T03:20Z",
+    "journal_path": "autopilot/journal/2026-11-15T03-20Z_cycle-044.json",
+    "journal_commit": "6e6ce752cfdafbb28efe134f7ddb62b5cd24f401",
     "code_experiment_executed": false,
     "code_committed": false,
     "market_backtest_executed": false,
     "new_candidate_verified": false,
-    "scheduled_capture_run_id": 43551671731,
     "blocked": [
-      "First eligible closed UTC day fetch not yet due at observation time",
-      "V22 original evidence ZIP and first capture ZIP not independently inspected",
-      "V23 broker fill calibration and open-equity accounting incomplete"
+      "Cannot enumerate latest Actions runs; 2026-11-15 scheduled capture outcome unknown",
+      "Original V22 ZIP and capture ZIP not independently downloaded/inspected",
+      "V23 broker fill calibration and open equity incomplete"
     ]
   },
   "report_policy": {
@@ -102,7 +101,7 @@
     "first_capture_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
     "capture_job_log_checked_id": 132315296691,
     "capture_job_log_status": "V22_CAPTURE_STATUS NOT_STARTED valid 0 unavailable 0 (rechecked cycle 036)",
-    "latest_cycle_journal_commit": "95c1410feacc2381ce2b567939cf280a60562ec0"
+    "latest_cycle_journal_commit": "6e6ce752cfdafbb28efe134f7ddb62b5cd24f401"
   },
   "last_report_local_date": "2026-11-14"
 }
