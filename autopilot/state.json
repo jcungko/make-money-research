@@ -60,17 +60,17 @@
   "last_cycle": {
     "kind": "scheduled",
     "status": "CAPTURE_WORKFLOW_VERIFIED_SOURCE_UNAVAILABLE_NO_NEW_RUN",
-    "run_utc_approx": "2026-11-15T06:15Z",
-    "journal_path": "autopilot/journal/2026-11-15T06-15Z_cycle-047.json",
-    "journal_commit": "fd4959a115e63da2e3ccc02d88b3a7764808d615",
+    "run_utc_approx": "2026-11-15T07:23Z",
+    "journal_path": "autopilot/journal/2026-11-15T07-23Z_cycle-048.json",
+    "journal_commit": "d41ec5eb98112133e8212e37b352532326154382",
     "code_experiment_executed": false,
     "code_committed": false,
     "market_backtest_executed": false,
     "new_candidate_verified": false,
     "blocked": [
       "Prospective raw ticks unavailable for 2026-11-14 (HTTP 404)",
-      "V22 historical ZIP not independently rechecked this cycle",
-      "V23 fill calibration and open-equity ledger incomplete"
+      "V22 historical evidence ZIP not independently rechecked this cycle",
+      "V23 broker fill calibration and open-equity ledger incomplete"
     ]
   },
   "report_policy": {
@@ -106,7 +106,7 @@
     "first_capture_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
     "capture_job_log_checked_id": 132315296691,
     "capture_job_log_status": "V22_CAPTURE_STATUS NOT_STARTED valid 0 unavailable 0 (rechecked cycle 036)",
-    "latest_cycle_journal_commit": "fd4959a115e63da2e3ccc02d88b3a7764808d615",
+    "latest_cycle_journal_commit": "d41ec5eb98112133e8212e37b352532326154382",
     "latest_capture_artifact_id": 14144527780,
     "latest_capture_artifact_digest": "sha256:605a85c74262d7e38938f2903376b533dd2538c5ecb8605283690bbd01b484f5",
     "latest_capture_artifact_contents_verified": true
