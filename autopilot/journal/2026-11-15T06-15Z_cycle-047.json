@@ -1,0 +1,64 @@
+{
+  "entry_id": "2026-11-15T06-15Z_cycle-047",
+  "idempotency_key": "make-money-autopilot:2026-11-15T06-15Z:cycle-047",
+  "observed_at_utc_approx": "2026-11-15T06:15Z",
+  "status": "CAPTURE_WORKFLOW_VERIFIED_SOURCE_UNAVAILABLE_NO_NEW_RUN",
+  "sources": {
+    "control_state_blob_sha_before": "811fc5becf6ddaa1a096cf6349b7328acd323b38",
+    "previous_journal": "autopilot/journal/2026-11-15T05-15Z_cycle-046.json",
+    "actions_total": 135,
+    "latest_run_id": 43672504583,
+    "latest_run_url": "https://github.com/jcungko/make-money-research/actions/runs/43672504583",
+    "latest_run_started": "2026-11-15T03:28:17Z",
+    "latest_run_conclusion": "success",
+    "artifact_id": 14144527780,
+    "artifact_size_bytes": 1752,
+    "artifact_digest": "sha256:605a85c74262d7e38938f2903376b533dd2538c5ecb8605283690bbd01b484f5",
+    "artifact_content_verified_prior_cycle": true,
+    "prereg_and_audit_read": true
+  },
+  "capture": {
+    "checked_day_utc": "2026-11-14",
+    "status": "HTTP_404_UNAVAILABLE_PRIOR_ARTIFACT",
+    "valid_days": 0,
+    "raw_tick_zip_present": false,
+    "notes": "No new Actions run. Success of workflow does not establish raw tick availability. Seven-day backfill remains scheduled; no changes to main."
+  },
+  "v22": {
+    "status": "NO_VERIFIED_EDGE",
+    "reported_filtered_ticks": 26880814,
+    "feature_valid": 7074,
+    "labelled": 5948,
+    "logistic_trades": 1,
+    "lightgbm_trades": 5,
+    "selection_funnel": "36126 slots; no quote 14229, spread>20 72, stale features 14138, no entry 613, missing future label 1126",
+    "no_trade_cause": "predicted cost-adjusted EV threshold +USD0.02, not post-signal spread filter",
+    "simulator_mismatch": "fixed 60-second training label versus SL/TP barrier exit",
+    "historical_zip_reverified_this_cycle": false
+  },
+  "v23": {
+    "status": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "broker_fill_calibration": "INCOMPLETE",
+    "open_equity_accounting": "INCOMPLETE",
+    "future_holdout_untouched": true
+  },
+  "execution": {
+    "training": false,
+    "backtest": false,
+    "live_trading": false,
+    "main_modified": false,
+    "paid_api": false
+  },
+  "blocked": [
+    "Prospective raw ticks unavailable for 2026-11-14 (HTTP 404)",
+    "V22 historical ZIP not independently rechecked this cycle",
+    "V23 fill calibration and open-equity ledger incomplete"
+  ],
+  "notification": {
+    "local_date": "2026-11-15",
+    "local_time_approx": "13:15",
+    "daily_due": false,
+    "new_independently_verified_candidate": false,
+    "last_report_local_date": "2026-11-14"
+  }
+}
