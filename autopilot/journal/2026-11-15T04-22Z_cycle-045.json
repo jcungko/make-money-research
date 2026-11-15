@@ -1,0 +1,75 @@
+{
+  "entry_id": "2026-11-15T04-22Z_cycle-045",
+  "idempotency_key": "make-money-autopilot:2026-11-15T04-22Z:cycle-045",
+  "observed_at_utc_approx": "2026-11-15T04:22Z",
+  "status": "CAPTURE_SCHEDULE_VERIFIED_SOURCE_UNAVAILABLE",
+  "sources": {
+    "control_state_blob_sha_before": "ebe35c041e008e33084b0d2891de6e12fbc0be91",
+    "previous_journal": "autopilot/journal/2026-11-15T03-20Z_cycle-044.json",
+    "journal_files_before": 46,
+    "actions_total": 135,
+    "latest_run_id": 43672504583,
+    "latest_run_url": "https://github.com/jcungko/make-money-research/actions/runs/43672504583",
+    "latest_run_event": "schedule",
+    "latest_run_started": "2026-11-15T03:28:17Z",
+    "latest_run_conclusion": "success",
+    "job_id": 132685440117,
+    "artifact_id": 14144527780,
+    "artifact_size_bytes": 1752,
+    "artifact_digest": "sha256:605a85c74262d7e38938f2903376b533dd2538c5ecb8605283690bbd01b484f5",
+    "artifact_zip_independently_opened": true,
+    "artifact_files": [
+      "v22_preflight/RUN_MANIFEST.json",
+      "v22_prospective_daily/RUN_MANIFEST.json",
+      "v22_prospective_daily/unavailable_2026_11_14.json"
+    ]
+  },
+  "capture": {
+    "day": "2026-11-14",
+    "result": "UNAVAILABLE_HTTP_404",
+    "validated_days": 0,
+    "unavailable_days": 1,
+    "raw_tick_zip_present": false,
+    "checked_at": "2026-11-15T03:28:27.186752+00:00",
+    "note": "404 does not establish market closure; no raw data and no verified future-data edge. GitHub workflow success is not a successful data capture."
+  },
+  "v22": {
+    "status": "NO_VERIFIED_EDGE",
+    "audit_reported_filtered_ticks": 26880814,
+    "feature_valid": 7074,
+    "labelled": 5948,
+    "logistic_trades": 1,
+    "lightgbm_trades": 5,
+    "explanation": "36,126 clock slots; no quote 14,229, spread>20 72, stale features 14,138, missing entry 613, missing future label 1,126; 2,077 of 2,080 test predictions per model spread<=10; only 1 and 5 predicted net EV >=$0.02; original evidence ZIP not independently verified this cycle.",
+    "simulator_mismatch": "60-second fixed-exit class labels vs broker-like SL/TP barrier-exit simulator; no retrospective retune"
+  },
+  "v23": {
+    "status": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "minimum_trades": 200,
+    "minimum_distinct_days": 20,
+    "minimum_complete_months": 2,
+    "profit_factor_min": 1.2,
+    "broker_fill_calibration": "INCOMPLETE",
+    "open_equity_accounting": "INCOMPLETE",
+    "no_future_labels_inspected": true
+  },
+  "execution": {
+    "training": false,
+    "backtest": false,
+    "live_trading": false,
+    "main_modified": false,
+    "paid_api": false
+  },
+  "blocked": [
+    "2026-11-14 prospective source HTTP 404, zero validated tick days",
+    "Original historical V22 evidence ZIP not independently inspected in this cycle",
+    "V23 broker fill calibration and conservative open-equity ledger remain incomplete"
+  ],
+  "notification": {
+    "local_date": "2026-11-15",
+    "local_time_approx": "11:22",
+    "last_report_local_date": "2026-11-14",
+    "daily_due": false,
+    "new_independently_verified_candidate": false
+  }
+}
