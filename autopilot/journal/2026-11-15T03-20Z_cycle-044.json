@@ -1,0 +1,62 @@
+{
+  "entry_id": "2026-11-15T03-20Z_cycle-044",
+  "idempotency_key": "make-money-autopilot:2026-11-15T03-20Z:cycle-044",
+  "observed_at_utc_approx": "2026-11-15T03:20Z",
+  "status": "BLOCKED_LATEST_ACTIONS_ENUMERATION",
+  "verified": {
+    "control_state_sha_before": "bffc93391f5c2288ddaffa64f83aaa17c6aaa3ff",
+    "previous_journal": "autopilot/journal/2026-11-15T02-14Z_cycle-043.json",
+    "v22_audit_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
+    "v23_prereg_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9",
+    "capture_workflow_sha": "ce3b7dea52283ca6f3a469c137abc7f9b694d963",
+    "known_capture_run_id": 43551671731,
+    "known_capture_job_id": 132315296691,
+    "known_capture_job_log": "V22_CAPTURE_STATUS NOT_STARTED valid 0 unavailable 0",
+    "known_capture_artifact_id": 14095913673,
+    "known_capture_artifact_bytes": 1101,
+    "known_capture_artifact_sha256": "3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74"
+  },
+  "v22": {
+    "status": "NO_VERIFIED_EDGE",
+    "filtered_ticks_reported": 26880814,
+    "feature_valid": 7074,
+    "labelled": 5948,
+    "logistic_trades": 1,
+    "lightgbm_trades": 5,
+    "explanation": "36,126 slots; 14,229 no quote; 72 spread>20; 14,138 stale features; 613 missing entry; 1,126 missing future label. 2,077/2,080 passed spread<=10 per model, only 1/5 predicted net EV>=0.02. V22 target fixed 60s differs from barrier-exit simulator; no retuning."
+  },
+  "v23": {
+    "status": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "minimum_trades": 200,
+    "minimum_days": 20,
+    "minimum_months": 2,
+    "profit_factor_min": 1.2,
+    "broker_fill_calibration": "INCOMPLETE",
+    "open_equity_accounting": "INCOMPLETE"
+  },
+  "capture": {
+    "first_eligible_fetch_utc": "2026-11-15T02:43:00Z",
+    "now_past_eligible_fetch": true,
+    "latest_scheduled_run_verified": false,
+    "new_raw_tick_verified": false,
+    "reason": "Connector offers per-run jobs/artifacts/logs but not repository-wide workflow run listing; public API retrieval unavailable; cannot determine whether 2026-11-15 scheduled run started."
+  },
+  "execution": {
+    "training": false,
+    "backtest": false,
+    "live_trading": false,
+    "main_modified": false,
+    "paid_api": false
+  },
+  "blocked": [
+    "Cannot enumerate latest Actions runs; 2026-11-15 scheduled capture outcome unknown",
+    "Original V22 ZIP and capture ZIP not independently downloaded/inspected",
+    "V23 broker fill calibration and open equity incomplete"
+  ],
+  "notification": {
+    "local_date": "2026-11-15",
+    "last_report_local_date": "2026-11-14",
+    "daily_due": false,
+    "new_independently_verified_candidate": false
+  }
+}
