@@ -1,0 +1,68 @@
+{
+  "entry_id": "2026-11-15T02-14Z_cycle-043",
+  "idempotency_key": "make-money-autopilot:2026-11-15T02-14Z:cycle-043",
+  "observed_at_utc_approx": "2026-11-15T02:14Z",
+  "status": "WAITING_FOR_FIRST_ELIGIBLE_RAW_CAPTURE",
+  "verified": {
+    "control_head_before": "22bf082f1917c7ca86905026da23e00cb571325a",
+    "state_blob_sha_before": "ebca9d5bfd1001dc0a2af79d1aafb03aa4dc385b",
+    "journal_files_before": 44,
+    "previous_journal": "autopilot/journal/2026-11-15T01-21Z_cycle-042.json",
+    "actions_total": 134,
+    "latest_actions_run_id": 43551671731,
+    "latest_actions_event": "schedule",
+    "latest_actions_created_utc": "2026-11-14T03:26:45Z",
+    "latest_actions_conclusion": "success",
+    "capture_artifact_id": 14095913673,
+    "capture_artifact_bytes": 1101,
+    "capture_artifact_expired": false,
+    "capture_artifact_digest": "sha256:3919be60490d86a2d1a4e3c51d12b4f1fcca8eee6197156bf74113d097071f74",
+    "capture_artifact_zip_inspected": false,
+    "workflow_cron_utc": "43 2 * * *",
+    "v22_audit_blob_sha": "bc86afd0cf74a0f5d95a21dfa14883f339efc03d",
+    "v23_prereg_blob_sha": "da24394f10748b96c8d110ea9b840c293d64c3e9"
+  },
+  "v22": {
+    "status": "NO_VERIFIED_EDGE",
+    "reported_filtered_ticks": 26880814,
+    "feature_valid": 7074,
+    "labelled": 5948,
+    "logistic_trades": 1,
+    "lightgbm_trades": 5,
+    "explanation": "36,126 fixed ten-minute slots; 14,229 no quote, 72 spread>20, 14,138 stale features, 613 missing entry, 1,126 missing future labels; 2,077 of 2,080 evaluation predictions passed spread <=10 per model but only 1/5 passed predicted net EV gate. No retuning historical test."
+  },
+  "v23": {
+    "status": "DESIGN_FROZEN_NOT_TRAINED_NOT_VALIDATED",
+    "minimum_trades": 200,
+    "minimum_distinct_days": 20,
+    "minimum_complete_months": 2,
+    "profit_factor_min": 1.2,
+    "broker_fill_calibration": "INCOMPLETE",
+    "open_equity_accounting": "INCOMPLETE"
+  },
+  "capture": {
+    "earliest_eligible_fetch_utc": "2026-11-15T02:43:00Z",
+    "new_raw_tick_verified": false,
+    "prior_run": "SUCCESSFUL_PREFLIGHT_NO_RAW_TICK_DATA",
+    "note": "At observed time 02:14Z first eligible collection is not due; Saturday UTC 2026-11-14 may return unavailable, which does not establish market closure."
+  },
+  "execution": {
+    "training": false,
+    "backtest": false,
+    "live_trading": false,
+    "main_modified": false,
+    "paid_api": false,
+    "code_experiment_executed": false
+  },
+  "blocked": [
+    "First eligible closed UTC day fetch not yet due at observation time",
+    "V22 original evidence ZIP and first capture ZIP not independently inspected",
+    "V23 broker fill calibration and open-equity accounting incomplete"
+  ],
+  "notification": {
+    "local_date": "2026-11-15",
+    "last_report_local_date": "2026-11-14",
+    "daily_due": false,
+    "new_independently_verified_candidate": false
+  }
+}
