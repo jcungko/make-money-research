@@ -43,7 +43,7 @@ jobs:
             id="${successful[0]}"
             mkdir -p /tmp/usdjpy-restore
             gh run download "$id" -n "usdjpy-checkpoint-$id" -D /tmp/usdjpy-restore
-            if [ -f /tmp/usdjpy-restore/manifest.json ]; then
+            if [ -f /tmp/usdjpy-restore/manifest.json ] && python -c 'import json; from pathlib import Path; m=json.loads(Path("/tmp/usdjpy-restore/manifest.json").read_text()); raise SystemExit(0 if any(str(p).startswith("experiments/") for p in m.get("files", {})) else 1)'; then
               mkdir -p /tmp/usdjpy-restore/experiments
               gh run download "$id" -n "usdjpy-evidence-$id" -D /tmp/usdjpy-restore/experiments
             fi
@@ -74,7 +74,7 @@ jobs:
           name: usdjpy-evidence-${{ github.run_id }}
           path: research_usdjpy/results/experiments/
           retention-days: 90
-          if-no-files-found: error
+          if-no-files-found: warn
       - name: Send secure Telegram alert only for candidates, failures or smoke test
         if: always()
         shell: bash
