@@ -1,0 +1,60 @@
+name: USDJPY Research Autopilot R1 — research only
+on:
+  schedule:
+    - cron: '17 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/usdjpy-research-autopilot.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: usdjpy-r1-research-isolated
+  cancel-in-progress: false
+jobs:
+  research:
+    if: ${{ github.repository == 'jcungko/make-money-research' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout isolated research branch (never change existing projects)
+        uses: actions/checkout@v4
+        with:
+          ref: research/usdjpy-autopilot-20261116
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install free research-only libraries
+        run: python -m pip install 'numpy>=2.0,<3' 'pandas>=2.2,<3'
+      - name: Validate core invariants before research
+        run: python -m unittest discover -s research_usdjpy -p 'test_*.py' -v
+      - name: Run REAL Exness USDJPY M5 research experiments (or explicit BLOCKED)
+        id: experiments
+        run: python research_usdjpy/engine.py
+      - name: Save immutable experiment evidence and state on isolated branch
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research_usdjpy/results/
+          if ! git diff --cached --quiet; then
+            git commit -m 'USDJPY R1: archive actual experiment results and checkpoint [skip ci]'
+            git push origin HEAD:research/usdjpy-autopilot-20261116
+          else
+            echo 'No new research files to commit'
+          fi
+      - name: Upload bounded run evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: usdjpy-research-${{ github.run_id }}
+          path: |
+            research_usdjpy/results/state.json
+            research_usdjpy/results/run_*.json
+          retention-days: 14
+          if-no-files-found: warn
