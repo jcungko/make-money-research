@@ -10,6 +10,7 @@ on:
 permissions:
   contents: read
   actions: read
+  id-token: write
 concurrency:
   group: usdjpy-r1-research-isolated
   cancel-in-progress: false
@@ -28,48 +29,83 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Restore last validated research cursor from previous GitHub artifact
+      - name: Restore and verify latest successful checkpoint, fail closed on corruption
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p research_usdjpy/results
-          restored=0
-          while read -r id; do
-            [ -n "$id" ] || continue
-            mkdir -p /tmp/usdjpy-previous
-            if gh run download "$id" -n "usdjpy-checkpoint-$id" -D /tmp/usdjpy-previous >/dev/null 2>&1; then
-              if [ -s /tmp/usdjpy-previous/state.json ]; then
-                cp /tmp/usdjpy-previous/state.json research_usdjpy/results/state.json
-                echo "RESTORED_CURSOR_FROM_RUN=$id"
-                restored=1
-                break
-              fi
+          mapfile -t successful < <(gh run list --workflow 'usdjpy-research-autopilot.yml' --limit 100 --json databaseId,conclusion --jq '.[] | select(.conclusion == "success") | .databaseId')
+          if [ "${#successful[@]}" -eq 0 ]; then
+            echo 'BOOTSTRAP_CURSOR_ZERO: no prior successful research run'
+          else
+            id="${successful[0]}"
+            mkdir -p /tmp/usdjpy-restore
+            gh run download "$id" -n "usdjpy-checkpoint-$id" -D /tmp/usdjpy-restore
+            if [ -f /tmp/usdjpy-restore/manifest.json ]; then
+              mkdir -p /tmp/usdjpy-restore/experiments
+              gh run download "$id" -n "usdjpy-evidence-$id" -D /tmp/usdjpy-restore/experiments
             fi
-          done < <(gh run list --workflow 'usdjpy-research-autopilot.yml' --limit 30 --json databaseId,status --jq '.[] | select(.status == "completed") | .databaseId')
-          if [ "$restored" -eq 0 ]; then
-            prior_success="$(gh run list --workflow 'usdjpy-research-autopilot.yml' --limit 30 --json conclusion --jq '.[] | select(.conclusion == "success") | .conclusion')"
-            if [ -n "$prior_success" ]; then
-              echo 'BLOCKED: prior successful run exists but checkpoint was not restorable; refusing to reset cursor'
-              exit 5
-            fi
-            echo 'BOOTSTRAP_NEW_CURSOR=0 (no prior successful checkpoint)'
-          fi
-          if [ "$restored" -eq 1 ]; then
-            python -c 'import json; from pathlib import Path; s=json.loads(Path("research_usdjpy/results/state.json").read_text()); assert s["protocol"] == "USDJPY-R1-20261116" and 0 <= s["cursor"] <= 96 and s["completed"] >= s["cursor"]'
+            python research_usdjpy/checkpoint.py restore /tmp/usdjpy-restore research_usdjpy/results
           fi
       - name: Install free research-only libraries
         run: python -m pip install 'numpy>=2.0,<3' 'pandas>=2.2,<3'
-      - name: Validate core invariants before research
+      - name: Validate core invariants and checkpoint corruption recovery tests
         run: python -m unittest discover -s research_usdjpy -p 'test_*.py' -v
       - name: Run REAL Exness USDJPY experiments (explicit BLOCKED on error)
         run: python research_usdjpy/engine.py
-      - name: Upload state AND complete per-trade evidence for current cycle
-        if: always()
+      - name: Seal and independently verify checkpoint with SHA256 proof index
+        run: python research_usdjpy/checkpoint.py seal research_usdjpy/results
+      - name: Upload small durable state, provenance journal and checksum manifest
         uses: actions/upload-artifact@v4
         with:
           name: usdjpy-checkpoint-${{ github.run_id }}
-          path: research_usdjpy/results/
+          path: |
+            research_usdjpy/results/state.json
+            research_usdjpy/results/index.json
+            research_usdjpy/results/manifest.json
+            research_usdjpy/results/run_*.json
           retention-days: 90
           if-no-files-found: error
+      - name: Upload immutable per-trade evidence for this cycle
+        uses: actions/upload-artifact@v4
+        with:
+          name: usdjpy-evidence-${{ github.run_id }}
+          path: research_usdjpy/results/experiments/
+          retention-days: 90
+          if-no-files-found: error
+      - name: Send secure Telegram alert only for candidates, failures or smoke test
+        if: always()
+        shell: bash
+        env:
+          ACTION_STATUS: ${{ job.status }}
+          ACTION_EVENT: ${{ github.event_name }}
+          ACTION_RUN_ID: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          if [ ! -f research_usdjpy/checkpoint.py ]; then
+            echo '::warning::Notification impossible: checkpoint utility missing'
+            exit 0
+          fi
+          payload="$(python research_usdjpy/checkpoint.py payload research_usdjpy/results "$ACTION_EVENT" "$ACTION_RUN_ID" "$ACTION_STATUS")"
+          kind="$(printf '%s' "$payload" | python -c 'import sys,json; print(json.load(sys.stdin)["kind"])')"
+          if [ "$kind" = "NONE" ]; then
+            echo 'Telegram: no candidate/error event, staying quiet'
+            exit 0
+          fi
+          if [ -z "$ACTIONS_ID_TOKEN_REQUEST_URL" ] || [ -z "$ACTIONS_ID_TOKEN_REQUEST_TOKEN" ]; then
+            echo '::warning::Telegram OIDC token unavailable'
+            exit 0
+          fi
+          oidc_response="$(curl -fsS --max-time 12 -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=make-money-usdjpy-notifier-v1")"
+          jwt="$(printf '%s' "$oidc_response" | python -c 'import sys,json; print(json.load(sys.stdin)["value"])')"
+          if curl -fsS --retry 2 --max-time 20 -X POST \
+            -H "Authorization: Bearer $jwt" \
+            -H 'Content-Type: application/json' \
+            --data "$payload" \
+            'https://make-money-r146.jcungko.workers.dev/notify-usdjpy' >/dev/null; then
+            echo "TELEGRAM_NOTICE_DELIVERED=$kind"
+          else
+            echo "::warning::TELEGRAM_NOTICE_FAILED=$kind (research checkpoint remains independent)"
+          fi
