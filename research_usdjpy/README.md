@@ -8,8 +8,8 @@ No live trading, no MT5 connectivity, no tokens, no Telegram, no paid API, no ch
 - Source datasets: `data/v17_exness_2025/USDJPY_2025_UTC_7TF.zip` and `data/v17_exness_2026/USDJPY_2026_UTC_7TF.zip` with manifest provenance, M5 Bid/Ask.
 - Registers a finite deterministic search space of 96 configurations, maximum 2 new experiments per hourly run. Each entry uses the *following* bar's executable bid/ask opening quote, with hard modeled SL and TP; intrabar ambiguity is stop-first.
 - Each run hashes source ZIP files and saves unique per-experiment JSON with per-trade ledger, cost-stress results and limitations.
-- State and journals persist in `research_usdjpy/results/` on research branch, committed by the workflow; no repository artifacts are deleted.
-- A `BLOCKED` run records the error and exits nonzero. Cursor only advances after experiment evidence is saved. Resume from stored cursor on next schedule.
+- The repository's github-actions bot received HTTP 403 on git push. Until separate security approval, every run stores its results and state as a GitHub Actions artifact (`usdjpy-checkpoint-<run_id>`) with 90-day retention. Next run restores the most recent checkpoint state using GitHub's API. Individual experiments remain as evidence in their original run artifacts, rather than being committed to the branch. These artifacts are temporary and NOT durable long-term storage.
+- A `BLOCKED` run records the error and exits nonzero. Cursor only advances after experiment evidence is saved. Resume from the previous artifact cursor on next schedule; do not silently reset if previous run exists but checkpoint is unavailable.
 - After 96 registered configurations, report `EXHAUSTED`; never blindly mine unbounded combinations.
 - Research candidates are NOT approved for real trading, NOT independently forward verified. Historical years have already been investigated many times.
 
@@ -20,7 +20,7 @@ No live trading, no MT5 connectivity, no tokens, no Telegram, no paid API, no ch
 - Recorded bar open and quote series are historical, not live broker fills. Partial intrabar and gap uncertainty remain.
 - The dataset is historically exposed, NOT clean holdout. This phase produces **RESEARCH_CANDIDATE** and **REJECTED** only.
 - Later phases require broker-calibrated raw tick replay, walk-forward, multiple-testing correction, independent prospective protocol and explicit live approval.
-- Schedule is best effort, can skip/delay. Verify current Actions runs and committed state to confirm progress.
+- Schedule is best effort, can skip/delay. Verify Actions runs, downloadable checkpoint artifacts and the current cursor. No claim that research results have been committed to GitHub git history.
 
 ## Proof of real experiments
-Inspect GitHub Actions run job steps and `research_usdjpy/results/state.json` `completed` and `cursor`. Compare the timestamped `run_*.json` report with corresponding `experiments/UJ-R1-xxx.json`, including trades and cost assumptions. A green workflow without evidence is NOT sufficient proof.
+Inspect GitHub Actions run job steps and the `state.json` `completed` and `cursor` **inside the checkpoint artifact**. Compare the timestamped `run_*.json` report with corresponding `experiments/UJ-R1-xxx.json`, including trades and cost assumptions. A green workflow without evidence is NOT sufficient proof.
