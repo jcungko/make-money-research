@@ -1,0 +1,34 @@
+[
+  {
+    "sl": 5,
+    "n": 1989,
+    "overlapping_trades": 0,
+    "negative_hold_duration": 0,
+    "unexpected_timed_exit": 0,
+    "censored_open_orders": 0,
+    "stop_side_invalid": 0,
+    "max_pnl_fill_difference_usd": 5.17808018685173e-13,
+    "mismatched_trades_gt_1cent": 0,
+    "max_tp_conversion_error_usd": 3.552713678800501e-13,
+    "max_duration_minutes": 179.4032,
+    "realized_pnl_usd": -1877.0271719286761,
+    "entry_spread_avg_usd": 1.0127953745600793,
+    "stop_loss_trade_average_usd": -5.1409124629080125
+  },
+  {
+    "sl": 10,
+    "n": 1679,
+    "overlapping_trades": 0,
+    "negative_hold_duration": 0,
+    "unexpected_timed_exit": 0,
+    "censored_open_orders": 0,
+    "stop_side_invalid": 0,
+    "max_pnl_fill_difference_usd": 5.17808018685173e-13,
+    "mismatched_trades_gt_1cent": 0,
+    "max_tp_conversion_error_usd": 3.552713678800501e-13,
+    "max_duration_minutes": 3077.042,
+    "realized_pnl_usd": -1573.6096071288694,
+    "entry_spread_avg_usd": 1.0133412745681927,
+    "stop_loss_trade_average_usd": -10.156436233611442
+  }
+]
