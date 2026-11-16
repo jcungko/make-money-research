@@ -90,7 +90,7 @@ async function handleUsdNotify(request,env) {
        !p.candidates.every(x=>/^UJ-R1-[0-9]{3}$/.test(x))) throw Error('invalid payload');
     if(p.kind==='CANDIDATE'&&p.candidates.length===0)throw Error('empty candidates');
     if(!env.R146_STATE)throw Error('KV not connected');
-    const key='usdjpy-notifier-v1:'+p.kind+':'+p.run_id;
+    const key='usdjpy-notifier-v1:'+(p.kind==='EXHAUSTED'?'EXHAUSTED-R1':p.kind+':'+p.run_id);
     if(await env.R146_STATE.get(key)) return new Response('duplicate ignored',{status:200});
     const run='https://github.com/jcungko/make-money-research/actions/runs/'+p.run_id;
     let message;
