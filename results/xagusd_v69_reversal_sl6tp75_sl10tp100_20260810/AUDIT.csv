@@ -1,0 +1,3 @@
+sl_usd,tp_percent_of_previous_candle_range,n_trades,overlap_with_next_entry,negative_duration,duplicate_trade_bar_entries,unexpected_time_exits,uncensored_remaining_open_at_end,max_pnl_fill_discrepancy_usd,pnl_fill_mismatches_gt_1cent,max_tp_conversion_discrepancy_usd,max_stop_price_distance_discrepancy_usd_per_oz,total_realized_usd
+6,75,1732,0,0,0,0,0,5.044853423896711e-13,0,3.588240815588506e-13,9.658940314238862e-15,-1563.274250048852
+10,100,1127,0,0,0,0,0,5.293543381412746e-13,0,3.552713678800501e-13,4.274358644806853e-15,-1313.6487265477883
