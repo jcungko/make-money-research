@@ -8,7 +8,9 @@ on:
       - '.github/workflows/usdjpy-research-autopilot.yml'
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
+  actions: read
+  id-token: write
 concurrency:
   group: usdjpy-r1-research-isolated
   cancel-in-progress: false
@@ -18,43 +20,92 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - name: Checkout isolated research branch (never change existing projects)
+      - name: Checkout isolated research branch (no old project changes)
         uses: actions/checkout@v4
         with:
           ref: research/usdjpy-autopilot-20261116
-          persist-credentials: true
+          persist-credentials: false
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install free research-only libraries
-        run: python -m pip install 'numpy>=2.0,<3' 'pandas>=2.2,<3'
-      - name: Validate core invariants before research
-        run: python -m unittest discover -s research_usdjpy -p 'test_*.py' -v
-      - name: Run REAL Exness USDJPY M5 research experiments (or explicit BLOCKED)
-        id: experiments
-        run: python research_usdjpy/engine.py
-      - name: Save immutable experiment evidence and state on isolated branch
-        if: always()
+      - name: Restore and verify latest successful checkpoint, fail closed on corruption
+        env:
+          GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add research_usdjpy/results/
-          if ! git diff --cached --quiet; then
-            git commit -m 'USDJPY R1: archive actual experiment results and checkpoint [skip ci]'
-            git push origin HEAD:research/usdjpy-autopilot-20261116
+          mkdir -p research_usdjpy/results
+          mapfile -t successful < <(gh run list --workflow 'usdjpy-research-autopilot.yml' --limit 100 --json databaseId,conclusion --jq '.[] | select(.conclusion == "success") | .databaseId')
+          if [ "${#successful[@]}" -eq 0 ]; then
+            echo 'BOOTSTRAP_CURSOR_ZERO: no prior successful research run'
           else
-            echo 'No new research files to commit'
+            id="${successful[0]}"
+            mkdir -p /tmp/usdjpy-restore
+            gh run download "$id" -n "usdjpy-checkpoint-$id" -D /tmp/usdjpy-restore
+            if [ -f /tmp/usdjpy-restore/manifest.json ]; then
+              mkdir -p /tmp/usdjpy-restore/experiments
+              gh run download "$id" -n "usdjpy-evidence-$id" -D /tmp/usdjpy-restore/experiments
+            fi
+            python research_usdjpy/checkpoint.py restore /tmp/usdjpy-restore research_usdjpy/results
           fi
-      - name: Upload bounded run evidence
-        if: always()
+      - name: Install free research-only libraries
+        run: python -m pip install 'numpy>=2.0,<3' 'pandas>=2.2,<3'
+      - name: Validate core invariants and checkpoint corruption recovery tests
+        run: python -m unittest discover -s research_usdjpy -p 'test_*.py' -v
+      - name: Run REAL Exness USDJPY experiments (explicit BLOCKED on error)
+        run: python research_usdjpy/engine.py
+      - name: Seal and independently verify checkpoint with SHA256 proof index
+        run: python research_usdjpy/checkpoint.py seal research_usdjpy/results
+      - name: Upload small durable state, provenance journal and checksum manifest
         uses: actions/upload-artifact@v4
         with:
-          name: usdjpy-research-${{ github.run_id }}
+          name: usdjpy-checkpoint-${{ github.run_id }}
           path: |
             research_usdjpy/results/state.json
+            research_usdjpy/results/index.json
+            research_usdjpy/results/manifest.json
             research_usdjpy/results/run_*.json
-          retention-days: 14
-          if-no-files-found: warn
+          retention-days: 90
+          if-no-files-found: error
+      - name: Upload immutable per-trade evidence for this cycle
+        uses: actions/upload-artifact@v4
+        with:
+          name: usdjpy-evidence-${{ github.run_id }}
+          path: research_usdjpy/results/experiments/
+          retention-days: 90
+          if-no-files-found: error
+      - name: Send secure Telegram alert only for candidates, failures or smoke test
+        if: always()
+        shell: bash
+        env:
+          ACTION_STATUS: ${{ job.status }}
+          ACTION_EVENT: ${{ github.event_name }}
+          ACTION_RUN_ID: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          if [ ! -f research_usdjpy/checkpoint.py ]; then
+            echo '::warning::Notification impossible: checkpoint utility missing'
+            exit 0
+          fi
+          payload="$(python research_usdjpy/checkpoint.py payload research_usdjpy/results "$ACTION_EVENT" "$ACTION_RUN_ID" "$ACTION_STATUS")"
+          kind="$(printf '%s' "$payload" | python -c 'import sys,json; print(json.load(sys.stdin)["kind"])')"
+          if [ "$kind" = "NONE" ]; then
+            echo 'Telegram: no candidate/error event, staying quiet'
+            exit 0
+          fi
+          if [ -z "$ACTIONS_ID_TOKEN_REQUEST_URL" ] || [ -z "$ACTIONS_ID_TOKEN_REQUEST_TOKEN" ]; then
+            echo '::warning::Telegram OIDC token unavailable'
+            exit 0
+          fi
+          oidc_response="$(curl -fsS --max-time 12 -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=make-money-usdjpy-notifier-v1")"
+          jwt="$(printf '%s' "$oidc_response" | python -c 'import sys,json; print(json.load(sys.stdin)["value"])')"
+          if curl -fsS --retry 2 --max-time 20 -X POST \
+            -H "Authorization: Bearer $jwt" \
+            -H 'Content-Type: application/json' \
+            --data "$payload" \
+            'https://make-money-r146.jcungko.workers.dev/notify-usdjpy' >/dev/null; then
+            echo "TELEGRAM_NOTICE_DELIVERED=$kind"
+          else
+            echo "::warning::TELEGRAM_NOTICE_FAILED=$kind (research checkpoint remains independent)"
+          fi
