@@ -1,0 +1,23 @@
+name: FX M5 directional rescue Exness 2026 train Aug Sep holdout Oct
+on:
+  push:
+    branches: [research/m5-hedged-tp050-sl10-aug-oct2026]
+    paths:
+      - 'scripts/m5_directional_rescue_2026.py'
+      - '.github/workflows/m5-directional-rescue-2026.yml'
+  workflow_dispatch:
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Screen directional M5 signals with frozen Oct holdout
+        run: python scripts/m5_directional_rescue_2026.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fx-m5-directional-rescue-audit
+          path: results/m5_directional_rescue_2026/
+          if-no-files-found: warn
