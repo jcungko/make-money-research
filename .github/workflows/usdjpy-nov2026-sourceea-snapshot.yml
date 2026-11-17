@@ -1,0 +1,44 @@
+name: USDJPY November 2026 Exness bid ask M5 for public EA screening
+'on':
+  push:
+    branches: [main]
+    paths: ['.github/workflows/usdjpy-nov2026-sourceea-snapshot.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install dependencies
+        run: pip install 'pandas>=2.2,<3' requests
+      - name: Download Exness USDJPY tick archive and aggregate real bid ask 5m
+        run: |
+          mkdir -p usdjpy_nov2026_sourceea
+          python - <<'PY'
+          import hashlib,io,zipfile,pathlib,requests,pandas as pd,json
+          from scripts.v12_exness_collect import ticks_to_5m
+          s='USDJPY';p=pathlib.Path('usdjpy_nov2026_sourceea')
+          url='https://ticks.ex2archive.com/ticks/USDJPY/2026/11/Exness_USDJPY_2026_11.zip'
+          cutoff=pd.Timestamp('2026-11-17T00:00:00Z')
+          response=requests.get(url,timeout=(20,180));response.raise_for_status()
+          assert zipfile.is_zipfile(io.BytesIO(response.content))
+          df=ticks_to_5m(response.content,cutoff,pd.Timestamp('2026-11-01T00:00:00Z'))
+          assert len(df)>1000 and df.index.max()<cutoff and df.index.is_unique and not (df.bid_close>df.ask_close).any()
+          dest=p/'USDJPY_M5_2026_NOV01_to_NOV16_UTC.csv.gz'
+          df.to_csv(dest,index_label='timestamp_utc',compression='gzip',float_format='%.6f')
+          meta={'symbol':'USDJPY','source_url':url,'source_zip_sha256':hashlib.sha256(response.content).hexdigest(),'count':len(df),'first_utc':df.index.min().isoformat(),'last_utc':df.index.max().isoformat(),'cutoff_exclusive_utc':cutoff.isoformat()}
+          (p/'manifest.json').write_text(json.dumps(meta,indent=2))
+          print(json.dumps(meta),flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: USDJPY-Nov2026-sourceEA-M5-bidask
+          path: usdjpy_nov2026_sourceea/
+          retention-days: 30
+          if-no-files-found: warn
