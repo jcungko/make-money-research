@@ -1,0 +1,23 @@
+name: M5 BUY SELL TP Sweep 0.10 0.20 0.30 0.40 August October 2026
+on:
+  push:
+    branches: [research/m5-hedged-tp050-sl10-aug-oct2026]
+    paths:
+      - 'scripts/m5_hedged_tp_sweep_aug_oct2026.py'
+      - '.github/workflows/m5-hedged-tp-sweep-aug-oct2026.yml'
+  workflow_dispatch:
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Backtest TP sweep against Exness Bid Ask M5
+        run: python scripts/m5_hedged_tp_sweep_aug_oct2026.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: m5-hedged-tp-sweep-2026-results
+          path: results/m5_hedged_tp_sweep_aug_oct2026/
+          if-no-files-found: warn
