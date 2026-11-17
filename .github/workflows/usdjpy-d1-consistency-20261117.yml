@@ -1,0 +1,47 @@
+name: USDJPY D1 Consistency Historical Research (isolated)
+on:
+  push:
+    branches:
+      - research/usdjpy-d1-consistency-20261117
+    paths:
+      - .github/workflows/usdjpy-d1-consistency-20261117.yml
+permissions:
+  contents: write
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install research dependencies
+        run: pip install "numpy>=1.26,<3" "pandas>=2.2,<3"
+      - name: Decode versioned protocol and run D1 stop-first backtest
+        shell: bash
+        run: |
+          mkdir -p research_usdjpy
+          echo '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' | base64 -d | gzip -d > research_usdjpy/d1_consistency.py
+          python research_usdjpy/d1_consistency.py
+      - name: Publish evidence on isolated branch only
+        if: success()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research_usdjpy/d1_consistency.py results/usdjpy_d1_consistency_20261117/
+          if ! git diff --cached --quiet; then
+            git commit -m "Research: USDJPY 2026 D1 reproducible SL TP backtest and evidence"
+            git push origin HEAD:research/usdjpy-d1-consistency-20261117
+          fi
+      - name: Save report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: usdjpy-d1-consistency-evidence
+          path: results/usdjpy_d1_consistency_20261117/
+          if-no-files-found: warn
+          retention-days: 30
