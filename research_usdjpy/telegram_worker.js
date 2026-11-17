@@ -107,8 +107,64 @@ async function handleUsdNotify(request,env) {
     return new Response('not delivered',{status:403});
   }
 }
+
+// --- Independent XAGUSD M15 movement alerts; uses existing Telegram+KV bindings ---
+const XAG_M15_MS=900000, XAG_LIMIT_PCT=0.50, XAG_KEY='xagusd-m15-sampled-v1';
+async function xagSpotQuote(now) {
+  const r=await fetch('https://api.gold-api.com/price/XAG',
+    {headers:{accept:'application/json'},signal:AbortSignal.timeout(8000)});
+  if(!r.ok)throw Error('XAG source HTTP '+r.status);
+  const j=await r.json(), price=Number(j.price), t=Date.parse(j.updatedAt);
+  if(j.symbol!=='XAG'||!Number.isFinite(price)||price<=0||
+     (j.currency&&j.currency!=='USD')||!Number.isFinite(t)||
+     t>now+60000||now-t>180000)throw Error('XAG source invalid/stale');
+  return {price,t,source:'Gold API XAG/USD spot'};
+}
+async function scanXagM15(env) {
+  if(!env.R146_STATE)throw Error('XAG KV binding missing');
+  const now=Date.now(),start=Math.floor(now/XAG_M15_MS)*XAG_M15_MS;
+  const q=await xagSpotQuote(now);
+  if(q.t<start)return {status:'waiting_for_new_candle_quote'};
+  const activation=XAG_KEY+':activated';
+  if(!(await env.R146_STATE.get(activation))){
+    await notify(env,'✅ MAKE MONEY — Đã kích hoạt cảnh báo XAGUSD M15 biến động >= 0,50% (tăng hoặc giảm). Kiểm tra mỗi phút. Giá spot XAG/USD lấy mẫu, KHÔNG phải giá nến Exness MT5. Chỉ cảnh báo giá, không phải tín hiệu giao dịch.');
+    await env.R146_STATE.put(activation,'1');
+  }
+  const openKey=XAG_KEY+':open:'+start;
+  const saved=await env.R146_STATE.get(openKey,'json');
+  if(!saved){
+    await env.R146_STATE.put(openKey,JSON.stringify({open:q.price,quoteTime:q.t}),{expirationTtl:3600});
+    return {status:'primed',start,open:q.price};
+  }
+  if(!Number.isFinite(saved.open)||saved.open<=0||
+     !Number.isFinite(saved.quoteTime)||saved.quoteTime<start)
+    throw Error('XAG invalid stored candle opening');
+  const pct=(q.price/saved.open-1)*100;
+  if(Math.abs(pct)<XAG_LIMIT_PCT)return {status:'below_threshold',change_percent:pct};
+  const sentKey=XAG_KEY+':sent:'+start;
+  if(await env.R146_STATE.get(sentKey))return {status:'already_alerted',change_percent:pct};
+  const vn=ms=>new Date(ms+25200000).toISOString().slice(0,19).replace('T',' ');
+  const msg=[
+    '🚨 MAKE MONEY — XAGUSD M15 BIẾN ĐỘNG >= 0,50%',
+    (pct>0?'📈 TĂNG ':'📉 GIẢM ')+pct.toFixed(3)+'% so với giá đầu nến lấy mẫu',
+    'Giá đầu nến (lấy mẫu): '+saved.open.toFixed(3)+' USD/oz',
+    'Giá kiểm tra: '+q.price.toFixed(3)+' USD/oz',
+    'Bắt đầu nến (VN): '+vn(start),
+    'Nguồn cập nhật (VN): '+vn(q.t),
+    'Nguồn: '+q.source,
+    'Dữ liệu spot tham khảo; có thể khác Exness MT5. Giá đầu nến lấy từ mẫu đầu tiên, nến chưa đóng.',
+    'Chỉ là cảnh báo giá — KHÔNG phải tín hiệu giao dịch.'
+  ].join('\n');
+  await notify(env,msg);
+  await env.R146_STATE.put(sentKey,'1',{expirationTtl:3600});
+  return {status:'sent',change_percent:pct};
+}
+
 export default {
-  scheduled: btcAlertWorker.scheduled,
+  scheduled(event,env,ctx){
+    btcAlertWorker.scheduled(event,env,ctx);
+    ctx.waitUntil(scanXagM15(env).then(r=>console.log('XAG M15 alert:',JSON.stringify(r))).catch(e=>console.error('XAG M15 alert failed:',String(e))));
+  },
   async fetch(request,env,ctx) {
     if(new URL(request.url).pathname==='/notify-usdjpy'&&request.method==='POST'){
       return handleUsdNotify(request,env);
