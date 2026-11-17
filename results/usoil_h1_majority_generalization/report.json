@@ -1,0 +1,918 @@
+{
+  "method": "USOIL H1 2/3 close-open majority, entry each H1, SL5 TP10, H1 time exit",
+  "source": "Exness Bid/Ask M5/H1 V19 USOIL, years 2025/2026",
+  "assumptions": "0.01 lot, USOIL 1000 barrels per lot; bid/ask included, M5 first SL on ties; no slippage/commission/swap",
+  "rules": {
+    "ALL": "original both sides",
+    "LONG_ONLY": "only LONG majority; no SHORT",
+    "LONG_PLUS_TREND_SHORT": "LONG unfiltered; SHORT only if previous H1 bid close < 24 completed H1 SMA and SMA < SMA six H1 bars earlier",
+    "BOTH_SMA24_TREND": "LONG only previous close > SMA24 and SMA rising; SHORT only previous close < SMA24 and SMA falling"
+  },
+  "cohorts": {},
+  "variants": {
+    "ALL": {
+      "cohorts": {
+        "2025": {
+          "n": 5603,
+          "pnl": -622.65,
+          "win_rate_pct": 45.76,
+          "profit_factor": 0.8738,
+          "tp": 42,
+          "sl": 311
+        },
+        "2026_Jan_Jul": {
+          "n": 3877,
+          "pnl": -499.99,
+          "win_rate_pct": 44.18,
+          "profit_factor": 0.9282,
+          "tp": 309,
+          "sl": 1060
+        },
+        "2026_Aug_Oct": {
+          "n": 1488,
+          "pnl": -39.55,
+          "win_rate_pct": 47.65,
+          "profit_factor": 0.9837,
+          "tp": 74,
+          "sl": 349
+        },
+        "2026_All": {
+          "n": 4882,
+          "pnl": -512.75,
+          "win_rate_pct": 45.12,
+          "profit_factor": 0.9409,
+          "tp": 364,
+          "sl": 1324
+        },
+        "all": {
+          "n": 10485,
+          "pnl": -1135.4,
+          "win_rate_pct": 45.46,
+          "profit_factor": 0.9166,
+          "tp": 406,
+          "sl": 1635
+        }
+      },
+      "monthly": {
+        "2025-01": {
+          "n": 453,
+          "pnl": -71.55,
+          "win_rate_pct": 45.25,
+          "profit_factor": 0.844,
+          "tp": 2,
+          "sl": 25
+        },
+        "2025-02": {
+          "n": 438,
+          "pnl": -92.9,
+          "win_rate_pct": 44.75,
+          "profit_factor": 0.7359,
+          "tp": 0,
+          "sl": 22
+        },
+        "2025-03": {
+          "n": 460,
+          "pnl": -1.4,
+          "win_rate_pct": 48.91,
+          "profit_factor": 0.996,
+          "tp": 1,
+          "sl": 14
+        },
+        "2025-04": {
+          "n": 457,
+          "pnl": 31.64,
+          "win_rate_pct": 48.8,
+          "profit_factor": 1.0601,
+          "tp": 15,
+          "sl": 58
+        },
+        "2025-05": {
+          "n": 481,
+          "pnl": -9.78,
+          "win_rate_pct": 48.86,
+          "profit_factor": 0.9776,
+          "tp": 2,
+          "sl": 30
+        },
+        "2025-06": {
+          "n": 459,
+          "pnl": -80.69,
+          "win_rate_pct": 43.79,
+          "profit_factor": 0.8709,
+          "tp": 14,
+          "sl": 72
+        },
+        "2025-07": {
+          "n": 499,
+          "pnl": -68.4,
+          "win_rate_pct": 43.29,
+          "profit_factor": 0.8381,
+          "tp": 2,
+          "sl": 16
+        },
+        "2025-08": {
+          "n": 456,
+          "pnl": -73.45,
+          "win_rate_pct": 45.39,
+          "profit_factor": 0.7831,
+          "tp": 1,
+          "sl": 18
+        },
+        "2025-09": {
+          "n": 475,
+          "pnl": -2.08,
+          "win_rate_pct": 48.21,
+          "profit_factor": 0.9935,
+          "tp": 2,
+          "sl": 12
+        },
+        "2025-10": {
+          "n": 503,
+          "pnl": -159.39,
+          "win_rate_pct": 41.35,
+          "profit_factor": 0.6701,
+          "tp": 1,
+          "sl": 28
+        },
+        "2025-11": {
+          "n": 421,
+          "pnl": -39.45,
+          "win_rate_pct": 45.84,
+          "profit_factor": 0.8755,
+          "tp": 2,
+          "sl": 9
+        },
+        "2025-12": {
+          "n": 501,
+          "pnl": -55.2,
+          "win_rate_pct": 45.11,
+          "profit_factor": 0.8218,
+          "tp": 0,
+          "sl": 7
+        },
+        "2026-01": {
+          "n": 447,
+          "pnl": -25.72,
+          "win_rate_pct": 48.32,
+          "profit_factor": 0.9381,
+          "tp": 4,
+          "sl": 30
+        },
+        "2026-02": {
+          "n": 456,
+          "pnl": -102.11,
+          "win_rate_pct": 45.83,
+          "profit_factor": 0.7895,
+          "tp": 4,
+          "sl": 43
+        },
+        "2026-03": {
+          "n": 508,
+          "pnl": -15.59,
+          "win_rate_pct": 40.35,
+          "profit_factor": 0.9888,
+          "tp": 104,
+          "sl": 267
+        },
+        "2026-04": {
+          "n": 482,
+          "pnl": -157.55,
+          "win_rate_pct": 39.42,
+          "profit_factor": 0.8666,
+          "tp": 63,
+          "sl": 205
+        },
+        "2026-05": {
+          "n": 480,
+          "pnl": -107.07,
+          "win_rate_pct": 41.67,
+          "profit_factor": 0.9015,
+          "tp": 61,
+          "sl": 183
+        },
+        "2026-06": {
+          "n": 501,
+          "pnl": -13.08,
+          "win_rate_pct": 47.11,
+          "profit_factor": 0.9841,
+          "tp": 26,
+          "sl": 119
+        },
+        "2026-07": {
+          "n": 520,
+          "pnl": -52.08,
+          "win_rate_pct": 45.77,
+          "profit_factor": 0.9396,
+          "tp": 28,
+          "sl": 128
+        },
+        "2026-08": {
+          "n": 483,
+          "pnl": -26.79,
+          "win_rate_pct": 45.34,
+          "profit_factor": 0.9627,
+          "tp": 19,
+          "sl": 85
+        },
+        "2026-09": {
+          "n": 503,
+          "pnl": 33.67,
+          "win_rate_pct": 48.11,
+          "profit_factor": 1.0377,
+          "tp": 35,
+          "sl": 143
+        },
+        "2026-10": {
+          "n": 502,
+          "pnl": -46.43,
+          "win_rate_pct": 49.4,
+          "profit_factor": 0.9432,
+          "tp": 20,
+          "sl": 121
+        }
+      },
+      "positive_months": 2,
+      "tested_months": 22,
+      "positive_months_2025": 1,
+      "positive_months_2026": 1
+    },
+    "LONG_ONLY": {
+      "cohorts": {
+        "2025": {
+          "n": 2921,
+          "pnl": -306.04,
+          "win_rate_pct": 46.76,
+          "profit_factor": 0.8792,
+          "tp": 16,
+          "sl": 162
+        },
+        "2026_Jan_Jul": {
+          "n": 2042,
+          "pnl": -58.81,
+          "win_rate_pct": 45.35,
+          "profit_factor": 0.9838,
+          "tp": 164,
+          "sl": 562
+        },
+        "2026_Aug_Oct": {
+          "n": 772,
+          "pnl": 62.55,
+          "win_rate_pct": 48.19,
+          "profit_factor": 1.0484,
+          "tp": 42,
+          "sl": 189
+        },
+        "2026_All": {
+          "n": 2578,
+          "pnl": -10.86,
+          "win_rate_pct": 46.2,
+          "profit_factor": 0.9976,
+          "tp": 196,
+          "sl": 710
+        },
+        "all": {
+          "n": 5499,
+          "pnl": -316.9,
+          "win_rate_pct": 46.5,
+          "profit_factor": 0.9554,
+          "tp": 212,
+          "sl": 872
+        }
+      },
+      "monthly": {
+        "2025-01": {
+          "n": 223,
+          "pnl": -24.51,
+          "win_rate_pct": 46.19,
+          "profit_factor": 0.8893,
+          "tp": 1,
+          "sl": 15
+        },
+        "2025-02": {
+          "n": 232,
+          "pnl": -58.29,
+          "win_rate_pct": 45.69,
+          "profit_factor": 0.7073,
+          "tp": 0,
+          "sl": 14
+        },
+        "2025-03": {
+          "n": 246,
+          "pnl": -4.09,
+          "win_rate_pct": 50.81,
+          "profit_factor": 0.9769,
+          "tp": 0,
+          "sl": 6
+        },
+        "2025-04": {
+          "n": 225,
+          "pnl": 7.27,
+          "win_rate_pct": 49.78,
+          "profit_factor": 1.0309,
+          "tp": 6,
+          "sl": 21
+        },
+        "2025-05": {
+          "n": 285,
+          "pnl": 18.81,
+          "win_rate_pct": 51.58,
+          "profit_factor": 1.0705,
+          "tp": 2,
+          "sl": 21
+        },
+        "2025-06": {
+          "n": 246,
+          "pnl": -25.69,
+          "win_rate_pct": 45.12,
+          "profit_factor": 0.9229,
+          "tp": 5,
+          "sl": 40
+        },
+        "2025-07": {
+          "n": 256,
+          "pnl": 2.8,
+          "win_rate_pct": 46.09,
+          "profit_factor": 1.0129,
+          "tp": 1,
+          "sl": 8
+        },
+        "2025-08": {
+          "n": 232,
+          "pnl": -50.3,
+          "win_rate_pct": 45.26,
+          "profit_factor": 0.6953,
+          "tp": 0,
+          "sl": 9
+        },
+        "2025-09": {
+          "n": 216,
+          "pnl": -8.37,
+          "win_rate_pct": 43.98,
+          "profit_factor": 0.9449,
+          "tp": 0,
+          "sl": 6
+        },
+        "2025-10": {
+          "n": 255,
+          "pnl": -99.34,
+          "win_rate_pct": 41.57,
+          "profit_factor": 0.5934,
+          "tp": 0,
+          "sl": 14
+        },
+        "2025-11": {
+          "n": 222,
+          "pnl": -21.58,
+          "win_rate_pct": 47.75,
+          "profit_factor": 0.861,
+          "tp": 1,
+          "sl": 5
+        },
+        "2025-12": {
+          "n": 283,
+          "pnl": -42.75,
+          "win_rate_pct": 46.64,
+          "profit_factor": 0.7467,
+          "tp": 0,
+          "sl": 3
+        },
+        "2026-01": {
+          "n": 262,
+          "pnl": 36.3,
+          "win_rate_pct": 52.29,
+          "profit_factor": 1.1586,
+          "tp": 3,
+          "sl": 21
+        },
+        "2026-02": {
+          "n": 238,
+          "pnl": -25.68,
+          "win_rate_pct": 48.74,
+          "profit_factor": 0.8944,
+          "tp": 3,
+          "sl": 26
+        },
+        "2026-03": {
+          "n": 310,
+          "pnl": 85.81,
+          "win_rate_pct": 44.19,
+          "profit_factor": 1.1075,
+          "tp": 62,
+          "sl": 152
+        },
+        "2026-04": {
+          "n": 253,
+          "pnl": -99.4,
+          "win_rate_pct": 39.13,
+          "profit_factor": 0.8427,
+          "tp": 29,
+          "sl": 112
+        },
+        "2026-05": {
+          "n": 239,
+          "pnl": -58.46,
+          "win_rate_pct": 41.0,
+          "profit_factor": 0.8923,
+          "tp": 31,
+          "sl": 90
+        },
+        "2026-06": {
+          "n": 218,
+          "pnl": -66.67,
+          "win_rate_pct": 43.12,
+          "profit_factor": 0.8315,
+          "tp": 10,
+          "sl": 53
+        },
+        "2026-07": {
+          "n": 286,
+          "pnl": 54.69,
+          "win_rate_pct": 48.25,
+          "profit_factor": 1.1245,
+          "tp": 16,
+          "sl": 67
+        },
+        "2026-08": {
+          "n": 236,
+          "pnl": 14.6,
+          "win_rate_pct": 45.34,
+          "profit_factor": 1.0412,
+          "tp": 10,
+          "sl": 41
+        },
+        "2026-09": {
+          "n": 278,
+          "pnl": 24.42,
+          "win_rate_pct": 47.84,
+          "profit_factor": 1.0477,
+          "tp": 21,
+          "sl": 85
+        },
+        "2026-10": {
+          "n": 258,
+          "pnl": 23.53,
+          "win_rate_pct": 51.16,
+          "profit_factor": 1.0554,
+          "tp": 11,
+          "sl": 63
+        }
+      },
+      "positive_months": 9,
+      "tested_months": 22,
+      "positive_months_2025": 3,
+      "positive_months_2026": 6
+    },
+    "LONG_PLUS_TREND_SHORT": {
+      "cohorts": {
+        "2025": {
+          "n": 4150,
+          "pnl": -543.44,
+          "win_rate_pct": 45.95,
+          "profit_factor": 0.8539,
+          "tp": 28,
+          "sl": 238
+        },
+        "2026_Jan_Jul": {
+          "n": 2824,
+          "pnl": -158.02,
+          "win_rate_pct": 44.97,
+          "profit_factor": 0.9684,
+          "tp": 226,
+          "sl": 767
+        },
+        "2026_Aug_Oct": {
+          "n": 1026,
+          "pnl": -41.65,
+          "win_rate_pct": 47.17,
+          "profit_factor": 0.9759,
+          "tp": 51,
+          "sl": 250
+        },
+        "2026_All": {
+          "n": 3506,
+          "pnl": -174.94,
+          "win_rate_pct": 45.61,
+          "profit_factor": 0.9719,
+          "tp": 266,
+          "sl": 956
+        },
+        "all": {
+          "n": 7656,
+          "pnl": -718.38,
+          "win_rate_pct": 45.79,
+          "profit_factor": 0.9277,
+          "tp": 294,
+          "sl": 1194
+        }
+      },
+      "monthly": {
+        "2025-01": {
+          "n": 352,
+          "pnl": -81.35,
+          "win_rate_pct": 45.17,
+          "profit_factor": 0.776,
+          "tp": 1,
+          "sl": 20
+        },
+        "2025-02": {
+          "n": 317,
+          "pnl": -83.94,
+          "win_rate_pct": 42.9,
+          "profit_factor": 0.6862,
+          "tp": 0,
+          "sl": 17
+        },
+        "2025-03": {
+          "n": 318,
+          "pnl": -11.09,
+          "win_rate_pct": 48.74,
+          "profit_factor": 0.9559,
+          "tp": 0,
+          "sl": 12
+        },
+        "2025-04": {
+          "n": 351,
+          "pnl": 13.13,
+          "win_rate_pct": 49.57,
+          "profit_factor": 1.0317,
+          "tp": 12,
+          "sl": 46
+        },
+        "2025-05": {
+          "n": 361,
+          "pnl": -3.3,
+          "win_rate_pct": 50.69,
+          "profit_factor": 0.9904,
+          "tp": 2,
+          "sl": 25
+        },
+        "2025-06": {
+          "n": 307,
+          "pnl": -54.58,
+          "win_rate_pct": 42.35,
+          "profit_factor": 0.8765,
+          "tp": 9,
+          "sl": 54
+        },
+        "2025-07": {
+          "n": 357,
+          "pnl": -33.43,
+          "win_rate_pct": 43.14,
+          "profit_factor": 0.8857,
+          "tp": 1,
+          "sl": 10
+        },
+        "2025-08": {
+          "n": 349,
+          "pnl": -79.94,
+          "win_rate_pct": 45.27,
+          "profit_factor": 0.6956,
+          "tp": 0,
+          "sl": 12
+        },
+        "2025-09": {
+          "n": 351,
+          "pnl": -10.29,
+          "win_rate_pct": 48.15,
+          "profit_factor": 0.9586,
+          "tp": 1,
+          "sl": 10
+        },
+        "2025-10": {
+          "n": 386,
+          "pnl": -107.28,
+          "win_rate_pct": 43.26,
+          "profit_factor": 0.702,
+          "tp": 1,
+          "sl": 21
+        },
+        "2025-11": {
+          "n": 302,
+          "pnl": -49.39,
+          "win_rate_pct": 45.7,
+          "profit_factor": 0.7879,
+          "tp": 1,
+          "sl": 7
+        },
+        "2025-12": {
+          "n": 399,
+          "pnl": -41.98,
+          "win_rate_pct": 46.12,
+          "profit_factor": 0.8248,
+          "tp": 0,
+          "sl": 4
+        },
+        "2026-01": {
+          "n": 314,
+          "pnl": 21.71,
+          "win_rate_pct": 50.32,
+          "profit_factor": 1.0798,
+          "tp": 3,
+          "sl": 22
+        },
+        "2026-02": {
+          "n": 344,
+          "pnl": -56.74,
+          "win_rate_pct": 47.09,
+          "profit_factor": 0.8449,
+          "tp": 4,
+          "sl": 36
+        },
+        "2026-03": {
+          "n": 372,
+          "pnl": 57.52,
+          "win_rate_pct": 43.01,
+          "profit_factor": 1.0589,
+          "tp": 73,
+          "sl": 187
+        },
+        "2026-04": {
+          "n": 329,
+          "pnl": -107.05,
+          "win_rate_pct": 38.91,
+          "profit_factor": 0.8694,
+          "tp": 43,
+          "sl": 144
+        },
+        "2026-05": {
+          "n": 359,
+          "pnl": -72.58,
+          "win_rate_pct": 40.95,
+          "profit_factor": 0.9132,
+          "tp": 51,
+          "sl": 142
+        },
+        "2026-06": {
+          "n": 388,
+          "pnl": -35.14,
+          "win_rate_pct": 46.39,
+          "profit_factor": 0.9453,
+          "tp": 19,
+          "sl": 89
+        },
+        "2026-07": {
+          "n": 374,
+          "pnl": 58.99,
+          "win_rate_pct": 48.13,
+          "profit_factor": 1.103,
+          "tp": 22,
+          "sl": 86
+        },
+        "2026-08": {
+          "n": 344,
+          "pnl": -24.73,
+          "win_rate_pct": 45.06,
+          "profit_factor": 0.9526,
+          "tp": 11,
+          "sl": 61
+        },
+        "2026-09": {
+          "n": 364,
+          "pnl": 3.39,
+          "win_rate_pct": 47.53,
+          "profit_factor": 1.005,
+          "tp": 28,
+          "sl": 113
+        },
+        "2026-10": {
+          "n": 318,
+          "pnl": -20.31,
+          "win_rate_pct": 49.06,
+          "profit_factor": 0.9613,
+          "tp": 12,
+          "sl": 76
+        }
+      },
+      "positive_months": 5,
+      "tested_months": 22,
+      "positive_months_2025": 1,
+      "positive_months_2026": 4
+    },
+    "BOTH_SMA24_TREND": {
+      "cohorts": {
+        "2025": {
+          "n": 2548,
+          "pnl": -420.83,
+          "win_rate_pct": 44.58,
+          "profit_factor": 0.82,
+          "tp": 19,
+          "sl": 145
+        },
+        "2026_Jan_Jul": {
+          "n": 1873,
+          "pnl": -154.98,
+          "win_rate_pct": 44.26,
+          "profit_factor": 0.9536,
+          "tp": 148,
+          "sl": 511
+        },
+        "2026_Aug_Oct": {
+          "n": 672,
+          "pnl": -90.69,
+          "win_rate_pct": 45.24,
+          "profit_factor": 0.9199,
+          "tp": 35,
+          "sl": 159
+        },
+        "2026_All": {
+          "n": 2293,
+          "pnl": -219.83,
+          "win_rate_pct": 44.44,
+          "profit_factor": 0.9464,
+          "tp": 175,
+          "sl": 629
+        },
+        "all": {
+          "n": 4841,
+          "pnl": -640.66,
+          "win_rate_pct": 44.52,
+          "profit_factor": 0.9005,
+          "tp": 194,
+          "sl": 774
+        }
+      },
+      "monthly": {
+        "2025-01": {
+          "n": 210,
+          "pnl": -49.12,
+          "win_rate_pct": 46.67,
+          "profit_factor": 0.7745,
+          "tp": 0,
+          "sl": 9
+        },
+        "2025-02": {
+          "n": 187,
+          "pnl": -29.7,
+          "win_rate_pct": 42.78,
+          "profit_factor": 0.7862,
+          "tp": 0,
+          "sl": 9
+        },
+        "2025-03": {
+          "n": 193,
+          "pnl": -42.14,
+          "win_rate_pct": 42.49,
+          "profit_factor": 0.7523,
+          "tp": 0,
+          "sl": 9
+        },
+        "2025-04": {
+          "n": 231,
+          "pnl": -12.3,
+          "win_rate_pct": 48.92,
+          "profit_factor": 0.9572,
+          "tp": 6,
+          "sl": 34
+        },
+        "2025-05": {
+          "n": 208,
+          "pnl": -43.81,
+          "win_rate_pct": 47.6,
+          "profit_factor": 0.7921,
+          "tp": 1,
+          "sl": 15
+        },
+        "2025-06": {
+          "n": 185,
+          "pnl": -40.51,
+          "win_rate_pct": 39.46,
+          "profit_factor": 0.8603,
+          "tp": 8,
+          "sl": 34
+        },
+        "2025-07": {
+          "n": 229,
+          "pnl": -35.7,
+          "win_rate_pct": 41.05,
+          "profit_factor": 0.8127,
+          "tp": 1,
+          "sl": 7
+        },
+        "2025-08": {
+          "n": 205,
+          "pnl": -36.16,
+          "win_rate_pct": 44.88,
+          "profit_factor": 0.7419,
+          "tp": 0,
+          "sl": 3
+        },
+        "2025-09": {
+          "n": 242,
+          "pnl": -0.66,
+          "win_rate_pct": 50.0,
+          "profit_factor": 0.996,
+          "tp": 1,
+          "sl": 5
+        },
+        "2025-10": {
+          "n": 227,
+          "pnl": -61.96,
+          "win_rate_pct": 41.85,
+          "profit_factor": 0.7168,
+          "tp": 1,
+          "sl": 14
+        },
+        "2025-11": {
+          "n": 181,
+          "pnl": -44.48,
+          "win_rate_pct": 41.44,
+          "profit_factor": 0.721,
+          "tp": 1,
+          "sl": 5
+        },
+        "2025-12": {
+          "n": 250,
+          "pnl": -24.29,
+          "win_rate_pct": 45.6,
+          "profit_factor": 0.8356,
+          "tp": 0,
+          "sl": 1
+        },
+        "2026-01": {
+          "n": 211,
+          "pnl": -10.31,
+          "win_rate_pct": 47.87,
+          "profit_factor": 0.9477,
+          "tp": 1,
+          "sl": 16
+        },
+        "2026-02": {
+          "n": 233,
+          "pnl": -51.35,
+          "win_rate_pct": 45.49,
+          "profit_factor": 0.8058,
+          "tp": 3,
+          "sl": 28
+        },
+        "2026-03": {
+          "n": 262,
+          "pnl": 22.1,
+          "win_rate_pct": 43.13,
+          "profit_factor": 1.0325,
+          "tp": 46,
+          "sl": 129
+        },
+        "2026-04": {
+          "n": 217,
+          "pnl": -69.69,
+          "win_rate_pct": 37.33,
+          "profit_factor": 0.8765,
+          "tp": 31,
+          "sl": 102
+        },
+        "2026-05": {
+          "n": 210,
+          "pnl": -71.09,
+          "win_rate_pct": 38.1,
+          "profit_factor": 0.8615,
+          "tp": 30,
+          "sl": 88
+        },
+        "2026-06": {
+          "n": 245,
+          "pnl": 5.85,
+          "win_rate_pct": 48.98,
+          "profit_factor": 1.0154,
+          "tp": 11,
+          "sl": 54
+        },
+        "2026-07": {
+          "n": 243,
+          "pnl": 45.35,
+          "win_rate_pct": 46.91,
+          "profit_factor": 1.123,
+          "tp": 18,
+          "sl": 53
+        },
+        "2026-08": {
+          "n": 252,
+          "pnl": -25.84,
+          "win_rate_pct": 45.24,
+          "profit_factor": 0.9298,
+          "tp": 8,
+          "sl": 41
+        },
+        "2026-09": {
+          "n": 232,
+          "pnl": 27.67,
+          "win_rate_pct": 47.84,
+          "profit_factor": 1.0659,
+          "tp": 21,
+          "sl": 68
+        },
+        "2026-10": {
+          "n": 188,
+          "pnl": -92.52,
+          "win_rate_pct": 42.02,
+          "profit_factor": 0.7306,
+          "tp": 6,
+          "sl": 50
+        }
+      },
+      "positive_months": 4,
+      "tested_months": 22,
+      "positive_months_2025": 0,
+      "positive_months_2026": 4
+    }
+  }
+}
