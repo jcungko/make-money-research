@@ -1,0 +1,98 @@
+name: Research snapshot source EAs and real Bid Ask data Aug-Oct 2026
+'on':
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ea-source-audit-snapshot-2026.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install archive dependencies
+        run: pip install 'pandas>=2.2,<3' requests
+      - name: Fetch pinned source and month-separated Exness Bid Ask M1 candles
+        shell: bash
+        run: |
+          mkdir -p research_snapshot_2026
+          cat > /tmp/snapshot.py <<'PY'
+          import os, io, json, zipfile, hashlib, requests, pandas as pd, urllib.parse
+          from pathlib import Path
+          base=Path('research_snapshot_2026'); (base/'src').mkdir(parents=True,exist_ok=True); (base/'data').mkdir(parents=True,exist_ok=True)
+          sources={
+             'GoodMA.mq4': ('Yumerain/EA-MQL4','d6338c4cee7c38cf15b4781fddfb5c78a5b790f0','Experts/GoodMA.mq4'),
+             'Pinball.mq4': ('Yumerain/EA-MQL4','d6338c4cee7c38cf15b4781fddfb5c78a5b790f0','Experts/Pinball.mq4'),
+             'TurtleTrading.mq5': ('pengfuchao/mql5-algo-trading','1757435ea94d05b944b675ad902f624d186cc36b','Strategies/Strategy_Turtle_Trading.mq5'),
+             'EMA_MTF.mq5': ('111aaa327/mt5-ea-open-source','98cc370881a3ceb1d75c028b5b08e48f511a5114','Experts/EURUSD_EMA_MTF_5_8_21_55_EA_v2.mq5'),
+             'DonchianGrid.mq5': ('Yogurt-Peng/EA','432b2773dd506a37fd702ac73a4407a4dd831315','外汇网格策略.mq5'),
+             'SmartGridMartingale.mq5': ('chenhengyi53-design/SmartGridMartingaleEA','87e68013a3131ff8adaa37a292ad8de4f0d9f217','智能网格马丁EA_完美版_fixed.mq5'),
+             'Yogurt_Tools.mqh': ('Yogurt-Peng/EA','432b2773dd506a37fd702ac73a4407a4dd831315','Tools.mqh'),
+             'Yogurt_Indicators.mqh': ('Yogurt-Peng/EA','432b2773dd506a37fd702ac73a4407a4dd831315','Indicators.mqh'),
+             'Yogurt_Draw.mqh': ('Yogurt-Peng/EA','432b2773dd506a37fd702ac73a4407a4dd831315','Draw.mqh'),
+             'Yogurt_PerformanceEvaluator.mqh': ('Yogurt-Peng/EA','432b2773dd506a37fd702ac73a4407a4dd831315','PerformanceEvaluator.mqh')
+          }
+          provenance={}
+          with requests.Session() as s:
+              for name,(repo,sha,path) in sources.items():
+                  url='https://raw.githubusercontent.com/'+repo+'/'+sha+'/'+urllib.parse.quote(path)
+                  r=s.get(url,timeout=35);r.raise_for_status()
+                  (base/'src'/name).write_bytes(r.content)
+                  provenance[name]=dict(repo=repo,sha=sha,path=path,url=url,bytes=len(r.content),sha256=hashlib.sha256(r.content).hexdigest())
+                  print('SOURCE',name,len(r.content),flush=True)
+              (base/'sources.json').write_text(json.dumps(provenance,ensure_ascii=False,indent=2))
+              # Store quoted bid/ask OHLC per real minute; do NOT invent missing tick timestamps or bid/ask.
+              for symbol in ['XAUUSD','XAGUSD']:
+                  pieces=[]
+                  for month in [7,8,9,10]:
+                      url=f'https://ticks.ex2archive.com/ticks/{symbol}/2026/{month:02d}/Exness_{symbol}_2026_{month:02d}.zip'
+                      r=s.get(url,timeout=(20,180));r.raise_for_status()
+                      assert zipfile.is_zipfile(io.BytesIO(r.content)),url
+                      bars=[]
+                      with zipfile.ZipFile(io.BytesIO(r.content)) as z:
+                          for member in z.namelist():
+                              if not member.lower().endswith('.csv'): continue
+                              with z.open(member) as f:
+                                  for chunk in pd.read_csv(f,usecols=['Timestamp','Bid','Ask'],chunksize=300000):
+                                      ts=pd.to_datetime(chunk.Timestamp,format='ISO8601',utc=True,errors='coerce')
+                                      good=ts.notna()&chunk.Bid.notna()&chunk.Ask.notna()&(chunk.Bid<=chunk.Ask)
+                                      if not good.any():continue
+                                      tmp=chunk.loc[good,['Bid','Ask']]
+                                      tmp.index=ts[good].dt.floor('min')
+                                      bars.append(tmp.groupby(level=0,sort=True).agg(
+                                        bid_open=('Bid','first'),bid_high=('Bid','max'),bid_low=('Bid','min'),bid_close=('Bid','last'),
+                                        ask_open=('Ask','first'),ask_high=('Ask','max'),ask_low=('Ask','min'),ask_close=('Ask','last'),
+                                        tick_count=('Bid','size')))
+                      assert bars,url
+                      agg={**{f'{side}_{p}':f for side in ['bid','ask'] for p,f in [('open','first'),('high','max'),('low','min'),('close','last')]},'tick_count':'sum'}
+                      frame=pd.concat(bars).sort_index(kind='stable').groupby(level=0,sort=True).agg(agg)
+                      pieces.append(frame)
+                      print('METAL',symbol,month,'M1',len(frame),'SOURCE_BYTES',len(r.content),flush=True)
+                  allbars=pd.concat(pieces).sort_index()
+                  allbars.to_csv(base/'data'/f'{symbol}_M1_JUL_OCT_2026_UTC.csv.gz',compression='gzip',index_label='timestamp_utc',float_format='%.6f')
+              for symbol in ['EURUSD','USDJPY']:
+                  zpath=Path('data/v17_exness_2026')/f'{symbol}_2026_UTC_7TF.zip'
+                  assert zpath.exists(),zpath
+                  with zipfile.ZipFile(zpath) as z:
+                      for tf in ['M5','M15','H1','H4','D1']:
+                          df=pd.read_csv(z.open(f'{symbol}_{tf}_2026_UTC.csv'),index_col=0,parse_dates=[0])
+                          df.index=pd.to_datetime(df.index,utc=True)
+                          df=df.loc['2026-07-01':'2026-10-31']
+                          df.to_csv(base/'data'/f'{symbol}_{tf}_JUL_OCT_2026_UTC.csv.gz',index_label='timestamp_utc',compression='gzip')
+                          print('FX',symbol,tf,len(df),flush=True)
+          PY
+          python /tmp/snapshot.py
+      - name: Upload reproducible research snapshot
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: EA-public-source-2026-aug-oct-snapshot
+          path: research_snapshot_2026/
+          retention-days: 30
+          if-no-files-found: warn
