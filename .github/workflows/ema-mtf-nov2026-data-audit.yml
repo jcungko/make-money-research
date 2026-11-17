@@ -1,0 +1,59 @@
+name: EMA MTF EURUSD Nov 2026 data snapshot (research only)
+'on':
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ema-mtf-nov2026-data-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deterministic data-processing dependencies
+        run: python -m pip install 'pandas>=2.2,<3' requests
+      - name: Fetch Exness EURUSD ticks and publish completed UTC trading dates through Nov 16
+        shell: bash
+        run: |
+          mkdir -p ema_mtf_nov2026_input
+          python - <<'PY'
+          import hashlib,io,json,zipfile,pathlib,requests,pandas as pd
+          from scripts.v12_exness_collect import ticks_to_5m
+          path=pathlib.Path('ema_mtf_nov2026_input')
+          src='https://ticks.ex2archive.com/ticks/EURUSD/2026/11/Exness_EURUSD_2026_11.zip'
+          begin=pd.Timestamp('2026-11-01T00:00:00Z')
+          cutoff=pd.Timestamp('2026-11-17T00:00:00Z')
+          response=requests.get(src,timeout=(20,180));response.raise_for_status()
+          data=response.content
+          assert zipfile.is_zipfile(io.BytesIO(data)), 'Exness response is not a ZIP'
+          m5=ticks_to_5m(data,cutoff,begin)
+          assert len(m5)>800, 'Too few M5 bars for November'
+          assert m5.index.is_unique and m5.index.is_monotonic_increasing
+          assert m5.index.max()<cutoff
+          assert not (m5.bid_close>m5.ask_close).any()
+          output=path/'EURUSD_M5_2026_NOV01_to_NOV16_UTC.csv.gz'
+          m5.to_csv(output,index_label='timestamp_utc',compression='gzip',float_format='%.6f')
+          meta=dict(symbol='EURUSD',price_source='Exness archived tick Bid and Ask',source_url=src,
+                    source_zip_sha256=hashlib.sha256(data).hexdigest(),source_zip_bytes=len(data),
+                    csv_gz_sha256=hashlib.sha256(output.read_bytes()).hexdigest(),frame='M5',
+                    first_utc=m5.index.min().isoformat(),last_utc=m5.index.max().isoformat(),
+                    cutoff_exclusive_utc=cutoff.isoformat(),rows=len(m5),
+                    daily_rows={str(k):len(v) for k,v in m5.groupby(m5.index.date)},
+                    disclaimer='November 17 partial UTC day excluded; use only fully closed calendar days')
+          (path/'manifest.json').write_text(json.dumps(meta,indent=2))
+          print('RESEARCH_DATA_MANIFEST',json.dumps(meta),flush=True)
+          PY
+      - name: Archive reproducible EURUSD Nov data and provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: EURUSD-Nov2026-bidask-M5-through-Nov16
+          path: ema_mtf_nov2026_input/
+          retention-days: 30
+          if-no-files-found: warn
