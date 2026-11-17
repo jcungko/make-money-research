@@ -1,0 +1,23 @@
+name: M5 simultaneous BUY SELL TP0.50 SL10 Aug-Oct 2026
+on:
+  push:
+    branches: [research/m5-hedged-tp050-sl10-aug-oct2026]
+    paths:
+      - 'scripts/m5_hedged_tp050_sl10_aug_oct2026.py'
+      - '.github/workflows/m5-hedged-tp050-sl10-aug-oct2026.yml'
+  workflow_dispatch:
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run auditable backtest
+        run: python scripts/m5_hedged_tp050_sl10_aug_oct2026.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: m5-hedged-tp050-sl10-results
+          path: results/m5_hedged_tp050_sl10_aug_oct2026/
+          if-no-files-found: warn
