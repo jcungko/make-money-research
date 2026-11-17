@@ -59,6 +59,35 @@ jobs:
           p.write_text(s)
           PY
           python research_usdjpy/d1_consistency.py
+      - name: Independent D1-42 per-trade profit loss detail
+        shell: bash
+        run: |
+          python - <<'PY'
+          import sys, csv, json, statistics
+          from pathlib import Path
+          from collections import defaultdict
+          sys.path.insert(0,'research_usdjpy')
+          import d1_consistency as d
+          m, daily, meta = d.load(2026)
+          processed, grouped = d.prepare(m,daily)
+          spec = dict(id='D1-42',family='three_fade',stop_atr=0.25,entry_hour_utc=1,rr=1.0)
+          trades = d.simulate(processed,grouped,spec,slip=0.20,commission=0.07)
+          stress = d.simulate(processed,grouped,spec,slip=0.70,commission=0.10)
+          assert len(trades)==146, 'trade count mismatch to frozen report'
+          assert abs(sum(t['pnl_usd'] for t in trades)-0.66895)<1e-3, 'PnL mismatch to frozen report'
+          out=Path('results/usdjpy_d1_consistency_20261117')
+          out.mkdir(parents=True,exist_ok=True)
+          with (out/'D1-42_all_trades.csv').open('w',newline='') as f:
+              w=csv.DictWriter(f,fieldnames=list(trades[0]));w.writeheader();w.writerows(trades)
+          wins=[t['pnl_usd'] for t in trades if t['pnl_usd']>0]
+          losses=[t['pnl_usd'] for t in trades if t['pnl_usd']<0]
+          by_month=defaultdict(list)
+          for t in trades:by_month[t['day'][:7]].append(t)
+          stats=lambda xs:dict(n=len(xs),min_usd=round(min(xs),5),max_usd=round(max(xs),5),mean_usd=round(statistics.mean(xs),5),median_usd=round(statistics.median(xs),5),total_usd=round(sum(xs),5))
+          report=dict(strategy=spec,notes=['Historical rejected candidate, NOT approved for live trading','0.01 lot (1000 USD notional) theoretical USDJPY','entry and exit executable Bid/Ask M5 with additional 0.2 pip slippage per side and USD 0.07 commission per trade','Same M5 touches both stop and target => SL first'],total=d.stats(trades),wins=stats(wins),losses=stats(losses),by_month={mo:dict(n=len(group),wins=len([q for q in group if q['pnl_usd']>0]),losses=len([q for q in group if q['pnl_usd']<0]),gross_profit_usd=round(sum(q['pnl_usd'] for q in group if q['pnl_usd']>0),5),gross_loss_usd=round(sum(q['pnl_usd'] for q in group if q['pnl_usd']<0),5),net_usd=round(sum(q['pnl_usd'] for q in group),5)) for mo,group in sorted(by_month.items())},stop_width_pips=dict(min=min(t['width_pips'] for t in trades),max=max(t['width_pips'] for t in trades),median=round(statistics.median(t['width_pips'] for t in trades),2)),stress=d.stats(stress))
+          (out/'D1-42_trade_breakdown.json').write_text(json.dumps(report,indent=2)+'\n')
+          print(json.dumps(dict(total=report['total'],wins=report['wins'],losses=report['losses'],stop_width_pips=report['stop_width_pips'])))
+          PY
       - name: Publish evidence on isolated branch only
         if: success()
         shell: bash
