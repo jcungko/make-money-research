@@ -1,0 +1,34 @@
+name: USOIL H1 2025-2026 generalization audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/usoil-h1-2025-2026-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'pandas>=2.2,<3'
+      - run: python scripts/usoil_h1_majority_generalization_audit.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: usoil-h1-majority-generalization-audit-2025-2026
+          path: results/usoil_h1_majority_generalization/
+      - name: Commit isolated audit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/usoil_h1_majority_generalization/
+          if ! git diff --cached --quiet; then
+            git commit -m "Research: audit USOIL H1 generalization across 2025 and 2026"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
