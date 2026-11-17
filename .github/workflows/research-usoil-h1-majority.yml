@@ -1,0 +1,34 @@
+name: Research USOIL H1 majority Aug-Oct 2026
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/research-usoil-h1-majority.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'pandas>=2.2,<3'
+      - run: python scripts/usoil_h1_majority_backtest.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: usoil-h1-majority-aug-oct-2026
+          path: results/usoil_h1_majority_2026/
+      - name: Publish research report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/usoil_h1_majority_2026/
+          if ! git diff --cached --quiet; then
+            git commit -m "Research: USOIL H1 majority Aug-Oct results"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
