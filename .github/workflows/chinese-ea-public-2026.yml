@@ -25,8 +25,13 @@ jobs:
           python - <<'PY'
           import os,base64,zlib,hashlib,pathlib
           b=zlib.decompress(base64.b64decode(os.environ['BASE64_SCRIPT']))
-          pathlib.Path('chinese_ea_public_backtest_2026.py').write_bytes(b)
-          print('SOURCE_SHA256',hashlib.sha256(b).hexdigest())
+          old = "AGG={**{f'{s}_{f}':f for s in ['bid','ask'] for f in ['open','high','low','close']},'tick_count':'sum'}"
+          replacement = "FUNC={'open':'first','high':'max','low':'min','close':'last'}\nAGG={**{f'{s}_{f}':FUNC[f] for s in ['bid','ask'] for f in FUNC},'tick_count':'sum'}"
+          script=b.decode('utf-8')
+          assert script.count(old)==1, 'Pinned source changed'
+          script=script.replace(old,replacement)
+          pathlib.Path('chinese_ea_public_backtest_2026.py').write_text(script,encoding='utf-8')
+          print('SOURCE_SHA256',hashlib.sha256(script.encode()).hexdigest())
           PY
       - name: Run three fixed M15 research strategies
         run: python chinese_ea_public_backtest_2026.py
