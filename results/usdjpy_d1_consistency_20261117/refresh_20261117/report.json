@@ -1,0 +1,436 @@
+{
+  "protocol": "D1-42-FROZEN-FORWARD-HISTORICAL-REPLAY-20261117",
+  "created_utc": "2026-11-17T06:27:24.574003+00:00",
+  "excluded_incomplete_utc_day": "2026-11-17",
+  "target_days_utc": [
+    "2026-11-11",
+    "2026-11-12",
+    "2026-11-13",
+    "2026-11-16"
+  ],
+  "source": "Exness public daily tick archives (USDJPY standard symbol)",
+  "branch": "research/usdjpy-d1-consistency-20261117",
+  "status": "COMPLETE",
+  "day_sources": [
+    {
+      "date": "2026-11-11",
+      "status": "VERIFIED_CLOSED",
+      "source_url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/11/11/Exness_USDJPY_2026_11_11.zip",
+      "archive_sha256": "d43c6882537ced7b9ac08b7f89958da79580a6bbd8c1f88091ebe71d983679bd",
+      "zip_status": "complete_zip",
+      "ticks": 45547,
+      "m5_bars": 287,
+      "first_utc": "2026-11-11T00:00:00.111000+00:00",
+      "last_utc": "2026-11-11T23:59:58.952000+00:00",
+      "download_bytes": 307280,
+      "last_modified": "Thu, 12 Nov 2026 00:41:20 GMT"
+    },
+    {
+      "date": "2026-11-12",
+      "status": "VERIFIED_CLOSED",
+      "source_url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/11/12/Exness_USDJPY_2026_11_12.zip",
+      "archive_sha256": "31c9038f967200a166703e69f411b26ab288fd98c80dcba09678ee4b1824ab48",
+      "zip_status": "complete_zip",
+      "ticks": 70289,
+      "m5_bars": 287,
+      "first_utc": "2026-11-12T00:00:00.104000+00:00",
+      "last_utc": "2026-11-12T23:59:55.367000+00:00",
+      "download_bytes": 463805,
+      "last_modified": "Fri, 13 Nov 2026 00:41:20 GMT"
+    },
+    {
+      "date": "2026-11-13",
+      "status": "VERIFIED_CLOSED",
+      "source_url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/11/13/Exness_USDJPY_2026_11_13.zip",
+      "archive_sha256": "c2fae3917a94fca7f615786b1e270d2b769676f6721e1e0d79a6524e323b310c",
+      "zip_status": "complete_zip",
+      "ticks": 61030,
+      "m5_bars": 264,
+      "first_utc": "2026-11-13T00:00:00.091000+00:00",
+      "last_utc": "2026-11-13T21:58:54.770000+00:00",
+      "download_bytes": 403055,
+      "last_modified": "Sat, 14 Nov 2026 00:41:20 GMT"
+    },
+    {
+      "date": "2026-11-16",
+      "status": "VERIFIED_CLOSED",
+      "source_url": "https://ticks.ex2archive.com/ticks/USDJPY/2026/11/16/Exness_USDJPY_2026_11_16.zip",
+      "archive_sha256": "5656bf6db71a1060584c8ad6f5506ca9213c7a3be5b64efe9570dd6bf98e1db9",
+      "zip_status": "complete_zip",
+      "ticks": 65227,
+      "m5_bars": 287,
+      "first_utc": "2026-11-16T00:00:00.076000+00:00",
+      "last_utc": "2026-11-16T23:59:59.063000+00:00",
+      "download_bytes": 432268,
+      "last_modified": "Tue, 17 Nov 2026 00:41:21 GMT"
+    }
+  ],
+  "source_errors": [],
+  "strategy": {
+    "id": "D1-42",
+    "family": "three_fade",
+    "stop_atr": 0.25,
+    "entry_hour_utc": 1,
+    "rr": 1.0
+  },
+  "changes_to_strategy": false,
+  "real_trading": false,
+  "costs": {
+    "bid_ask": true,
+    "baseline_slippage_pips_per_side": 0.2,
+    "baseline_commission_usd_roundtrip": 0.07,
+    "stress_slippage_pips_per_side": 0.7,
+    "stress_commission_usd_roundtrip": 0.1,
+    "actual_exness_costs_verified": false
+  },
+  "old_source": {
+    "year": 2026,
+    "sha256": "1231c9cdcc62ea40db6da48fc96e1beffb758096456532a9fce6e269f23ca574",
+    "m5": 64089,
+    "d1": 269
+  },
+  "baseline_before_refresh": {
+    "n": 146,
+    "win_rate": 0.5479,
+    "win_lower95": 0.467,
+    "net_usd": 0.66894,
+    "profit_factor": 1.006,
+    "max_dd_usd": 24.9454,
+    "tp_count": 76,
+    "sl_count": 62,
+    "time_count": 8,
+    "monthly": {
+      "2026-01": {
+        "n": 5,
+        "net_usd": 6.65161,
+        "wins": 4,
+        "win_rate": 0.8
+      },
+      "2026-02": {
+        "n": 17,
+        "net_usd": -21.9723,
+        "wins": 4,
+        "win_rate": 0.2353
+      },
+      "2026-03": {
+        "n": 14,
+        "net_usd": 2.6884,
+        "wins": 8,
+        "win_rate": 0.5714
+      },
+      "2026-04": {
+        "n": 13,
+        "net_usd": 0.94128,
+        "wins": 7,
+        "win_rate": 0.5385
+      },
+      "2026-05": {
+        "n": 16,
+        "net_usd": 8.76281,
+        "wins": 11,
+        "win_rate": 0.6875
+      },
+      "2026-06": {
+        "n": 16,
+        "net_usd": 0.91907,
+        "wins": 10,
+        "win_rate": 0.625
+      },
+      "2026-07": {
+        "n": 18,
+        "net_usd": 1.6942,
+        "wins": 10,
+        "win_rate": 0.5556
+      },
+      "2026-08": {
+        "n": 12,
+        "net_usd": 3.43795,
+        "wins": 7,
+        "win_rate": 0.5833
+      },
+      "2026-09": {
+        "n": 20,
+        "net_usd": -11.18583,
+        "wins": 8,
+        "win_rate": 0.4
+      },
+      "2026-10": {
+        "n": 10,
+        "net_usd": 2.767,
+        "wins": 6,
+        "win_rate": 0.6
+      },
+      "2026-11": {
+        "n": 5,
+        "net_usd": 5.96477,
+        "wins": 5,
+        "win_rate": 1.0
+      }
+    }
+  },
+  "contiguous_verified_days": [
+    "2026-11-11",
+    "2026-11-12",
+    "2026-11-13",
+    "2026-11-16"
+  ],
+  "ignored_noncontiguous_days": [],
+  "full_to_utc_day": "2026-11-16",
+  "new_m5_rows": 1125,
+  "new_d1_rows": 4,
+  "new_trades": [
+    {
+      "day": "2026-11-11",
+      "direction": "SELL",
+      "entry_utc": "2026-11-11T01:00:00+00:00",
+      "exit_utc": "2026-11-11T10:10:00+00:00",
+      "outcome": "SL",
+      "entry": 158.797,
+      "sl": 159.04146,
+      "tp": 158.55254,
+      "exit": 159.04346,
+      "width_pips": 24.45,
+      "spread_pips": 0.7,
+      "pnl_usd": -1.619666
+    },
+    {
+      "day": "2026-11-12",
+      "direction": "SELL",
+      "entry_utc": "2026-11-12T01:00:00+00:00",
+      "exit_utc": "2026-11-12T02:15:00+00:00",
+      "outcome": "SL",
+      "entry": 159.58,
+      "sl": 159.81393,
+      "tp": 159.34607,
+      "exit": 159.81593,
+      "width_pips": 23.39,
+      "spread_pips": 0.7,
+      "pnl_usd": -1.546252
+    },
+    {
+      "day": "2026-11-13",
+      "direction": "SELL",
+      "entry_utc": "2026-11-13T01:00:00+00:00",
+      "exit_utc": "2026-11-13T06:10:00+00:00",
+      "outcome": "SL",
+      "entry": 159.861,
+      "sl": 160.08854,
+      "tp": 159.63346,
+      "exit": 160.09054,
+      "width_pips": 22.75,
+      "spread_pips": 0.7,
+      "pnl_usd": -1.503843
+    },
+    {
+      "day": "2026-11-16",
+      "direction": "SELL",
+      "entry_utc": "2026-11-16T01:00:00+00:00",
+      "exit_utc": "2026-11-16T05:05:00+00:00",
+      "outcome": "TP",
+      "entry": 159.767,
+      "sl": 159.98857,
+      "tp": 159.54543,
+      "exit": 159.54743,
+      "width_pips": 22.16,
+      "spread_pips": 0.7,
+      "pnl_usd": 1.306214
+    }
+  ],
+  "new_period": {
+    "n": 4,
+    "win_rate": 0.25,
+    "win_lower95": 0.0456,
+    "net_usd": -3.36355,
+    "profit_factor": 0.28,
+    "max_dd_usd": 4.66976,
+    "tp_count": 1,
+    "sl_count": 3,
+    "time_count": 0,
+    "monthly": {
+      "2026-11": {
+        "n": 4,
+        "net_usd": -3.36355,
+        "wins": 1,
+        "win_rate": 0.25
+      }
+    }
+  },
+  "new_period_stress": {
+    "n": 4,
+    "win_rate": 0.25,
+    "win_lower95": 0.0456,
+    "net_usd": -3.60884,
+    "profit_factor": 0.256,
+    "max_dd_usd": 4.85372,
+    "tp_count": 1,
+    "sl_count": 3,
+    "time_count": 0,
+    "monthly": {
+      "2026-11": {
+        "n": 4,
+        "net_usd": -3.60884,
+        "wins": 1,
+        "win_rate": 0.25
+      }
+    }
+  },
+  "updated_cumulative": {
+    "n": 150,
+    "win_rate": 0.54,
+    "win_lower95": 0.4602,
+    "net_usd": -2.6946,
+    "profit_factor": 0.978,
+    "max_dd_usd": 24.9454,
+    "tp_count": 77,
+    "sl_count": 65,
+    "time_count": 8,
+    "monthly": {
+      "2026-01": {
+        "n": 5,
+        "net_usd": 6.65161,
+        "wins": 4,
+        "win_rate": 0.8
+      },
+      "2026-02": {
+        "n": 17,
+        "net_usd": -21.9723,
+        "wins": 4,
+        "win_rate": 0.2353
+      },
+      "2026-03": {
+        "n": 14,
+        "net_usd": 2.6884,
+        "wins": 8,
+        "win_rate": 0.5714
+      },
+      "2026-04": {
+        "n": 13,
+        "net_usd": 0.94128,
+        "wins": 7,
+        "win_rate": 0.5385
+      },
+      "2026-05": {
+        "n": 16,
+        "net_usd": 8.76281,
+        "wins": 11,
+        "win_rate": 0.6875
+      },
+      "2026-06": {
+        "n": 16,
+        "net_usd": 0.91907,
+        "wins": 10,
+        "win_rate": 0.625
+      },
+      "2026-07": {
+        "n": 18,
+        "net_usd": 1.6942,
+        "wins": 10,
+        "win_rate": 0.5556
+      },
+      "2026-08": {
+        "n": 12,
+        "net_usd": 3.43795,
+        "wins": 7,
+        "win_rate": 0.5833
+      },
+      "2026-09": {
+        "n": 20,
+        "net_usd": -11.18583,
+        "wins": 8,
+        "win_rate": 0.4
+      },
+      "2026-10": {
+        "n": 10,
+        "net_usd": 2.767,
+        "wins": 6,
+        "win_rate": 0.6
+      },
+      "2026-11": {
+        "n": 9,
+        "net_usd": 2.60122,
+        "wins": 6,
+        "win_rate": 0.6667
+      }
+    }
+  },
+  "updated_cumulative_stress": {
+    "n": 150,
+    "win_rate": 0.52,
+    "win_lower95": 0.4406,
+    "net_usd": -21.67629,
+    "profit_factor": 0.834,
+    "max_dd_usd": 36.13319,
+    "tp_count": 74,
+    "sl_count": 68,
+    "time_count": 8,
+    "monthly": {
+      "2026-01": {
+        "n": 5,
+        "net_usd": 6.33916,
+        "wins": 4,
+        "win_rate": 0.8
+      },
+      "2026-02": {
+        "n": 17,
+        "net_usd": -23.02974,
+        "wins": 4,
+        "win_rate": 0.2353
+      },
+      "2026-03": {
+        "n": 14,
+        "net_usd": 1.82688,
+        "wins": 8,
+        "win_rate": 0.5714
+      },
+      "2026-04": {
+        "n": 13,
+        "net_usd": 0.14297,
+        "wins": 7,
+        "win_rate": 0.5385
+      },
+      "2026-05": {
+        "n": 16,
+        "net_usd": -0.33065,
+        "wins": 9,
+        "win_rate": 0.5625
+      },
+      "2026-06": {
+        "n": 16,
+        "net_usd": -1.54168,
+        "wins": 9,
+        "win_rate": 0.5625
+      },
+      "2026-07": {
+        "n": 18,
+        "net_usd": 0.5699,
+        "wins": 10,
+        "win_rate": 0.5556
+      },
+      "2026-08": {
+        "n": 12,
+        "net_usd": 2.60528,
+        "wins": 7,
+        "win_rate": 0.5833
+      },
+      "2026-09": {
+        "n": 20,
+        "net_usd": -12.42456,
+        "wins": 8,
+        "win_rate": 0.4
+      },
+      "2026-10": {
+        "n": 10,
+        "net_usd": 2.15,
+        "wins": 6,
+        "win_rate": 0.6
+      },
+      "2026-11": {
+        "n": 9,
+        "net_usd": 2.01614,
+        "wins": 6,
+        "win_rate": 0.6667
+      }
+    }
+  },
+  "disclaimer": "Past historical replay, not forward verification. D1-42 was previously rejected; costs are hypothetical."
+}
