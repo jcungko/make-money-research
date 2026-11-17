@@ -1,0 +1,284 @@
+{
+  "strategy": {
+    "id": "D1-42",
+    "family": "three_fade",
+    "stop_atr": 0.25,
+    "entry_hour_utc": 1,
+    "rr": 1.0
+  },
+  "notes": [
+    "Historical rejected candidate, NOT approved for live trading",
+    "0.01 lot (1000 USD notional) theoretical USDJPY",
+    "entry and exit executable Bid/Ask M5 with additional 0.2 pip slippage per side and USD 0.07 commission per trade",
+    "Same M5 touches both stop and target => SL first"
+  ],
+  "total": {
+    "n": 146,
+    "win_rate": 0.5479,
+    "win_lower95": 0.467,
+    "net_usd": 0.66894,
+    "profit_factor": 1.006,
+    "max_dd_usd": 24.9454,
+    "tp_count": 76,
+    "sl_count": 62,
+    "time_count": 8,
+    "monthly": {
+      "2026-01": {
+        "n": 5,
+        "net_usd": 6.65161,
+        "wins": 4,
+        "win_rate": 0.8
+      },
+      "2026-02": {
+        "n": 17,
+        "net_usd": -21.9723,
+        "wins": 4,
+        "win_rate": 0.2353
+      },
+      "2026-03": {
+        "n": 14,
+        "net_usd": 2.6884,
+        "wins": 8,
+        "win_rate": 0.5714
+      },
+      "2026-04": {
+        "n": 13,
+        "net_usd": 0.94128,
+        "wins": 7,
+        "win_rate": 0.5385
+      },
+      "2026-05": {
+        "n": 16,
+        "net_usd": 8.76281,
+        "wins": 11,
+        "win_rate": 0.6875
+      },
+      "2026-06": {
+        "n": 16,
+        "net_usd": 0.91907,
+        "wins": 10,
+        "win_rate": 0.625
+      },
+      "2026-07": {
+        "n": 18,
+        "net_usd": 1.6942,
+        "wins": 10,
+        "win_rate": 0.5556
+      },
+      "2026-08": {
+        "n": 12,
+        "net_usd": 3.43795,
+        "wins": 7,
+        "win_rate": 0.5833
+      },
+      "2026-09": {
+        "n": 20,
+        "net_usd": -11.18583,
+        "wins": 8,
+        "win_rate": 0.4
+      },
+      "2026-10": {
+        "n": 10,
+        "net_usd": 2.767,
+        "wins": 6,
+        "win_rate": 0.6
+      },
+      "2026-11": {
+        "n": 5,
+        "net_usd": 5.96477,
+        "wins": 5,
+        "win_rate": 1.0
+      }
+    }
+  },
+  "wins": {
+    "n": 80,
+    "min_usd": 0.2762,
+    "max_usd": 2.4718,
+    "mean_usd": 1.46701,
+    "median_usd": 1.51108,
+    "total_usd": 117.36065
+  },
+  "losses": {
+    "n": 66,
+    "min_usd": -2.89126,
+    "max_usd": -0.38735,
+    "mean_usd": -1.76806,
+    "median_usd": -1.83231,
+    "total_usd": -116.69171
+  },
+  "by_month": {
+    "2026-01": {
+      "n": 5,
+      "wins": 4,
+      "losses": 1,
+      "gross_profit_usd": 8.46453,
+      "gross_loss_usd": -1.81292,
+      "net_usd": 6.65161
+    },
+    "2026-02": {
+      "n": 17,
+      "wins": 4,
+      "losses": 13,
+      "gross_profit_usd": 9.34763,
+      "gross_loss_usd": -31.31993,
+      "net_usd": -21.9723
+    },
+    "2026-03": {
+      "n": 14,
+      "wins": 8,
+      "losses": 6,
+      "gross_profit_usd": 13.9507,
+      "gross_loss_usd": -11.2623,
+      "net_usd": 2.6884
+    },
+    "2026-04": {
+      "n": 13,
+      "wins": 7,
+      "losses": 6,
+      "gross_profit_usd": 10.21738,
+      "gross_loss_usd": -9.2761,
+      "net_usd": 0.94128
+    },
+    "2026-05": {
+      "n": 16,
+      "wins": 11,
+      "losses": 5,
+      "gross_profit_usd": 17.43737,
+      "gross_loss_usd": -8.67456,
+      "net_usd": 8.76281
+    },
+    "2026-06": {
+      "n": 16,
+      "wins": 10,
+      "losses": 6,
+      "gross_profit_usd": 6.96675,
+      "gross_loss_usd": -6.04768,
+      "net_usd": 0.91907
+    },
+    "2026-07": {
+      "n": 18,
+      "wins": 10,
+      "losses": 8,
+      "gross_profit_usd": 10.21303,
+      "gross_loss_usd": -8.51884,
+      "net_usd": 1.6942
+    },
+    "2026-08": {
+      "n": 12,
+      "wins": 7,
+      "losses": 5,
+      "gross_profit_usd": 11.33948,
+      "gross_loss_usd": -7.90153,
+      "net_usd": 3.43795
+    },
+    "2026-09": {
+      "n": 20,
+      "wins": 8,
+      "losses": 12,
+      "gross_profit_usd": 14.92443,
+      "gross_loss_usd": -26.11026,
+      "net_usd": -11.18583
+    },
+    "2026-10": {
+      "n": 10,
+      "wins": 6,
+      "losses": 4,
+      "gross_profit_usd": 8.53459,
+      "gross_loss_usd": -5.76759,
+      "net_usd": 2.767
+    },
+    "2026-11": {
+      "n": 5,
+      "wins": 5,
+      "losses": 0,
+      "gross_profit_usd": 5.96477,
+      "gross_loss_usd": 0,
+      "net_usd": 5.96477
+    }
+  },
+  "stop_width_pips": {
+    "min": 11.38,
+    "max": 42.88,
+    "median": 27.66
+  },
+  "stress": {
+    "n": 146,
+    "win_rate": 0.5274,
+    "win_lower95": 0.4468,
+    "net_usd": -18.06745,
+    "profit_factor": 0.857,
+    "max_dd_usd": 36.13319,
+    "tp_count": 73,
+    "sl_count": 65,
+    "time_count": 8,
+    "monthly": {
+      "2026-01": {
+        "n": 5,
+        "net_usd": 6.33916,
+        "wins": 4,
+        "win_rate": 0.8
+      },
+      "2026-02": {
+        "n": 17,
+        "net_usd": -23.02974,
+        "wins": 4,
+        "win_rate": 0.2353
+      },
+      "2026-03": {
+        "n": 14,
+        "net_usd": 1.82688,
+        "wins": 8,
+        "win_rate": 0.5714
+      },
+      "2026-04": {
+        "n": 13,
+        "net_usd": 0.14297,
+        "wins": 7,
+        "win_rate": 0.5385
+      },
+      "2026-05": {
+        "n": 16,
+        "net_usd": -0.33065,
+        "wins": 9,
+        "win_rate": 0.5625
+      },
+      "2026-06": {
+        "n": 16,
+        "net_usd": -1.54168,
+        "wins": 9,
+        "win_rate": 0.5625
+      },
+      "2026-07": {
+        "n": 18,
+        "net_usd": 0.5699,
+        "wins": 10,
+        "win_rate": 0.5556
+      },
+      "2026-08": {
+        "n": 12,
+        "net_usd": 2.60528,
+        "wins": 7,
+        "win_rate": 0.5833
+      },
+      "2026-09": {
+        "n": 20,
+        "net_usd": -12.42456,
+        "wins": 8,
+        "win_rate": 0.4
+      },
+      "2026-10": {
+        "n": 10,
+        "net_usd": 2.15,
+        "wins": 6,
+        "win_rate": 0.6
+      },
+      "2026-11": {
+        "n": 5,
+        "net_usd": 5.62498,
+        "wins": 5,
+        "win_rate": 1.0
+      }
+    }
+  }
+}
