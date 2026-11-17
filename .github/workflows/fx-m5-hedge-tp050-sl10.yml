@@ -1,0 +1,39 @@
+name: Research FX M5 Hedge TP0.50 SL10 Aug-Oct 2026
+on:
+  push:
+    branches:
+      - research/fx-m5-hedge-tp050-sl10-2026
+    paths:
+      - .github/workflows/fx-m5-hedge-tp050-sl10.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install backtest requirements
+        run: pip install 'numpy>=1.26,<3' 'pandas>=2.2,<3'
+      - name: Backtest three Exness symbols
+        run: python scripts/fx_m5_hedge_tp050_sl10.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fx-m5-hedge-tp050-sl10-2026
+          path: results/fx_m5_hedge_tp050_sl10_2026/
+          if-no-files-found: warn
+      - name: Commit isolated report to research branch
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/fx_m5_hedge_tp050_sl10_2026/
+          if ! git diff --cached --quiet; then
+            git commit -m "Research: FX M5 hedge Aug-Oct 2026 full backtest"
+            git push origin HEAD:research/fx-m5-hedge-tp050-sl10-2026
+          fi
