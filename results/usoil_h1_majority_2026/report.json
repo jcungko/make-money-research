@@ -1,0 +1,64 @@
+{
+  "method": "USOIL H1 prior 3 bullish majority long / bearish majority short",
+  "data": "Exness V19 Standard unsuffixed 2026 bid/ask M5 and H1",
+  "period": "2026-08-01 through 2026-10-31 UTC",
+  "lot_assumed": 0.01,
+  "contract_size_assumed": 1000,
+  "one_price_unit_pnl_usd": 10.0,
+  "risk_and_target_usd": 10.0,
+  "stop_target_price_distance": 1.0,
+  "entry": "first M5 quote at start of each H1; long ask open short bid open",
+  "exit": "SL/TP tested with M5 bid for long, ask for short; otherwise last M5 close",
+  "conservatism": "stop first when both barriers hit inside same M5",
+  "limitations": "M5 ambiguity; contract size not broker verified; no commission/swap/slippage; 5 minute close can be earlier than actual H1 end if missing ticks",
+  "monthly": {
+    "2026-08": {
+      "trades": 483,
+      "wins": 223,
+      "losses": 260,
+      "flat": 0,
+      "win_rate_pct": 46.17,
+      "gross_pnl_usd": -10.47,
+      "tp": 19,
+      "sl": 12,
+      "hour_close": 452,
+      "ambiguous_m5": 0
+    },
+    "2026-09": {
+      "trades": 503,
+      "wins": 256,
+      "losses": 247,
+      "flat": 0,
+      "win_rate_pct": 50.89,
+      "gross_pnl_usd": 8.83,
+      "tp": 37,
+      "sl": 31,
+      "hour_close": 435,
+      "ambiguous_m5": 0
+    },
+    "2026-10": {
+      "trades": 502,
+      "wins": 256,
+      "losses": 245,
+      "flat": 1,
+      "win_rate_pct": 51.0,
+      "gross_pnl_usd": -61.77,
+      "tp": 22,
+      "sl": 27,
+      "hour_close": 453,
+      "ambiguous_m5": 0
+    }
+  },
+  "total": {
+    "trades": 1488,
+    "wins": 735,
+    "losses": 752,
+    "flat": 1,
+    "win_rate_pct": 49.4,
+    "gross_pnl_usd": -63.41,
+    "tp": 78,
+    "sl": 70,
+    "hour_close": 1340,
+    "ambiguous_m5": 0
+  }
+}
