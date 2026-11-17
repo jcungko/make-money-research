@@ -30,6 +30,11 @@ jobs:
           script=b.decode('utf-8')
           assert script.count(old)==1, 'Pinned source changed'
           script=script.replace(old,replacement)
+          needle = "        # mark-to-market at M5 bar close; spread realized through correct executable bid/ask side"
+          insert = "        # CRITICAL: a trade entered at this M5 open can hit SL/TP in THIS SAME bar.\n        # Without this block, a fast initial stop would be incorrectly deferred to the next bar.\n        if position is not None and position['time']==t:\n            p=position; side=p['side']; reason=None; price=None\n            if side==1:\n                if bar.bid_low<=p['stop']:\n                    reason='SL'; price=min(float(bar.bid_open),p['stop'])\n                elif bar.bid_high>=p['take']:\n                    reason='TP'; price=p['take']\n            else:\n                if bar.ask_high>=p['stop']:\n                    reason='SL'; price=max(float(bar.ask_open),p['stop'])\n                elif bar.ask_low<=p['take']:\n                    reason='TP'; price=p['take']\n            if reason:\n                r=(price-p['entry'])*side/p['dist']\n                pnl=r*p['risk_usd'];balance+=pnl\n                trades.append(dict(model=model,entry_utc=p['time'].isoformat(),exit_utc=t.isoformat(),side='BUY' if side==1 else 'SELL',entry=p['entry'],exit=price,sl_at_entry=p['initial_stop'],tp=p['take'],r=round(float(r),5),pnl_usd=round(float(pnl),5),reason=reason))\n                position=None\n"
+          assert script.count(needle)==1, 'Expected same-bar fix anchor'
+          script=script.replace(needle,insert+needle)
+          assert hashlib.sha256(script.encode()).hexdigest()=='1178af93835304a6a5f5ff04466ee1241f1f24b740f0a8d0315272ffa3dc116f', 'Unexpected script hash'
           pathlib.Path('chinese_ea_public_backtest_2026.py').write_text(script,encoding='utf-8')
           print('SOURCE_SHA256',hashlib.sha256(script.encode()).hexdigest())
           PY
