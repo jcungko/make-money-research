@@ -1,0 +1,47 @@
+name: USDJPY D1 Nov17 closed-day update RESEARCH ONLY
+on:
+  push:
+    branches: [research/usdjpy-d1-consistency-20261117]
+    paths:
+      - '.github/workflows/usdjpy-d1-refresh-nov17.yml'
+      - 'research_usdjpy/refresh_nov17.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: usdjpy-d1-nov17-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install research dependencies
+        run: pip install "numpy>=1.26,<3" "pandas>=2.2,<3" "requests>=2.31,<3"
+      - name: Fetch completed Exness USDJPY November daily archives and recheck fixed D1-42
+        run: python research_usdjpy/refresh_nov17.py
+      - name: Persist evidence in isolated research branch only
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/usdjpy_d1_consistency_20261117/refresh_20261117/
+          if ! git diff --cached --quiet; then
+            git commit -m "Research: record Exness Nov11-Nov16 D1-42 replay and provenance"
+            git push origin HEAD:research/usdjpy-d1-consistency-20261117
+          else
+            echo "No new evidence files"
+          fi
+      - name: Archive research evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: usd-jpy-d1-nov17-closed-day-refresh
+          path: results/usdjpy_d1_consistency_20261117/refresh_20261117/
+          if-no-files-found: warn
+          retention-days: 30
