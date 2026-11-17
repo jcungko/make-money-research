@@ -1,0 +1,34 @@
+name: Research EA 2026 full-year indicator warmup archive
+'on':
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ea-fullwarmup-2026.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Export source Bid Ask candles Jan-Oct without modifying data
+        run: |
+          mkdir -p EA-warmup
+          python - <<'PY'
+          import zipfile, pathlib
+          for s in ('EURUSD','USDJPY'):
+              with zipfile.ZipFile(f'data/v17_exness_2026/{s}_2026_UTC_7TF.zip') as z:
+                  for tf in ('M5','M15','H1','H4','D1'):
+                      c=z.read(f'{s}_{tf}_2026_UTC.csv')
+                      (pathlib.Path('EA-warmup')/f'{s}_{tf}_2026_UTC.csv').write_bytes(c)
+                      print(s,tf,len(c))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: EA-full-warmup-2026-FX
+          path: EA-warmup/
+          retention-days: 30
