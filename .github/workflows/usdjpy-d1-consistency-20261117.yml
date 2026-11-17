@@ -47,6 +47,17 @@ jobs:
           pathlib.Path('research_usdjpy/d1_consistency.py').write_bytes(recovered[2])
           print('Recovered protocol with SHA-256 verified',recovered[0],recovered[1],len(recovered[2]))
           PY
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('research_usdjpy/d1_consistency.py')
+          s=p.read_text()
+          conv="lambda x: x.item() if hasattr(x, 'item') else str(x)"
+          assert 'json.dumps(report,indent=2,ensure_ascii=False)' in s
+          assert 'ensure_ascii=False))' in s
+          s=s.replace('json.dumps(report,indent=2,ensure_ascii=False)', 'json.dumps(report,indent=2,ensure_ascii=False,default='+conv+')')
+          s=s.replace('ensure_ascii=False))', 'ensure_ascii=False,default='+conv+'))')
+          p.write_text(s)
+          PY
           python research_usdjpy/d1_consistency.py
       - name: Publish evidence on isolated branch only
         if: success()
